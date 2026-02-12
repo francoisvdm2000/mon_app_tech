@@ -5,7 +5,10 @@ import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // intFormatter, numFormatter, ExpandSectionCard
 import '../../app/utils/png_exporter.dart';
-import 'mire_painters.dart';
+import '../../l10n/app_localizations.dart';
+
+import 'mire_painters.dart' as mp;
+import 'mire_texts.dart';
 
 class _FormDropdown<T> extends StatelessWidget {
   const _FormDropdown({
@@ -50,7 +53,7 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
   // --- Mire simple
   final _wSimpleCtrl = TextEditingController(text: '1920');
   final _hSimpleCtrl = TextEditingController(text: '1080');
-  VideoSimpleMireType _simpleType = VideoSimpleMireType.comboAll;
+  mp.VideoSimpleMireType _simpleType = mp.VideoSimpleMireType.comboAll;
 
   // --- Mire mapping
   final _wMapCtrl = TextEditingController(text: '3840');
@@ -58,7 +61,7 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
   final _nProjCtrl = TextEditingController(text: '2');
   final _overlapCtrl = TextEditingController(text: '10.0');
   MappingOrientation _orientation = MappingOrientation.horizontal;
-  VideoMappingMireType _mapType = VideoMappingMireType.combo;
+  mp.VideoMappingMireType _mapType = mp.VideoMappingMireType.combo;
 
   String _errSimple = '';
   String _errMap = '';
@@ -75,7 +78,10 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
   }
 
   int? _i(TextEditingController c) => int.tryParse(c.text.trim());
-  double? _d(TextEditingController c) => double.tryParse(c.text.trim().replaceAll(',', '.'));
+  double? _d(TextEditingController c) =>
+      double.tryParse(c.text.trim().replaceAll(',', '.'));
+
+  MireTexts _texts(AppLocalizations loc) => MireTexts.fromLoc(loc);
 
   void _validateSimple() {
     final w = _i(_wSimpleCtrl);
@@ -152,16 +158,21 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
     _validateSimple();
     if (_errSimple.isNotEmpty) return;
 
+    final loc = AppLocalizations.of(context);
+    final texts = _texts(loc);
+
     final w = _i(_wSimpleCtrl)!;
     final h = _i(_hSimpleCtrl)!;
 
-    final painter = VideoSimpleMirePainter(
+    final painter = mp.VideoSimpleMirePainter(
+      texts: texts,
       widthPx: w,
       heightPx: h,
       type: _simpleType,
     );
 
-    final png = await _renderToPngBytes(widthPx: w, heightPx: h, painter: painter);
+    final png =
+        await _renderToPngBytes(widthPx: w, heightPx: h, painter: painter);
     final filename = 'mire_video_simple_${w}x${h}_${_simpleType.name}.png';
     await exportPngBytes(png, filename);
   }
@@ -170,12 +181,16 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
     _validateMapping();
     if (_errMap.isNotEmpty) return;
 
+    final loc = AppLocalizations.of(context);
+    final texts = _texts(loc);
+
     final w = _i(_wMapCtrl)!;
     final h = _i(_hMapCtrl)!;
     final n = _i(_nProjCtrl)!;
     final ov = _d(_overlapCtrl)!;
 
-    final painter = VideoMappingMirePainter(
+    final painter = mp.VideoMappingMirePainter(
+      texts: texts,
       widthPx: w,
       heightPx: h,
       nProjectors: n,
@@ -184,11 +199,13 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
       type: _mapType,
     );
 
-    final png = await _renderToPngBytes(widthPx: w, heightPx: h, painter: painter);
+    final png =
+        await _renderToPngBytes(widthPx: w, heightPx: h, painter: painter);
 
     final oriTag = _orientation == MappingOrientation.horizontal ? 'H' : 'V';
     final ovTag = ov.toStringAsFixed(1).replaceAll('.', '_');
-    final filename = 'mire_video_mapping_${w}x${h}_N${n}_ov${ovTag}_${oriTag}_${_mapType.name}.png';
+    final filename =
+        'mire_video_mapping_${w}x${h}_N${n}_ov${ovTag}_${oriTag}_${_mapType.name}.png';
 
     await exportPngBytes(png, filename);
   }
@@ -196,6 +213,9 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
   @override
   Widget build(BuildContext context) {
     final bottom = MediaQuery.of(context).viewPadding.bottom;
+
+    final loc = AppLocalizations.of(context);
+    final texts = _texts(loc);
 
     final wSimple = _i(_wSimpleCtrl) ?? 1920;
     final hSimple = _i(_hSimpleCtrl) ?? 1080;
@@ -205,13 +225,15 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
     final nMap = _i(_nProjCtrl) ?? 2;
     final ovMap = _d(_overlapCtrl) ?? 10.0;
 
-    final simplePainter = VideoSimpleMirePainter(
+    final simplePainter = mp.VideoSimpleMirePainter(
+      texts: texts,
       widthPx: wSimple,
       heightPx: hSimple,
       type: _simpleType,
     );
 
-    final mapPainter = VideoMappingMirePainter(
+    final mapPainter = mp.VideoMappingMirePainter(
+      texts: texts,
       widthPx: wMap,
       heightPx: hMap,
       nProjectors: nMap,
@@ -241,7 +263,10 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
                             controller: _wSimpleCtrl,
                             keyboardType: TextInputType.number,
                             inputFormatters: [intFormatter],
-                            decoration: const InputDecoration(labelText: 'Largeur (px)', hintText: 'ex: 1920'),
+                            decoration: const InputDecoration(
+                              labelText: 'Largeur (px)',
+                              hintText: 'ex: 1920',
+                            ),
                             onChanged: (_) => _validateSimple(),
                           ),
                         ),
@@ -251,25 +276,41 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
                             controller: _hSimpleCtrl,
                             keyboardType: TextInputType.number,
                             inputFormatters: [intFormatter],
-                            decoration: const InputDecoration(labelText: 'Hauteur (px)', hintText: 'ex: 1080'),
+                            decoration: const InputDecoration(
+                              labelText: 'Hauteur (px)',
+                              hintText: 'ex: 1080',
+                            ),
                             onChanged: (_) => _validateSimple(),
                           ),
                         ),
                       ],
                     ),
                     const SizedBox(height: 12),
-                    _FormDropdown<VideoSimpleMireType>(
+                    _FormDropdown<mp.VideoSimpleMireType>(
                       label: 'Type de mire',
                       value: _simpleType,
                       items: const [
                         DropdownMenuItem(
-                          value: VideoSimpleMireType.comboAll,
-                          child: Text('Combo (grille + cercles + 2 barres centrées)'),
+                          value: mp.VideoSimpleMireType.comboAll,
+                          child: Text(
+                              'Combo (grille + cercles + 2 barres centrées)'),
                         ),
-                        DropdownMenuItem(value: VideoSimpleMireType.gridSafe, child: Text('Grille + safe + cercles')),
-                        DropdownMenuItem(value: VideoSimpleMireType.colorBars, child: Text('Barres + rampes + cercles')),
-                        DropdownMenuItem(value: VideoSimpleMireType.uniformity, child: Text('Uniformité + cercles')),
-                        DropdownMenuItem(value: VideoSimpleMireType.checkerboard, child: Text('Damier + cercles')),
+                        DropdownMenuItem(
+                          value: mp.VideoSimpleMireType.gridSafe,
+                          child: Text('Grille + safe + cercles'),
+                        ),
+                        DropdownMenuItem(
+                          value: mp.VideoSimpleMireType.colorBars,
+                          child: Text('Barres + rampes + cercles'),
+                        ),
+                        DropdownMenuItem(
+                          value: mp.VideoSimpleMireType.uniformity,
+                          child: Text('Uniformité + cercles'),
+                        ),
+                        DropdownMenuItem(
+                          value: mp.VideoSimpleMireType.checkerboard,
+                          child: Text('Damier + cercles'),
+                        ),
                       ],
                       onChanged: (v) {
                         setState(() => _simpleType = v);
@@ -292,7 +333,10 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
                       const SizedBox(height: 10),
                       Align(
                         alignment: Alignment.centerLeft,
-                        child: Text(_errSimple, style: const TextStyle(color: Colors.redAccent)),
+                        child: Text(
+                          _errSimple,
+                          style: const TextStyle(color: Colors.redAccent),
+                        ),
                       ),
                     ],
                     const SizedBox(height: 12),
@@ -314,7 +358,10 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
                             controller: _wMapCtrl,
                             keyboardType: TextInputType.number,
                             inputFormatters: [intFormatter],
-                            decoration: const InputDecoration(labelText: 'Largeur (px)', hintText: 'ex: 3840'),
+                            decoration: const InputDecoration(
+                              labelText: 'Largeur (px)',
+                              hintText: 'ex: 3840',
+                            ),
                             onChanged: (_) => _validateMapping(),
                           ),
                         ),
@@ -324,7 +371,10 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
                             controller: _hMapCtrl,
                             keyboardType: TextInputType.number,
                             inputFormatters: [intFormatter],
-                            decoration: const InputDecoration(labelText: 'Hauteur (px)', hintText: 'ex: 2160'),
+                            decoration: const InputDecoration(
+                              labelText: 'Hauteur (px)',
+                              hintText: 'ex: 2160',
+                            ),
                             onChanged: (_) => _validateMapping(),
                           ),
                         ),
@@ -338,7 +388,10 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
                             controller: _nProjCtrl,
                             keyboardType: TextInputType.number,
                             inputFormatters: [intFormatter],
-                            decoration: const InputDecoration(labelText: 'Nombre de projecteurs (N)', hintText: 'ex: 2'),
+                            decoration: const InputDecoration(
+                              labelText: 'Nombre de projecteurs (N)',
+                              hintText: 'ex: 2',
+                            ),
                             onChanged: (_) => _validateMapping(),
                           ),
                         ),
@@ -346,9 +399,15 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
                         Expanded(
                           child: TextField(
                             controller: _overlapCtrl,
-                            keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: false),
+                            keyboardType: const TextInputType.numberWithOptions(
+                              decimal: true,
+                              signed: false,
+                            ),
                             inputFormatters: [numFormatter],
-                            decoration: const InputDecoration(labelText: 'Overlap (%)', hintText: 'ex: 10.0'),
+                            decoration: const InputDecoration(
+                              labelText: 'Overlap (%)',
+                              hintText: 'ex: 10.0',
+                            ),
                             onChanged: (_) => _validateMapping(),
                           ),
                         ),
@@ -359,8 +418,14 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
                       label: 'Orientation',
                       value: _orientation,
                       items: const [
-                        DropdownMenuItem(value: MappingOrientation.horizontal, child: Text('Horizontal')),
-                        DropdownMenuItem(value: MappingOrientation.vertical, child: Text('Vertical')),
+                        DropdownMenuItem(
+                          value: MappingOrientation.horizontal,
+                          child: Text('Horizontal'),
+                        ),
+                        DropdownMenuItem(
+                          value: MappingOrientation.vertical,
+                          child: Text('Vertical'),
+                        ),
                       ],
                       onChanged: (v) {
                         setState(() => _orientation = v);
@@ -368,13 +433,22 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
                       },
                     ),
                     const SizedBox(height: 12),
-                    _FormDropdown<VideoMappingMireType>(
+                    _FormDropdown<mp.VideoMappingMireType>(
                       label: 'Type mapping',
                       value: _mapType,
                       items: const [
-                        DropdownMenuItem(value: VideoMappingMireType.combo, child: Text('Combo (zones + overlap + blend)')),
-                        DropdownMenuItem(value: VideoMappingMireType.zonesAndOverlap, child: Text('Zones + overlap')),
-                        DropdownMenuItem(value: VideoMappingMireType.blendRamps, child: Text('Blend ramps')),
+                        DropdownMenuItem(
+                          value: mp.VideoMappingMireType.combo,
+                          child: Text('Combo (zones + overlap + blend)'),
+                        ),
+                        DropdownMenuItem(
+                          value: mp.VideoMappingMireType.zonesAndOverlap,
+                          child: Text('Zones + overlap'),
+                        ),
+                        DropdownMenuItem(
+                          value: mp.VideoMappingMireType.blendRamps,
+                          child: Text('Blend ramps'),
+                        ),
                       ],
                       onChanged: (v) {
                         setState(() => _mapType = v);
@@ -397,7 +471,10 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
                       const SizedBox(height: 10),
                       Align(
                         alignment: Alignment.centerLeft,
-                        child: Text(_errMap, style: const TextStyle(color: Colors.redAccent)),
+                        child: Text(
+                          _errMap,
+                          style: const TextStyle(color: Colors.redAccent),
+                        ),
                       ),
                     ],
                     const SizedBox(height: 12),

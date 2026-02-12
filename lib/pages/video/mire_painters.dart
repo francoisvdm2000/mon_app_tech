@@ -3,9 +3,21 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 
-enum VideoSimpleMireType { gridSafe, checkerboard, colorBars, uniformity, comboAll }
+import 'mire_texts.dart';
+
+enum VideoSimpleMireType {
+  gridSafe,
+  checkerboard,
+  colorBars,
+  uniformity,
+  comboAll
+}
+
 enum VideoMappingMireType { zonesAndOverlap, blendRamps, combo }
-enum MappingOrientation { horizontal, vertical }
+
+// ✅ IMPORTANT : MappingOrientation est défini UNE SEULE FOIS dans mire_texts.dart
+// enum MappingOrientation { horizontal, vertical }
+
 enum LedMireType { pixelPerfect, gridLabels, colorBars, uniformity, tilesId }
 
 const kMagenta = Color(0xFFFF00FF);
@@ -61,7 +73,12 @@ class _PaintUtil {
   /// Zone safe pour éviter tout clipping (preview ET export).
   static Rect safeRect(Size size) {
     final inset = borderStroke / 2.0;
-    return Rect.fromLTWH(inset, inset, size.width - inset * 2, size.height - inset * 2);
+    return Rect.fromLTWH(
+      inset,
+      inset,
+      size.width - inset * 2,
+      size.height - inset * 2,
+    );
   }
 
   static void borderInside(Canvas canvas, Size size) {
@@ -85,8 +102,10 @@ class _PaintUtil {
     final pad = size.shortestSide * 0.020;
 
     final line1 = title;
-    final line2 = '${widthPx}x$heightPx px  •  Ratio ${ratioLabel(widthPx, heightPx)}';
-    final line3 = (subtitle == null || subtitle.trim().isEmpty) ? null : subtitle.trim();
+    final line2 =
+        '${widthPx}x$heightPx px  •  Ratio ${ratioLabel(widthPx, heightPx)}';
+    final line3 =
+        (subtitle == null || subtitle.trim().isEmpty) ? null : subtitle.trim();
 
     final t1 = text(
       line1,
@@ -110,7 +129,10 @@ class _PaintUtil {
           );
 
     final contentW = math.max(t1.width, math.max(t2.width, t3?.width ?? 0));
-    final contentH = t1.height + pad * 0.35 + t2.height + (t3 == null ? 0 : (pad * 0.25 + t3.height));
+    final contentH = t1.height +
+        pad * 0.35 +
+        t2.height +
+        (t3 == null ? 0 : (pad * 0.25 + t3.height));
 
     final boxW = contentW + pad * 2.0;
     final boxH = contentH + pad * 1.4;
@@ -220,7 +242,6 @@ class _PaintUtil {
     canvas.drawLine(Offset(cx, cy - s), Offset(cx, cy + s), p);
   }
 
-  /// Petit tag avec fond pour éviter les collisions visuelles.
   static void tag(
     Canvas canvas,
     Rect zone, {
@@ -233,10 +254,20 @@ class _PaintUtil {
     final maxW = zone.width * maxWidthFactor;
 
     double fs = fontSize;
-    TextPainter tp = text(textValue, size: fs, weight: FontWeight.w900, color: Colors.white.withValues(alpha: 0.95));
+    TextPainter tp = text(
+      textValue,
+      size: fs,
+      weight: FontWeight.w900,
+      color: Colors.white.withValues(alpha: 0.95),
+    );
     while (tp.width > maxW && fs > 16) {
       fs *= 0.90;
-      tp = text(textValue, size: fs, weight: FontWeight.w900, color: Colors.white.withValues(alpha: 0.95));
+      tp = text(
+        textValue,
+        size: fs,
+        weight: FontWeight.w900,
+        color: Colors.white.withValues(alpha: 0.95),
+      );
     }
 
     final boxW = tp.width + pad * 2;
@@ -255,7 +286,10 @@ class _PaintUtil {
       o = Offset(zone.right - boxW - pad, zone.bottom - boxH - pad);
     }
 
-    final rr = RRect.fromRectAndRadius(Rect.fromLTWH(o.dx, o.dy, boxW, boxH), Radius.circular(pad * 0.8));
+    final rr = RRect.fromRectAndRadius(
+      Rect.fromLTWH(o.dx, o.dy, boxW, boxH),
+      Radius.circular(pad * 0.8),
+    );
     canvas.drawRRect(rr, Paint()..color = Colors.black.withValues(alpha: 0.45));
     canvas.drawRRect(
       rr,
@@ -281,8 +315,12 @@ class _PaintUtil {
     final boxH = tp.height + pad * 1.4;
     final o = Offset(zone.left + pad, zone.top + pad);
 
-    final rr = RRect.fromRectAndRadius(Rect.fromLTWH(o.dx, o.dy, boxW, boxH), Radius.circular(pad * 0.8));
-    canvas.drawRRect(rr, Paint()..color = Colors.redAccent.withValues(alpha: 0.75));
+    final rr = RRect.fromRectAndRadius(
+      Rect.fromLTWH(o.dx, o.dy, boxW, boxH),
+      Radius.circular(pad * 0.8),
+    );
+    canvas.drawRRect(
+        rr, Paint()..color = Colors.redAccent.withValues(alpha: 0.75));
     canvas.drawRRect(
       rr,
       Paint()
@@ -301,11 +339,13 @@ class VideoSimpleMirePainter extends CustomPainter {
     required this.widthPx,
     required this.heightPx,
     required this.type,
+    required this.texts,
   });
 
   final int widthPx;
   final int heightPx;
   final VideoSimpleMireType type;
+  final MireTexts texts;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -347,7 +387,9 @@ class VideoSimpleMirePainter extends CustomPainter {
     _PaintUtil.drawInfoBadge(
       canvas,
       size,
-      title: type == VideoSimpleMireType.comboAll ? 'VIDEO / MIRE COMBO' : 'VIDEO / MIRE SIMPLE',
+      title: type == VideoSimpleMireType.comboAll
+          ? texts.videoComboTitle
+          : texts.videoSimpleTitle,
       widthPx: widthPx,
       heightPx: heightPx,
       subtitle: _subtitleFor(type),
@@ -359,15 +401,15 @@ class VideoSimpleMirePainter extends CustomPainter {
   String _subtitleFor(VideoSimpleMireType t) {
     switch (t) {
       case VideoSimpleMireType.gridSafe:
-        return 'Grille + safe + cercles';
+        return texts.simpleSubtitleGridSafe;
       case VideoSimpleMireType.checkerboard:
-        return 'Damier + cercles';
+        return texts.simpleSubtitleCheckerboard;
       case VideoSimpleMireType.colorBars:
-        return 'Barres + rampes + cercles';
+        return texts.simpleSubtitleColorBars;
       case VideoSimpleMireType.uniformity:
-        return 'Uniformité + cercles';
+        return texts.simpleSubtitleUniformity;
       case VideoSimpleMireType.comboAll:
-        return 'Grille + safe + 2 barres centrées + cercles';
+        return texts.simpleSubtitleComboAll;
     }
   }
 
@@ -384,8 +426,10 @@ class VideoSimpleMirePainter extends CustomPainter {
       canvas.drawLine(Offset(0, y), Offset(size.width, y), grid);
     }
 
-    final safe90 = Rect.fromLTWH(size.width * 0.05, size.height * 0.05, size.width * 0.90, size.height * 0.90);
-    final safe80 = Rect.fromLTWH(size.width * 0.10, size.height * 0.10, size.width * 0.80, size.height * 0.80);
+    final safe90 = Rect.fromLTWH(size.width * 0.05, size.height * 0.05,
+        size.width * 0.90, size.height * 0.90);
+    final safe80 = Rect.fromLTWH(size.width * 0.10, size.height * 0.10,
+        size.width * 0.80, size.height * 0.80);
 
     final p1 = Paint()
       ..color = Colors.white.withValues(alpha: 0.60)
@@ -409,7 +453,11 @@ class VideoSimpleMirePainter extends CustomPainter {
       for (int x = 0; x < cells; x++) {
         final isDark = (x + y).isEven;
         final rect = Rect.fromLTWH(x * cellW, y * cellH, cellW, cellH);
-        canvas.drawRect(rect, Paint()..color = isDark ? Colors.black : Colors.white.withValues(alpha: 0.9));
+        canvas.drawRect(
+            rect,
+            Paint()
+              ..color =
+                  isDark ? Colors.black : Colors.white.withValues(alpha: 0.9));
       }
     }
   }
@@ -429,11 +477,13 @@ class VideoSimpleMirePainter extends CustomPainter {
     final w = size.width / colors.length;
 
     for (int i = 0; i < colors.length; i++) {
-      canvas.drawRect(Rect.fromLTWH(i * w, 0, w, barH), Paint()..color = colors[i]);
+      canvas.drawRect(
+          Rect.fromLTWH(i * w, 0, w, barH), Paint()..color = colors[i]);
     }
 
     final rampRect = Rect.fromLTWH(0, barH, size.width, size.height - barH);
-    final shader = ui.Gradient.linear(rampRect.topLeft, rampRect.topRight, const [Colors.black, Colors.white]);
+    final shader = ui.Gradient.linear(rampRect.topLeft, rampRect.topRight,
+        const [Colors.black, Colors.white]);
     canvas.drawRect(rampRect, Paint()..shader = shader);
   }
 
@@ -441,7 +491,8 @@ class VideoSimpleMirePainter extends CustomPainter {
     final w = size.width / 2;
     final h = size.height / 2;
     canvas.drawRect(Rect.fromLTWH(0, 0, w, h), Paint()..color = Colors.white);
-    canvas.drawRect(Rect.fromLTWH(w, 0, w, h), Paint()..color = const Color(0xFF808080));
+    canvas.drawRect(
+        Rect.fromLTWH(w, 0, w, h), Paint()..color = const Color(0xFF808080));
     canvas.drawRect(Rect.fromLTWH(0, h, w, h), Paint()..color = Colors.red);
     canvas.drawRect(Rect.fromLTWH(w, h, w, h), Paint()..color = Colors.black);
   }
@@ -456,11 +507,15 @@ class VideoSimpleMirePainter extends CustomPainter {
     final barH = size.height * 0.14;
 
     final topCenterY = size.height * 0.25;
-    final colorRect = Rect.fromCenter(center: Offset(size.width / 2, topCenterY), width: barW, height: barH);
+    final colorRect = Rect.fromCenter(
+        center: Offset(size.width / 2, topCenterY), width: barW, height: barH);
     _drawColorBar(canvas, colorRect);
 
     final bottomCenterY = size.height * 0.75;
-    final grayRect = Rect.fromCenter(center: Offset(size.width / 2, bottomCenterY), width: barW, height: barH);
+    final grayRect = Rect.fromCenter(
+        center: Offset(size.width / 2, bottomCenterY),
+        width: barW,
+        height: barH);
     _drawGrayRamp(canvas, grayRect);
 
     final border = Paint()
@@ -485,18 +540,23 @@ class VideoSimpleMirePainter extends CustomPainter {
     ];
     final w = r.width / colors.length;
     for (int i = 0; i < colors.length; i++) {
-      canvas.drawRect(Rect.fromLTWH(r.left + i * w, r.top, w, r.height), Paint()..color = colors[i]);
+      canvas.drawRect(Rect.fromLTWH(r.left + i * w, r.top, w, r.height),
+          Paint()..color = colors[i]);
     }
   }
 
   void _drawGrayRamp(Canvas canvas, Rect r) {
-    final shader = ui.Gradient.linear(r.topLeft, r.topRight, const [Colors.black, Colors.white]);
+    final shader = ui.Gradient.linear(
+        r.topLeft, r.topRight, const [Colors.black, Colors.white]);
     canvas.drawRect(r, Paint()..shader = shader);
   }
 
   @override
   bool shouldRepaint(covariant VideoSimpleMirePainter oldDelegate) {
-    return oldDelegate.widthPx != widthPx || oldDelegate.heightPx != heightPx || oldDelegate.type != type;
+    return oldDelegate.widthPx != widthPx ||
+        oldDelegate.heightPx != heightPx ||
+        oldDelegate.type != type ||
+        oldDelegate.texts != texts;
   }
 }
 
@@ -509,6 +569,7 @@ class VideoMappingMirePainter extends CustomPainter {
     required this.overlapPercent,
     required this.orientation,
     required this.type,
+    required this.texts,
   });
 
   final int widthPx;
@@ -517,6 +578,7 @@ class VideoMappingMirePainter extends CustomPainter {
   final double overlapPercent;
   final MappingOrientation orientation;
   final VideoMappingMireType type;
+  final MireTexts texts;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -530,7 +592,9 @@ class VideoMappingMirePainter extends CustomPainter {
     final n = nProjectors.clamp(1, 64);
     final p = (overlapPercent / 100.0).clamp(0.0, 0.99);
 
-    final total = (orientation == MappingOrientation.horizontal) ? inner.width : inner.height;
+    final total = (orientation == MappingOrientation.horizontal)
+        ? inner.width
+        : inner.height;
     final projSize = total / (n - (n - 1) * p);
     final overlap = projSize * p;
     final step = projSize - overlap;
@@ -548,7 +612,6 @@ class VideoMappingMirePainter extends CustomPainter {
     _PaintUtil.circles(canvas, inner);
     _PaintUtil.crosshair(canvas, inner);
 
-    // Zones projo
     for (int i = 0; i < n; i++) {
       final start = i * step;
       final end = start + projSize;
@@ -572,18 +635,16 @@ class VideoMappingMirePainter extends CustomPainter {
       _PaintUtil.circlesInRect(canvas, zone);
       _zoneGrid(canvas, zone, baseStep: inner.shortestSide / 12);
 
-      // ✅ PROJO centré
       _PaintUtil.tag(
         canvas,
         zone,
-        textValue: 'PROJO ${i + 1}',
+        textValue: texts.projectorLabel(i + 1),
         anchor: Alignment.center,
         maxWidthFactor: 0.75,
         fontSize: inner.shortestSide * 0.10,
       );
     }
 
-    // Overlaps : PAS de texte, juste zone grisée
     for (int i = 0; i < n - 1; i++) {
       final oStart = (i + 1) * step;
       final oEnd = oStart + overlap;
@@ -595,12 +656,14 @@ class VideoMappingMirePainter extends CustomPainter {
         overlapRect = Rect.fromLTWH(0, oStart, inner.width, oEnd - oStart);
       }
 
-      if (type == VideoMappingMireType.zonesAndOverlap || type == VideoMappingMireType.combo) {
+      if (type == VideoMappingMireType.zonesAndOverlap ||
+          type == VideoMappingMireType.combo) {
         _overlapShade(canvas, overlapRect);
         _hatchLightLess(canvas, overlapRect);
       }
 
-      if (type == VideoMappingMireType.blendRamps || type == VideoMappingMireType.combo) {
+      if (type == VideoMappingMireType.blendRamps ||
+          type == VideoMappingMireType.combo) {
         _blendRamp(canvas, overlapRect, orientation: orientation);
       }
 
@@ -616,12 +679,11 @@ class VideoMappingMirePainter extends CustomPainter {
     _PaintUtil.drawInfoBadge(
       canvas,
       size,
-      title: 'VIDEO / MIRE MAPPING',
+      title: texts.videoMappingTitle,
       widthPx: widthPx,
       heightPx: heightPx,
-      subtitle:
-          'N=$n • Overlap ${overlapPercent.toStringAsFixed(1)}% • '
-          '${orientation == MappingOrientation.horizontal ? "Horizontal" : "Vertical"}',
+      subtitle: texts.mappingSubtitle(
+          n: n, percent: overlapPercent, orientation: orientation),
       align: Alignment.bottomLeft,
     );
     _PaintUtil.borderInside(canvas, size);
@@ -659,34 +721,44 @@ class VideoMappingMirePainter extends CustomPainter {
     canvas.drawRect(r, Paint()..color = Colors.white.withValues(alpha: 0.07));
   }
 
-  /// Diagonales plus légères = moins “brouillon”.
   void _hatchLightLess(Canvas canvas, Rect r) {
     final p = Paint()
       ..color = Colors.white.withValues(alpha: 0.10)
       ..strokeWidth = 2;
 
-    final step = (r.shortestSide / 4).clamp(40.0, 120.0); // ✅ moins dense
+    final step = (r.shortestSide / 4).clamp(40.0, 120.0);
     for (double x = r.left - r.height; x < r.right + r.height; x += step) {
       canvas.drawLine(Offset(x, r.bottom), Offset(x + r.height, r.top), p);
     }
   }
 
-  void _blendRamp(Canvas canvas, Rect r, {required MappingOrientation orientation}) {
+  void _blendRamp(Canvas canvas, Rect r,
+      {required MappingOrientation orientation}) {
     final shader = (orientation == MappingOrientation.horizontal)
         ? ui.Gradient.linear(
             r.topLeft,
             r.topRight,
-            [Colors.white.withValues(alpha: 0.82), Colors.black.withValues(alpha: 0.82)],
+            [
+              Colors.white.withValues(alpha: 0.82),
+              Colors.black.withValues(alpha: 0.82)
+            ],
           )
         : ui.Gradient.linear(
             r.topLeft,
             r.bottomLeft,
-            [Colors.white.withValues(alpha: 0.82), Colors.black.withValues(alpha: 0.82)],
+            [
+              Colors.white.withValues(alpha: 0.82),
+              Colors.black.withValues(alpha: 0.82)
+            ],
           );
 
     canvas.drawRect(r.deflate(6), Paint()..shader = shader);
 
-    final tt = _PaintUtil.text('BLEND', size: r.shortestSide * 0.18, color: Colors.white.withValues(alpha: 0.9));
+    final tt = _PaintUtil.text(
+      texts.blendLabel,
+      size: r.shortestSide * 0.18,
+      color: Colors.white.withValues(alpha: 0.9),
+    );
     tt.paint(canvas, Offset(r.left + 12, r.bottom - tt.height - 12));
   }
 
@@ -697,7 +769,8 @@ class VideoMappingMirePainter extends CustomPainter {
         oldDelegate.nProjectors != nProjectors ||
         oldDelegate.overlapPercent != overlapPercent ||
         oldDelegate.orientation != orientation ||
-        oldDelegate.type != type;
+        oldDelegate.type != type ||
+        oldDelegate.texts != texts;
   }
 }
 
@@ -707,6 +780,7 @@ class LedMirePainter extends CustomPainter {
     required this.widthPx,
     required this.heightPx,
     required this.type,
+    required this.texts,
     this.tileWpx,
     this.tileHpx,
     this.tileWcm,
@@ -718,6 +792,7 @@ class LedMirePainter extends CustomPainter {
   final int widthPx;
   final int heightPx;
   final LedMireType type;
+  final MireTexts texts;
 
   final int? tileWpx;
   final int? tileHpx;
@@ -727,7 +802,6 @@ class LedMirePainter extends CustomPainter {
 
   final int? tilesX;
   final int? tilesY;
-
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -744,25 +818,21 @@ class LedMirePainter extends CustomPainter {
         _PaintUtil.circles(canvas, inner);
         _PaintUtil.crosshair(canvas, inner);
         break;
-
       case LedMireType.gridLabels:
         _gridLabels(canvas, inner);
         _PaintUtil.circles(canvas, inner);
         _PaintUtil.crosshair(canvas, inner);
         break;
-
       case LedMireType.colorBars:
         _colorBars(canvas, inner);
         _PaintUtil.circles(canvas, inner);
         _PaintUtil.crosshair(canvas, inner);
         break;
-
       case LedMireType.uniformity:
         _uniformity(canvas, inner);
         _PaintUtil.circles(canvas, inner);
         _PaintUtil.crosshair(canvas, inner);
         break;
-
       case LedMireType.tilesId:
         _tilesId(canvas, inner);
         _PaintUtil.circles(canvas, inner);
@@ -775,10 +845,12 @@ class LedMirePainter extends CustomPainter {
     _PaintUtil.drawInfoBadge(
       canvas,
       size,
-      title: type == LedMireType.tilesId ? 'LED / TILES ID' : 'LED / MIRE',
+      title:
+          type == LedMireType.tilesId ? texts.ledTilesIdTitle : texts.ledTitle,
       widthPx: widthPx,
       heightPx: heightPx,
-      subtitle: type == LedMireType.tilesId ? _tilesSubtitle() : _subtitleFor(type),
+      subtitle:
+          type == LedMireType.tilesId ? _tilesSubtitle() : _subtitleFor(type),
       align: Alignment.bottomLeft,
     );
 
@@ -788,54 +860,57 @@ class LedMirePainter extends CustomPainter {
   String _subtitleFor(LedMireType t) {
     switch (t) {
       case LedMireType.pixelPerfect:
-        return 'Pixel perfect + cercles';
+        return texts.ledSubtitlePixelPerfect;
       case LedMireType.gridLabels:
-        return 'Grille + repères + cercles';
+        return texts.ledSubtitleGridLabels;
       case LedMireType.colorBars:
-        return 'Barres + rampes + cercles';
+        return texts.ledSubtitleColorBars;
       case LedMireType.uniformity:
-        return 'Uniformité + cercles';
+        return texts.ledSubtitleUniformity;
       case LedMireType.tilesId:
         return _tilesSubtitle();
     }
   }
 
   String _tilesSubtitle() {
-  final tw = tileWpx ?? 0;
-  final th = tileHpx ?? 0;
+    final tw = tileWpx ?? 0;
+    final th = tileHpx ?? 0;
 
-  if (tw <= 0 || th <= 0) return 'Renseigne Tile (px) pour numérotation.';
+    if (tw <= 0 || th <= 0) return texts.tileMissingPx;
 
-  final nx = tilesX ?? (widthPx ~/ tw);
-  final ny = tilesY ?? (heightPx ~/ th);
+    final nx = tilesX ?? (widthPx ~/ tw);
+    final ny = tilesY ?? (heightPx ~/ th);
 
-  String tilePhys = '';
-  String pitchStr = '';
-  String wallPhys = '';
+    String tilePhys = '';
+    String pitchStr = '';
+    String wallPhys = '';
 
-  if ((tileWcm ?? 0) > 0 && (tileHcm ?? 0) > 0) {
-    final px = (tileWcm! * 10.0) / tw;
-    final py = (tileHcm! * 10.0) / th;
+    if ((tileWcm ?? 0) > 0 && (tileHcm ?? 0) > 0) {
+      final px = (tileWcm! * 10.0) / tw;
+      final py = (tileHcm! * 10.0) / th;
 
-    if ((px - py).abs() <= 0.05) {
-      pitchStr = 'Pitch ~ ${((px + py) / 2).toStringAsFixed(2)} mm';
-    } else {
-      pitchStr = 'Pitch X ${px.toStringAsFixed(2)} • Y ${py.toStringAsFixed(2)} mm';
+      if ((px - py).abs() <= 0.05) {
+        pitchStr = texts.pitchEq(((px + py) / 2).toStringAsFixed(2));
+      } else {
+        pitchStr = texts.pitchXY(px.toStringAsFixed(2), py.toStringAsFixed(2));
+      }
+
+      tilePhys = texts.tilePhys(
+          tileWcm!.toStringAsFixed(2), tileHcm!.toStringAsFixed(2));
+
+      final wallWm = (nx * tileWcm!) / 100.0;
+      final wallHm = (ny * tileHcm!) / 100.0;
+      wallPhys =
+          texts.wallPhys(wallWm.toStringAsFixed(2), wallHm.toStringAsFixed(2));
     }
 
-    tilePhys = 'Tile ${tileWcm!.toStringAsFixed(2)}×${tileHcm!.toStringAsFixed(2)} cm';
+    final base = texts.tilesBase(tw: tw, th: th, nx: nx, ny: ny);
+    final extras = [tilePhys, pitchStr, wallPhys]
+        .where((e) => e.trim().isNotEmpty)
+        .join(' • ');
 
-    final wallWm = (nx * tileWcm!) / 100.0;
-    final wallHm = (ny * tileHcm!) / 100.0;
-    wallPhys = 'Mur ~ ${wallWm.toStringAsFixed(2)}×${wallHm.toStringAsFixed(2)} m';
+    return extras.isEmpty ? base : '$base • $extras';
   }
-
-  final base = 'Tile ${tw}x$th px • Grille $nx x $ny';
-  final extras = [tilePhys, pitchStr, wallPhys].where((e) => e.trim().isNotEmpty).join(' • ');
-
-  return extras.isEmpty ? base : '$base • $extras';
-}
-
 
   void _pixelPerfect(Canvas canvas, Size size) {
     final p1 = Paint()..color = Colors.white.withValues(alpha: 0.85);
@@ -844,7 +919,8 @@ class LedMirePainter extends CustomPainter {
     final step = (size.width / 320).clamp(1.0, 3.0);
     bool white = true;
     for (double x = 0; x < size.width; x += step) {
-      canvas.drawRect(Rect.fromLTWH(x, 0, step, size.height * 0.5), white ? p1 : p2);
+      canvas.drawRect(
+          Rect.fromLTWH(x, 0, step, size.height * 0.5), white ? p1 : p2);
       white = !white;
     }
 
@@ -857,7 +933,9 @@ class LedMirePainter extends CustomPainter {
         final isDark = (x + y).isEven;
         canvas.drawRect(
           Rect.fromLTWH(x * cw, top + y * ch, cw, ch),
-          Paint()..color = isDark ? Colors.black : Colors.white.withValues(alpha: 0.9),
+          Paint()
+            ..color =
+                isDark ? Colors.black : Colors.white.withValues(alpha: 0.9),
         );
       }
     }
@@ -892,11 +970,13 @@ class LedMirePainter extends CustomPainter {
     final w = size.width / colors.length;
 
     for (int i = 0; i < colors.length; i++) {
-      canvas.drawRect(Rect.fromLTWH(i * w, 0, w, barH), Paint()..color = colors[i]);
+      canvas.drawRect(
+          Rect.fromLTWH(i * w, 0, w, barH), Paint()..color = colors[i]);
     }
 
     final rampRect = Rect.fromLTWH(0, barH, size.width, size.height - barH);
-    final shader = ui.Gradient.linear(rampRect.topLeft, rampRect.topRight, const [Colors.black, Colors.white]);
+    final shader = ui.Gradient.linear(rampRect.topLeft, rampRect.topRight,
+        const [Colors.black, Colors.white]);
     canvas.drawRect(rampRect, Paint()..shader = shader);
   }
 
@@ -905,7 +985,8 @@ class LedMirePainter extends CustomPainter {
     final h = size.height / 2;
 
     canvas.drawRect(Rect.fromLTWH(0, 0, w, h), Paint()..color = Colors.white);
-    canvas.drawRect(Rect.fromLTWH(w, 0, w, h), Paint()..color = const Color(0xFF808080));
+    canvas.drawRect(
+        Rect.fromLTWH(w, 0, w, h), Paint()..color = const Color(0xFF808080));
     canvas.drawRect(Rect.fromLTWH(0, h, w, h), Paint()..color = Colors.red);
     canvas.drawRect(Rect.fromLTWH(w, h, w, h), Paint()..color = Colors.black);
   }
@@ -916,7 +997,8 @@ class LedMirePainter extends CustomPainter {
 
     if (tw <= 0 || th <= 0) {
       _gridLabels(canvas, size);
-      final t = _PaintUtil.text('Tile (px) manquant', size: size.shortestSide * 0.05, color: Colors.redAccent);
+      final t = _PaintUtil.text(texts.tileMissingPx,
+          size: size.shortestSide * 0.05, color: Colors.redAccent);
       t.paint(canvas, Offset(size.width * 0.05, size.height * 0.45));
       return;
     }
@@ -924,7 +1006,6 @@ class LedMirePainter extends CustomPainter {
     final okW = (widthPx % tw) == 0;
     final okH = (heightPx % th) == 0;
 
-    // ✅ tiles entières seulement (pas de tile coupée)
     final nx = widthPx ~/ tw;
     final ny = heightPx ~/ th;
 
@@ -932,7 +1013,7 @@ class LedMirePainter extends CustomPainter {
       _PaintUtil.warningTag(
         canvas,
         Rect.fromLTWH(0, 0, size.width, size.height),
-        'MUR NON MULTIPLE DE TILES',
+        texts.wallNotMultipleOfTiles,
       );
     }
 
@@ -967,7 +1048,8 @@ class LedMirePainter extends CustomPainter {
           pxToCanvasY(bottomPx.toDouble()),
         );
 
-        final c = tileColors[(x + y) % tileColors.length].withValues(alpha: 0.20);
+        final c =
+            tileColors[(x + y) % tileColors.length].withValues(alpha: 0.20);
         canvas.drawRect(rect, Paint()..color = c);
         canvas.drawRect(rect, border);
 
@@ -987,7 +1069,8 @@ class LedMirePainter extends CustomPainter {
           weight: FontWeight.w700,
           color: Colors.white70,
         );
-        sub.paint(canvas, Offset(rect.left + 10, rect.top + 10 + label.height + 2));
+        sub.paint(
+            canvas, Offset(rect.left + 10, rect.top + 10 + label.height + 2));
       }
     }
   }
@@ -995,13 +1078,14 @@ class LedMirePainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant LedMirePainter oldDelegate) {
     return oldDelegate.widthPx != widthPx ||
-    oldDelegate.heightPx != heightPx ||
-    oldDelegate.type != type ||
-    oldDelegate.tileWpx != tileWpx ||
-    oldDelegate.tileHpx != tileHpx ||
-    oldDelegate.tileWcm != tileWcm ||
-    oldDelegate.tileHcm != tileHcm ||
-    oldDelegate.tilesX != tilesX ||
-    oldDelegate.tilesY != tilesY;
+        oldDelegate.heightPx != heightPx ||
+        oldDelegate.type != type ||
+        oldDelegate.tileWpx != tileWpx ||
+        oldDelegate.tileHpx != tileHpx ||
+        oldDelegate.tileWcm != tileWcm ||
+        oldDelegate.tileHcm != tileHcm ||
+        oldDelegate.tilesX != tilesX ||
+        oldDelegate.tilesY != tilesY ||
+        oldDelegate.texts != texts;
   }
 }

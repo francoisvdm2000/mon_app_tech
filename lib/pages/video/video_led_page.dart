@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../app/ui/widgets.dart'; // numFormatter, intFormatter, ExpandSectionCard, ResultBox, copyToClipboard
 
 class VideoLedPage extends StatefulWidget {
@@ -10,7 +11,6 @@ class VideoLedPage extends StatefulWidget {
 }
 
 class _VideoLedPageState extends State<VideoLedPage> {
-  // Inputs (autonomes, pas d'encart global)
   final _tilesXCtrl = TextEditingController();
   final _tilesYCtrl = TextEditingController();
 
@@ -34,6 +34,7 @@ class _VideoLedPageState extends State<VideoLedPage> {
   }
 
   int? _i(TextEditingController c) => int.tryParse(c.text.trim());
+
   double? _d(TextEditingController c) {
     final t = c.text.trim().replaceAll(',', '.');
     return double.tryParse(t);
@@ -62,7 +63,8 @@ class _VideoLedPageState extends State<VideoLedPage> {
   }) {
     return TextField(
       controller: controller,
-      keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: false),
+      keyboardType:
+          const TextInputType.numberWithOptions(decimal: true, signed: false),
       inputFormatters: [numFormatter],
       textInputAction: action,
       decoration: InputDecoration(labelText: label, hintText: hint),
@@ -76,6 +78,8 @@ class _VideoLedPageState extends State<VideoLedPage> {
     required VoidCallback onCalc,
     required String result,
   }) {
+    final loc = AppLocalizations.of(context);
+
     return ExpandSectionCard(
       title: title,
       icon: icon,
@@ -90,12 +94,12 @@ class _VideoLedPageState extends State<VideoLedPage> {
                 child: ElevatedButton.icon(
                   onPressed: onCalc,
                   icon: const Icon(Icons.calculate),
-                  label: const Text('Calculer'),
+                  label: Text(loc.commonCalculate),
                 ),
               ),
               const SizedBox(width: 10),
               IconButton(
-                tooltip: 'Copier le résultat',
+                tooltip: loc.commonCopyResultTooltip,
                 onPressed: () => copyToClipboard(context, result),
                 icon: const Icon(Icons.copy),
               ),
@@ -109,6 +113,8 @@ class _VideoLedPageState extends State<VideoLedPage> {
   }
 
   void _calcLed() {
+    final loc = AppLocalizations.of(context);
+
     final tilesX = _i(_tilesXCtrl);
     final tilesY = _i(_tilesYCtrl);
 
@@ -118,12 +124,22 @@ class _VideoLedPageState extends State<VideoLedPage> {
     final tileWcm = _d(_tileWcmCtrl);
     final tileHcm = _d(_tileHcmCtrl);
 
-    if (tilesX == null || tilesY == null || tileWpx == null || tileHpx == null || tileWcm == null || tileHcm == null) {
-      setState(() => _r = '❌ Données manquantes : Tiles X/Y + Tile px + Tile cm.');
+    if (tilesX == null ||
+        tilesY == null ||
+        tileWpx == null ||
+        tileHpx == null ||
+        tileWcm == null ||
+        tileHcm == null) {
+      setState(() => _r = loc.videoLedErrMissingInputs);
       return;
     }
-    if (tilesX <= 0 || tilesY <= 0 || tileWpx <= 0 || tileHpx <= 0 || tileWcm <= 0 || tileHcm <= 0) {
-      setState(() => _r = '❌ Toutes les valeurs doivent être > 0.');
+    if (tilesX <= 0 ||
+        tilesY <= 0 ||
+        tileWpx <= 0 ||
+        tileHpx <= 0 ||
+        tileWcm <= 0 ||
+        tileHcm <= 0) {
+      setState(() => _r = loc.videoLedErrAllGt0);
       return;
     }
 
@@ -138,27 +154,41 @@ class _VideoLedPageState extends State<VideoLedPage> {
 
     String pitchLabel;
     if ((pitchXmm - pitchYmm).abs() <= 0.05) {
-      pitchLabel = '${((pitchXmm + pitchYmm) / 2.0).toStringAsFixed(2)} mm';
+      // ✅ 1 argument POSITIONNEL
+      pitchLabel = loc.videoLedPitchUniform(
+        ((pitchXmm + pitchYmm) / 2.0).toStringAsFixed(2),
+      );
     } else {
-      pitchLabel = 'X ${pitchXmm.toStringAsFixed(2)} mm • Y ${pitchYmm.toStringAsFixed(2)} mm';
+      // ✅ 2 arguments POSITIONNELS
+      pitchLabel = loc.videoLedPitchXY(
+        pitchXmm.toStringAsFixed(2),
+        pitchYmm.toStringAsFixed(2),
+      );
     }
 
     setState(() {
-  _r =
-      '✅ Résolution mur: $wallWpx × $wallHpx px\n'
-      '✅ Taille mur: ${wallWm.toStringAsFixed(2)} × ${wallHm.toStringAsFixed(2)} m\n'
-      'Tile: $tileWpx×$tileHpx px • ${tileWcm.toStringAsFixed(2)}×${tileHcm.toStringAsFixed(2)} cm\n'
-      'Pitch calculé: $pitchLabel';
-});
-
+      // ✅ 9 arguments POSITIONNELS (d’après tes erreurs “9 positional arguments expected…”)
+      _r = loc.videoLedResult(
+        wallWpx.toString(),
+        wallHpx.toString(),
+        wallWm.toStringAsFixed(2),
+        wallHm.toStringAsFixed(2),
+        tileWpx.toString(),
+        tileHpx.toString(),
+        tileWcm.toStringAsFixed(2),
+        tileHcm.toStringAsFixed(2),
+        pitchLabel,
+      );
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('LED')),
+      appBar: AppBar(title: Text(loc.videoLedTitle)),
       body: SafeArea(
         bottom: true,
         child: SingleChildScrollView(
@@ -166,7 +196,7 @@ class _VideoLedPageState extends State<VideoLedPage> {
           child: Column(
             children: [
               _calcSection(
-                title: 'Calcul — Pixels / tiles',
+                title: loc.videoLedCalcTitle,
                 icon: Icons.grid_4x4,
                 inputs: [
                   Row(
@@ -174,8 +204,8 @@ class _VideoLedPageState extends State<VideoLedPage> {
                       Expanded(
                         child: _intField(
                           controller: _tilesXCtrl,
-                          label: 'Tiles horizontales (X)',
-                          hint: 'ex: 15',
+                          label: loc.videoLedTilesXLabel,
+                          hint: loc.videoLedTilesXHint,
                           action: TextInputAction.next,
                         ),
                       ),
@@ -183,8 +213,8 @@ class _VideoLedPageState extends State<VideoLedPage> {
                       Expanded(
                         child: _intField(
                           controller: _tilesYCtrl,
-                          label: 'Tiles verticales (Y)',
-                          hint: 'ex: 8',
+                          label: loc.videoLedTilesYLabel,
+                          hint: loc.videoLedTilesYHint,
                           action: TextInputAction.next,
                         ),
                       ),
@@ -196,8 +226,8 @@ class _VideoLedPageState extends State<VideoLedPage> {
                       Expanded(
                         child: _intField(
                           controller: _tileWpxCtrl,
-                          label: 'Tile largeur (px)',
-                          hint: 'ex: 128',
+                          label: loc.videoLedTileWpxLabel,
+                          hint: loc.videoLedTileWpxHint,
                           action: TextInputAction.next,
                         ),
                       ),
@@ -205,8 +235,8 @@ class _VideoLedPageState extends State<VideoLedPage> {
                       Expanded(
                         child: _intField(
                           controller: _tileHpxCtrl,
-                          label: 'Tile hauteur (px)',
-                          hint: 'ex: 128',
+                          label: loc.videoLedTileHpxLabel,
+                          hint: loc.videoLedTileHpxHint,
                           action: TextInputAction.next,
                         ),
                       ),
@@ -218,8 +248,8 @@ class _VideoLedPageState extends State<VideoLedPage> {
                       Expanded(
                         child: _numField(
                           controller: _tileWcmCtrl,
-                          label: 'Tile largeur (cm)',
-                          hint: 'ex: 33.28',
+                          label: loc.videoLedTileWcmLabel,
+                          hint: loc.videoLedTileWcmHint,
                           action: TextInputAction.next,
                         ),
                       ),
@@ -227,8 +257,8 @@ class _VideoLedPageState extends State<VideoLedPage> {
                       Expanded(
                         child: _numField(
                           controller: _tileHcmCtrl,
-                          label: 'Tile hauteur (cm)',
-                          hint: 'ex: 33.28',
+                          label: loc.videoLedTileHcmLabel,
+                          hint: loc.videoLedTileHcmHint,
                           action: TextInputAction.done,
                         ),
                       ),

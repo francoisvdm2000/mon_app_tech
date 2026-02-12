@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../app/constants.dart';
+import '../l10n/app_localizations.dart';
 import 'about_page.dart';
 import 'mentions_page.dart';
 import 'lumiere_page.dart';
 import 'laser_page.dart';
 import 'video/video_page.dart';
 import 'laser/laser_consent_dialog.dart';
+import 'settings_page.dart';
 
 class PageAccueil extends StatefulWidget {
   const PageAccueil({super.key});
@@ -27,7 +29,9 @@ class _PageAccueilState extends State<PageAccueil> {
     final prefs = await SharedPreferences.getInstance();
     final accepted = prefs.getBool(kPrefDisclaimerAccepted) ?? false;
     if (!accepted) {
-      WidgetsBinding.instance.addPostFrameCallback((_) => _showDisclaimerDialog());
+      WidgetsBinding.instance.addPostFrameCallback(
+        (_) => _showDisclaimerDialog(),
+      );
     }
   }
 
@@ -43,11 +47,15 @@ class _PageAccueilState extends State<PageAccueil> {
     await prefs.remove(kPrefDisclaimerAccepted);
     if (!mounted) return;
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text("Consentements réinitialisés.")),
-    );
+    final loc = AppLocalizations.of(context);
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => _showDisclaimerDialog());
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(loc.consentsReset)));
+
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => _showDisclaimerDialog(),
+    );
   }
 
   void _showDisclaimerDialog() {
@@ -59,9 +67,11 @@ class _PageAccueilState extends State<PageAccueil> {
 
         return StatefulBuilder(
           builder: (context, setStateDialog) {
+            final loc = AppLocalizations.of(context);
+
             return AlertDialog(
               backgroundColor: const Color(0xFF111111),
-              title: const Text(kDisclaimerTitle),
+              title: Text(loc.disclaimerTitle),
               content: SizedBox(
                 width: double.maxFinite,
                 height: 420,
@@ -70,7 +80,7 @@ class _PageAccueilState extends State<PageAccueil> {
                     Expanded(
                       child: SingleChildScrollView(
                         child: Text(
-                          kDisclaimerText,
+                          loc.disclaimerText,
                           style: const TextStyle(fontSize: 13),
                         ),
                       ),
@@ -78,10 +88,11 @@ class _PageAccueilState extends State<PageAccueil> {
                     const SizedBox(height: 8),
                     CheckboxListTile(
                       value: checked,
-                      onChanged: (v) => setStateDialog(() => checked = v ?? false),
-                      title: const Text(
-                        "Je certifie avoir lu et accepté ces conditions.",
-                        style: TextStyle(fontSize: 13),
+                      onChanged: (v) =>
+                          setStateDialog(() => checked = v ?? false),
+                      title: Text(
+                        loc.disclaimerCertify,
+                        style: const TextStyle(fontSize: 13),
                       ),
                       controlAffinity: ListTileControlAffinity.leading,
                       activeColor: Colors.white,
@@ -92,7 +103,7 @@ class _PageAccueilState extends State<PageAccueil> {
               actions: [
                 ElevatedButton(
                   onPressed: checked ? _acceptDisclaimer : null,
-                  child: const Text("J'accepte"),
+                  child: Text(loc.disclaimerAccept),
                 ),
               ],
             );
@@ -159,7 +170,10 @@ class _PageAccueilState extends State<PageAccueil> {
                       ),
                     ),
                   ),
-                  Icon(Icons.chevron_right, color: Colors.white.withValues(alpha: 0.55)),
+                  Icon(
+                    Icons.chevron_right,
+                    color: Colors.white.withValues(alpha: 0.55),
+                  ),
                 ],
               ),
               const SizedBox(height: 12),
@@ -180,22 +194,31 @@ class _PageAccueilState extends State<PageAccueil> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Accueil')),
+      appBar: AppBar(title: Text(loc.homeTitle)),
       drawer: Drawer(
         backgroundColor: const Color(0xFF111111),
         child: ListView(
           children: [
-            const DrawerHeader(
+            DrawerHeader(
               child: Text(
-                "Menu",
-                style: TextStyle(fontSize: 20, color: Colors.white),
+                loc.menuTitle,
+                style: const TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
             ListTile(
-              title: const Text("Mentions légales"),
+              title: Text(loc.settings),
+              leading: const Icon(Icons.settings),
+              onTap: () {
+                Navigator.pop(context);
+                _push(const PageSettings());
+              },
+            ),
+            ListTile(
+              title: Text(loc.legalNotices),
               leading: const Icon(Icons.gavel),
               onTap: () {
                 Navigator.pop(context);
@@ -203,7 +226,7 @@ class _PageAccueilState extends State<PageAccueil> {
               },
             ),
             ListTile(
-              title: const Text("Réinitialiser consentements"),
+              title: Text(loc.resetConsents),
               leading: const Icon(Icons.refresh),
               onTap: () {
                 Navigator.pop(context);
@@ -221,33 +244,29 @@ class _PageAccueilState extends State<PageAccueil> {
             children: [
               _homeTile(
                 icon: Icons.video_settings,
-                title: "Vidéo",
-                subtitle: "Lentille & mesure, luminosité, multiprojecteur, LED et mires.",
+                title: loc.homeVideoTitle,
+                subtitle: loc.homeVideoSubtitle,
                 onTap: () => _push(const PageVideo()),
               ),
               const SizedBox(height: 12),
-
               _homeTile(
                 icon: Icons.lightbulb_outline,
-                title: "Lumière",
-                subtitle: "Taille de projection, dip-switch DMX, photométrie, catalogue, patch DMX.",
+                title: loc.homeLightTitle,
+                subtitle: loc.homeLightSubtitle,
                 onTap: () => _push(const PageLumiere()),
               ),
               const SizedBox(height: 12),
-
               _homeTile(
                 icon: Icons.center_focus_strong,
-                title: "Laser",
-                subtitle: "Calculs et sécurité laser (consentement requis à chaque entrée).",
+                title: loc.homeLaserTitle,
+                subtitle: loc.homeLaserSubtitle,
                 onTap: _goToLaserWithConsent,
               ),
               const SizedBox(height: 12),
-
-              // ✅ Déplacé en dernier + renommé
               _homeTile(
                 icon: Icons.menu_book,
-                title: "Références",
-                subtitle: "DMX / réseau / vidéo : fiches & repères terrain.",
+                title: loc.homeReferencesTitle,
+                subtitle: loc.homeReferencesSubtitle,
                 onTap: () => _push(const PageAbout()),
               ),
             ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../l10n/app_localizations.dart';
+
 import 'mire_ecran_led_page.dart';
 import 'mire_ecran_video_page.dart';
 
@@ -9,41 +11,42 @@ class VideoMirePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final loc = AppLocalizations.of(context);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Mire')),
+      appBar: AppBar(title: Text(loc.videoMireTitle)),
       body: SafeArea(
         bottom: true,
         child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
           children: [
             Text(
-              'Générateur de mires',
-              style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
+              loc.videoMireHeaderTitle,
+              style: theme.textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.w800,
+              ),
             ),
             const SizedBox(height: 6),
             Text(
-              'Mires indicatives (calage, focus, géométrie, blend, pixel perfect).',
+              loc.videoMireHeaderSubtitle,
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
                 height: 1.25,
               ),
             ),
             const SizedBox(height: 16),
-
             _TileCard(
-              title: 'Mire écran vidéo',
-              subtitle: 'Simple (WxH px) + Mapping multi-projos (N + overlap).',
+              title: loc.videoMireScreenVideoTitle,
+              subtitle: loc.videoMireScreenVideoSubtitle,
               icon: Icons.videocam,
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const MireEcranVideoPage()),
               ),
             ),
             const SizedBox(height: 12),
-
             _TileCard(
-              title: 'Mire écran LED',
-              subtitle: 'Mire selon WxH px (pixel perfect, uniformité, grille).',
+              title: loc.videoMireScreenLedTitle,
+              subtitle: loc.videoMireScreenLedSubtitle,
               icon: Icons.view_quilt,
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const MireEcranLedPage()),
@@ -92,13 +95,16 @@ class _TileCard extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w800),
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.w800,
+                      ),
                     ),
                     const SizedBox(height: 6),
                     Text(
                       subtitle,
                       style: theme.textTheme.bodyMedium?.copyWith(
-                        color: theme.colorScheme.onSurface.withValues(alpha: 0.75),
+                        color:
+                            theme.colorScheme.onSurface.withValues(alpha: 0.75),
                         height: 1.25,
                       ),
                     ),
@@ -106,7 +112,10 @@ class _TileCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 8),
-              Icon(Icons.chevron_right, color: theme.colorScheme.onSurface.withValues(alpha: 0.65)),
+              Icon(
+                Icons.chevron_right,
+                color: theme.colorScheme.onSurface.withValues(alpha: 0.65),
+              ),
             ],
           ),
         ),

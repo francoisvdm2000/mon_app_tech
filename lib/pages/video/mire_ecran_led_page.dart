@@ -5,7 +5,10 @@ import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // intFormatter, ExpandSectionCard
 import '../../app/utils/png_exporter.dart';
+import '../../l10n/app_localizations.dart'; // ✅ TON AppLocalizations
+
 import 'mire_painters.dart';
+import 'mire_texts.dart'; // ✅ MireTexts unique (doit être la seule source)
 
 class _FormDropdown<T> extends StatelessWidget {
   const _FormDropdown({
@@ -103,19 +106,22 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
     return mm / _tileHpx;
   }
 
-  String _pitchLabel() {
+  String _pitchLabel(AppLocalizations loc) {
     final px = _pitchXmm;
     final py = _pitchYmm;
-    if (px == null || py == null) return '—';
+    if (px == null || py == null) return loc.mireDash;
+
     final diff = (px - py).abs();
     if (diff <= 0.05) {
       final avg = (px + py) / 2.0;
-      return '${avg.toStringAsFixed(2)} mm';
+      return loc.mirePitchEqual(avg.toStringAsFixed(2));
     }
-    return 'X ${px.toStringAsFixed(2)} mm • Y ${py.toStringAsFixed(2)} mm';
+    return loc.mirePitchXY(px.toStringAsFixed(2), py.toStringAsFixed(2));
   }
 
-  void _validate() {
+  MireTexts _texts(AppLocalizations loc) => MireTexts.fromLoc(loc);
+
+  void _validate(AppLocalizations loc) {
     final tilesX = _tilesX;
     final tilesY = _tilesY;
     final tw = _tileWpx;
@@ -124,19 +130,18 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
     final thcm = _tileHcm;
 
     if (tilesX <= 0 || tilesY <= 0) {
-      setState(() => _err = '❌ Renseigne Tiles X/Y (>0).');
+      setState(() => _err = loc.mireLedErrTilesXY);
       return;
     }
     if (tw <= 0 || th <= 0) {
-      setState(() => _err = '❌ Renseigne Tile px (largeur/hauteur >0).');
+      setState(() => _err = loc.mireLedErrTilePx);
       return;
     }
     if (twcm <= 0 || thcm <= 0) {
-      setState(() => _err = '❌ Renseigne Tile cm (largeur/hauteur >0).');
+      setState(() => _err = loc.mireLedErrTileCm);
       return;
     }
 
-    // sanity pitch
     final px = _pitchXmm;
     final py = _pitchYmm;
     if (px == null || py == null) {
@@ -146,13 +151,13 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
 
     // pitch "absurde"
     if (px < 0.5 || px > 20 || py < 0.5 || py > 20) {
-      setState(() => _err = '⚠️ Pitch calculé hors plage (0.5–20 mm). Vérifie Tile cm / px.');
+      setState(() => _err = loc.mireLedWarnPitchOutOfRange);
       return;
     }
 
     // pitch X vs Y très différent
     if ((px - py).abs() > 0.20) {
-      setState(() => _err = '⚠️ Pitch X ≠ Pitch Y (tile non homogène). Vérifie dimensions cm et px.');
+      setState(() => _err = loc.mireLedWarnPitchXNotY);
       return;
     }
 
@@ -198,8 +203,8 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
     return bytes!.buffer.asUint8List();
   }
 
-  Future<void> _exportLed() async {
-    _validate();
+  Future<void> _exportLed(AppLocalizations loc) async {
+    _validate(loc);
     if (_err.startsWith('❌')) return;
 
     final wallW = _wallWpx;
@@ -209,6 +214,7 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
       widthPx: wallW,
       heightPx: wallH,
       type: _type,
+      texts: _texts(loc),
       tileWpx: (_type == LedMireType.tilesId) ? _tileWpx : null,
       tileHpx: (_type == LedMireType.tilesId) ? _tileHpx : null,
       tileWcm: (_type == LedMireType.tilesId) ? _tileWcm : null,
@@ -217,11 +223,11 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
       tilesY: _tilesY,
     );
 
-    final png = await _renderToPngBytes(widthPx: wallW, heightPx: wallH, painter: painter);
+    final png = await _renderToPngBytes(
+        widthPx: wallW, heightPx: wallH, painter: painter);
 
     final typeName = _type.name;
-    final filename =
-        'mire_led_${wallW}x$wallH'
+    final filename = 'mire_led_${wallW}x$wallH'
         '_tiles${_tilesX}x$_tilesY'
         '_tile${_tileWpx}x${_tileHpx}px'
         '_tile${_tileWcm.toStringAsFixed(2)}x${_tileHcm.toStringAsFixed(2)}cm'
@@ -232,6 +238,7 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     final wallW = _wallWpx > 0 ? _wallWpx : 1920;
@@ -241,16 +248,27 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
       widthPx: wallW,
       heightPx: wallH,
       type: _type,
-      tileWpx: (_type == LedMireType.tilesId) ? (_tileWpx > 0 ? _tileWpx : 128) : null,
-      tileHpx: (_type == LedMireType.tilesId) ? (_tileHpx > 0 ? _tileHpx : 128) : null,
-      tileWcm: (_type == LedMireType.tilesId) ? (_tileWcm > 0 ? _tileWcm : 33.28) : null,
-      tileHcm: (_type == LedMireType.tilesId) ? (_tileHcm > 0 ? _tileHcm : 33.28) : null,
+      texts: _texts(loc),
+      tileWpx: (_type == LedMireType.tilesId)
+          ? (_tileWpx > 0 ? _tileWpx : 128)
+          : null,
+      tileHpx: (_type == LedMireType.tilesId)
+          ? (_tileHpx > 0 ? _tileHpx : 128)
+          : null,
+      tileWcm: (_type == LedMireType.tilesId)
+          ? (_tileWcm > 0 ? _tileWcm : 33.28)
+          : null,
+      tileHcm: (_type == LedMireType.tilesId)
+          ? (_tileHcm > 0 ? _tileHcm : 33.28)
+          : null,
       tilesX: _tilesX > 0 ? _tilesX : null,
       tilesY: _tilesY > 0 ? _tilesY : null,
     );
 
+    final isError = _err.startsWith('❌');
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Mire écran LED')),
+      appBar: AppBar(title: Text(loc.videoMireScreenLedTitle)),
       body: SafeArea(
         bottom: true,
         child: SingleChildScrollView(
@@ -258,12 +276,11 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
           child: Column(
             children: [
               ExpandSectionCard(
-                title: 'Paramètres mur LED',
+                title: loc.mireLedParamsTitle,
                 icon: Icons.view_quilt,
                 initiallyExpanded: true,
                 child: Column(
                   children: [
-                    // Tiles X/Y
                     Row(
                       children: [
                         Expanded(
@@ -271,8 +288,9 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
                             controller: _tilesXCtrl,
                             keyboardType: TextInputType.number,
                             inputFormatters: [intFormatter],
-                            decoration: const InputDecoration(labelText: 'Tiles horizontales (X)'),
-                            onChanged: (_) => _validate(),
+                            decoration: InputDecoration(
+                                labelText: loc.mireLedTilesXLabel),
+                            onChanged: (_) => _validate(loc),
                           ),
                         ),
                         const SizedBox(width: 12),
@@ -281,16 +299,14 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
                             controller: _tilesYCtrl,
                             keyboardType: TextInputType.number,
                             inputFormatters: [intFormatter],
-                            decoration: const InputDecoration(labelText: 'Tiles verticales (Y)'),
-                            onChanged: (_) => _validate(),
+                            decoration: InputDecoration(
+                                labelText: loc.mireLedTilesYLabel),
+                            onChanged: (_) => _validate(loc),
                           ),
                         ),
                       ],
                     ),
-
                     const SizedBox(height: 12),
-
-                    // Tile px + Tile cm (même ligne)
                     Row(
                       children: [
                         Expanded(
@@ -298,8 +314,9 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
                             controller: _tileWpxCtrl,
                             keyboardType: TextInputType.number,
                             inputFormatters: [intFormatter],
-                            decoration: const InputDecoration(labelText: 'Tile largeur (px)'),
-                            onChanged: (_) => _validate(),
+                            decoration: InputDecoration(
+                                labelText: loc.mireLedTileWpxLabel),
+                            onChanged: (_) => _validate(loc),
                           ),
                         ),
                         const SizedBox(width: 12),
@@ -308,86 +325,98 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
                             controller: _tileHpxCtrl,
                             keyboardType: TextInputType.number,
                             inputFormatters: [intFormatter],
-                            decoration: const InputDecoration(labelText: 'Tile hauteur (px)'),
-                            onChanged: (_) => _validate(),
+                            decoration: InputDecoration(
+                                labelText: loc.mireLedTileHpxLabel),
+                            onChanged: (_) => _validate(loc),
                           ),
                         ),
                       ],
                     ),
-
                     const SizedBox(height: 10),
-
                     Row(
                       children: [
                         Expanded(
                           child: TextField(
                             controller: _tileWcmCtrl,
-                            keyboardType: const TextInputType.numberWithOptions(decimal: true),
-                            decoration: const InputDecoration(labelText: 'Tile largeur (cm)'),
-                            onChanged: (_) => _validate(),
+                            keyboardType: const TextInputType.numberWithOptions(
+                                decimal: true),
+                            decoration: InputDecoration(
+                                labelText: loc.mireLedTileWcmLabel),
+                            onChanged: (_) => _validate(loc),
                           ),
                         ),
                         const SizedBox(width: 12),
                         Expanded(
                           child: TextField(
                             controller: _tileHcmCtrl,
-                            keyboardType: const TextInputType.numberWithOptions(decimal: true),
-                            decoration: const InputDecoration(labelText: 'Tile hauteur (cm)'),
-                            onChanged: (_) => _validate(),
+                            keyboardType: const TextInputType.numberWithOptions(
+                                decimal: true),
+                            decoration: InputDecoration(
+                                labelText: loc.mireLedTileHcmLabel),
+                            onChanged: (_) => _validate(loc),
                           ),
                         ),
                       ],
                     ),
-
                     const SizedBox(height: 12),
-
                     _FormDropdown<LedMireType>(
-                      label: 'Type de mire',
+                      label: loc.mireTypeLabel,
                       value: _type,
-                      items: const [
-                        DropdownMenuItem(value: LedMireType.tilesId, child: Text('Tiles ID (numéro + couleurs)')),
-                        DropdownMenuItem(value: LedMireType.pixelPerfect, child: Text('Pixel perfect + cercles')),
-                        DropdownMenuItem(value: LedMireType.gridLabels, child: Text('Grille + repères + cercles')),
-                        DropdownMenuItem(value: LedMireType.colorBars, child: Text('Barres + rampes + cercles')),
-                        DropdownMenuItem(value: LedMireType.uniformity, child: Text('Uniformité + cercles')),
+                      items: [
+                        DropdownMenuItem(
+                            value: LedMireType.tilesId,
+                            child: Text(loc.mireLedTypeTilesId)),
+                        DropdownMenuItem(
+                            value: LedMireType.pixelPerfect,
+                            child: Text(loc.mireLedTypePixelPerfect)),
+                        DropdownMenuItem(
+                            value: LedMireType.gridLabels,
+                            child: Text(loc.mireLedTypeGridLabels)),
+                        DropdownMenuItem(
+                            value: LedMireType.colorBars,
+                            child: Text(loc.mireLedTypeColorBars)),
+                        DropdownMenuItem(
+                            value: LedMireType.uniformity,
+                            child: Text(loc.mireLedTypeUniformity)),
                       ],
                       onChanged: (v) {
                         setState(() => _type = v);
-                        _validate();
+                        _validate(loc);
                       },
                     ),
-
                     const SizedBox(height: 12),
-
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        'Résolution mur: ${_wallWpx > 0 ? _wallWpx : '-'} × ${_wallHpx > 0 ? _wallHpx : '-'} px',
-                        style: TextStyle(color: Colors.white.withValues(alpha: 0.80)),
+                        loc.mireLedWallResolution(
+                          _wallWpx > 0 ? _wallWpx.toString() : loc.mireDash,
+                          _wallHpx > 0 ? _wallHpx.toString() : loc.mireDash,
+                        ),
+                        style: TextStyle(
+                            color: Colors.white.withValues(alpha: 0.80)),
                       ),
                     ),
                     const SizedBox(height: 6),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        'Pitch calculé: ${_pitchLabel()}',
-                        style: TextStyle(color: Colors.white.withValues(alpha: 0.70)),
+                        loc.mireLedPitchComputed(_pitchLabel(loc)),
+                        style: TextStyle(
+                            color: Colors.white.withValues(alpha: 0.70)),
                       ),
                     ),
-
                     const SizedBox(height: 10),
                     Row(
                       children: [
                         Expanded(
                           child: ElevatedButton.icon(
-                            onPressed: _exportLed,
+                            onPressed: () => _exportLed(loc),
                             icon: const Icon(Icons.image_outlined),
-                            label: const Text('Exporter PNG'),
+                            label: Text(loc.mireExportPng),
                           ),
                         ),
                       ],
                     ),
-
                     if (_err.isNotEmpty) ...[
                       const SizedBox(height: 10),
                       Align(
@@ -395,12 +424,13 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
                         child: Text(
                           _err,
                           style: TextStyle(
-                            color: _err.startsWith('❌') ? Colors.redAccent : Colors.orangeAccent,
+                            color: isError
+                                ? Colors.redAccent
+                                : Colors.orangeAccent,
                           ),
                         ),
                       ),
                     ],
-
                     const SizedBox(height: 12),
                     _previewBox(w: wallW, h: wallH, painter: painter),
                   ],

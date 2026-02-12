@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import 'app/app.dart';
+import 'providers/locale_provider.dart';
 
-
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MonApp());
+
+  final localeProvider = LocaleProvider();
+  await localeProvider.loadSavedLocale();
+
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => localeProvider,
+      child: const MonApp(),
+    ),
+  );
 }

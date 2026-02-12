@@ -2,13 +2,15 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../app/ui/widgets.dart'; // numFormatter, intFormatter, ExpandSectionCard, ResultBox, copyToClipboard
 
 class VideoMultiprojecteurPage extends StatefulWidget {
   const VideoMultiprojecteurPage({super.key});
 
   @override
-  State<VideoMultiprojecteurPage> createState() => _VideoMultiprojecteurPageState();
+  State<VideoMultiprojecteurPage> createState() =>
+      _VideoMultiprojecteurPageState();
 }
 
 class _VideoMultiprojecteurPageState extends State<VideoMultiprojecteurPage> {
@@ -70,7 +72,8 @@ class _VideoMultiprojecteurPageState extends State<VideoMultiprojecteurPage> {
     return int.tryParse(t);
   }
 
-  InputDecoration _dec(String label, String hint) => InputDecoration(labelText: label, hintText: hint);
+  InputDecoration _dec(String label, String hint) =>
+      InputDecoration(labelText: label, hintText: hint);
 
   Widget _numField({
     required TextEditingController controller,
@@ -81,7 +84,8 @@ class _VideoMultiprojecteurPageState extends State<VideoMultiprojecteurPage> {
   }) {
     return TextField(
       controller: controller,
-      keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: false),
+      keyboardType:
+          const TextInputType.numberWithOptions(decimal: true, signed: false),
       inputFormatters: [numFormatter],
       textInputAction: action,
       onSubmitted: (_) => onDone?.call(),
@@ -110,9 +114,11 @@ class _VideoMultiprojecteurPageState extends State<VideoMultiprojecteurPage> {
     required String value,
     required ValueChanged<String> onChanged,
   }) {
+    final loc = AppLocalizations.of(context);
+
     return DropdownButtonFormField<String>(
       initialValue: value,
-      decoration: const InputDecoration(labelText: 'Format (ratio)'),
+      decoration: InputDecoration(labelText: loc.videoMpFormatLabel),
       items: const [
         DropdownMenuItem(value: '16:9', child: Text('16:9')),
         DropdownMenuItem(value: '16:10', child: Text('16:10')),
@@ -131,6 +137,8 @@ class _VideoMultiprojecteurPageState extends State<VideoMultiprojecteurPage> {
     required String result,
     bool initiallyExpanded = false,
   }) {
+    final loc = AppLocalizations.of(context);
+
     return ExpandSectionCard(
       title: title,
       icon: icon,
@@ -145,12 +153,12 @@ class _VideoMultiprojecteurPageState extends State<VideoMultiprojecteurPage> {
                 child: ElevatedButton.icon(
                   onPressed: onCalc,
                   icon: const Icon(Icons.calculate),
-                  label: const Text('Calculer'),
+                  label: Text(loc.commonCalculate),
                 ),
               ),
               const SizedBox(width: 10),
               IconButton(
-                tooltip: 'Copier le résultat',
+                tooltip: loc.commonCopyResultTooltip,
                 onPressed: () => copyToClipboard(context, result),
                 icon: const Icon(Icons.copy),
               ),
@@ -164,31 +172,33 @@ class _VideoMultiprojecteurPageState extends State<VideoMultiprojecteurPage> {
   }
 
   void _calc5() {
+    final loc = AppLocalizations.of(context);
+
     final wTot = _d(_c5WtotCtrl);
     final pPercent = _d(_c5OverlapCtrl);
     final n = _i(_c5NCtrl);
 
     if (wTot == null || pPercent == null || n == null) {
-      setState(() => _r5 = '❌ Données manquantes : Largeur totale + Overlap% + N.');
+      setState(() => _r5 = loc.videoMpErrMissing5);
       return;
     }
     if (wTot <= 0) {
-      setState(() => _r5 = '❌ Largeur totale doit être > 0.');
+      setState(() => _r5 = loc.videoMpErrWidthGt0);
       return;
     }
     if (n < 2) {
-      setState(() => _r5 = '❌ N doit être ≥ 2.');
+      setState(() => _r5 = loc.videoMpErrNGte2);
       return;
     }
     if (pPercent < 0 || pPercent >= 100) {
-      setState(() => _r5 = '❌ Overlap% doit être entre 0 et 99.9.');
+      setState(() => _r5 = loc.videoMpErrOverlapRange);
       return;
     }
 
     final p = pPercent / 100.0;
     final denom = (n - (n - 1) * p);
     if (denom <= 0) {
-      setState(() => _r5 = '❌ Paramètres impossibles (denom ≤ 0).');
+      setState(() => _r5 = loc.videoMpErrImpossibleDenom);
       return;
     }
 
@@ -199,17 +209,18 @@ class _VideoMultiprojecteurPageState extends State<VideoMultiprojecteurPage> {
     final hTot = wTot / ratioWH;
 
     setState(() {
-      _r5 =
-          'Format: $_format5\n'
-          'Largeur totale: ${wTot.toStringAsFixed(3)} m\n'
+      _r5 = 'Format: $_format5\n'
+          'Largeur totale: ${wTot.toStringAsFixed(3)} ${loc.commonUnitMeter}\n'
           'N: $n | Overlap: ${pPercent.toStringAsFixed(1)}%\n\n'
-          '- Largeur par projecteur: ${wParProj.toStringAsFixed(3)} m\n'
-          '- Overlap entre 2 projos: ${overlapM.toStringAsFixed(3)} m\n'
-          '- Hauteur totale: ${hTot.toStringAsFixed(3)} m';
+          '- Largeur / projecteur: ${wParProj.toStringAsFixed(3)} ${loc.commonUnitMeter}\n'
+          '- Overlap entre projos: ${overlapM.toStringAsFixed(3)} ${loc.commonUnitMeter}\n'
+          '- Hauteur totale: ${hTot.toStringAsFixed(3)} ${loc.commonUnitMeter}';
     });
   }
 
   void _calc6() {
+    final loc = AppLocalizations.of(context);
+
     final wTot = _d(_c6WtotCtrl);
     final distance = _d(_c6DistanceCtrl);
     final pPercent = _d(_c6OverlapCtrl);
@@ -220,15 +231,15 @@ class _VideoMultiprojecteurPageState extends State<VideoMultiprojecteurPage> {
     final gain = _d(_c6GainCtrl); // optional
 
     if (wTot == null || distance == null || pPercent == null) {
-      setState(() => _r6 = '❌ Données manquantes : Largeur totale + Distance + Overlap%.');
+      setState(() => _r6 = loc.videoMpErrMissing6Main);
       return;
     }
     if (wTot <= 0 || distance <= 0) {
-      setState(() => _r6 = '❌ Largeur totale et distance doivent être > 0.');
+      setState(() => _r6 = loc.videoMpErrWidthDistanceGt0);
       return;
     }
     if (pPercent < 0 || pPercent >= 100) {
-      setState(() => _r6 = '❌ Overlap% doit être entre 0 et 99.9.');
+      setState(() => _r6 = loc.videoMpErrOverlapRange);
       return;
     }
 
@@ -236,14 +247,14 @@ class _VideoMultiprojecteurPageState extends State<VideoMultiprojecteurPage> {
     double? b = ratioMax;
 
     if (a == null && b == null) {
-      setState(() => _r6 = '❌ Données manquantes : Ratio min et/ou Ratio max.');
+      setState(() => _r6 = loc.videoMpErrMissingRatios);
       return;
     }
     a ??= b;
     b ??= a;
 
     if (a == null || b == null || a <= 0 || b <= 0) {
-      setState(() => _r6 = '❌ Ratio invalide (doit être > 0).');
+      setState(() => _r6 = loc.videoMpErrInvalidRatio);
       return;
     }
 
@@ -260,7 +271,8 @@ class _VideoMultiprojecteurPageState extends State<VideoMultiprojecteurPage> {
       return nDouble.ceil().clamp(1, 999999);
     }
 
-    double coverage(double wPerProj, int n) => wPerProj * (1 + (n - 1) * (1 - p));
+    double coverage(double wPerProj, int n) =>
+        wPerProj * (1 + (n - 1) * (1 - p));
 
     final wAtMin = widthPerProj(ratioMinOk);
     final nAtMin = computeN(wAtMin);
@@ -275,43 +287,51 @@ class _VideoMultiprojecteurPageState extends State<VideoMultiprojecteurPage> {
     final area = wTot * hTot;
 
     String lumiForN(int n) {
-      if (lumensPerProj == null || gain == null || lumensPerProj.toString().isEmpty || gain.toString().isEmpty) {
-        return "Luminosité (optionnelle) : renseigne Lumens/projo + Gain pour estimer.";
+      if (lumensPerProj == null || gain == null) {
+        return loc.videoMpLumiOptionalHint;
       }
       if (lumensPerProj <= 0 || gain <= 0) {
-        return "Luminosité: ❌ Lumens/projo et gain doivent être > 0.";
+        return loc.videoMpLumiErrLumensGainGt0;
       }
+
       final totalLumensUseful = n * lumensPerProj * gain;
       final lux = totalLumensUseful / area;
       final nits = totalLumensUseful / (math.pi * area);
       final fl = nits / 3.426;
 
-      return "Luminosité estimée (N=$n)\n"
-          "Surface: ${area.toStringAsFixed(2)} m²\n"
-          "Lux eq: ${lux.toStringAsFixed(0)}\n"
-          "Nits: ${nits.toStringAsFixed(1)} | ft-L: ${fl.toStringAsFixed(1)}";
+      // ✅ 5 arguments POSITIONNELS (corrige tes erreurs “5 positional arguments expected…”)
+      return loc.videoMpLumiEstimated(
+        n.toString(),
+        area.toStringAsFixed(2),
+        lux.toStringAsFixed(0),
+        nits.toStringAsFixed(1),
+        fl.toStringAsFixed(1),
+      );
     }
 
     setState(() {
-      _r6 =
-          "Format: $_format6\n"
-          "Largeur totale=${wTot.toStringAsFixed(3)} m | Distance=${distance.toStringAsFixed(3)} m | Overlap=${pPercent.toStringAsFixed(1)}%\n"
-          "Hauteur totale=${hTot.toStringAsFixed(3)} m | Surface=${area.toStringAsFixed(2)} m²\n"
-          "Ratio min/max: ${ratioMinOk.toStringAsFixed(3)} → ${ratioMaxOk.toStringAsFixed(3)}\n\n"
-          "Cas ratio plus ouvert (min) = $nAtMin projos | couverture ≈ ${covAtMin.toStringAsFixed(3)} m\n"
-          "${lumiForN(nAtMin)}\n\n"
-          "Cas ratio plus serré (max) = $nAtMax projos | couverture ≈ ${covAtMax.toStringAsFixed(3)} m\n"
-          "${lumiForN(nAtMax)}\n\n"
-          "Note: estimation indicative.";
+      _r6 = 'Format: $_format6\n'
+          'Largeur totale=${wTot.toStringAsFixed(3)} ${loc.commonUnitMeter} | '
+          'Distance=${distance.toStringAsFixed(3)} ${loc.commonUnitMeter} | '
+          'Overlap=${pPercent.toStringAsFixed(1)}%\n'
+          'Hauteur totale=${hTot.toStringAsFixed(3)} ${loc.commonUnitMeter} | '
+          'Surface=${area.toStringAsFixed(2)} m²\n'
+          'Ratio min→max: ${ratioMinOk.toStringAsFixed(3)} → ${ratioMaxOk.toStringAsFixed(3)}\n\n'
+          '${loc.videoMpCaseOpenMin(nAtMin.toString(), covAtMin.toStringAsFixed(3))}\n'
+          '${lumiForN(nAtMin)}\n\n'
+          '${loc.videoMpCaseTightMax(nAtMax.toString(), covAtMax.toStringAsFixed(3))}\n'
+          '${lumiForN(nAtMax)}\n\n'
+          '${loc.videoMpNoteIndicative}';
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Multiprojecteur')),
+      appBar: AppBar(title: Text(loc.videoMultiprojectorTitle)),
       body: SafeArea(
         bottom: true,
         child: SingleChildScrollView(
@@ -319,30 +339,32 @@ class _VideoMultiprojecteurPageState extends State<VideoMultiprojecteurPage> {
           child: Column(
             children: [
               _calcSection(
-                title: 'Calcul 5 — Largeur par projecteur',
+                title: loc.videoMpCalc5Title,
                 icon: Icons.grid_on,
                 initiallyExpanded: true,
                 inputs: [
-                  _formatDropdown(value: _format5, onChanged: (v) => setState(() => _format5 = v)),
+                  _formatDropdown(
+                      value: _format5,
+                      onChanged: (v) => setState(() => _format5 = v)),
                   const SizedBox(height: 12),
                   _numField(
                     controller: _c5WtotCtrl,
-                    label: 'Largeur totale de projection (m)',
-                    hint: 'ex: 18.0',
+                    label: loc.videoMpTotalWidthLabel,
+                    hint: loc.videoMpTotalWidthHint,
                     action: TextInputAction.next,
                   ),
                   const SizedBox(height: 12),
                   _numField(
                     controller: _c5OverlapCtrl,
-                    label: 'Overlap (%)',
-                    hint: 'ex: 10',
+                    label: loc.videoMpOverlapLabel,
+                    hint: loc.videoMpOverlapHint,
                     action: TextInputAction.next,
                   ),
                   const SizedBox(height: 12),
                   _intField(
                     controller: _c5NCtrl,
-                    label: 'Nombre de projecteurs (N)',
-                    hint: 'ex: 2',
+                    label: loc.videoMpProjectorCountLabel,
+                    hint: loc.videoMpProjectorCountHint,
                     action: TextInputAction.done,
                     onDone: _calc5,
                   ),
@@ -352,65 +374,68 @@ class _VideoMultiprojecteurPageState extends State<VideoMultiprojecteurPage> {
               ),
               const SizedBox(height: 12),
               _calcSection(
-                title: 'Calcul 6 — Nombre de projecteurs (ratio min/max)',
+                title: loc.videoMpCalc6Title,
                 icon: Icons.auto_fix_high,
                 inputs: [
-                  _formatDropdown(value: _format6, onChanged: (v) => setState(() => _format6 = v)),
+                  _formatDropdown(
+                      value: _format6,
+                      onChanged: (v) => setState(() => _format6 = v)),
                   const SizedBox(height: 12),
                   _numField(
                     controller: _c6WtotCtrl,
-                    label: 'Largeur totale de projection (m)',
-                    hint: 'ex: 18.0',
+                    label: loc.videoMpTotalWidthLabel,
+                    hint: loc.videoMpTotalWidthHint,
                     action: TextInputAction.next,
                   ),
                   const SizedBox(height: 12),
                   _numField(
                     controller: _c6DistanceCtrl,
-                    label: 'Distance de projection (m)',
-                    hint: 'ex: 12.0',
+                    label: loc.videoMpDistanceLabel,
+                    hint: loc.videoMpDistanceHint,
                     action: TextInputAction.next,
                   ),
                   const SizedBox(height: 12),
                   _numField(
                     controller: _c6OverlapCtrl,
-                    label: 'Overlap (%)',
-                    hint: 'ex: 10',
+                    label: loc.videoMpOverlapLabel,
+                    hint: loc.videoMpOverlapHint,
                     action: TextInputAction.next,
                   ),
                   const SizedBox(height: 12),
                   _numField(
                     controller: _c6RatioMinCtrl,
-                    label: 'Ratio min',
-                    hint: 'ex: 1.20',
+                    label: loc.videoMpRatioMinLabel,
+                    hint: loc.videoMpRatioMinHint,
                     action: TextInputAction.next,
                   ),
                   const SizedBox(height: 12),
                   _numField(
                     controller: _c6RatioMaxCtrl,
-                    label: 'Ratio max',
-                    hint: 'ex: 1.80',
+                    label: loc.videoMpRatioMaxLabel,
+                    hint: loc.videoMpRatioMaxHint,
                     action: TextInputAction.next,
                   ),
                   const SizedBox(height: 16),
-                  const Align(
+                  Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      'Optionnel : luminosité',
-                      style: TextStyle(color: Colors.white70, fontWeight: FontWeight.bold),
+                      loc.videoMpOptionalLuminanceTitle,
+                      style: const TextStyle(
+                          color: Colors.white70, fontWeight: FontWeight.bold),
                     ),
                   ),
                   const SizedBox(height: 10),
                   _numField(
                     controller: _c6LumensPerCtrl,
-                    label: 'Lumens par projecteur',
-                    hint: 'ex: 20000',
+                    label: loc.videoMpLumensPerProjectorLabel,
+                    hint: loc.videoMpLumensPerProjectorHint,
                     action: TextInputAction.next,
                   ),
                   const SizedBox(height: 12),
                   _numField(
                     controller: _c6GainCtrl,
-                    label: 'Gain',
-                    hint: 'ex: 1.0',
+                    label: loc.videoMpGainLabel,
+                    hint: loc.videoMpGainHint,
                     action: TextInputAction.done,
                     onDone: _calc6,
                   ),

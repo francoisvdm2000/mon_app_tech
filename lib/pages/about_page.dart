@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../l10n/app_localizations.dart';
+
 import 'about/about_dmx_page.dart';
 import 'about/about_artnet_page.dart';
 import 'about/about_sacn_page.dart';
@@ -19,8 +21,10 @@ class PageAbout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Références')),
+      appBar: AppBar(title: Text(loc.homeReferencesTitle)),
       body: SafeArea(
         bottom: true,
         child: SingleChildScrollView(
@@ -30,112 +34,84 @@ class PageAbout extends StatelessWidget {
               final isWide = c.maxWidth >= 900;
               final tileW = isWide ? (c.maxWidth - 12) / 2 : c.maxWidth;
 
-              Widget sized(Widget child) => SizedBox(width: tileW, child: child);
+              Widget sized(Widget child) =>
+                  SizedBox(width: tileW, child: child);
 
               return Wrap(
                 spacing: 12,
                 runSpacing: 12,
                 children: [
-                  // 1) DMX
                   sized(
                     _NavTile(
-                      title: 'DMX — fonctionnement (simple & complet)',
-                      subtitle:
-                          'Univers, adresses, trames, câblage RS-485, terminaison, erreurs terrain.\n'
-                          'Inclut schémas + checklist.',
+                      title: loc.aboutDmxTitle,
+                      subtitle: loc.aboutDmxSubtitle,
                       icon: Icons.cable,
                       onTap: () => _open(context, const AboutDmxPage()),
                     ),
                   ),
-
-                  // 2) Art-Net
                   sized(
                     _NavTile(
-                      title: 'Art-Net — DMX sur IP (nodes, unicast/broadcast)',
-                      subtitle:
-                          'Univers DMX sur Ethernet/UDP, nodes, broadcast vs unicast.\n'
-                          'Limites réelles, stabilité réseau, RDM selon matériel.',
+                      title: loc.aboutArtNetTitle,
+                      subtitle: loc.aboutArtNetSubtitle,
                       icon: Icons.router,
                       onTap: () => _open(context, const AboutArtNetPage()),
                     ),
                   ),
-
-                  // 3) sACN
                   sized(
                     _NavTile(
-                      title: 'sACN / E1.31 — multicast, IGMP, priorités',
-                      subtitle:
-                          'Standard DMX sur IP orienté réseau “pro”.\n'
-                          'Multicast/unicast, IGMP snooping/querier, priorités multi-sources.',
+                      title: loc.aboutSacnTitle,
+                      subtitle: loc.aboutSacnSubtitle,
                       icon: Icons.wifi_tethering,
                       onTap: () => _open(context, const AboutSacnPage()),
                     ),
                   ),
-
-                  // 4) IP basics
                   sized(
                     _NavTile(
-                      title: 'Réseau — bases IP / masque / DHCP (essentiel)',
-                      subtitle:
-                          'Comprendre IP, masque, passerelle, DHCP vs statique.\n'
-                          'Exemples concrets (2.x, 10.x, 192.168.x) + checklist.',
+                      title: loc.aboutIpBasicsTitle,
+                      subtitle: loc.aboutIpBasicsSubtitle,
                       icon: Icons.language,
                       onTap: () => _open(context, const AboutIpBasicsPage()),
                     ),
                   ),
-
-                  // 5) Réseau lumière
                   sized(
                     _NavTile(
-                      title: 'Réseau lumière — VLAN, IGMP, Wi-Fi vs filaire',
-                      subtitle:
-                          'Architecture simple et robuste pour Art-Net/sACN.\n'
-                          'VLAN, IGMP snooping/querier, Wi-Fi (jitter), switchs, schémas + checklist.',
+                      title: loc.aboutLightNetworkTitle,
+                      subtitle: loc.aboutLightNetworkSubtitle,
                       icon: Icons.lan,
                       onTap: () => _open(context, const AboutNetworkPage()),
                     ),
                   ),
-
-                  // 6) Réseau câbles / fibre
                   sized(
                     _NavTile(
-                      title: 'Réseau — RJ45 / Fibre / débits & longueurs',
-                      subtitle:
-                          'Cat5e→Cat8, fibre OM3/OM4/OS2, LC/SC/MPO, distances typiques, bonnes pratiques show.',
-                      icon: Icons.cable, // (tu avais Icons.router, mais cable est plus logique ici)
+                      title: loc.aboutCablingFiberTitle,
+                      subtitle: loc.aboutCablingFiberSubtitle,
+                      icon: Icons.cable,
                       onTap: () => _open(context, const AboutReseauPage()),
                     ),
                   ),
-
-                  // 7) Vidéo
                   sized(
                     _NavTile(
-                      title: 'Vidéo — SDI / NDI / IP (SRT/RTMP)',
-                      subtitle:
-                          'Choisir selon latence, fiabilité, câblage, réseau LAN vs WAN.\n'
-                          'Tableaux + schéma.',
+                      title: loc.aboutVideoTitle,
+                      subtitle: loc.aboutVideoSubtitle,
                       icon: Icons.connected_tv,
                       onTap: () => _open(context, const AboutVideoPage()),
                     ),
                   ),
-
-                  // 8) Électrique
                   sized(
                     _NavTile(
-                      title: 'Électrique — Schuko / P17 / puissances',
-                      subtitle: 'Connecteurs, mono/tri, tableaux kW rapides (16A→400A), pièges terrain.',
+                      title: loc.aboutElectricityTitle,
+                      subtitle: loc.aboutElectricitySubtitle,
                       icon: Icons.electrical_services,
                       onTap: () => _open(context, const AboutElectricitePage()),
                     ),
                   ),
-
-                  // 9) Informatique
                   sized(
                     _NavTile(
-                      title: 'Informatique — USB / HDMI / DP / SATA / NVMe…',
-                      subtitle: 'Débits utiles, versions, limites réelles, pièges marketing.',
+                      title: loc.aboutComputingTitle,
+                      subtitle: loc.aboutComputingSubtitle,
                       icon: Icons.usb,
-                      onTap: () => _open(context, const AboutInformatiquePage()),
+                      onTap: () =>
+                          _open(context, const AboutInformatiquePage()),
                     ),
                   ),
                 ],
@@ -203,7 +179,8 @@ class _NavTile extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 8),
-              Icon(Icons.chevron_right, color: Colors.white.withValues(alpha: 0.55)),
+              Icon(Icons.chevron_right,
+                  color: Colors.white.withValues(alpha: 0.55)),
             ],
           ),
         ),

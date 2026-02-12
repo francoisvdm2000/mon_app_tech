@@ -1,0 +1,733 @@
+{
+  "@@locale": "pt",
+
+  "appTitle": "Meu App Tech",
+
+  "homeTitle": "Início",
+  "menuTitle": "Menu",
+  "settings": "Configurações",
+  "language": "Idioma",
+  "languageSystem": "Sistema (automático)",
+  "languageSystemCurrent": "Idioma do telefone",
+
+  "legalNotices": "Avisos legais",
+  "resetConsents": "Reiniciar consentimentos",
+  "consentsReset": "Consentimentos reiniciados.",
+
+  "homeVideoTitle": "Vídeo",
+  "homeVideoSubtitle": "Lente e medição, luminosidade, multiprojetor, LED e padrões de teste.",
+  "homeLightTitle": "Luz",
+  "homeLightSubtitle": "Tamanho de projeção, dip-switch DMX, fotometria, catálogo, patch DMX.",
+  "homeLaserTitle": "Laser",
+  "homeLaserSubtitle": "Cálculos e segurança laser (consentimento exigido a cada entrada).",
+  "homeReferencesTitle": "Referências",
+  "homeReferencesSubtitle": "DMX / rede / vídeo: fichas e referências de campo.",
+
+  "disclaimerTitle": "⚠️ AVISO LEGAL & ISENÇÃO DE RESPONSABILIDADE",
+  "disclaimerText": "USO APENAS INDICATIVO\n\nOs cálculos fornecidos por esta aplicação (vídeo, luz, laser) são apresentados apenas para fins informativos e indicativos.\nNão substituem, em caso algum:\n- cálculos certificados,\n- estudos técnicos,\n- as normas oficiais em vigor,\n- nem a validação por um profissional qualificado.\n\nRESPONSABILIDADE\nO editor desta aplicação não pode ser responsabilizado por erros de cálculo, omissões, danos materiais,\nlesões corporais, ou qualquer incidente ocorrido durante a instalação, operação ou utilização dos equipamentos.\n\nVÍDEO & PROJEÇÃO\nOs resultados (tamanhos, rácios, luminosidade, overlaps, etc.) baseiam-se em modelos teóricos e podem variar conforme:\nótica, zoom, uniformidade, iluminação ambiente, suporte/superfície, afinações, etc.\nVerifica sempre a documentação oficial do fabricante.\n\nLUZ\nOs cálculos são indicativos e não têm em conta todas as condições reais (tolerâncias, perdas óticas,\ndegeneração das fontes, normas locais, condições ambientais…).\n\nLASER – SEGURANÇA\nOs cálculos NOHD, SZED e CZED baseiam-se em hipóteses padrão e limites teóricos.\nNão consideram, nomeadamente:\n- instrumentos óticos (binóculos, câmaras, telescópios…),\n- condições atmosféricas (nevoeiro, chuva, poeiras…),\n- reflexos imprevistos, usos indevidos, ajustes específicos.\nA utilização de um sistema laser implica responsabilidade direta do operador e uma análise de risco adequada.\n\nACEITAÇÃO DE RISCOS\nAo utilizar esta aplicação, o utilizador reconhece:\n- ter tomado conhecimento das regras de segurança aplicáveis,\n- ser o único responsável pelas suas instalações,\n- assumir a responsabilidade total pelos riscos ligados ao uso dos equipamentos (vídeo, luz, laser),\n- verificar sistematicamente os dados com os manuais oficiais do fabricante.",
+  "disclaimerCertify": "Certifico que li e aceitei estas condições.",
+  "disclaimerAccept": "Aceito",
+
+  "laserConsentTitle": "🔴 CONSENTIMENTO LASER (OBRIGATÓRIO)",
+  "laserConsentText": "ACESSO À PARTE LASER\n\nA parte LASER desta aplicação diz respeito a cálculos de segurança (ex.: NOHD, SZED, CZED).\nEstes cálculos são indicativos e não substituem:\n- uma análise de risco,\n- as normas em vigor,\n- os procedimentos de exploração/operação,\n- nem a validação por uma pessoa qualificada.\n\nIMPORTANTE\n- Risco de lesões oculares / cutâneas em caso de utilização inadequada.\n- O cálculo pode estar errado se os parâmetros introduzidos forem incompletos/errados ou se o contexto real diferir (ótica,\n  condições atmosféricas, reflexos, alinhamento, etc.).\n- O operador é o único responsável pela instalação, operação e conformidade.\n\nAo validar, confirmas:\n- compreender os riscos,\n- respeitar as regras de segurança aplicáveis,\n- assumir a responsabilidade total em caso de negligência ou mau uso.",
+
+  "commonCancel": "Cancelar",
+  "commonSave": "Guardar",
+  "commonRename": "Renomear",
+  "commonSearch": "Pesquisar",
+  "commonNone": "Nenhum registo",
+  "commonCalculate": "Calcular",
+  "commonCopyResultTooltip": "Copiar o resultado",
+  "commonUnitMeter": "m",
+  "commonReset": "Reset",
+  "commonOkWithCheck": "OK ✅",
+  "commonTooLowWithCross": "Demasiado baixo ❌",
+
+  "lightProjectionTitle": "Tamanho de projeção",
+  "lightProjectionDescription": "Cálculo indicativo do tamanho da mancha conforme ângulo, distância e diâmetro.",
+  "lightDmxSwitchTitle": "Dip-switch DMX",
+  "lightDmxSwitchDescription": "Conversão indicativa entre endereço DMX e interruptores, com navegação por intervalos.",
+  "lightPhotometryTitle": "Fotometria",
+  "lightPhotometryDescription": "Conversões indicativas entre lux, candela e lúmen, com distância e ângulo.",
+  "lightCatalogTitle": "Catálogo",
+  "lightCatalogDescription": "Seleção por fabricante, tipo e produto, com informações e manual.",
+  "lightPatchTitle": "Patch DMX",
+  "lightPatchDescription": "Importar um ficheiro MVR ou criar um patch manualmente a partir da biblioteca.",
+  "lightDisclaimerShort": "Ferramentas indicativas. Verifica sempre a documentação do fabricante.",
+
+  "laserInputsTitle": "Entradas",
+  "laserPowerLabel": "Potência (mW)",
+  "laserPowerHint": "ex: 5000",
+  "laserDivergenceLabel": "Divergência (mrad)",
+  "laserDivergenceHint": "ex: 1.2",
+  "laserDiameterLabel": "Diâmetro de saída (mm)",
+  "laserDiameterHint": "ex: 3.0",
+  "laserSaveCurrentProjector": "Guardar este projetor",
+
+  "laserSafetyResultsTitle": "Resultados de segurança",
+  "laserZoneNohdDesc": "Perigo ocular",
+  "laserZoneSzedDesc": "Zona sensível",
+  "laserZoneCzedDesc": "Zona crítica",
+  "laserTargetDistanceLabel": "Distância alvo (m)",
+  "laserTargetDistanceHint": "ex: 10",
+
+  "laserAdviceFullPower": "Potência total permitida (100 %)",
+  "laserAdviceMaxRecommended": "Potência máxima recomendada: {percent}",
+  "@laserAdviceMaxRecommended": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+
+  "laserSavedProjectorsTitle": "Projetores guardados",
+  "laserSearchHint": "ex: “RGB 5W”",
+
+  "laserPresetSubtitle": "P: {p} mW • Div: {div} mrad • Ø: {diam} mm",
+  "@laserPresetSubtitle": {
+    "placeholders": {
+      "p": {},
+      "div": {},
+      "diam": {}
+    }
+  },
+
+  "laserSaveProjectorTitle": "Guardar um projetor",
+  "laserRenameProjectorTitle": "Renomear o projetor",
+  "laserProjectorNameLabel": "Nome do projetor",
+
+  "laserInvalidInputs": "Introduz valores válidos de potência, divergência e diâmetro.",
+  "laserPresetAdded": "Registo adicionado.",
+  "laserPresetDeleted": "Registo eliminado.",
+  "laserNameUpdated": "Nome atualizado.",
+
+  "laserNormativeParamsTitle": "Parâmetros de segurança utilizados",
+  "laserNormativeParamsBody": "MPE para a distância nominal de perigo ocular (NOHD): 25,4 W/m²\n(Norma IEC 60825-1, edição 3.0)\n\nMPE para a distância de exposição da zona sensível (SZED): 1 W/m²\n(Norma ANSI Z136.6)\n\nMPE para a distância de exposição da zona crítica (CZED): 0,05 W/m²\n(Norma ANSI Z136.6)",
+
+  "laserDisclaimerShort": "Cálculo indicativo. Não substitui uma análise de segurança laser.",
+
+  "aboutDmxTitle": "DMX — funcionamento (simples & completo)",
+  "aboutDmxSubtitle": "Universos, endereços, tramas, cablagem RS-485, terminação, erros de campo.\nInclui esquemas + checklist.",
+
+  "aboutArtNetTitle": "Art-Net — DMX sobre IP (nodes, unicast/broadcast)",
+  "aboutArtNetSubtitle": "Universos DMX sobre Ethernet/UDP, nodes, broadcast vs unicast.\nLimites reais, estabilidade de rede, RDM conforme hardware.",
+
+  "aboutSacnTitle": "sACN / E1.31 — multicast, IGMP, prioridades",
+  "aboutSacnSubtitle": "Standard DMX sobre IP orientado a rede “pro”.\nMulticast/unicast, IGMP snooping/querier, prioridades multi-fontes.",
+
+  "aboutIpBasicsTitle": "Rede — bases IP / máscara / DHCP (essencial)",
+  "aboutIpBasicsSubtitle": "Compreender IP, máscara, gateway, DHCP vs estático.\nExemplos concretos (2.x, 10.x, 192.168.x) + checklist.",
+
+  "aboutLightNetworkTitle": "Rede luz — VLAN, IGMP, Wi-Fi vs cabo",
+  "aboutLightNetworkSubtitle": "Arquitetura simples e robusta para Art-Net/sACN.\nVLAN, IGMP snooping/querier, Wi-Fi (jitter), switches, esquemas + checklist.",
+
+  "aboutCablingFiberTitle": "Rede — RJ45 / Fibra / débitos & distâncias",
+  "aboutCablingFiberSubtitle": "Cat5e→Cat8, fibra OM3/OM4/OS2, LC/SC/MPO, distâncias típicas, boas práticas em show.",
+
+  "aboutVideoTitle": "Vídeo — SDI / NDI / IP (SRT/RTMP)",
+  "aboutVideoSubtitle": "Escolher conforme latência, fiabilidade, cablagem, LAN vs WAN.\nTabelas + esquema.",
+
+  "aboutElectricityTitle": "Elétrica — Schuko / P17 / potências",
+  "aboutElectricitySubtitle": "Conectores, mono/tri, tabelas rápidas de kW (16A→400A), armadilhas de campo.",
+
+  "aboutComputingTitle": "Informática — USB / HDMI / DP / SATA / NVMe…",
+  "aboutComputingSubtitle": "Débitos úteis, versões, limites reais, armadilhas de marketing.",
+
+  "videoTitle": "Vídeo",
+  "videoToolsTitle": "Ferramentas de vídeo",
+  "videoDisclaimerShort": "Cálculos indicativos. Verifica sempre a documentação do fabricante.",
+
+  "videoLensMeasureTitle": "Lente & medição",
+  "videoLensMeasureSubtitle": "Rácio / largura / altura (cálculos 1 a 3).",
+
+  "videoBrightnessTitle": "Luminosidade",
+  "videoBrightnessSubtitle": "Lux / nits / ft-L + limiar (cálculo 4).",
+
+  "videoMultiprojectorTitle": "Multiprojetor",
+  "videoMultiprojectorSubtitle": "Overlap + largura/projetor + número de projetores (cálculos 5 & 6).",
+
+  "videoLedTitle": "LED",
+  "videoLedSubtitle": "Píxeis do wall LED conforme tamanho, pitch e dimensões das tiles.",
+
+  "videoTestPatternTitle": "Padrão de teste",
+  "videoTestPatternSubtitle": "Criação de padrões de teste para ecrãs e walls LED (mais tarde).",
+
+  "videoMpFormatLabel": "Formato (rácio)",
+  "videoMpCalc5Title": "Cálculo 5 — Largura por projetor",
+  "videoMpCalc6Title": "Cálculo 6 — Nº de projetores (rácio min/max)",
+
+  "videoMpTotalWidthLabel": "Largura total de projeção (m)",
+  "videoMpTotalWidthHint": "ex: 18.0",
+  "videoMpDistanceLabel": "Distância de projeção (m)",
+  "videoMpDistanceHint": "ex: 12.0",
+  "videoMpOverlapLabel": "Overlap (%)",
+  "videoMpOverlapHint": "ex: 10",
+  "videoMpProjectorCountLabel": "Número de projetores (N)",
+  "videoMpProjectorCountHint": "ex: 2",
+  "videoMpRatioMinLabel": "Rácio min",
+  "videoMpRatioMinHint": "ex: 1.20",
+  "videoMpRatioMaxLabel": "Rácio max",
+  "videoMpRatioMaxHint": "ex: 1.80",
+
+  "videoMpOptionalLuminanceTitle": "Opcional: luminosidade",
+  "videoMpLumensPerProjectorLabel": "Lúmens por projetor",
+  "videoMpLumensPerProjectorHint": "ex: 20000",
+  "videoMpGainLabel": "Ganho",
+  "videoMpGainHint": "ex: 1.0",
+
+  "videoMpErrMissing5": "❌ Dados em falta: Largura total + Overlap% + N.",
+  "videoMpErrWidthGt0": "❌ A largura total deve ser > 0.",
+  "videoMpErrNGte2": "❌ N deve ser ≥ 2.",
+  "videoMpErrOverlapRange": "❌ Overlap% deve estar entre 0 e 99.9.",
+  "videoMpErrImpossibleDenom": "❌ Parâmetros impossíveis (denom ≤ 0).",
+
+  "videoMpErrMissing6Main": "❌ Dados em falta: Largura total + Distância + Overlap%.",
+  "videoMpErrWidthDistanceGt0": "❌ A largura total e a distância devem ser > 0.",
+  "videoMpErrMissingRatios": "❌ Dados em falta: Rácio min e/ou Rácio max.",
+  "videoMpErrInvalidRatio": "❌ Rácio inválido (deve ser > 0).",
+
+  "videoMpLumiOptionalHint": "Luminosidade (opcional): indica Lúmens/projetor + Ganho para estimar.",
+  "videoMpLumiErrLumensGainGt0": "Luminosidade: ❌ Lúmens/projetor e ganho devem ser > 0.",
+
+  "videoMpCaseOpenMin": "Caso rácio mais aberto (min) = {n} projetores | cobertura ≈ {coverage} m",
+  "@videoMpCaseOpenMin": {
+    "placeholders": {
+      "n": {},
+      "coverage": {}
+    }
+  },
+
+  "videoMpCaseTightMax": "Caso rácio mais fechado (max) = {n} projetores | cobertura ≈ {coverage} m",
+  "@videoMpCaseTightMax": {
+    "placeholders": {
+      "n": {},
+      "coverage": {}
+    }
+  },
+
+  "videoMpLumiEstimated": "Luminosidade estimada (N={n})\nÁrea: {area} m²\nLux eq: {lux}\nNits: {nits} | ft-L: {fl}",
+  "@videoMpLumiEstimated": {
+    "placeholders": {
+      "n": {},
+      "area": {},
+      "lux": {},
+      "nits": {},
+      "fl": {}
+    }
+  },
+
+  "videoMpNoteIndicative": "Nota: estimativa indicativa.",
+
+  "videoLmFormatLabel": "Formato (rácio)",
+  "videoLmCalc1Title": "Cálculo 1 — Rácio (Distância / Largura)",
+  "videoLmCalc2Title": "Cálculo 2 — Largura (Distância / Rácio)",
+  "videoLmCalc3Title": "Cálculo 3 — Altura (Largura + Formato)",
+
+  "videoLmDistanceLabel": "Distância de projeção (m)",
+  "videoLmDistanceHint": "ex: 12.0",
+  "videoLmImageWidthLabel": "Largura de imagem (m)",
+  "videoLmImageWidthHint": "ex: 6.0",
+  "videoLmThrowRatioLabel": "Rácio de projeção",
+  "videoLmThrowRatioHint": "ex: 1.60",
+
+  "videoLmErrMissingDistanceWidth": "❌ Dados em falta: Distância + Largura.",
+  "videoLmErrMissingDistanceRatio": "❌ Dados em falta: Distância + Rácio.",
+  "videoLmErrMissingWidthOnly": "❌ Dado em falta: Largura.",
+  "videoLmErrWidthGt0": "❌ A largura deve ser > 0.",
+  "videoLmErrRatioGt0": "❌ O rácio deve ser > 0.",
+
+  "videoLmResultRatio": "✅ Rácio de projeção = {ratio}",
+  "@videoLmResultRatio": {
+    "placeholders": {
+      "ratio": {}
+    }
+  },
+
+  "videoLmResultWidth": "✅ Largura da imagem = {width} m",
+  "@videoLmResultWidth": {
+    "placeholders": {
+      "width": {}
+    }
+  },
+
+  "videoLmResultHeight": "✅ Altura = {height} m (formato {format})",
+  "@videoLmResultHeight": {
+    "placeholders": {
+      "height": {},
+      "format": {}
+    }
+  },
+
+  "videoLedCalcTitle": "Cálculo — Píxeis / tiles",
+
+  "videoLedTilesXLabel": "Tiles horizontais (X)",
+  "videoLedTilesXHint": "ex: 15",
+  "videoLedTilesYLabel": "Tiles verticais (Y)",
+  "videoLedTilesYHint": "ex: 8",
+
+  "videoLedTileWpxLabel": "Tile largura (px)",
+  "videoLedTileWpxHint": "ex: 128",
+  "videoLedTileHpxLabel": "Tile altura (px)",
+  "videoLedTileHpxHint": "ex: 128",
+
+  "videoLedTileWcmLabel": "Tile largura (cm)",
+  "videoLedTileWcmHint": "ex: 33.28",
+  "videoLedTileHcmLabel": "Tile altura (cm)",
+  "videoLedTileHcmHint": "ex: 33.28",
+
+  "videoLedErrMissingInputs": "❌ Dados em falta: Tiles X/Y + Tile px + Tile cm.",
+  "videoLedErrAllGt0": "❌ Todos os valores devem ser > 0.",
+
+  "videoLedPitchUniform": "{value} mm",
+  "@videoLedPitchUniform": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+
+  "videoLedPitchXY": "X {x} mm • Y {y} mm",
+  "@videoLedPitchXY": {
+    "placeholders": {
+      "x": {},
+      "y": {}
+    }
+  },
+
+  "videoLedResult": "✅ Resolução do wall: {wallWpx} × {wallHpx} px\n✅ Tamanho do wall: {wallWm} × {wallHm} m\nTile: {tileWpx}×{tileHpx} px • {tileWcm}×{tileHcm} cm\nPitch calculado: {pitch}",
+  "@videoLedResult": {
+    "placeholders": {
+      "wallWpx": {},
+      "wallHpx": {},
+      "wallWm": {},
+      "wallHm": {},
+      "tileWpx": {},
+      "tileHpx": {},
+      "tileWcm": {},
+      "tileHcm": {},
+      "pitch": {}
+    }
+  },
+
+  "videoCalculationsTitle": "Cálculos de vídeo",
+  "videoCopyAllTooltip": "Copiar todos os resultados",
+  "videoExportPdfTooltip": "Exportar PDF",
+  "videoCalculateAll": "Calcular tudo",
+
+  "videoSummaryPillsTitle": "Resumo (pastilhas)",
+  "videoCopySummaryTooltip": "Copiar o resumo",
+
+  "videoCommonParamsTitle": "Parâmetros comuns",
+  "videoFormatLabel": "Formato (rácio)",
+
+  "videoDistanceLabel": "Distância de projeção (m)",
+  "videoDistanceHint": "ex: 12.0",
+
+  "videoImageWidthLabel": "Largura da imagem (m)",
+  "videoImageWidthHint": "ex: 6.0",
+
+  "videoThrowRatioLabel": "Rácio de projeção",
+  "videoThrowRatioHint": "ex: 1.60",
+
+  "videoLumensLabel": "Lúmens (ANSI)",
+  "videoLumensHint": "ex: 20000",
+
+  "videoGainLabel": "Ganho",
+  "videoGainHint": "ex: 1.0",
+
+  "videoScreenPresetLabel": "Ecrã / Superfície (preset)",
+
+  "videoPresetFrontWhite": "Frontal - ecrã branco mate (ganho 1.0)",
+  "videoPresetFrontGrey": "Frontal - ecrã cinzento (ganho 0.8)",
+  "videoPresetFrontHighGain": "Frontal - ecrã high gain (ganho 1.3)",
+  "videoPresetRearDiffusion": "Retro - tela de difusão (ganho 0.7)",
+  "videoPresetRearClear": "Retro - tela clara (ganho 0.9)",
+  "videoPresetMappingMatte": "Mapping - tinta mate (ganho 0.75)",
+  "videoPresetMappingSatin": "Mapping - tinta acetinada (ganho 0.9)",
+  "videoPresetMappingLightStone": "Mapping - pedra clara (ganho 0.6)",
+  "videoPresetMappingDarkStone": "Mapping - pedra escura (ganho 0.35)",
+  "videoPresetMappingGlass": "Mapping - vidro (ganho 0.15)",
+
+  "videoPresetFrontWhiteShort": "Frontal - ecrã branco mate",
+  "videoPresetFrontGreyShort": "Frontal - ecrã cinzento",
+  "videoPresetFrontHighGainShort": "Frontal - ecrã high gain",
+  "videoPresetRearDiffusionShort": "Retro - tela de difusão",
+  "videoPresetRearClearShort": "Retro - tela clara",
+  "videoPresetMappingMatteShort": "Mapping - tinta mate",
+  "videoPresetMappingSatinShort": "Mapping - tinta acetinada",
+  "videoPresetMappingLightStoneShort": "Mapping - pedra clara",
+  "videoPresetMappingDarkStoneShort": "Mapping - pedra escura",
+  "videoPresetMappingGlassShort": "Mapping - vidro",
+
+  "videoOverlapLabel": "Overlap (%)",
+  "videoOverlapHint": "ex: 10",
+
+  "videoTotalWidthLabel": "Largura total de projeção (m)",
+  "videoTotalWidthHint": "ex: 18.0",
+
+  "videoCalc1Title": "Cálculo 1 — Rácio (Distância / Largura)",
+  "videoCalc2Title": "Cálculo 2 — Largura (Distância / Rácio)",
+  "videoCalc3Title": "Cálculo 3 — Altura (Largura + Formato)",
+  "videoCalc4Title": "Cálculo 4 — Luminosidade (lux / nits / ft-L + limiar)",
+  "videoCalc5Title": "Cálculo 5 — Overlap (Largura total + N)",
+  "videoCalc6Title": "Cálculo 6 — Nº projetores auto + luminosidade",
+
+  "videoCalc5NLabel": "Número de projetores (N)",
+  "videoCalc5NHint": "ex: 2",
+
+  "videoCalc6RatioMinLabel": "Rácio min",
+  "videoCalc6RatioMinHint": "ex: 1.20",
+  "videoCalc6RatioMaxLabel": "Rácio max",
+  "videoCalc6RatioMaxHint": "ex: 1.80",
+
+  "videoOptionalBrightnessTitle": "Opcional: luminosidade",
+  "videoCalc6LumensPerProjectorLabel": "Lúmens por projetor",
+  "videoCalc6LumensPerProjectorHint": "ex: 20000",
+  "videoCalc6GainLabel": "Ganho (calc 6)",
+  "videoCalc6GainHint": "ex: 1.0",
+
+  "videoCalc1ErrMissing": "❌ Dados em falta: Distância + Largura.",
+  "videoCalc2ErrMissing": "❌ Dados em falta: Distância + Rácio.",
+  "videoCalc3ErrMissingWidth": "❌ Dado em falta: Largura.",
+
+  "videoErrWidthGt0": "❌ A largura deve ser > 0.",
+  "videoErrRatioGt0": "❌ O rácio deve ser > 0.",
+
+  "videoCalc1Ok": "✅ Rácio de projeção = {ratio}",
+  "@videoCalc1Ok": {
+    "placeholders": {
+      "ratio": {}
+    }
+  },
+
+  "videoCalc2Ok": "✅ Largura da imagem = {width} m",
+  "@videoCalc2Ok": {
+    "placeholders": {
+      "width": {}
+    }
+  },
+
+  "videoCalc3Ok": "✅ Altura = {height} m (formato {format})",
+  "@videoCalc3Ok": {
+    "placeholders": {
+      "height": {},
+      "format": {}
+    }
+  },
+
+  "videoCalc4ErrMissing": "❌ Dados em falta: Lúmens + Ganho + Largura.",
+  "videoCalc4ErrGt0": "❌ Lúmens/Ganho/Largura devem ser > 0.",
+
+  "videoCalc4Result": "Área: {area} m² (formato {format})\nLux (lm/m²): {lux}\nLux eq (ganho): {luxEq}\nLuminância: {nits} nits | {fl} ft-L\nLimiar mínimo ({presetLabel}): {minFl} ft-L → {status}\nNota: conversão nits/ft-L baseada numa hipótese Lambertiana (aprox).",
+  "@videoCalc4Result": {
+    "placeholders": {
+      "area": {},
+      "format": {},
+      "lux": {},
+      "luxEq": {},
+      "nits": {},
+      "fl": {},
+      "presetLabel": {},
+      "minFl": {},
+      "status": {}
+    }
+  },
+
+  "videoCalc5ErrMissing": "❌ Dados em falta: Largura total + Overlap% + Número de projetores.",
+  "videoErrTotalWidthGt0": "❌ A largura total deve ser > 0.",
+  "videoCalc5ErrNMin2": "❌ O número de projetores deve ser ≥ 2.",
+  "videoErrOverlapRange": "❌ Overlap% deve estar entre 0 e 99.9.",
+  "videoErrImpossibleDenom": "❌ Parâmetros impossíveis (denom ≤ 0).",
+
+  "videoCalc5Result": "Largura total: {wTot} m\nN: {n} | Overlap: {overlapPct}% (sobre a largura do projetor)\n\n- Largura por projetor: {wPer} m\n- Overlap entre 2 projetores: {overlapM} m\n- Altura total (formato {format}): {hTot} m",
+  "@videoCalc5Result": {
+    "placeholders": {
+      "wTot": {},
+      "n": {},
+      "overlapPct": {},
+      "wPer": {},
+      "overlapM": {},
+      "format": {},
+      "hTot": {}
+    }
+  },
+
+  "videoCalc6ErrMissingBasics": "❌ Dados em falta: Largura total + Distância + Overlap%.",
+  "videoErrTotalWidthAndDistanceGt0": "❌ A largura total e a distância devem ser > 0.",
+  "videoCalc6ErrMissingRatio": "❌ Dados em falta: Rácio min e/ou Rácio max.",
+
+  "videoCalc6LumiOptional": "Luminosidade (opcional): indica Lúmens/projetor + Ganho para a estimativa.",
+  "videoCalc6LumiErrGt0": "Luminosidade: ❌ Lúmens/projetor e ganho devem ser > 0.",
+
+  "videoCalc6LumiForN": "Luminosidade estimada (N={n})\nÁrea: {area} m²\nLux eq: {lux} (lm/m²)\nNits: {nits} | ft-L: {fl}",
+  "@videoCalc6LumiForN": {
+    "placeholders": {
+      "n": {},
+      "area": {},
+      "lux": {},
+      "nits": {},
+      "fl": {}
+    }
+  },
+
+  "videoCalc6NoteIndicative": "Nota: estimativa indicativa (blend/overlap reais podem reduzir um pouco).",
+
+  "videoCalc6Result": "Largura total={wTot} m | Distância={distance} m | Overlap={overlapPct}%\nFormato {format} → Altura total={hTot} m | Área={area} m²\nRácio min/max: {ratioMin} → {ratioMax}\n\nCaso rácio mais aberto (min) = {nMin} projetores | cobertura ≈ {covMin} m\n{lumiMin}\n\nCaso rácio mais fechado (max) = {nMax} projetores | cobertura ≈ {covMax} m\n{lumiMax}\n\n{note}",
+  "@videoCalc6Result": {
+    "placeholders": {
+      "wTot": {},
+      "distance": {},
+      "overlapPct": {},
+      "format": {},
+      "hTot": {},
+      "area": {},
+      "ratioMin": {},
+      "ratioMax": {},
+      "nMin": {},
+      "covMin": {},
+      "lumiMin": {},
+      "nMax": {},
+      "covMax": {},
+      "lumiMax": {},
+      "note": {}
+    }
+  },
+
+  "videoCommonPillFormat": "Formato: {format}",
+  "@videoCommonPillFormat": {
+    "placeholders": {
+      "format": {}
+    }
+  },
+  "videoCommonPillDistance": "Distância: {value}",
+  "@videoCommonPillDistance": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "videoCommonPillWidth": "Largura: {value}",
+  "@videoCommonPillWidth": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "videoCommonPillRatio": "Rácio: {value}",
+  "@videoCommonPillRatio": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "videoCommonPillHeight": "Altura: {value}",
+  "@videoCommonPillHeight": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "videoCommonPillArea": "Área: {value}",
+  "@videoCommonPillArea": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "videoCommonPillTotalWidth": "Largura total: {value}",
+  "@videoCommonPillTotalWidth": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "videoCommonPillOverlap": "Overlap: {value}",
+  "@videoCommonPillOverlap": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+
+  "videoPdfTitle": "Mon App Technique – Export Vídeo",
+  "videoPdfDate": "Data",
+  "videoPdfFormat": "Formato",
+  "videoPdfDistance": "Distância (m)",
+  "videoPdfImageWidth": "Largura da imagem (m)",
+  "videoPdfRatio": "Rácio",
+  "videoPdfLumens": "Lúmens",
+  "videoPdfGain": "Ganho",
+  "videoPdfScreenPreset": "Preset ecrã",
+  "videoPdfOverlap": "Overlap (%)",
+  "videoPdfTotalWidth": "Largura total (m)",
+  "videoPdfCalc5N": "N (calc5)",
+  "videoPdfCalc6RatioMin": "Rácio min (calc6)",
+  "videoPdfCalc6RatioMax": "Rácio max (calc6)",
+  "videoPdfCalc6LumensPerProj": "Lúmens/projetor (calc6)",
+  "videoPdfCalc6Gain": "Ganho (calc6)",
+  "videoPdfParams": "Parâmetros",
+  "videoPdfResults": "Resultados",
+  "videoPdfCalc1": "Cálculo 1",
+  "videoPdfCalc2": "Cálculo 2",
+  "videoPdfCalc3": "Cálculo 3",
+  "videoPdfCalc4": "Cálculo 4",
+  "videoPdfCalc5": "Cálculo 5",
+  "videoPdfCalc6": "Cálculo 6",
+
+  "videoCalcLabel": "Cálculo {n}",
+  "@videoCalcLabel": {
+    "placeholders": {
+      "n": {}
+    }
+  },
+
+  "videoBrightnessSectionTitle": "Cálculo 4 — Lux / nits / ft-L + limiar",
+  "videoCalc4ErrMissingSimple": "❌ Dados em falta: Largura + Lúmens + Ganho.",
+
+  "videoBrightnessResult": "Formato: {format}\nÁrea: {area} m²\nLux (lm/m²): {lux}\nLux eq (ganho): {luxEq}\nLuminância: {nits} nits | {fl} ft-L\nLimiar mínimo ({presetLabel}): {minFl} ft-L → {status}\nNota: estimativa indicativa (Lambert).",
+  "@videoBrightnessResult": {
+    "placeholders": {
+      "format": {},
+      "area": {},
+      "lux": {},
+      "luxEq": {},
+      "nits": {},
+      "fl": {},
+      "presetLabel": {},
+      "minFl": {},
+      "status": {}
+    }
+  },
+
+  "videoMireTitle": "Padrão",
+  "videoMireHeaderTitle": "Gerador de padrões",
+  "videoMireHeaderSubtitle": "Padrões indicativos (alinhamento, foco, geometria, blend, pixel perfect).",
+
+  "videoMireScreenVideoTitle": "Padrão ecrã vídeo",
+  "videoMireScreenVideoSubtitle": "Simples (LxA px) + mapping multiprojetor (N + overlap).",
+
+  "videoMireScreenLedTitle": "Padrão ecrã LED",
+  "videoMireScreenLedSubtitle": "Padrão conforme LxA px (pixel perfect, uniformidade, grelha).",
+
+  "mireVideoSimpleTitle": "VÍDEO / PADRÃO SIMPLES",
+  "mireVideoComboTitle": "VÍDEO / PADRÃO COMBO",
+  "mireVideoMappingTitle": "VÍDEO / PADRÃO MAPPING",
+  "mireLedTitle": "LED / PADRÃO",
+  "mireLedTilesIdTitle": "LED / ID TILES",
+
+  "mireSimpleSubtitleGridSafe": "Grelha + safe + círculos",
+  "mireSimpleSubtitleCheckerboard": "Xadrez + círculos",
+  "mireSimpleSubtitleColorBars": "Barras + rampas + círculos",
+  "mireSimpleSubtitleUniformity": "Uniformidade + círculos",
+  "mireSimpleSubtitleComboAll": "Grelha + safe + 2 barras centradas + círculos",
+
+  "mireLedSubtitlePixelPerfect": "Pixel perfect + círculos",
+  "mireLedSubtitleGridLabels": "Grelha + referências + círculos",
+  "mireLedSubtitleColorBars": "Barras + rampas + círculos",
+  "mireLedSubtitleUniformity": "Uniformidade + círculos",
+
+  "mireMappingSubtitlePattern": "N={n} • Overlap {percent}% • {orient}",
+  "mireOrientationHorizontal": "Horizontal",
+  "mireOrientationVertical": "Vertical",
+
+  "mireProjectorLabelPattern": "PROJO {index}",
+  "mireBlendLabel": "BLEND",
+
+  "mireTileMissingPx": "Indica Tile (px) para numeração.",
+  "mireWallNotMultipleOfTiles": "WALL NÃO MÚLTIPLO DE TILES",
+
+  "mireTilesSubtitleBase": "Tile {tw}x{th} px • Grelha {nx} x {ny}",
+  "mireTilesSubtitleTilePhys": "Tile {wcm}×{hcm} cm",
+  "mireTilesSubtitlePitchEq": "Pitch ~ {pitch} mm",
+  "mireTilesSubtitlePitchXY": "Pitch X {px} • Y {py} mm",
+  "mireTilesSubtitleWallPhys": "Wall ~ {wm}×{hm} m",
+
+  "mireSimpleSectionTitle": "Padrão ecrã simples",
+  "mireMappingSectionTitle": "Padrão mapping multiprojetor",
+
+  "mireVideoSimpleSectionTitle": "Padrão ecrã simples",
+  "mireVideoMappingSectionTitle": "Padrão mapping multiprojetor",
+
+  "mireWidthPxLabel": "Largura (px)",
+  "mireHeightPxLabel": "Altura (px)",
+  "mireWidthPxHint": "ex: 1920",
+  "mireHeightPxHint": "ex: 1080",
+  "mireWidthPxHintMapping": "ex: 3840",
+  "mireHeightPxHintMapping": "ex: 2160",
+
+  "mireTypeLabel": "Tipo de padrão",
+  "mireExportPng": "Exportar PNG",
+
+  "mireErrInvalidWHpx": "❌ Largura/altura inválidas (px).",
+  "mireErrInvalidProjectors": "❌ Número de projetores inválido (N > 0).",
+  "mireErrInvalidOverlap": "❌ Overlap inválido (0 a 99.9).",
+
+  "mireSimpleTypeComboAll": "Combo (grelha + círculos + 2 barras centradas)",
+  "mireSimpleTypeGridSafe": "Grelha + safe + círculos",
+  "mireSimpleTypeColorBars": "Barras + rampas + círculos",
+  "mireSimpleTypeUniformity": "Uniformidade + círculos",
+  "mireSimpleTypeCheckerboard": "Xadrez + círculos",
+
+  "mireProjectorsNLabel": "Número de projetores (N)",
+  "mireProjectorsNHint": "ex: 2",
+  "mireOverlapLabel": "Overlap (%)",
+  "mireOverlapHint": "ex: 10.0",
+
+  "mireOrientationLabel": "Orientação",
+  "mireMappingTypeLabel": "Tipo de mapping",
+  "mireMappingTypeCombo": "Combo (zonas + overlap + blend)",
+  "mireMappingTypeZonesOverlap": "Zonas + overlap",
+  "mireMappingTypeBlendRamps": "Rampas de blend",
+
+  "mireDash": "—",
+
+  "mirePitchEqual": "{value} mm",
+  "@mirePitchEqual": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+
+  "mirePitchXY": "X {x} mm • Y {y} mm",
+  "@mirePitchXY": {
+    "placeholders": {
+      "x": {},
+      "y": {}
+    }
+  },
+
+  "mireLedParamsTitle": "Parâmetros do wall LED",
+
+  "mireLedTilesXLabel": "Tiles horizontais (X)",
+  "mireLedTilesYLabel": "Tiles verticais (Y)",
+
+  "mireLedTileWpxLabel": "Tile largura (px)",
+  "mireLedTileHpxLabel": "Tile altura (px)",
+  "mireLedTileWcmLabel": "Tile largura (cm)",
+  "mireLedTileHcmLabel": "Tile altura (cm)",
+
+  "mireLedWallResolution": "Resolução do wall: {w} × {h} px",
+  "@mireLedWallResolution": {
+    "placeholders": {
+      "w": {},
+      "h": {}
+    }
+  },
+
+  "mireLedPitchComputed": "Pitch calculado: {pitch}",
+  "@mireLedPitchComputed": {
+    "placeholders": {
+      "pitch": {}
+    }
+  },
+
+  "mireLedErrTilesXY": "❌ Indica Tiles X/Y (>0).",
+  "mireLedErrTilePx": "❌ Indica Tile px (largura/altura >0).",
+  "mireLedErrTileCm": "❌ Indica Tile cm (largura/altura >0).",
+
+  "mireLedWarnPitchOutOfRange": "⚠️ Pitch calculado fora do intervalo (0.5–20 mm). Verifica Tile cm / px.",
+  "mireLedWarnPitchXNotY": "⚠️ Pitch X ≠ Pitch Y (tile não homogénea). Verifica dimensões em cm e px.",
+
+  "mireLedTypeTilesId": "Tiles ID (número + cores)",
+  "mireLedTypePixelPerfect": "Pixel perfect + círculos",
+  "mireLedTypeGridLabels": "Grelha + referências + círculos",
+  "mireLedTypeColorBars": "Barras + rampas + círculos",
+  "mireLedTypeUniformity": "Uniformidade + círculos",
+
+  "mireVideoTypeCombo": "Combo (grelha + círculos + 2 barras centradas)",
+  "mireVideoTypeGridSafe": "Grelha + safe + círculos",
+  "mireVideoTypeColorBars": "Barras + rampas + círculos",
+  "mireVideoTypeUniformity": "Uniformidade + círculos",
+  "mireVideoTypeCheckerboard": "Xadrez + círculos"
+}

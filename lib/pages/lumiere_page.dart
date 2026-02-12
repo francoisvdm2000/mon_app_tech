@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../app/ui/widgets.dart';
+import '../l10n/app_localizations.dart';
 
 import 'lumiere/dipswitch_page.dart';
 import 'lumiere/fixtures/fixture_catalog_page.dart';
@@ -41,63 +42,57 @@ class PageLumiere extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Lumière')),
+      appBar: AppBar(title: Text(loc.homeLightTitle)),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
         children: [
           _actionCard(
             context: context,
-            title: 'Taille de projection',
+            title: loc.lightProjectionTitle,
             icon: Icons.zoom_out_map,
-            description:
-                'Calcul indicatif de la taille de tache selon l’angle, la distance et le diamètre.',
+            description: loc.lightProjectionDescription,
             onTap: () => _open(context, const ProjectionPage()),
           ),
           const SizedBox(height: _kActionSpacing),
           _actionCard(
             context: context,
-            title: 'Dip-switch DMX',
+            title: loc.lightDmxSwitchTitle,
             icon: Icons.settings_input_component,
-            description:
-                'Conversion indicative entre adresse DMX et interrupteurs, avec navigation par intervalle.',
+            description: loc.lightDmxSwitchDescription,
             onTap: () => _open(context, const DipSwitchPage()),
           ),
           const SizedBox(height: _kActionSpacing),
           _actionCard(
             context: context,
-            title: 'Photométrie',
+            title: loc.lightPhotometryTitle,
             icon: Icons.brightness_high,
-            description:
-                'Conversions indicatives entre lux, candela et lumen, avec distance et angle.',
+            description: loc.lightPhotometryDescription,
             onTap: () => _open(context, const PhotometryPage()),
           ),
           const SizedBox(height: _kActionSpacing),
           _actionCard(
             context: context,
-            title: 'Catalogue',
+            title: loc.lightCatalogTitle,
             icon: Icons.list_alt,
-            description:
-                'Sélection par constructeur, type et produit, avec informations et manuel.',
+            description: loc.lightCatalogDescription,
             onTap: () => _open(context, const FixtureCatalogPage()),
           ),
           const SizedBox(height: _kActionSpacing),
-
-          // ✅ NOUVELLE TUILE
           _actionCard(
             context: context,
-            title: 'Patch DMX',
+            title: loc.lightPatchTitle,
             icon: Icons.account_tree,
-            description:
-                'Importer un fichier MVR ou créer un patch manuellement depuis la librairie.',
+            description: loc.lightPatchDescription,
             onTap: () => _open(context, const PatchHomePage()),
           ),
-
           const SizedBox(height: 18),
-          const Text(
-            'Outils indicatifs. Vérifie toujours la documentation constructeur.',
+          Text(
+            loc.lightDisclaimerShort,
             textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.white38, fontSize: 12),
+            style: const TextStyle(color: Colors.white38, fontSize: 12),
           ),
         ],
       ),

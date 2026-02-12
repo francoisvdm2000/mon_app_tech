@@ -1,15 +1,14 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 
-import '../../app/constants.dart';
 import '../../app/ui/widgets.dart';
+import '../../l10n/app_localizations.dart';
 
 /// =======================
-/// SOUS-PAGE : CALCULATEUR VIDÉO (ancien PageVideo)
+/// SOUS-PAGE : CALCULATEUR VIDÉO
 /// =======================
 class VideoCalculationsPage extends StatefulWidget {
   const VideoCalculationsPage({super.key});
@@ -19,31 +18,26 @@ class VideoCalculationsPage extends StatefulWidget {
 }
 
 class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
-  // Commun
   String _format = '16:9';
 
-  final _distanceCtrl = TextEditingController(); // distance projection
-  final _largeurCtrl = TextEditingController(); // largeur image
-  final _ratioCtrl = TextEditingController(); // ratio de projection
+  final _distanceCtrl = TextEditingController();
+  final _largeurCtrl = TextEditingController();
+  final _ratioCtrl = TextEditingController();
   final _lumensCtrl = TextEditingController();
   final _gainCtrl = TextEditingController(text: '1.0');
   final _overlapPercentCtrl = TextEditingController(text: '10');
-  final _largeurTotaleCtrl = TextEditingController(); // largeur totale de projection
+  final _largeurTotaleCtrl = TextEditingController();
 
-  // Presets écran/support
-  String _screenPreset = 'Front - écran blanc mat (gain 1.0)';
+  String _screenPresetKey = 'front_white_1_0';
   double _minFl = 16.0;
 
-  // Calcul 5
   final _calc5NCtrl = TextEditingController(text: '2');
 
-  // Calcul 6
   final _calc6RatioMinCtrl = TextEditingController();
   final _calc6RatioMaxCtrl = TextEditingController();
   final _calc6LumensPerProjCtrl = TextEditingController();
   final _calc6GainCtrl = TextEditingController(text: '1.0');
 
-  // Résultats
   String r1 = '';
   String r2 = '';
   String r3 = '';
@@ -72,7 +66,6 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
     super.dispose();
   }
 
-  // Helpers
   double _ratioWHFromFormat(String fmt) {
     switch (fmt) {
       case '16:10':
@@ -97,53 +90,50 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
     return int.tryParse(t);
   }
 
-  void _appliquerPresetEcran(String preset) {
+  void _applyScreenPreset(String key) {
     double gain;
     double minFl;
 
-    switch (preset) {
-      // Front
-      case 'Front - écran blanc mat (gain 1.0)':
+    switch (key) {
+      case 'front_white_1_0':
         gain = 1.0;
         minFl = 16.0;
         break;
-      case 'Front - écran gris (gain 0.8)':
+      case 'front_grey_0_8':
         gain = 0.8;
         minFl = 16.0;
         break;
-      case 'Front - écran high gain (gain 1.3)':
+      case 'front_highgain_1_3':
         gain = 1.3;
         minFl = 16.0;
         break;
 
-      // Rétro
-      case 'Rétro - toile diffusion (gain 0.7)':
+      case 'rear_diffusion_0_7':
         gain = 0.7;
         minFl = 10.0;
         break;
-      case 'Rétro - toile claire (gain 0.9)':
+      case 'rear_clear_0_9':
         gain = 0.9;
         minFl = 10.0;
         break;
 
-      // Mapping
-      case 'Mapping - peinture mate (gain 0.75)':
+      case 'mapping_matte_0_75':
         gain = 0.75;
         minFl = 30.0;
         break;
-      case 'Mapping - peinture satinée (gain 0.9)':
+      case 'mapping_satin_0_9':
         gain = 0.9;
         minFl = 30.0;
         break;
-      case 'Mapping - pierre claire (gain 0.6)':
+      case 'mapping_lightstone_0_6':
         gain = 0.6;
         minFl = 35.0;
         break;
-      case 'Mapping - pierre sombre (gain 0.35)':
+      case 'mapping_darkstone_0_35':
         gain = 0.35;
         minFl = 45.0;
         break;
-      case 'Mapping - vitre (gain 0.15)':
+      case 'mapping_glass_0_15':
         gain = 0.15;
         minFl = 60.0;
         break;
@@ -154,13 +144,15 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
     }
 
     setState(() {
-      _screenPreset = preset;
+      _screenPresetKey = key;
       _minFl = minFl;
       _gainCtrl.text = gain.toStringAsFixed(2);
     });
   }
 
   List<Widget> _summaryPills() {
+    final loc = AppLocalizations.of(context);
+
     final d = _d(_distanceCtrl);
     final w = _d(_largeurCtrl);
     final ratio = _d(_ratioCtrl);
@@ -180,14 +172,14 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
         v == null ? '-' : '${v.toStringAsFixed(dec)}$unit';
 
     return [
-      MiniPill('Format: $_format'),
-      MiniPill('Distance: ${fmt(d, dec: 2, unit: ' m')}'),
-      MiniPill('Largeur: ${fmt(w, dec: 2, unit: ' m')}'),
-      MiniPill('Ratio: ${fmt(ratio, dec: 3)}'),
-      MiniPill('Hauteur: ${fmt(h, dec: 2, unit: ' m')}'),
-      MiniPill('Surface: ${fmt(area, dec: 2, unit: ' m²')}'),
-      MiniPill('Largeur totale: ${fmt(wTot, dec: 2, unit: ' m')}'),
-      MiniPill('Overlap: ${fmt(overlap, dec: 1, unit: ' %')}'),
+      MiniPill(loc.videoCommonPillFormat(_format)),
+      MiniPill(loc.videoCommonPillDistance(fmt(d, dec: 2, unit: ' m'))),
+      MiniPill(loc.videoCommonPillWidth(fmt(w, dec: 2, unit: ' m'))),
+      MiniPill(loc.videoCommonPillRatio(fmt(ratio, dec: 3))),
+      MiniPill(loc.videoCommonPillHeight(fmt(h, dec: 2, unit: ' m'))),
+      MiniPill(loc.videoCommonPillArea(fmt(area, dec: 2, unit: ' m²'))),
+      MiniPill(loc.videoCommonPillTotalWidth(fmt(wTot, dec: 2, unit: ' m'))),
+      MiniPill(loc.videoCommonPillOverlap(fmt(overlap, dec: 1, unit: ' %'))),
     ];
   }
 
@@ -203,8 +195,8 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
   }) {
     return TextField(
       controller: controller,
-      keyboardType: const TextInputType.numberWithOptions(
-          decimal: true, signed: false),
+      keyboardType:
+          const TextInputType.numberWithOptions(decimal: true, signed: false),
       inputFormatters: [numFormatter],
       textInputAction: action,
       onSubmitted: (_) => onDone?.call(),
@@ -216,21 +208,23 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
   // CALCULS
   // =======================
   void calc1() {
+    final loc = AppLocalizations.of(context);
+
     final d = _d(_distanceCtrl);
     final w = _d(_largeurCtrl);
 
     if (d == null || w == null) {
-      setState(() => r1 = '❌ Données manquantes: Distance + Largeur.');
+      setState(() => r1 = loc.videoCalc1ErrMissing);
       return;
     }
     if (w <= 0) {
-      setState(() => r1 = '❌ La largeur doit être > 0.');
+      setState(() => r1 = loc.videoErrWidthGt0);
       return;
     }
 
     final ratio = d / w;
     setState(() {
-      r1 = '✅ Ratio de projection = ${ratio.toStringAsFixed(3)}';
+      r1 = loc.videoCalc1Ok(ratio.toStringAsFixed(3));
       if (_ratioCtrl.text.trim().isEmpty) {
         _ratioCtrl.text = ratio.toStringAsFixed(3);
       }
@@ -238,49 +232,55 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
   }
 
   void calc2() {
+    final loc = AppLocalizations.of(context);
+
     final d = _d(_distanceCtrl);
     final ratio = _d(_ratioCtrl);
 
     if (d == null || ratio == null) {
-      setState(() => r2 = '❌ Données manquantes: Distance + Ratio.');
+      setState(() => r2 = loc.videoCalc2ErrMissing);
       return;
     }
     if (ratio <= 0) {
-      setState(() => r2 = '❌ Le ratio doit être > 0.');
+      setState(() => r2 = loc.videoErrRatioGt0);
       return;
     }
 
     final w = d / ratio;
-    setState(() => r2 = '✅ Largeur image = ${w.toStringAsFixed(3)} m');
+    setState(() => r2 = loc.videoCalc2Ok(w.toStringAsFixed(3)));
   }
 
   void calc3() {
+    final loc = AppLocalizations.of(context);
+
     final w = _d(_largeurCtrl);
     if (w == null) {
-      setState(() => r3 = '❌ Donnée manquante: Largeur.');
+      setState(() => r3 = loc.videoCalc3ErrMissingWidth);
       return;
     }
     if (w <= 0) {
-      setState(() => r3 = '❌ La largeur doit être > 0.');
+      setState(() => r3 = loc.videoErrWidthGt0);
       return;
     }
 
     final ratioWH = _ratioWHFromFormat(_format);
     final h = w / ratioWH;
-    setState(() => r3 = '✅ Hauteur = ${h.toStringAsFixed(3)} m (format $_format)');
+    setState(() => r3 = loc.videoCalc3Ok(h.toStringAsFixed(3), _format));
   }
 
   void calc4() {
+    final loc = AppLocalizations.of(context);
+
     final lumens = _d(_lumensCtrl);
     final gain = _d(_gainCtrl);
     final w = _d(_largeurCtrl);
 
     if (lumens == null || gain == null || w == null) {
-      setState(() => r4 = '❌ Données manquantes: Lumens + Gain + Largeur.');
+      setState(() => r4 = loc.videoCalc4ErrMissing);
       return;
     }
     if (lumens <= 0 || gain <= 0 || w <= 0) {
-      setState(() => r4 = '❌ Lumens/Gain/Largeur doivent être > 0.');
+      setState(() => r4 = loc.videoCalc4ErrGt0);
       return;
     }
 
@@ -296,37 +296,52 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
 
     final ok = fl >= _minFl;
 
+    final areaStr = area.toStringAsFixed(3);
+    final luxStr = lux.toStringAsFixed(0);
+    final luxEqStr = luxEq.toStringAsFixed(0);
+    final nitsStr = nits.toStringAsFixed(1);
+    final flStr = fl.toStringAsFixed(1);
+    final presetStr = _presetLabel(_screenPresetKey);
+    final minFlStr = _minFl.toStringAsFixed(0);
+    final status = ok ? loc.commonOkWithCheck : loc.commonTooLowWithCross;
+
     setState(() {
-      r4 =
-          'Surface: ${area.toStringAsFixed(3)} m² (format $_format)\n'
-          'Lux (lm/m²): ${lux.toStringAsFixed(0)}\n'
-          'Lux eq (gain): ${luxEq.toStringAsFixed(0)}\n'
-          'Luminance: ${nits.toStringAsFixed(1)} nits | ${fl.toStringAsFixed(1)} ft-L\n'
-          'Seuil mini ($_screenPreset): ${_minFl.toStringAsFixed(0)} ft-L → ${ok ? "OK ✅" : "Trop faible ❌"}\n'
-          'Note: conversion nits/ft-L basée sur une hypothèse Lambertienne (approx).';
+      // ✅ 9 arguments positionnels
+      r4 = loc.videoCalc4Result(
+        areaStr,
+        _format,
+        luxStr,
+        luxEqStr,
+        nitsStr,
+        flStr,
+        presetStr,
+        minFlStr,
+        status,
+      );
     });
   }
 
   void calc5() {
+    final loc = AppLocalizations.of(context);
+
     final wTot = _d(_largeurTotaleCtrl);
     final pPercent = _d(_overlapPercentCtrl);
     final n = _i(_calc5NCtrl);
 
     if (wTot == null || pPercent == null || n == null) {
-      setState(() => r5 =
-          '❌ Données manquantes: Largeur totale + Overlap% + Nombre de projecteurs.');
+      setState(() => r5 = loc.videoCalc5ErrMissing);
       return;
     }
     if (wTot <= 0) {
-      setState(() => r5 = '❌ Largeur totale doit être > 0.');
+      setState(() => r5 = loc.videoErrTotalWidthGt0);
       return;
     }
     if (n < 2) {
-      setState(() => r5 = '❌ Le nombre de projecteurs doit être ≥ 2.');
+      setState(() => r5 = loc.videoCalc5ErrNMin2);
       return;
     }
     if (pPercent < 0 || pPercent >= 100) {
-      setState(() => r5 = '❌ Overlap% doit être entre 0 et 99.9.');
+      setState(() => r5 = loc.videoErrOverlapRange);
       return;
     }
 
@@ -334,7 +349,7 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
 
     final denom = (n - (n - 1) * p);
     if (denom <= 0) {
-      setState(() => r5 = '❌ Paramètres impossibles (denom ≤ 0).');
+      setState(() => r5 = loc.videoErrImpossibleDenom);
       return;
     }
 
@@ -344,17 +359,23 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
     final ratioWH = _ratioWHFromFormat(_format);
     final hTot = wTot / ratioWH;
 
+    // ✅ 7 arguments positionnels
     setState(() {
-      r5 =
-          'Largeur totale: ${wTot.toStringAsFixed(3)} m\n'
-          'N: $n | Overlap: ${pPercent.toStringAsFixed(1)}% (sur largeur projo)\n\n'
-          '- Largeur par projecteur: ${wParProj.toStringAsFixed(3)} m\n'
-          '- Overlap entre 2 projos: ${overlapM.toStringAsFixed(3)} m\n'
-          '- Hauteur totale (format $_format): ${hTot.toStringAsFixed(3)} m';
+      r5 = loc.videoCalc5Result(
+        wTot.toStringAsFixed(3),
+        n.toString(),
+        pPercent.toStringAsFixed(1),
+        wParProj.toStringAsFixed(3),
+        overlapM.toStringAsFixed(3),
+        _format,
+        hTot.toStringAsFixed(3),
+      );
     });
   }
 
   void calc6() {
+    final loc = AppLocalizations.of(context);
+
     final wTot = _d(_largeurTotaleCtrl);
     final distance = _d(_distanceCtrl);
     final pPercent = _d(_overlapPercentCtrl);
@@ -366,17 +387,15 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
     final gain = _d(_calc6GainCtrl);
 
     if (wTot == null || distance == null || pPercent == null) {
-      setState(() => r6 =
-          '❌ Données manquantes: Largeur totale + Distance + Overlap%.');
+      setState(() => r6 = loc.videoCalc6ErrMissingBasics);
       return;
     }
     if (wTot <= 0 || distance <= 0) {
-      setState(() => r6 =
-          '❌ Largeur totale et distance doivent être > 0.');
+      setState(() => r6 = loc.videoErrTotalWidthAndDistanceGt0);
       return;
     }
     if (pPercent < 0 || pPercent >= 100) {
-      setState(() => r6 = '❌ Overlap% doit être entre 0 et 99.9.');
+      setState(() => r6 = loc.videoErrOverlapRange);
       return;
     }
 
@@ -384,14 +403,14 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
     double? b = ratioMax;
 
     if (a == null && b == null) {
-      setState(() => r6 = '❌ Données manquantes: Ratio min et/ou Ratio max.');
+      setState(() => r6 = loc.videoCalc6ErrMissingRatio);
       return;
     }
-    if (a == null && b != null) a = b;
-    if (b == null && a != null) b = a;
+    a ??= b;
+    b ??= a;
 
     if (a == null || b == null || a <= 0 || b <= 0) {
-      setState(() => r6 = '❌ Ratio invalide (doit être > 0).');
+      setState(() => r6 = loc.videoErrRatioGt0);
       return;
     }
 
@@ -425,33 +444,44 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
 
     String lumiForN(int n) {
       if (lumensPerProj == null || gain == null) {
-        return "Luminosité (optionnelle): renseigne Lumens/projo + Gain pour l'estimation.";
+        return loc.videoCalc6LumiOptional;
       }
-      if (lumensPerProj <= 0 || gain <= 0) {
-        return "Luminosité: ❌ Lumens/projo et gain doivent être > 0.";
-      }
+      if (lumensPerProj <= 0 || gain <= 0) return loc.videoCalc6LumiErrGt0;
 
       final totalLumensUseful = n * lumensPerProj * gain;
       final lux = totalLumensUseful / area;
       final nits = totalLumensUseful / (math.pi * area);
       final fl = nits / 3.426;
 
-      return "Luminosité estimée (N=$n)\n"
-          "Surface: ${area.toStringAsFixed(2)} m²\n"
-          "Lux eq: ${lux.toStringAsFixed(0)} (lm/m²)\n"
-          "Nits: ${nits.toStringAsFixed(1)} | ft-L: ${fl.toStringAsFixed(1)}";
+      // ✅ 5 arguments positionnels
+      return loc.videoCalc6LumiForN(
+        n.toString(),
+        area.toStringAsFixed(2),
+        lux.toStringAsFixed(0),
+        nits.toStringAsFixed(1),
+        fl.toStringAsFixed(1),
+      );
     }
 
+    // ✅ 15 arguments positionnels (ordre basé sur tes noms initiaux)
     setState(() {
-      r6 =
-          "Largeur totale=${wTot.toStringAsFixed(3)} m | Distance=${distance.toStringAsFixed(3)} m | Overlap=${pPercent.toStringAsFixed(1)}%\n"
-          "Format $_format → Hauteur totale=${hTot.toStringAsFixed(3)} m | Surface=${area.toStringAsFixed(2)} m²\n"
-          "Ratio min/max: ${ratioMinOk.toStringAsFixed(3)} → ${ratioMaxOk.toStringAsFixed(3)}\n\n"
-          "Cas ratio plus ouvert (min) = $nAtMin projos | couverture ≈ ${covAtMin.toStringAsFixed(3)} m\n"
-          "${lumiForN(nAtMin)}\n\n"
-          "Cas ratio plus serré (max) = $nAtMax projos | couverture ≈ ${covAtMax.toStringAsFixed(3)} m\n"
-          "${lumiForN(nAtMax)}\n\n"
-          "Note: estimation indicative (blend/overlap réels peuvent réduire un peu).";
+      r6 = loc.videoCalc6Result(
+        wTot.toStringAsFixed(3), // wTot
+        distance.toStringAsFixed(3), // distance
+        pPercent.toStringAsFixed(1), // overlapPct
+        _format, // format
+        hTot.toStringAsFixed(3), // hTot
+        area.toStringAsFixed(2), // area
+        ratioMinOk.toStringAsFixed(3), // ratioMin
+        ratioMaxOk.toStringAsFixed(3), // ratioMax
+        nAtMin.toString(), // nMin
+        covAtMin.toStringAsFixed(3), // covMin
+        lumiForN(nAtMin), // lumiMin
+        nAtMax.toString(), // nMax
+        covAtMax.toStringAsFixed(3), // covMax
+        lumiForN(nAtMax), // lumiMax
+        loc.videoCalc6NoteIndicative, // note
+      );
     });
   }
 
@@ -485,7 +515,7 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
 
     setState(() {
       _format = '16:9';
-      _screenPreset = 'Front - écran blanc mat (gain 1.0)';
+      _screenPresetKey = 'front_white_1_0';
       _minFl = 16.0;
 
       r1 = '';
@@ -497,7 +527,37 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
     });
   }
 
+  String _presetLabel(String key) {
+    final loc = AppLocalizations.of(context);
+    switch (key) {
+      case 'front_white_1_0':
+        return loc.videoPresetFrontWhite;
+      case 'front_grey_0_8':
+        return loc.videoPresetFrontGrey;
+      case 'front_highgain_1_3':
+        return loc.videoPresetFrontHighGain;
+      case 'rear_diffusion_0_7':
+        return loc.videoPresetRearDiffusion;
+      case 'rear_clear_0_9':
+        return loc.videoPresetRearClear;
+      case 'mapping_matte_0_75':
+        return loc.videoPresetMappingMatte;
+      case 'mapping_satin_0_9':
+        return loc.videoPresetMappingSatin;
+      case 'mapping_lightstone_0_6':
+        return loc.videoPresetMappingLightStone;
+      case 'mapping_darkstone_0_35':
+        return loc.videoPresetMappingDarkStone;
+      case 'mapping_glass_0_15':
+        return loc.videoPresetMappingGlass;
+      default:
+        return loc.videoPresetFrontWhite;
+    }
+  }
+
   Future<void> exportVideoPdf() async {
+    final loc = AppLocalizations.of(context);
+
     final doc = pw.Document();
     final now = DateTime.now();
     final dateStr =
@@ -507,54 +567,58 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
     String safe(String s) => s.trim().isEmpty ? "-" : s.trim();
 
     final inputs = <String>[
-      "Date: $dateStr",
-      "Format: $_format",
-      "Distance (m): ${safe(_distanceCtrl.text)}",
-      "Largeur image (m): ${safe(_largeurCtrl.text)}",
-      "Ratio: ${safe(_ratioCtrl.text)}",
-      "Lumens: ${safe(_lumensCtrl.text)}",
-      "Gain: ${safe(_gainCtrl.text)}",
-      "Preset écran: $_screenPreset",
-      "Overlap (%): ${safe(_overlapPercentCtrl.text)}",
-      "Largeur totale (m): ${safe(_largeurTotaleCtrl.text)}",
-      "N (calc5): ${safe(_calc5NCtrl.text)}",
-      "Ratio min (calc6): ${safe(_calc6RatioMinCtrl.text)}",
-      "Ratio max (calc6): ${safe(_calc6RatioMaxCtrl.text)}",
-      "Lumens/projo (calc6): ${safe(_calc6LumensPerProjCtrl.text)}",
-      "Gain (calc6): ${safe(_calc6GainCtrl.text)}",
+      "${loc.videoPdfDate}: $dateStr",
+      "${loc.videoPdfFormat}: $_format",
+      "${loc.videoPdfDistance}: ${safe(_distanceCtrl.text)}",
+      "${loc.videoPdfImageWidth}: ${safe(_largeurCtrl.text)}",
+      "${loc.videoPdfRatio}: ${safe(_ratioCtrl.text)}",
+      "${loc.videoPdfLumens}: ${safe(_lumensCtrl.text)}",
+      "${loc.videoPdfGain}: ${safe(_gainCtrl.text)}",
+      "${loc.videoPdfScreenPreset}: ${_presetLabel(_screenPresetKey)}",
+      "${loc.videoPdfOverlap}: ${safe(_overlapPercentCtrl.text)}",
+      "${loc.videoPdfTotalWidth}: ${safe(_largeurTotaleCtrl.text)}",
+      "${loc.videoPdfCalc5N}: ${safe(_calc5NCtrl.text)}",
+      "${loc.videoPdfCalc6RatioMin}: ${safe(_calc6RatioMinCtrl.text)}",
+      "${loc.videoPdfCalc6RatioMax}: ${safe(_calc6RatioMaxCtrl.text)}",
+      "${loc.videoPdfCalc6LumensPerProj}: ${safe(_calc6LumensPerProjCtrl.text)}",
+      "${loc.videoPdfCalc6Gain}: ${safe(_calc6GainCtrl.text)}",
     ].join("\n");
 
     final results = <String>[
-      "Calcul 1:\n${safe(r1)}",
-      "Calcul 2:\n${safe(r2)}",
-      "Calcul 3:\n${safe(r3)}",
-      "Calcul 4:\n${safe(r4)}",
-      "Calcul 5:\n${safe(r5)}",
-      "Calcul 6:\n${safe(r6)}",
+      "${loc.videoPdfCalc1}:\n${safe(r1)}",
+      "${loc.videoPdfCalc2}:\n${safe(r2)}",
+      "${loc.videoPdfCalc3}:\n${safe(r3)}",
+      "${loc.videoPdfCalc4}:\n${safe(r4)}",
+      "${loc.videoPdfCalc5}:\n${safe(r5)}",
+      "${loc.videoPdfCalc6}:\n${safe(r6)}",
     ].join("\n\n");
 
     doc.addPage(
       pw.MultiPage(
         build: (context) => [
-          pw.Text("Mon App Technique – Export Vidéo",
-              style: pw.TextStyle(
-                  fontSize: 18, fontWeight: pw.FontWeight.bold)),
+          pw.Text(
+            loc.videoPdfTitle,
+            style: pw.TextStyle(fontSize: 18, fontWeight: pw.FontWeight.bold),
+          ),
           pw.SizedBox(height: 8),
-          pw.Text(kDisclaimerTitle,
-              style: pw.TextStyle(
-                  fontSize: 12, fontWeight: pw.FontWeight.bold)),
+          pw.Text(
+            loc.disclaimerTitle,
+            style: pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold),
+          ),
           pw.SizedBox(height: 4),
-          pw.Text(kDisclaimerText, style: const pw.TextStyle(fontSize: 9)),
+          pw.Text(loc.disclaimerText, style: const pw.TextStyle(fontSize: 9)),
           pw.Divider(),
-          pw.Text("Paramètres",
-              style: pw.TextStyle(
-                  fontSize: 12, fontWeight: pw.FontWeight.bold)),
+          pw.Text(
+            loc.videoPdfParams,
+            style: pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold),
+          ),
           pw.SizedBox(height: 4),
           pw.Text(inputs, style: const pw.TextStyle(fontSize: 10)),
           pw.SizedBox(height: 10),
-          pw.Text("Résultats",
-              style: pw.TextStyle(
-                  fontSize: 12, fontWeight: pw.FontWeight.bold)),
+          pw.Text(
+            loc.videoPdfResults,
+            style: pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold),
+          ),
           pw.SizedBox(height: 4),
           pw.Text(results, style: const pw.TextStyle(fontSize: 10)),
         ],
@@ -567,25 +631,24 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
     );
   }
 
-  // =======================
-  // UI
-  // =======================
   Widget _calcActionsRow({
     required VoidCallback onCalc,
     required String resultText,
   }) {
+    final loc = AppLocalizations.of(context);
+
     return Row(
       children: [
         Expanded(
           child: ElevatedButton.icon(
             onPressed: onCalc,
             icon: const Icon(Icons.calculate),
-            label: const Text("Calculer"),
+            label: Text(loc.commonCalculate),
           ),
         ),
         const SizedBox(width: 10),
         IconButton(
-          tooltip: "Copier le résultat",
+          tooltip: loc.commonCopyResultTooltip,
           onPressed: () => copyToClipboard(context, resultText),
           icon: const Icon(Icons.copy),
         ),
@@ -595,34 +658,34 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Calculs vidéo'),
+        title: Text(loc.videoCalculationsTitle),
         actions: [
           IconButton(
-            tooltip: "Copier tous les résultats",
+            tooltip: loc.videoCopyAllTooltip,
             onPressed: () {
               final all = [
-                if (r1.trim().isNotEmpty) "Calcul 1:\n$r1",
-                if (r2.trim().isNotEmpty) "Calcul 2:\n$r2",
-                if (r3.trim().isNotEmpty) "Calcul 3:\n$r3",
-                if (r4.trim().isNotEmpty) "Calcul 4:\n$r4",
-                if (r5.trim().isNotEmpty) "Calcul 5:\n$r5",
-                if (r6.trim().isNotEmpty) "Calcul 6:\n$r6",
+                if (r1.trim().isNotEmpty) "${loc.videoCalcLabel(1)}:\n$r1",
+                if (r2.trim().isNotEmpty) "${loc.videoCalcLabel(2)}:\n$r2",
+                if (r3.trim().isNotEmpty) "${loc.videoCalcLabel(3)}:\n$r3",
+                if (r4.trim().isNotEmpty) "${loc.videoCalcLabel(4)}:\n$r4",
+                if (r5.trim().isNotEmpty) "${loc.videoCalcLabel(5)}:\n$r5",
+                if (r6.trim().isNotEmpty) "${loc.videoCalcLabel(6)}:\n$r6",
               ].join("\n\n");
               copyToClipboard(context, all);
             },
             icon: const Icon(Icons.copy_all),
           ),
           IconButton(
-            tooltip: "Exporter PDF",
+            tooltip: loc.videoExportPdfTooltip,
             onPressed: exportVideoPdf,
             icon: const Icon(Icons.picture_as_pdf),
           ),
         ],
       ),
-
-      // Barre sticky (déjà OK avec SafeArea)
       bottomNavigationBar: SafeArea(
         top: false,
         child: Container(
@@ -638,8 +701,8 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
               final calcBtn = ElevatedButton.icon(
                 onPressed: calculerTout,
                 icon: const Icon(Icons.calculate),
-                label: const Text(
-                  "Calculer tout",
+                label: Text(
+                  loc.videoCalculateAll,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -648,8 +711,8 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
               final resetBtn = ElevatedButton.icon(
                 onPressed: resetAll,
                 icon: const Icon(Icons.refresh),
-                label: const Text(
-                  "Reset",
+                label: Text(
+                  loc.commonReset,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -677,7 +740,6 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
           ),
         ),
       ),
-
       body: SafeArea(
         bottom: true,
         child: Padding(
@@ -687,246 +749,278 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
               final isWide = c.maxWidth >= 900;
               final cardWidth = isWide ? (c.maxWidth - 12) / 2 : c.maxWidth;
 
-              Widget sized(Widget child) => SizedBox(width: cardWidth, child: child);
+              Widget sized(Widget child) =>
+                  SizedBox(width: cardWidth, child: child);
 
               final cards = <Widget>[
-                sized(SectionCard(
-                  title: "Résumé (pastilles)",
-                  icon: Icons.dashboard,
-                  trailing: IconButton(
-                    tooltip: "Copier le résumé",
-                    onPressed: () {
-                      final t = _summaryPills()
-                          .whereType<MiniPill>()
-                          .map((p) => (p.label))
-                          .join(" | ");
-                      copyToClipboard(context, t);
-                    },
-                    icon: const Icon(Icons.copy, color: Colors.white70),
+                sized(
+                  SectionCard(
+                    title: loc.videoSummaryPillsTitle,
+                    icon: Icons.dashboard,
+                    trailing: IconButton(
+                      tooltip: loc.videoCopySummaryTooltip,
+                      onPressed: () {
+                        final t = _summaryPills()
+                            .whereType<MiniPill>()
+                            .map((p) => p.label)
+                            .join(" | ");
+                        copyToClipboard(context, t);
+                      },
+                      icon: const Icon(Icons.copy, color: Colors.white70),
+                    ),
+                    child: Wrap(
+                      spacing: 8,
+                      runSpacing: 8,
+                      children: _summaryPills(),
+                    ),
                   ),
-                  child: Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
-                    children: _summaryPills(),
-                  ),
-                )),
-
-                sized(ExpandSectionCard(
-                  title: "Paramètres communs",
-                  icon: Icons.tune,
-                  initiallyExpanded: true,
-                  child: Column(
-                    children: [
-                      DropdownButtonFormField<String>(
-                        initialValue: _format,
-                        decoration: const InputDecoration(labelText: 'Format (ratio)'),
-                        items: const [
-                          DropdownMenuItem(value: '16:9', child: Text('16:9')),
-                          DropdownMenuItem(value: '16:10', child: Text('16:10')),
-                          DropdownMenuItem(value: '4:3', child: Text('4:3')),
-                          DropdownMenuItem(value: '21:9', child: Text('21:9')),
-                        ],
-                        onChanged: (v) => setState(() => _format = v ?? '16:9'),
-                      ),
-                      const SizedBox(height: 12),
-
-                      _numField(
-                        controller: _distanceCtrl,
-                        label: 'Distance de projection (m)',
-                        hint: 'ex: 12.0',
-                        action: TextInputAction.next,
-                      ),
-                      const SizedBox(height: 12),
-
-                      _numField(
-                        controller: _largeurCtrl,
-                        label: "Largeur d'image (m)",
-                        hint: 'ex: 6.0',
-                        action: TextInputAction.next,
-                      ),
-                      const SizedBox(height: 12),
-
-                      _numField(
-                        controller: _ratioCtrl,
-                        label: 'Ratio de projection',
-                        hint: 'ex: 1.60',
-                        action: TextInputAction.next,
-                      ),
-                      const SizedBox(height: 12),
-
-                      _numField(
-                        controller: _lumensCtrl,
-                        label: 'Lumens (ANSI)',
-                        hint: 'ex: 20000',
-                        action: TextInputAction.next,
-                      ),
-                      const SizedBox(height: 12),
-
-                      _numField(
-                        controller: _gainCtrl,
-                        label: 'Gain',
-                        hint: 'ex: 1.0',
-                        action: TextInputAction.next,
-                      ),
-                      const SizedBox(height: 12),
-
-                      DropdownButtonFormField<String>(
-                        initialValue: _screenPreset,
-                        decoration: const InputDecoration(labelText: 'Écran / Support (preset)'),
-                        items: const [
-                          DropdownMenuItem(value: 'Front - écran blanc mat (gain 1.0)', child: Text('Front - écran blanc mat')),
-                          DropdownMenuItem(value: 'Front - écran gris (gain 0.8)', child: Text('Front - écran gris')),
-                          DropdownMenuItem(value: 'Front - écran high gain (gain 1.3)', child: Text('Front - écran high gain')),
-                          DropdownMenuItem(value: 'Rétro - toile diffusion (gain 0.7)', child: Text('Rétro - toile diffusion')),
-                          DropdownMenuItem(value: 'Rétro - toile claire (gain 0.9)', child: Text('Rétro - toile claire')),
-                          DropdownMenuItem(value: 'Mapping - peinture mate (gain 0.75)', child: Text('Mapping - peinture mate')),
-                          DropdownMenuItem(value: 'Mapping - peinture satinée (gain 0.9)', child: Text('Mapping - peinture satinée')),
-                          DropdownMenuItem(value: 'Mapping - pierre claire (gain 0.6)', child: Text('Mapping - pierre claire')),
-                          DropdownMenuItem(value: 'Mapping - pierre sombre (gain 0.35)', child: Text('Mapping - pierre sombre')),
-                          DropdownMenuItem(value: 'Mapping - vitre (gain 0.15)', child: Text('Mapping - vitre')),
-                        ],
-                        onChanged: (v) {
-                          if (v == null) return;
-                          _appliquerPresetEcran(v);
-                        },
-                      ),
-                      const SizedBox(height: 12),
-
-                      _numField(
-                        controller: _overlapPercentCtrl,
-                        label: 'Overlap (%)',
-                        hint: 'ex: 10',
-                        action: TextInputAction.next,
-                      ),
-                      const SizedBox(height: 12),
-
-                      _numField(
-                        controller: _largeurTotaleCtrl,
-                        label: 'Largeur totale de projection (m)',
-                        hint: 'ex: 18.0',
-                        action: TextInputAction.done,
-                        onDone: calculerTout,
-                      ),
-                    ],
-                  ),
-                )),
-
-                sized(ExpandSectionCard(
-                  title: "Calcul 1 — Ratio (Distance / Largeur)",
-                  icon: Icons.straighten,
-                  child: Column(
-                    children: [
-                      _calcActionsRow(onCalc: calc1, resultText: r1),
-                      const SizedBox(height: 10),
-                      ResultBox(r1),
-                    ],
-                  ),
-                )),
-
-                sized(ExpandSectionCard(
-                  title: "Calcul 2 — Largeur (Distance / Ratio)",
-                  icon: Icons.swap_horiz,
-                  child: Column(
-                    children: [
-                      _calcActionsRow(onCalc: calc2, resultText: r2),
-                      const SizedBox(height: 10),
-                      ResultBox(r2),
-                    ],
-                  ),
-                )),
-
-                sized(ExpandSectionCard(
-                  title: "Calcul 3 — Hauteur (Largeur + Format)",
-                  icon: Icons.height,
-                  child: Column(
-                    children: [
-                      _calcActionsRow(onCalc: calc3, resultText: r3),
-                      const SizedBox(height: 10),
-                      ResultBox(r3),
-                    ],
-                  ),
-                )),
-
-                sized(ExpandSectionCard(
-                  title: "Calcul 4 — Luminosité (lux / nits / ft-L + seuil)",
-                  icon: Icons.brightness_6,
-                  child: Column(
-                    children: [
-                      _calcActionsRow(onCalc: calc4, resultText: r4),
-                      const SizedBox(height: 10),
-                      ResultBox(r4),
-                    ],
-                  ),
-                )),
-
-                sized(ExpandSectionCard(
-                  title: "Calcul 5 — Overlap (Largeur totale + N)",
-                  icon: Icons.grid_on,
-                  child: Column(
-                    children: [
-                      _numField(
-                        controller: _calc5NCtrl,
-                        label: 'Nombre de projecteurs (N)',
-                        hint: 'ex: 2',
-                        action: TextInputAction.done,
-                        onDone: calc5,
-                      ),
-                      const SizedBox(height: 12),
-                      _calcActionsRow(onCalc: calc5, resultText: r5),
-                      const SizedBox(height: 10),
-                      ResultBox(r5),
-                    ],
-                  ),
-                )),
-
-                sized(ExpandSectionCard(
-                  title: "Calcul 6 — Nb projecteurs auto + luminosité",
-                  icon: Icons.auto_fix_high,
-                  child: Column(
-                    children: [
-                      _numField(
-                        controller: _calc6RatioMinCtrl,
-                        label: 'Ratio min',
-                        hint: 'ex: 1.20',
-                        action: TextInputAction.next,
-                      ),
-                      const SizedBox(height: 12),
-                      _numField(
-                        controller: _calc6RatioMaxCtrl,
-                        label: 'Ratio max',
-                        hint: 'ex: 1.80',
-                        action: TextInputAction.next,
-                      ),
-                      const SizedBox(height: 16),
-                      const Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          "Optionnel : luminosité",
-                          style: TextStyle(color: Colors.white70, fontWeight: FontWeight.bold),
+                ),
+                sized(
+                  ExpandSectionCard(
+                    title: loc.videoCommonParamsTitle,
+                    icon: Icons.tune,
+                    initiallyExpanded: true,
+                    child: Column(
+                      children: [
+                        DropdownButtonFormField<String>(
+                          initialValue: _format,
+                          decoration:
+                              InputDecoration(labelText: loc.videoFormatLabel),
+                          items: const [
+                            DropdownMenuItem(
+                                value: '16:9', child: Text('16:9')),
+                            DropdownMenuItem(
+                                value: '16:10', child: Text('16:10')),
+                            DropdownMenuItem(value: '4:3', child: Text('4:3')),
+                            DropdownMenuItem(
+                                value: '21:9', child: Text('21:9')),
+                          ],
+                          onChanged: (v) =>
+                              setState(() => _format = v ?? '16:9'),
                         ),
-                      ),
-                      const SizedBox(height: 10),
-                      _numField(
-                        controller: _calc6LumensPerProjCtrl,
-                        label: 'Lumens par projecteur',
-                        hint: 'ex: 20000',
-                        action: TextInputAction.next,
-                      ),
-                      const SizedBox(height: 12),
-                      _numField(
-                        controller: _calc6GainCtrl,
-                        label: 'Gain (calc 6)',
-                        hint: 'ex: 1.0',
-                        action: TextInputAction.done,
-                        onDone: calc6,
-                      ),
-                      const SizedBox(height: 12),
-                      _calcActionsRow(onCalc: calc6, resultText: r6),
-                      const SizedBox(height: 10),
-                      ResultBox(r6),
-                    ],
+                        const SizedBox(height: 12),
+                        _numField(
+                          controller: _distanceCtrl,
+                          label: loc.videoDistanceLabel,
+                          hint: loc.videoDistanceHint,
+                          action: TextInputAction.next,
+                        ),
+                        const SizedBox(height: 12),
+                        _numField(
+                          controller: _largeurCtrl,
+                          label: loc.videoImageWidthLabel,
+                          hint: loc.videoImageWidthHint,
+                          action: TextInputAction.next,
+                        ),
+                        const SizedBox(height: 12),
+                        _numField(
+                          controller: _ratioCtrl,
+                          label: loc.videoThrowRatioLabel,
+                          hint: loc.videoThrowRatioHint,
+                          action: TextInputAction.next,
+                        ),
+                        const SizedBox(height: 12),
+                        _numField(
+                          controller: _lumensCtrl,
+                          label: loc.videoLumensLabel,
+                          hint: loc.videoLumensHint,
+                          action: TextInputAction.next,
+                        ),
+                        const SizedBox(height: 12),
+                        _numField(
+                          controller: _gainCtrl,
+                          label: loc.videoGainLabel,
+                          hint: loc.videoGainHint,
+                          action: TextInputAction.next,
+                        ),
+                        const SizedBox(height: 12),
+                        DropdownButtonFormField<String>(
+                          initialValue: _screenPresetKey,
+                          decoration: InputDecoration(
+                              labelText: loc.videoScreenPresetLabel),
+                          items: [
+                            DropdownMenuItem(
+                                value: 'front_white_1_0',
+                                child: Text(loc.videoPresetFrontWhiteShort)),
+                            DropdownMenuItem(
+                                value: 'front_grey_0_8',
+                                child: Text(loc.videoPresetFrontGreyShort)),
+                            DropdownMenuItem(
+                                value: 'front_highgain_1_3',
+                                child: Text(loc.videoPresetFrontHighGainShort)),
+                            DropdownMenuItem(
+                                value: 'rear_diffusion_0_7',
+                                child: Text(loc.videoPresetRearDiffusionShort)),
+                            DropdownMenuItem(
+                                value: 'rear_clear_0_9',
+                                child: Text(loc.videoPresetRearClearShort)),
+                            DropdownMenuItem(
+                                value: 'mapping_matte_0_75',
+                                child: Text(loc.videoPresetMappingMatteShort)),
+                            DropdownMenuItem(
+                                value: 'mapping_satin_0_9',
+                                child: Text(loc.videoPresetMappingSatinShort)),
+                            DropdownMenuItem(
+                                value: 'mapping_lightstone_0_6',
+                                child: Text(
+                                    loc.videoPresetMappingLightStoneShort)),
+                            DropdownMenuItem(
+                                value: 'mapping_darkstone_0_35',
+                                child:
+                                    Text(loc.videoPresetMappingDarkStoneShort)),
+                            DropdownMenuItem(
+                                value: 'mapping_glass_0_15',
+                                child: Text(loc.videoPresetMappingGlassShort)),
+                          ],
+                          onChanged: (v) {
+                            if (v == null) return;
+                            _applyScreenPreset(v);
+                          },
+                        ),
+                        const SizedBox(height: 12),
+                        _numField(
+                          controller: _overlapPercentCtrl,
+                          label: loc.videoOverlapLabel,
+                          hint: loc.videoOverlapHint,
+                          action: TextInputAction.next,
+                        ),
+                        const SizedBox(height: 12),
+                        _numField(
+                          controller: _largeurTotaleCtrl,
+                          label: loc.videoTotalWidthLabel,
+                          hint: loc.videoTotalWidthHint,
+                          action: TextInputAction.done,
+                          onDone: calculerTout,
+                        ),
+                      ],
+                    ),
                   ),
-                )),
+                ),
+                sized(
+                  ExpandSectionCard(
+                    title: loc.videoCalc1Title,
+                    icon: Icons.straighten,
+                    child: Column(
+                      children: [
+                        _calcActionsRow(onCalc: calc1, resultText: r1),
+                        const SizedBox(height: 10),
+                        ResultBox(r1),
+                      ],
+                    ),
+                  ),
+                ),
+                sized(
+                  ExpandSectionCard(
+                    title: loc.videoCalc2Title,
+                    icon: Icons.swap_horiz,
+                    child: Column(
+                      children: [
+                        _calcActionsRow(onCalc: calc2, resultText: r2),
+                        const SizedBox(height: 10),
+                        ResultBox(r2),
+                      ],
+                    ),
+                  ),
+                ),
+                sized(
+                  ExpandSectionCard(
+                    title: loc.videoCalc3Title,
+                    icon: Icons.height,
+                    child: Column(
+                      children: [
+                        _calcActionsRow(onCalc: calc3, resultText: r3),
+                        const SizedBox(height: 10),
+                        ResultBox(r3),
+                      ],
+                    ),
+                  ),
+                ),
+                sized(
+                  ExpandSectionCard(
+                    title: loc.videoCalc4Title,
+                    icon: Icons.brightness_6,
+                    child: Column(
+                      children: [
+                        _calcActionsRow(onCalc: calc4, resultText: r4),
+                        const SizedBox(height: 10),
+                        ResultBox(r4),
+                      ],
+                    ),
+                  ),
+                ),
+                sized(
+                  ExpandSectionCard(
+                    title: loc.videoCalc5Title,
+                    icon: Icons.grid_on,
+                    child: Column(
+                      children: [
+                        _numField(
+                          controller: _calc5NCtrl,
+                          label: loc.videoCalc5NLabel,
+                          hint: loc.videoCalc5NHint,
+                          action: TextInputAction.done,
+                          onDone: calc5,
+                        ),
+                        const SizedBox(height: 12),
+                        _calcActionsRow(onCalc: calc5, resultText: r5),
+                        const SizedBox(height: 10),
+                        ResultBox(r5),
+                      ],
+                    ),
+                  ),
+                ),
+                sized(
+                  ExpandSectionCard(
+                    title: loc.videoCalc6Title,
+                    icon: Icons.auto_fix_high,
+                    child: Column(
+                      children: [
+                        _numField(
+                          controller: _calc6RatioMinCtrl,
+                          label: loc.videoCalc6RatioMinLabel,
+                          hint: loc.videoCalc6RatioMinHint,
+                          action: TextInputAction.next,
+                        ),
+                        const SizedBox(height: 12),
+                        _numField(
+                          controller: _calc6RatioMaxCtrl,
+                          label: loc.videoCalc6RatioMaxLabel,
+                          hint: loc.videoCalc6RatioMaxHint,
+                          action: TextInputAction.next,
+                        ),
+                        const SizedBox(height: 16),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            loc.videoOptionalBrightnessTitle,
+                            style: const TextStyle(
+                                color: Colors.white70,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        _numField(
+                          controller: _calc6LumensPerProjCtrl,
+                          label: loc.videoCalc6LumensPerProjectorLabel,
+                          hint: loc.videoCalc6LumensPerProjectorHint,
+                          action: TextInputAction.next,
+                        ),
+                        const SizedBox(height: 12),
+                        _numField(
+                          controller: _calc6GainCtrl,
+                          label: loc.videoCalc6GainLabel,
+                          hint: loc.videoCalc6GainHint,
+                          action: TextInputAction.done,
+                          onDone: calc6,
+                        ),
+                        const SizedBox(height: 12),
+                        _calcActionsRow(onCalc: calc6, resultText: r6),
+                        const SizedBox(height: 10),
+                        ResultBox(r6),
+                      ],
+                    ),
+                  ),
+                ),
               ];
 
               return SingleChildScrollView(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../../app/ui/widgets.dart'; // numFormatter, ExpandSectionCard, ResultBox, copyToClipboard
 
 class VideoLensMeasurePage extends StatefulWidget {
@@ -55,7 +56,8 @@ class _VideoLensMeasurePageState extends State<VideoLensMeasurePage> {
     return double.tryParse(t);
   }
 
-  InputDecoration _dec(String label, String hint) => InputDecoration(labelText: label, hintText: hint);
+  InputDecoration _dec(String label, String hint) =>
+      InputDecoration(labelText: label, hintText: hint);
 
   Widget _numField({
     required TextEditingController controller,
@@ -66,7 +68,8 @@ class _VideoLensMeasurePageState extends State<VideoLensMeasurePage> {
   }) {
     return TextField(
       controller: controller,
-      keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: false),
+      keyboardType:
+          const TextInputType.numberWithOptions(decimal: true, signed: false),
       inputFormatters: [numFormatter],
       textInputAction: action,
       onSubmitted: (_) => onDone?.call(),
@@ -78,9 +81,11 @@ class _VideoLensMeasurePageState extends State<VideoLensMeasurePage> {
     required String value,
     required ValueChanged<String> onChanged,
   }) {
+    final loc = AppLocalizations.of(context);
+
     return DropdownButtonFormField<String>(
       initialValue: value,
-      decoration: const InputDecoration(labelText: 'Format (ratio)'),
+      decoration: InputDecoration(labelText: loc.videoLmFormatLabel),
       items: const [
         DropdownMenuItem(value: '16:9', child: Text('16:9')),
         DropdownMenuItem(value: '16:10', child: Text('16:10')),
@@ -98,6 +103,8 @@ class _VideoLensMeasurePageState extends State<VideoLensMeasurePage> {
     required VoidCallback onCalc,
     required String result,
   }) {
+    final loc = AppLocalizations.of(context);
+
     return ExpandSectionCard(
       title: title,
       icon: icon,
@@ -111,12 +118,12 @@ class _VideoLensMeasurePageState extends State<VideoLensMeasurePage> {
                 child: ElevatedButton.icon(
                   onPressed: onCalc,
                   icon: const Icon(Icons.calculate),
-                  label: const Text('Calculer'),
+                  label: Text(loc.commonCalculate),
                 ),
               ),
               const SizedBox(width: 10),
               IconButton(
-                tooltip: 'Copier le résultat',
+                tooltip: loc.commonCopyResultTooltip,
                 onPressed: () => copyToClipboard(context, result),
                 icon: const Icon(Icons.copy),
               ),
@@ -131,65 +138,78 @@ class _VideoLensMeasurePageState extends State<VideoLensMeasurePage> {
 
   // ---------- CALCS
   void _calc1() {
+    final loc = AppLocalizations.of(context);
+
     final d = _d(_c1DistanceCtrl);
     final w = _d(_c1WidthCtrl);
 
     if (d == null || w == null) {
-      setState(() => _r1 = '❌ Données manquantes : Distance + Largeur.');
+      setState(() => _r1 = loc.videoLmErrMissingDistanceWidth);
       return;
     }
     if (w <= 0) {
-      setState(() => _r1 = '❌ Largeur doit être > 0.');
+      setState(() => _r1 = loc.videoLmErrWidthGt0);
       return;
     }
 
     final ratio = d / w;
     setState(() {
-      _r1 = '✅ Ratio de projection = ${ratio.toStringAsFixed(3)}';
+      // ✅ FIX: appel positionnel (pas named)
+      _r1 = loc.videoLmResultRatio(ratio.toStringAsFixed(3));
     });
   }
 
   void _calc2() {
+    final loc = AppLocalizations.of(context);
+
     final d = _d(_c2DistanceCtrl);
     final ratio = _d(_c2RatioCtrl);
 
     if (d == null || ratio == null) {
-      setState(() => _r2 = '❌ Données manquantes : Distance + Ratio.');
+      setState(() => _r2 = loc.videoLmErrMissingDistanceRatio);
       return;
     }
     if (ratio <= 0) {
-      setState(() => _r2 = '❌ Ratio doit être > 0.');
+      setState(() => _r2 = loc.videoLmErrRatioGt0);
       return;
     }
 
     final w = d / ratio;
-    setState(() => _r2 = '✅ Largeur image = ${w.toStringAsFixed(3)} m');
+    // ✅ FIX: appel positionnel (pas named)
+    setState(() => _r2 = loc.videoLmResultWidth(w.toStringAsFixed(3)));
   }
 
   void _calc3() {
+    final loc = AppLocalizations.of(context);
+
     final w = _d(_c3WidthCtrl);
 
     if (w == null) {
-      setState(() => _r3 = '❌ Donnée manquante : Largeur.');
+      setState(() => _r3 = loc.videoLmErrMissingWidthOnly);
       return;
     }
     if (w <= 0) {
-      setState(() => _r3 = '❌ Largeur doit être > 0.');
+      setState(() => _r3 = loc.videoLmErrWidthGt0);
       return;
     }
 
     final ratioWH = _ratioWHFromFormat(_format3);
     final h = w / ratioWH;
 
-    setState(() => _r3 = '✅ Hauteur = ${h.toStringAsFixed(3)} m (format $_format3)');
+    // ✅ FIX: appel positionnel (pas named)
+    setState(() => _r3 = loc.videoLmResultHeight(
+          h.toStringAsFixed(3),
+          _format3,
+        ));
   }
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Lentille & mesure')),
+      appBar: AppBar(title: Text(loc.videoLensMeasureTitle)),
       body: SafeArea(
         bottom: true,
         child: SingleChildScrollView(
@@ -197,7 +217,7 @@ class _VideoLensMeasurePageState extends State<VideoLensMeasurePage> {
           child: Column(
             children: [
               _calcSection(
-                title: 'Calcul 1 — Ratio (Distance / Largeur)',
+                title: loc.videoLmCalc1Title,
                 icon: Icons.straighten,
                 inputs: [
                   _formatDropdown(
@@ -207,15 +227,15 @@ class _VideoLensMeasurePageState extends State<VideoLensMeasurePage> {
                   const SizedBox(height: 12),
                   _numField(
                     controller: _c1DistanceCtrl,
-                    label: 'Distance de projection (m)',
-                    hint: 'ex: 12.0',
+                    label: loc.videoLmDistanceLabel,
+                    hint: loc.videoLmDistanceHint,
                     action: TextInputAction.next,
                   ),
                   const SizedBox(height: 12),
                   _numField(
                     controller: _c1WidthCtrl,
-                    label: "Largeur d'image (m)",
-                    hint: 'ex: 6.0',
+                    label: loc.videoLmImageWidthLabel,
+                    hint: loc.videoLmImageWidthHint,
                     action: TextInputAction.done,
                     onDone: _calc1,
                   ),
@@ -225,20 +245,20 @@ class _VideoLensMeasurePageState extends State<VideoLensMeasurePage> {
               ),
               const SizedBox(height: 12),
               _calcSection(
-                title: 'Calcul 2 — Largeur (Distance / Ratio)',
+                title: loc.videoLmCalc2Title,
                 icon: Icons.swap_horiz,
                 inputs: [
                   _numField(
                     controller: _c2DistanceCtrl,
-                    label: 'Distance de projection (m)',
-                    hint: 'ex: 12.0',
+                    label: loc.videoLmDistanceLabel,
+                    hint: loc.videoLmDistanceHint,
                     action: TextInputAction.next,
                   ),
                   const SizedBox(height: 12),
                   _numField(
                     controller: _c2RatioCtrl,
-                    label: 'Ratio de projection',
-                    hint: 'ex: 1.60',
+                    label: loc.videoLmThrowRatioLabel,
+                    hint: loc.videoLmThrowRatioHint,
                     action: TextInputAction.done,
                     onDone: _calc2,
                   ),
@@ -248,7 +268,7 @@ class _VideoLensMeasurePageState extends State<VideoLensMeasurePage> {
               ),
               const SizedBox(height: 12),
               _calcSection(
-                title: 'Calcul 3 — Hauteur (Largeur + Format)',
+                title: loc.videoLmCalc3Title,
                 icon: Icons.height,
                 inputs: [
                   _formatDropdown(
@@ -258,8 +278,8 @@ class _VideoLensMeasurePageState extends State<VideoLensMeasurePage> {
                   const SizedBox(height: 12),
                   _numField(
                     controller: _c3WidthCtrl,
-                    label: "Largeur d'image (m)",
-                    hint: 'ex: 6.0',
+                    label: loc.videoLmImageWidthLabel,
+                    hint: loc.videoLmImageWidthHint,
                     action: TextInputAction.done,
                     onDone: _calc3,
                   ),

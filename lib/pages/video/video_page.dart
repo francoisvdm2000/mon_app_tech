@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../l10n/app_localizations.dart';
+
 import 'video_lens_measure_page.dart';
 import 'video_brightness_page.dart';
 import 'video_multiprojecteur_page.dart';
@@ -12,71 +14,70 @@ class PageVideo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final loc = AppLocalizations.of(context);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Vidéo')),
+      appBar: AppBar(title: Text(loc.videoTitle)),
       body: SafeArea(
         bottom: true,
         child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
           children: [
             Text(
-              'Outils vidéo',
-              style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
+              loc.videoToolsTitle,
+              style: theme.textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.w800,
+              ),
             ),
             const SizedBox(height: 6),
             Text(
-              "Calculs indicatifs. Vérifie toujours la documentation constructeur.",
+              loc.videoDisclaimerShort,
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
                 height: 1.25,
               ),
             ),
             const SizedBox(height: 16),
-
             _TileCard(
-              title: 'Lentille & mesure',
-              subtitle: 'Ratio / largeur / hauteur (calculs 1 à 3).',
+              title: loc.videoLensMeasureTitle,
+              subtitle: loc.videoLensMeasureSubtitle,
               icon: Icons.straighten,
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const VideoLensMeasurePage()),
               ),
             ),
             const SizedBox(height: 12),
-
             _TileCard(
-              title: 'Luminosité',
-              subtitle: 'Lux / nits / ft-L + seuil (calcul 4).',
+              title: loc.videoBrightnessTitle,
+              subtitle: loc.videoBrightnessSubtitle,
               icon: Icons.brightness_6,
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const VideoBrightnessPage()),
               ),
             ),
             const SizedBox(height: 12),
-
             _TileCard(
-              title: 'Multiprojecteur',
-              subtitle: 'Overlap + largeur/projo + nombre de projos (calculs 5 & 6).',
+              title: loc.videoMultiprojectorTitle,
+              subtitle: loc.videoMultiprojectorSubtitle,
               icon: Icons.grid_on,
               onTap: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const VideoMultiprojecteurPage()),
+                MaterialPageRoute(
+                    builder: (_) => const VideoMultiprojecteurPage()),
               ),
             ),
             const SizedBox(height: 12),
-
             _TileCard(
-              title: 'LED',
-              subtitle: 'Pixels du mur LED selon taille, pitch, dimension des tiles.',
+              title: loc.videoLedTitle,
+              subtitle: loc.videoLedSubtitle,
               icon: Icons.view_quilt,
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const VideoLedPage()),
               ),
             ),
             const SizedBox(height: 12),
-
             _TileCard(
-              title: 'Mire',
-              subtitle: 'Création de mire vidéo pour écran et mur LED (à faire après).',
+              title: loc.videoTestPatternTitle,
+              subtitle: loc.videoTestPatternSubtitle,
               icon: Icons.image,
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const VideoMirePage()),
@@ -125,13 +126,16 @@ class _TileCard extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w800),
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.w800,
+                      ),
                     ),
                     const SizedBox(height: 6),
                     Text(
                       subtitle,
                       style: theme.textTheme.bodyMedium?.copyWith(
-                        color: theme.colorScheme.onSurface.withValues(alpha: 0.75),
+                        color:
+                            theme.colorScheme.onSurface.withValues(alpha: 0.75),
                         height: 1.25,
                       ),
                     ),
@@ -139,7 +143,10 @@ class _TileCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 8),
-              Icon(Icons.chevron_right, color: theme.colorScheme.onSurface.withValues(alpha: 0.65)),
+              Icon(
+                Icons.chevron_right,
+                color: theme.colorScheme.onSurface.withValues(alpha: 0.65),
+              ),
             ],
           ),
         ),
