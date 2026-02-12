@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'laser_disclaimer_text.dart';
+
+import '../../l10n/app_localizations.dart';
 
 class LaserConsentDialog extends StatefulWidget {
   const LaserConsentDialog({
@@ -18,11 +19,13 @@ class _LaserConsentDialogState extends State<LaserConsentDialog> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return AlertDialog(
       backgroundColor: const Color(0xFF111111),
-      title: const Text(
-        'CONSENTEMENT LASER (OBLIGATOIRE)',
-        style: TextStyle(fontWeight: FontWeight.bold),
+      title: Text(
+        loc.laserConsentTitle,
+        style: const TextStyle(fontWeight: FontWeight.bold),
       ),
       content: SizedBox(
         width: double.maxFinite,
@@ -32,8 +35,12 @@ class _LaserConsentDialogState extends State<LaserConsentDialog> {
             Expanded(
               child: SingleChildScrollView(
                 child: Text(
-                  laserLegalDisclaimerText,
-                  style: const TextStyle(fontSize: 13, color: Colors.white70, height: 1.3),
+                  loc.laserConsentText,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: Colors.white70,
+                    height: 1.3,
+                  ),
                 ),
               ),
             ),
@@ -41,9 +48,9 @@ class _LaserConsentDialogState extends State<LaserConsentDialog> {
             CheckboxListTile(
               value: _checked,
               onChanged: (v) => setState(() => _checked = v ?? false),
-              title: const Text(
-                "Je comprends les risques et j’assume ma responsabilité.",
-                style: TextStyle(fontSize: 13),
+              title: Text(
+                loc.laserConsentCheckboxLabel,
+                style: const TextStyle(fontSize: 13),
               ),
               controlAffinity: ListTileControlAffinity.leading,
               activeColor: Colors.white,
@@ -54,18 +61,17 @@ class _LaserConsentDialogState extends State<LaserConsentDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(false),
-          child: const Text("Annuler"),
+          child: Text(loc.commonCancel),
         ),
         ElevatedButton(
           onPressed: _checked
               ? () async {
                   await widget.onAccepted();
-if (!context.mounted) return;
-Navigator.of(context).pop(true);
-
+                  if (!context.mounted) return;
+                  Navigator.of(context).pop(true);
                 }
               : null,
-          child: const Text("J'accepte et continuer"),
+          child: Text(loc.laserConsentContinue),
         ),
       ],
     );

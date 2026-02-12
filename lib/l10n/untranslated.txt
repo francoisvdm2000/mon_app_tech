@@ -1,1 +1,64 @@
-{}
+{
+  "de": [
+    "laserConsentCheckboxLabel",
+    "laserConsentAcceptContinue",
+    "laserConsentContinue",
+    "laserZoneLabelNohd",
+    "laserZoneLabelSzed",
+    "laserZoneLabelCzed",
+    "laserValueMeter",
+    "laserPercentValue",
+    "laserLegalDisclaimerText",
+    "laserLegalDisclaimerTextLong"
+  ],
+
+  "en": [
+    "laserConsentAcceptContinue",
+    "laserZoneLabelNohd",
+    "laserZoneLabelSzed",
+    "laserZoneLabelCzed",
+    "laserValueMeter",
+    "laserPercentValue",
+    "laserLegalDisclaimerText",
+    "laserLegalDisclaimerTextLong"
+  ],
+
+  "es": [
+    "laserConsentCheckboxLabel",
+    "laserConsentAcceptContinue",
+    "laserConsentContinue",
+    "laserZoneLabelNohd",
+    "laserZoneLabelSzed",
+    "laserZoneLabelCzed",
+    "laserValueMeter",
+    "laserPercentValue",
+    "laserLegalDisclaimerText",
+    "laserLegalDisclaimerTextLong"
+  ],
+
+  "nl": [
+    "laserConsentCheckboxLabel",
+    "laserConsentAcceptContinue",
+    "laserConsentContinue",
+    "laserZoneLabelNohd",
+    "laserZoneLabelSzed",
+    "laserZoneLabelCzed",
+    "laserValueMeter",
+    "laserPercentValue",
+    "laserLegalDisclaimerText",
+    "laserLegalDisclaimerTextLong"
+  ],
+
+  "pt": [
+    "laserConsentCheckboxLabel",
+    "laserConsentAcceptContinue",
+    "laserConsentContinue",
+    "laserZoneLabelNohd",
+    "laserZoneLabelSzed",
+    "laserZoneLabelCzed",
+    "laserValueMeter",
+    "laserPercentValue",
+    "laserLegalDisclaimerText",
+    "laserLegalDisclaimerTextLong"
+  ]
+}

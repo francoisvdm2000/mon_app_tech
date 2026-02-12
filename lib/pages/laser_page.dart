@@ -1,3 +1,4 @@
+// lib/pages/laser_page.dart
 import 'package:flutter/material.dart';
 
 import '../app/ui/widgets.dart'; // numFormatter, SectionCard, ExpandSectionCard
@@ -120,6 +121,7 @@ class _LaserPageState extends State<LaserPage> {
     });
   }
 
+  // Formatters "tech" -> pas besoin i18n
   String _formatMeters(double value) {
     if (value <= 0) return '0 m';
     if (value < 10) return '${value.toStringAsFixed(1)} m';
@@ -309,9 +311,10 @@ class _LaserPageState extends State<LaserPage> {
                   child: Text(
                     title,
                     style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],
@@ -325,9 +328,9 @@ class _LaserPageState extends State<LaserPage> {
   }
 
   Widget _zoneLine({
-    required String label,
-    required String desc,
-    required String value,
+    required String label, // sigle tech (NOHD/SZED/CZED)
+    required String desc, // localisé
+    required String value, // format local (simple)
     required Color color,
   }) {
     return Container(
@@ -360,8 +363,9 @@ class _LaserPageState extends State<LaserPage> {
             child: Text(
               desc,
               style: TextStyle(
-                  color: Colors.white.withValues(alpha: 0.70),
-                  fontWeight: FontWeight.w600),
+                color: Colors.white.withValues(alpha: 0.70),
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
           const SizedBox(width: 12),
@@ -554,8 +558,9 @@ class _LaserPageState extends State<LaserPage> {
                               title: Text(
                                 p.name,
                                 style: const TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w700),
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700,
+                                ),
                               ),
                               subtitle: Text(
                                 loc.laserPresetSubtitle(pStr, divStr, dStr),
@@ -604,7 +609,9 @@ class _LaserPageState extends State<LaserPage> {
                 loc.laserDisclaimerShort,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    color: Colors.white.withValues(alpha: 0.38), fontSize: 12),
+                  color: Colors.white.withValues(alpha: 0.38),
+                  fontSize: 12,
+                ),
               ),
             ],
           ),

@@ -607,5 +607,7 @@
   "mireVideoTypeGridSafe": "Grid + safe + circles",
   "mireVideoTypeColorBars": "Bars + ramps + circles",
   "mireVideoTypeUniformity": "Uniformity + circles",
-  "mireVideoTypeCheckerboard": "Checkerboard + circles"
+  "mireVideoTypeCheckerboard": "Checkerboard + circles",
+  "laserConsentCheckboxLabel": "I understand the risks and I assume my responsibility.",
+"laserConsentContinue": "I accept and continue"
 }

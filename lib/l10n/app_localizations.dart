@@ -2464,6 +2464,66 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Damier + cercles'**
   String get mireVideoTypeCheckerboard;
+
+  /// No description provided for @laserConsentCheckboxLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Je comprends les risques et j’assume ma responsabilité.'**
+  String get laserConsentCheckboxLabel;
+
+  /// No description provided for @laserConsentAcceptContinue.
+  ///
+  /// In fr, this message translates to:
+  /// **'J\'accepte et continuer'**
+  String get laserConsentAcceptContinue;
+
+  /// No description provided for @laserConsentContinue.
+  ///
+  /// In fr, this message translates to:
+  /// **'J\'accepte et continuer'**
+  String get laserConsentContinue;
+
+  /// No description provided for @laserZoneLabelNohd.
+  ///
+  /// In fr, this message translates to:
+  /// **'NOHD'**
+  String get laserZoneLabelNohd;
+
+  /// No description provided for @laserZoneLabelSzed.
+  ///
+  /// In fr, this message translates to:
+  /// **'SZED'**
+  String get laserZoneLabelSzed;
+
+  /// No description provided for @laserZoneLabelCzed.
+  ///
+  /// In fr, this message translates to:
+  /// **'CZED'**
+  String get laserZoneLabelCzed;
+
+  /// No description provided for @laserValueMeter.
+  ///
+  /// In fr, this message translates to:
+  /// **'{value} m'**
+  String laserValueMeter(Object value);
+
+  /// No description provided for @laserPercentValue.
+  ///
+  /// In fr, this message translates to:
+  /// **'{value} %'**
+  String laserPercentValue(Object value);
+
+  /// No description provided for @laserLegalDisclaimerText.
+  ///
+  /// In fr, this message translates to:
+  /// **'AVERTISSEMENT LÉGAL ET CLAUSE DE NON-RESPONSABILITÉ\n\nL\'utilisation de ce calculateur est strictement réservée à titre informatif et indicatif.\nLes résultats obtenus ne constituent pas une expertise technique et ne sauraient engager la responsabilité de l\'éditeur en cas d\'erreur de calcul, d\'omission ou d\'accident survenus lors de l\'installation ou de l\'exploitation du matériel.\n\nCalculs NOHD et Instruments Optiques :\nDans certaines circonstances, des instruments optiques spéciaux (jumelles, télescopes) peuvent être utilisés pour visualiser le laser à une distance plus éloignée.\nCe fait doit être pris en compte lors de la détermination du NOHD.\nDans le calcul ci-joint, aucun instrument optique n\'est pris en compte, car il est très peu probable que cela doive être pris en compte dans l\'industrie courante du laser.\nCependant, il incombe à l\'opérateur de procéder à une évaluation appropriée des risques pour la sécurité.\n\nZones d\'Interférence Visuelle (SZED et CZED) :\nLes calculs des distances SZED (aveuglement temporaire) et CZED (éblouissement) sont basés sur des seuils d\'éclairement énergétique standards pour la vision humaine.\nCes valeurs ne sont valables que pour un observateur dont l\'œil est adapté à l\'obscurité (conditions de spectacle).\nCes résultats ne tiennent pas compte des conditions atmosphériques (brume, pluie, pollution) qui peuvent réduire ou diffuser la portée théorique du faisceau.\n\nParamètres Techniques :\nLe calculateur n\'est applicable que pour les sources laser en mode continu (CW) et n\'est valable que pour la plage de longueur d\'onde de 400 à 700 nm – paramètres standards pour les systèmes laser de spectacle.\n\nAcceptation des Risques :\nCe calculateur est fourni \"tel quel\".\nNous ne garantissons pas l\'exactitude et la précision des résultats.\nEn activant cet outil, l\'utilisateur reconnaît être un professionnel formé aux règles de sécurité en vigueur et accepte l\'entière responsabilité des risques liés à la mise en œuvre des équipements (laser, lumière, vidéo).\nVérifiez systématiquement les données avec les manuels constructeurs officiels.'**
+  String get laserLegalDisclaimerText;
+
+  /// No description provided for @laserLegalDisclaimerTextLong.
+  ///
+  /// In fr, this message translates to:
+  /// **'AVERTISSEMENT LÉGAL ET CLAUSE DE NON-RESPONSABILITÉ\n\nL\'utilisation de ce calculateur est strictement réservée à titre informatif et indicatif.\nLes résultats obtenus ne constituent pas une expertise technique et ne sauraient engager la responsabilité de l\'éditeur en cas d\'erreur de calcul, d\'omission ou d\'accident survenus lors de l\'installation ou de l\'exploitation du matériel.\n\nCalculs NOHD et Instruments Optiques :\nDans certaines circonstances, des instruments optiques spéciaux (jumelles, télescopes) peuvent être utilisés pour visualiser le laser à une distance plus éloignée.\nCe fait doit être pris en compte lors de la détermination du NOHD.\nDans le calcul ci-joint, aucun instrument optique n\'est pris en compte, car il est très peu probable que cela doive être pris en compte dans l\'industrie courante du laser.\nCependant, il incombe à l\'opérateur de procéder à une évaluation appropriée des risques pour la sécurité.\n\nZones d\'Interférence Visuelle (SZED et CZED) :\nLes calculs des distances SZED (aveuglement temporaire) et CZED (éblouissement) sont basés sur des seuils d\'éclairement énergétique standards pour la vision humaine.\nCes valeurs ne sont valables que pour un observateur dont l\'œil est adapté à l\'obscurité (conditions de spectacle).\nCes résultats ne tiennent pas compte des conditions atmosphériques (brume, pluie, pollution) qui peuvent réduire ou diffuser la portée théorique du faisceau.\n\nParamètres Techniques :\nLe calculateur n\'est applicable que pour les sources laser en mode continu (CW) et n\'est valable que pour la plage de longueur d\'onde de 400 à 700 nm – paramètres standards pour les systèmes laser de spectacle.\n\nAcceptation des Risques :\nCe calculateur est fourni \"tel quel\".\nNous ne garantissons pas l\'exactitude et la précision des résultats.\nEn activant cet outil, l\'utilisateur reconnaît être un professionnel formé aux règles de sécurité en vigueur et accepte l\'entière responsabilité des risques liés à la mise en œuvre des équipements (laser, lumière, vidéo).\nVérifiez systématiquement les données avec les manuels constructeurs officiels.'**
+  String get laserLegalDisclaimerTextLong;
 }
 
 class _AppLocalizationsDelegate
