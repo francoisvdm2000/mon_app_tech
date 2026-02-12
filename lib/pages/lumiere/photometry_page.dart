@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart';
+import '../../l10n/app_localizations.dart';
 import 'photometry_calculations.dart';
 
 class PhotometryPage extends StatefulWidget {
@@ -157,11 +158,13 @@ class _PhotometryPageState extends State<PhotometryPage> {
     final cd2 = _parse(_candela1.text) ?? 0.0;
     final d2 = _parse(_distance1.text) ?? 0.0;
 
+    final loc = AppLocalizations.of(context);
     setState(() {
-      _summary1 =
-          'Éclairement : ${_fmt(lux2, decimals: 1)} lux\n'
-          'Intensité lumineuse : ${_fmt(cd2, decimals: 0)} candela\n'
-          'Distance : ${_fmt(d2, decimals: 2)} mètre';
+      _summary1 = loc.photometrySummary1(
+        _fmt(lux2, decimals: 1),
+        _fmt(cd2, decimals: 0),
+        _fmt(d2, decimals: 2),
+      );
     });
   }
 
@@ -182,7 +185,8 @@ class _PhotometryPageState extends State<PhotometryPage> {
         if (!lmOk && cdOk) {
           final c = cd;
           if (c != null && c > 0) {
-            final computed = PhotometryCalculations.lumensFromCandelaAndBeamAngle(
+            final computed =
+                PhotometryCalculations.lumensFromCandelaAndBeamAngle(
               candela: c,
               beamAngleDegree: a,
             );
@@ -191,7 +195,8 @@ class _PhotometryPageState extends State<PhotometryPage> {
         } else if (!cdOk && lmOk) {
           final lm = lumens;
           if (lm != null && lm > 0) {
-            final computed = PhotometryCalculations.candelaFromLumensAndBeamAngle(
+            final computed =
+                PhotometryCalculations.candelaFromLumensAndBeamAngle(
               lumens: lm,
               beamAngleDegree: a,
             );
@@ -208,12 +213,14 @@ class _PhotometryPageState extends State<PhotometryPage> {
       beamAngleDegree: a2,
     );
 
+    final loc = AppLocalizations.of(context);
     setState(() {
-      _summary2 =
-          'Flux lumineux : ${_fmt(lm2, decimals: 0)} lumen\n'
-          'Intensité lumineuse : ${_fmt(cd2, decimals: 0)} candela\n'
-          'Angle de faisceau : ${_fmt(a2, decimals: 1)} degré\n'
-          'Angle solide : ${_fmt(omega, decimals: 3)} stéradian';
+      _summary2 = loc.photometrySummary2(
+        _fmt(lm2, decimals: 0),
+        _fmt(cd2, decimals: 0),
+        _fmt(a2, decimals: 1),
+        _fmt(omega, decimals: 3),
+      );
     });
   }
 
@@ -240,23 +247,27 @@ class _PhotometryPageState extends State<PhotometryPage> {
     final d2 = dist ?? 0.0;
     final a2 = angle ?? 0.0;
 
+    final loc = AppLocalizations.of(context);
     setState(() {
-      _summary3 =
-          'Flux lumineux : ${_fmt(lm2, decimals: 0)} lumen\n'
-          'Distance : ${_fmt(d2, decimals: 2)} mètre\n'
-          'Angle de faisceau : ${_fmt(a2, decimals: 1)} degré\n'
-          'Éclairement estimé : ${_fmt(lux, decimals: 1)} lux';
+      _summary3 = loc.photometrySummary3(
+        _fmt(lm2, decimals: 0),
+        _fmt(d2, decimals: 2),
+        _fmt(a2, decimals: 1),
+        _fmt(lux, decimals: 1),
+      );
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Photométrie'),
+        title: Text(loc.lightPhotometryTitle),
         actions: [
           IconButton(
-            tooltip: 'Réinitialiser',
+            tooltip: loc.commonReset,
             onPressed: _resetAll,
             icon: const Icon(Icons.restart_alt),
           ),
@@ -267,38 +278,41 @@ class _PhotometryPageState extends State<PhotometryPage> {
         child: Column(
           children: [
             ExpandSectionCard(
-              title: 'Lux et candela',
+              title: loc.photometrySection1Title,
               icon: Icons.light_mode,
               initiallyExpanded: true,
               child: Column(
                 children: [
                   TextField(
                     controller: _lux1,
-                    keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                    keyboardType:
+                        const TextInputType.numberWithOptions(decimal: true),
                     inputFormatters: [numFormatter],
-                    decoration: const InputDecoration(
-                      labelText: 'Éclairement (lux)',
-                      hintText: 'Exemple : 500',
+                    decoration: InputDecoration(
+                      labelText: loc.photometryLuxLabel,
+                      hintText: loc.photometryLuxHint,
                     ),
                   ),
                   const SizedBox(height: 12),
                   TextField(
                     controller: _candela1,
-                    keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                    keyboardType:
+                        const TextInputType.numberWithOptions(decimal: true),
                     inputFormatters: [numFormatter],
-                    decoration: const InputDecoration(
-                      labelText: 'Intensité lumineuse (candela)',
-                      hintText: 'Exemple : 20000',
+                    decoration: InputDecoration(
+                      labelText: loc.photometryCandelaLabel,
+                      hintText: loc.photometryCandelaHint1,
                     ),
                   ),
                   const SizedBox(height: 12),
                   TextField(
                     controller: _distance1,
-                    keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                    keyboardType:
+                        const TextInputType.numberWithOptions(decimal: true),
                     inputFormatters: [numFormatter],
-                    decoration: const InputDecoration(
-                      labelText: 'Distance (mètre)',
-                      hintText: 'Exemple : 5',
+                    decoration: InputDecoration(
+                      labelText: loc.photometryDistanceLabel,
+                      hintText: loc.photometryDistanceHint1,
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -308,38 +322,41 @@ class _PhotometryPageState extends State<PhotometryPage> {
             ),
             const SizedBox(height: 14),
             ExpandSectionCard(
-              title: 'Lumen et candela',
+              title: loc.photometrySection2Title,
               icon: Icons.flash_on,
               initiallyExpanded: false,
               child: Column(
                 children: [
                   TextField(
                     controller: _lumens2,
-                    keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                    keyboardType:
+                        const TextInputType.numberWithOptions(decimal: true),
                     inputFormatters: [numFormatter],
-                    decoration: const InputDecoration(
-                      labelText: 'Flux lumineux (lumen)',
-                      hintText: 'Exemple : 20000',
+                    decoration: InputDecoration(
+                      labelText: loc.photometryLumensLabel,
+                      hintText: loc.photometryLumensHint2,
                     ),
                   ),
                   const SizedBox(height: 12),
                   TextField(
                     controller: _candela2,
-                    keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                    keyboardType:
+                        const TextInputType.numberWithOptions(decimal: true),
                     inputFormatters: [numFormatter],
-                    decoration: const InputDecoration(
-                      labelText: 'Intensité lumineuse (candela)',
-                      hintText: 'Exemple : 150000',
+                    decoration: InputDecoration(
+                      labelText: loc.photometryCandelaLabel,
+                      hintText: loc.photometryCandelaHint2,
                     ),
                   ),
                   const SizedBox(height: 12),
                   TextField(
                     controller: _angle2,
-                    keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                    keyboardType:
+                        const TextInputType.numberWithOptions(decimal: true),
                     inputFormatters: [numFormatter],
-                    decoration: const InputDecoration(
-                      labelText: 'Angle de faisceau (degré)',
-                      hintText: 'Exemple : 10',
+                    decoration: InputDecoration(
+                      labelText: loc.photometryBeamAngleLabel,
+                      hintText: loc.photometryBeamAngleHint2,
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -349,38 +366,41 @@ class _PhotometryPageState extends State<PhotometryPage> {
             ),
             const SizedBox(height: 14),
             ExpandSectionCard(
-              title: 'Lux à partir de lumen',
+              title: loc.photometrySection3Title,
               icon: Icons.calculate,
               initiallyExpanded: false,
               child: Column(
                 children: [
                   TextField(
                     controller: _lumens3,
-                    keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                    keyboardType:
+                        const TextInputType.numberWithOptions(decimal: true),
                     inputFormatters: [numFormatter],
-                    decoration: const InputDecoration(
-                      labelText: 'Flux lumineux (lumen)',
-                      hintText: 'Exemple : 20000',
+                    decoration: InputDecoration(
+                      labelText: loc.photometryLumensLabel,
+                      hintText: loc.photometryLumensHint3,
                     ),
                   ),
                   const SizedBox(height: 12),
                   TextField(
                     controller: _distance3,
-                    keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                    keyboardType:
+                        const TextInputType.numberWithOptions(decimal: true),
                     inputFormatters: [numFormatter],
-                    decoration: const InputDecoration(
-                      labelText: 'Distance (mètre)',
-                      hintText: 'Exemple : 8',
+                    decoration: InputDecoration(
+                      labelText: loc.photometryDistanceLabel,
+                      hintText: loc.photometryDistanceHint3,
                     ),
                   ),
                   const SizedBox(height: 12),
                   TextField(
                     controller: _angle3,
-                    keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                    keyboardType:
+                        const TextInputType.numberWithOptions(decimal: true),
                     inputFormatters: [numFormatter],
-                    decoration: const InputDecoration(
-                      labelText: 'Angle de faisceau (degré)',
-                      hintText: 'Exemple : 15',
+                    decoration: InputDecoration(
+                      labelText: loc.photometryBeamAngleLabel,
+                      hintText: loc.photometryBeamAngleHint3,
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -389,10 +409,10 @@ class _PhotometryPageState extends State<PhotometryPage> {
               ),
             ),
             const SizedBox(height: 16),
-            const Text(
-              'Calculs indicatifs. Les résultats dépendent du faisceau réel, des optiques et des conditions de mesure.',
+            Text(
+              loc.photometryDisclaimerShort,
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white38, fontSize: 12),
+              style: const TextStyle(color: Colors.white38, fontSize: 12),
             ),
           ],
         ),

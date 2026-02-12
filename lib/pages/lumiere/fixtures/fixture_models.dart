@@ -147,18 +147,6 @@ class Product {
         if (manualUrl != null) 'manualUrl': manualUrl,
         if (dmxChartUrl != null) 'dmxChartUrl': dmxChartUrl,
       };
-
-  String displayInt(int? value, String unit) {
-    if (value == null || value <= 0) return 'Non renseigné';
-    return '$value $unit';
-  }
-
-  String displayDouble(double? value, String unit) {
-    if (value == null || value <= 0) return 'Non renseigné';
-    // Affichage propre: 1 décimale si besoin
-    final s = (value % 1 == 0) ? value.toStringAsFixed(0) : value.toStringAsFixed(1);
-    return '$s $unit';
-  }
 }
 
 class DmxMode {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart';
+import '../../l10n/app_localizations.dart';
 import 'dipswitch_calculations.dart';
 
 class DipSwitchPage extends StatefulWidget {
@@ -144,127 +145,180 @@ class _DipSwitchPageState extends State<DipSwitchPage> {
   }
 
   void _recomputeText() {
+    final loc = AppLocalizations.of(context);
+
     final a = _parseInt(_addressController.text);
-    final step = _parseInt(_intervalController.text) ?? 1;
+    final stepRaw = _parseInt(_intervalController.text) ?? 1;
+    final step = stepRaw <= 0 ? 1 : stepRaw;
 
     final lines = <String>[];
-    lines.add('Conversion indicative dip-switch / adresse DMX');
+
+    lines.add(loc.dipSwitchResultHeader);
     lines.add('');
-    lines.add('Mode : ${_useAddressMinusOne ? 'Adresse moins 1' : 'Adresse directe'}');
+    lines.add(
+      loc.dipSwitchResultModeLine(
+        _useAddressMinusOne
+            ? loc.dipSwitchModeAddressMinusOne
+            : loc.dipSwitchModeAddressDirect,
+      ),
+    );
     lines.add('');
 
     if (a == null) {
-      lines.add('Adresse DMX : non renseignée');
+      lines.add(loc.dipSwitchResultAddressNotProvided);
     } else {
       final value = _addressToBinaryValue(a);
-      lines.add('Adresse DMX : $a');
-      lines.add('Valeur binaire utilisée : $value');
+      lines.add(loc.dipSwitchResultAddressLine(a.toString()));
+      lines.add(loc.dipSwitchResultBinaryValueLine(value.toString()));
     }
 
-    lines.add('Intervalle : ${step <= 0 ? 1 : step} canal');
+    lines.add(
+      loc.dipSwitchResultIntervalLine(
+        step.toString(),
+        loc.dipSwitchChannelUnit(step),
+      ),
+    );
 
     setState(() => _result = lines.join('\n'));
   }
 
-Widget _dipSwitch() {
-  // Dimensions de base
-  const double baseDipWidth = 28;
-  const double baseDipHeight = 60;
-  const double baseKnobHeight = 22;
-  const double baseSpacing = 14;
+  Widget _dipSwitch() {
+    final loc = AppLocalizations.of(context);
 
-  // Largeur idéale (9 switches uniquement, plus de légende)
-  const double perSwitchWidth = baseDipWidth + baseSpacing;
-  const double idealTotalWidth = (9 * perSwitchWidth) - baseSpacing;
+    // Dimensions de base
+    const double baseDipWidth = 28;
+    const double baseDipHeight = 60;
+    const double baseKnobHeight = 22;
+    const double baseSpacing = 14;
 
-  return LayoutBuilder(
-    builder: (context, constraints) {
-      final available = constraints.maxWidth;
+    // Largeur idéale (9 switches uniquement, plus de légende)
+    const double perSwitchWidth = baseDipWidth + baseSpacing;
+    const double idealTotalWidth = (9 * perSwitchWidth) - baseSpacing;
 
-      // Scale down uniquement sur petits écrans
-      final scale = (available / idealTotalWidth).clamp(0.72, 1.0);
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final available = constraints.maxWidth;
 
-      final dipWidth = baseDipWidth * scale;
-      final dipHeight = baseDipHeight * scale;
-      final knobHeight = baseKnobHeight * scale;
-      final spacing = baseSpacing * scale;
+        // Scale down uniquement sur petits écrans
+        final scale = (available / idealTotalWidth).clamp(0.72, 1.0);
 
-      Widget dipToggle(int i) {
-        final weight = DipSwitchCalculations.weights[i];
-        final on = _switches[i];
+        final dipWidth = baseDipWidth * scale;
+        final dipHeight = baseDipHeight * scale;
+        final knobHeight = baseKnobHeight * scale;
+        final spacing = baseSpacing * scale;
 
-        return Padding(
-          padding: EdgeInsets.only(right: i == 8 ? 0 : spacing),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              RotatedBox(
-                quarterTurns: 3,
-                child: Text(
-                  'Switch ${i + 1}',
-                  style: TextStyle(color: Colors.white70, fontSize: 12 * scale),
+        Widget dipToggle(int i) {
+          final weight = DipSwitchCalculations.weights[i];
+          final on = _switches[i];
+
+          return Padding(
+            padding: EdgeInsets.only(right: i == 8 ? 0 : spacing),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                RotatedBox(
+                  quarterTurns: 3,
+                  child: Text(
+                    loc.dipSwitchSwitchLabel((i + 1).toString()),
+                    style:
+                        TextStyle(color: Colors.white70, fontSize: 12 * scale),
+                  ),
                 ),
-              ),
-              SizedBox(height: 4 * scale),
+                SizedBox(height: 4 * scale),
+                Text(
+                  '($weight)',
+                  style: TextStyle(color: Colors.white54, fontSize: 12 * scale),
+                ),
+                SizedBox(height: 6 * scale),
+                GestureDetector(
+                  onTap: () => _onSwitchToggled(i),
+                  child: Container(
+                    width: dipWidth,
+                    height: dipHeight,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(4 * scale),
+                      border: Border.all(color: Colors.white24),
+                    ),
+                    child: Stack(
+                      children: [
+                        // Repères intégrés (gain de place, explicite)
+                        Positioned(
+                          top: 4 * scale,
+                          left: 0,
+                          right: 0,
+                          child: Text(
+                            loc.dipSwitchOnLabel,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white54,
+                              fontSize: 9 * scale,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 4 * scale,
+                          left: 0,
+                          right: 0,
+                          child: Text(
+                            loc.dipSwitchOffLabel,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white38,
+                              fontSize: 9 * scale,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+
+                        // Knob
+                        Align(
+                          alignment:
+                              on ? Alignment.topCenter : Alignment.bottomCenter,
+                          child: Container(
+                            margin: EdgeInsets.all(3 * scale),
+                            height: knobHeight,
+                            decoration: BoxDecoration(
+                              color: on
+                                  ? Colors.greenAccent
+                                  : Colors.grey.shade700,
+                              borderRadius: BorderRadius.circular(3 * scale),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        }
+
+        return Container(
+          padding: const EdgeInsets.all(14),
+          decoration: BoxDecoration(
+            color: const Color(0xFF0B0B0B),
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(color: Colors.white12),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
               Text(
-                '($weight)',
+                loc.dipSwitchScrollHint,
                 style: TextStyle(color: Colors.white54, fontSize: 12 * scale),
               ),
-              SizedBox(height: 6 * scale),
-              GestureDetector(
-                onTap: () => _onSwitchToggled(i),
-                child: Container(
-                  width: dipWidth,
-                  height: dipHeight,
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(4 * scale),
-                    border: Border.all(color: Colors.white24),
-                  ),
-                  child: Stack(
+              const SizedBox(height: 10),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      // Repères intégrés (gain de place, explicite)
-                      Positioned(
-                        top: 4 * scale,
-                        left: 0,
-                        right: 0,
-                        child: Text(
-                          'ON',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white54,
-                            fontSize: 9 * scale,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 4 * scale,
-                        left: 0,
-                        right: 0,
-                        child: Text(
-                          'OFF',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white38,
-                            fontSize: 9 * scale,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ),
-
-                      // Knob
-                      Align(
-                        alignment: on ? Alignment.topCenter : Alignment.bottomCenter,
-                        child: Container(
-                          margin: EdgeInsets.all(3 * scale),
-                          height: knobHeight,
-                          decoration: BoxDecoration(
-                            color: on ? Colors.greenAccent : Colors.grey.shade700,
-                            borderRadius: BorderRadius.circular(3 * scale),
-                          ),
-                        ),
-                      ),
+                      for (int i = 0; i < 9; i++) dipToggle(i),
                     ],
                   ),
                 ),
@@ -272,53 +326,20 @@ Widget _dipSwitch() {
             ],
           ),
         );
-      }
-
-      return Container(
-        padding: const EdgeInsets.all(14),
-        decoration: BoxDecoration(
-          color: const Color(0xFF0B0B0B),
-          borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: Colors.white12),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              'Fais défiler horizontalement si nécessaire.',
-              style: TextStyle(color: Colors.white54, fontSize: 12 * scale),
-            ),
-            const SizedBox(height: 10),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    for (int i = 0; i < 9; i++) dipToggle(i),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      );
-    },
-  );
-}
-
-
-
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Dip-switch DMX'),
+        title: Text(loc.lightDmxSwitchTitle),
         actions: [
           IconButton(
-            tooltip: 'Réinitialiser',
+            tooltip: loc.dipSwitchResetTooltip,
             onPressed: _resetAll,
             icon: const Icon(Icons.restart_alt),
           ),
@@ -329,7 +350,7 @@ Widget _dipSwitch() {
         child: Column(
           children: [
             ExpandSectionCard(
-              title: 'Entrées',
+              title: loc.dipSwitchInputsTitle,
               icon: Icons.edit,
               initiallyExpanded: true,
               child: Column(
@@ -338,9 +359,9 @@ Widget _dipSwitch() {
                     controller: _addressController,
                     keyboardType: TextInputType.number,
                     inputFormatters: [numFormatter],
-                    decoration: const InputDecoration(
-                      labelText: 'Adresse DMX (1 à 512)',
-                      hintText: 'Exemple : 1',
+                    decoration: InputDecoration(
+                      labelText: loc.dipSwitchAddressLabel,
+                      hintText: loc.dipSwitchAddressHint,
                     ),
                   ),
                   const SizedBox(height: 12),
@@ -348,18 +369,18 @@ Widget _dipSwitch() {
                     controller: _intervalController,
                     keyboardType: TextInputType.number,
                     inputFormatters: [numFormatter],
-                    decoration: const InputDecoration(
-                      labelText: 'Intervalle (nombre de canaux)',
-                      hintText: 'Exemple : 16',
+                    decoration: InputDecoration(
+                      labelText: loc.dipSwitchIntervalLabel,
+                      hintText: loc.dipSwitchIntervalHint,
                     ),
                   ),
                   const SizedBox(height: 12),
                   Row(
                     children: [
-                      const Expanded(
+                      Expanded(
                         child: Text(
-                          'Utiliser adresse moins 1',
-                          style: TextStyle(color: Colors.white70),
+                          loc.dipSwitchUseAddressMinusOneLabel,
+                          style: const TextStyle(color: Colors.white70),
                         ),
                       ),
                       Switch(
@@ -373,33 +394,31 @@ Widget _dipSwitch() {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: _nextAddress,
-                      child: const Text('Adresse suivante selon l’intervalle'),
+                      child: Text(loc.dipSwitchNextAddressButton),
                     ),
                   ),
                 ],
               ),
             ),
             const SizedBox(height: 14),
-
             ExpandSectionCard(
-              title: 'Dip-switch',
+              title: loc.dipSwitchSectionTitle,
               icon: Icons.tune,
               initiallyExpanded: true,
               child: _dipSwitch(),
             ),
-
             const SizedBox(height: 14),
             ExpandSectionCard(
-              title: 'Résumé',
+              title: loc.dipSwitchSummaryTitle,
               icon: Icons.info_outline,
               initiallyExpanded: true,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   if (_endOfUniverseWarning) ...[
-                    const Text(
-                      'Fin de l’univers : l’adresse suivante dépasserait 512.',
-                      style: TextStyle(
+                    Text(
+                      loc.dipSwitchEndOfUniverseWarning,
+                      style: const TextStyle(
                         color: Colors.redAccent,
                         fontWeight: FontWeight.w800,
                       ),

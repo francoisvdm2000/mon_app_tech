@@ -759,6 +759,237 @@
 "laserZoneLabelSzed": "SZED",
 "laserZoneLabelCzed": "CZED",
 
+  "catalogUpdateTooltip": "Mettre à jour",
+  "catalogResetTooltip": "Réinitialiser",
+
+  "catalogLastUpdate": "Dernière mise à jour : {date}",
+  "@catalogLastUpdate": { "placeholders": { "date": {} } },
+
+  "catalogManufacturerTitle": "Constructeur ({count})",
+  "@catalogManufacturerTitle": { "placeholders": { "count": {} } },
+
+  "catalogTypeTitle": "Type de projecteur ({count})",
+  "@catalogTypeTitle": { "placeholders": { "count": {} } },
+
+  "catalogModelTitle": "Modèle ({count})",
+  "@catalogModelTitle": { "placeholders": { "count": {} } },
+
+  "catalogDmxModeTitle": "Mode DMX ({count})",
+  "@catalogDmxModeTitle": { "placeholders": { "count": {} } },
+
+  "catalogDmxModeItem": "{name} ({channels} canaux)",
+  "@catalogDmxModeItem": {
+    "placeholders": {
+      "name": {},
+      "channels": {}
+    }
+  },
+
+  "catalogInfoDmxChannels": "Canaux DMX",
+  "catalogInfoWeight": "Poids",
+  "catalogInfoPower": "Puissance",
+  "catalogInfoLuminousFlux": "Flux lumineux",
+
+  "catalogNotProvided": "Non renseigné",
+
+    "catalogUpdateTooltip": "Mettre à jour",
+  "catalogResetTooltip": "Réinitialiser",
+
+  "catalogUpdated": "Catalogue mis à jour.",
+  "catalogSyncFailedUnknown": "Synchronisation impossible (raison inconnue).",
+  "catalogSyncFailed": "Synchronisation impossible : {error}",
+  "@catalogSyncFailed": { "placeholders": { "error": {} } },
+
+  "catalogSyncError": "Échec synchronisation : {error}",
+  "@catalogSyncError": { "placeholders": { "error": {} } },
+
+  "catalogLastUpdate": "Dernière mise à jour : {date}",
+  "@catalogLastUpdate": { "placeholders": { "date": {} } },
+
+  "catalogManufacturerTitle": "Constructeur ({count})",
+  "@catalogManufacturerTitle": { "placeholders": { "count": {} } },
+
+  "catalogTypeTitle": "Type de projecteur ({count})",
+  "@catalogTypeTitle": { "placeholders": { "count": {} } },
+
+  "catalogModelTitle": "Modèle ({count})",
+  "@catalogModelTitle": { "placeholders": { "count": {} } },
+
+  "catalogDmxModeTitle": "Mode DMX ({count})",
+  "@catalogDmxModeTitle": { "placeholders": { "count": {} } },
+
+  "catalogDmxModeItem": "{name} ({channels} canaux)",
+  "@catalogDmxModeItem": { "placeholders": { "name": {}, "channels": {} } },
+
+    "dipSwitchResetTooltip": "Réinitialiser",
+
+  "dipSwitchInputsTitle": "Entrées",
+  "dipSwitchSectionTitle": "Dip-switch",
+  "dipSwitchSummaryTitle": "Résumé",
+
+  "dipSwitchAddressLabel": "Adresse DMX (1 à 512)",
+  "dipSwitchAddressHint": "Exemple : 1",
+
+  "dipSwitchIntervalLabel": "Intervalle (nombre de canaux)",
+  "dipSwitchIntervalHint": "Exemple : 16",
+
+  "dipSwitchUseAddressMinusOneLabel": "Utiliser adresse moins 1",
+  "dipSwitchNextAddressButton": "Adresse suivante selon l’intervalle",
+
+  "dipSwitchEndOfUniverseWarning": "Fin de l’univers : l’adresse suivante dépasserait 512.",
+
+  "dipSwitchScrollHint": "Fais défiler horizontalement si nécessaire.",
+
+  "dipSwitchOnLabel": "ON",
+  "dipSwitchOffLabel": "OFF",
+
+  "dipSwitchSwitchLabel": "Switch {index}",
+  "@dipSwitchSwitchLabel": {
+    "placeholders": { "index": {} }
+  },
+
+  "dipSwitchResultHeader": "Conversion indicative dip-switch / adresse DMX",
+
+  "dipSwitchModeAddressMinusOne": "Adresse moins 1",
+  "dipSwitchModeAddressDirect": "Adresse directe",
+
+  "dipSwitchResultModeLine": "Mode : {mode}",
+  "@dipSwitchResultModeLine": {
+    "placeholders": { "mode": {} }
+  },
+
+  "dipSwitchResultAddressNotProvided": "Adresse DMX : non renseignée",
+
+  "dipSwitchResultAddressLine": "Adresse DMX : {address}",
+  "@dipSwitchResultAddressLine": {
+    "placeholders": { "address": {} }
+  },
+
+  "photometrySection1Title": "Lux et candela",
+  "photometrySection2Title": "Lumen et candela",
+  "photometrySection3Title": "Lux à partir de lumen",
+
+  "photometryLuxLabel": "Éclairement (lux)",
+  "photometryLuxHint": "Exemple : 500",
+
+  "photometryCandelaLabel": "Intensité lumineuse (candela)",
+  "photometryCandelaHint1": "Exemple : 20000",
+  "photometryCandelaHint2": "Exemple : 150000",
+
+  "photometryDistanceLabel": "Distance (mètre)",
+  "photometryDistanceHint1": "Exemple : 5",
+  "photometryDistanceHint3": "Exemple : 8",
+
+  "photometryLumensLabel": "Flux lumineux (lumen)",
+  "photometryLumensHint2": "Exemple : 20000",
+  "photometryLumensHint3": "Exemple : 20000",
+
+  "photometryBeamAngleLabel": "Angle de faisceau (degré)",
+  "photometryBeamAngleHint2": "Exemple : 10",
+  "photometryBeamAngleHint3": "Exemple : 15",
+
+  "photometrySummary1": "Éclairement : {lux} lux\nIntensité lumineuse : {candela} candela\nDistance : {distance} mètre",
+  "@photometrySummary1": {
+    "placeholders": {
+      "lux": {},
+      "candela": {},
+      "distance": {}
+    }
+  },
+
+  "photometrySummary2": "Flux lumineux : {lumens} lumen\nIntensité lumineuse : {candela} candela\nAngle de faisceau : {angle} degré\nAngle solide : {omega} stéradian",
+  "@photometrySummary2": {
+    "placeholders": {
+      "lumens": {},
+      "candela": {},
+      "angle": {},
+      "omega": {}
+    }
+  },
+  "projectionInputsTitle": "Entrées",
+  "projectionResultsTitle": "Résultats",
+
+  "projectionAngleLabel": "Angle de faisceau (degré)",
+  "projectionAngleHint": "Exemple : 15",
+
+  "projectionDistanceLabel": "Distance (mètre)",
+  "projectionDistanceHint": "Exemple : 10",
+
+  "projectionDiameterLabel": "Diamètre de tache (mètre)",
+  "projectionDiameterHint": "Exemple : 2,60",
+
+  "projectionAutoHelp": "Le calcul automatique se met à jour lorsque deux champs sont renseignés.",
+
+  "projectionHeaderNeedTwoValues": "Saisis deux valeurs pour calculer automatiquement la troisième.",
+  "projectionHeaderAutoActive": "Calcul automatique actif.",
+
+  "projectionDetailAngle": "Angle de faisceau : {value} degré",
+  "@projectionDetailAngle": { "placeholders": { "value": {} } },
+
+  "projectionDetailDistance": "Distance : {value} mètre",
+  "@projectionDetailDistance": { "placeholders": { "value": {} } },
+
+  "projectionDetailDiameter": "Diamètre de tache : {value} mètre",
+  "@projectionDetailDiameter": { "placeholders": { "value": {} } },
+
+  "projectionConeAngle": "Angle {angle}°",
+  "@projectionConeAngle": { "placeholders": { "angle": {} } },
+
+  "projectionConeDistance": "{distance} m",
+  "@projectionConeDistance": { "placeholders": { "distance": {} } },
+
+  "projectionConeDiameter": "{diameter} m",
+  "@projectionConeDiameter": { "placeholders": { "diameter": {} } },
+
+  "photometrySummary3": "Flux lumineux : {lumens} lumen\nDistance : {distance} mètre\nAngle de faisceau : {angle} degré\nÉclairement estimé : {lux} lux",
+  "@photometrySummary3": {
+    "placeholders": {
+      "lumens": {},
+      "distance": {},
+      "angle": {},
+      "lux": {}
+    }
+  },
+
+  "photometryDisclaimerShort": "Calculs indicatifs. Les résultats dépendent du faisceau réel, des optiques et des conditions de mesure.",
+
+
+  "dipSwitchResultBinaryValueLine": "Valeur binaire utilisée : {value}",
+  "@dipSwitchResultBinaryValueLine": {
+    "placeholders": { "value": {} }
+  },
+
+  "dipSwitchChannelUnit": "{count,plural,one{canal}other{canaux}}",
+  "@dipSwitchChannelUnit": {
+    "placeholders": { "count": {} }
+  },
+
+  "dipSwitchResultIntervalLine": "Intervalle : {step} {unit}",
+  "@dipSwitchResultIntervalLine": {
+    "placeholders": {
+      "step": {},
+      "unit": {}
+    }
+  },
+
+  "catalogInfoDmxChannels": "Canaux DMX",
+  "catalogInfoWeight": "Poids",
+  "catalogInfoPower": "Puissance",
+  "catalogInfoLuminousFlux": "Flux lumineux",
+
+  "catalogNotProvided": "Non renseigné",
+
+  "catalogOpenManual": "Ouvrir le manuel",
+  "catalogOpenDmxChart": "Ouvrir la charte DMX",
+
+  "catalogSyncFailedUnknown": "Synchronisation impossible (raison inconnue).",
+  "catalogSyncFailed": "Synchronisation impossible : {reason}",
+  "@catalogSyncFailed": { "placeholders": { "reason": {} } },
+
+  "catalogUpdated": "Catalogue mis à jour.",
+  "catalogSyncError": "Échec synchronisation : {error}",
+  "@catalogSyncError": { "placeholders": { "error": {} } },
+
 "laserConsentCheckboxLabel": "Je comprends les risques et j’assume ma responsabilité.",
 "laserConsentContinue": "J'accepte et continuer",
 
@@ -770,5 +1001,7 @@
 
   "laserLegalDisclaimerText": "AVERTISSEMENT LÉGAL ET CLAUSE DE NON-RESPONSABILITÉ\n\nL'utilisation de ce calculateur est strictement réservée à titre informatif et indicatif.\nLes résultats obtenus ne constituent pas une expertise technique et ne sauraient engager la responsabilité de l'éditeur en cas d'erreur de calcul, d'omission ou d'accident survenus lors de l'installation ou de l'exploitation du matériel.\n\nCalculs NOHD et Instruments Optiques :\nDans certaines circonstances, des instruments optiques spéciaux (jumelles, télescopes) peuvent être utilisés pour visualiser le laser à une distance plus éloignée.\nCe fait doit être pris en compte lors de la détermination du NOHD.\nDans le calcul ci-joint, aucun instrument optique n'est pris en compte, car il est très peu probable que cela doive être pris en compte dans l'industrie courante du laser.\nCependant, il incombe à l'opérateur de procéder à une évaluation appropriée des risques pour la sécurité.\n\nZones d'Interférence Visuelle (SZED et CZED) :\nLes calculs des distances SZED (aveuglement temporaire) et CZED (éblouissement) sont basés sur des seuils d'éclairement énergétique standards pour la vision humaine.\nCes valeurs ne sont valables que pour un observateur dont l'œil est adapté à l'obscurité (conditions de spectacle).\nCes résultats ne tiennent pas compte des conditions atmosphériques (brume, pluie, pollution) qui peuvent réduire ou diffuser la portée théorique du faisceau.\n\nParamètres Techniques :\nLe calculateur n'est applicable que pour les sources laser en mode continu (CW) et n'est valable que pour la plage de longueur d'onde de 400 à 700 nm – paramètres standards pour les systèmes laser de spectacle.\n\nAcceptation des Risques :\nCe calculateur est fourni \"tel quel\".\nNous ne garantissons pas l'exactitude et la précision des résultats.\nEn activant cet outil, l'utilisateur reconnaît être un professionnel formé aux règles de sécurité en vigueur et accepte l'entière responsabilité des risques liés à la mise en œuvre des équipements (laser, lumière, vidéo).\nVérifiez systématiquement les données avec les manuels constructeurs officiels.",
 
- "laserLegalDisclaimerTextLong": "AVERTISSEMENT LÉGAL ET CLAUSE DE NON-RESPONSABILITÉ\n\nL'utilisation de ce calculateur est strictement réservée à titre informatif et indicatif.\nLes résultats obtenus ne constituent pas une expertise technique et ne sauraient engager la responsabilité de l'éditeur en cas d'erreur de calcul, d'omission ou d'accident survenus lors de l'installation ou de l'exploitation du matériel.\n\nCalculs NOHD et Instruments Optiques :\nDans certaines circonstances, des instruments optiques spéciaux (jumelles, télescopes) peuvent être utilisés pour visualiser le laser à une distance plus éloignée.\nCe fait doit être pris en compte lors de la détermination du NOHD.\nDans le calcul ci-joint, aucun instrument optique n'est pris en compte, car il est très peu probable que cela doive être pris en compte dans l'industrie courante du laser.\nCependant, il incombe à l'opérateur de procéder à une évaluation appropriée des risques pour la sécurité.\n\nZones d'Interférence Visuelle (SZED et CZED) :\nLes calculs des distances SZED (aveuglement temporaire) et CZED (éblouissement) sont basés sur des seuils d'éclairement énergétique standards pour la vision humaine.\nCes valeurs ne sont valables que pour un observateur dont l'œil est adapté à l'obscurité (conditions de spectacle).\nCes résultats ne tiennent pas compte des conditions atmosphériques (brume, pluie, pollution) qui peuvent réduire ou diffuser la portée théorique du faisceau.\n\nParamètres Techniques :\nLe calculateur n'est applicable que pour les sources laser en mode continu (CW) et n'est valable que pour la plage de longueur d'onde de 400 à 700 nm – paramètres standards pour les systèmes laser de spectacle.\n\nAcceptation des Risques :\nCe calculateur est fourni \"tel quel\".\nNous ne garantissons pas l'exactitude et la précision des résultats.\nEn activant cet outil, l'utilisateur reconnaît être un professionnel formé aux règles de sécurité en vigueur et accepte l'entière responsabilité des risques liés à la mise en œuvre des équipements (laser, lumière, vidéo).\nVérifiez systématiquement les données avec les manuels constructeurs officiels."
+ "laserLegalDisclaimerTextLong": "AVERTISSEMENT LÉGAL ET CLAUSE DE NON-RESPONSABILITÉ\n\nL'utilisation de ce calculateur est strictement réservée à titre informatif et indicatif.\nLes résultats obtenus ne constituent pas une expertise technique et ne sauraient engager la responsabilité de l'éditeur en cas d'erreur de calcul, d'omission ou d'accident survenus lors de l'installation ou de l'exploitation du matériel.\n\nCalculs NOHD et Instruments Optiques :\nDans certaines circonstances, des instruments optiques spéciaux (jumelles, télescopes) peuvent être utilisés pour visualiser le laser à une distance plus éloignée.\nCe fait doit être pris en compte lors de la détermination du NOHD.\nDans le calcul ci-joint, aucun instrument optique n'est pris en compte, car il est très peu probable que cela doive être pris en compte dans l'industrie courante du laser.\nCependant, il incombe à l'opérateur de procéder à une évaluation appropriée des risques pour la sécurité.\n\nZones d'Interférence Visuelle (SZED et CZED) :\nLes calculs des distances SZED (aveuglement temporaire) et CZED (éblouissement) sont basés sur des seuils d'éclairement énergétique standards pour la vision humaine.\nCes valeurs ne sont valables que pour un observateur dont l'œil est adapté à l'obscurité (conditions de spectacle).\nCes résultats ne tiennent pas compte des conditions atmosphériques (brume, pluie, pollution) qui peuvent réduire ou diffuser la portée théorique du faisceau.\n\nParamètres Techniques :\nLe calculateur n'est applicable que pour les sources laser en mode continu (CW) et n'est valable que pour la plage de longueur d'onde de 400 à 700 nm – paramètres standards pour les systèmes laser de spectacle.\n\nAcceptation des Risques :\nCe calculateur est fourni \"tel quel\".\nNous ne garantissons pas l'exactitude et la précision des résultats.\nEn activant cet outil, l'utilisateur reconnaît être un professionnel formé aux règles de sécurité en vigueur et accepte l'entière responsabilité des risques liés à la mise en œuvre des équipements (laser, lumière, vidéo).\nVérifiez systématiquement les données avec les manuels constructeurs officiels.",
+"commonDash": "—"
+
 }

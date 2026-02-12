@@ -9,7 +9,8 @@ import 'fixture_repository.dart';
 
 // Import uniquement Web (implémentation fetch)
 // Sur mobile, ce fichier n’est pas utilisé.
-import 'fixture_hybrid_repository_web.dart' if (dart.library.io) 'fixture_hybrid_repository_web_noop.dart';
+import 'fixture_hybrid_repository_web.dart'
+    if (dart.library.io) 'fixture_hybrid_repository_web_noop.dart';
 
 class FixtureHybridRepository {
   static const _cacheKey = 'fixture_catalog_cache_v12';
@@ -42,7 +43,7 @@ class FixtureHybridRepository {
         }
       }
     } catch (_) {
-      // ignore
+      // Ignore cache errors and fall back to assets.
     }
 
     lastSource = 'assets';
@@ -53,12 +54,14 @@ class FixtureHybridRepository {
     lastError = '';
 
     try {
-      final body = kIsWeb ? await fetchTextWeb(_remoteUrl) : await _fetchTextIo(_remoteUrl);
+      final body = kIsWeb
+          ? await fetchTextWeb(_remoteUrl)
+          : await _fetchTextIo(_remoteUrl);
 
       final decoded = json.decode(body);
       if (decoded is! Map<String, dynamic>) {
         lastSource = 'remote_error';
-        lastError = 'JSON invalide';
+        lastError = 'Invalid JSON (expected object root).';
         return null;
       }
 
@@ -80,9 +83,16 @@ class FixtureHybridRepository {
       Uri.parse(url),
       headers: const {'Cache-Control': 'no-cache'},
     );
+
     if (res.statusCode != 200) {
-      throw Exception('HTTP ${res.statusCode}');
+      throw Exception('HTTP error: ${res.statusCode}');
     }
-    return res.body;
+
+    final body = res.body;
+    if (body.trim().isEmpty) {
+      throw Exception('Empty response');
+    }
+
+    return body;
   }
 }

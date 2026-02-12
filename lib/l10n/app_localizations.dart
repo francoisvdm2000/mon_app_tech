@@ -2513,6 +2513,494 @@ abstract class AppLocalizations {
   /// **'{value} %'**
   String laserPercentValue(Object value);
 
+  /// No description provided for @catalogUpdateTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mettre à jour'**
+  String get catalogUpdateTooltip;
+
+  /// No description provided for @catalogResetTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réinitialiser'**
+  String get catalogResetTooltip;
+
+  /// No description provided for @catalogLastUpdate.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dernière mise à jour : {date}'**
+  String catalogLastUpdate(Object date);
+
+  /// No description provided for @catalogManufacturerTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Constructeur ({count})'**
+  String catalogManufacturerTitle(Object count);
+
+  /// No description provided for @catalogTypeTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Type de projecteur ({count})'**
+  String catalogTypeTitle(Object count);
+
+  /// No description provided for @catalogModelTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modèle ({count})'**
+  String catalogModelTitle(Object count);
+
+  /// No description provided for @catalogDmxModeTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mode DMX ({count})'**
+  String catalogDmxModeTitle(Object count);
+
+  /// No description provided for @catalogDmxModeItem.
+  ///
+  /// In fr, this message translates to:
+  /// **'{name} ({channels} canaux)'**
+  String catalogDmxModeItem(Object name, Object channels);
+
+  /// No description provided for @catalogInfoDmxChannels.
+  ///
+  /// In fr, this message translates to:
+  /// **'Canaux DMX'**
+  String get catalogInfoDmxChannels;
+
+  /// No description provided for @catalogInfoWeight.
+  ///
+  /// In fr, this message translates to:
+  /// **'Poids'**
+  String get catalogInfoWeight;
+
+  /// No description provided for @catalogInfoPower.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance'**
+  String get catalogInfoPower;
+
+  /// No description provided for @catalogInfoLuminousFlux.
+  ///
+  /// In fr, this message translates to:
+  /// **'Flux lumineux'**
+  String get catalogInfoLuminousFlux;
+
+  /// No description provided for @catalogNotProvided.
+  ///
+  /// In fr, this message translates to:
+  /// **'Non renseigné'**
+  String get catalogNotProvided;
+
+  /// No description provided for @catalogUpdated.
+  ///
+  /// In fr, this message translates to:
+  /// **'Catalogue mis à jour.'**
+  String get catalogUpdated;
+
+  /// No description provided for @catalogSyncFailedUnknown.
+  ///
+  /// In fr, this message translates to:
+  /// **'Synchronisation impossible (raison inconnue).'**
+  String get catalogSyncFailedUnknown;
+
+  /// No description provided for @catalogSyncFailed.
+  ///
+  /// In fr, this message translates to:
+  /// **'Synchronisation impossible : {reason}'**
+  String catalogSyncFailed(Object reason);
+
+  /// No description provided for @catalogSyncError.
+  ///
+  /// In fr, this message translates to:
+  /// **'Échec synchronisation : {error}'**
+  String catalogSyncError(Object error);
+
+  /// No description provided for @dipSwitchResetTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réinitialiser'**
+  String get dipSwitchResetTooltip;
+
+  /// No description provided for @dipSwitchInputsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entrées'**
+  String get dipSwitchInputsTitle;
+
+  /// No description provided for @dipSwitchSectionTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip-switch'**
+  String get dipSwitchSectionTitle;
+
+  /// No description provided for @dipSwitchSummaryTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résumé'**
+  String get dipSwitchSummaryTitle;
+
+  /// No description provided for @dipSwitchAddressLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse DMX (1 à 512)'**
+  String get dipSwitchAddressLabel;
+
+  /// No description provided for @dipSwitchAddressHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exemple : 1'**
+  String get dipSwitchAddressHint;
+
+  /// No description provided for @dipSwitchIntervalLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Intervalle (nombre de canaux)'**
+  String get dipSwitchIntervalLabel;
+
+  /// No description provided for @dipSwitchIntervalHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exemple : 16'**
+  String get dipSwitchIntervalHint;
+
+  /// No description provided for @dipSwitchUseAddressMinusOneLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Utiliser adresse moins 1'**
+  String get dipSwitchUseAddressMinusOneLabel;
+
+  /// No description provided for @dipSwitchNextAddressButton.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse suivante selon l’intervalle'**
+  String get dipSwitchNextAddressButton;
+
+  /// No description provided for @dipSwitchEndOfUniverseWarning.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fin de l’univers : l’adresse suivante dépasserait 512.'**
+  String get dipSwitchEndOfUniverseWarning;
+
+  /// No description provided for @dipSwitchScrollHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fais défiler horizontalement si nécessaire.'**
+  String get dipSwitchScrollHint;
+
+  /// No description provided for @dipSwitchOnLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'ON'**
+  String get dipSwitchOnLabel;
+
+  /// No description provided for @dipSwitchOffLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'OFF'**
+  String get dipSwitchOffLabel;
+
+  /// No description provided for @dipSwitchSwitchLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Switch {index}'**
+  String dipSwitchSwitchLabel(Object index);
+
+  /// No description provided for @dipSwitchResultHeader.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conversion indicative dip-switch / adresse DMX'**
+  String get dipSwitchResultHeader;
+
+  /// No description provided for @dipSwitchModeAddressMinusOne.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse moins 1'**
+  String get dipSwitchModeAddressMinusOne;
+
+  /// No description provided for @dipSwitchModeAddressDirect.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse directe'**
+  String get dipSwitchModeAddressDirect;
+
+  /// No description provided for @dipSwitchResultModeLine.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mode : {mode}'**
+  String dipSwitchResultModeLine(Object mode);
+
+  /// No description provided for @dipSwitchResultAddressNotProvided.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse DMX : non renseignée'**
+  String get dipSwitchResultAddressNotProvided;
+
+  /// No description provided for @dipSwitchResultAddressLine.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse DMX : {address}'**
+  String dipSwitchResultAddressLine(Object address);
+
+  /// No description provided for @photometrySection1Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lux et candela'**
+  String get photometrySection1Title;
+
+  /// No description provided for @photometrySection2Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lumen et candela'**
+  String get photometrySection2Title;
+
+  /// No description provided for @photometrySection3Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lux à partir de lumen'**
+  String get photometrySection3Title;
+
+  /// No description provided for @photometryLuxLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Éclairement (lux)'**
+  String get photometryLuxLabel;
+
+  /// No description provided for @photometryLuxHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exemple : 500'**
+  String get photometryLuxHint;
+
+  /// No description provided for @photometryCandelaLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Intensité lumineuse (candela)'**
+  String get photometryCandelaLabel;
+
+  /// No description provided for @photometryCandelaHint1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exemple : 20000'**
+  String get photometryCandelaHint1;
+
+  /// No description provided for @photometryCandelaHint2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exemple : 150000'**
+  String get photometryCandelaHint2;
+
+  /// No description provided for @photometryDistanceLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Distance (mètre)'**
+  String get photometryDistanceLabel;
+
+  /// No description provided for @photometryDistanceHint1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exemple : 5'**
+  String get photometryDistanceHint1;
+
+  /// No description provided for @photometryDistanceHint3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exemple : 8'**
+  String get photometryDistanceHint3;
+
+  /// No description provided for @photometryLumensLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Flux lumineux (lumen)'**
+  String get photometryLumensLabel;
+
+  /// No description provided for @photometryLumensHint2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exemple : 20000'**
+  String get photometryLumensHint2;
+
+  /// No description provided for @photometryLumensHint3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exemple : 20000'**
+  String get photometryLumensHint3;
+
+  /// No description provided for @photometryBeamAngleLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle de faisceau (degré)'**
+  String get photometryBeamAngleLabel;
+
+  /// No description provided for @photometryBeamAngleHint2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exemple : 10'**
+  String get photometryBeamAngleHint2;
+
+  /// No description provided for @photometryBeamAngleHint3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exemple : 15'**
+  String get photometryBeamAngleHint3;
+
+  /// No description provided for @photometrySummary1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Éclairement : {lux} lux\nIntensité lumineuse : {candela} candela\nDistance : {distance} mètre'**
+  String photometrySummary1(Object lux, Object candela, Object distance);
+
+  /// No description provided for @photometrySummary2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Flux lumineux : {lumens} lumen\nIntensité lumineuse : {candela} candela\nAngle de faisceau : {angle} degré\nAngle solide : {omega} stéradian'**
+  String photometrySummary2(
+      Object lumens, Object candela, Object angle, Object omega);
+
+  /// No description provided for @projectionInputsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entrées'**
+  String get projectionInputsTitle;
+
+  /// No description provided for @projectionResultsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résultats'**
+  String get projectionResultsTitle;
+
+  /// No description provided for @projectionAngleLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle de faisceau (degré)'**
+  String get projectionAngleLabel;
+
+  /// No description provided for @projectionAngleHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exemple : 15'**
+  String get projectionAngleHint;
+
+  /// No description provided for @projectionDistanceLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Distance (mètre)'**
+  String get projectionDistanceLabel;
+
+  /// No description provided for @projectionDistanceHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exemple : 10'**
+  String get projectionDistanceHint;
+
+  /// No description provided for @projectionDiameterLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Diamètre de tache (mètre)'**
+  String get projectionDiameterLabel;
+
+  /// No description provided for @projectionDiameterHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exemple : 2,60'**
+  String get projectionDiameterHint;
+
+  /// No description provided for @projectionAutoHelp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le calcul automatique se met à jour lorsque deux champs sont renseignés.'**
+  String get projectionAutoHelp;
+
+  /// No description provided for @projectionHeaderNeedTwoValues.
+  ///
+  /// In fr, this message translates to:
+  /// **'Saisis deux valeurs pour calculer automatiquement la troisième.'**
+  String get projectionHeaderNeedTwoValues;
+
+  /// No description provided for @projectionHeaderAutoActive.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul automatique actif.'**
+  String get projectionHeaderAutoActive;
+
+  /// No description provided for @projectionDetailAngle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle de faisceau : {value} degré'**
+  String projectionDetailAngle(Object value);
+
+  /// No description provided for @projectionDetailDistance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Distance : {value} mètre'**
+  String projectionDetailDistance(Object value);
+
+  /// No description provided for @projectionDetailDiameter.
+  ///
+  /// In fr, this message translates to:
+  /// **'Diamètre de tache : {value} mètre'**
+  String projectionDetailDiameter(Object value);
+
+  /// No description provided for @projectionConeAngle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle {angle}°'**
+  String projectionConeAngle(Object angle);
+
+  /// No description provided for @projectionConeDistance.
+  ///
+  /// In fr, this message translates to:
+  /// **'{distance} m'**
+  String projectionConeDistance(Object distance);
+
+  /// No description provided for @projectionConeDiameter.
+  ///
+  /// In fr, this message translates to:
+  /// **'{diameter} m'**
+  String projectionConeDiameter(Object diameter);
+
+  /// No description provided for @photometrySummary3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Flux lumineux : {lumens} lumen\nDistance : {distance} mètre\nAngle de faisceau : {angle} degré\nÉclairement estimé : {lux} lux'**
+  String photometrySummary3(
+      Object lumens, Object distance, Object angle, Object lux);
+
+  /// No description provided for @photometryDisclaimerShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculs indicatifs. Les résultats dépendent du faisceau réel, des optiques et des conditions de mesure.'**
+  String get photometryDisclaimerShort;
+
+  /// No description provided for @dipSwitchResultBinaryValueLine.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeur binaire utilisée : {value}'**
+  String dipSwitchResultBinaryValueLine(Object value);
+
+  /// No description provided for @dipSwitchChannelUnit.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count,plural,one{canal}other{canaux}}'**
+  String dipSwitchChannelUnit(num count);
+
+  /// No description provided for @dipSwitchResultIntervalLine.
+  ///
+  /// In fr, this message translates to:
+  /// **'Intervalle : {step} {unit}'**
+  String dipSwitchResultIntervalLine(Object step, Object unit);
+
+  /// No description provided for @catalogOpenManual.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ouvrir le manuel'**
+  String get catalogOpenManual;
+
+  /// No description provided for @catalogOpenDmxChart.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ouvrir la charte DMX'**
+  String get catalogOpenDmxChart;
+
   /// No description provided for @laserLegalDisclaimerText.
   ///
   /// In fr, this message translates to:
@@ -2524,6 +3012,12 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'AVERTISSEMENT LÉGAL ET CLAUSE DE NON-RESPONSABILITÉ\n\nL\'utilisation de ce calculateur est strictement réservée à titre informatif et indicatif.\nLes résultats obtenus ne constituent pas une expertise technique et ne sauraient engager la responsabilité de l\'éditeur en cas d\'erreur de calcul, d\'omission ou d\'accident survenus lors de l\'installation ou de l\'exploitation du matériel.\n\nCalculs NOHD et Instruments Optiques :\nDans certaines circonstances, des instruments optiques spéciaux (jumelles, télescopes) peuvent être utilisés pour visualiser le laser à une distance plus éloignée.\nCe fait doit être pris en compte lors de la détermination du NOHD.\nDans le calcul ci-joint, aucun instrument optique n\'est pris en compte, car il est très peu probable que cela doive être pris en compte dans l\'industrie courante du laser.\nCependant, il incombe à l\'opérateur de procéder à une évaluation appropriée des risques pour la sécurité.\n\nZones d\'Interférence Visuelle (SZED et CZED) :\nLes calculs des distances SZED (aveuglement temporaire) et CZED (éblouissement) sont basés sur des seuils d\'éclairement énergétique standards pour la vision humaine.\nCes valeurs ne sont valables que pour un observateur dont l\'œil est adapté à l\'obscurité (conditions de spectacle).\nCes résultats ne tiennent pas compte des conditions atmosphériques (brume, pluie, pollution) qui peuvent réduire ou diffuser la portée théorique du faisceau.\n\nParamètres Techniques :\nLe calculateur n\'est applicable que pour les sources laser en mode continu (CW) et n\'est valable que pour la plage de longueur d\'onde de 400 à 700 nm – paramètres standards pour les systèmes laser de spectacle.\n\nAcceptation des Risques :\nCe calculateur est fourni \"tel quel\".\nNous ne garantissons pas l\'exactitude et la précision des résultats.\nEn activant cet outil, l\'utilisateur reconnaît être un professionnel formé aux règles de sécurité en vigueur et accepte l\'entière responsabilité des risques liés à la mise en œuvre des équipements (laser, lumière, vidéo).\nVérifiez systématiquement les données avec les manuels constructeurs officiels.'**
   String get laserLegalDisclaimerTextLong;
+
+  /// No description provided for @commonDash.
+  ///
+  /// In fr, this message translates to:
+  /// **'—'**
+  String get commonDash;
 }
 
 class _AppLocalizationsDelegate

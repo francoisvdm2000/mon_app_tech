@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../l10n/app_localizations.dart';
 import 'fixture_hybrid_repository.dart';
 import 'fixture_models.dart';
 
@@ -52,55 +53,50 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
       final remote = await _repo.refreshRemote();
       if (!mounted) return;
       if (remote != null) {
-        setState(() {
-          _catalog = remote;
-        });
+        setState(() => _catalog = remote);
       }
     } catch (_) {
       if (!mounted) return;
-      setState(() {
-        _loading = false;
-      });
+      setState(() => _loading = false);
     }
   }
 
   Future<void> _forceRefreshRemote() async {
-    setState(() {
-      _refreshing = true;
-    });
+    final loc = AppLocalizations.of(context);
+
+    setState(() => _refreshing = true);
     _spinController.repeat();
 
     try {
       await _repo.clearCache();
       final remote = await _repo.refreshRemote();
-
       if (!mounted) return;
 
       if (remote == null) {
-        final msg = _repo.lastError.trim().isEmpty
-            ? 'Synchronisation impossible (raison inconnue).'
-            : 'Synchronisation impossible : ${_repo.lastError}';
+        final err = _repo.lastError.trim();
+        final msg = err.isEmpty
+            ? loc.catalogSyncFailedUnknown
+            : loc.catalogSyncFailed(err);
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text(msg)));
       } else {
-        setState(() {
-          _catalog = remote;
-        });
+        setState(() => _catalog = remote);
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Catalogue mis à jour.')),
+          SnackBar(content: Text(loc.catalogUpdated)),
         );
       }
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Échec synchronisation : $e')),
+        SnackBar(content: Text(loc.catalogSyncError(e.toString()))),
       );
     } finally {
-      if (!mounted) {}
-      setState(() {
-        _refreshing = false;
-        _spinController.stop();
-      });
+      if (mounted) {
+        setState(() {
+          _refreshing = false;
+          _spinController.stop();
+        });
+      }
     }
   }
 
@@ -109,8 +105,22 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
     return '${two(d.day)}/${two(d.month)}/${d.year}';
   }
 
+  String _formatIntOrNA(AppLocalizations loc, int? value, String unit) {
+    if (value == null || value <= 0) return loc.catalogNotProvided;
+    return '$value $unit';
+  }
+
+  String _formatDoubleOrNA(AppLocalizations loc, double? value, String unit) {
+    if (value == null || value <= 0) return loc.catalogNotProvided;
+    final s =
+        (value % 1 == 0) ? value.toStringAsFixed(0) : value.toStringAsFixed(1);
+    return '$s $unit';
+  }
+
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     if (_loading || _catalog == null) {
       return const Scaffold(
         body: Center(child: CircularProgressIndicator()),
@@ -156,9 +166,11 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
             ? effectiveMode?.dmxChannels
             : selectedProduct.dmxChannels;
 
+    final lastUpdate = _formatDate(_catalog!.updatedAt);
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Catalogue'),
+        title: Text(loc.lightCatalogTitle),
         actions: [
           if (_refreshing)
             Padding(
@@ -170,12 +182,12 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
             )
           else
             IconButton(
-              tooltip: 'Mettre à jour',
+              tooltip: loc.catalogUpdateTooltip,
               icon: const Icon(Icons.cloud_download),
               onPressed: _forceRefreshRemote,
             ),
           IconButton(
-            tooltip: 'Réinitialiser',
+            tooltip: loc.catalogResetTooltip,
             icon: const Icon(Icons.refresh),
             onPressed: () {
               setState(() {
@@ -194,13 +206,12 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
           Padding(
             padding: const EdgeInsets.only(bottom: 16),
             child: Text(
-              'Dernière mise à jour : ${_formatDate(_catalog!.updatedAt)}',
+              loc.catalogLastUpdate(lastUpdate),
               style: const TextStyle(fontStyle: FontStyle.italic),
             ),
           ),
-
           _dropdown<String>(
-            title: 'Constructeur (${manufacturers.length})',
+            title: loc.catalogManufacturerTitle(manufacturers.length),
             value: _manufacturerName,
             items: manufacturers.map((m) => m.name).toList(),
             onChanged: (v) {
@@ -212,9 +223,8 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
               });
             },
           ),
-
           _dropdown<String>(
-            title: 'Type de projecteur (${types.length})',
+            title: loc.catalogTypeTitle(types.length),
             value: _type,
             items: types,
             onChanged: (v) {
@@ -225,9 +235,8 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
               });
             },
           ),
-
           _dropdown<String>(
-            title: 'Modèle (${products.length})',
+            title: loc.catalogModelTitle(products.length),
             value: _productName,
             items: products.map((p) => p.name).toList(),
             onChanged: (v) {
@@ -237,49 +246,44 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
               });
             },
           ),
-
           _dropdown<String>(
-            title: 'Mode DMX (${modeNames.length})',
+            title: loc.catalogDmxModeTitle(modeNames.length),
             value: effectiveModeName,
             items: modeNames,
             labelBuilder: (name) {
               final m = modes.firstWhere((x) => x.name == name);
-              return '${m.name} (${m.dmxChannels} canaux)';
+              return loc.catalogDmxModeItem(m.name, m.dmxChannels);
             },
             onChanged: modeNames.isEmpty
                 ? null
                 : (v) {
-                    setState(() {
-                      _dmxModeName = v;
-                    });
+                    setState(() => _dmxModeName = v);
                   },
           ),
-
           const SizedBox(height: 24),
-
           Card(
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _info('Canaux DMX', dmxValue?.toString() ?? 'Non renseigné'),
                   _info(
-                    'Poids',
-                    selectedProduct?.displayDouble(
-                            selectedProduct.weightKilogram, 'kg') ??
-                        'Non renseigné',
+                    loc.catalogInfoDmxChannels,
+                    dmxValue?.toString() ?? loc.catalogNotProvided,
                   ),
                   _info(
-                    'Puissance',
-                    selectedProduct?.displayInt(selectedProduct.powerWatt, 'W') ??
-                        'Non renseigné',
+                    loc.catalogInfoWeight,
+                    _formatDoubleOrNA(
+                        loc, selectedProduct?.weightKilogram, 'kg'),
                   ),
                   _info(
-                    'Flux lumineux',
-                    selectedProduct?.displayInt(
-                            selectedProduct.luminousFluxLumen, 'lm') ??
-                        'Non renseigné',
+                    loc.catalogInfoPower,
+                    _formatIntOrNA(loc, selectedProduct?.powerWatt, 'W'),
+                  ),
+                  _info(
+                    loc.catalogInfoLuminousFlux,
+                    _formatIntOrNA(
+                        loc, selectedProduct?.luminousFluxLumen, 'lm'),
                   ),
                   const SizedBox(height: 16),
                   Row(
@@ -287,24 +291,22 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
                       Expanded(
                         child: ElevatedButton.icon(
                           icon: const Icon(Icons.menu_book),
-                          label: const Text('Ouvrir le manuel'),
+                          label: Text(loc.catalogOpenManual),
                           onPressed: selectedProduct?.manualUrl == null
                               ? null
                               : () => launchUrl(
-                                    Uri.parse(selectedProduct!.manualUrl!),
-                                  ),
+                                  Uri.parse(selectedProduct!.manualUrl!)),
                         ),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
                         child: ElevatedButton.icon(
                           icon: const Icon(Icons.schema),
-                          label: const Text('Ouvrir la charte DMX'),
+                          label: Text(loc.catalogOpenDmxChart),
                           onPressed: selectedProduct?.dmxChartUrl == null
                               ? null
                               : () => launchUrl(
-                                    Uri.parse(selectedProduct!.dmxChartUrl!),
-                                  ),
+                                  Uri.parse(selectedProduct!.dmxChartUrl!)),
                         ),
                       ),
                     ],

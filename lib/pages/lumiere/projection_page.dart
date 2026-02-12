@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart';
+import '../../l10n/app_localizations.dart';
 import 'projection_calculations.dart';
 
 enum _Field { angle, distance, diameter }
@@ -96,15 +97,20 @@ class _ProjectionPageState extends State<ProjectionPage> {
           distanceMeter: distanceRaw!,
           beamAngleDegree: angleRaw!,
         );
-        _setText(_diameterController, computed > 0 ? _fmt(computed, decimals: 3) : '');
+        _setText(
+          _diameterController,
+          computed > 0 ? _fmt(computed, decimals: 3) : '',
+        );
       }
-    } else if (_lastEdited == _Field.diameter || _lastEdited == _Field.distance) {
+    } else if (_lastEdited == _Field.diameter ||
+        _lastEdited == _Field.distance) {
       if (distanceOk && diameterOk) {
         final computed = ProjectionCalculations.beamAngleDegree(
           distanceMeter: distanceRaw!,
           spotDiameterMeter: diameterRaw!,
         );
-        _setText(_angleController, computed > 0 ? _fmt(computed, decimals: 2) : '');
+        _setText(
+            _angleController, computed > 0 ? _fmt(computed, decimals: 2) : '');
       }
     } else if (_lastEdited == _Field.diameter || _lastEdited == _Field.angle) {
       if (angleOk && diameterOk) {
@@ -112,7 +118,10 @@ class _ProjectionPageState extends State<ProjectionPage> {
           beamAngleDegree: angleRaw!,
           spotDiameterMeter: diameterRaw!,
         );
-        _setText(_distanceController, computed > 0 ? _fmt(computed, decimals: 3) : '');
+        _setText(
+          _distanceController,
+          computed > 0 ? _fmt(computed, decimals: 3) : '',
+        );
       }
     }
 
@@ -121,38 +130,58 @@ class _ProjectionPageState extends State<ProjectionPage> {
     final distance2 = _parse(_distanceController.text) ?? 0.0;
     final diameter2 = _parse(_diameterController.text) ?? 0.0;
 
-    final validCount = (angle2 > 0 ? 1 : 0) + (distance2 > 0 ? 1 : 0) + (diameter2 > 0 ? 1 : 0);
+    final validCount = (angle2 > 0 ? 1 : 0) +
+        (distance2 > 0 ? 1 : 0) +
+        (diameter2 > 0 ? 1 : 0);
 
-    String header = '';
-    if (validCount < 2) {
-      header = 'Saisis deux valeurs pour calculer automatiquement la troisième.';
-    } else {
-      header = 'Calcul automatique actif.';
-    }
-
-    final detailLines = <String>[];
-    detailLines.add('Angle de faisceau : ${_fmt(angle2, decimals: 2)} degré');
-    detailLines.add('Distance : ${_fmt(distance2, decimals: 3)} mètre');
-    detailLines.add('Diamètre de tache : ${_fmt(diameter2, decimals: 3)} mètre');
+    // ⚠️ ici on ne met pas de texte "FR en dur" : c’est assigné dans build()
+    // (car besoin de loc)
+    final headerKey = validCount < 2 ? 'needTwo' : 'auto';
 
     setState(() {
-      _headerLine = header;
-      _detailText = detailLines.join('\n');
+      _headerLine = headerKey;
+      _detailText = _detailText; // sera reconstruit dans build() avec loc
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     final angleVal = _parse(_angleController.text) ?? 0.0;
     final distanceVal = _parse(_distanceController.text) ?? 0.0;
     final diameterVal = _parse(_diameterController.text) ?? 0.0;
 
+    // Header
+    final header = (_headerLine == 'needTwo')
+        ? loc.projectionHeaderNeedTwoValues
+        : loc.projectionHeaderAutoActive;
+
+    // Details (avec loc)
+    final angleStr = _fmt(angleVal, decimals: 2);
+    final distanceStr = _fmt(distanceVal, decimals: 3);
+    final diameterStr = _fmt(diameterVal, decimals: 3);
+
+    final detailLines = <String>[
+      loc.projectionDetailAngle(angleStr),
+      loc.projectionDetailDistance(distanceStr),
+      loc.projectionDetailDiameter(diameterStr),
+    ];
+    final detailText = detailLines.join('\n');
+
+    // Labels pour le cône (CustomPainter sans context)
+    final coneAngleLabel = loc.projectionConeAngle(angleStr);
+    final coneDistanceLabel = loc.projectionConeDistance(distanceStr);
+    final coneDiameterLabel = (diameterVal > 0)
+        ? loc.projectionConeDiameter(diameterStr)
+        : loc.commonDash;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Taille de projection'),
+        title: Text(loc.lightProjectionTitle),
         actions: [
           IconButton(
-            tooltip: 'Réinitialiser',
+            tooltip: loc.commonReset,
             onPressed: _resetAll,
             icon: const Icon(Icons.restart_alt),
           ),
@@ -163,70 +192,76 @@ class _ProjectionPageState extends State<ProjectionPage> {
         child: Column(
           children: [
             ExpandSectionCard(
-              title: 'Entrées',
+              title: loc.projectionInputsTitle,
               icon: Icons.edit,
               initiallyExpanded: true,
               child: Column(
                 children: [
                   TextField(
                     controller: _angleController,
-                    keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                    keyboardType:
+                        const TextInputType.numberWithOptions(decimal: true),
                     inputFormatters: [numFormatter],
-                    decoration: const InputDecoration(
-                      labelText: 'Angle de faisceau (degré)',
-                      hintText: 'Exemple : 15',
+                    decoration: InputDecoration(
+                      labelText: loc.projectionAngleLabel,
+                      hintText: loc.projectionAngleHint,
                     ),
                   ),
                   const SizedBox(height: 12),
                   TextField(
                     controller: _distanceController,
-                    keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                    keyboardType:
+                        const TextInputType.numberWithOptions(decimal: true),
                     inputFormatters: [numFormatter],
-                    decoration: const InputDecoration(
-                      labelText: 'Distance (mètre)',
-                      hintText: 'Exemple : 10',
+                    decoration: InputDecoration(
+                      labelText: loc.projectionDistanceLabel,
+                      hintText: loc.projectionDistanceHint,
                     ),
                   ),
                   const SizedBox(height: 12),
                   TextField(
                     controller: _diameterController,
-                    keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                    keyboardType:
+                        const TextInputType.numberWithOptions(decimal: true),
                     inputFormatters: [numFormatter],
-                    decoration: const InputDecoration(
-                      labelText: 'Diamètre de tache (mètre)',
-                      hintText: 'Exemple : 2,60',
+                    decoration: InputDecoration(
+                      labelText: loc.projectionDiameterLabel,
+                      hintText: loc.projectionDiameterHint,
                     ),
                   ),
                   const SizedBox(height: 10),
-                  const Text(
-                    'Le calcul automatique se met à jour lorsque deux champs sont renseignés.',
-                    style: TextStyle(color: Colors.white54, fontSize: 12),
+                  Text(
+                    loc.projectionAutoHelp,
+                    style: const TextStyle(color: Colors.white54, fontSize: 12),
                   ),
                 ],
               ),
             ),
             const SizedBox(height: 14),
             ExpandSectionCard(
-              title: 'Résultats',
+              title: loc.projectionResultsTitle,
               icon: Icons.calculate,
               initiallyExpanded: true,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    _headerLine,
+                    header,
                     style: const TextStyle(
                       color: Colors.white70,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                   const SizedBox(height: 10),
-                  ResultBox(_detailText),
+                  ResultBox(detailText),
                   const SizedBox(height: 12),
                   ConePreview(
                     angleDeg: angleVal,
                     distanceM: distanceVal,
                     diameterM: diameterVal,
+                    angleLabel: coneAngleLabel,
+                    distanceLabel: coneDistanceLabel,
+                    diameterLabel: coneDiameterLabel,
                   ),
                 ],
               ),
@@ -247,11 +282,18 @@ class ConePreview extends StatelessWidget {
   final double distanceM;
   final double diameterM;
 
+  final String angleLabel;
+  final String distanceLabel;
+  final String diameterLabel;
+
   const ConePreview({
     super.key,
     required this.angleDeg,
     required this.distanceM,
     required this.diameterM,
+    required this.angleLabel,
+    required this.distanceLabel,
+    required this.diameterLabel,
   });
 
   @override
@@ -265,6 +307,9 @@ class ConePreview extends StatelessWidget {
           angleDeg: angleDeg,
           distanceM: distanceM,
           diameterM: diameterM,
+          angleLabel: angleLabel,
+          distanceLabel: distanceLabel,
+          diameterLabel: diameterLabel,
         ),
       ),
     );
@@ -276,10 +321,17 @@ class _ConePainter extends CustomPainter {
   final double distanceM;
   final double diameterM;
 
+  final String angleLabel;
+  final String distanceLabel;
+  final String diameterLabel;
+
   _ConePainter({
     required this.angleDeg,
     required this.distanceM,
     required this.diameterM,
+    required this.angleLabel,
+    required this.distanceLabel,
+    required this.diameterLabel,
   });
 
   @override
@@ -368,11 +420,8 @@ class _ConePainter extends CustomPainter {
       );
     }
 
-    String fmt2(double v) => v.toStringAsFixed(2);
-    String fmt3(double v) => v.toStringAsFixed(3);
-
-    // --- 1) ANGLE (on garde le titre car c’est moins évident)
-    final anglePainter = tp('Angle ${fmt2(angleDeg)}°')..layout(maxWidth: size.width * 0.5);
+    // --- ANGLE
+    final anglePainter = tp(angleLabel)..layout(maxWidth: size.width * 0.55);
     anglePainter.paint(canvas, Offset(origin.dx - 6, origin.dy - 42));
 
     // Petit arc d’angle
@@ -380,40 +429,32 @@ class _ConePainter extends CustomPainter {
     final arcRect = Rect.fromCircle(center: origin, radius: arcR);
     canvas.drawArc(arcRect, -halfRad, 2 * halfRad, false, axisStroke);
 
-    // --- DISTANCE : cotation horizontale claire
-final distanceText = '${fmt2(distanceM)} m';
-final distPainter = tp(distanceText)..layout(maxWidth: size.width * 0.4);
+    // --- DISTANCE : cotation horizontale
+    final distPainter = tp(distanceLabel)..layout(maxWidth: size.width * 0.4);
 
-// Ligne de cotation horizontale
-final y = origin.dy + radius + 18; // sous le cône
-final start = Offset(origin.dx, y);
-final end = Offset(endMid.dx, y);
+    final y = origin.dy + radius + 18; // sous le cône
+    final start = Offset(origin.dx, y);
+    final end = Offset(endMid.dx, y);
 
-// Ligne principale
-canvas.drawLine(start, end, axisStroke);
+    canvas.drawLine(start, end, axisStroke);
 
-// Flèches
-const arrow = 6.0;
-canvas.drawLine(start, Offset(start.dx + arrow, start.dy - arrow), axisStroke);
-canvas.drawLine(start, Offset(start.dx + arrow, start.dy + arrow), axisStroke);
-canvas.drawLine(end, Offset(end.dx - arrow, end.dy - arrow), axisStroke);
-canvas.drawLine(end, Offset(end.dx - arrow, end.dy + arrow), axisStroke);
+    const arrow = 6.0;
+    canvas.drawLine(
+        start, Offset(start.dx + arrow, start.dy - arrow), axisStroke);
+    canvas.drawLine(
+        start, Offset(start.dx + arrow, start.dy + arrow), axisStroke);
+    canvas.drawLine(end, Offset(end.dx - arrow, end.dy - arrow), axisStroke);
+    canvas.drawLine(end, Offset(end.dx - arrow, end.dy + arrow), axisStroke);
 
-// Texte centré
-distPainter.paint(
-  canvas,
-  Offset(
-    (start.dx + end.dx) / 2 - distPainter.width / 2,
-    y - distPainter.height - 6,
-  ),
-);
+    distPainter.paint(
+      canvas,
+      Offset(
+        (start.dx + end.dx) / 2 - distPainter.width / 2,
+        y - distPainter.height - 6,
+      ),
+    );
 
-
-    // --- 3) DIAMÈTRE : vertical à droite, juste à l’extérieur du cône
-    // On retire le titre, on garde juste la valeur.
-    final diameterText = diameterM > 0 ? '${fmt3(diameterM)} m' : '—';
-
-    // Petit trait de repère vertical à droite du spot (extérieur)
+    // --- DIAMÈTRE : vertical à droite
     final outsideX = endTop.dx + 10;
     canvas.drawLine(
       Offset(outsideX, endTop.dy),
@@ -421,17 +462,12 @@ distPainter.paint(
       axisStroke,
     );
 
-    // Texte vertical (rotation -90°) à droite
-    final diaPainter = tp(diameterText)..layout(maxWidth: size.height);
+    final diaPainter = tp(diameterLabel)..layout(maxWidth: size.height);
 
-    // On place le texte au milieu du repère, vertical.
     final midY = (endTop.dy + endBot.dy) / 2;
     canvas.save();
-    // Translate vers le point où on veut ancrer le texte
     canvas.translate(outsideX + 14, midY + diaPainter.width / 2);
-    // Rotation pour écrire verticalement
     canvas.rotate(-math.pi / 2);
-    // Dessin : origine en (0,0) après rotation
     diaPainter.paint(canvas, Offset(0, -diaPainter.height / 2));
     canvas.restore();
   }
@@ -440,6 +476,9 @@ distPainter.paint(
   bool shouldRepaint(covariant _ConePainter oldDelegate) {
     return oldDelegate.angleDeg != angleDeg ||
         oldDelegate.distanceM != distanceM ||
-        oldDelegate.diameterM != diameterM;
+        oldDelegate.diameterM != diameterM ||
+        oldDelegate.angleLabel != angleLabel ||
+        oldDelegate.distanceLabel != distanceLabel ||
+        oldDelegate.diameterLabel != diameterLabel;
   }
 }

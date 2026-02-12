@@ -1387,10 +1387,319 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
+  String get catalogUpdateTooltip => 'Mettre à jour';
+
+  @override
+  String get catalogResetTooltip => 'Réinitialiser';
+
+  @override
+  String catalogLastUpdate(Object date) {
+    return 'Dernière mise à jour : $date';
+  }
+
+  @override
+  String catalogManufacturerTitle(Object count) {
+    return 'Constructeur ($count)';
+  }
+
+  @override
+  String catalogTypeTitle(Object count) {
+    return 'Type de projecteur ($count)';
+  }
+
+  @override
+  String catalogModelTitle(Object count) {
+    return 'Modèle ($count)';
+  }
+
+  @override
+  String catalogDmxModeTitle(Object count) {
+    return 'Mode DMX ($count)';
+  }
+
+  @override
+  String catalogDmxModeItem(Object name, Object channels) {
+    return '$name ($channels canaux)';
+  }
+
+  @override
+  String get catalogInfoDmxChannels => 'Canaux DMX';
+
+  @override
+  String get catalogInfoWeight => 'Poids';
+
+  @override
+  String get catalogInfoPower => 'Puissance';
+
+  @override
+  String get catalogInfoLuminousFlux => 'Flux lumineux';
+
+  @override
+  String get catalogNotProvided => 'Non renseigné';
+
+  @override
+  String get catalogUpdated => 'Catalogue mis à jour.';
+
+  @override
+  String get catalogSyncFailedUnknown =>
+      'Synchronisation impossible (raison inconnue).';
+
+  @override
+  String catalogSyncFailed(Object reason) {
+    return 'Synchronisation impossible : $reason';
+  }
+
+  @override
+  String catalogSyncError(Object error) {
+    return 'Échec synchronisation : $error';
+  }
+
+  @override
+  String get dipSwitchResetTooltip => 'Réinitialiser';
+
+  @override
+  String get dipSwitchInputsTitle => 'Entrées';
+
+  @override
+  String get dipSwitchSectionTitle => 'Dip-switch';
+
+  @override
+  String get dipSwitchSummaryTitle => 'Résumé';
+
+  @override
+  String get dipSwitchAddressLabel => 'Adresse DMX (1 à 512)';
+
+  @override
+  String get dipSwitchAddressHint => 'Exemple : 1';
+
+  @override
+  String get dipSwitchIntervalLabel => 'Intervalle (nombre de canaux)';
+
+  @override
+  String get dipSwitchIntervalHint => 'Exemple : 16';
+
+  @override
+  String get dipSwitchUseAddressMinusOneLabel => 'Utiliser adresse moins 1';
+
+  @override
+  String get dipSwitchNextAddressButton =>
+      'Adresse suivante selon l’intervalle';
+
+  @override
+  String get dipSwitchEndOfUniverseWarning =>
+      'Fin de l’univers : l’adresse suivante dépasserait 512.';
+
+  @override
+  String get dipSwitchScrollHint =>
+      'Fais défiler horizontalement si nécessaire.';
+
+  @override
+  String get dipSwitchOnLabel => 'ON';
+
+  @override
+  String get dipSwitchOffLabel => 'OFF';
+
+  @override
+  String dipSwitchSwitchLabel(Object index) {
+    return 'Switch $index';
+  }
+
+  @override
+  String get dipSwitchResultHeader =>
+      'Conversion indicative dip-switch / adresse DMX';
+
+  @override
+  String get dipSwitchModeAddressMinusOne => 'Adresse moins 1';
+
+  @override
+  String get dipSwitchModeAddressDirect => 'Adresse directe';
+
+  @override
+  String dipSwitchResultModeLine(Object mode) {
+    return 'Mode : $mode';
+  }
+
+  @override
+  String get dipSwitchResultAddressNotProvided =>
+      'Adresse DMX : non renseignée';
+
+  @override
+  String dipSwitchResultAddressLine(Object address) {
+    return 'Adresse DMX : $address';
+  }
+
+  @override
+  String get photometrySection1Title => 'Lux et candela';
+
+  @override
+  String get photometrySection2Title => 'Lumen et candela';
+
+  @override
+  String get photometrySection3Title => 'Lux à partir de lumen';
+
+  @override
+  String get photometryLuxLabel => 'Éclairement (lux)';
+
+  @override
+  String get photometryLuxHint => 'Exemple : 500';
+
+  @override
+  String get photometryCandelaLabel => 'Intensité lumineuse (candela)';
+
+  @override
+  String get photometryCandelaHint1 => 'Exemple : 20000';
+
+  @override
+  String get photometryCandelaHint2 => 'Exemple : 150000';
+
+  @override
+  String get photometryDistanceLabel => 'Distance (mètre)';
+
+  @override
+  String get photometryDistanceHint1 => 'Exemple : 5';
+
+  @override
+  String get photometryDistanceHint3 => 'Exemple : 8';
+
+  @override
+  String get photometryLumensLabel => 'Flux lumineux (lumen)';
+
+  @override
+  String get photometryLumensHint2 => 'Exemple : 20000';
+
+  @override
+  String get photometryLumensHint3 => 'Exemple : 20000';
+
+  @override
+  String get photometryBeamAngleLabel => 'Angle de faisceau (degré)';
+
+  @override
+  String get photometryBeamAngleHint2 => 'Exemple : 10';
+
+  @override
+  String get photometryBeamAngleHint3 => 'Exemple : 15';
+
+  @override
+  String photometrySummary1(Object lux, Object candela, Object distance) {
+    return 'Éclairement : $lux lux\nIntensité lumineuse : $candela candela\nDistance : $distance mètre';
+  }
+
+  @override
+  String photometrySummary2(
+      Object lumens, Object candela, Object angle, Object omega) {
+    return 'Flux lumineux : $lumens lumen\nIntensité lumineuse : $candela candela\nAngle de faisceau : $angle degré\nAngle solide : $omega stéradian';
+  }
+
+  @override
+  String get projectionInputsTitle => 'Entrées';
+
+  @override
+  String get projectionResultsTitle => 'Résultats';
+
+  @override
+  String get projectionAngleLabel => 'Angle de faisceau (degré)';
+
+  @override
+  String get projectionAngleHint => 'Exemple : 15';
+
+  @override
+  String get projectionDistanceLabel => 'Distance (mètre)';
+
+  @override
+  String get projectionDistanceHint => 'Exemple : 10';
+
+  @override
+  String get projectionDiameterLabel => 'Diamètre de tache (mètre)';
+
+  @override
+  String get projectionDiameterHint => 'Exemple : 2,60';
+
+  @override
+  String get projectionAutoHelp =>
+      'Le calcul automatique se met à jour lorsque deux champs sont renseignés.';
+
+  @override
+  String get projectionHeaderNeedTwoValues =>
+      'Saisis deux valeurs pour calculer automatiquement la troisième.';
+
+  @override
+  String get projectionHeaderAutoActive => 'Calcul automatique actif.';
+
+  @override
+  String projectionDetailAngle(Object value) {
+    return 'Angle de faisceau : $value degré';
+  }
+
+  @override
+  String projectionDetailDistance(Object value) {
+    return 'Distance : $value mètre';
+  }
+
+  @override
+  String projectionDetailDiameter(Object value) {
+    return 'Diamètre de tache : $value mètre';
+  }
+
+  @override
+  String projectionConeAngle(Object angle) {
+    return 'Angle $angle°';
+  }
+
+  @override
+  String projectionConeDistance(Object distance) {
+    return '$distance m';
+  }
+
+  @override
+  String projectionConeDiameter(Object diameter) {
+    return '$diameter m';
+  }
+
+  @override
+  String photometrySummary3(
+      Object lumens, Object distance, Object angle, Object lux) {
+    return 'Flux lumineux : $lumens lumen\nDistance : $distance mètre\nAngle de faisceau : $angle degré\nÉclairement estimé : $lux lux';
+  }
+
+  @override
+  String get photometryDisclaimerShort =>
+      'Calculs indicatifs. Les résultats dépendent du faisceau réel, des optiques et des conditions de mesure.';
+
+  @override
+  String dipSwitchResultBinaryValueLine(Object value) {
+    return 'Valeur binaire utilisée : $value';
+  }
+
+  @override
+  String dipSwitchChannelUnit(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'canaux',
+      one: 'canal',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String dipSwitchResultIntervalLine(Object step, Object unit) {
+    return 'Intervalle : $step $unit';
+  }
+
+  @override
+  String get catalogOpenManual => 'Ouvrir le manuel';
+
+  @override
+  String get catalogOpenDmxChart => 'Ouvrir la charte DMX';
+
+  @override
   String get laserLegalDisclaimerText =>
       'AVERTISSEMENT LÉGAL ET CLAUSE DE NON-RESPONSABILITÉ\n\nL\'utilisation de ce calculateur est strictement réservée à titre informatif et indicatif.\nLes résultats obtenus ne constituent pas une expertise technique et ne sauraient engager la responsabilité de l\'éditeur en cas d\'erreur de calcul, d\'omission ou d\'accident survenus lors de l\'installation ou de l\'exploitation du matériel.\n\nCalculs NOHD et Instruments Optiques :\nDans certaines circonstances, des instruments optiques spéciaux (jumelles, télescopes) peuvent être utilisés pour visualiser le laser à une distance plus éloignée.\nCe fait doit être pris en compte lors de la détermination du NOHD.\nDans le calcul ci-joint, aucun instrument optique n\'est pris en compte, car il est très peu probable que cela doive être pris en compte dans l\'industrie courante du laser.\nCependant, il incombe à l\'opérateur de procéder à une évaluation appropriée des risques pour la sécurité.\n\nZones d\'Interférence Visuelle (SZED et CZED) :\nLes calculs des distances SZED (aveuglement temporaire) et CZED (éblouissement) sont basés sur des seuils d\'éclairement énergétique standards pour la vision humaine.\nCes valeurs ne sont valables que pour un observateur dont l\'œil est adapté à l\'obscurité (conditions de spectacle).\nCes résultats ne tiennent pas compte des conditions atmosphériques (brume, pluie, pollution) qui peuvent réduire ou diffuser la portée théorique du faisceau.\n\nParamètres Techniques :\nLe calculateur n\'est applicable que pour les sources laser en mode continu (CW) et n\'est valable que pour la plage de longueur d\'onde de 400 à 700 nm – paramètres standards pour les systèmes laser de spectacle.\n\nAcceptation des Risques :\nCe calculateur est fourni \"tel quel\".\nNous ne garantissons pas l\'exactitude et la précision des résultats.\nEn activant cet outil, l\'utilisateur reconnaît être un professionnel formé aux règles de sécurité en vigueur et accepte l\'entière responsabilité des risques liés à la mise en œuvre des équipements (laser, lumière, vidéo).\nVérifiez systématiquement les données avec les manuels constructeurs officiels.';
 
   @override
   String get laserLegalDisclaimerTextLong =>
       'AVERTISSEMENT LÉGAL ET CLAUSE DE NON-RESPONSABILITÉ\n\nL\'utilisation de ce calculateur est strictement réservée à titre informatif et indicatif.\nLes résultats obtenus ne constituent pas une expertise technique et ne sauraient engager la responsabilité de l\'éditeur en cas d\'erreur de calcul, d\'omission ou d\'accident survenus lors de l\'installation ou de l\'exploitation du matériel.\n\nCalculs NOHD et Instruments Optiques :\nDans certaines circonstances, des instruments optiques spéciaux (jumelles, télescopes) peuvent être utilisés pour visualiser le laser à une distance plus éloignée.\nCe fait doit être pris en compte lors de la détermination du NOHD.\nDans le calcul ci-joint, aucun instrument optique n\'est pris en compte, car il est très peu probable que cela doive être pris en compte dans l\'industrie courante du laser.\nCependant, il incombe à l\'opérateur de procéder à une évaluation appropriée des risques pour la sécurité.\n\nZones d\'Interférence Visuelle (SZED et CZED) :\nLes calculs des distances SZED (aveuglement temporaire) et CZED (éblouissement) sont basés sur des seuils d\'éclairement énergétique standards pour la vision humaine.\nCes valeurs ne sont valables que pour un observateur dont l\'œil est adapté à l\'obscurité (conditions de spectacle).\nCes résultats ne tiennent pas compte des conditions atmosphériques (brume, pluie, pollution) qui peuvent réduire ou diffuser la portée théorique du faisceau.\n\nParamètres Techniques :\nLe calculateur n\'est applicable que pour les sources laser en mode continu (CW) et n\'est valable que pour la plage de longueur d\'onde de 400 à 700 nm – paramètres standards pour les systèmes laser de spectacle.\n\nAcceptation des Risques :\nCe calculateur est fourni \"tel quel\".\nNous ne garantissons pas l\'exactitude et la précision des résultats.\nEn activant cet outil, l\'utilisateur reconnaît être un professionnel formé aux règles de sécurité en vigueur et accepte l\'entière responsabilité des risques liés à la mise en œuvre des équipements (laser, lumière, vidéo).\nVérifiez systématiquement les données avec les manuels constructeurs officiels.';
+
+  @override
+  String get commonDash => '—';
 }
