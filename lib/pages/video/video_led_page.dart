@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../l10n/app_localizations.dart';
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import '../../app/ui/widgets.dart'; // numFormatter, intFormatter, ExpandSectionCard, ResultBox, copyToClipboard
 
 class VideoLedPage extends StatefulWidget {

@@ -1,5 +1,5 @@
 // lib/pages/video/mire_texts.dart
-import '../../l10n/app_localizations.dart';
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 /// Orientation utilisée par les mires "mapping"
 enum MappingOrientation { horizontal, vertical }

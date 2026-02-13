@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../app/ui/widgets.dart';
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'patch_models.dart';
 import 'patch_store.dart';
 
@@ -45,22 +46,21 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
   }
 
   Future<void> _confirmReset() async {
+    final loc = AppLocalizations.of(context);
+
     final ok = await showDialog<bool>(
       context: context,
       builder: (_) => AlertDialog(
-        title: const Text('Réinitialiser la référence ?'),
-        content: const Text(
-          'Cela efface le patch chargé depuis le MVR dans l’application.\n'
-          'Aucune donnée du fichier n’est modifiée.',
-        ),
+        title: Text(loc.patchUniverseResetTitle),
+        content: Text(loc.patchUniverseResetContent),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: const Text('Annuler'),
+            child: Text(loc.commonCancel),
           ),
           ElevatedButton(
             onPressed: () => Navigator.pop(context, true),
-            child: const Text('Réinitialiser'),
+            child: Text(loc.patchUniverseResetConfirm),
           ),
         ],
       ),
@@ -71,19 +71,31 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
     }
   }
 
-  void _zoomOut() => setState(() => _tileWanted = (_tileWanted - 2).clamp(12, 40));
-  void _zoomIn() => setState(() => _tileWanted = (_tileWanted + 2).clamp(12, 40));
+  void _zoomOut() =>
+      setState(() => _tileWanted = (_tileWanted - 2).clamp(12, 40));
+  void _zoomIn() =>
+      setState(() => _tileWanted = (_tileWanted + 2).clamp(12, 40));
 
   Future<void> _showChannelPopup({
     required int universe,
     required int address,
   }) async {
+    final loc = AppLocalizations.of(context);
+
     final occupants = patchStore.entriesOccupyingChannel(universe, address);
     final occupied = occupants.isNotEmpty;
 
     final title = occupied
-        ? (occupants.length > 1 ? 'Conflit' : 'Canal occupé')
-        : 'Canal libre';
+        ? (occupants.length > 1
+            ? loc.patchUniversePopupTitleConflict
+            : loc.patchUniversePopupTitleOccupied)
+        : loc.patchUniversePopupTitleFree;
+
+    final String stateLabel = occupied
+        ? (occupants.length > 1
+            ? loc.patchUniverseStateConflict
+            : loc.patchUniverseStateOccupied)
+        : loc.patchUniverseStateFree;
 
     final Widget content = occupied
         ? Column(
@@ -91,15 +103,17 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Univers : $universe\n'
-                'Adresse : $address\n'
-                'État : ${occupants.length > 1 ? 'Conflit' : 'Occupé'}',
+                loc.patchUniversePopupHeader(
+                  universe,
+                  address,
+                  stateLabel,
+                ),
               ),
               const SizedBox(height: 12),
               if (occupants.length > 1)
-                const Text(
-                  'Plusieurs machines occupent ce canal.',
-                  style: TextStyle(fontWeight: FontWeight.w700),
+                Text(
+                  loc.patchUniversePopupManyOccupants,
+                  style: const TextStyle(fontWeight: FontWeight.w700),
                 ),
               if (occupants.length > 1) const SizedBox(height: 8),
               ...occupants.take(8).map((e) => _OccupantLine(entry: e)),
@@ -107,16 +121,18 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
                 Padding(
                   padding: const EdgeInsets.only(top: 8),
                   child: Text(
-                    '… et ${occupants.length - 8} autre(s).',
+                    loc.patchUniversePopupMore(occupants.length - 8),
                     style: const TextStyle(color: Colors.white70),
                   ),
                 ),
             ],
           )
         : Text(
-            'Univers : $universe\n'
-            'Adresse : $address\n'
-            'État : Libre',
+            loc.patchUniversePopupHeader(
+              universe,
+              address,
+              stateLabel,
+            ),
           );
 
     await showDialog<void>(
@@ -132,7 +148,7 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('OK'),
+            child: Text(loc.commonOk),
           ),
         ],
       ),
@@ -141,20 +157,24 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return AnimatedBuilder(
       animation: patchStore,
       builder: (context, _) {
         final universes = patchStore.universesInUse;
 
-        final occupied = patchStore.occupiedChannelsForUniverse(_selectedUniverse);
-        final conflictChannels = patchStore.conflictChannelsForUniverse(_selectedUniverse);
+        final occupied =
+            patchStore.occupiedChannelsForUniverse(_selectedUniverse);
+        final conflictChannels =
+            patchStore.conflictChannelsForUniverse(_selectedUniverse);
 
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Patch'),
+            title: Text(loc.patchUniverseAppBarTitle),
             actions: [
               IconButton(
-                tooltip: 'Réinitialiser la référence',
+                tooltip: loc.patchUniverseResetTooltip,
                 onPressed: patchStore.entries.isEmpty ? null : _confirmReset,
                 icon: const Icon(Icons.restart_alt),
               ),
@@ -164,19 +184,18 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
             children: [
               SectionCard(
-                title: 'Référence',
+                title: loc.patchUniverseReferenceTitle,
                 icon: Icons.lock_outline,
                 child: Text(
                   patchStore.isReadOnly
-                      ? 'Lecture seule (depuis MVR)'
-                      : 'Aucune référence chargée',
+                      ? loc.patchUniverseReferenceReadOnly
+                      : loc.patchUniverseReferenceNone,
                   style: const TextStyle(color: Colors.white70),
                 ),
               ),
               const SizedBox(height: 12),
-
               SectionCard(
-                title: 'Univers',
+                title: loc.patchUniverseUniverseTitle,
                 icon: Icons.layers_outlined,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -184,12 +203,14 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
                     DropdownButtonFormField<int>(
                       initialValue: _selectedUniverse,
                       isExpanded: true,
-                      decoration: const InputDecoration(labelText: 'Univers DMX'),
+                      decoration: InputDecoration(
+                        labelText: loc.patchUniverseUniverseDropdownLabel,
+                      ),
                       items: (universes.isEmpty ? [1] : universes)
                           .map(
                             (u) => DropdownMenuItem(
                               value: u,
-                              child: Text('Univers $u'),
+                              child: Text(loc.patchUniverseUniverseItem(u)),
                             ),
                           )
                           .toList(),
@@ -200,30 +221,29 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
                     ),
                     const SizedBox(height: 12),
                     Text(
-                      'Occupés : ${occupied.length} / 512',
+                      loc.patchUniverseOccupiedCount(occupied.length),
                       style: const TextStyle(color: Colors.white70),
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'Conflits : ${conflictChannels.length} canal(aux)',
+                      loc.patchUniverseConflictCount(conflictChannels.length),
                       style: const TextStyle(color: Colors.white70),
                     ),
                     const SizedBox(height: 10),
                     const _Legend(),
                     const SizedBox(height: 8),
-                    const Text(
-                      'Touche une case pour afficher le détail.',
-                      style: TextStyle(color: Colors.white54),
+                    Text(
+                      loc.patchUniverseTapHint,
+                      style: const TextStyle(color: Colors.white54),
                     ),
                   ],
                 ),
               ),
-
               const SizedBox(height: 12),
 
               // ---- ZOOM AU DESSUS DE LA GRILLE ----
               SectionCard(
-                title: 'Zoom',
+                title: loc.patchUniverseZoomTitle,
                 icon: Icons.zoom_in,
                 child: Row(
                   children: [
@@ -231,7 +251,7 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
                       child: ElevatedButton.icon(
                         onPressed: _zoomOut,
                         icon: const Icon(Icons.remove),
-                        label: const Text('Réduire'),
+                        label: Text(loc.patchUniverseZoomOut),
                         style: ButtonStyle(
                           foregroundColor:
                               WidgetStateProperty.all(const Color(0xFFB0B0B0)),
@@ -243,7 +263,7 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
                       child: ElevatedButton.icon(
                         onPressed: _zoomIn,
                         icon: const Icon(Icons.add),
-                        label: const Text('Agrandir'),
+                        label: Text(loc.patchUniverseZoomIn),
                         style: ButtonStyle(
                           foregroundColor:
                               WidgetStateProperty.all(const Color(0xFFB0B0B0)),
@@ -253,13 +273,13 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
                   ],
                 ),
               ),
-
               const SizedBox(height: 12),
 
               SectionCard(
-                title: 'Occupation (1 à 512)',
+                title: loc.patchUniverseGridTitle,
                 icon: Icons.grid_on,
                 child: _Full512Grid10Cols(
+                  limitedText: loc.patchUniverseGridLimitedByWidth,
                   tileWanted: _tileWanted,
                   gap: _gap,
                   occupied: occupied,
@@ -283,6 +303,8 @@ class _Legend extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     Widget item(Color color, String label) {
       return Row(
         mainAxisSize: MainAxisSize.min,
@@ -306,9 +328,11 @@ class _Legend extends StatelessWidget {
       spacing: 16,
       runSpacing: 8,
       children: [
-        item(Colors.white10, 'Libre'),
-        item(Colors.greenAccent.withValues(alpha: 0.85), 'Occupé'),
-        item(Colors.redAccent.withValues(alpha: 0.9), 'Conflit'),
+        item(Colors.white10, loc.patchUniverseLegendFree),
+        item(Colors.greenAccent.withValues(alpha: 0.85),
+            loc.patchUniverseLegendOccupied),
+        item(Colors.redAccent.withValues(alpha: 0.9),
+            loc.patchUniverseLegendConflict),
       ],
     );
   }
@@ -321,12 +345,18 @@ class _OccupantLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
       child: Text(
-        '• ${entry.fixtureName}\n'
-        '  ${entry.dmxModeName} — ${entry.channelCount} canal(aux)\n'
-        '  ${entry.startAddress} → ${entry.endAddress}',
+        loc.patchUniverseOccupantLine(
+          entry.fixtureName,
+          entry.dmxModeName,
+          entry.channelCount,
+          entry.startAddress,
+          entry.endAddress,
+        ),
         style: const TextStyle(color: Colors.white70),
       ),
     );
@@ -336,6 +366,7 @@ class _OccupantLine extends StatelessWidget {
 /// Grille 10 colonnes (cases grandes), responsive, sans overflow.
 /// Affiche un avertissement si le zoom est limité par l’écran.
 class _Full512Grid10Cols extends StatelessWidget {
+  final String limitedText;
   final double tileWanted;
   final double gap;
   final Set<int> occupied;
@@ -343,6 +374,7 @@ class _Full512Grid10Cols extends StatelessWidget {
   final void Function(int address) onTap;
 
   const _Full512Grid10Cols({
+    required this.limitedText,
     required this.tileWanted,
     required this.gap,
     required this.occupied,
@@ -371,8 +403,8 @@ class _Full512Grid10Cols extends StatelessWidget {
           const labelWidth = 44.0;
           const labelGap = 8.0;
 
-          final gridWidth =
-              (availableWidth - labelWidth - labelGap).clamp(0.0, double.infinity);
+          final gridWidth = (availableWidth - labelWidth - labelGap)
+              .clamp(0.0, double.infinity);
 
           // Taille max possible pour tenir, arrondi inférieur => anti-overflow
           final raw = (gridWidth - (gap * (columns - 1))) / columns;
@@ -389,7 +421,7 @@ class _Full512Grid10Cols extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10),
                   child: Text(
-                    'Limité par la largeur de l’écran.',
+                    limitedText,
                     style: TextStyle(
                       color: Colors.amberAccent.withValues(alpha: 0.9),
                     ),
@@ -429,25 +461,30 @@ class _Full512Grid10Cols extends StatelessWidget {
 
                               if (address > 512) {
                                 return SizedBox(
-                                  width: i == columns - 1 ? tileSize : tileSize + gap,
+                                  width: i == columns - 1
+                                      ? tileSize
+                                      : tileSize + gap,
                                   height: tileSize,
                                 );
                               }
 
-                              final isConflict = conflictChannels.contains(address);
+                              final isConflict =
+                                  conflictChannels.contains(address);
                               final isOcc = occupied.contains(address);
 
                               final Color color;
                               if (isConflict) {
                                 color = Colors.redAccent.withValues(alpha: 0.9);
                               } else if (isOcc) {
-                                color = Colors.greenAccent.withValues(alpha: 0.85);
+                                color =
+                                    Colors.greenAccent.withValues(alpha: 0.85);
                               } else {
                                 color = Colors.white10;
                               }
 
                               return Padding(
-                                padding: EdgeInsets.only(right: i == columns - 1 ? 0 : gap),
+                                padding: EdgeInsets.only(
+                                    right: i == columns - 1 ? 0 : gap),
                                 child: GestureDetector(
                                   onTap: () => onTap(address),
                                   child: Container(

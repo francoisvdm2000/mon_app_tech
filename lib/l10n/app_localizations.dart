@@ -301,7 +301,7 @@ abstract class AppLocalizations {
   /// No description provided for @commonReset.
   ///
   /// In fr, this message translates to:
-  /// **'Reset'**
+  /// **'Réinitialiser'**
   String get commonReset;
 
   /// No description provided for @commonOkWithCheck.
@@ -3006,6 +3006,782 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'AVERTISSEMENT LÉGAL ET CLAUSE DE NON-RESPONSABILITÉ\n\nL\'utilisation de ce calculateur est strictement réservée à titre informatif et indicatif.\nLes résultats obtenus ne constituent pas une expertise technique et ne sauraient engager la responsabilité de l\'éditeur en cas d\'erreur de calcul, d\'omission ou d\'accident survenus lors de l\'installation ou de l\'exploitation du matériel.\n\nCalculs NOHD et Instruments Optiques :\nDans certaines circonstances, des instruments optiques spéciaux (jumelles, télescopes) peuvent être utilisés pour visualiser le laser à une distance plus éloignée.\nCe fait doit être pris en compte lors de la détermination du NOHD.\nDans le calcul ci-joint, aucun instrument optique n\'est pris en compte, car il est très peu probable que cela doive être pris en compte dans l\'industrie courante du laser.\nCependant, il incombe à l\'opérateur de procéder à une évaluation appropriée des risques pour la sécurité.\n\nZones d\'Interférence Visuelle (SZED et CZED) :\nLes calculs des distances SZED (aveuglement temporaire) et CZED (éblouissement) sont basés sur des seuils d\'éclairement énergétique standards pour la vision humaine.\nCes valeurs ne sont valables que pour un observateur dont l\'œil est adapté à l\'obscurité (conditions de spectacle).\nCes résultats ne tiennent pas compte des conditions atmosphériques (brume, pluie, pollution) qui peuvent réduire ou diffuser la portée théorique du faisceau.\n\nParamètres Techniques :\nLe calculateur n\'est applicable que pour les sources laser en mode continu (CW) et n\'est valable que pour la plage de longueur d\'onde de 400 à 700 nm – paramètres standards pour les systèmes laser de spectacle.\n\nAcceptation des Risques :\nCe calculateur est fourni \"tel quel\".\nNous ne garantissons pas l\'exactitude et la précision des résultats.\nEn activant cet outil, l\'utilisateur reconnaît être un professionnel formé aux règles de sécurité en vigueur et accepte l\'entière responsabilité des risques liés à la mise en œuvre des équipements (laser, lumière, vidéo).\nVérifiez systématiquement les données avec les manuels constructeurs officiels.'**
   String get laserLegalDisclaimerText;
+
+  /// No description provided for @patchPageTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch DMX'**
+  String get patchPageTitle;
+
+  /// No description provided for @patchSummaryTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résumé'**
+  String get patchSummaryTitle;
+
+  /// No description provided for @patchListTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch'**
+  String get patchListTitle;
+
+  /// No description provided for @patchUniverseLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers DMX :'**
+  String get patchUniverseLabel;
+
+  /// No description provided for @patchUniverseSelected.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers sélectionné'**
+  String get patchUniverseSelected;
+
+  /// No description provided for @patchUniverseItem.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers {value}'**
+  String patchUniverseItem(Object value);
+
+  /// No description provided for @patchFixturesCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projecteurs : {count}'**
+  String patchFixturesCount(Object count);
+
+  /// No description provided for @patchChannelsUsed.
+  ///
+  /// In fr, this message translates to:
+  /// **'Canaux occupés : {count} / 512'**
+  String patchChannelsUsed(Object count);
+
+  /// No description provided for @patchConflicts.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conflits : {count} canal(aux)'**
+  String patchConflicts(Object count);
+
+  /// No description provided for @patchEmptyUniverse.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune entrée dans cet univers.'**
+  String get patchEmptyUniverse;
+
+  /// No description provided for @patchModeLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mode DMX : {mode}'**
+  String patchModeLabel(Object mode);
+
+  /// No description provided for @patchAddressLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse : {start} → {end} (unité : canaux DMX)'**
+  String patchAddressLabel(Object start, Object end);
+
+  /// No description provided for @patchConflictShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conflit DMX'**
+  String get patchConflictShort;
+
+  /// No description provided for @patchEditTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modifier le patch'**
+  String get patchEditTitle;
+
+  /// No description provided for @patchEditModeLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mode DMX (libellé)'**
+  String get patchEditModeLabel;
+
+  /// No description provided for @patchEditChannelsLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nombre de canaux (unité : canaux DMX)'**
+  String get patchEditChannelsLabel;
+
+  /// No description provided for @patchEditHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Astuce : saisis le nombre de canaux du mode constructeur (ex : 26).'**
+  String get patchEditHint;
+
+  /// No description provided for @patchInvalidChannelCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nombre de canaux invalide.'**
+  String get patchInvalidChannelCount;
+
+  /// No description provided for @patchConflictError.
+  ///
+  /// In fr, this message translates to:
+  /// **'Impossible : conflit DMX ou valeurs invalides.'**
+  String get patchConflictError;
+
+  /// No description provided for @patchHomeTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch DMX'**
+  String get patchHomeTitle;
+
+  /// No description provided for @patchHomeImportMvrTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Importer un fichier MVR'**
+  String get patchHomeImportMvrTitle;
+
+  /// No description provided for @patchHomeImportMvrDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charger un fichier MVR depuis l’appareil et afficher un résumé clair sous forme de tableur.'**
+  String get patchHomeImportMvrDescription;
+
+  /// No description provided for @patchHomeViewPatchTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Voir le patch actuel'**
+  String get patchHomeViewPatchTitle;
+
+  /// No description provided for @patchHomeViewPatchDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Afficher l’univers DMX, les canaux occupés et les projecteurs patchés.'**
+  String get patchHomeViewPatchDescription;
+
+  /// No description provided for @patchHomeDisclaimer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Import MVR : lecture indicative. Vérifie toujours le patch final.'**
+  String get patchHomeDisclaimer;
+
+  /// No description provided for @patchHubTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch / MVR'**
+  String get patchHubTitle;
+
+  /// No description provided for @patchHubWorksiteTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mode chantier'**
+  String get patchHubWorksiteTitle;
+
+  /// No description provided for @patchHubWorksiteBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lecture seule : le MVR est chargé comme référence.\nAucune modification d’adresses n’est possible dans l’application.'**
+  String get patchHubWorksiteBody;
+
+  /// No description provided for @patchHubOpenMvrButton.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charger / consulter un fichier MVR'**
+  String get patchHubOpenMvrButton;
+
+  /// No description provided for @patchHubOpenGridButton.
+  ///
+  /// In fr, this message translates to:
+  /// **'Voir la place disponible (grille DMX)'**
+  String get patchHubOpenGridButton;
+
+  /// No description provided for @patchHubStateTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'État'**
+  String get patchHubStateTitle;
+
+  /// No description provided for @patchHubStateEmpty.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune référence chargée.'**
+  String get patchHubStateEmpty;
+
+  /// No description provided for @patchHubStateLoaded.
+  ///
+  /// In fr, this message translates to:
+  /// **'Référence chargée : {count} entrée(s), lecture seule.'**
+  String patchHubStateLoaded(Object count);
+
+  /// No description provided for @patchIssueInvalidUniverse.
+  ///
+  /// In fr, this message translates to:
+  /// **'L’univers doit être supérieur ou égal à 1.'**
+  String get patchIssueInvalidUniverse;
+
+  /// No description provided for @patchIssueInvalidStartAddress.
+  ///
+  /// In fr, this message translates to:
+  /// **'L’adresse DMX doit être comprise entre 1 et 512.'**
+  String get patchIssueInvalidStartAddress;
+
+  /// No description provided for @patchIssueInvalidChannelCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le nombre de canaux doit être supérieur ou égal à 1.'**
+  String get patchIssueInvalidChannelCount;
+
+  /// No description provided for @patchIssueRangeExceedsUniverse.
+  ///
+  /// In fr, this message translates to:
+  /// **'La plage de canaux dépasse 512 dans cet univers.'**
+  String get patchIssueRangeExceedsUniverse;
+
+  /// No description provided for @patchIssueUnknown.
+  ///
+  /// In fr, this message translates to:
+  /// **'Erreur de validation inconnue.'**
+  String get patchIssueUnknown;
+
+  /// No description provided for @patchManualTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch manuel'**
+  String get patchManualTitle;
+
+  /// No description provided for @patchManualDisabledTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fonction désactivée'**
+  String get patchManualDisabledTitle;
+
+  /// No description provided for @patchManualDisabledBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le patch manuel est désactivé pour le mode chantier.\nUtilise uniquement l’import MVR et la vue patch.'**
+  String get patchManualDisabledBody;
+
+  /// No description provided for @patchMvrTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Importer un fichier MVR'**
+  String get patchMvrTitle;
+
+  /// No description provided for @patchMvrClearTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Effacer l’import mémorisé'**
+  String get patchMvrClearTooltip;
+
+  /// No description provided for @patchMvrFileCardTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fichier MVR'**
+  String get patchMvrFileCardTitle;
+
+  /// No description provided for @patchMvrFileCardHelp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charge un fichier MVR depuis l’appareil. Les données sont mémorisées automatiquement.'**
+  String get patchMvrFileCardHelp;
+
+  /// No description provided for @patchMvrButtonAnalyzing.
+  ///
+  /// In fr, this message translates to:
+  /// **'Analyse en cours…'**
+  String get patchMvrButtonAnalyzing;
+
+  /// No description provided for @patchMvrButtonPickFile.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charger un fichier MVR'**
+  String get patchMvrButtonPickFile;
+
+  /// No description provided for @patchMvrButtonLoadAsReference.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charger comme référence de patch (lecture seule)'**
+  String get patchMvrButtonLoadAsReference;
+
+  /// No description provided for @patchMvrSummaryTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résumé (persistant)'**
+  String get patchMvrSummaryTitle;
+
+  /// No description provided for @patchMvrColumnsHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Colonnes : ID, Nom machine, Univers, Adresse DMX, Canaux.'**
+  String get patchMvrColumnsHint;
+
+  /// No description provided for @patchMvrFilterUniverseLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Filtrer par univers'**
+  String get patchMvrFilterUniverseLabel;
+
+  /// No description provided for @patchMvrFilterAllUniverses.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tous les univers'**
+  String get patchMvrFilterAllUniverses;
+
+  /// No description provided for @patchMvrUniverseItem.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers {u}'**
+  String patchMvrUniverseItem(Object u);
+
+  /// No description provided for @patchMvrSortByLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Trier par'**
+  String get patchMvrSortByLabel;
+
+  /// No description provided for @patchMvrSortId.
+  ///
+  /// In fr, this message translates to:
+  /// **'ID'**
+  String get patchMvrSortId;
+
+  /// No description provided for @patchMvrSortName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom de machine'**
+  String get patchMvrSortName;
+
+  /// No description provided for @patchMvrSortUniverse.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers'**
+  String get patchMvrSortUniverse;
+
+  /// No description provided for @patchMvrSortAddress.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse DMX'**
+  String get patchMvrSortAddress;
+
+  /// No description provided for @patchMvrSortChannels.
+  ///
+  /// In fr, this message translates to:
+  /// **'Canaux'**
+  String get patchMvrSortChannels;
+
+  /// No description provided for @patchMvrSortUniverseThenAddress.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers + Adresse DMX'**
+  String get patchMvrSortUniverseThenAddress;
+
+  /// No description provided for @patchMvrOrderLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ordre'**
+  String get patchMvrOrderLabel;
+
+  /// No description provided for @patchMvrOrderAsc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Croissant'**
+  String get patchMvrOrderAsc;
+
+  /// No description provided for @patchMvrOrderDesc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Décroissant'**
+  String get patchMvrOrderDesc;
+
+  /// No description provided for @patchMvrColId.
+  ///
+  /// In fr, this message translates to:
+  /// **'ID'**
+  String get patchMvrColId;
+
+  /// No description provided for @patchMvrColName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom machine'**
+  String get patchMvrColName;
+
+  /// No description provided for @patchMvrColUniverse.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers'**
+  String get patchMvrColUniverse;
+
+  /// No description provided for @patchMvrColAddress.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse DMX'**
+  String get patchMvrColAddress;
+
+  /// No description provided for @patchMvrColChannels.
+  ///
+  /// In fr, this message translates to:
+  /// **'Canaux'**
+  String get patchMvrColChannels;
+
+  /// No description provided for @patchMvrModeNotProvided.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mode non renseigné (MVR)'**
+  String get patchMvrModeNotProvided;
+
+  /// No description provided for @patchMvrStatusRestored.
+  ///
+  /// In fr, this message translates to:
+  /// **'ℹ️ Import MVR restauré ({count} lignes).'**
+  String patchMvrStatusRestored(Object count);
+
+  /// No description provided for @patchMvrStatusCleared.
+  ///
+  /// In fr, this message translates to:
+  /// **'Import MVR effacé.'**
+  String get patchMvrStatusCleared;
+
+  /// No description provided for @patchMvrStatusSelectingFile.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sélection du fichier…'**
+  String get patchMvrStatusSelectingFile;
+
+  /// No description provided for @patchMvrStatusFilePickFailed.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Sélection de fichier impossible : {error}'**
+  String patchMvrStatusFilePickFailed(Object error);
+
+  /// No description provided for @patchMvrStatusNoFileSelected.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Aucun fichier sélectionné.'**
+  String get patchMvrStatusNoFileSelected;
+
+  /// No description provided for @patchMvrStatusUnsupportedFile.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Fichier non supporté.\nSélectionne un fichier avec l’extension .mvr.\nFichier choisi : {name}'**
+  String patchMvrStatusUnsupportedFile(Object name);
+
+  /// No description provided for @patchMvrStatusEmptyBytes.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Impossible de lire le fichier (bytes vides).\nAstuce : réessaie en sélectionnant le fichier depuis un gestionnaire de fichiers.'**
+  String get patchMvrStatusEmptyBytes;
+
+  /// No description provided for @patchMvrStatusExtractingZip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Extraction MVR (archive ZIP)…'**
+  String get patchMvrStatusExtractingZip;
+
+  /// No description provided for @patchMvrStatusSceneXmlNotFound.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Fichier MVR invalide : XML de scène introuvable.\nAttendu : GeneralSceneDescription.xml (prioritaire) ou Scene.mvr.'**
+  String get patchMvrStatusSceneXmlNotFound;
+
+  /// No description provided for @patchMvrStatusLoadingGdtf.
+  ///
+  /// In fr, this message translates to:
+  /// **'Chargement des fichiers GDTF…'**
+  String get patchMvrStatusLoadingGdtf;
+
+  /// No description provided for @patchMvrStatusParsingContent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Analyse du contenu MVR…'**
+  String get patchMvrStatusParsingContent;
+
+  /// No description provided for @patchMvrStatusNoUsableFixtures.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Aucun projecteur exploitable trouvé.'**
+  String get patchMvrStatusNoUsableFixtures;
+
+  /// No description provided for @patchMvrStatusFixturesFound.
+  ///
+  /// In fr, this message translates to:
+  /// **'✅ {count} projecteurs trouvés.\nFootprints via GDTF : {resolved}'**
+  String patchMvrStatusFixturesFound(Object count, Object resolved);
+
+  /// No description provided for @patchMvrStatusParseError.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Erreur parsing MVR : {error}'**
+  String patchMvrStatusParseError(Object error);
+
+  /// No description provided for @patchMvrStatusNoContentToLoad.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Aucun contenu MVR à charger.'**
+  String get patchMvrStatusNoContentToLoad;
+
+  /// No description provided for @patchMvrStatusReferenceLoaded.
+  ///
+  /// In fr, this message translates to:
+  /// **'✅ Référence patch chargée (lecture seule)\nEntrées chargées : {loaded}\nIgnorées (univers/adresse manquants) : {skipped}\nFootprints via GDTF : {footprints}\n\nAucune modification n’a été appliquée aux adresses du MVR.'**
+  String patchMvrStatusReferenceLoaded(
+      Object loaded, Object skipped, Object footprints);
+
+  /// No description provided for @commonOk.
+  ///
+  /// In fr, this message translates to:
+  /// **'OK'**
+  String get commonOk;
+
+  /// No description provided for @patchUniverseAppBarTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch'**
+  String get patchUniverseAppBarTitle;
+
+  /// No description provided for @patchUniverseResetTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réinitialiser la référence'**
+  String get patchUniverseResetTooltip;
+
+  /// No description provided for @patchUniverseReferenceTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Référence'**
+  String get patchUniverseReferenceTitle;
+
+  /// No description provided for @patchUniverseReferenceReadOnly.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lecture seule (depuis MVR)'**
+  String get patchUniverseReferenceReadOnly;
+
+  /// No description provided for @patchUniverseReferenceNone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune référence chargée'**
+  String get patchUniverseReferenceNone;
+
+  /// No description provided for @patchUniverseUniverseTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers'**
+  String get patchUniverseUniverseTitle;
+
+  /// No description provided for @patchUniverseUniverseDropdownLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers DMX'**
+  String get patchUniverseUniverseDropdownLabel;
+
+  /// No description provided for @patchUniverseUniverseItem.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers {value}'**
+  String patchUniverseUniverseItem(int value);
+
+  /// No description provided for @patchUniverseOccupiedCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'Occupés : {count} / 512'**
+  String patchUniverseOccupiedCount(int count);
+
+  /// No description provided for @patchUniverseConflictCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conflits : {count} canal(aux)'**
+  String patchUniverseConflictCount(int count);
+
+  /// No description provided for @patchUniverseTapHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Touche une case pour afficher le détail.'**
+  String get patchUniverseTapHint;
+
+  /// No description provided for @patchUniverseZoomTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Zoom'**
+  String get patchUniverseZoomTitle;
+
+  /// No description provided for @patchUniverseZoomOut.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réduire'**
+  String get patchUniverseZoomOut;
+
+  /// No description provided for @patchUniverseZoomIn.
+  ///
+  /// In fr, this message translates to:
+  /// **'Agrandir'**
+  String get patchUniverseZoomIn;
+
+  /// No description provided for @patchUniverseGridTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Occupation (1 à 512)'**
+  String get patchUniverseGridTitle;
+
+  /// No description provided for @patchUniverseGridLimitedByWidth.
+  ///
+  /// In fr, this message translates to:
+  /// **'Limité par la largeur de l’écran.'**
+  String get patchUniverseGridLimitedByWidth;
+
+  /// No description provided for @patchUniverseLegendFree.
+  ///
+  /// In fr, this message translates to:
+  /// **'Libre'**
+  String get patchUniverseLegendFree;
+
+  /// No description provided for @patchUniverseLegendOccupied.
+  ///
+  /// In fr, this message translates to:
+  /// **'Occupé'**
+  String get patchUniverseLegendOccupied;
+
+  /// No description provided for @patchUniverseLegendConflict.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conflit'**
+  String get patchUniverseLegendConflict;
+
+  /// No description provided for @patchUniverseResetTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réinitialiser la référence ?'**
+  String get patchUniverseResetTitle;
+
+  /// No description provided for @patchUniverseResetContent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cela efface le patch chargé depuis le MVR dans l’application.\nAucune donnée du fichier n’est modifiée.'**
+  String get patchUniverseResetContent;
+
+  /// No description provided for @patchUniverseResetConfirm.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réinitialiser'**
+  String get patchUniverseResetConfirm;
+
+  /// No description provided for @patchUniversePopupTitleFree.
+  ///
+  /// In fr, this message translates to:
+  /// **'Canal libre'**
+  String get patchUniversePopupTitleFree;
+
+  /// No description provided for @patchUniversePopupTitleOccupied.
+  ///
+  /// In fr, this message translates to:
+  /// **'Canal occupé'**
+  String get patchUniversePopupTitleOccupied;
+
+  /// No description provided for @patchUniversePopupTitleConflict.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conflit'**
+  String get patchUniversePopupTitleConflict;
+
+  /// No description provided for @patchUniverseStateFree.
+  ///
+  /// In fr, this message translates to:
+  /// **'Libre'**
+  String get patchUniverseStateFree;
+
+  /// No description provided for @patchUniverseStateOccupied.
+  ///
+  /// In fr, this message translates to:
+  /// **'Occupé'**
+  String get patchUniverseStateOccupied;
+
+  /// No description provided for @patchUniverseStateConflict.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conflit'**
+  String get patchUniverseStateConflict;
+
+  /// No description provided for @patchUniversePopupHeader.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers : {universe}\nAdresse : {address}\nÉtat : {state}'**
+  String patchUniversePopupHeader(int universe, int address, String state);
+
+  /// No description provided for @patchUniversePopupManyOccupants.
+  ///
+  /// In fr, this message translates to:
+  /// **'Plusieurs machines occupent ce canal.'**
+  String get patchUniversePopupManyOccupants;
+
+  /// No description provided for @patchUniversePopupMore.
+  ///
+  /// In fr, this message translates to:
+  /// **'… et {count} autre(s).'**
+  String patchUniversePopupMore(int count);
+
+  /// No description provided for @patchUniverseOccupantLine.
+  ///
+  /// In fr, this message translates to:
+  /// **'• {fixture}\n  {mode} — {channels} canal(aux)\n  {start} → {end}'**
+  String patchUniverseOccupantLine(
+      String fixture, String mode, int channels, int start, int end);
+
+  /// No description provided for @commonClose.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fermer'**
+  String get commonClose;
+
+  /// No description provided for @commonContinue.
+  ///
+  /// In fr, this message translates to:
+  /// **'Continuer'**
+  String get commonContinue;
+
+  /// No description provided for @patchTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch DMX'**
+  String get patchTitle;
+
+  /// No description provided for @patchReference.
+  ///
+  /// In fr, this message translates to:
+  /// **'Référence'**
+  String get patchReference;
+
+  /// No description provided for @patchReadOnly.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lecture seule (depuis MVR)'**
+  String get patchReadOnly;
+
+  /// No description provided for @patchNoReference.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune référence chargée'**
+  String get patchNoReference;
+
+  /// No description provided for @patchUniverse.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers DMX'**
+  String get patchUniverse;
+
+  /// No description provided for @patchOccupied.
+  ///
+  /// In fr, this message translates to:
+  /// **'Occupés : {count} / 512'**
+  String patchOccupied(Object count);
+
+  /// No description provided for @patchResetReferenceTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réinitialiser la référence ?'**
+  String get patchResetReferenceTitle;
+
+  /// No description provided for @patchResetReferenceText.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cela efface le patch chargé depuis le MVR dans l’application.\nAucune donnée du fichier n’est modifiée.'**
+  String get patchResetReferenceText;
+
+  /// No description provided for @patchLoadReference.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charger comme référence de patch (lecture seule)'**
+  String get patchLoadReference;
 
   /// No description provided for @laserLegalDisclaimerTextLong.
   ///

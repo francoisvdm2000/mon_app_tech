@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../l10n/app_localizations.dart';
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 import 'about/about_dmx_page.dart';
 import 'about/about_artnet_page.dart';

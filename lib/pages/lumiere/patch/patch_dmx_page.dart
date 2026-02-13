@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../app/ui/widgets.dart';
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'patch_models.dart';
 import 'patch_store.dart';
 
@@ -42,24 +43,31 @@ class _PatchDmxPageState extends State<PatchDmxPage> {
   }
 
   Future<void> _editEntry(PatchEntry entry) async {
+    final loc = AppLocalizations.of(context);
+
     final modeCtrl = TextEditingController(text: entry.dmxModeName);
-    final channelsCtrl = TextEditingController(text: entry.channelCount.toString());
+    final channelsCtrl =
+        TextEditingController(text: entry.channelCount.toString());
 
     final res = await showDialog<_EditResult>(
       context: context,
       builder: (ctx) {
         return AlertDialog(
           backgroundColor: const Color(0xFF111111),
-          title: const Text('Modifier le patch', style: TextStyle(color: Colors.white)),
+          title: Text(
+            loc.patchEditTitle,
+            style: const TextStyle(color: Colors.white),
+          ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(entry.fixtureName, style: const TextStyle(color: Colors.white70)),
+              Text(entry.fixtureName,
+                  style: const TextStyle(color: Colors.white70)),
               const SizedBox(height: 12),
               TextField(
                 controller: modeCtrl,
-                decoration: const InputDecoration(
-                  labelText: 'Mode DMX (libellé)',
+                decoration: InputDecoration(
+                  labelText: loc.patchEditModeLabel,
                 ),
               ),
               const SizedBox(height: 12),
@@ -67,36 +75,42 @@ class _PatchDmxPageState extends State<PatchDmxPage> {
                 controller: channelsCtrl,
                 keyboardType: TextInputType.number,
                 inputFormatters: [numFormatter],
-                decoration: const InputDecoration(
-                  labelText: 'Nombre de canaux (unité : canaux DMX)',
+                decoration: InputDecoration(
+                  labelText: loc.patchEditChannelsLabel,
                 ),
               ),
               const SizedBox(height: 8),
-              const Text(
-                'Astuce : saisis le nombre de canaux du mode constructeur (ex : 26).',
-                style: TextStyle(color: Colors.white38, fontSize: 12),
+              Text(
+                loc.patchEditHint,
+                style: const TextStyle(color: Colors.white38, fontSize: 12),
               ),
             ],
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx),
-              child: const Text('Annuler'),
+              child: Text(loc.commonCancel),
             ),
             ElevatedButton(
               onPressed: () {
                 final ch = int.tryParse(channelsCtrl.text.trim());
                 if (ch == null || ch < 1 || ch > 512) {
-                  Navigator.pop(ctx, const _EditResult(error: 'Nombre de canaux invalide.'));
+                  Navigator.pop(
+                    ctx,
+                    _EditResult(error: loc.patchInvalidChannelCount),
+                  );
                   return;
                 }
                 final modeName = modeCtrl.text.trim().isEmpty
                     ? entry.dmxModeName
                     : modeCtrl.text.trim();
 
-                Navigator.pop(ctx, _EditResult(modeName: modeName, channels: ch));
+                Navigator.pop(
+                  ctx,
+                  _EditResult(modeName: modeName, channels: ch),
+                );
               },
-              child: const Text('Enregistrer'),
+              child: Text(loc.commonSave),
             ),
           ],
         );
@@ -106,7 +120,8 @@ class _PatchDmxPageState extends State<PatchDmxPage> {
     if (!mounted || res == null) return;
 
     if (res.error != null) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(res.error!)));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(res.error!)));
       return;
     }
 
@@ -118,13 +133,15 @@ class _PatchDmxPageState extends State<PatchDmxPage> {
     final ok = patchStore.updateById(entry.id, updated);
     if (ok == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Impossible : conflit DMX ou valeurs invalides.')),
+        SnackBar(content: Text(loc.patchConflictError)),
       );
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return AnimatedBuilder(
       animation: patchStore,
       builder: (context, _) {
@@ -138,19 +155,20 @@ class _PatchDmxPageState extends State<PatchDmxPage> {
         final conflicts = patchStore.conflictsInUniverse(currentUniverse);
 
         return Scaffold(
-          appBar: AppBar(title: const Text('Patch DMX')),
+          appBar: AppBar(title: Text(loc.patchPageTitle)),
           body: ListView(
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
             children: [
               SectionCard(
-                title: 'Résumé',
+                title: loc.patchSummaryTitle,
                 icon: Icons.info_outline,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Row(
                       children: [
-                        const Text('Univers DMX : ', style: TextStyle(color: Colors.white70)),
+                        Text(loc.patchUniverseLabel,
+                            style: const TextStyle(color: Colors.white70)),
                         const SizedBox(width: 8),
                         Expanded(
                           child: DropdownButtonFormField<int>(
@@ -158,39 +176,51 @@ class _PatchDmxPageState extends State<PatchDmxPage> {
                             items: (universes.isEmpty ? <int>[1] : universes)
                                 .map((u) => DropdownMenuItem(
                                       value: u,
-                                      child: Text('Univers $u'),
+                                      child: Text(
+                                          loc.patchUniverseItem(u.toString())),
                                     ))
                                 .toList(),
                             onChanged: (v) {
                               if (v == null) return;
                               setState(() => _selectedUniverse = v);
                             },
-                            decoration: const InputDecoration(
-                              labelText: 'Univers sélectionné',
+                            decoration: InputDecoration(
+                              labelText: loc.patchUniverseSelected,
                             ),
                           ),
                         ),
                       ],
                     ),
                     const SizedBox(height: 12),
-                    Text('Projecteurs : ${entries.length}', style: const TextStyle(color: Colors.white70)),
+                    Text(
+                      loc.patchFixturesCount(entries.length.toString()),
+                      style: const TextStyle(color: Colors.white70),
+                    ),
                     const SizedBox(height: 6),
-                    Text('Canaux occupés : $occupied / 512', style: const TextStyle(color: Colors.white70)),
+                    Text(
+                      loc.patchChannelsUsed(occupied.toString()),
+                      style: const TextStyle(color: Colors.white70),
+                    ),
                     if (conflicts.isNotEmpty) ...[
                       const SizedBox(height: 10),
-                      Text('Conflits détectés : ${conflicts.length}', style: const TextStyle(color: Colors.redAccent)),
+                      Text(
+                        loc.patchConflicts(conflicts.length.toString()),
+                        style: const TextStyle(color: Colors.redAccent),
+                      ),
                     ],
                   ],
                 ),
               ),
               const SizedBox(height: 12),
               SectionCard(
-                title: 'Patch',
+                title: loc.patchListTitle,
                 icon: Icons.tune,
                 child: entries.isEmpty
-                    ? const Text('Aucune entrée dans cet univers.', style: TextStyle(color: Colors.white70))
+                    ? Text(loc.patchEmptyUniverse,
+                        style: const TextStyle(color: Colors.white70))
                     : Column(
-                        children: entries.map((e) => _entryTile(e)).toList(),
+                        children:
+                            entries.map((e) => _entryTile(e, loc)).toList(),
                       ),
               ),
             ],
@@ -200,7 +230,7 @@ class _PatchDmxPageState extends State<PatchDmxPage> {
     );
   }
 
-  Widget _entryTile(PatchEntry e) {
+  Widget _entryTile(PatchEntry e, AppLocalizations loc) {
     final hasConflict = patchStore.conflictsFor(e, ignoreId: e.id).isNotEmpty;
 
     return InkWell(
@@ -227,19 +257,26 @@ class _PatchDmxPageState extends State<PatchDmxPage> {
                 children: [
                   Text(
                     e.fixtureName,
-                    style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+                    style: const TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.w700),
                   ),
                   const SizedBox(height: 4),
-                  Text('Mode DMX : ${e.dmxModeName}', style: const TextStyle(color: Colors.white70)),
+                  Text(
+                    loc.patchModeLabel(e.dmxModeName),
+                    style: const TextStyle(color: Colors.white70),
+                  ),
                   const SizedBox(height: 2),
                   Text(
-                    'Adresse : ${e.startAddress} → ${e.endAddress} (unité : canaux DMX)',
+                    loc.patchAddressLabel('${e.startAddress}-${e.endAddress}'),
                     style: const TextStyle(color: Colors.white70),
                   ),
                   if (hasConflict)
-                    const Padding(
-                      padding: EdgeInsets.only(top: 6),
-                      child: Text('Conflit DMX', style: TextStyle(color: Colors.redAccent)),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 6),
+                      child: Text(
+                        loc.patchConflictShort,
+                        style: const TextStyle(color: Colors.redAccent),
+                      ),
                     ),
                 ],
               ),

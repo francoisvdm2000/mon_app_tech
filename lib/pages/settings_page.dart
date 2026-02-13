@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/locale_provider.dart';
-import '../l10n/app_localizations.dart';
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 class PageSettings extends StatelessWidget {
   const PageSettings({super.key});

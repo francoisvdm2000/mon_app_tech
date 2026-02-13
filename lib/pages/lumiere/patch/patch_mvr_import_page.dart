@@ -8,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:xml/xml.dart';
 
 import '../../../app/ui/widgets.dart';
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'gdtf_reader.dart';
 import 'patch_models.dart';
 import 'patch_store.dart';
@@ -53,10 +54,13 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
       if (decoded is! List) return;
 
       final rows = decoded.map((e) => _MvrRow.fromJson(e)).toList();
+
+      if (!mounted) return;
+      final loc = AppLocalizations.of(context);
+
       setState(() {
         _rows = rows;
-        _status =
-            rows.isEmpty ? '' : 'ℹ️ Import MVR restauré (${rows.length} lignes).';
+        _status = rows.isEmpty ? '' : loc.patchMvrStatusRestored(rows.length);
       });
     } catch (_) {
       // Cache corrompu : on ignore.
@@ -72,19 +76,25 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
   Future<void> _clearCache() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(_kMvrCacheKey);
+
+    if (!mounted) return;
+    final loc = AppLocalizations.of(context);
+
     setState(() {
       _rows = const [];
       _universeFilter = null;
-      _status = 'Import MVR effacé.';
+      _status = loc.patchMvrStatusCleared;
     });
   }
 
   // ===================== IMPORT FICHIER =====================
 
   Future<void> _pickAndParse() async {
+    final loc = AppLocalizations.of(context);
+
     setState(() {
       _isLoading = true;
-      _status = 'Sélection du fichier…';
+      _status = loc.patchMvrStatusSelectingFile;
       _rows = const [];
       _universeFilter = null;
     });
@@ -96,9 +106,10 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
         withData: true,
       );
     } catch (e) {
+      if (!mounted) return;
       setState(() {
         _isLoading = false;
-        _status = '❌ Sélection de fichier impossible : $e';
+        _status = loc.patchMvrStatusFilePickFailed(e.toString());
       });
       return;
     }
@@ -108,7 +119,7 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
     if (result == null || result.files.isEmpty) {
       setState(() {
         _isLoading = false;
-        _status = '❌ Aucun fichier sélectionné.';
+        _status = loc.patchMvrStatusNoFileSelected;
       });
       return;
     }
@@ -120,10 +131,7 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
     if (!nameLower.endsWith('.mvr')) {
       setState(() {
         _isLoading = false;
-        _status =
-            '❌ Fichier non supporté.\n'
-            'Sélectionne un fichier avec l’extension .mvr.\n'
-            'Fichier choisi : $name';
+        _status = loc.patchMvrStatusUnsupportedFile(name);
       });
       return;
     }
@@ -132,15 +140,13 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
     if (bytes == null || bytes.isEmpty) {
       setState(() {
         _isLoading = false;
-        _status =
-            '❌ Impossible de lire le fichier (bytes vides).\n'
-            'Astuce : réessaie en sélectionnant le fichier depuis un gestionnaire de fichiers.';
+        _status = loc.patchMvrStatusEmptyBytes;
       });
       return;
     }
 
     try {
-      setState(() => _status = 'Extraction MVR (archive ZIP)…');
+      setState(() => _status = loc.patchMvrStatusExtractingZip);
 
       final zip = ZipDecoder().decodeBytes(bytes, verify: true);
 
@@ -148,17 +154,15 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
       if (xmlString == null || xmlString.trim().isEmpty) {
         setState(() {
           _isLoading = false;
-          _status =
-              '❌ Fichier MVR invalide : XML de scène introuvable.\n'
-              'Attendu : GeneralSceneDescription.xml (prioritaire) ou Scene.mvr.';
+          _status = loc.patchMvrStatusSceneXmlNotFound;
         });
         return;
       }
 
-      setState(() => _status = 'Chargement des fichiers GDTF…');
+      setState(() => _status = loc.patchMvrStatusLoadingGdtf);
       final gdtfMap = _extractGdtfFiles(zip);
 
-      setState(() => _status = 'Analyse du contenu MVR…');
+      setState(() => _status = loc.patchMvrStatusParsingContent);
       final rows = _parseMvrFixturesRobust(xmlString, gdtfMap);
 
       await _saveToCache(rows);
@@ -169,14 +173,14 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
         _isLoading = false;
         _rows = rows;
         _status = rows.isEmpty
-            ? '❌ Aucun projecteur exploitable trouvé.'
-            : '✅ ${rows.length} projecteurs trouvés.\n'
-                'Footprints via GDTF : $resolved';
+            ? loc.patchMvrStatusNoUsableFixtures
+            : loc.patchMvrStatusFixturesFound(rows.length, resolved);
       });
     } catch (e) {
+      if (!mounted) return;
       setState(() {
         _isLoading = false;
-        _status = '❌ Erreur parsing MVR : $e';
+        _status = loc.patchMvrStatusParseError(e.toString());
       });
     }
   }
@@ -202,8 +206,10 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
   // ===================== CHARGER COMME RÉFÉRENCE PATCH =====================
 
   void _loadAsReference() {
+    final loc = AppLocalizations.of(context);
+
     if (_rows.isEmpty) {
-      setState(() => _status = '❌ Aucun contenu MVR à charger.');
+      setState(() => _status = loc.patchMvrStatusNoContentToLoad);
       return;
     }
 
@@ -231,7 +237,7 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
       final e = PatchEntry(
         id: id,
         fixtureName: r.name,
-        dmxModeName: r.dmxModeName ?? 'Mode non renseigné (MVR)',
+        dmxModeName: r.dmxModeName ?? loc.patchMvrModeNotProvided,
         channelCount: channels,
         universe: u,
         startAddress: a,
@@ -244,12 +250,7 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
     patchStore.loadReference(entries);
 
     setState(() {
-      _status =
-          '✅ Référence patch chargée (lecture seule)\n'
-          'Entrées chargées : $loaded\n'
-          'Ignorées (univers/adresse manquants) : $skipped\n'
-          'Footprints via GDTF : $footprintsFromGdtf\n\n'
-          'Aucune modification n’a été appliquée aux adresses du MVR.';
+      _status = loc.patchMvrStatusReferenceLoaded(loaded, skipped, footprintsFromGdtf);
     });
   }
 
@@ -323,13 +324,15 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Importer un fichier MVR'),
+        title: Text(loc.patchMvrTitle),
         actions: [
           if (_rows.isNotEmpty)
             IconButton(
-              tooltip: 'Effacer l’import mémorisé',
+              tooltip: loc.patchMvrClearTooltip,
               onPressed: _clearCache,
               icon: const Icon(Icons.delete_outline),
             ),
@@ -339,25 +342,29 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
         children: [
           SectionCard(
-            title: 'Fichier MVR',
+            title: loc.patchMvrFileCardTitle,
             icon: Icons.upload_file,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Text(
-                  'Charge un fichier MVR depuis l’appareil. Les données sont mémorisées automatiquement.',
-                  style: TextStyle(color: Colors.white70),
+                Text(
+                  loc.patchMvrFileCardHelp,
+                  style: const TextStyle(color: Colors.white70),
                 ),
                 const SizedBox(height: 12),
                 ElevatedButton(
                   onPressed: _isLoading ? null : _pickAndParse,
-                  child: Text(_isLoading ? 'Analyse en cours…' : 'Charger un fichier MVR'),
+                  child: Text(
+                    _isLoading
+                        ? loc.patchMvrButtonAnalyzing
+                        : loc.patchMvrButtonPickFile,
+                  ),
                 ),
                 const SizedBox(height: 12),
                 if (_rows.isNotEmpty)
                   ElevatedButton(
                     onPressed: _loadAsReference,
-                    child: const Text('Charger comme référence de patch (lecture seule)'),
+                    child: Text(loc.patchMvrButtonLoadAsReference),
                   ),
                 const SizedBox(height: 12),
                 ResultBox(_status),
@@ -372,43 +379,43 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
   }
 
   Widget _buildTableCard() {
+    final loc = AppLocalizations.of(context);
+
     final universes = _universesFromRows();
     final rows = _filteredRows(_sortedRows());
 
     return SectionCard(
-      title: 'Résumé (persistant)',
+      title: loc.patchMvrSummaryTitle,
       icon: Icons.table_chart,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const Text(
-            'Colonnes : ID, Nom machine, Univers, Adresse DMX, Canaux.',
-            style: TextStyle(color: Colors.white70),
+          Text(
+            loc.patchMvrColumnsHint,
+            style: const TextStyle(color: Colors.white70),
           ),
           const SizedBox(height: 12),
-
           DropdownButtonFormField<int?>(
             initialValue: _universeFilter,
             isExpanded: true,
-            decoration: const InputDecoration(
-              labelText: 'Filtrer par univers',
+            decoration: InputDecoration(
+              labelText: loc.patchMvrFilterUniverseLabel,
             ),
             items: [
-              const DropdownMenuItem<int?>(
+              DropdownMenuItem<int?>(
                 value: null,
-                child: Text('Tous les univers'),
+                child: Text(loc.patchMvrFilterAllUniverses),
               ),
               ...universes.map(
                 (u) => DropdownMenuItem<int?>(
                   value: u,
-                  child: Text('Univers $u'),
+                  child: Text(loc.patchMvrUniverseItem(u)),
                 ),
               ),
             ],
             onChanged: (v) => setState(() => _universeFilter = v),
           ),
           const SizedBox(height: 12),
-
           LayoutBuilder(
             builder: (context, constraints) {
               final isNarrow = constraints.maxWidth < 520;
@@ -416,16 +423,25 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
               final sortBy = DropdownButtonFormField<_SortField>(
                 initialValue: _sortField,
                 isExpanded: true,
-                decoration: const InputDecoration(labelText: 'Trier par'),
-                items: const [
-                  DropdownMenuItem(value: _SortField.id, child: Text('ID')),
-                  DropdownMenuItem(value: _SortField.name, child: Text('Nom de machine')),
-                  DropdownMenuItem(value: _SortField.universe, child: Text('Univers')),
-                  DropdownMenuItem(value: _SortField.address, child: Text('Adresse DMX')),
-                  DropdownMenuItem(value: _SortField.channels, child: Text('Canaux')),
+                decoration: InputDecoration(labelText: loc.patchMvrSortByLabel),
+                items: [
+                  DropdownMenuItem(
+                      value: _SortField.id, child: Text(loc.patchMvrSortId)),
+                  DropdownMenuItem(
+                      value: _SortField.name,
+                      child: Text(loc.patchMvrSortName)),
+                  DropdownMenuItem(
+                      value: _SortField.universe,
+                      child: Text(loc.patchMvrSortUniverse)),
+                  DropdownMenuItem(
+                      value: _SortField.address,
+                      child: Text(loc.patchMvrSortAddress)),
+                  DropdownMenuItem(
+                      value: _SortField.channels,
+                      child: Text(loc.patchMvrSortChannels)),
                   DropdownMenuItem(
                     value: _SortField.universeThenAddress,
-                    child: Text('Univers + Adresse DMX'),
+                    child: Text(loc.patchMvrSortUniverseThenAddress),
                   ),
                 ],
                 onChanged: (v) {
@@ -437,10 +453,12 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
               final order = DropdownButtonFormField<bool>(
                 initialValue: _sortAscending,
                 isExpanded: true,
-                decoration: const InputDecoration(labelText: 'Ordre'),
-                items: const [
-                  DropdownMenuItem(value: true, child: Text('Croissant')),
-                  DropdownMenuItem(value: false, child: Text('Décroissant')),
+                decoration: InputDecoration(labelText: loc.patchMvrOrderLabel),
+                items: [
+                  DropdownMenuItem(
+                      value: true, child: Text(loc.patchMvrOrderAsc)),
+                  DropdownMenuItem(
+                      value: false, child: Text(loc.patchMvrOrderDesc)),
                 ],
                 onChanged: (v) {
                   if (v == null) return;
@@ -467,9 +485,7 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
               );
             },
           ),
-
           const SizedBox(height: 12),
-
           Container(
             decoration: BoxDecoration(
               color: const Color(0xFF0B0B0B),
@@ -484,12 +500,12 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
                   fontWeight: FontWeight.w700,
                 ),
                 dataTextStyle: const TextStyle(color: Colors.white70),
-                columns: const [
-                  DataColumn(label: Text('ID')),
-                  DataColumn(label: Text('Nom machine')),
-                  DataColumn(label: Text('Univers')),
-                  DataColumn(label: Text('Adresse DMX')),
-                  DataColumn(label: Text('Canaux')),
+                columns: [
+                  DataColumn(label: Text(loc.patchMvrColId)),
+                  DataColumn(label: Text(loc.patchMvrColName)),
+                  DataColumn(label: Text(loc.patchMvrColUniverse)),
+                  DataColumn(label: Text(loc.patchMvrColAddress)),
+                  DataColumn(label: Text(loc.patchMvrColChannels)),
                 ],
                 rows: List.generate(rows.length, (index) {
                   final r = rows[index];
@@ -540,16 +556,16 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
         );
 
     best ??= archive.files.cast<ArchiveFile?>().firstWhere(
-          (f) {
-            if (f == null || !f.isFile) return false;
-            final n = f.name.toLowerCase();
-            if (!n.endsWith('.xml') && !n.endsWith('.mvr')) return false;
-            return n.contains('generalscenedescription') ||
-                n.contains('scene') ||
-                n.contains('description');
-          },
-          orElse: () => null,
-        );
+      (f) {
+        if (f == null || !f.isFile) return false;
+        final n = f.name.toLowerCase();
+        if (!n.endsWith('.xml') && !n.endsWith('.mvr')) return false;
+        return n.contains('generalscenedescription') ||
+            n.contains('scene') ||
+            n.contains('description');
+      },
+      orElse: () => null,
+    );
 
     if (best == null) return null;
 
@@ -576,7 +592,8 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
 
     for (final fx in fixtures) {
       final name =
-          (_readStringAttrOrChild(fx, const ['name', 'Name']) ?? 'Sans nom').trim();
+          (_readStringAttrOrChild(fx, const ['name', 'Name']) ?? 'Sans nom')
+              .trim();
 
       final fixtureId =
           _readStringAttrOrChild(fx, const ['FixtureID', 'fixtureid']);
@@ -589,8 +606,10 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
       final address = patch?.$2;
 
       // Vectorworks : GDTFSpec + GDTFMode
-      final gdtfSpec = _readStringAttrOrChild(fx, const ['GDTFSpec', 'GdtfSpec']);
-      final gdtfMode = _readStringAttrOrChild(fx, const ['GDTFMode', 'GdtfMode']);
+      final gdtfSpec =
+          _readStringAttrOrChild(fx, const ['GDTFSpec', 'GdtfSpec']);
+      final gdtfMode =
+          _readStringAttrOrChild(fx, const ['GDTFMode', 'GdtfMode']);
 
       final channels = _resolveFootprintFromGdtf(
         gdtfSpec: gdtfSpec,
@@ -606,7 +625,8 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
           name: name.isEmpty ? 'Sans nom' : name,
           universe: universe,
           address: address,
-          dmxModeName: gdtfMode?.trim().isEmpty ?? true ? null : gdtfMode!.trim(),
+          dmxModeName:
+              gdtfMode?.trim().isEmpty ?? true ? null : gdtfMode!.trim(),
           channelCount: channels,
         ),
       );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart';
-import '../../l10n/app_localizations.dart';
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'dipswitch_calculations.dart';
 
 class DipSwitchPage extends StatefulWidget {
@@ -175,7 +175,7 @@ class _DipSwitchPageState extends State<DipSwitchPage> {
     lines.add(
       loc.dipSwitchResultIntervalLine(
         step.toString(),
-        loc.dipSwitchChannelUnit(step),
+        loc.dipSwitchChannelUnit,
       ),
     );
 

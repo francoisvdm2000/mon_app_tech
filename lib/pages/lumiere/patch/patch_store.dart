@@ -3,6 +3,15 @@ import 'patch_models.dart';
 
 final PatchStore patchStore = PatchStore._();
 
+/// Petit “carrier” i18n: une clé + placeholders.
+/// (PatchStore n’a pas BuildContext, donc pas AppLocalizations ici.)
+@immutable
+class PatchIssueText {
+  final String key;
+  final Map<String, Object?> args;
+  const PatchIssueText(this.key, [this.args = const {}]);
+}
+
 class PatchStore extends ChangeNotifier {
   PatchStore._();
 
@@ -134,21 +143,21 @@ class PatchStore extends ChangeNotifier {
     if (entry.universe < 1) {
       issues.add(const PatchIssue(
         PatchIssueCode.invalidUniverse,
-        'L’univers doit être supérieur ou égal à 1.',
+        'patchIssueInvalidUniverse',
       ));
     }
 
     if (entry.startAddress < 1 || entry.startAddress > 512) {
       issues.add(const PatchIssue(
         PatchIssueCode.invalidStartAddress,
-        'L’adresse DMX doit être comprise entre 1 et 512.',
+        'patchIssueInvalidStartAddress',
       ));
     }
 
     if (entry.channelCount < 1) {
       issues.add(const PatchIssue(
         PatchIssueCode.invalidChannelCount,
-        'Le nombre de canaux doit être supérieur ou égal à 1.',
+        'patchIssueInvalidChannelCount',
       ));
     }
 
@@ -158,7 +167,7 @@ class PatchStore extends ChangeNotifier {
       if (entry.endAddress > 512) {
         issues.add(const PatchIssue(
           PatchIssueCode.rangeExceedsUniverse,
-          'La plage de canaux dépasse 512 dans cet univers.',
+          'patchIssueRangeExceedsUniverse',
         ));
       }
     }

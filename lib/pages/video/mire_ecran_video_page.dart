@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // intFormatter, numFormatter, ExpandSectionCard
 import '../../app/utils/png_exporter.dart';
-import '../../l10n/app_localizations.dart';
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 import 'mire_painters.dart' as mp;
 import 'mire_texts.dart';

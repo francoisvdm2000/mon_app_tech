@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../app/ui/widgets.dart'; // numFormatter, SectionCard, ExpandSectionCard
-import '../l10n/app_localizations.dart';
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'laser/laser_calculations.dart';
 import 'laser/laser_storage.dart';
 

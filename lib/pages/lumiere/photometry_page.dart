@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart';
-import '../../l10n/app_localizations.dart';
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'photometry_calculations.dart';
 
 class PhotometryPage extends StatefulWidget {
@@ -209,18 +209,11 @@ class _PhotometryPageState extends State<PhotometryPage> {
     final lm2 = _parse(_lumens2.text) ?? 0.0;
     final cd2 = _parse(_candela2.text) ?? 0.0;
     final a2 = _parse(_angle2.text) ?? 0.0;
-    final omega = PhotometryCalculations.solidAngleSteradianFromBeamAngle(
-      beamAngleDegree: a2,
-    );
 
     final loc = AppLocalizations.of(context);
     setState(() {
-      _summary2 = loc.photometrySummary2(
-        _fmt(lm2, decimals: 0),
-        _fmt(cd2, decimals: 0),
-        _fmt(a2, decimals: 1),
-        _fmt(omega, decimals: 3),
-      );
+      _summary2 = loc.photometrySummary2(_fmt(lm2, decimals: 0),
+          _fmt(cd2, decimals: 0), _fmt(a2, decimals: 1));
     });
   }
 
@@ -249,12 +242,8 @@ class _PhotometryPageState extends State<PhotometryPage> {
 
     final loc = AppLocalizations.of(context);
     setState(() {
-      _summary3 = loc.photometrySummary3(
-        _fmt(lm2, decimals: 0),
-        _fmt(d2, decimals: 2),
-        _fmt(a2, decimals: 1),
-        _fmt(lux, decimals: 1),
-      );
+      _summary3 = loc.photometrySummary3(_fmt(lm2, decimals: 0),
+          _fmt(d2, decimals: 2), _fmt(a2, decimals: 1), _fmt(lux, decimals: 0));
     });
   }
 

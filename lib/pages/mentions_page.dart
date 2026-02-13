@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../app/ui/widgets.dart';
-import '../l10n/app_localizations.dart';
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 class PageMentionsLegales extends StatelessWidget {
   const PageMentionsLegales({super.key});

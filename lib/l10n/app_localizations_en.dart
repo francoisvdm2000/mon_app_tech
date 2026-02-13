@@ -1689,6 +1689,459 @@ class AppLocalizationsEn extends AppLocalizations {
       'AVERTISSEMENT LÉGAL ET CLAUSE DE NON-RESPONSABILITÉ\n\nL\'utilisation de ce calculateur est strictement réservée à titre informatif et indicatif.\nLes résultats obtenus ne constituent pas une expertise technique et ne sauraient engager la responsabilité de l\'éditeur en cas d\'erreur de calcul, d\'omission ou d\'accident survenus lors de l\'installation ou de l\'exploitation du matériel.\n\nCalculs NOHD et Instruments Optiques :\nDans certaines circonstances, des instruments optiques spéciaux (jumelles, télescopes) peuvent être utilisés pour visualiser le laser à une distance plus éloignée.\nCe fait doit être pris en compte lors de la détermination du NOHD.\nDans le calcul ci-joint, aucun instrument optique n\'est pris en compte, car il est très peu probable que cela doive être pris en compte dans l\'industrie courante du laser.\nCependant, il incombe à l\'opérateur de procéder à une évaluation appropriée des risques pour la sécurité.\n\nZones d\'Interférence Visuelle (SZED et CZED) :\nLes calculs des distances SZED (aveuglement temporaire) et CZED (éblouissement) sont basés sur des seuils d\'éclairement énergétique standards pour la vision humaine.\nCes valeurs ne sont valables que pour un observateur dont l\'œil est adapté à l\'obscurité (conditions de spectacle).\nCes résultats ne tiennent pas compte des conditions atmosphériques (brume, pluie, pollution) qui peuvent réduire ou diffuser la portée théorique du faisceau.\n\nParamètres Techniques :\nLe calculateur n\'est applicable que pour les sources laser en mode continu (CW) et n\'est valable que pour la plage de longueur d\'onde de 400 à 700 nm – paramètres standards pour les systèmes laser de spectacle.\n\nAcceptation des Risques :\nCe calculateur est fourni \"tel quel\".\nNous ne garantissons pas l\'exactitude et la précision des résultats.\nEn activant cet outil, l\'utilisateur reconnaît être un professionnel formé aux règles de sécurité en vigueur et accepte l\'entière responsabilité des risques liés à la mise en œuvre des équipements (laser, lumière, vidéo).\nVérifiez systématiquement les données avec les manuels constructeurs officiels.';
 
   @override
+  String get patchPageTitle => 'Patch DMX';
+
+  @override
+  String get patchSummaryTitle => 'Résumé';
+
+  @override
+  String get patchListTitle => 'Patch';
+
+  @override
+  String get patchUniverseLabel => 'Univers DMX :';
+
+  @override
+  String get patchUniverseSelected => 'Univers sélectionné';
+
+  @override
+  String patchUniverseItem(Object value) {
+    return 'Univers $value';
+  }
+
+  @override
+  String patchFixturesCount(Object count) {
+    return 'Projecteurs : $count';
+  }
+
+  @override
+  String patchChannelsUsed(Object count) {
+    return 'Canaux occupés : $count / 512';
+  }
+
+  @override
+  String patchConflicts(Object count) {
+    return 'Conflits : $count canal(aux)';
+  }
+
+  @override
+  String get patchEmptyUniverse => 'Aucune entrée dans cet univers.';
+
+  @override
+  String patchModeLabel(Object mode) {
+    return 'Mode DMX : $mode';
+  }
+
+  @override
+  String patchAddressLabel(Object start, Object end) {
+    return 'Adresse : $start → $end (unité : canaux DMX)';
+  }
+
+  @override
+  String get patchConflictShort => 'Conflit DMX';
+
+  @override
+  String get patchEditTitle => 'Modifier le patch';
+
+  @override
+  String get patchEditModeLabel => 'Mode DMX (libellé)';
+
+  @override
+  String get patchEditChannelsLabel => 'Nombre de canaux (unité : canaux DMX)';
+
+  @override
+  String get patchEditHint =>
+      'Astuce : saisis le nombre de canaux du mode constructeur (ex : 26).';
+
+  @override
+  String get patchInvalidChannelCount => 'Nombre de canaux invalide.';
+
+  @override
+  String get patchConflictError =>
+      'Impossible : conflit DMX ou valeurs invalides.';
+
+  @override
+  String get patchHomeTitle => 'Patch DMX';
+
+  @override
+  String get patchHomeImportMvrTitle => 'Importer un fichier MVR';
+
+  @override
+  String get patchHomeImportMvrDescription =>
+      'Charger un fichier MVR depuis l’appareil et afficher un résumé clair sous forme de tableur.';
+
+  @override
+  String get patchHomeViewPatchTitle => 'Voir le patch actuel';
+
+  @override
+  String get patchHomeViewPatchDescription =>
+      'Afficher l’univers DMX, les canaux occupés et les projecteurs patchés.';
+
+  @override
+  String get patchHomeDisclaimer =>
+      'Import MVR : lecture indicative. Vérifie toujours le patch final.';
+
+  @override
+  String get patchHubTitle => 'Patch / MVR';
+
+  @override
+  String get patchHubWorksiteTitle => 'Mode chantier';
+
+  @override
+  String get patchHubWorksiteBody =>
+      'Lecture seule : le MVR est chargé comme référence.\nAucune modification d’adresses n’est possible dans l’application.';
+
+  @override
+  String get patchHubOpenMvrButton => 'Charger / consulter un fichier MVR';
+
+  @override
+  String get patchHubOpenGridButton => 'Voir la place disponible (grille DMX)';
+
+  @override
+  String get patchHubStateTitle => 'État';
+
+  @override
+  String get patchHubStateEmpty => 'Aucune référence chargée.';
+
+  @override
+  String patchHubStateLoaded(Object count) {
+    return 'Référence chargée : $count entrée(s), lecture seule.';
+  }
+
+  @override
+  String get patchIssueInvalidUniverse =>
+      'L’univers doit être supérieur ou égal à 1.';
+
+  @override
+  String get patchIssueInvalidStartAddress =>
+      'L’adresse DMX doit être comprise entre 1 et 512.';
+
+  @override
+  String get patchIssueInvalidChannelCount =>
+      'Le nombre de canaux doit être supérieur ou égal à 1.';
+
+  @override
+  String get patchIssueRangeExceedsUniverse =>
+      'La plage de canaux dépasse 512 dans cet univers.';
+
+  @override
+  String get patchIssueUnknown => 'Erreur de validation inconnue.';
+
+  @override
+  String get patchManualTitle => 'Patch manuel';
+
+  @override
+  String get patchManualDisabledTitle => 'Fonction désactivée';
+
+  @override
+  String get patchManualDisabledBody =>
+      'Le patch manuel est désactivé pour le mode chantier.\nUtilise uniquement l’import MVR et la vue patch.';
+
+  @override
+  String get patchMvrTitle => 'Importer un fichier MVR';
+
+  @override
+  String get patchMvrClearTooltip => 'Effacer l’import mémorisé';
+
+  @override
+  String get patchMvrFileCardTitle => 'Fichier MVR';
+
+  @override
+  String get patchMvrFileCardHelp =>
+      'Charge un fichier MVR depuis l’appareil. Les données sont mémorisées automatiquement.';
+
+  @override
+  String get patchMvrButtonAnalyzing => 'Analyse en cours…';
+
+  @override
+  String get patchMvrButtonPickFile => 'Charger un fichier MVR';
+
+  @override
+  String get patchMvrButtonLoadAsReference =>
+      'Charger comme référence de patch (lecture seule)';
+
+  @override
+  String get patchMvrSummaryTitle => 'Résumé (persistant)';
+
+  @override
+  String get patchMvrColumnsHint =>
+      'Colonnes : ID, Nom machine, Univers, Adresse DMX, Canaux.';
+
+  @override
+  String get patchMvrFilterUniverseLabel => 'Filtrer par univers';
+
+  @override
+  String get patchMvrFilterAllUniverses => 'Tous les univers';
+
+  @override
+  String patchMvrUniverseItem(Object u) {
+    return 'Univers $u';
+  }
+
+  @override
+  String get patchMvrSortByLabel => 'Trier par';
+
+  @override
+  String get patchMvrSortId => 'ID';
+
+  @override
+  String get patchMvrSortName => 'Nom de machine';
+
+  @override
+  String get patchMvrSortUniverse => 'Univers';
+
+  @override
+  String get patchMvrSortAddress => 'Adresse DMX';
+
+  @override
+  String get patchMvrSortChannels => 'Canaux';
+
+  @override
+  String get patchMvrSortUniverseThenAddress => 'Univers + Adresse DMX';
+
+  @override
+  String get patchMvrOrderLabel => 'Ordre';
+
+  @override
+  String get patchMvrOrderAsc => 'Croissant';
+
+  @override
+  String get patchMvrOrderDesc => 'Décroissant';
+
+  @override
+  String get patchMvrColId => 'ID';
+
+  @override
+  String get patchMvrColName => 'Nom machine';
+
+  @override
+  String get patchMvrColUniverse => 'Univers';
+
+  @override
+  String get patchMvrColAddress => 'Adresse DMX';
+
+  @override
+  String get patchMvrColChannels => 'Canaux';
+
+  @override
+  String get patchMvrModeNotProvided => 'Mode non renseigné (MVR)';
+
+  @override
+  String patchMvrStatusRestored(Object count) {
+    return 'ℹ️ Import MVR restauré ($count lignes).';
+  }
+
+  @override
+  String get patchMvrStatusCleared => 'Import MVR effacé.';
+
+  @override
+  String get patchMvrStatusSelectingFile => 'Sélection du fichier…';
+
+  @override
+  String patchMvrStatusFilePickFailed(Object error) {
+    return '❌ Sélection de fichier impossible : $error';
+  }
+
+  @override
+  String get patchMvrStatusNoFileSelected => '❌ Aucun fichier sélectionné.';
+
+  @override
+  String patchMvrStatusUnsupportedFile(Object name) {
+    return '❌ Fichier non supporté.\nSélectionne un fichier avec l’extension .mvr.\nFichier choisi : $name';
+  }
+
+  @override
+  String get patchMvrStatusEmptyBytes =>
+      '❌ Impossible de lire le fichier (bytes vides).\nAstuce : réessaie en sélectionnant le fichier depuis un gestionnaire de fichiers.';
+
+  @override
+  String get patchMvrStatusExtractingZip => 'Extraction MVR (archive ZIP)…';
+
+  @override
+  String get patchMvrStatusSceneXmlNotFound =>
+      '❌ Fichier MVR invalide : XML de scène introuvable.\nAttendu : GeneralSceneDescription.xml (prioritaire) ou Scene.mvr.';
+
+  @override
+  String get patchMvrStatusLoadingGdtf => 'Chargement des fichiers GDTF…';
+
+  @override
+  String get patchMvrStatusParsingContent => 'Analyse du contenu MVR…';
+
+  @override
+  String get patchMvrStatusNoUsableFixtures =>
+      '❌ Aucun projecteur exploitable trouvé.';
+
+  @override
+  String patchMvrStatusFixturesFound(Object count, Object resolved) {
+    return '✅ $count projecteurs trouvés.\nFootprints via GDTF : $resolved';
+  }
+
+  @override
+  String patchMvrStatusParseError(Object error) {
+    return '❌ Erreur parsing MVR : $error';
+  }
+
+  @override
+  String get patchMvrStatusNoContentToLoad => '❌ Aucun contenu MVR à charger.';
+
+  @override
+  String patchMvrStatusReferenceLoaded(
+      Object loaded, Object skipped, Object footprints) {
+    return '✅ Référence patch chargée (lecture seule)\nEntrées chargées : $loaded\nIgnorées (univers/adresse manquants) : $skipped\nFootprints via GDTF : $footprints\n\nAucune modification n’a été appliquée aux adresses du MVR.';
+  }
+
+  @override
+  String get commonOk => 'OK';
+
+  @override
+  String get patchUniverseAppBarTitle => 'Patch';
+
+  @override
+  String get patchUniverseResetTooltip => 'Réinitialiser la référence';
+
+  @override
+  String get patchUniverseReferenceTitle => 'Référence';
+
+  @override
+  String get patchUniverseReferenceReadOnly => 'Lecture seule (depuis MVR)';
+
+  @override
+  String get patchUniverseReferenceNone => 'Aucune référence chargée';
+
+  @override
+  String get patchUniverseUniverseTitle => 'Univers';
+
+  @override
+  String get patchUniverseUniverseDropdownLabel => 'Univers DMX';
+
+  @override
+  String patchUniverseUniverseItem(int value) {
+    return 'Univers $value';
+  }
+
+  @override
+  String patchUniverseOccupiedCount(int count) {
+    return 'Occupés : $count / 512';
+  }
+
+  @override
+  String patchUniverseConflictCount(int count) {
+    return 'Conflits : $count canal(aux)';
+  }
+
+  @override
+  String get patchUniverseTapHint => 'Touche une case pour afficher le détail.';
+
+  @override
+  String get patchUniverseZoomTitle => 'Zoom';
+
+  @override
+  String get patchUniverseZoomOut => 'Réduire';
+
+  @override
+  String get patchUniverseZoomIn => 'Agrandir';
+
+  @override
+  String get patchUniverseGridTitle => 'Occupation (1 à 512)';
+
+  @override
+  String get patchUniverseGridLimitedByWidth =>
+      'Limité par la largeur de l’écran.';
+
+  @override
+  String get patchUniverseLegendFree => 'Libre';
+
+  @override
+  String get patchUniverseLegendOccupied => 'Occupé';
+
+  @override
+  String get patchUniverseLegendConflict => 'Conflit';
+
+  @override
+  String get patchUniverseResetTitle => 'Réinitialiser la référence ?';
+
+  @override
+  String get patchUniverseResetContent =>
+      'Cela efface le patch chargé depuis le MVR dans l’application.\nAucune donnée du fichier n’est modifiée.';
+
+  @override
+  String get patchUniverseResetConfirm => 'Réinitialiser';
+
+  @override
+  String get patchUniversePopupTitleFree => 'Canal libre';
+
+  @override
+  String get patchUniversePopupTitleOccupied => 'Canal occupé';
+
+  @override
+  String get patchUniversePopupTitleConflict => 'Conflit';
+
+  @override
+  String get patchUniverseStateFree => 'Libre';
+
+  @override
+  String get patchUniverseStateOccupied => 'Occupé';
+
+  @override
+  String get patchUniverseStateConflict => 'Conflit';
+
+  @override
+  String patchUniversePopupHeader(int universe, int address, String state) {
+    return 'Univers : $universe\nAdresse : $address\nÉtat : $state';
+  }
+
+  @override
+  String get patchUniversePopupManyOccupants =>
+      'Plusieurs machines occupent ce canal.';
+
+  @override
+  String patchUniversePopupMore(int count) {
+    return '… et $count autre(s).';
+  }
+
+  @override
+  String patchUniverseOccupantLine(
+      String fixture, String mode, int channels, int start, int end) {
+    return '• $fixture\n  $mode — $channels canal(aux)\n  $start → $end';
+  }
+
+  @override
+  String get commonClose => 'Fermer';
+
+  @override
+  String get commonContinue => 'Continuer';
+
+  @override
+  String get patchTitle => 'Patch DMX';
+
+  @override
+  String get patchReference => 'Référence';
+
+  @override
+  String get patchReadOnly => 'Lecture seule (depuis MVR)';
+
+  @override
+  String get patchNoReference => 'Aucune référence chargée';
+
+  @override
+  String get patchUniverse => 'Univers DMX';
+
+  @override
+  String patchOccupied(Object count) {
+    return 'Occupés : $count / 512';
+  }
+
+  @override
+  String get patchResetReferenceTitle => 'Réinitialiser la référence ?';
+
+  @override
+  String get patchResetReferenceText =>
+      'Cela efface le patch chargé depuis le MVR dans l’application.\nAucune donnée du fichier n’est modifiée.';
+
+  @override
+  String get patchLoadReference =>
+      'Charger comme référence de patch (lecture seule)';
+
+  @override
   String get laserLegalDisclaimerTextLong =>
       'AVERTISSEMENT LÉGAL ET CLAUSE DE NON-RESPONSABILITÉ\n\nL\'utilisation de ce calculateur est strictement réservée à titre informatif et indicatif.\nLes résultats obtenus ne constituent pas une expertise technique et ne sauraient engager la responsabilité de l\'éditeur en cas d\'erreur de calcul, d\'omission ou d\'accident survenus lors de l\'installation ou de l\'exploitation du matériel.\n\nCalculs NOHD et Instruments Optiques :\nDans certaines circonstances, des instruments optiques spéciaux (jumelles, télescopes) peuvent être utilisés pour visualiser le laser à une distance plus éloignée.\nCe fait doit être pris en compte lors de la détermination du NOHD.\nDans le calcul ci-joint, aucun instrument optique n\'est pris en compte, car il est très peu probable que cela doive être pris en compte dans l\'industrie courante du laser.\nCependant, il incombe à l\'opérateur de procéder à une évaluation appropriée des risques pour la sécurité.\n\nZones d\'Interférence Visuelle (SZED et CZED) :\nLes calculs des distances SZED (aveuglement temporaire) et CZED (éblouissement) sont basés sur des seuils d\'éclairement énergétique standards pour la vision humaine.\nCes valeurs ne sont valables que pour un observateur dont l\'œil est adapté à l\'obscurité (conditions de spectacle).\nCes résultats ne tiennent pas compte des conditions atmosphériques (brume, pluie, pollution) qui peuvent réduire ou diffuser la portée théorique du faisceau.\n\nParamètres Techniques :\nLe calculateur n\'est applicable que pour les sources laser en mode continu (CW) et n\'est valable que pour la plage de longueur d\'onde de 400 à 700 nm – paramètres standards pour les systèmes laser de spectacle.\n\nAcceptation des Risques :\nCe calculateur est fourni \"tel quel\".\nNous ne garantissons pas l\'exactitude et la précision des résultats.\nEn activant cet outil, l\'utilisateur reconnaît être un professionnel formé aux règles de sécurité en vigueur et accepte l\'entière responsabilité des risques liés à la mise en œuvre des équipements (laser, lumière, vidéo).\nVérifiez systématiquement les données avec les manuels constructeurs officiels.';
 

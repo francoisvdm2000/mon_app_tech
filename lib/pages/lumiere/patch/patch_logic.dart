@@ -1,3 +1,4 @@
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'patch_models.dart';
 
 class PatchLogic {
@@ -10,6 +11,7 @@ class PatchLogic {
     return end <= maxAddress;
   }
 
+  /// ✅ Version historique (non-i18n) : on la garde pour ne rien casser.
   static List<PatchIssue> validateBasics({
     required int universe,
     required int startAddress,
@@ -47,6 +49,62 @@ class PatchLogic {
     }
 
     return issues;
+  }
+
+  /// ✅ Version i18n (à utiliser dans les pages/UI).
+  /// Même logique, mais messages issus des .arb.
+  static List<PatchIssue> validateBasicsLocalized({
+    required AppLocalizations loc,
+    required int universe,
+    required int startAddress,
+    required int channelCount,
+  }) {
+    final issues = <PatchIssue>[];
+
+    if (universe < 1) {
+      issues.add(PatchIssue(
+        PatchIssueCode.invalidUniverse,
+        messageForIssueCode(loc, PatchIssueCode.invalidUniverse),
+      ));
+    }
+    if (startAddress < 1 || startAddress > maxAddress) {
+      issues.add(PatchIssue(
+        PatchIssueCode.invalidStartAddress,
+        messageForIssueCode(loc, PatchIssueCode.invalidStartAddress),
+      ));
+    }
+    if (channelCount < 1) {
+      issues.add(PatchIssue(
+        PatchIssueCode.invalidChannelCount,
+        messageForIssueCode(loc, PatchIssueCode.invalidChannelCount),
+      ));
+    }
+
+    if (issues.isEmpty) {
+      final end = startAddress + channelCount - 1;
+      if (end > maxAddress) {
+        issues.add(PatchIssue(
+          PatchIssueCode.rangeExceedsUniverse,
+          messageForIssueCode(loc, PatchIssueCode.rangeExceedsUniverse),
+        ));
+      }
+    }
+
+    return issues;
+  }
+
+  /// ✅ Mapping code -> texte localisé (1 seul endroit).
+  static String messageForIssueCode(AppLocalizations loc, PatchIssueCode code) {
+    switch (code) {
+      case PatchIssueCode.invalidUniverse:
+        return loc.patchIssueInvalidUniverse;
+      case PatchIssueCode.invalidStartAddress:
+        return loc.patchIssueInvalidStartAddress;
+      case PatchIssueCode.invalidChannelCount:
+        return loc.patchIssueInvalidChannelCount;
+      case PatchIssueCode.rangeExceedsUniverse:
+        return loc.patchIssueRangeExceedsUniverse;
+    }
   }
 
   static bool overlaps(PatchEntry a, PatchEntry b) {
@@ -109,7 +167,8 @@ class PatchLogic {
   }
 
   /// DMX absolute -> (universe, address)
-  static ({int universe, int address})? mapAbsoluteAddress(int absoluteAddress) {
+  static ({int universe, int address})? mapAbsoluteAddress(
+      int absoluteAddress) {
     return DmxAddressMapping.fromAbsolute(absoluteAddress);
   }
 

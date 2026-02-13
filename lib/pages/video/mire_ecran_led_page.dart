@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // intFormatter, ExpandSectionCard
 import '../../app/utils/png_exporter.dart';
-import '../../l10n/app_localizations.dart'; // ✅ TON AppLocalizations
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart'; // ✅ TON AppLocalizations
 
 import 'mire_painters.dart';
 import 'mire_texts.dart'; // ✅ MireTexts unique (doit être la seule source)

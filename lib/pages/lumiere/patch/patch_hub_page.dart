@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../app/ui/widgets.dart';
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'patch_mvr_import_page.dart';
 import 'patch_universe_page.dart';
 import 'patch_store.dart';
@@ -14,43 +15,47 @@ class PatchHubPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return AnimatedBuilder(
       animation: patchStore,
       builder: (context, _) {
+        final hasRef = patchStore.entries.isNotEmpty;
+        final count = patchStore.entries.length;
+
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Patch / MVR'),
+            title: Text(loc.patchHubTitle),
           ),
           body: ListView(
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
             children: [
               SectionCard(
-                title: 'Mode chantier',
+                title: loc.patchHubWorksiteTitle,
                 icon: Icons.lock_outline,
-                child: const Text(
-                  'Lecture seule : le MVR est chargé comme référence.\n'
-                  'Aucune modification d’adresses n’est possible dans l’application.',
-                  style: TextStyle(color: Colors.white70),
+                child: Text(
+                  loc.patchHubWorksiteBody,
+                  style: const TextStyle(color: Colors.white70),
                 ),
               ),
               const SizedBox(height: 12),
               ElevatedButton(
                 onPressed: () => _open(context, const PatchMvrImportPage()),
-                child: const Text('Charger / consulter un fichier MVR'),
+                child: Text(loc.patchHubOpenMvrButton),
               ),
               const SizedBox(height: 8),
               ElevatedButton(
                 onPressed: () => _open(context, const PatchUniversePage()),
-                child: const Text('Voir la place disponible (grille DMX)'),
+                child: Text(loc.patchHubOpenGridButton),
               ),
               const SizedBox(height: 12),
               SectionCard(
-                title: 'État',
+                title: loc.patchHubStateTitle,
                 icon: Icons.info_outline,
                 child: Text(
-                  patchStore.entries.isEmpty
-                      ? 'Aucune référence chargée.'
-                      : 'Référence chargée : ${patchStore.entries.length} entrée(s), lecture seule.',
+                  hasRef
+                      ? loc.patchHubStateLoaded(count)
+                      : loc.patchHubStateEmpty,
                   style: const TextStyle(color: Colors.white70),
                 ),
               ),
