@@ -151,7 +151,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutDmxTitle.
   ///
   /// In fr, this message translates to:
-  /// **'DMX — fonctionnement (simple & complet)'**
+  /// **'DMX'**
   String get aboutDmxTitle;
 
   /// No description provided for @aboutElectricitySubtitle.
@@ -175,7 +175,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutIpBasicsTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Réseau — bases IP / masque / DHCP (essentiel)'**
+  /// **'Bases IP'**
   String get aboutIpBasicsTitle;
 
   /// No description provided for @aboutLightNetworkSubtitle.
@@ -199,7 +199,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutSacnTitle.
   ///
   /// In fr, this message translates to:
-  /// **'sACN / E1.31 — multicast, IGMP, priorités'**
+  /// **'sACN'**
   String get aboutSacnTitle;
 
   /// No description provided for @aboutVideoSubtitle.
@@ -211,7 +211,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutVideoTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Vidéo — SDI / NDI / IP (SRT/RTMP)'**
+  /// **'Vidéo'**
   String get aboutVideoTitle;
 
   /// No description provided for @appTitle.
@@ -3687,6 +3687,558 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Largeur totale de projection (m)'**
   String get videoTotalWidthLabel;
+
+  /// No description provided for @aboutArtnetTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Art-Net'**
+  String get aboutArtnetTitle;
+
+  /// No description provided for @aboutArtnetToc01.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) Art-Net — c’est quoi et pourquoi'**
+  String get aboutArtnetToc01;
+
+  /// No description provided for @aboutArtnetToc02.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) Adressage & univers — mapping propre'**
+  String get aboutArtnetToc02;
+
+  /// No description provided for @aboutArtnetToc03.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) Limites & perf — ce qui casse en premier'**
+  String get aboutArtnetToc03;
+
+  /// No description provided for @aboutArtnetToc04.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) Nodes, splitters & RDM'**
+  String get aboutArtnetToc04;
+
+  /// No description provided for @aboutArtnetToc05.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) Dépannage — symptômes → causes'**
+  String get aboutArtnetToc05;
+
+  /// No description provided for @aboutArtnetToc06.
+  ///
+  /// In fr, this message translates to:
+  /// **'6) Schémas (réseau / unicast vs broadcast)'**
+  String get aboutArtnetToc06;
+
+  /// No description provided for @aboutArtnetToc07.
+  ///
+  /// In fr, this message translates to:
+  /// **'6bis) Images (assets) — RJ45/switch/câbles'**
+  String get aboutArtnetToc07;
+
+  /// No description provided for @aboutArtnetToc08.
+  ///
+  /// In fr, this message translates to:
+  /// **'7) Checklist rapide'**
+  String get aboutArtnetToc08;
+
+  /// No description provided for @aboutDmxToc01.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) DMX, univers, adresses — la base'**
+  String get aboutDmxToc01;
+
+  /// No description provided for @aboutDmxToc02.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) Trame DMX — break, start code, canaux'**
+  String get aboutDmxToc02;
+
+  /// No description provided for @aboutDmxToc03.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) Câblage RS-485 — topologie & câble'**
+  String get aboutDmxToc03;
+
+  /// No description provided for @aboutDmxToc04.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) Terminaison & splitters — éviter les réflexions'**
+  String get aboutDmxToc04;
+
+  /// No description provided for @aboutDmxToc05.
+  ///
+  /// In fr, this message translates to:
+  /// **'4bis) RDM — limites & compatibilités'**
+  String get aboutDmxToc05;
+
+  /// No description provided for @aboutDmxToc06.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) Dépannage terrain — symptômes → causes'**
+  String get aboutDmxToc06;
+
+  /// No description provided for @aboutDmxToc07.
+  ///
+  /// In fr, this message translates to:
+  /// **'6) Art-Net — repères terrain'**
+  String get aboutDmxToc07;
+
+  /// No description provided for @aboutDmxToc08.
+  ///
+  /// In fr, this message translates to:
+  /// **'7) sACN / E1.31 — multicast, IGMP, priorités'**
+  String get aboutDmxToc08;
+
+  /// No description provided for @aboutDmxToc09.
+  ///
+  /// In fr, this message translates to:
+  /// **'8) DMX vs Art-Net vs sACN — choisir'**
+  String get aboutDmxToc09;
+
+  /// No description provided for @aboutDmxToc10.
+  ///
+  /// In fr, this message translates to:
+  /// **'9) Schémas terrain (DMX / IP / pinout)'**
+  String get aboutDmxToc10;
+
+  /// No description provided for @aboutDmxToc11.
+  ///
+  /// In fr, this message translates to:
+  /// **'10) Checklist rapide'**
+  String get aboutDmxToc11;
+
+  /// No description provided for @aboutElectriciteTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Électricité'**
+  String get aboutElectriciteTitle;
+
+  /// No description provided for @aboutElectriciteToc01.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) Bases (W, A, V, kW)'**
+  String get aboutElectriciteToc01;
+
+  /// No description provided for @aboutElectriciteToc02.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) Connecteurs (Schuko / P17 / PowerCON)'**
+  String get aboutElectriciteToc02;
+
+  /// No description provided for @aboutElectriciteToc03.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) Mono / Tri (ce que ça change)'**
+  String get aboutElectriciteToc03;
+
+  /// No description provided for @aboutElectriciteToc04.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) Table rapide (16A → 400A)'**
+  String get aboutElectriciteToc04;
+
+  /// No description provided for @aboutElectriciteToc05.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) Sécurité & pièges terrain'**
+  String get aboutElectriciteToc05;
+
+  /// No description provided for @aboutElectriciteToc06.
+  ///
+  /// In fr, this message translates to:
+  /// **'6) Checklist'**
+  String get aboutElectriciteToc06;
+
+  /// No description provided for @aboutInformatiqueTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Informatique'**
+  String get aboutInformatiqueTitle;
+
+  /// No description provided for @aboutInformatiqueToc01.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) USB / USB-C / Thunderbolt'**
+  String get aboutInformatiqueToc01;
+
+  /// No description provided for @aboutInformatiqueToc02.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) Stockage (SATA / NVMe / SSD)'**
+  String get aboutInformatiqueToc02;
+
+  /// No description provided for @aboutInformatiqueToc03.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) Liaisons vidéo (DP / HDMI)'**
+  String get aboutInformatiqueToc03;
+
+  /// No description provided for @aboutInformatiqueToc04.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) PCIe / GPU (repères)'**
+  String get aboutInformatiqueToc04;
+
+  /// No description provided for @aboutInformatiqueToc05.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) Checklist (plateau)'**
+  String get aboutInformatiqueToc05;
+
+  /// No description provided for @aboutIpBasicsToc01.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) C’est quoi une IP et à quoi ça sert ?'**
+  String get aboutIpBasicsToc01;
+
+  /// No description provided for @aboutIpBasicsToc02.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) Pourquoi 192.x / 10.x / 172.x ? (adresses privées)'**
+  String get aboutIpBasicsToc02;
+
+  /// No description provided for @aboutIpBasicsToc03.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) Masque & sous-réseaux : comprendre pour de vrai'**
+  String get aboutIpBasicsToc03;
+
+  /// No description provided for @aboutIpBasicsToc04.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) DHCP, passerelle, DNS : qui fait quoi ?'**
+  String get aboutIpBasicsToc04;
+
+  /// No description provided for @aboutIpBasicsToc05.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) Comment deux appareils se parlent (LAN vs hors LAN)'**
+  String get aboutIpBasicsToc05;
+
+  /// No description provided for @aboutIpBasicsToc06.
+  ///
+  /// In fr, this message translates to:
+  /// **'6) Plans IP “show” simples (exemples prêts à copier)'**
+  String get aboutIpBasicsToc06;
+
+  /// No description provided for @aboutIpBasicsToc07.
+  ///
+  /// In fr, this message translates to:
+  /// **'7) Dépannage : symptômes → causes (méthode terrain)'**
+  String get aboutIpBasicsToc07;
+
+  /// No description provided for @aboutIpBasicsToc08.
+  ///
+  /// In fr, this message translates to:
+  /// **'8) Mini-exercices (vérifier vite un masque / un réseau)'**
+  String get aboutIpBasicsToc08;
+
+  /// No description provided for @aboutIpBasicsToc09.
+  ///
+  /// In fr, this message translates to:
+  /// **'9) Checklist rapide'**
+  String get aboutIpBasicsToc09;
+
+  /// No description provided for @aboutNetworkTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Network (EN)'**
+  String get aboutNetworkTitle;
+
+  /// No description provided for @aboutNetworkToc01.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) Objectif: réseau stable'**
+  String get aboutNetworkToc01;
+
+  /// No description provided for @aboutNetworkToc02.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) Plan IP (simple)'**
+  String get aboutNetworkToc02;
+
+  /// No description provided for @aboutNetworkToc03.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) VLAN (séparation)'**
+  String get aboutNetworkToc03;
+
+  /// No description provided for @aboutNetworkToc04.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) IGMP (sACN multicast)'**
+  String get aboutNetworkToc04;
+
+  /// No description provided for @aboutNetworkToc05.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) Wi-Fi vs filaire'**
+  String get aboutNetworkToc05;
+
+  /// No description provided for @aboutNetworkToc06.
+  ///
+  /// In fr, this message translates to:
+  /// **'6) Switch: ce qu’il faut'**
+  String get aboutNetworkToc06;
+
+  /// No description provided for @aboutNetworkToc07.
+  ///
+  /// In fr, this message translates to:
+  /// **'7) Schémas'**
+  String get aboutNetworkToc07;
+
+  /// No description provided for @aboutNetworkToc08.
+  ///
+  /// In fr, this message translates to:
+  /// **'7bis) Images (assets)'**
+  String get aboutNetworkToc08;
+
+  /// No description provided for @aboutNetworkToc09.
+  ///
+  /// In fr, this message translates to:
+  /// **'8) Checklist'**
+  String get aboutNetworkToc09;
+
+  /// No description provided for @aboutReseauTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réseau'**
+  String get aboutReseauTitle;
+
+  /// No description provided for @aboutReseauToc01.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) Bases réseau (LAN / IP / débit)'**
+  String get aboutReseauToc01;
+
+  /// No description provided for @aboutReseauToc02.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) RJ45 & catégories (Cat5e/6/6A/…)'**
+  String get aboutReseauToc02;
+
+  /// No description provided for @aboutReseauToc03.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) PoE (alimentation réseau)'**
+  String get aboutReseauToc03;
+
+  /// No description provided for @aboutReseauToc04.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) Fibre (SM/MM) + connecteurs (LC/SC)'**
+  String get aboutReseauToc04;
+
+  /// No description provided for @aboutReseauToc05.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) SFP / SFP+ / QSFP (modules)'**
+  String get aboutReseauToc05;
+
+  /// No description provided for @aboutReseauToc06.
+  ///
+  /// In fr, this message translates to:
+  /// **'6) Switches (VLAN / IGMP / QoS)'**
+  String get aboutReseauToc06;
+
+  /// No description provided for @aboutReseauToc07.
+  ///
+  /// In fr, this message translates to:
+  /// **'7) Art-Net / sACN sur réseau (conseils)'**
+  String get aboutReseauToc07;
+
+  /// No description provided for @aboutReseauToc08.
+  ///
+  /// In fr, this message translates to:
+  /// **'8) Checklist'**
+  String get aboutReseauToc08;
+
+  /// No description provided for @aboutSacnToc01.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) À quoi sert sACN ?'**
+  String get aboutSacnToc01;
+
+  /// No description provided for @aboutSacnToc02.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) Univers (numérotation)'**
+  String get aboutSacnToc02;
+
+  /// No description provided for @aboutSacnToc03.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) Multicast / Unicast + IGMP'**
+  String get aboutSacnToc03;
+
+  /// No description provided for @aboutSacnToc04.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) Priorités (multi-sources)'**
+  String get aboutSacnToc04;
+
+  /// No description provided for @aboutSacnToc05.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) Limites / perfs'**
+  String get aboutSacnToc05;
+
+  /// No description provided for @aboutSacnToc06.
+  ///
+  /// In fr, this message translates to:
+  /// **'6) RDM & sACN (proxy / selon matériel)'**
+  String get aboutSacnToc06;
+
+  /// No description provided for @aboutSacnToc07.
+  ///
+  /// In fr, this message translates to:
+  /// **'7) Schémas'**
+  String get aboutSacnToc07;
+
+  /// No description provided for @aboutSacnToc08.
+  ///
+  /// In fr, this message translates to:
+  /// **'7bis) Images (assets)'**
+  String get aboutSacnToc08;
+
+  /// No description provided for @aboutSacnToc09.
+  ///
+  /// In fr, this message translates to:
+  /// **'8) Checklist'**
+  String get aboutSacnToc09;
+
+  /// No description provided for @aboutVideoToc01.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) Bases vidéo (mots-clés)'**
+  String get aboutVideoToc01;
+
+  /// No description provided for @aboutVideoToc02.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) Résolution & FPS'**
+  String get aboutVideoToc02;
+
+  /// No description provided for @aboutVideoToc03.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) Couleur (4:4:4 / 4:2:2 / 10-bit)'**
+  String get aboutVideoToc03;
+
+  /// No description provided for @aboutVideoToc04.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) Sync (Genlock / Timecode)'**
+  String get aboutVideoToc04;
+
+  /// No description provided for @aboutVideoToc05.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) Câbles & distances'**
+  String get aboutVideoToc05;
+
+  /// No description provided for @aboutVideoToc06.
+  ///
+  /// In fr, this message translates to:
+  /// **'6) SDI (3G / 6G / 12G)'**
+  String get aboutVideoToc06;
+
+  /// No description provided for @aboutVideoToc07.
+  ///
+  /// In fr, this message translates to:
+  /// **'7) HDMI — terrain'**
+  String get aboutVideoToc07;
+
+  /// No description provided for @aboutVideoToc08.
+  ///
+  /// In fr, this message translates to:
+  /// **'8) NDI — quand / pourquoi / limites'**
+  String get aboutVideoToc08;
+
+  /// No description provided for @aboutVideoToc09.
+  ///
+  /// In fr, this message translates to:
+  /// **'9) Mapping / LED / multi-projo'**
+  String get aboutVideoToc09;
+
+  /// No description provided for @aboutVideoToc10.
+  ///
+  /// In fr, this message translates to:
+  /// **'10) Checklist terrain'**
+  String get aboutVideoToc10;
+
+  /// No description provided for @aboutTileDmxTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'DMX — fonctionnement (simple & complet)'**
+  String get aboutTileDmxTitle;
+
+  /// No description provided for @aboutTileArtnetTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Art-Net — DMX sur IP (nodes, unicast/broadcast)'**
+  String get aboutTileArtnetTitle;
+
+  /// No description provided for @aboutTileSacnTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'sACN / E1.31 — multicast, IGMP, priorités'**
+  String get aboutTileSacnTitle;
+
+  /// No description provided for @aboutTileIpBasicsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réseau — bases IP / masque / DHCP (essentiel)'**
+  String get aboutTileIpBasicsTitle;
+
+  /// No description provided for @aboutTileReseauTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réseau — RJ45 / Fibre / débits & longueurs'**
+  String get aboutTileReseauTitle;
+
+  /// No description provided for @aboutTileNetworkTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réseau lumière — VLAN, IGMP, Wi-Fi vs filaire'**
+  String get aboutTileNetworkTitle;
+
+  /// No description provided for @aboutTileVideoTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vidéo — SDI / NDI / IP (SRT/RTMP)'**
+  String get aboutTileVideoTitle;
+
+  /// No description provided for @aboutTileElectriciteTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Électrique — Schuko / P17 / puissances'**
+  String get aboutTileElectriciteTitle;
+
+  /// No description provided for @aboutTileElectriciteSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Connecteurs, mono/tri, tableaux kW rapides (16A→400A), pièges terrain.'**
+  String get aboutTileElectriciteSubtitle;
+
+  /// No description provided for @aboutTileInformatiqueTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Informatique — USB / HDMI / DP / SATA / NVMe…'**
+  String get aboutTileInformatiqueTitle;
+
+  /// No description provided for @aboutTileInformatiqueSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Débits utiles, versions, limites réelles, pièges marketing.'**
+  String get aboutTileInformatiqueSubtitle;
+
+  /// No description provided for @aboutTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'À propos'**
+  String get aboutTitle;
 }
 
 class _AppLocalizationsDelegate

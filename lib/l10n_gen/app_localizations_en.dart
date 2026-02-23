@@ -52,7 +52,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutIpBasicsTitle =>
-      'Network — IP basics / subnet / DHCP (essentials)';
+      'Network — IP basics / subnet mask / DHCP (essential)';
 
   @override
   String get aboutLightNetworkSubtitle =>
@@ -67,14 +67,14 @@ class AppLocalizationsEn extends AppLocalizations {
       'A network-pro-oriented DMX-over-IP standard.\\nMulticast/unicast, IGMP snooping/querier, multi-source priorities.';
 
   @override
-  String get aboutSacnTitle => 'sACN / E1.31 — multicast, IGMP, priorities';
+  String get aboutSacnTitle => 'sACN / E1.31 — multicast & priorities';
 
   @override
   String get aboutVideoSubtitle =>
       'Choose based on latency, reliability, cabling, LAN vs WAN.\\nTables + diagram.';
 
   @override
-  String get aboutVideoTitle => 'Video — SDI / NDI / IP (SRT/RTMP)';
+  String get aboutVideoTitle => 'Video — field notes';
 
   @override
   String get appTitle => 'My Tech App';
@@ -2064,4 +2064,296 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get videoTotalWidthLabel => 'Total projection width (m)';
+
+  @override
+  String get aboutArtnetTitle =>
+      'Art-Net — DMX universes over IP (simple & complete)';
+
+  @override
+  String get aboutArtnetToc01 => '1) Art‑Net — what it is and why';
+
+  @override
+  String get aboutArtnetToc02 => '2) Addressing & universes — clean mapping';
+
+  @override
+  String get aboutArtnetToc03 => '3) Limits & performance — what breaks first';
+
+  @override
+  String get aboutArtnetToc04 => '4) Nodes, splitters & RDM';
+
+  @override
+  String get aboutArtnetToc05 => '5) Troubleshooting — symptoms → causes';
+
+  @override
+  String get aboutArtnetToc06 => '6) Diagrams (network / unicast vs broadcast)';
+
+  @override
+  String get aboutArtnetToc07 => '6bis) Images (assets) — RJ45/switch/cables';
+
+  @override
+  String get aboutArtnetToc08 => '7) Quick checklist';
+
+  @override
+  String get aboutDmxToc01 => '1) DMX, universes, addresses — the basics';
+
+  @override
+  String get aboutDmxToc02 => '2) DMX frame — break, start code, channels';
+
+  @override
+  String get aboutDmxToc03 => '3) RS‑485 wiring — topology & cable';
+
+  @override
+  String get aboutDmxToc04 => '4) Termination & splitters — avoid reflections';
+
+  @override
+  String get aboutDmxToc05 => '4bis) RDM — limits & compatibility';
+
+  @override
+  String get aboutDmxToc06 => '5) Field troubleshooting — symptoms → causes';
+
+  @override
+  String get aboutDmxToc07 => '6) Art‑Net — field pointers';
+
+  @override
+  String get aboutDmxToc08 => '7) sACN / E1.31 — multicast, IGMP, priorities';
+
+  @override
+  String get aboutDmxToc09 => '8) DMX vs Art‑Net vs sACN — choosing';
+
+  @override
+  String get aboutDmxToc10 => '9) Field diagrams (DMX / IP / pinout)';
+
+  @override
+  String get aboutDmxToc11 => '10) Quick checklist';
+
+  @override
+  String get aboutElectriciteTitle => 'Electrical — field notes';
+
+  @override
+  String get aboutElectriciteToc01 => '1) Basics (W, A, V, kW)';
+
+  @override
+  String get aboutElectriciteToc02 => '2) Connectors (Schuko / CEE / PowerCON)';
+
+  @override
+  String get aboutElectriciteToc03 =>
+      '3) Single‑phase / three‑phase (what changes)';
+
+  @override
+  String get aboutElectriciteToc04 => '4) Quick table (16A → 400A)';
+
+  @override
+  String get aboutElectriciteToc05 => '5) Safety & field pitfalls';
+
+  @override
+  String get aboutElectriciteToc06 => '6) Checklist';
+
+  @override
+  String get aboutInformatiqueTitle => 'IT — field notes';
+
+  @override
+  String get aboutInformatiqueToc01 => '1) USB / USB‑C / Thunderbolt';
+
+  @override
+  String get aboutInformatiqueToc02 => '2) Storage (SATA / NVMe / SSD)';
+
+  @override
+  String get aboutInformatiqueToc03 => '3) Video links (DP / HDMI)';
+
+  @override
+  String get aboutInformatiqueToc04 => '4) PCIe / GPU (markers)';
+
+  @override
+  String get aboutInformatiqueToc05 => '5) Checklist (on site)';
+
+  @override
+  String get aboutIpBasicsToc01 =>
+      '1) What is an IP address and what is it for?';
+
+  @override
+  String get aboutIpBasicsToc02 =>
+      '2) Why 192.x / 10.x / 172.x? (private addresses)';
+
+  @override
+  String get aboutIpBasicsToc03 =>
+      '3) Subnet mask & subnets: actually understanding it';
+
+  @override
+  String get aboutIpBasicsToc04 => '4) DHCP, gateway, DNS: who does what?';
+
+  @override
+  String get aboutIpBasicsToc05 =>
+      '5) How two devices talk (LAN vs outside LAN)';
+
+  @override
+  String get aboutIpBasicsToc06 =>
+      '6) Simple “show” IP plans (copy‑paste examples)';
+
+  @override
+  String get aboutIpBasicsToc07 =>
+      '7) Troubleshooting: symptoms → causes (field method)';
+
+  @override
+  String get aboutIpBasicsToc08 =>
+      '8) Mini‑exercises (quickly verify a mask / a network)';
+
+  @override
+  String get aboutIpBasicsToc09 => '9) Quick checklist';
+
+  @override
+  String get aboutNetworkTitle => 'Lighting network — VLAN, IGMP, Wi‑Fi';
+
+  @override
+  String get aboutNetworkToc01 => '1) Goal: a stable network';
+
+  @override
+  String get aboutNetworkToc02 => '2) IP plan (simple)';
+
+  @override
+  String get aboutNetworkToc03 => '3) VLAN (segmentation)';
+
+  @override
+  String get aboutNetworkToc04 => '4) IGMP (sACN multicast)';
+
+  @override
+  String get aboutNetworkToc05 => '5) Wi‑Fi vs wired';
+
+  @override
+  String get aboutNetworkToc06 => '6) Switch: what you need';
+
+  @override
+  String get aboutNetworkToc07 => '7) Diagrams';
+
+  @override
+  String get aboutNetworkToc08 => '7bis) Images (assets)';
+
+  @override
+  String get aboutNetworkToc09 => '8) Checklist';
+
+  @override
+  String get aboutReseauTitle => 'Networking — field notes';
+
+  @override
+  String get aboutReseauToc01 => '1) Network basics (LAN / IP / bandwidth)';
+
+  @override
+  String get aboutReseauToc02 => '2) RJ45 & categories (Cat5e/6/6A/…)';
+
+  @override
+  String get aboutReseauToc03 => '3) PoE (power over Ethernet)';
+
+  @override
+  String get aboutReseauToc04 => '4) Fiber (SM/MM) + connectors (LC/SC)';
+
+  @override
+  String get aboutReseauToc05 => '5) SFP / SFP+ / QSFP (modules)';
+
+  @override
+  String get aboutReseauToc06 => '6) Switches (VLAN / IGMP / QoS)';
+
+  @override
+  String get aboutReseauToc07 => '7) Art‑Net / sACN on a network (tips)';
+
+  @override
+  String get aboutReseauToc08 => '8) Checklist';
+
+  @override
+  String get aboutSacnToc01 => '1) What is sACN for?';
+
+  @override
+  String get aboutSacnToc02 => '2) Universes (numbering)';
+
+  @override
+  String get aboutSacnToc03 => '3) Multicast / Unicast + IGMP';
+
+  @override
+  String get aboutSacnToc04 => '4) Priorities (multiple sources)';
+
+  @override
+  String get aboutSacnToc05 => '5) Limits / performance';
+
+  @override
+  String get aboutSacnToc06 => '6) RDM & sACN (proxy / hardware‑dependent)';
+
+  @override
+  String get aboutSacnToc07 => '7) Diagrams';
+
+  @override
+  String get aboutSacnToc08 => '7bis) Images (assets)';
+
+  @override
+  String get aboutSacnToc09 => '8) Checklist';
+
+  @override
+  String get aboutVideoToc01 => '1) Video basics (keywords)';
+
+  @override
+  String get aboutVideoToc02 => '2) Resolution & FPS';
+
+  @override
+  String get aboutVideoToc03 => '3) Color (4:4:4 / 4:2:2 / 10‑bit)';
+
+  @override
+  String get aboutVideoToc04 => '4) Sync (Genlock / Timecode)';
+
+  @override
+  String get aboutVideoToc05 => '5) Cables & distances';
+
+  @override
+  String get aboutVideoToc06 => '6) SDI (3G / 6G / 12G)';
+
+  @override
+  String get aboutVideoToc07 => '7) HDMI — field notes';
+
+  @override
+  String get aboutVideoToc08 => '8) NDI — when / why / limits';
+
+  @override
+  String get aboutVideoToc09 => '9) Mapping / LED / multi‑projector';
+
+  @override
+  String get aboutVideoToc10 => '10) Field checklist';
+
+  @override
+  String get aboutTileDmxTitle => 'DMX — how it works (simple & complete)';
+
+  @override
+  String get aboutTileArtnetTitle =>
+      'Art‑Net — DMX over IP (nodes, unicast/broadcast)';
+
+  @override
+  String get aboutTileSacnTitle => 'sACN / E1.31 — multicast, IGMP, priorities';
+
+  @override
+  String get aboutTileIpBasicsTitle =>
+      'Network — IP basics / subnet mask / DHCP (essential)';
+
+  @override
+  String get aboutTileReseauTitle =>
+      'Networking — RJ45 / fiber / bandwidth & distances';
+
+  @override
+  String get aboutTileNetworkTitle =>
+      'Lighting network — VLAN, IGMP, Wi‑Fi vs wired';
+
+  @override
+  String get aboutTileVideoTitle => 'Video — SDI / NDI / IP (SRT/RTMP)';
+
+  @override
+  String get aboutTileElectriciteTitle => 'Electrical — Schuko / CEE / power';
+
+  @override
+  String get aboutTileElectriciteSubtitle =>
+      'Connectors, 1‑phase/3‑phase, quick kW tables (16A→400A), field pitfalls.';
+
+  @override
+  String get aboutTileInformatiqueTitle =>
+      'IT — USB / HDMI / DP / SATA / NVMe…';
+
+  @override
+  String get aboutTileInformatiqueSubtitle =>
+      'Useful throughput, versions, real limits, marketing traps.';
+
+  @override
+  String get aboutTitle => 'À propos';
 }
