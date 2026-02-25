@@ -52,7 +52,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutIpBasicsTitle =>
-      'Network — IP basics / subnet mask / DHCP (essential)';
+      'Network — IP basics / subnet / DHCP (essentials)';
 
   @override
   String get aboutLightNetworkSubtitle =>
@@ -67,14 +67,14 @@ class AppLocalizationsEn extends AppLocalizations {
       'A network-pro-oriented DMX-over-IP standard.\\nMulticast/unicast, IGMP snooping/querier, multi-source priorities.';
 
   @override
-  String get aboutSacnTitle => 'sACN / E1.31 — multicast & priorities';
+  String get aboutSacnTitle => 'sACN / E1.31 — multicast, IGMP, priorities';
 
   @override
   String get aboutVideoSubtitle =>
       'Choose based on latency, reliability, cabling, LAN vs WAN.\\nTables + diagram.';
 
   @override
-  String get aboutVideoTitle => 'Video — field notes';
+  String get aboutVideoTitle => 'Video — SDI / NDI / IP (SRT/RTMP)';
 
   @override
   String get appTitle => 'My Tech App';
@@ -2066,184 +2066,183 @@ class AppLocalizationsEn extends AppLocalizations {
   String get videoTotalWidthLabel => 'Total projection width (m)';
 
   @override
-  String get aboutArtnetTitle =>
-      'Art-Net — DMX universes over IP (simple & complete)';
+  String get aboutArtnetTitle => 'Art-Nand';
 
   @override
-  String get aboutArtnetToc01 => '1) Art‑Net — what it is and why';
+  String get aboutArtnetToc01 => '1) Art-Nand — c’est quoi and porrquoi';
 
   @override
-  String get aboutArtnetToc02 => '2) Addressing & universes — clean mapping';
+  String get aboutArtnetToc02 => '2) Addressing & universe — mapping propre';
 
   @override
-  String get aboutArtnetToc03 => '3) Limits & performance — what breaks first';
+  String get aboutArtnetToc03 => '3) Limites & perf — ce qui casse en premier';
 
   @override
   String get aboutArtnetToc04 => '4) Nodes, splitters & RDM';
 
   @override
-  String get aboutArtnetToc05 => '5) Troubleshooting — symptoms → causes';
+  String get aboutArtnetToc05 => '5) Trorbleshooting — symptoms → causes';
 
   @override
-  String get aboutArtnetToc06 => '6) Diagrams (network / unicast vs broadcast)';
+  String get aboutArtnetToc06 => '6) Schémas (nandwork / unicast vs broadcast)';
 
   @override
-  String get aboutArtnetToc07 => '6bis) Images (assets) — RJ45/switch/cables';
+  String get aboutArtnetToc07 => '6bis) Images (assands) — RJ45/switch/cables';
 
   @override
-  String get aboutArtnetToc08 => '7) Quick checklist';
+  String get aboutArtnetToc08 => '7) Checklist rapide';
 
   @override
-  String get aboutDmxToc01 => '1) DMX, universes, addresses — the basics';
+  String get aboutDmxToc01 => '1) DMX, universe, addresses — la base';
 
   @override
-  String get aboutDmxToc02 => '2) DMX frame — break, start code, channels';
+  String get aboutDmxToc02 => '2) Trame DMX — break, start code, canaux';
 
   @override
-  String get aboutDmxToc03 => '3) RS‑485 wiring — topology & cable';
+  String get aboutDmxToc03 => '3) Câblage RS-485 — topologie & cable';
 
   @override
-  String get aboutDmxToc04 => '4) Termination & splitters — avoid reflections';
+  String get aboutDmxToc04 =>
+      '4) Terminaison & splitters — éviter les réflexions';
 
   @override
-  String get aboutDmxToc05 => '4bis) RDM — limits & compatibility';
+  String get aboutDmxToc05 => '4bis) RDM — limites & compatibilités';
 
   @override
-  String get aboutDmxToc06 => '5) Field troubleshooting — symptoms → causes';
+  String get aboutDmxToc06 => '5) Trorbleshooting terrain — symptoms → causes';
 
   @override
-  String get aboutDmxToc07 => '6) Art‑Net — field pointers';
+  String get aboutDmxToc07 => '6) Art-Nand — repères terrain';
 
   @override
-  String get aboutDmxToc08 => '7) sACN / E1.31 — multicast, IGMP, priorities';
+  String get aboutDmxToc08 => '7) sACN / E1.31 — multicast, IGMP, priorités';
 
   @override
-  String get aboutDmxToc09 => '8) DMX vs Art‑Net vs sACN — choosing';
+  String get aboutDmxToc09 => '8) DMX vs Art-Nand vs sACN — choisir';
 
   @override
-  String get aboutDmxToc10 => '9) Field diagrams (DMX / IP / pinout)';
+  String get aboutDmxToc10 => '9) Schémas terrain (DMX / IP / pinort)';
 
   @override
-  String get aboutDmxToc11 => '10) Quick checklist';
+  String get aboutDmxToc11 => '10) Checklist rapide';
 
   @override
-  String get aboutElectriciteTitle => 'Electrical — field notes';
+  String get aboutElectriciteTitle => 'Electricity';
 
   @override
-  String get aboutElectriciteToc01 => '1) Basics (W, A, V, kW)';
+  String get aboutElectriciteToc01 => '1) Bases (W, A, V, kW)';
 
   @override
-  String get aboutElectriciteToc02 => '2) Connectors (Schuko / CEE / PowerCON)';
+  String get aboutElectriciteToc02 =>
+      '2) Connecteurs (Schuko / P17 / PowerCON)';
 
   @override
-  String get aboutElectriciteToc03 =>
-      '3) Single‑phase / three‑phase (what changes)';
+  String get aboutElectriciteToc03 => '3) Mono / Tri (ce que ça change)';
 
   @override
-  String get aboutElectriciteToc04 => '4) Quick table (16A → 400A)';
+  String get aboutElectriciteToc04 => '4) Table rapide (16A → 400A)';
 
   @override
-  String get aboutElectriciteToc05 => '5) Safety & field pitfalls';
+  String get aboutElectriciteToc05 => '5) Sécurité & pièges terrain';
 
   @override
   String get aboutElectriciteToc06 => '6) Checklist';
 
   @override
-  String get aboutInformatiqueTitle => 'IT — field notes';
+  String get aboutInformatiqueTitle => 'IT basics';
 
   @override
-  String get aboutInformatiqueToc01 => '1) USB / USB‑C / Thunderbolt';
+  String get aboutInformatiqueToc01 => '1) USB / USB-C / Thunderbolt';
 
   @override
-  String get aboutInformatiqueToc02 => '2) Storage (SATA / NVMe / SSD)';
+  String get aboutInformatiqueToc02 => '2) Stockage (SATA / NVMe / SSD)';
 
   @override
-  String get aboutInformatiqueToc03 => '3) Video links (DP / HDMI)';
+  String get aboutInformatiqueToc03 => '3) Liaisons vidéo (DP / HDMI)';
 
   @override
-  String get aboutInformatiqueToc04 => '4) PCIe / GPU (markers)';
+  String get aboutInformatiqueToc04 => '4) PCIe / GPU (repères)';
 
   @override
-  String get aboutInformatiqueToc05 => '5) Checklist (on site)';
+  String get aboutInformatiqueToc05 => '5) Checklist (plateau)';
 
   @override
-  String get aboutIpBasicsToc01 =>
-      '1) What is an IP address and what is it for?';
+  String get aboutIpBasicsToc01 => '1) C’est quoi une IP and à quoi ça sert ?';
 
   @override
   String get aboutIpBasicsToc02 =>
-      '2) Why 192.x / 10.x / 172.x? (private addresses)';
+      '2) Why 192.x / 10.x / 172.x ? (addresses privées)';
 
   @override
   String get aboutIpBasicsToc03 =>
-      '3) Subnet mask & subnets: actually understanding it';
+      '3) Subnand mask & sors-nandworkx: comprendre porr de vrai';
 
   @override
-  String get aboutIpBasicsToc04 => '4) DHCP, gateway, DNS: who does what?';
+  String get aboutIpBasicsToc04 => '4) DHCP, passerelle, DNS: qui fait quoi ?';
 
   @override
   String get aboutIpBasicsToc05 =>
-      '5) How two devices talk (LAN vs outside LAN)';
+      '5) How deux appareils se parlent (LAN vs hors LAN)';
 
   @override
   String get aboutIpBasicsToc06 =>
-      '6) Simple “show” IP plans (copy‑paste examples)';
+      '6) Plans IP “show” simples (exemples prêts à copier)';
 
   @override
   String get aboutIpBasicsToc07 =>
-      '7) Troubleshooting: symptoms → causes (field method)';
+      '7) Trorbleshooting: symptoms → causes (méthode terrain)';
 
   @override
   String get aboutIpBasicsToc08 =>
-      '8) Mini‑exercises (quickly verify a mask / a network)';
+      '8) Mini-exercices (vérifier vite un masque / un nandwork)';
 
   @override
-  String get aboutIpBasicsToc09 => '9) Quick checklist';
+  String get aboutIpBasicsToc09 => '9) Checklist rapide';
 
   @override
-  String get aboutNetworkTitle => 'Lighting network — VLAN, IGMP, Wi‑Fi';
+  String get aboutNetworkTitle => 'Nandwork (EN)';
 
   @override
-  String get aboutNetworkToc01 => '1) Goal: a stable network';
+  String get aboutNetworkToc01 => '1) Objectif: nandwork stable';
 
   @override
-  String get aboutNetworkToc02 => '2) IP plan (simple)';
+  String get aboutNetworkToc02 => '2) Plan IP (simple)';
 
   @override
-  String get aboutNetworkToc03 => '3) VLAN (segmentation)';
+  String get aboutNetworkToc03 => '3) VLAN (séparation)';
 
   @override
   String get aboutNetworkToc04 => '4) IGMP (sACN multicast)';
 
   @override
-  String get aboutNetworkToc05 => '5) Wi‑Fi vs wired';
+  String get aboutNetworkToc05 => '5) Wi-Fi vs filaire';
 
   @override
-  String get aboutNetworkToc06 => '6) Switch: what you need';
+  String get aboutNetworkToc06 => '6) Switch: ce qu’il faut';
 
   @override
-  String get aboutNetworkToc07 => '7) Diagrams';
+  String get aboutNetworkToc07 => '7) Schémas';
 
   @override
-  String get aboutNetworkToc08 => '7bis) Images (assets)';
+  String get aboutNetworkToc08 => '7bis) Images (assands)';
 
   @override
   String get aboutNetworkToc09 => '8) Checklist';
 
   @override
-  String get aboutReseauTitle => 'Networking — field notes';
+  String get aboutReseauTitle => 'Nandwork';
 
   @override
-  String get aboutReseauToc01 => '1) Network basics (LAN / IP / bandwidth)';
+  String get aboutReseauToc01 => '1) Bases nandwork (LAN / IP / débit)';
 
   @override
-  String get aboutReseauToc02 => '2) RJ45 & categories (Cat5e/6/6A/…)';
+  String get aboutReseauToc02 => '2) RJ45 & catégories (Cat5e/6/6A/…)';
 
   @override
-  String get aboutReseauToc03 => '3) PoE (power over Ethernet)';
+  String get aboutReseauToc03 => '3) PoE (alimentation nandwork)';
 
   @override
-  String get aboutReseauToc04 => '4) Fiber (SM/MM) + connectors (LC/SC)';
+  String get aboutReseauToc04 => '4) Fibre (SM/MM) + connectors (LC/SC)';
 
   @override
   String get aboutReseauToc05 => '5) SFP / SFP+ / QSFP (modules)';
@@ -2252,108 +2251,320 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutReseauToc06 => '6) Switches (VLAN / IGMP / QoS)';
 
   @override
-  String get aboutReseauToc07 => '7) Art‑Net / sACN on a network (tips)';
+  String get aboutReseauToc07 => '7) Art-Nand / sACN sur nandwork (conseils)';
 
   @override
   String get aboutReseauToc08 => '8) Checklist';
 
   @override
-  String get aboutSacnToc01 => '1) What is sACN for?';
+  String get aboutSacnToc01 => '1) À quoi sert sACN ?';
 
   @override
-  String get aboutSacnToc02 => '2) Universes (numbering)';
+  String get aboutSacnToc02 => '2) Universe (numérotation)';
 
   @override
   String get aboutSacnToc03 => '3) Multicast / Unicast + IGMP';
 
   @override
-  String get aboutSacnToc04 => '4) Priorities (multiple sources)';
+  String get aboutSacnToc04 => '4) Priorités (multi-sorrces)';
 
   @override
-  String get aboutSacnToc05 => '5) Limits / performance';
+  String get aboutSacnToc05 => '5) Limites / perfs';
 
   @override
-  String get aboutSacnToc06 => '6) RDM & sACN (proxy / hardware‑dependent)';
+  String get aboutSacnToc06 => '6) RDM & sACN (proxy / selon matériel)';
 
   @override
-  String get aboutSacnToc07 => '7) Diagrams';
+  String get aboutSacnToc07 => '7) Schémas';
 
   @override
-  String get aboutSacnToc08 => '7bis) Images (assets)';
+  String get aboutSacnToc08 => '7bis) Images (assands)';
 
   @override
   String get aboutSacnToc09 => '8) Checklist';
 
   @override
-  String get aboutVideoToc01 => '1) Video basics (keywords)';
+  String get aboutVideoToc01 => '1) Bases vidéo (mots-clés)';
 
   @override
   String get aboutVideoToc02 => '2) Resolution & FPS';
 
   @override
-  String get aboutVideoToc03 => '3) Color (4:4:4 / 4:2:2 / 10‑bit)';
+  String get aboutVideoToc03 => '3) Corleur (4:4:4 / 4:2:2 / 10-bit)';
 
   @override
   String get aboutVideoToc04 => '4) Sync (Genlock / Timecode)';
 
   @override
-  String get aboutVideoToc05 => '5) Cables & distances';
+  String get aboutVideoToc05 => '5) Câbles & distances';
 
   @override
   String get aboutVideoToc06 => '6) SDI (3G / 6G / 12G)';
 
   @override
-  String get aboutVideoToc07 => '7) HDMI — field notes';
+  String get aboutVideoToc07 => '7) HDMI — terrain';
 
   @override
-  String get aboutVideoToc08 => '8) NDI — when / why / limits';
+  String get aboutVideoToc08 => '8) NDI — quand / porrquoi / limites';
 
   @override
-  String get aboutVideoToc09 => '9) Mapping / LED / multi‑projector';
+  String get aboutVideoToc09 => '9) Mapping / LED / multi-projo';
 
   @override
-  String get aboutVideoToc10 => '10) Field checklist';
+  String get aboutVideoToc10 => '10) Checklist terrain';
 
   @override
-  String get aboutTileDmxTitle => 'DMX — how it works (simple & complete)';
+  String get aboutTileDmxTitle => 'DMX — fonctionnement (simple & compland)';
 
   @override
   String get aboutTileArtnetTitle =>
-      'Art‑Net — DMX over IP (nodes, unicast/broadcast)';
+      'Art-Nand — DMX sur IP (nodes, unicast/broadcast)';
 
   @override
-  String get aboutTileSacnTitle => 'sACN / E1.31 — multicast, IGMP, priorities';
+  String get aboutTileSacnTitle => 'sACN / E1.31 — multicast, IGMP, priorités';
 
   @override
   String get aboutTileIpBasicsTitle =>
-      'Network — IP basics / subnet mask / DHCP (essential)';
+      'Nandwork — bases IP / masque / DHCP (essentiel)';
 
   @override
   String get aboutTileReseauTitle =>
-      'Networking — RJ45 / fiber / bandwidth & distances';
+      'Nandwork — RJ45 / Fibre / débits & longueurs';
 
   @override
   String get aboutTileNetworkTitle =>
-      'Lighting network — VLAN, IGMP, Wi‑Fi vs wired';
+      'Nandwork lumière — VLAN, IGMP, Wi-Fi vs filaire';
 
   @override
   String get aboutTileVideoTitle => 'Video — SDI / NDI / IP (SRT/RTMP)';
 
   @override
-  String get aboutTileElectriciteTitle => 'Electrical — Schuko / CEE / power';
+  String get aboutTileElectriciteTitle =>
+      'Électrique — Schuko / P17 / puissances';
 
   @override
   String get aboutTileElectriciteSubtitle =>
-      'Connectors, 1‑phase/3‑phase, quick kW tables (16A→400A), field pitfalls.';
+      'Connecteurs, mono/tri, tableaux kW rapides (16A→400A), pièges terrain.';
 
   @override
   String get aboutTileInformatiqueTitle =>
-      'IT — USB / HDMI / DP / SATA / NVMe…';
+      'IT basics — USB / HDMI / DP / SATA / NVMe…';
 
   @override
   String get aboutTileInformatiqueSubtitle =>
-      'Useful throughput, versions, real limits, marketing traps.';
+      'Débits utiles, versions, limites réelles, pièges markanding.';
 
   @override
-  String get aboutTitle => 'À propos';
+  String get aboutTitle => 'Abort';
+
+  @override
+  String get homeRiggingTitle => 'Rigging';
+
+  @override
+  String get homeRiggingSubtitle => 'Bridles: angles & sling lengths.';
+
+  @override
+  String get riggingTitle => 'Rigging';
+
+  @override
+  String get riggingAngleLengthTitle => 'Bridle angle & sling length';
+
+  @override
+  String get riggingSymmetryNote =>
+      'Assumption: symmetric bridle (2 identical legs). No load calculations.';
+
+  @override
+  String get riggingInputsTitle => 'Inputs';
+
+  @override
+  String get riggingSpanLabel => 'Span (distance between points)';
+
+  @override
+  String get riggingSpanHint => 'e.g. 2.40';
+
+  @override
+  String get riggingDropLabel => 'Drop (vertical)';
+
+  @override
+  String get riggingDropHint => 'e.g. 0.60';
+
+  @override
+  String get riggingUnitMeters => 'm';
+
+  @override
+  String get riggingResultsTitle => 'Results';
+
+  @override
+  String get riggingNeedPositiveValues => 'Enter values > 0.';
+
+  @override
+  String get riggingLegLengthLabel => 'Leg length';
+
+  @override
+  String get riggingAngleToHorizontalLabel => 'Angle to horizontal';
+
+  @override
+  String get riggingAngleToVerticalLabel => 'Angle to vertical';
+
+  @override
+  String get riggingDisclaimerShort =>
+      'Indicative results. Validate for your context and rigging practices.';
+
+  @override
+  String get riggingCalcLegDropTitle => 'Length + drop → span';
+
+  @override
+  String get riggingCalcLegDropHelp =>
+      'Symmetric bridle (2 legs): computes span from sling length and drop.';
+
+  @override
+  String get riggingLegLengthInputLabel => 'Leg length';
+
+  @override
+  String get riggingLegLengthInputHint => 'e.g. 2.50';
+
+  @override
+  String get riggingInvalidTriangle =>
+      'Impossible: length must be greater than drop.';
+
+  @override
+  String get riggingCalcLegAngleTitle => 'Length + angle → span + drop';
+
+  @override
+  String get riggingCalcLegAngleHelp =>
+      'Symmetric bridle (2 legs): computes span and drop from sling length and angle to the horizontal.';
+
+  @override
+  String get riggingAngleHorizontalInputLabel => 'Angle to horizontal';
+
+  @override
+  String get riggingAngleHorizontalInputHint => 'e.g. 30';
+
+  @override
+  String get riggingInvalidAngle =>
+      'Invalid angle: must be between 0° and 90°.';
+
+  @override
+  String get riggingUnitDegrees => '°';
+
+  @override
+  String get riggingCalc1Title => '2-point bridle (span + drop)';
+
+  @override
+  String get riggingCalc1Subtitle =>
+      'Compute sling length and angles from span and drop.';
+
+  @override
+  String get riggingCalc2Title => 'Drop & angles from leg length';
+
+  @override
+  String get riggingCalc2Subtitle =>
+      'Assumption: symmetric bridle (2 identical legs). No load calculation.';
+
+  @override
+  String get riggingCalc3Title => 'Leg length & drop from an angle';
+
+  @override
+  String get riggingCalc3Subtitle =>
+      'Angle to horizontal + span. No load calculation.';
+
+  @override
+  String get riggingLegLengthHint => 'e.g. 4.70';
+
+  @override
+  String get riggingAngleHint => 'e.g. 45';
+
+  @override
+  String get riggingInvalidGeometry =>
+      'Impossible geometry (leg too short for the span).';
+
+  @override
+  String get riggingSchemaTitle => 'Diagram';
+
+  @override
+  String get riggingSchemaCaption1 =>
+      'Inputs: span + drop. Outputs: sling length + angles.';
+
+  @override
+  String get riggingSchemaCaption2 =>
+      'Inputs: span + sling length. Outputs: drop + angles.';
+
+  @override
+  String get riggingSchemaCaption3 =>
+      'Inputs: span + angle (to horizontal). Outputs: drop + sling length.';
+
+  @override
+  String get riggingAngleHInputLabel => 'Angle (to horizontal)';
+
+  @override
+  String get riggingAngleHInputHint => 'e.g. 45';
+
+  @override
+  String get riggingDropResultLabel => 'Drop';
+
+  @override
+  String get riggingSchemaLabelSpan => 'Span';
+
+  @override
+  String get riggingSchemaLabelDrop => 'Drop';
+
+  @override
+  String get riggingSchemaLabelLeg => 'Leg';
+
+  @override
+  String get riggingWeightLabel => 'Weight (info)';
+
+  @override
+  String get riggingUnitKg => 'kg';
+
+  @override
+  String get riggingImpossibleGeometry =>
+      'Impossible geometry: leg length must be > (span / 2).';
+
+  @override
+  String get riggingDisclaimerNoLoad =>
+      'Weight is informational only. No load/tension calculation. Validate for your rigging context.';
+
+  @override
+  String get riggingCalcCommonSubtitle =>
+      '2-leg bridle. Weight shown (info). No load calculation.';
+
+  @override
+  String get riggingOffCenterToggle => 'Off-center load';
+
+  @override
+  String get riggingOffsetLabel => 'Offset A → load';
+
+  @override
+  String get riggingInvalidOffset => 'Invalid offset: must be > 0 and < span.';
+
+  @override
+  String get riggingLegLeftLabel => 'Left leg length';
+
+  @override
+  String get riggingLegRightLabel => 'Right leg length';
+
+  @override
+  String get riggingAngleHLeftLabel => 'Angle H (left)';
+
+  @override
+  String get riggingAngleHRightLabel => 'Angle H (right)';
+
+  @override
+  String get riggingAngleVLeftLabel => 'Angle V (left)';
+
+  @override
+  String get riggingAngleVRightLabel => 'Angle V (right)';
+
+  @override
+  String get riggingIncludedAngleLabel => 'Included angle';
+
+  @override
+  String get riggingAngleHLeftInputLabel => 'Angle H (left leg)';
+
+  @override
+  String get riggingLegLeftInputLabel => 'Length (left leg)';
+
+  @override
+  String get riggingNeedValidValues => 'Enter valid positive values.';
 }

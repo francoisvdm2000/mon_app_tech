@@ -152,8 +152,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get lightPatchTitle => 'Patch DMX';
 
   @override
-  String get lightPatchDescription =>
-      'Importer un fichier MVR ou créer un patch manuellement depuis la librairie.';
+  String get lightPatchDescription => 'Importer et visualiser un fichier MVR.';
 
   @override
   String get lightDisclaimerShort =>

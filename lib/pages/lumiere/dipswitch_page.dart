@@ -15,18 +15,24 @@ class _DipSwitchPageState extends State<DipSwitchPage> {
   final _addressController = TextEditingController();
   final _intervalController = TextEditingController(text: '1');
 
+  bool _didInitDependencies = false;
   bool _isUpdating = false;
   bool _useAddressMinusOne = false; // OFF par défaut
   List<bool> _switches = List<bool>.filled(9, false);
-
-  String _result = '';
-  bool _endOfUniverseWarning = false; // ✅ alerte fin d’univers
 
   @override
   void initState() {
     super.initState();
     _addressController.addListener(_onAddressChanged);
     _intervalController.addListener(_recomputeText);
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_didInitDependencies) return;
+    _didInitDependencies = true;
+    // Safe: context is ready here (localizations/theme can be read).
     _recomputeText();
   }
 
@@ -71,9 +77,7 @@ class _DipSwitchPageState extends State<DipSwitchPage> {
       _intervalController.text = '1';
       _useAddressMinusOne = false;
       _switches = List<bool>.filled(9, false);
-      _endOfUniverseWarning = false;
       _isUpdating = false;
-      _recomputeText();
     });
   }
 
@@ -84,8 +88,6 @@ class _DipSwitchPageState extends State<DipSwitchPage> {
     if (a == null || a < 1 || a > 512) {
       setState(() {
         _switches = List<bool>.filled(9, false);
-        _endOfUniverseWarning = false;
-        _recomputeText();
       });
       return;
     }
@@ -93,8 +95,6 @@ class _DipSwitchPageState extends State<DipSwitchPage> {
     final value = _addressToBinaryValue(a);
     setState(() {
       _switches = DipSwitchCalculations.addressToSwitches(value);
-      _endOfUniverseWarning = false; // changer l'adresse “efface” l’alerte
-      _recomputeText();
     });
   }
 
@@ -110,8 +110,6 @@ class _DipSwitchPageState extends State<DipSwitchPage> {
     _addressController.text = addr.toString();
     _isUpdating = false;
 
-    setState(() => _endOfUniverseWarning = false);
-    _recomputeText();
   }
 
   void _nextAddress() {
@@ -123,8 +121,6 @@ class _DipSwitchPageState extends State<DipSwitchPage> {
 
     if (next > 512) {
       // ✅ on signale en rouge, sans avancer
-      setState(() => _endOfUniverseWarning = true);
-      _recomputeText();
       return;
     }
 
@@ -132,14 +128,12 @@ class _DipSwitchPageState extends State<DipSwitchPage> {
     _addressController.text = next.toString();
     _isUpdating = false;
 
-    setState(() => _endOfUniverseWarning = false);
     _onAddressChanged();
   }
 
   void _toggleAddressMode(bool v) {
     setState(() {
       _useAddressMinusOne = v;
-      _endOfUniverseWarning = false;
     });
     _onAddressChanged();
   }
@@ -179,7 +173,7 @@ class _DipSwitchPageState extends State<DipSwitchPage> {
       ),
     );
 
-    setState(() => _result = lines.join('\n'));
+    setState(() {});
   }
 
   Widget _dipSwitch() {
@@ -406,28 +400,6 @@ class _DipSwitchPageState extends State<DipSwitchPage> {
               icon: Icons.tune,
               initiallyExpanded: true,
               child: _dipSwitch(),
-            ),
-            const SizedBox(height: 14),
-            ExpandSectionCard(
-              title: loc.dipSwitchSummaryTitle,
-              icon: Icons.info_outline,
-              initiallyExpanded: true,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  if (_endOfUniverseWarning) ...[
-                    Text(
-                      loc.dipSwitchEndOfUniverseWarning,
-                      style: const TextStyle(
-                        color: Colors.redAccent,
-                        fontWeight: FontWeight.w800,
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                  ],
-                  ResultBox(_result),
-                ],
-              ),
             ),
           ],
         ),

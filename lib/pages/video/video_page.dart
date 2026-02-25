@@ -13,7 +13,6 @@ class PageVideo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final loc = AppLocalizations.of(context);
 
     return Scaffold(
@@ -23,21 +22,6 @@ class PageVideo extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
           children: [
-            Text(
-              loc.videoToolsTitle,
-              style: theme.textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.w800,
-              ),
-            ),
-            const SizedBox(height: 6),
-            Text(
-              loc.videoDisclaimerShort,
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
-                height: 1.25,
-              ),
-            ),
-            const SizedBox(height: 16),
             _TileCard(
               title: loc.videoLensMeasureTitle,
               subtitle: loc.videoLensMeasureSubtitle,

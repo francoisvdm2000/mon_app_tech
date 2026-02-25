@@ -373,7 +373,7 @@ abstract class AppLocalizations {
   /// No description provided for @lightPatchDescription.
   ///
   /// In fr, this message translates to:
-  /// **'Importer un fichier MVR ou créer un patch manuellement depuis la librairie.'**
+  /// **'Importer ou visualiser un fichier MVR.'**
   String get lightPatchDescription;
 
   /// No description provided for @lightDisclaimerShort.

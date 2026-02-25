@@ -174,7 +174,8 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
     final png =
         await _renderToPngBytes(widthPx: w, heightPx: h, painter: painter);
     final filename = 'mire_video_simple_${w}x${h}_${_simpleType.name}.png';
-    await exportPngBytes(png, filename);
+    if (!mounted) return;
+    await exportPngBytes(context, png, filename);
   }
 
   Future<void> _exportMapping() async {
@@ -207,7 +208,8 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
     final filename =
         'mire_video_mapping_${w}x${h}_N${n}_ov${ovTag}_${oriTag}_${_mapType.name}.png';
 
-    await exportPngBytes(png, filename);
+    if (!mounted) return;
+    await exportPngBytes(context, png, filename);
   }
 
   @override

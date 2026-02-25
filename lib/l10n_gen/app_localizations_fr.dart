@@ -461,8 +461,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get lightDmxSwitchTitle => 'Dip-switch DMX';
 
   @override
-  String get lightPatchDescription =>
-      'Importer un fichier MVR ou créer un patch manuellement depuis la librairie.';
+  String get lightPatchDescription => 'Importer et visualiser un fichier MVR.';
 
   @override
   String get lightPatchTitle => 'Patch DMX';
@@ -2364,4 +2363,217 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutTitle => 'À propos';
+
+  @override
+  String get homeRiggingTitle => 'Rigging';
+
+  @override
+  String get homeRiggingSubtitle => 'Bridles : angles & longueurs d’élingues.';
+
+  @override
+  String get riggingTitle => 'Rigging';
+
+  @override
+  String get riggingAngleLengthTitle => 'Angle de bridle & longueur d’élingues';
+
+  @override
+  String get riggingSymmetryNote =>
+      'Hypothèse : bridle symétrique (2 brins identiques). Aucun calcul de charge.';
+
+  @override
+  String get riggingInputsTitle => 'Entrées';
+
+  @override
+  String get riggingSpanLabel => 'Entraxe (distance entre points)';
+
+  @override
+  String get riggingSpanHint => 'Ex : 2.40';
+
+  @override
+  String get riggingDropLabel => 'Flèche (drop vertical)';
+
+  @override
+  String get riggingDropHint => 'Ex : 0.60';
+
+  @override
+  String get riggingUnitMeters => 'm';
+
+  @override
+  String get riggingResultsTitle => 'Résultats';
+
+  @override
+  String get riggingNeedPositiveValues => 'Renseigne des valeurs > 0.';
+
+  @override
+  String get riggingLegLengthLabel => 'Longueur d’un brin';
+
+  @override
+  String get riggingAngleToHorizontalLabel =>
+      'Angle par rapport à l’horizontale';
+
+  @override
+  String get riggingAngleToVerticalLabel => 'Angle par rapport à la verticale';
+
+  @override
+  String get riggingDisclaimerShort =>
+      'Résultats indicatifs. À valider selon ton contexte et les pratiques rigging.';
+
+  @override
+  String get riggingCalcLegDropTitle => 'Longueur + flèche → portée';
+
+  @override
+  String get riggingCalcLegDropHelp =>
+      'Élingue symétrique (2 brins) : calcule la portée à partir de la longueur d’élingue et de la flèche.';
+
+  @override
+  String get riggingLegLengthInputLabel => 'Longueur d’un brin';
+
+  @override
+  String get riggingLegLengthInputHint => 'Ex: 2.50';
+
+  @override
+  String get riggingInvalidTriangle =>
+      'Impossible : la longueur doit être supérieure à la flèche.';
+
+  @override
+  String get riggingCalcLegAngleTitle => 'Longueur + angle → portée + flèche';
+
+  @override
+  String get riggingCalcLegAngleHelp =>
+      'Élingue symétrique (2 brins) : calcule portée et flèche à partir de la longueur et de l’angle par rapport à l’horizontale.';
+
+  @override
+  String get riggingAngleHorizontalInputLabel =>
+      'Angle par rapport à l’horizontale';
+
+  @override
+  String get riggingAngleHorizontalInputHint => 'Ex: 30';
+
+  @override
+  String get riggingInvalidAngle => 'Angle invalide : entre 0° et 90° (exclu).';
+
+  @override
+  String get riggingUnitDegrees => '°';
+
+  @override
+  String get riggingCalc1Title => 'Entraxe + flèche → longueur & angles';
+
+  @override
+  String get riggingCalc1Subtitle =>
+      'Bridle symétrique (2 brins identiques). Poids affiché (info). Aucun calcul de charge.';
+
+  @override
+  String get riggingCalc2Title => 'Entraxe + angle(H) → flèche & longueur';
+
+  @override
+  String get riggingCalc2Subtitle =>
+      'Angle par rapport à l\'horizontale. Bridle symétrique. Aucun calcul de charge.';
+
+  @override
+  String get riggingCalc3Title => 'Entraxe + longueur → flèche & angles';
+
+  @override
+  String get riggingCalc3Subtitle =>
+      'Longueur d’un brin connue. Bridle symétrique. Aucun calcul de charge.';
+
+  @override
+  String get riggingLegLengthHint => 'Ex: 4.70';
+
+  @override
+  String get riggingAngleHint => 'Ex : 45';
+
+  @override
+  String get riggingInvalidGeometry =>
+      'Géométrie impossible (longueur trop courte pour l’entraxe).';
+
+  @override
+  String get riggingSchemaTitle => 'Schéma';
+
+  @override
+  String get riggingSchemaCaption1 =>
+      'Entrées : portée + flèche. Sorties : longueur d’élingue + angles.';
+
+  @override
+  String get riggingSchemaCaption2 =>
+      'Entrées : portée + longueur d’élingue. Sorties : flèche + angles.';
+
+  @override
+  String get riggingSchemaCaption3 =>
+      'Entrées : portée + angle (horizontal). Sorties : flèche + longueur.';
+
+  @override
+  String get riggingAngleHInputLabel => 'Angle (par rapport à l’horizontale)';
+
+  @override
+  String get riggingAngleHInputHint => 'Ex: 45';
+
+  @override
+  String get riggingDropResultLabel => 'Flèche (drop)';
+
+  @override
+  String get riggingSchemaLabelSpan => 'Entraxe';
+
+  @override
+  String get riggingSchemaLabelDrop => 'Flèche';
+
+  @override
+  String get riggingSchemaLabelLeg => 'Brin';
+
+  @override
+  String get riggingWeightLabel => 'Poids (info)';
+
+  @override
+  String get riggingUnitKg => 'kg';
+
+  @override
+  String get riggingImpossibleGeometry =>
+      'Géométrie impossible : la longueur d’un brin doit être > (entraxe / 2).';
+
+  @override
+  String get riggingDisclaimerNoLoad =>
+      'Poids affiché à titre indicatif. Aucun calcul de charge / tension. Valide selon ton contexte rigging.';
+
+  @override
+  String get riggingCalcCommonSubtitle =>
+      'Bridle 2 brins. Poids affiché (info). Aucun calcul de charge.';
+
+  @override
+  String get riggingOffCenterToggle => 'Charge décentrée';
+
+  @override
+  String get riggingOffsetLabel => 'Offset A → charge';
+
+  @override
+  String get riggingInvalidOffset =>
+      'Offset invalide : doit être > 0 et < entraxe.';
+
+  @override
+  String get riggingLegLeftLabel => 'Longueur brin gauche';
+
+  @override
+  String get riggingLegRightLabel => 'Longueur brin droit';
+
+  @override
+  String get riggingAngleHLeftLabel => 'Angle H (gauche)';
+
+  @override
+  String get riggingAngleHRightLabel => 'Angle H (droit)';
+
+  @override
+  String get riggingAngleVLeftLabel => 'Angle V (gauche)';
+
+  @override
+  String get riggingAngleVRightLabel => 'Angle V (droit)';
+
+  @override
+  String get riggingIncludedAngleLabel => 'Angle entre brins';
+
+  @override
+  String get riggingAngleHLeftInputLabel => 'Angle H (brin gauche)';
+
+  @override
+  String get riggingLegLeftInputLabel => 'Longueur (brin gauche)';
+
+  @override
+  String get riggingNeedValidValues => 'Entrer des valeurs positives valides.';
 }

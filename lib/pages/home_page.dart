@@ -10,6 +10,7 @@ import 'laser_page.dart';
 import 'video/video_page.dart';
 import 'laser/laser_consent_dialog.dart';
 import 'settings_page.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PageAccueil extends StatefulWidget {
   const PageAccueil({super.key});
@@ -32,6 +33,28 @@ class _PageAccueilState extends State<PageAccueil> {
       WidgetsBinding.instance.addPostFrameCallback(
         (_) => _showDisclaimerDialog(),
       );
+    }
+  }
+
+  Future<void> _contactEmail() async {
+    final Uri emailUri = Uri(
+      scheme: 'mailto',
+      path: 'info@openwhite.eu', // ← mets ton email
+      query: 'subject=Mon App Tech - Contact',
+    );
+
+    if (await canLaunchUrl(emailUri)) {
+      await launchUrl(emailUri);
+    }
+  }
+
+  Future<void> _openGoogleForm() async {
+    final Uri formUri = Uri.parse(
+      'https://forms.gle/ymhsrLXyZioCoqUa6', // ← ton lien
+    );
+
+    if (await canLaunchUrl(formUri)) {
+      await launchUrl(formUri, mode: LaunchMode.externalApplication);
     }
   }
 
@@ -226,6 +249,28 @@ class _PageAccueilState extends State<PageAccueil> {
               },
             ),
             ListTile(
+              title: Text(Localizations.localeOf(context).languageCode == 'fr'
+                  ? 'Contact'
+                  : 'Contact'),
+              leading: const Icon(Icons.mail_outline),
+              onTap: () async {
+                Navigator.pop(context);
+                await _contactEmail();
+              },
+            ),
+            ListTile(
+              title: Text(
+                Localizations.localeOf(context).languageCode == 'fr'
+                    ? 'Proposer un article au catalogue'
+                    : 'Submit a catalog item',
+              ),
+              leading: const Icon(Icons.playlist_add),
+              onTap: () async {
+                Navigator.pop(context);
+                await _openGoogleForm();
+              },
+            ),
+            ListTile(
               title: Text(loc.resetConsents),
               leading: const Icon(Icons.refresh),
               onTap: () {
@@ -255,6 +300,7 @@ class _PageAccueilState extends State<PageAccueil> {
                 subtitle: loc.homeLightSubtitle,
                 onTap: () => _push(const PageLumiere()),
               ),
+              const SizedBox(height: 12),
               const SizedBox(height: 12),
               _homeTile(
                 icon: Icons.center_focus_strong,

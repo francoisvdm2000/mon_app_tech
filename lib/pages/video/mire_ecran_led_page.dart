@@ -233,7 +233,8 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
         '_tile${_tileWcm.toStringAsFixed(2)}x${_tileHcm.toStringAsFixed(2)}cm'
         '_$typeName.png';
 
-    await exportPngBytes(png, filename);
+    if (!mounted) return;
+    await exportPngBytes(context, png, filename);
   }
 
   @override

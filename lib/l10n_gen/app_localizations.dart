@@ -895,7 +895,7 @@ abstract class AppLocalizations {
   /// No description provided for @lightPatchDescription.
   ///
   /// In fr, this message translates to:
-  /// **'Importer un fichier MVR ou créer un patch manuellement depuis la librairie.'**
+  /// **'Importer et visualiser un fichier MVR.'**
   String get lightPatchDescription;
 
   /// No description provided for @lightPatchTitle.
@@ -4239,6 +4239,396 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'À propos'**
   String get aboutTitle;
+
+  /// No description provided for @homeRiggingTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging'**
+  String get homeRiggingTitle;
+
+  /// No description provided for @homeRiggingSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bridles : angles & longueurs d’élingues.'**
+  String get homeRiggingSubtitle;
+
+  /// No description provided for @riggingTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging'**
+  String get riggingTitle;
+
+  /// No description provided for @riggingAngleLengthTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle de bridle & longueur d’élingues'**
+  String get riggingAngleLengthTitle;
+
+  /// No description provided for @riggingSymmetryNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Hypothèse : bridle symétrique (2 brins identiques). Aucun calcul de charge.'**
+  String get riggingSymmetryNote;
+
+  /// No description provided for @riggingInputsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entrées'**
+  String get riggingInputsTitle;
+
+  /// No description provided for @riggingSpanLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entraxe (distance entre points)'**
+  String get riggingSpanLabel;
+
+  /// No description provided for @riggingSpanHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex : 2.40'**
+  String get riggingSpanHint;
+
+  /// No description provided for @riggingDropLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Flèche (drop vertical)'**
+  String get riggingDropLabel;
+
+  /// No description provided for @riggingDropHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex : 0.60'**
+  String get riggingDropHint;
+
+  /// No description provided for @riggingUnitMeters.
+  ///
+  /// In fr, this message translates to:
+  /// **'m'**
+  String get riggingUnitMeters;
+
+  /// No description provided for @riggingResultsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résultats'**
+  String get riggingResultsTitle;
+
+  /// No description provided for @riggingNeedPositiveValues.
+  ///
+  /// In fr, this message translates to:
+  /// **'Renseigne des valeurs > 0.'**
+  String get riggingNeedPositiveValues;
+
+  /// No description provided for @riggingLegLengthLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Longueur d’un brin'**
+  String get riggingLegLengthLabel;
+
+  /// No description provided for @riggingAngleToHorizontalLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle par rapport à l’horizontale'**
+  String get riggingAngleToHorizontalLabel;
+
+  /// No description provided for @riggingAngleToVerticalLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle par rapport à la verticale'**
+  String get riggingAngleToVerticalLabel;
+
+  /// No description provided for @riggingDisclaimerShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résultats indicatifs. À valider selon ton contexte et les pratiques rigging.'**
+  String get riggingDisclaimerShort;
+
+  /// No description provided for @riggingCalcLegDropTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Longueur + flèche → portée'**
+  String get riggingCalcLegDropTitle;
+
+  /// No description provided for @riggingCalcLegDropHelp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Élingue symétrique (2 brins) : calcule la portée à partir de la longueur d’élingue et de la flèche.'**
+  String get riggingCalcLegDropHelp;
+
+  /// No description provided for @riggingLegLengthInputLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Longueur d’un brin'**
+  String get riggingLegLengthInputLabel;
+
+  /// No description provided for @riggingLegLengthInputHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex: 2.50'**
+  String get riggingLegLengthInputHint;
+
+  /// No description provided for @riggingInvalidTriangle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Impossible : la longueur doit être supérieure à la flèche.'**
+  String get riggingInvalidTriangle;
+
+  /// No description provided for @riggingCalcLegAngleTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Longueur + angle → portée + flèche'**
+  String get riggingCalcLegAngleTitle;
+
+  /// No description provided for @riggingCalcLegAngleHelp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Élingue symétrique (2 brins) : calcule portée et flèche à partir de la longueur et de l’angle par rapport à l’horizontale.'**
+  String get riggingCalcLegAngleHelp;
+
+  /// No description provided for @riggingAngleHorizontalInputLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle par rapport à l’horizontale'**
+  String get riggingAngleHorizontalInputLabel;
+
+  /// No description provided for @riggingAngleHorizontalInputHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex: 30'**
+  String get riggingAngleHorizontalInputHint;
+
+  /// No description provided for @riggingInvalidAngle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle invalide : entre 0° et 90° (exclu).'**
+  String get riggingInvalidAngle;
+
+  /// No description provided for @riggingUnitDegrees.
+  ///
+  /// In fr, this message translates to:
+  /// **'°'**
+  String get riggingUnitDegrees;
+
+  /// No description provided for @riggingCalc1Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entraxe + flèche → longueur & angles'**
+  String get riggingCalc1Title;
+
+  /// No description provided for @riggingCalc1Subtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bridle symétrique (2 brins identiques). Poids affiché (info). Aucun calcul de charge.'**
+  String get riggingCalc1Subtitle;
+
+  /// No description provided for @riggingCalc2Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entraxe + angle(H) → flèche & longueur'**
+  String get riggingCalc2Title;
+
+  /// No description provided for @riggingCalc2Subtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle par rapport à l\'horizontale. Bridle symétrique. Aucun calcul de charge.'**
+  String get riggingCalc2Subtitle;
+
+  /// No description provided for @riggingCalc3Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entraxe + longueur → flèche & angles'**
+  String get riggingCalc3Title;
+
+  /// No description provided for @riggingCalc3Subtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Longueur d’un brin connue. Bridle symétrique. Aucun calcul de charge.'**
+  String get riggingCalc3Subtitle;
+
+  /// No description provided for @riggingLegLengthHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex: 4.70'**
+  String get riggingLegLengthHint;
+
+  /// No description provided for @riggingAngleHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex : 45'**
+  String get riggingAngleHint;
+
+  /// No description provided for @riggingInvalidGeometry.
+  ///
+  /// In fr, this message translates to:
+  /// **'Géométrie impossible (longueur trop courte pour l’entraxe).'**
+  String get riggingInvalidGeometry;
+
+  /// No description provided for @riggingSchemaTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Schéma'**
+  String get riggingSchemaTitle;
+
+  /// No description provided for @riggingSchemaCaption1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entrées : portée + flèche. Sorties : longueur d’élingue + angles.'**
+  String get riggingSchemaCaption1;
+
+  /// No description provided for @riggingSchemaCaption2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entrées : portée + longueur d’élingue. Sorties : flèche + angles.'**
+  String get riggingSchemaCaption2;
+
+  /// No description provided for @riggingSchemaCaption3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entrées : portée + angle (horizontal). Sorties : flèche + longueur.'**
+  String get riggingSchemaCaption3;
+
+  /// No description provided for @riggingAngleHInputLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle (par rapport à l’horizontale)'**
+  String get riggingAngleHInputLabel;
+
+  /// No description provided for @riggingAngleHInputHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex: 45'**
+  String get riggingAngleHInputHint;
+
+  /// No description provided for @riggingDropResultLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Flèche (drop)'**
+  String get riggingDropResultLabel;
+
+  /// No description provided for @riggingSchemaLabelSpan.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entraxe'**
+  String get riggingSchemaLabelSpan;
+
+  /// No description provided for @riggingSchemaLabelDrop.
+  ///
+  /// In fr, this message translates to:
+  /// **'Flèche'**
+  String get riggingSchemaLabelDrop;
+
+  /// No description provided for @riggingSchemaLabelLeg.
+  ///
+  /// In fr, this message translates to:
+  /// **'Brin'**
+  String get riggingSchemaLabelLeg;
+
+  /// No description provided for @riggingWeightLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Poids (info)'**
+  String get riggingWeightLabel;
+
+  /// No description provided for @riggingUnitKg.
+  ///
+  /// In fr, this message translates to:
+  /// **'kg'**
+  String get riggingUnitKg;
+
+  /// No description provided for @riggingImpossibleGeometry.
+  ///
+  /// In fr, this message translates to:
+  /// **'Géométrie impossible : la longueur d’un brin doit être > (entraxe / 2).'**
+  String get riggingImpossibleGeometry;
+
+  /// No description provided for @riggingDisclaimerNoLoad.
+  ///
+  /// In fr, this message translates to:
+  /// **'Poids affiché à titre indicatif. Aucun calcul de charge / tension. Valide selon ton contexte rigging.'**
+  String get riggingDisclaimerNoLoad;
+
+  /// No description provided for @riggingCalcCommonSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bridle 2 brins. Poids affiché (info). Aucun calcul de charge.'**
+  String get riggingCalcCommonSubtitle;
+
+  /// No description provided for @riggingOffCenterToggle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charge décentrée'**
+  String get riggingOffCenterToggle;
+
+  /// No description provided for @riggingOffsetLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Offset A → charge'**
+  String get riggingOffsetLabel;
+
+  /// No description provided for @riggingInvalidOffset.
+  ///
+  /// In fr, this message translates to:
+  /// **'Offset invalide : doit être > 0 et < entraxe.'**
+  String get riggingInvalidOffset;
+
+  /// No description provided for @riggingLegLeftLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Longueur brin gauche'**
+  String get riggingLegLeftLabel;
+
+  /// No description provided for @riggingLegRightLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Longueur brin droit'**
+  String get riggingLegRightLabel;
+
+  /// No description provided for @riggingAngleHLeftLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle H (gauche)'**
+  String get riggingAngleHLeftLabel;
+
+  /// No description provided for @riggingAngleHRightLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle H (droit)'**
+  String get riggingAngleHRightLabel;
+
+  /// No description provided for @riggingAngleVLeftLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle V (gauche)'**
+  String get riggingAngleVLeftLabel;
+
+  /// No description provided for @riggingAngleVRightLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle V (droit)'**
+  String get riggingAngleVRightLabel;
+
+  /// No description provided for @riggingIncludedAngleLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle entre brins'**
+  String get riggingIncludedAngleLabel;
+
+  /// No description provided for @riggingAngleHLeftInputLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle H (brin gauche)'**
+  String get riggingAngleHLeftInputLabel;
+
+  /// No description provided for @riggingLegLeftInputLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Longueur (brin gauche)'**
+  String get riggingLegLeftInputLabel;
+
+  /// No description provided for @riggingNeedValidValues.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entrer des valeurs positives valides.'**
+  String get riggingNeedValidValues;
 }
 
 class _AppLocalizationsDelegate

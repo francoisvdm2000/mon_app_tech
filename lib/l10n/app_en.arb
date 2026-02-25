@@ -1,244 +1,115 @@
 {
   "@@locale": "en",
-  "@laserAdviceMaxRecommended": {
-    "placeholders": {
-      "percent": {}
-    }
-  },
-  "@laserPresetSubtitle": {
-    "placeholders": {
-      "diam": {},
-      "div": {},
-      "p": {}
-    }
-  },
-  "@mireLedPitchComputed": {
-    "placeholders": {
-      "pitch": {}
-    }
-  },
-  "@mireLedWallResolution": {
-    "placeholders": {
-      "h": {},
-      "w": {}
-    }
-  },
-  "@mirePitchEqual": {
-    "placeholders": {
-      "value": {}
-    }
-  },
-  "@mirePitchXY": {
-    "placeholders": {
-      "x": {},
-      "y": {}
-    }
-  },
-  "@videoBrightnessResult": {
-    "placeholders": {
-      "area": {},
-      "fl": {},
-      "format": {},
-      "lux": {},
-      "luxEq": {},
-      "minFl": {},
-      "nits": {},
-      "presetLabel": {},
-      "status": {}
-    }
-  },
-  "@videoCalc1Ok": {
-    "placeholders": {
-      "ratio": {}
-    }
-  },
-  "@videoCalc2Ok": {
-    "placeholders": {
-      "width": {}
-    }
-  },
-  "@videoCalc3Ok": {
-    "placeholders": {
-      "format": {},
-      "height": {}
-    }
-  },
-  "@videoCalc4Result": {
-    "placeholders": {
-      "area": {},
-      "fl": {},
-      "format": {},
-      "lux": {},
-      "luxEq": {},
-      "minFl": {},
-      "nits": {},
-      "presetLabel": {},
-      "status": {}
-    }
-  },
-  "@videoCalc5Result": {
-    "placeholders": {
-      "format": {},
-      "hTot": {},
-      "n": {},
-      "overlapM": {},
-      "overlapPct": {},
-      "wPer": {},
-      "wTot": {}
-    }
-  },
-  "@videoCalc6LumiForN": {
-    "placeholders": {
-      "area": {},
-      "fl": {},
-      "lux": {},
-      "n": {},
-      "nits": {}
-    }
-  },
-  "@videoCalc6Result": {
-    "placeholders": {
-      "area": {},
-      "covMax": {},
-      "covMin": {},
-      "distance": {},
-      "format": {},
-      "hTot": {},
-      "lumiMax": {},
-      "lumiMin": {},
-      "nMax": {},
-      "nMin": {},
-      "note": {},
-      "overlapPct": {},
-      "ratioMax": {},
-      "ratioMin": {},
-      "wTot": {}
-    }
-  },
-  "@videoCalcLabel": {
-    "placeholders": {
-      "n": {}
-    }
-  },
-  "@videoCommonPillArea": {
-    "placeholders": {
-      "value": {}
-    }
-  },
-  "@videoCommonPillDistance": {
-    "placeholders": {
-      "value": {}
-    }
-  },
-  "@videoCommonPillFormat": {
-    "placeholders": {
-      "format": {}
-    }
-  },
-  "@videoCommonPillHeight": {
-    "placeholders": {
-      "value": {}
-    }
-  },
-  "@videoCommonPillOverlap": {
-    "placeholders": {
-      "value": {}
-    }
-  },
-  "@videoCommonPillRatio": {
-    "placeholders": {
-      "value": {}
-    }
-  },
-  "@videoCommonPillTotalWidth": {
-    "placeholders": {
-      "value": {}
-    }
-  },
-  "@videoCommonPillWidth": {
-    "placeholders": {
-      "value": {}
-    }
-  },
-  "@videoLedPitchUniform": {
-    "placeholders": {
-      "value": {}
-    }
-  },
-  "@videoLedPitchXY": {
-    "placeholders": {
-      "x": {},
-      "y": {}
-    }
-  },
-  "@videoLedResult": {
-    "placeholders": {
-      "pitch": {},
-      "tileHcm": {},
-      "tileHpx": {},
-      "tileWcm": {},
-      "tileWpx": {},
-      "wallHm": {},
-      "wallHpx": {},
-      "wallWm": {},
-      "wallWpx": {}
-    }
-  },
-  "@videoLmResultHeight": {
-    "placeholders": {
-      "format": {},
-      "height": {}
-    }
-  },
-  "@videoLmResultRatio": {
-    "placeholders": {
-      "ratio": {}
-    }
-  },
-  "@videoLmResultWidth": {
-    "placeholders": {
-      "width": {}
-    }
-  },
-  "@videoMpCaseOpenMin": {
-    "placeholders": {
-      "coverage": {},
-      "n": {}
-    }
-  },
-  "@videoMpCaseTightMax": {
-    "placeholders": {
-      "coverage": {},
-      "n": {}
-    }
-  },
-  "@videoMpLumiEstimated": {
-    "placeholders": {
-      "area": {},
-      "fl": {},
-      "lux": {},
-      "n": {},
-      "nits": {}
-    }
-  },
   "aboutArtNetSubtitle": "DMX universes over Ethernet/UDP, nodes, broadcast vs unicast.\\nReal-world limits, network stability, RDM depending on hardware.",
   "aboutArtNetTitle": "Art-Net — DMX over IP (nodes, unicast/broadcast)",
+  "aboutArtnetTitle": "Art-Nand",
+  "aboutArtnetToc01": "1) Art-Nand — c’est quoi and porrquoi",
+  "aboutArtnetToc02": "2) Addressing & universe — mapping propre",
+  "aboutArtnetToc03": "3) Limites & perf — ce qui casse en premier",
+  "aboutArtnetToc04": "4) Nodes, splitters & RDM",
+  "aboutArtnetToc05": "5) Trorbleshooting — symptoms → causes",
+  "aboutArtnetToc06": "6) Schémas (nandwork / unicast vs broadcast)",
+  "aboutArtnetToc07": "6bis) Images (assands) — RJ45/switch/cables",
+  "aboutArtnetToc08": "7) Checklist rapide",
   "aboutCablingFiberSubtitle": "Cat5e→Cat8, fiber OM3/OM4/OS2, LC/SC/MPO, typical distances, show best practices.",
   "aboutCablingFiberTitle": "Network — RJ45 / fiber / speeds & distances",
   "aboutComputingSubtitle": "Useful bandwidth, versions, real limits, marketing traps.",
   "aboutComputingTitle": "Computing — USB / HDMI / DP / SATA / NVMe…",
   "aboutDmxSubtitle": "Universes, addresses, frames, RS-485 wiring, termination, field issues.\\nIncludes diagrams + checklist.",
   "aboutDmxTitle": "DMX — how it works (simple & complete)",
+  "aboutDmxToc01": "1) DMX, universe, addresses — la base",
+  "aboutDmxToc02": "2) Trame DMX — break, start code, canaux",
+  "aboutDmxToc03": "3) Câblage RS-485 — topologie & cable",
+  "aboutDmxToc04": "4) Terminaison & splitters — éviter les réflexions",
+  "aboutDmxToc05": "4bis) RDM — limites & compatibilités",
+  "aboutDmxToc06": "5) Trorbleshooting terrain — symptoms → causes",
+  "aboutDmxToc07": "6) Art-Nand — repères terrain",
+  "aboutDmxToc08": "7) sACN / E1.31 — multicast, IGMP, priorités",
+  "aboutDmxToc09": "8) DMX vs Art-Nand vs sACN — choisir",
+  "aboutDmxToc10": "9) Schémas terrain (DMX / IP / pinort)",
+  "aboutDmxToc11": "10) Checklist rapide",
+  "aboutElectriciteTitle": "Electricity",
+  "aboutElectriciteToc01": "1) Bases (W, A, V, kW)",
+  "aboutElectriciteToc02": "2) Connecteurs (Schuko / P17 / PowerCON)",
+  "aboutElectriciteToc03": "3) Mono / Tri (ce que ça change)",
+  "aboutElectriciteToc04": "4) Table rapide (16A → 400A)",
+  "aboutElectriciteToc05": "5) Sécurité & pièges terrain",
+  "aboutElectriciteToc06": "6) Checklist",
   "aboutElectricitySubtitle": "Connectors, single/three-phase, quick kW tables (16A→400A), field pitfalls.",
   "aboutElectricityTitle": "Electrical — Schuko / CEE (P17) / power",
+  "aboutInformatiqueTitle": "IT basics",
+  "aboutInformatiqueToc01": "1) USB / USB-C / Thunderbolt",
+  "aboutInformatiqueToc02": "2) Stockage (SATA / NVMe / SSD)",
+  "aboutInformatiqueToc03": "3) Liaisons vidéo (DP / HDMI)",
+  "aboutInformatiqueToc04": "4) PCIe / GPU (repères)",
+  "aboutInformatiqueToc05": "5) Checklist (plateau)",
   "aboutIpBasicsSubtitle": "Understand IP, subnet mask, gateway, DHCP vs static.\\nConcrete examples (2.x, 10.x, 192.168.x) + checklist.",
-  "aboutIpBasicsTitle": "Network — IP basics / subnet mask / DHCP (essential)",
+  "aboutIpBasicsTitle": "Network — IP basics / subnet / DHCP (essentials)",
+  "aboutIpBasicsToc01": "1) C’est quoi une IP and à quoi ça sert ?",
+  "aboutIpBasicsToc02": "2) Why 192.x / 10.x / 172.x ? (addresses privées)",
+  "aboutIpBasicsToc03": "3) Subnand mask & sors-nandworkx: comprendre porr de vrai",
+  "aboutIpBasicsToc04": "4) DHCP, passerelle, DNS: qui fait quoi ?",
+  "aboutIpBasicsToc05": "5) How deux appareils se parlent (LAN vs hors LAN)",
+  "aboutIpBasicsToc06": "6) Plans IP “show” simples (exemples prêts à copier)",
+  "aboutIpBasicsToc07": "7) Trorbleshooting: symptoms → causes (méthode terrain)",
+  "aboutIpBasicsToc08": "8) Mini-exercices (vérifier vite un masque / un nandwork)",
+  "aboutIpBasicsToc09": "9) Checklist rapide",
   "aboutLightNetworkSubtitle": "Simple and robust architecture for Art-Net/sACN.\\nVLAN, IGMP snooping/querier, Wi‑Fi (jitter), switches, diagrams + checklist.",
   "aboutLightNetworkTitle": "Lighting network — VLAN, IGMP, Wi-Fi vs wired",
+  "aboutNetworkTitle": "Nandwork (EN)",
+  "aboutNetworkToc01": "1) Objectif: nandwork stable",
+  "aboutNetworkToc02": "2) Plan IP (simple)",
+  "aboutNetworkToc03": "3) VLAN (séparation)",
+  "aboutNetworkToc04": "4) IGMP (sACN multicast)",
+  "aboutNetworkToc05": "5) Wi-Fi vs filaire",
+  "aboutNetworkToc06": "6) Switch: ce qu’il faut",
+  "aboutNetworkToc07": "7) Schémas",
+  "aboutNetworkToc08": "7bis) Images (assands)",
+  "aboutNetworkToc09": "8) Checklist",
+  "aboutReseauTitle": "Nandwork",
+  "aboutReseauToc01": "1) Bases nandwork (LAN / IP / débit)",
+  "aboutReseauToc02": "2) RJ45 & catégories (Cat5e/6/6A/…)",
+  "aboutReseauToc03": "3) PoE (alimentation nandwork)",
+  "aboutReseauToc04": "4) Fibre (SM/MM) + connectors (LC/SC)",
+  "aboutReseauToc05": "5) SFP / SFP+ / QSFP (modules)",
+  "aboutReseauToc06": "6) Switches (VLAN / IGMP / QoS)",
+  "aboutReseauToc07": "7) Art-Nand / sACN sur nandwork (conseils)",
+  "aboutReseauToc08": "8) Checklist",
   "aboutSacnSubtitle": "A network-pro-oriented DMX-over-IP standard.\\nMulticast/unicast, IGMP snooping/querier, multi-source priorities.",
-  "aboutSacnTitle": "sACN / E1.31 — multicast & priorities",
+  "aboutSacnTitle": "sACN / E1.31 — multicast, IGMP, priorities",
+  "aboutSacnToc01": "1) À quoi sert sACN ?",
+  "aboutSacnToc02": "2) Universe (numérotation)",
+  "aboutSacnToc03": "3) Multicast / Unicast + IGMP",
+  "aboutSacnToc04": "4) Priorités (multi-sorrces)",
+  "aboutSacnToc05": "5) Limites / perfs",
+  "aboutSacnToc06": "6) RDM & sACN (proxy / selon matériel)",
+  "aboutSacnToc07": "7) Schémas",
+  "aboutSacnToc08": "7bis) Images (assands)",
+  "aboutSacnToc09": "8) Checklist",
+  "aboutTileArtnetTitle": "Art-Nand — DMX sur IP (nodes, unicast/broadcast)",
+  "aboutTileDmxTitle": "DMX — fonctionnement (simple & compland)",
+  "aboutTileElectriciteSubtitle": "Connecteurs, mono/tri, tableaux kW rapides (16A→400A), pièges terrain.",
+  "aboutTileElectriciteTitle": "Électrique — Schuko / P17 / puissances",
+  "aboutTileInformatiqueSubtitle": "Débits utiles, versions, limites réelles, pièges markanding.",
+  "aboutTileInformatiqueTitle": "IT basics — USB / HDMI / DP / SATA / NVMe…",
+  "aboutTileIpBasicsTitle": "Nandwork — bases IP / masque / DHCP (essentiel)",
+  "aboutTileNetworkTitle": "Nandwork lumière — VLAN, IGMP, Wi-Fi vs filaire",
+  "aboutTileReseauTitle": "Nandwork — RJ45 / Fibre / débits & longueurs",
+  "aboutTileSacnTitle": "sACN / E1.31 — multicast, IGMP, priorités",
+  "aboutTileVideoTitle": "Video — SDI / NDI / IP (SRT/RTMP)",
+  "aboutTitle": "Abort",
   "aboutVideoSubtitle": "Choose based on latency, reliability, cabling, LAN vs WAN.\\nTables + diagram.",
-  "aboutVideoTitle": "Video — field notes",
+  "aboutVideoTitle": "Video — SDI / NDI / IP (SRT/RTMP)",
+  "aboutVideoToc01": "1) Bases vidéo (mots-clés)",
+  "aboutVideoToc02": "2) Resolution & FPS",
+  "aboutVideoToc03": "3) Corleur (4:4:4 / 4:2:2 / 10-bit)",
+  "aboutVideoToc04": "4) Sync (Genlock / Timecode)",
+  "aboutVideoToc05": "5) Câbles & distances",
+  "aboutVideoToc06": "6) SDI (3G / 6G / 12G)",
+  "aboutVideoToc07": "7) HDMI — terrain",
+  "aboutVideoToc08": "8) NDI — quand / porrquoi / limites",
+  "aboutVideoToc09": "9) Mapping / LED / multi-projo",
+  "aboutVideoToc10": "10) Checklist terrain",
   "appTitle": "My Tech App",
   "catalogDmxModeItem": "{name} — {channels} channels",
   "catalogDmxModeTitle": "DMX mode ({count})",
@@ -307,6 +178,8 @@
   "homeLightTitle": "Lighting",
   "homeReferencesSubtitle": "DMX / network / video: field guides & quick references.",
   "homeReferencesTitle": "References",
+  "homeRiggingSubtitle": "Bridles: angles & sling lengths.",
+  "homeRiggingTitle": "Rigging",
   "homeTitle": "Home",
   "homeVideoSubtitle": "Lens & measurement, brightness, multi-projector, LED and test patterns.",
   "homeVideoTitle": "Video",
@@ -315,6 +188,11 @@
   "languageSystemCurrent": "Phone language",
   "laserAdviceFullPower": "Full power allowed (100 %)",
   "laserAdviceMaxRecommended": "Maximum recommended power: {percent}",
+  "@laserAdviceMaxRecommended": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
   "laserConsentCheckboxLabel": "I accept and understand the risks.",
   "laserConsentContinue": "Continue",
   "laserConsentText": "ACCESS TO THE LASER SECTION\\n\\nThe LASER section of this application includes safety calculations (e.g. NOHD, SZED, CZED).\\nThese calculations are indicative and do not replace:\\n- a risk assessment,\\n- applicable standards,\\n- operating procedures,\\n- or validation by a qualified person.\\n\\nIMPORTANT\\n- Risk of eye / skin injury in case of improper use.\\n- Results may be incorrect if parameters are incomplete, inaccurate, or if real conditions differ (optics,\\n  atmospheric conditions, reflections, alignment, etc.).\\n- The operator is solely responsible for installation, operation, and compliance.\\n\\nBy validating, you confirm that you:\\n- understand the risks,\\n- comply with applicable safety rules,\\n- assume full responsibility in case of negligence or misuse.",
@@ -334,6 +212,13 @@
   "laserPresetAdded": "Record added.",
   "laserPresetDeleted": "Record deleted.",
   "laserPresetSubtitle": "P: {p} mW • Div: {div} mrad • Ø: {diam} mm",
+  "@laserPresetSubtitle": {
+    "placeholders": {
+      "diam": {},
+      "div": {},
+      "p": {}
+    }
+  },
   "laserProjectorNameLabel": "Projector name",
   "laserRenameProjectorTitle": "Rename projector",
   "laserSafetyResultsTitle": "Safety results",
@@ -373,6 +258,11 @@
   "mireLedErrTilesXY": "❌ Enter Tiles X/Y (>0).",
   "mireLedParamsTitle": "LED wall parameters",
   "mireLedPitchComputed": "Computed pitch: {pitch}",
+  "@mireLedPitchComputed": {
+    "placeholders": {
+      "pitch": {}
+    }
+  },
   "mireLedSubtitleColorBars": "Bars + ramps + circles",
   "mireLedSubtitleGridLabels": "Grid + markers + circles",
   "mireLedSubtitlePixelPerfect": "Pixel perfect + circles",
@@ -391,6 +281,12 @@
   "mireLedTypeTilesId": "Tile IDs (number + colors)",
   "mireLedTypeUniformity": "Uniformity + circles",
   "mireLedWallResolution": "Wall resolution: {w} × {h} px",
+  "@mireLedWallResolution": {
+    "placeholders": {
+      "h": {},
+      "w": {}
+    }
+  },
   "mireLedWarnPitchOutOfRange": "⚠️ Computed pitch out of range (0.5–20 mm). Check Tile cm / px.",
   "mireLedWarnPitchXNotY": "⚠️ Pitch X ≠ Pitch Y (non-uniform tile). Check cm and px dimensions.",
   "mireMappingSectionTitle": "Multi-projector mapping pattern",
@@ -405,7 +301,18 @@
   "mireOverlapHint": "e.g.: 10.0",
   "mireOverlapLabel": "Overlap (%)",
   "mirePitchEqual": "{value} mm",
+  "@mirePitchEqual": {
+    "placeholders": {
+      "value": {}
+    }
+  },
   "mirePitchXY": "X {x} mm • Y {y} mm",
+  "@mirePitchXY": {
+    "placeholders": {
+      "x": {},
+      "y": {}
+    }
+  },
   "mireProjectorLabelPattern": "PROJ {index}",
   "mireProjectorsNHint": "e.g.: 2",
   "mireProjectorsNLabel": "Number of projectors (N)",
@@ -507,6 +414,17 @@
   "patchMvrStatusExtractingZip": "Extracting ZIP…",
   "patchMvrStatusFilePickFailed": "File selection failed: {reason}",
   "patchMvrStatusFixturesFound": "Fixtures found: {count} (multi-channel: {resolved}).",
+  "@patchMvrStatusFixturesFound": {
+    "description": "",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "resolved": {
+        "type": "int"
+      }
+    }
+  },
   "patchMvrStatusLoadingGdtf": "Loading GDTF…",
   "patchMvrStatusNoContentToLoad": "No content to load.",
   "patchMvrStatusNoFileSelected": "No file selected.",
@@ -514,6 +432,20 @@
   "patchMvrStatusParseError": "Parse error: {message}",
   "patchMvrStatusParsingContent": "Parsing content…",
   "patchMvrStatusReferenceLoaded": "Reference loaded: {count} fixture(s) (skipped: {skipped}, GDTF footprints: {footprints}).",
+  "@patchMvrStatusReferenceLoaded": {
+    "description": "",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      },
+      "footprints": {
+        "type": "int"
+      }
+    }
+  },
   "patchMvrStatusRestored": "Restored: {count} fixtures",
   "patchMvrStatusSceneXmlNotFound": "scene.xml not found in the MVR.",
   "patchMvrStatusSelectingFile": "Selecting file…",
@@ -579,6 +511,23 @@
   "photometrySummary1": "At {distance} m, {candela} cd ≈ {lux} lux.",
   "photometrySummary2": "At {distance} m, {lumens} lm ≈ {lux} lux (approx.).",
   "photometrySummary3": "Lumens: {lumens} lm — Distance: {distance} m — Angle: {angle}° — Lux: {lux} lx.",
+  "@photometrySummary3": {
+    "description": "",
+    "placeholders": {
+      "lumens": {
+        "type": "String"
+      },
+      "distance": {
+        "type": "String"
+      },
+      "angle": {
+        "type": "String"
+      },
+      "lux": {
+        "type": "String"
+      }
+    }
+  },
   "projectionAngleHint": "In degrees",
   "projectionAngleLabel": "Angle",
   "projectionAutoHelp": "Auto: computes the missing value.",
@@ -597,30 +546,98 @@
   "projectionInputsTitle": "Inputs",
   "projectionResultsTitle": "Results",
   "resetConsents": "Reset consents",
+  "riggingAngleLengthTitle": "Bridle angle & sling length",
+  "riggingAngleToHorizontalLabel": "Angle to horizontal",
+  "riggingAngleToVerticalLabel": "Angle to vertical",
+  "riggingDisclaimerShort": "Indicative results. Validate for your context and rigging practices.",
+  "riggingDropHint": "e.g. 0.60",
+  "riggingDropLabel": "Drop (vertical)",
+  "riggingInputsTitle": "Inputs",
+  "riggingLegLengthLabel": "Leg length",
+  "riggingNeedPositiveValues": "Enter values > 0.",
+  "riggingResultsTitle": "Results",
+  "riggingSpanHint": "e.g. 2.40",
+  "riggingSpanLabel": "Span (distance between points)",
+  "riggingSymmetryNote": "Assumption: symmetric bridle (2 identical legs). No load calculations.",
+  "riggingTitle": "Rigging",
+  "riggingUnitMeters": "m",
   "settings": "Settings",
   "videoBrightnessResult": "Format: {format}\\nArea: {area} m²\\nLux (lm/m²): {lux}\\nEq lux (gain): {luxEq}\\nLuminance: {nits} nits | {fl} ft‑L\\nMinimum threshold ({presetLabel}): {minFl} ft‑L → {status}\\nNote: indicative estimate (Lambert).",
+  "@videoBrightnessResult": {
+    "placeholders": {
+      "area": {},
+      "fl": {},
+      "format": {},
+      "lux": {},
+      "luxEq": {},
+      "minFl": {},
+      "nits": {},
+      "presetLabel": {},
+      "status": {}
+    }
+  },
   "videoBrightnessSectionTitle": "Calc 4 — Lux / nits / ft‑L + threshold",
   "videoBrightnessSubtitle": "Lux / nits / ft‑L + threshold (calculation 4).",
   "videoBrightnessTitle": "Brightness",
   "videoCalc1ErrMissing": "❌ Missing data: Distance + Width.",
   "videoCalc1Ok": "✅ Throw ratio = {ratio}",
+  "@videoCalc1Ok": {
+    "placeholders": {
+      "ratio": {}
+    }
+  },
   "videoCalc1Title": "Calc 1 — Ratio (Distance / Width)",
   "videoCalc2ErrMissing": "❌ Missing data: Distance + Ratio.",
   "videoCalc2Ok": "✅ Image width = {width} m",
+  "@videoCalc2Ok": {
+    "placeholders": {
+      "width": {}
+    }
+  },
   "videoCalc2Title": "Calc 2 — Width (Distance / Ratio)",
   "videoCalc3ErrMissingWidth": "❌ Missing data: Width.",
   "videoCalc3Ok": "✅ Height = {height} m (format {format})",
+  "@videoCalc3Ok": {
+    "placeholders": {
+      "format": {},
+      "height": {}
+    }
+  },
   "videoCalc3Title": "Calc 3 — Height (Width + Format)",
   "videoCalc4ErrGt0": "❌ Lumens/Gain/Width must be > 0.",
   "videoCalc4ErrMissing": "❌ Missing data: Lumens + Gain + Width.",
   "videoCalc4ErrMissingSimple": "❌ Missing data: Width + Lumens + Gain.",
   "videoCalc4Result": "Area: {area} m² (format {format})\\nLux (lm/m²): {lux}\\nEq lux (gain): {luxEq}\\nLuminance: {nits} nits | {fl} ft‑L\\nMinimum threshold ({presetLabel}): {minFl} ft‑L → {status}\\nNote: nits/ft‑L conversion based on a Lambertian assumption (approx).",
+  "@videoCalc4Result": {
+    "placeholders": {
+      "area": {},
+      "fl": {},
+      "format": {},
+      "lux": {},
+      "luxEq": {},
+      "minFl": {},
+      "nits": {},
+      "presetLabel": {},
+      "status": {}
+    }
+  },
   "videoCalc4Title": "Calc 4 — Brightness (lux / nits / ft‑L + threshold)",
   "videoCalc5ErrMissing": "❌ Missing data: Total width + Overlap% + Number of projectors.",
   "videoCalc5ErrNMin2": "❌ Number of projectors must be ≥ 2.",
   "videoCalc5NHint": "e.g.: 2",
   "videoCalc5NLabel": "Number of projectors (N)",
   "videoCalc5Result": "Total width: {wTot} m\\nN: {n} | Overlap: {overlapPct}% (on projector width)\\n\\n- Width per projector: {wPer} m\\n- Overlap between 2 projectors: {overlapM} m\\n- Total height (format {format}): {hTot} m",
+  "@videoCalc5Result": {
+    "placeholders": {
+      "format": {},
+      "hTot": {},
+      "n": {},
+      "overlapM": {},
+      "overlapPct": {},
+      "wPer": {},
+      "wTot": {}
+    }
+  },
   "videoCalc5Title": "Calc 5 — Overlap (Total width + N)",
   "videoCalc6ErrMissingBasics": "❌ Missing data: Total width + Distance + Overlap%.",
   "videoCalc6ErrMissingRatio": "❌ Missing data: Min ratio and/or Max ratio.",
@@ -630,6 +647,15 @@
   "videoCalc6LumensPerProjectorLabel": "Lumens per projector",
   "videoCalc6LumiErrGt0": "Brightness: ❌ Lumens/projector and gain must be > 0.",
   "videoCalc6LumiForN": "Estimated brightness (N={n})\\nArea: {area} m²\\nEq lux: {lux} (lm/m²)\\nNits: {nits} | ft‑L: {fl}",
+  "@videoCalc6LumiForN": {
+    "placeholders": {
+      "area": {},
+      "fl": {},
+      "lux": {},
+      "n": {},
+      "nits": {}
+    }
+  },
   "videoCalc6LumiOptional": "Brightness (optional): enter Lumens/projector + Gain for the estimate.",
   "videoCalc6NoteIndicative": "Note: indicative estimate (real blend/overlap may reduce it slightly).",
   "videoCalc6RatioMaxHint": "e.g.: 1.80",
@@ -637,19 +663,83 @@
   "videoCalc6RatioMinHint": "e.g.: 1.20",
   "videoCalc6RatioMinLabel": "Min ratio",
   "videoCalc6Result": "Total width={wTot} m | Distance={distance} m | Overlap={overlapPct}%\\nFormat {format} → Total height={hTot} m | Area={area} m²\\nMin/max ratio: {ratioMin} → {ratioMax}\\n\\nWidest ratio case (min) = {nMin} projectors | coverage ≈ {covMin} m\\n{lumiMin}\\n\\nTightest ratio case (max) = {nMax} projectors | coverage ≈ {covMax} m\\n{lumiMax}\\n\\n{note}",
+  "@videoCalc6Result": {
+    "placeholders": {
+      "area": {},
+      "covMax": {},
+      "covMin": {},
+      "distance": {},
+      "format": {},
+      "hTot": {},
+      "lumiMax": {},
+      "lumiMin": {},
+      "nMax": {},
+      "nMin": {},
+      "note": {},
+      "overlapPct": {},
+      "ratioMax": {},
+      "ratioMin": {},
+      "wTot": {}
+    }
+  },
   "videoCalc6Title": "Calc 6 — Auto projector count + brightness",
   "videoCalcLabel": "Calc {n}",
+  "@videoCalcLabel": {
+    "placeholders": {
+      "n": {}
+    }
+  },
   "videoCalculateAll": "Calculate all",
   "videoCalculationsTitle": "Video calculations",
   "videoCommonParamsTitle": "Common parameters",
   "videoCommonPillArea": "Area: {value}",
+  "@videoCommonPillArea": {
+    "placeholders": {
+      "value": {}
+    }
+  },
   "videoCommonPillDistance": "Distance: {value}",
+  "@videoCommonPillDistance": {
+    "placeholders": {
+      "value": {}
+    }
+  },
   "videoCommonPillFormat": "Format: {format}",
+  "@videoCommonPillFormat": {
+    "placeholders": {
+      "format": {}
+    }
+  },
   "videoCommonPillHeight": "Height: {value}",
+  "@videoCommonPillHeight": {
+    "placeholders": {
+      "value": {}
+    }
+  },
   "videoCommonPillOverlap": "Overlap: {value}",
+  "@videoCommonPillOverlap": {
+    "placeholders": {
+      "value": {}
+    }
+  },
   "videoCommonPillRatio": "Ratio: {value}",
+  "@videoCommonPillRatio": {
+    "placeholders": {
+      "value": {}
+    }
+  },
   "videoCommonPillTotalWidth": "Total width: {value}",
+  "@videoCommonPillTotalWidth": {
+    "placeholders": {
+      "value": {}
+    }
+  },
   "videoCommonPillWidth": "Width: {value}",
+  "@videoCommonPillWidth": {
+    "placeholders": {
+      "value": {}
+    }
+  },
   "videoCopyAllTooltip": "Copy all results",
   "videoCopySummaryTooltip": "Copy summary",
   "videoDisclaimerShort": "Indicative calculations. Always check manufacturer documentation.",
@@ -671,8 +761,32 @@
   "videoLedErrAllGt0": "❌ All values must be > 0.",
   "videoLedErrMissingInputs": "❌ Missing data: Tiles X/Y + Tile px + Tile cm.",
   "videoLedPitchUniform": "{value} mm",
+  "@videoLedPitchUniform": {
+    "placeholders": {
+      "value": {}
+    }
+  },
   "videoLedPitchXY": "X {x} mm • Y {y} mm",
+  "@videoLedPitchXY": {
+    "placeholders": {
+      "x": {},
+      "y": {}
+    }
+  },
   "videoLedResult": "✅ Wall resolution: {wallWpx} × {wallHpx} px\\n✅ Wall size: {wallWm} × {wallHm} m\\nTile: {tileWpx}×{tileHpx} px • {tileWcm}×{tileHcm} cm\\nComputed pitch: {pitch}",
+  "@videoLedResult": {
+    "placeholders": {
+      "pitch": {},
+      "tileHcm": {},
+      "tileHpx": {},
+      "tileWcm": {},
+      "tileWpx": {},
+      "wallHm": {},
+      "wallHpx": {},
+      "wallWm": {},
+      "wallWpx": {}
+    }
+  },
   "videoLedSubtitle": "LED wall pixels based on size, pitch, tile dimensions.",
   "videoLedTileHcmHint": "e.g.: 33.28",
   "videoLedTileHcmLabel": "Tile height (cm)",
@@ -703,8 +817,24 @@
   "videoLmImageWidthHint": "e.g.: 6.0",
   "videoLmImageWidthLabel": "Image width (m)",
   "videoLmResultHeight": "✅ Height = {height} m (format {format})",
+  "@videoLmResultHeight": {
+    "placeholders": {
+      "format": {},
+      "height": {}
+    }
+  },
   "videoLmResultRatio": "✅ Throw ratio = {ratio}",
+  "@videoLmResultRatio": {
+    "placeholders": {
+      "ratio": {}
+    }
+  },
   "videoLmResultWidth": "✅ Image width = {width} m",
+  "@videoLmResultWidth": {
+    "placeholders": {
+      "width": {}
+    }
+  },
   "videoLmThrowRatioHint": "e.g.: 1.60",
   "videoLmThrowRatioLabel": "Throw ratio",
   "videoLumensHint": "e.g.: 20000",
@@ -719,7 +849,19 @@
   "videoMpCalc5Title": "Calc 5 — Width per projector",
   "videoMpCalc6Title": "Calc 6 — Number of projectors (min/max ratio)",
   "videoMpCaseOpenMin": "Widest ratio case (min) = {n} projectors | coverage ≈ {coverage} m",
+  "@videoMpCaseOpenMin": {
+    "placeholders": {
+      "coverage": {},
+      "n": {}
+    }
+  },
   "videoMpCaseTightMax": "Tightest ratio case (max) = {n} projectors | coverage ≈ {coverage} m",
+  "@videoMpCaseTightMax": {
+    "placeholders": {
+      "coverage": {},
+      "n": {}
+    }
+  },
   "videoMpDistanceHint": "e.g.: 12.0",
   "videoMpDistanceLabel": "Throw distance (m)",
   "videoMpErrImpossibleDenom": "❌ Impossible parameters (denom ≤ 0).",
@@ -738,6 +880,15 @@
   "videoMpLumensPerProjectorLabel": "Lumens per projector",
   "videoMpLumiErrLumensGainGt0": "Brightness: ❌ Lumens/projector and gain must be > 0.",
   "videoMpLumiEstimated": "Estimated brightness (N={n})\\nArea: {area} m²\\nEq lux: {lux}\\nNits: {nits} | ft‑L: {fl}",
+  "@videoMpLumiEstimated": {
+    "placeholders": {
+      "area": {},
+      "fl": {},
+      "lux": {},
+      "n": {},
+      "nits": {}
+    }
+  },
   "videoMpLumiOptionalHint": "Brightness (optional): enter Lumens/projector + Gain to estimate.",
   "videoMpNoteIndicative": "Note: indicative estimate.",
   "videoMpOptionalLuminanceTitle": "Optional: brightness",
@@ -810,138 +961,62 @@
   "videoToolsTitle": "Video tools",
   "videoTotalWidthHint": "e.g.: 18.0",
   "videoTotalWidthLabel": "Total projection width (m)",
-  "@patchMvrStatusFixturesFound": {
-    "description": "",
-    "placeholders": {
-      "count": {
-        "type": "int"
-      },
-      "resolved": {
-        "type": "int"
-      }
-    }
-  },
-  "@patchMvrStatusReferenceLoaded": {
-    "description": "",
-    "placeholders": {
-      "count": {
-        "type": "int"
-      },
-      "skipped": {
-        "type": "int"
-      },
-      "footprints": {
-        "type": "int"
-      }
-    }
-  },
-  "@photometrySummary3": {
-    "description": "",
-    "placeholders": {
-      "lumens": {
-        "type": "String"
-      },
-      "distance": {
-        "type": "String"
-      },
-      "angle": {
-        "type": "String"
-      },
-      "lux": {
-        "type": "String"
-      }
-    }
-  },
-  "aboutArtnetTitle": "Art-Net — DMX universes over IP (simple & complete)",
-  "aboutReseauTitle": "Networking — field notes",
-  "aboutNetworkTitle": "Lighting network — VLAN, IGMP, Wi‑Fi",
-  "aboutElectriciteTitle": "Electrical — field notes",
-  "aboutInformatiqueTitle": "IT — field notes",
-  "aboutDmxToc01": "1) DMX, universes, addresses — the basics",
-  "aboutDmxToc02": "2) DMX frame — break, start code, channels",
-  "aboutDmxToc03": "3) RS‑485 wiring — topology & cable",
-  "aboutDmxToc04": "4) Termination & splitters — avoid reflections",
-  "aboutDmxToc05": "4bis) RDM — limits & compatibility",
-  "aboutDmxToc06": "5) Field troubleshooting — symptoms → causes",
-  "aboutDmxToc07": "6) Art‑Net — field pointers",
-  "aboutDmxToc08": "7) sACN / E1.31 — multicast, IGMP, priorities",
-  "aboutDmxToc09": "8) DMX vs Art‑Net vs sACN — choosing",
-  "aboutDmxToc10": "9) Field diagrams (DMX / IP / pinout)",
-  "aboutDmxToc11": "10) Quick checklist",
-  "aboutArtnetToc01": "1) Art‑Net — what it is and why",
-  "aboutArtnetToc02": "2) Addressing & universes — clean mapping",
-  "aboutArtnetToc03": "3) Limits & performance — what breaks first",
-  "aboutArtnetToc04": "4) Nodes, splitters & RDM",
-  "aboutArtnetToc05": "5) Troubleshooting — symptoms → causes",
-  "aboutArtnetToc06": "6) Diagrams (network / unicast vs broadcast)",
-  "aboutArtnetToc07": "6bis) Images (assets) — RJ45/switch/cables",
-  "aboutArtnetToc08": "7) Quick checklist",
-  "aboutSacnToc01": "1) What is sACN for?",
-  "aboutSacnToc02": "2) Universes (numbering)",
-  "aboutSacnToc03": "3) Multicast / Unicast + IGMP",
-  "aboutSacnToc04": "4) Priorities (multiple sources)",
-  "aboutSacnToc05": "5) Limits / performance",
-  "aboutSacnToc06": "6) RDM & sACN (proxy / hardware‑dependent)",
-  "aboutSacnToc07": "7) Diagrams",
-  "aboutSacnToc08": "7bis) Images (assets)",
-  "aboutSacnToc09": "8) Checklist",
-  "aboutIpBasicsToc01": "1) What is an IP address and what is it for?",
-  "aboutIpBasicsToc02": "2) Why 192.x / 10.x / 172.x? (private addresses)",
-  "aboutIpBasicsToc03": "3) Subnet mask & subnets: actually understanding it",
-  "aboutIpBasicsToc04": "4) DHCP, gateway, DNS: who does what?",
-  "aboutIpBasicsToc05": "5) How two devices talk (LAN vs outside LAN)",
-  "aboutIpBasicsToc06": "6) Simple “show” IP plans (copy‑paste examples)",
-  "aboutIpBasicsToc07": "7) Troubleshooting: symptoms → causes (field method)",
-  "aboutIpBasicsToc08": "8) Mini‑exercises (quickly verify a mask / a network)",
-  "aboutIpBasicsToc09": "9) Quick checklist",
-  "aboutReseauToc01": "1) Network basics (LAN / IP / bandwidth)",
-  "aboutReseauToc02": "2) RJ45 & categories (Cat5e/6/6A/…)",
-  "aboutReseauToc03": "3) PoE (power over Ethernet)",
-  "aboutReseauToc04": "4) Fiber (SM/MM) + connectors (LC/SC)",
-  "aboutReseauToc05": "5) SFP / SFP+ / QSFP (modules)",
-  "aboutReseauToc06": "6) Switches (VLAN / IGMP / QoS)",
-  "aboutReseauToc07": "7) Art‑Net / sACN on a network (tips)",
-  "aboutReseauToc08": "8) Checklist",
-  "aboutNetworkToc01": "1) Goal: a stable network",
-  "aboutNetworkToc02": "2) IP plan (simple)",
-  "aboutNetworkToc03": "3) VLAN (segmentation)",
-  "aboutNetworkToc04": "4) IGMP (sACN multicast)",
-  "aboutNetworkToc05": "5) Wi‑Fi vs wired",
-  "aboutNetworkToc06": "6) Switch: what you need",
-  "aboutNetworkToc07": "7) Diagrams",
-  "aboutNetworkToc08": "7bis) Images (assets)",
-  "aboutNetworkToc09": "8) Checklist",
-  "aboutVideoToc01": "1) Video basics (keywords)",
-  "aboutVideoToc02": "2) Resolution & FPS",
-  "aboutVideoToc03": "3) Color (4:4:4 / 4:2:2 / 10‑bit)",
-  "aboutVideoToc04": "4) Sync (Genlock / Timecode)",
-  "aboutVideoToc05": "5) Cables & distances",
-  "aboutVideoToc06": "6) SDI (3G / 6G / 12G)",
-  "aboutVideoToc07": "7) HDMI — field notes",
-  "aboutVideoToc08": "8) NDI — when / why / limits",
-  "aboutVideoToc09": "9) Mapping / LED / multi‑projector",
-  "aboutVideoToc10": "10) Field checklist",
-  "aboutElectriciteToc01": "1) Basics (W, A, V, kW)",
-  "aboutElectriciteToc02": "2) Connectors (Schuko / CEE / PowerCON)",
-  "aboutElectriciteToc03": "3) Single‑phase / three‑phase (what changes)",
-  "aboutElectriciteToc04": "4) Quick table (16A → 400A)",
-  "aboutElectriciteToc05": "5) Safety & field pitfalls",
-  "aboutElectriciteToc06": "6) Checklist",
-  "aboutInformatiqueToc01": "1) USB / USB‑C / Thunderbolt",
-  "aboutInformatiqueToc02": "2) Storage (SATA / NVMe / SSD)",
-  "aboutInformatiqueToc03": "3) Video links (DP / HDMI)",
-  "aboutInformatiqueToc04": "4) PCIe / GPU (markers)",
-  "aboutInformatiqueToc05": "5) Checklist (on site)",
-  "aboutTileDmxTitle": "DMX — how it works (simple & complete)",
-  "aboutTileArtnetTitle": "Art‑Net — DMX over IP (nodes, unicast/broadcast)",
-  "aboutTileSacnTitle": "sACN / E1.31 — multicast, IGMP, priorities",
-  "aboutTileIpBasicsTitle": "Network — IP basics / subnet mask / DHCP (essential)",
-  "aboutTileReseauTitle": "Networking — RJ45 / fiber / bandwidth & distances",
-  "aboutTileNetworkTitle": "Lighting network — VLAN, IGMP, Wi‑Fi vs wired",
-  "aboutTileVideoTitle": "Video — SDI / NDI / IP (SRT/RTMP)",
-  "aboutTileElectriciteTitle": "Electrical — Schuko / CEE / power",
-  "aboutTileElectriciteSubtitle": "Connectors, 1‑phase/3‑phase, quick kW tables (16A→400A), field pitfalls.",
-  "aboutTileInformatiqueTitle": "IT — USB / HDMI / DP / SATA / NVMe…",
-  "aboutTileInformatiqueSubtitle": "Useful throughput, versions, real limits, marketing traps."
+    "riggingCalcLegDropTitle": "Length + drop → span",
+  "riggingCalcLegDropHelp": "Symmetric bridle (2 legs): computes span from sling length and drop.",
+  "riggingLegLengthInputHint": "e.g. 2.50",
+  "riggingInvalidTriangle": "Impossible: length must be greater than drop.",
+  "riggingCalcLegAngleTitle": "Length + angle → span + drop",
+  "riggingCalcLegAngleHelp": "Symmetric bridle (2 legs): computes span and drop from sling length and angle to the horizontal.",
+  "riggingAngleHorizontalInputLabel": "Angle to horizontal",
+  "riggingAngleHorizontalInputHint": "e.g. 30",
+  "riggingInvalidAngle": "Invalid angle: must be between 0° and 90°.",
+  "riggingUnitDegrees": "°",
+  "riggingCalc1Title": "2-point bridle (span + drop)",
+  "riggingCalc1Subtitle": "Compute sling length and angles from span and drop.",
+    
   
+  "riggingAngleHint": "e.g. 45",
+
+  
+
+  
+  "riggingSchemaCaption1": "Inputs: span + drop. Outputs: sling length + angles.",
+  "riggingSchemaCaption2": "Inputs: span + sling length. Outputs: drop + angles.",
+  "riggingSchemaCaption3": "Inputs: span + angle (to horizontal). Outputs: drop + sling length.",
+    "riggingCalc2Title": "Drop & angles from leg length",
+  "riggingCalc2Subtitle": "Assumption: symmetric bridle (2 identical legs). No load calculation.",
+  "riggingCalc3Title": "Leg length & drop from an angle",
+  "riggingCalc3Subtitle": "Angle to horizontal + span. No load calculation.",
+
+  "riggingLegLengthInputLabel": "Leg length",
+  "riggingLegLengthHint": "e.g. 4.70",
+  "riggingAngleHInputLabel": "Angle (to horizontal)",
+  "riggingAngleHInputHint": "e.g. 45",
+  "riggingDropResultLabel": "Drop",
+  "riggingInvalidGeometry": "Impossible geometry (leg too short for the span).",
+
+  "riggingSchemaTitle": "Diagram",
+  "riggingSchemaLabelSpan": "Span",
+  "riggingSchemaLabelDrop": "Drop",
+  "riggingSchemaLabelLeg": "Leg",
+
+"riggingWeightLabel": "Weight (info)",
+"riggingUnitKg": "kg",
+"riggingImpossibleGeometry": "Impossible geometry: leg length must be > (span / 2).",
+"riggingDisclaimerNoLoad": "Weight is informational only. No load/tension calculation. Validate for your rigging context.",
+"riggingCalcCommonSubtitle": "2-leg bridle. Weight shown (info). No load calculation.",
+"riggingOffCenterToggle": "Off-center load",
+"riggingOffsetLabel": "Offset A → load",
+"riggingInvalidOffset": "Invalid offset: must be > 0 and < span.",
+"riggingLegLeftLabel": "Left leg length",
+"riggingLegRightLabel": "Right leg length",
+"riggingAngleHLeftLabel": "Angle H (left)",
+"riggingAngleHRightLabel": "Angle H (right)",
+"riggingAngleVLeftLabel": "Angle V (left)",
+"riggingAngleVRightLabel": "Angle V (right)",
+"riggingIncludedAngleLabel": "Included angle",
+"riggingAngleHLeftInputLabel": "Angle H (left leg)",
+"riggingLegLeftInputLabel": "Length (left leg)",
+"riggingNeedValidValues": "Enter valid positive values."
+
 }

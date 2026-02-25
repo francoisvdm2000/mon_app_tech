@@ -12,6 +12,8 @@ class PhotometryPage extends StatefulWidget {
 }
 
 class _PhotometryPageState extends State<PhotometryPage> {
+  bool _didInitDependencies = false;
+
   // Outil 1 : lux <-> candela avec distance
   final _lux1 = TextEditingController();
   final _candela1 = TextEditingController();
@@ -51,8 +53,17 @@ class _PhotometryPageState extends State<PhotometryPage> {
       c.addListener(_recomputeAll);
     }
 
+    // _recomputeAll() uses localization (context), so it is triggered in didChangeDependencies.
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_didInitDependencies) return;
+    _didInitDependencies = true;
     _recomputeAll();
   }
+
 
   @override
   void dispose() {
@@ -107,7 +118,7 @@ class _PhotometryPageState extends State<PhotometryPage> {
       c.clear();
     }
     _isUpdating = false;
-    _recomputeAll();
+    // _recomputeAll() uses localization (context), so it is triggered in didChangeDependencies.
   }
 
   void _recomputeAll() {

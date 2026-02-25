@@ -1,16 +1,27 @@
-import 'dart:io';
 import 'dart:typed_data';
-
-import 'package:path_provider/path_provider.dart';
+import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
-Future<void> exportPngBytes(Uint8List bytes, String filename) async {
-  final dir = await getTemporaryDirectory();
-  final file = File('${dir.path}/$filename');
-  await file.writeAsBytes(bytes, flush: true);
+Future<void> exportPngBytes(
+  BuildContext context,
+  Uint8List bytes,
+  String filename,
+) async {
+  final box = context.findRenderObject() as RenderBox?;
+
+  Rect? origin;
+  if (box != null && box.hasSize) {
+    origin = box.localToGlobal(Offset.zero) & box.size;
+  }
+
+  final xFile = XFile.fromData(
+    bytes,
+    mimeType: 'image/png',
+    name: filename,
+  );
 
   await Share.shareXFiles(
-    [XFile(file.path, mimeType: 'image/png', name: filename)],
-    subject: filename,
+    [xFile],
+    sharePositionOrigin: origin,
   );
 }
