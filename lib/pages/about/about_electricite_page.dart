@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, copyToClipboard
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 class AboutElectricitePage extends StatefulWidget {
   const AboutElectricitePage({super.key});
@@ -18,6 +19,8 @@ class _AboutElectricitePageState extends State<AboutElectricitePage> {
   final _kPowerTable = GlobalKey();
   final _kSafety = GlobalKey();
   final _kChecklist = GlobalKey();
+
+  final _kKvaConversion = GlobalKey();
 
   @override
   void dispose() {
@@ -38,6 +41,7 @@ class _AboutElectricitePageState extends State<AboutElectricitePage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
@@ -51,22 +55,16 @@ class _AboutElectricitePageState extends State<AboutElectricitePage> {
             children: [
               _TocCard(
                 onCopy: () {
-                  final txt = '''
-ÉLECTRIQUE — repères terrain
-• Puissance ≈ U×I (mono) ; tri ≈ √3×U×I.
-• 16A mono ≈ 3,7 kW (230V).
-• 32A tri ≈ 22 kW (400V).
-• Toujours: terre + protections + câbles dimensionnés.
-'''.trim();
-                  copyToClipboard(context, txt);
+                  copyToClipboard(context, loc.elecTocCopyText);
                 },
                 items: [
-                  _TocItem('1) Bases (W, A, V, kW)', onTap: () => _goTo(_kBasics)),
-                  _TocItem('2) Connecteurs (Schuko / P17 / PowerCON)', onTap: () => _goTo(_kConnectors)),
-                  _TocItem('3) Mono / Tri (ce que ça change)', onTap: () => _goTo(_kMonoTri)),
-                  _TocItem('4) Table rapide (16A → 400A)', onTap: () => _goTo(_kPowerTable)),
-                  _TocItem('5) Sécurité & pièges terrain', onTap: () => _goTo(_kSafety)),
-                  _TocItem('6) Checklist', onTap: () => _goTo(_kChecklist)),
+                  _TocItem(loc.elecToc1, onTap: () => _goTo(_kBasics)),
+                  _TocItem(loc.elecToc2, onTap: () => _goTo(_kConnectors)),
+                  _TocItem(loc.elecToc3, onTap: () => _goTo(_kMonoTri)),
+                  _TocItem(loc.elecToc4, onTap: () => _goTo(_kPowerTable)),
+                  _TocItem(loc.elecToc5, onTap: () => _goTo(_kKvaConversion)),
+                  _TocItem(loc.elecToc6, onTap: () => _goTo(_kSafety)),
+                  _TocItem(loc.elecToc7, onTap: () => _goTo(_kChecklist)),
                 ],
               ),
               const SizedBox(height: 12),
@@ -87,6 +85,11 @@ class _AboutElectricitePageState extends State<AboutElectricitePage> {
               const _Section4PowerTable(),
               const SizedBox(height: 12),
 
+
+              _Anchor(key: _kKvaConversion),
+              const _SectionKvaConversion(),
+              const SizedBox(height: 12),
+
               _Anchor(key: _kSafety),
               const _Section5Safety(),
               const SizedBox(height: 12),
@@ -94,16 +97,7 @@ class _AboutElectricitePageState extends State<AboutElectricitePage> {
               _Anchor(key: _kChecklist),
               _Section6Checklist(
                 onCopy: () {
-                  final txt = '''
-ÉLECTRIQUE — Checklist
-☐ Identifier la source (mono/tri, intensité dispo)
-☐ Vérifier protections (disjoncteur + différentiel)
-☐ Terre présente (continuité) + pas de bricolage
-☐ Câbles dimensionnés (chauffe, longueur)
-☐ Répartir les charges (éviter tout sur une phase)
-☐ Test charge progressive (pas tout ON d’un coup)
-'''.trim();
-                  copyToClipboard(context, txt);
+                  copyToClipboard(context, loc.elecTocCopyText);
                 },
               ),
 
@@ -121,6 +115,98 @@ class _AboutElectricitePageState extends State<AboutElectricitePage> {
 /// TOC
 /// =======================
 
+
+class _SectionKvaConversion extends StatelessWidget {
+  const _SectionKvaConversion();
+
+  static const _rows = <int>[
+    16, 20, 25, 32, 40, 50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630, 800,
+  ];
+
+  String _kw(double v) {
+    final s = v.toStringAsFixed(1);
+    return s.endsWith('.0') ? s.substring(0, s.length - 2) : s;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+    final title = loc.elecKvaTitle;
+    final formula = loc.elecKvaFormula;
+    final intro = loc.elecKvaIntro;
+    final note = loc.elecKvaNote;
+
+    final colKva = loc.elecKvaColKva;
+    final colPf08 = loc.elecKvaColPf08;
+    final colPf10 = loc.elecKvaColPf10;
+
+    return SectionCard(
+      title: title,
+      icon: Icons.bolt,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            '$formula\n\n$intro',
+            style: const TextStyle(height: 1.25),
+          ),
+          const SizedBox(height: 10),
+          Table(
+            border: TableBorder.all(color: Colors.white24),
+            columnWidths: const {
+              0: FlexColumnWidth(1),
+              1: FlexColumnWidth(1),
+              2: FlexColumnWidth(1),
+            },
+            children: [
+              TableRow(
+                decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.06)),
+                children: [
+                  _cell(colKva, bold: true),
+                  _cell(colPf08, bold: true),
+                  _cell(colPf10, bold: true),
+                ],
+              ),
+              for (final kva in _rows)
+                TableRow(
+                  children: [
+                    _cell('$kva'),
+                    _cell(_kw(kva * 0.8)),
+                    _cell(_kw(kva * 1.0)),
+                  ],
+                ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Text(
+            note,
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.70),
+              fontSize: 12,
+              height: 1.25,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  static Widget _cell(String text, {bool bold = false}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+      child: Text(
+        text,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontWeight: bold ? FontWeight.w900 : FontWeight.w700,
+          color: Colors.white.withValues(alpha: bold ? 0.95 : 0.85),
+        ),
+      ),
+    );
+  }
+}
+
 class _TocCard extends StatelessWidget {
   const _TocCard({
     required this.items,
@@ -133,10 +219,10 @@ class _TocCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SectionCard(
-      title: 'Sommaire',
+      title: AppLocalizations.of(context).commonTocTitle,
       icon: Icons.electrical_services,
       trailing: IconButton(
-        tooltip: 'Copier résumé',
+        tooltip: AppLocalizations.of(context).commonCopySummaryTooltip,
         icon: const Icon(Icons.copy, color: Colors.white70),
         onPressed: onCopy,
       ),
@@ -368,7 +454,7 @@ class _Section5Safety extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SectionCard(
-      title: '5) Sécurité & pièges terrain',
+      title: '6) Sécurité & pièges terrain',
       icon: Icons.health_and_safety,
       child: const Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

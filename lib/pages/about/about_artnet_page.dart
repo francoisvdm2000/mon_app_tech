@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../app/ui/widgets.dart'; // SectionCard, ExpandSectionCard, MiniPill, copyToClipboard
+import '../../app/ui/widgets.dart';
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
+import 'about_universe_to_artnet_table_page.dart';
+import 'about_universe_to_hex_table_page.dart'; // SectionCard, ExpandSectionCard, MiniPill, copyToClipboard
 
 class AboutArtNetPage extends StatefulWidget {
   const AboutArtNetPage({super.key});
@@ -18,8 +21,8 @@ class _AboutArtNetPageState extends State<AboutArtNetPage> {
   final _k4NodesRdm = GlobalKey();
   final _k5Troubleshooting = GlobalKey();
   final _k6Diagrams = GlobalKey();
-  final _k6bAssets = GlobalKey();
   final _k7Checklist = GlobalKey();
+  final _k8Conversion = GlobalKey();
 
   void _goTo(GlobalKey key) {
     final ctx = key.currentContext;
@@ -40,6 +43,7 @@ class _AboutArtNetPageState extends State<AboutArtNetPage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
@@ -65,65 +69,43 @@ class _AboutArtNetPageState extends State<AboutArtNetPage> {
                   copyToClipboard(context, txt);
                 },
                 items: [
-                  _TocItem('1) Art-Net — c’est quoi et pourquoi', onTap: () => _goTo(_k1Basics)),
-                  _TocItem('2) Adressage & univers — mapping propre', onTap: () => _goTo(_k2Addressing)),
-                  _TocItem('3) Limites & perf — ce qui casse en premier', onTap: () => _goTo(_k3Limits)),
-                  _TocItem('4) Nodes, splitters & RDM', onTap: () => _goTo(_k4NodesRdm)),
-                  _TocItem('5) Dépannage — symptômes → causes', onTap: () => _goTo(_k5Troubleshooting)),
-                  _TocItem('6) Schémas (réseau / unicast vs broadcast)', onTap: () => _goTo(_k6Diagrams)),
-                  _TocItem('6bis) Images (assets) — RJ45/switch/câbles', onTap: () => _goTo(_k6bAssets)),
-                  _TocItem('7) Checklist rapide', onTap: () => _goTo(_k7Checklist)),
+                  _TocItem('1) Art-Net — c’est quoi et pourquoi',
+                      onTap: () => _goTo(_k1Basics)),
+                  _TocItem('2) Adressage & univers — mapping propre',
+                      onTap: () => _goTo(_k2Addressing)),
+                  _TocItem('3) Limites & perf — ce qui casse en premier',
+                      onTap: () => _goTo(_k3Limits)),
+                  _TocItem('4) Nodes, splitters & RDM',
+                      onTap: () => _goTo(_k4NodesRdm)),
+                  _TocItem('5) Dépannage — symptômes → causes',
+                      onTap: () => _goTo(_k5Troubleshooting)),
+                  _TocItem('6) Schémas (réseau / unicast vs broadcast)',
+                      onTap: () => _goTo(_k6Diagrams)),
+                  _TocItem('7) Checklist rapide',
+                      onTap: () => _goTo(_k7Checklist)),
+                  _TocItem(loc.aboutArtnetTocConversionTitle,
+                      onTap: () => _goTo(_k8Conversion)),
                 ],
               ),
-
               const SizedBox(height: 12),
-
               _Anchor(key: _k1Basics),
               const _Section1Basics(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k2Addressing),
               const _Section2Addressing(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k3Limits),
               const _Section3Limits(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k4NodesRdm),
               const _Section4NodesRdm(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k5Troubleshooting),
               const _Section5Troubleshooting(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k6Diagrams),
               const _Section6Diagrams(),
               const SizedBox(height: 12),
-
-              _Anchor(key: _k6bAssets),
-              _Section6bAssets(
-                onCopy: () {
-                  final txt = '''
-Assets recommandés (optionnels)
-- assets/images/connectors/rj45.png
-- assets/images/network/switch.png
-- assets/images/cables/ethernet_cat5e_cat6.png
-- assets/images/cables/ethernet_short_patch.png
-
-pubspec.yaml (exemple)
-flutter:
-  assets:
-    - assets/images/connectors/
-    - assets/images/network/
-    - assets/images/cables/
-'''.trim();
-                  copyToClipboard(context, txt);
-                },
-              ),
-              const SizedBox(height: 12),
-
               _Anchor(key: _k7Checklist),
               _Section7Checklist(
                 onCopy: () {
@@ -136,11 +118,14 @@ Art-Net — Checklist terrain
 ☐ Switch correct (éviter hubs / vieux switchs instables)
 ☐ Wi-Fi évité si show critique (préférer filaire)
 ☐ Si RDM: node “RDM proxy” confirmé + câblage DMX stable
-'''.trim();
+'''
+                      .trim();
                   copyToClipboard(context, txt);
                 },
               ),
-
+              const SizedBox(height: 12),
+              _Anchor(key: _k8Conversion),
+              const _Section8Conversion(),
               const SizedBox(height: 18),
               const _FooterNote(),
             ],
@@ -401,51 +386,6 @@ class _Section6Diagrams extends StatelessWidget {
   }
 }
 
-class _Section6bAssets extends StatelessWidget {
-  const _Section6bAssets({required this.onCopy});
-  final VoidCallback onCopy;
-
-  @override
-  Widget build(BuildContext context) {
-    return ExpandSectionCard(
-      title: '6bis) Images (assets) — RJ45/switch/câbles',
-      icon: Icons.image_outlined,
-      trailing: IconButton(
-        tooltip: 'Copier liste assets',
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _Paragraph(
-            "Section prévue pour illustrer le réseau (RJ45, switch, câbles). "
-            "Si les assets n’existent pas, l’app affiche un fallback propre.",
-          ),
-          SizedBox(height: 10),
-          _Subtitle('Exemples'),
-          SizedBox(height: 10),
-          _AssetRow(
-            items: [
-              _AssetSpec(label: 'RJ45', assetPath: 'assets/images/connectors/rj45.png', hint: 'Connecteur Ethernet'),
-              _AssetSpec(
-                label: 'Switch',
-                assetPath: 'assets/images/network/switch.png',
-                hint: 'Switch (idéalement géré si IGMP/VLAN)',
-              ),
-              _AssetSpec(
-                label: 'Câble Ethernet',
-                assetPath: 'assets/images/cables/ethernet_cat5e_cat6.png',
-                hint: 'Cat5e/Cat6 = base fiable',
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 class _Section7Checklist extends StatelessWidget {
   const _Section7Checklist({required this.onCopy});
   final VoidCallback onCopy;
@@ -506,16 +446,20 @@ class _TocCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     onTap: it.onTap,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 12),
                       child: Row(
                         children: [
                           Expanded(
                             child: Text(
                               it.label,
-                              style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w800),
+                              style: TextStyle(
+                                  color: Colors.white.withValues(alpha: 0.92),
+                                  fontWeight: FontWeight.w800),
                             ),
                           ),
-                          Icon(Icons.chevron_right, color: Colors.white.withValues(alpha: 0.55)),
+                          Icon(Icons.chevron_right,
+                              color: Colors.white.withValues(alpha: 0.55)),
                         ],
                       ),
                     ),
@@ -563,7 +507,10 @@ class _Subtitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w900, fontSize: 14.5),
+      style: TextStyle(
+          color: Colors.white.withValues(alpha: 0.92),
+          fontWeight: FontWeight.w900,
+          fontSize: 14.5),
     );
   }
 }
@@ -576,7 +523,10 @@ class _Paragraph extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35, fontSize: 13.5),
+      style: TextStyle(
+          color: Colors.white.withValues(alpha: 0.80),
+          height: 1.35,
+          fontSize: 13.5),
     );
   }
 }
@@ -595,11 +545,17 @@ class _BulletList extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('•  ', style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35)),
+                  Text('•  ',
+                      style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.80),
+                          height: 1.35)),
                   Expanded(
                     child: Text(
                       s,
-                      style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35, fontSize: 13.5),
+                      style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.80),
+                          height: 1.35,
+                          fontSize: 13.5),
                     ),
                   ),
                 ],
@@ -630,7 +586,10 @@ class _Callout extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w900, fontSize: 13.5),
+            style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.92),
+                fontWeight: FontWeight.w900,
+                fontSize: 13.5),
           ),
           const SizedBox(height: 8),
           _BulletList(items: bullets),
@@ -796,124 +755,13 @@ class _UnicastBroadcastPainter extends CustomPainter {
 /// ASSETS UI (fallback)
 /// =======================
 
-class _AssetSpec {
-  const _AssetSpec({required this.label, required this.assetPath, required this.hint});
-  final String label;
-  final String assetPath;
-  final String hint;
-}
-
-class _AssetRow extends StatelessWidget {
-  const _AssetRow({required this.items});
-  final List<_AssetSpec> items;
-
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (ctx, c) {
-        final isNarrow = c.maxWidth < 520;
-        if (isNarrow) {
-          return Column(
-            children: items
-                .map((it) => Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: _AssetTile(spec: it),
-                    ))
-                .toList(),
-          );
-        }
-        return Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            for (int i = 0; i < items.length; i++) ...[
-              Expanded(child: _AssetTile(spec: items[i])),
-              if (i != items.length - 1) const SizedBox(width: 10),
-            ],
-          ],
-        );
-      },
-    );
-  }
-}
-
-class _AssetTile extends StatelessWidget {
-  const _AssetTile({required this.spec});
-  final _AssetSpec spec;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xFF0B0B0B),
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: Colors.white12),
-      ),
-      padding: const EdgeInsets.all(12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            spec.label,
-            style: TextStyle(
-              color: Colors.white.withValues(alpha: 0.92),
-              fontWeight: FontWeight.w900,
-              fontSize: 13.5,
-            ),
-          ),
-          const SizedBox(height: 8),
-          AspectRatio(
-            aspectRatio: 16 / 9,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.06),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.white12),
-                ),
-                child: Image.asset(
-                  spec.assetPath,
-                  fit: BoxFit.contain,
-                  errorBuilder: (context, error, stack) {
-                    return Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(Icons.image_not_supported, color: Colors.white.withValues(alpha: 0.45)),
-                          const SizedBox(height: 6),
-                          Text(
-                            'Asset manquant',
-                            style: TextStyle(color: Colors.white.withValues(alpha: 0.65), fontWeight: FontWeight.w800),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(spec.hint, style: TextStyle(color: Colors.white.withValues(alpha: 0.78), height: 1.25, fontSize: 12.5)),
-          const SizedBox(height: 8),
-          Text(
-            spec.assetPath,
-            style: TextStyle(fontFamily: 'monospace', fontSize: 11.8, color: Colors.white.withValues(alpha: 0.55)),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-/// =======================
-/// PAINTER HELPERS
-/// =======================
-
 class _Grid {
   static void paint(Canvas canvas, Size size) {
-    canvas.drawRect(Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
-    final faint = Paint()..color = Colors.white.withValues(alpha: 0.16)..strokeWidth = 1;
+    canvas.drawRect(
+        Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
+    final faint = Paint()
+      ..color = Colors.white.withValues(alpha: 0.16)
+      ..strokeWidth = 1;
     final step = size.shortestSide / 10;
     for (double x = 0; x <= size.width; x += step) {
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), faint);
@@ -925,16 +773,22 @@ class _Grid {
 }
 
 class _Box {
-  static void draw(Canvas canvas, Size size, Offset center, String label, {required bool accent}) {
+  static void draw(Canvas canvas, Size size, Offset center, String label,
+      {required bool accent}) {
     final w = size.width * 0.22;
     final h = size.height * 0.22;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.05));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.05));
 
     final fill = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.18) : Colors.white.withValues(alpha: 0.08);
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.18)
+          : Colors.white.withValues(alpha: 0.08);
     final border = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.60) : Colors.white.withValues(alpha: 0.30)
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.60)
+          : Colors.white.withValues(alpha: 0.30)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 
@@ -954,7 +808,8 @@ class _Box {
     final w = size.width * 0.08;
     final h = size.height * 0.12;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.04));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.04));
 
     canvas.drawRRect(rr, Paint()..color = Colors.white.withValues(alpha: 0.07));
     canvas.drawRRect(
@@ -976,11 +831,19 @@ class _Box {
 }
 
 class _Text {
-  static TextPainter tp(String s, {required double fontSize, required Color color, required FontWeight weight}) {
+  static TextPainter tp(String s,
+      {required double fontSize,
+      required Color color,
+      required FontWeight weight}) {
     final t = TextPainter(
       text: TextSpan(
         text: s,
-        style: TextStyle(fontSize: fontSize, color: color, fontWeight: weight, fontFamily: 'monospace', height: 1.15),
+        style: TextStyle(
+            fontSize: fontSize,
+            color: color,
+            fontWeight: weight,
+            fontFamily: 'monospace',
+            height: 1.15),
       ),
       textDirection: TextDirection.ltr,
     );
@@ -989,7 +852,10 @@ class _Text {
   }
 
   static void center(Canvas canvas, Rect rect, TextPainter tp) {
-    tp.paint(canvas, Offset(rect.left + (rect.width - tp.width) / 2, rect.top + (rect.height - tp.height) / 2));
+    tp.paint(
+        canvas,
+        Offset(rect.left + (rect.width - tp.width) / 2,
+            rect.top + (rect.height - tp.height) / 2));
   }
 
   static void paintLabel(Canvas canvas, Offset pos, TextPainter tp) {
@@ -999,7 +865,133 @@ class _Text {
       const Radius.circular(12),
     );
     canvas.drawRRect(r, Paint()..color = Colors.black.withValues(alpha: 0.45));
-    canvas.drawRRect(r, Paint()..color = Colors.white.withValues(alpha: 0.14)..style = PaintingStyle.stroke..strokeWidth = 1.5);
+    canvas.drawRRect(
+        r,
+        Paint()
+          ..color = Colors.white.withValues(alpha: 0.14)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.5);
     tp.paint(canvas, Offset(pos.dx + pad, pos.dy + pad));
+  }
+}
+
+class _Section8Conversion extends StatelessWidget {
+  const _Section8Conversion();
+
+  @override
+  Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
+    return SectionCard(
+      title: loc.aboutArtnetTocConversionTitle,
+      icon: Icons.table_chart,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            loc.aboutArtnetConversionIntro,
+            style: const TextStyle(height: 1.25),
+          ),
+          const SizedBox(height: 10),
+          _NavLinkTile(
+            title: loc.aboutUniverseToArtnetTitle,
+            subtitle: loc.aboutUniverseToArtnetSubtitle,
+            icon: Icons.swap_horiz,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const AboutUniverseToArtNetTablePage(),
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 10),
+          _NavLinkTile(
+            title: loc.aboutUniverseToHexTitle,
+            subtitle: loc.aboutUniverseToHexSubtitle,
+            icon: Icons.code,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const AboutUniverseToHexTablePage(),
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 10),
+          Text(
+            loc.aboutArtnetConversionNote,
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.70),
+              fontSize: 12,
+              height: 1.25,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _NavLinkTile extends StatelessWidget {
+  const _NavLinkTile({
+    required this.title,
+    required this.subtitle,
+    required this.icon,
+    required this.onTap,
+  });
+
+  final String title;
+  final String subtitle;
+  final IconData icon;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: const Color(0xFF0B0B0B),
+      borderRadius: BorderRadius.circular(12),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(12),
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+          child: Row(
+            children: [
+              Icon(icon, color: Colors.white.withValues(alpha: 0.80)),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                        color: Colors.white.withValues(alpha: 0.92),
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      subtitle,
+                      style: TextStyle(
+                        color: Colors.white.withValues(alpha: 0.70),
+                        fontWeight: FontWeight.w600,
+                        height: 1.2,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Icon(Icons.chevron_right,
+                  color: Colors.white.withValues(alpha: 0.55)),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

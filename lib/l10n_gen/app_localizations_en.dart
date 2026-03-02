@@ -77,69 +77,70 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutVideoTitle => 'Video — SDI / NDI / IP (SRT/RTMP)';
 
   @override
-  String get appTitle => 'My Tech App';
+  String get appTitle => 'Mon App Tech';
 
   @override
   String catalogDmxModeItem(Object channels, Object name) {
-    return '$name — $channels channels';
+    return '$name — $channels canaux';
   }
 
   @override
   String catalogDmxModeTitle(Object count) {
-    return 'DMX mode ($count)';
+    return 'Mode DMX ($count)';
   }
 
   @override
-  String get catalogInfoDmxChannels => 'DMX channels';
+  String get catalogInfoDmxChannels => 'Canaux DMX';
 
   @override
-  String get catalogInfoLuminousFlux => 'Luminous flux';
+  String get catalogInfoLuminousFlux => 'Flux lumineux';
 
   @override
-  String get catalogInfoPower => 'Power';
+  String get catalogInfoPower => 'Puissance';
 
   @override
-  String get catalogInfoWeight => 'Weight';
+  String get catalogInfoWeight => 'Poids';
 
   @override
   String catalogLastUpdate(Object date) {
-    return 'Last update: $date';
+    return 'Dernière mise à jour : $date';
   }
 
   @override
   String catalogManufacturerTitle(Object count) {
-    return 'Manufacturer ($count)';
+    return 'Constructeur ($count)';
   }
 
   @override
   String catalogModelTitle(Object count) {
-    return 'Model ($count)';
+    return 'Modèle ($count)';
   }
 
   @override
-  String get catalogNotProvided => 'Not provided';
+  String get catalogNotProvided => 'Non renseigné';
 
   @override
-  String get catalogOpenDmxChart => 'Open DMX chart';
+  String get catalogOpenDmxChart => 'Ouvrir la table DMX';
 
   @override
-  String get catalogOpenManual => 'Open manual';
+  String get catalogOpenManual => 'Ouvrir le manuel';
 
   @override
-  String get catalogResetTooltip => 'Reset';
+  String get catalogResetTooltip => 'Réinitialiser';
 
   @override
   String catalogSyncError(Object message) {
-    return 'Error: $message';
+    return 'Erreur : $message';
   }
 
   @override
   String catalogSyncFailed(Object reason) {
-    return 'Sync failed: $reason';
+    return 'Échec de synchronisation : $reason';
   }
 
   @override
-  String get catalogSyncFailedUnknown => 'Sync failed (unknown reason).';
+  String get catalogSyncFailedUnknown =>
+      'Échec de synchronisation (raison inconnue).';
 
   @override
   String catalogTypeTitle(Object count) {
@@ -147,25 +148,25 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get catalogUpdateTooltip => 'Update';
+  String get catalogUpdateTooltip => 'Mettre à jour';
 
   @override
-  String get catalogUpdated => 'Catalog updated.';
+  String get catalogUpdated => 'Catalogue mis à jour.';
 
   @override
-  String get commonCalculate => 'Calculate';
+  String get commonCalculate => 'Calculer';
 
   @override
-  String get commonCancel => 'Cancel';
+  String get commonCancel => 'Annuler';
 
   @override
-  String get commonCopyResultTooltip => 'Copy result';
+  String get commonCopyResultTooltip => 'Copier le résultat';
 
   @override
   String get commonDash => '—';
 
   @override
-  String get commonNone => 'No records';
+  String get commonNone => 'Aucun enregistrement';
 
   @override
   String get commonOk => 'OK';
@@ -174,56 +175,56 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commonOkWithCheck => 'OK ✅';
 
   @override
-  String get commonRename => 'Rename';
+  String get commonRename => 'Renommer';
 
   @override
   String get commonReset => 'Reset';
 
   @override
-  String get commonSave => 'Save';
+  String get commonSave => 'Enregistrer';
 
   @override
-  String get commonSearch => 'Search';
+  String get commonSearch => 'Rechercher';
 
   @override
-  String get commonTooLowWithCross => 'Too low ❌';
+  String get commonTooLowWithCross => 'Trop faible ❌';
 
   @override
   String get commonUnitMeter => 'm';
 
   @override
-  String get consentsReset => 'Consents reset.';
+  String get consentsReset => 'Consentements réinitialisés.';
 
   @override
-  String get dipSwitchAddressHint => 'e.g. 1 to 512';
+  String get dipSwitchAddressHint => 'Ex : 1 à 512';
 
   @override
-  String get dipSwitchAddressLabel => 'DMX address';
+  String get dipSwitchAddressLabel => 'Adresse DMX';
 
   @override
-  String get dipSwitchChannelUnit => 'channel';
+  String get dipSwitchChannelUnit => 'canal';
 
   @override
   String get dipSwitchEndOfUniverseWarning =>
-      'Warning: end of DMX universe reached.';
+      'Attention : fin d’univers DMX atteinte.';
 
   @override
-  String get dipSwitchInputsTitle => 'Inputs';
+  String get dipSwitchInputsTitle => 'Entrées';
 
   @override
-  String get dipSwitchIntervalHint => 'e.g. 4 (channels)';
+  String get dipSwitchIntervalHint => 'Ex : 4 (canaux)';
 
   @override
-  String get dipSwitchIntervalLabel => 'Interval';
+  String get dipSwitchIntervalLabel => 'Intervalle';
 
   @override
-  String get dipSwitchModeAddressDirect => 'Direct address';
+  String get dipSwitchModeAddressDirect => 'Adresse directe';
 
   @override
-  String get dipSwitchModeAddressMinusOne => 'Address - 1';
+  String get dipSwitchModeAddressMinusOne => 'Adresse - 1';
 
   @override
-  String get dipSwitchNextAddressButton => 'Next address';
+  String get dipSwitchNextAddressButton => 'Adresse suivante';
 
   @override
   String get dipSwitchOffLabel => 'OFF';
@@ -232,42 +233,42 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dipSwitchOnLabel => 'ON';
 
   @override
-  String get dipSwitchResetTooltip => 'Reset';
+  String get dipSwitchResetTooltip => 'Réinitialiser';
 
   @override
   String dipSwitchResultAddressLine(Object address) {
-    return 'Address: $address';
+    return 'Adresse : $address';
   }
 
   @override
-  String get dipSwitchResultAddressNotProvided => 'Address not provided';
+  String get dipSwitchResultAddressNotProvided => 'Adresse non renseignée';
 
   @override
   String dipSwitchResultBinaryValueLine(Object binary) {
-    return 'Binary: $binary';
+    return 'Binaire : $binary';
   }
 
   @override
-  String get dipSwitchResultHeader => 'Result';
+  String get dipSwitchResultHeader => 'Résultat';
 
   @override
   String dipSwitchResultIntervalLine(Object end, Object start) {
-    return 'Range: $start → $end';
+    return 'Intervalle : $start → $end';
   }
 
   @override
   String dipSwitchResultModeLine(Object mode) {
-    return 'Mode: $mode';
+    return 'Mode : $mode';
   }
 
   @override
-  String get dipSwitchScrollHint => 'Scroll to see all switches.';
+  String get dipSwitchScrollHint => 'Fais défiler pour voir tous les switchs.';
 
   @override
-  String get dipSwitchSectionTitle => 'Switches';
+  String get dipSwitchSectionTitle => 'Switchs';
 
   @override
-  String get dipSwitchSummaryTitle => 'Summary';
+  String get dipSwitchSummaryTitle => 'Résumé';
 
   @override
   String dipSwitchSwitchLabel(Object index) {
@@ -275,127 +276,128 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get dipSwitchUseAddressMinusOneLabel => 'Use Address - 1 mode';
+  String get dipSwitchUseAddressMinusOneLabel => 'Utiliser le mode Adresse - 1';
 
   @override
-  String get disclaimerAccept => 'Accept';
+  String get disclaimerAccept => 'J\'accepte';
 
   @override
   String get disclaimerCertify =>
-      'I certify that I have read and accepted these conditions.';
+      'Je certifie avoir lu et accepté ces conditions.';
 
   @override
   String get disclaimerText =>
-      'FOR INFORMATIONAL USE ONLY\\n\\nThe calculations provided by this application (video, lighting, laser) are for informational and indicative purposes only.\\nThey do not replace:\\n- certified calculations,\\n- technical studies,\\n- applicable official standards,\\n- or validation by a qualified professional.\\n\\nLIABILITY\\nThe publisher of this application cannot be held responsible for calculation errors, omissions, equipment damage,\\npersonal injury, or any incident occurring during installation, operation, or use of equipment.\\n\\nVIDEO & PROJECTION\\nResults (sizes, ratios, brightness, overlaps, etc.) are based on theoretical models and may vary depending on:\\noptics, zoom, uniformity, ambient light, surface, settings, etc.\\nAlways verify with official manufacturer documentation.\\n\\nLIGHTING\\nCalculations are indicative and do not account for all real conditions (tolerances, optical losses,\\nsource degradation, local standards, environmental conditions…).\\n\\nLASER – SAFETY\\nNOHD, SZED and CZED calculations are based on standard assumptions and theoretical thresholds.\\nThey do not take into account, in particular:\\n- optical instruments (binoculars, cameras, telescopes…),\\n- atmospheric conditions (fog, rain, dust…),\\n- unexpected reflections, misuse, or specific settings.\\nThe use of a laser system implies direct operator responsibility and an appropriate risk assessment.\\n\\nRISK ACCEPTANCE\\nBy using this application, the user acknowledges:\\n- having read the applicable safety rules,\\n- being solely responsible for their installations,\\n- assuming full responsibility for risks related to the use of equipment (video, lighting, laser),\\n- systematically verifying data with official manufacturer manuals.';
+      'UTILISATION À TITRE INDICATIF UNIQUEMENT\n\nLes calculs fournis par cette application (vidéo, lumière, laser) sont donnés à titre informatif et indicatif.\nIls ne remplacent en aucun cas :\n- des calculs certifiés,\n- des études techniques,\n- les normes officielles en vigueur,\n- ni la validation par un professionnel qualifié.\n\nRESPONSABILITÉ\nL’éditeur de cette application ne peut être tenu responsable d’erreurs de calcul, d’omissions, de dommages matériels,\nd’accidents corporels, ou de tout incident survenant lors de l’installation, de l’exploitation ou de l’utilisation des équipements.\n\nVIDÉO & PROJECTION\nLes résultats (tailles, ratios, luminosité, overlaps, etc.) reposent sur des modèles théoriques et peuvent varier selon :\noptique, zoom, uniformité, environnement lumineux, support, réglages, etc.\nToujours vérifier avec les documentations constructeur officielles.\n\nLUMIÈRE\nLes calculs sont indicatifs et ne tienent pas compte de toutes les conditions réelles (tolérances, pertes optiques,\ndégradation des sources, normes locales, conditions ambiantes…).\n\nLASER – SÉCURITÉ\nLes calculs NOHD, SZED et CZED sont basés sur des hypothèses standards et des seuils théoriques.\nIls ne prennent pas en compte notamment :\n- instruments optiques (jumelles, caméras, télescopes…),\n- conditions atmosphériques (brouillard, pluie, poussière…),\n- réflexions imprévues, usages détournés, réglages spécifiques.\nL’utilisation d’un système laser implique une responsabilité directe de l’opérateur et une analyse de risques adaptée.\n\nACCEPTATION DES RISQUES\nEn utilisant cette application, l’utilisateur reconnaît :\n- avoir pris connaissance des règles de sécurité applicables,\n- être seul responsable de ses installations,\n- assumer l’entière responsabilité des risques liés à l’utilisation des équipements (vidéo, lumière, laser),\n- vérifier systématiquement les données avec les manuels constructeurs officiels.';
 
   @override
-  String get disclaimerTitle => '⚠️ LEGAL DISCLAIMER & LIMITATION OF LIABILITY';
+  String get disclaimerTitle => '⚠️ AVERTISSEMENT LÉGAL & NON-RESPONSABILITÉ';
 
   @override
   String get homeLaserSubtitle =>
-      'Laser calculations and safety (consent required each time).';
+      'Calculs et sécurité laser (consentement requis à chaque entrée).';
 
   @override
   String get homeLaserTitle => 'Laser';
 
   @override
   String get homeLightSubtitle =>
-      'Projection size, DMX dip-switch, photometry, catalog, DMX patch.';
+      'Taille de projection, dip-switch DMX, photométrie, catalogue, patch DMX.';
 
   @override
-  String get homeLightTitle => 'Lighting';
+  String get homeLightTitle => 'Lumière';
 
   @override
   String get homeReferencesSubtitle =>
-      'DMX / network / video: field guides & quick references.';
+      'DMX / réseau / vidéo : fiches & repères terrain.';
 
   @override
-  String get homeReferencesTitle => 'References';
+  String get homeReferencesTitle => 'Références';
 
   @override
-  String get homeTitle => 'Home';
+  String get homeTitle => 'Accueil';
 
   @override
   String get homeVideoSubtitle =>
-      'Lens & measurement, brightness, multi-projector, LED and test patterns.';
+      'Lentille & mesure, luminosité, multiprojecteur, LED et mires.';
 
   @override
-  String get homeVideoTitle => 'Video';
+  String get homeVideoTitle => 'Vidéo';
 
   @override
-  String get language => 'Language';
+  String get language => 'Langue';
 
   @override
-  String get languageSystem => 'System (automatic)';
+  String get languageSystem => 'Système (automatique)';
 
   @override
-  String get languageSystemCurrent => 'Phone language';
+  String get languageSystemCurrent => 'Langue du téléphone';
 
   @override
-  String get laserAdviceFullPower => 'Full power allowed (100 %)';
+  String get laserAdviceFullPower => 'Pleine puissance autorisée (100 %)';
 
   @override
   String laserAdviceMaxRecommended(Object percent) {
-    return 'Maximum recommended power: $percent';
+    return 'Puissance maximale conseillée : $percent';
   }
 
   @override
-  String get laserConsentCheckboxLabel => 'I accept and understand the risks.';
+  String get laserConsentCheckboxLabel =>
+      'J’accepte et je comprends les risques.';
 
   @override
-  String get laserConsentContinue => 'Continue';
+  String get laserConsentContinue => 'Continuer';
 
   @override
   String get laserConsentText =>
-      'ACCESS TO THE LASER SECTION\\n\\nThe LASER section of this application includes safety calculations (e.g. NOHD, SZED, CZED).\\nThese calculations are indicative and do not replace:\\n- a risk assessment,\\n- applicable standards,\\n- operating procedures,\\n- or validation by a qualified person.\\n\\nIMPORTANT\\n- Risk of eye / skin injury in case of improper use.\\n- Results may be incorrect if parameters are incomplete, inaccurate, or if real conditions differ (optics,\\n  atmospheric conditions, reflections, alignment, etc.).\\n- The operator is solely responsible for installation, operation, and compliance.\\n\\nBy validating, you confirm that you:\\n- understand the risks,\\n- comply with applicable safety rules,\\n- assume full responsibility in case of negligence or misuse.';
+      'ACCÈS À LA PARTIE LASER\n\nLa partie LASER de cette application concerne des calculs de sécurité (ex : NOHD, SZED, CZED).\nCes calculs sont indicatifs et ne remplacent pas :\n- une analyse de risques,\n- les normes en vigueur,\n- les procédures d’exploitation,\n- ni la validation par une personne qualifiée.\n\nIMPORTANT\n- Risque de lésions oculaires / cutanées en cas de mauvaise utilisation.\n- Le calcul peut être faux si les paramètres entrés sont incomplets, erronés ou si le contexte réel diffère (optique,\n  conditions atmosphériques, réflexions, alignement, etc.).\n- L’opérateur est seul responsable de l’installation, de l’exploitation et de la conformité.\n\nEn validant, vous confirmez :\n- comprendre les risques,\n- respecter les règles de sécurité applicables,\n- assumer l’entière responsabilité en cas de négligence ou mauvaise utilisation.';
 
   @override
-  String get laserConsentTitle => '🔴 LASER CONSENT (MANDATORY)';
+  String get laserConsentTitle => '🔴 CONSENTEMENT LASER (OBLIGATOIRE)';
 
   @override
-  String get laserDiameterHint => 'e.g.: 3.0';
+  String get laserDiameterHint => 'ex: 3.0';
 
   @override
-  String get laserDiameterLabel => 'Output diameter (mm)';
+  String get laserDiameterLabel => 'Diamètre de sortie (mm)';
 
   @override
   String get laserDisclaimerShort =>
-      'Indicative calculation. Does not replace a laser safety analysis.';
+      'Calcul indicatif. Ne remplace pas une analyse de sécurité laser.';
 
   @override
-  String get laserDivergenceHint => 'e.g.: 1.2';
+  String get laserDivergenceHint => 'ex: 1.2';
 
   @override
   String get laserDivergenceLabel => 'Divergence (mrad)';
 
   @override
-  String get laserInputsTitle => 'Inputs';
+  String get laserInputsTitle => 'Entrées';
 
   @override
   String get laserInvalidInputs =>
-      'Please enter valid power, divergence and diameter values.';
+      'Veuillez entrer une puissance, une divergence et un diamètre valides.';
 
   @override
-  String get laserNameUpdated => 'Name updated.';
+  String get laserNameUpdated => 'Nom mis à jour.';
 
   @override
   String get laserNormativeParamsBody =>
-      'MPE for Nominal Ocular Hazard Distance (NOHD): 25.4 W/m²\\n(IEC 60825-1, edition 3.0)\\n\\nMPE for Sensitive Zone Exposure Distance (SZED): 1 W/m²\\n(ANSI Z136.6)\\n\\nMPE for Critical Zone Exposure Distance (CZED): 0.05 W/m²\\n(ANSI Z136.6)';
+      'MPE pour la distance nominale de danger oculaire (NOHD) : 25,4 W/m²\n(Norme IEC 60825-1, édition 3.0)\n\nMPE pour la distance d’exposition de la zone sensible (SZED) : 1 W/m²\n(Norme ANSI Z136.6)\n\nMPE pour la distance d’exposition de la zone critique (CZED) : 0,05 W/m²\n(Norme ANSI Z136.6)';
 
   @override
-  String get laserNormativeParamsTitle => 'Selected safety parameters';
+  String get laserNormativeParamsTitle => 'Paramètres de sécurité retenus';
 
   @override
-  String get laserPowerHint => 'e.g.: 5000';
+  String get laserPowerHint => 'ex: 5000';
 
   @override
-  String get laserPowerLabel => 'Power (mW)';
+  String get laserPowerLabel => 'Puissance (mW)';
 
   @override
-  String get laserPresetAdded => 'Record added.';
+  String get laserPresetAdded => 'Enregistrement ajouté.';
 
   @override
-  String get laserPresetDeleted => 'Record deleted.';
+  String get laserPresetDeleted => 'Enregistrement supprimé.';
 
   @override
   String laserPresetSubtitle(Object diam, Object div, Object p) {
@@ -403,82 +405,81 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get laserProjectorNameLabel => 'Projector name';
+  String get laserProjectorNameLabel => 'Nom du projecteur';
 
   @override
-  String get laserRenameProjectorTitle => 'Rename projector';
+  String get laserRenameProjectorTitle => 'Renommer le projecteur';
 
   @override
-  String get laserSafetyResultsTitle => 'Safety results';
+  String get laserSafetyResultsTitle => 'Résultats de sécurité';
 
   @override
-  String get laserSaveCurrentProjector => 'Save this projector';
+  String get laserSaveCurrentProjector => 'Enregistrer ce projecteur';
 
   @override
-  String get laserSaveProjectorTitle => 'Save a projector';
+  String get laserSaveProjectorTitle => 'Enregistrer un projecteur';
 
   @override
-  String get laserSavedProjectorsTitle => 'Saved projectors';
+  String get laserSavedProjectorsTitle => 'Projecteurs enregistrés';
 
   @override
-  String get laserSearchHint => 'e.g.: “RGB 5W”';
+  String get laserSearchHint => 'ex: “RGB 5W”';
 
   @override
-  String get laserTargetDistanceHint => 'e.g.: 10';
+  String get laserTargetDistanceHint => 'ex: 10';
 
   @override
-  String get laserTargetDistanceLabel => 'Target distance (m)';
+  String get laserTargetDistanceLabel => 'Distance cible (m)';
 
   @override
-  String get laserZoneCzedDesc => 'Critical zone';
+  String get laserZoneCzedDesc => 'Zone critique';
 
   @override
-  String get laserZoneNohdDesc => 'Eye hazard';
+  String get laserZoneNohdDesc => 'Danger oculaire';
 
   @override
-  String get laserZoneSzedDesc => 'Sensitive zone';
+  String get laserZoneSzedDesc => 'Zone sensible';
 
   @override
-  String get legalNotices => 'Legal notices';
+  String get legalNotices => 'Mentions légales';
 
   @override
   String get lightCatalogDescription =>
-      'Selection by manufacturer, type and product, with information and manual.';
+      'Sélection par constructeur, type et produit, avec informations et manuel.';
 
   @override
-  String get lightCatalogTitle => 'Catalog';
+  String get lightCatalogTitle => 'Catalogue';
 
   @override
   String get lightDisclaimerShort =>
-      'Indicative tools. Always check manufacturer documentation.';
+      'Outils indicatifs. Vérifie toujours la documentation constructeur.';
 
   @override
   String get lightDmxSwitchDescription =>
-      'Indicative conversion between DMX address and switches, with range navigation.';
+      'Conversion indicative entre adresse DMX et interrupteurs, avec navigation par intervalle.';
 
   @override
-  String get lightDmxSwitchTitle => 'DMX dip-switch';
+  String get lightDmxSwitchTitle => 'Dip-switch DMX';
 
   @override
-  String get lightPatchDescription =>
-      'Import an MVR file or create a patch manually from the library.';
+  String get lightPatchDescription => 'Importer et visualiser un fichier MVR.';
 
   @override
-  String get lightPatchTitle => 'DMX patch';
+  String get lightPatchTitle => 'Patch DMX';
 
   @override
   String get lightPhotometryDescription =>
-      'Indicative conversions between lux, candela and lumen, with distance and angle.';
+      'Conversions indicatives entre lux, candela et lumen, avec distance et angle.';
 
   @override
-  String get lightPhotometryTitle => 'Photometry';
+  String get lightPhotometryTitle => 'Photométrie';
 
   @override
   String get lightProjectionDescription =>
-      'Indicative spot size calculation based on angle, distance and diameter.';
+      'Calcul indicatif de la taille de tache selon l’angle, la distance et le diamètre.';
 
   @override
-  String get lightProjectionTitle => 'Projection size';
+  String get lightProjectionTitle => 'Taille de projection';
 
   @override
   String get menuTitle => 'Menu';
@@ -490,110 +491,110 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mireDash => '—';
 
   @override
-  String get mireErrInvalidOverlap => '❌ Invalid overlap (0 to 99.9).';
+  String get mireErrInvalidOverlap => '❌ Overlap invalide (0 à 99.9).';
 
   @override
   String get mireErrInvalidProjectors =>
-      '❌ Invalid number of projectors (N > 0).';
+      '❌ Nombre de projecteurs invalide (N > 0).';
 
   @override
-  String get mireErrInvalidWHpx => '❌ Invalid width/height (px).';
+  String get mireErrInvalidWHpx => '❌ Largeur/hauteur invalides (px).';
 
   @override
-  String get mireExportPng => 'Export PNG';
+  String get mireExportPng => 'Exporter PNG';
 
   @override
-  String get mireHeightPxHint => 'e.g.: 1080';
+  String get mireHeightPxHint => 'ex: 1080';
 
   @override
-  String get mireHeightPxHintMapping => 'e.g.: 2160';
+  String get mireHeightPxHintMapping => 'ex: 2160';
 
   @override
-  String get mireHeightPxLabel => 'Height (px)';
+  String get mireHeightPxLabel => 'Hauteur (px)';
 
   @override
-  String get mireLedErrTileCm => '❌ Enter Tile cm (width/height >0).';
+  String get mireLedErrTileCm => '❌ Renseigne Tile cm (largeur/hauteur >0).';
 
   @override
-  String get mireLedErrTilePx => '❌ Enter Tile px (width/height >0).';
+  String get mireLedErrTilePx => '❌ Renseigne Tile px (largeur/hauteur >0).';
 
   @override
-  String get mireLedErrTilesXY => '❌ Enter Tiles X/Y (>0).';
+  String get mireLedErrTilesXY => '❌ Renseigne Tiles X/Y (>0).';
 
   @override
-  String get mireLedParamsTitle => 'LED wall parameters';
+  String get mireLedParamsTitle => 'Paramètres mur LED';
 
   @override
   String mireLedPitchComputed(Object pitch) {
-    return 'Computed pitch: $pitch';
+    return 'Pitch calculé: $pitch';
   }
 
   @override
-  String get mireLedSubtitleColorBars => 'Bars + ramps + circles';
+  String get mireLedSubtitleColorBars => 'Barres + rampes + cercles';
 
   @override
-  String get mireLedSubtitleGridLabels => 'Grid + markers + circles';
+  String get mireLedSubtitleGridLabels => 'Grille + repères + cercles';
 
   @override
-  String get mireLedSubtitlePixelPerfect => 'Pixel perfect + circles';
+  String get mireLedSubtitlePixelPerfect => 'Pixel perfect + cercles';
 
   @override
-  String get mireLedSubtitleUniformity => 'Uniformity + circles';
+  String get mireLedSubtitleUniformity => 'Uniformité + cercles';
 
   @override
-  String get mireLedTileHcmLabel => 'Tile height (cm)';
+  String get mireLedTileHcmLabel => 'Tile hauteur (cm)';
 
   @override
-  String get mireLedTileHpxLabel => 'Tile height (px)';
+  String get mireLedTileHpxLabel => 'Tile hauteur (px)';
 
   @override
-  String get mireLedTileWcmLabel => 'Tile width (cm)';
+  String get mireLedTileWcmLabel => 'Tile largeur (cm)';
 
   @override
-  String get mireLedTileWpxLabel => 'Tile width (px)';
+  String get mireLedTileWpxLabel => 'Tile largeur (px)';
 
   @override
-  String get mireLedTilesIdTitle => 'LED / TILE IDs';
+  String get mireLedTilesIdTitle => 'LED / ID TILES';
 
   @override
-  String get mireLedTilesXLabel => 'Horizontal tiles (X)';
+  String get mireLedTilesXLabel => 'Tiles horizontales (X)';
 
   @override
-  String get mireLedTilesYLabel => 'Vertical tiles (Y)';
+  String get mireLedTilesYLabel => 'Tiles verticales (Y)';
 
   @override
-  String get mireLedTitle => 'LED / PATTERN';
+  String get mireLedTitle => 'LED / MIRE';
 
   @override
-  String get mireLedTypeColorBars => 'Bars + ramps + circles';
+  String get mireLedTypeColorBars => 'Barres + rampes + cercles';
 
   @override
-  String get mireLedTypeGridLabels => 'Grid + markers + circles';
+  String get mireLedTypeGridLabels => 'Grille + repères + cercles';
 
   @override
-  String get mireLedTypePixelPerfect => 'Pixel perfect + circles';
+  String get mireLedTypePixelPerfect => 'Pixel perfect + cercles';
 
   @override
-  String get mireLedTypeTilesId => 'Tile IDs (number + colors)';
+  String get mireLedTypeTilesId => 'Tiles ID (numéro + couleurs)';
 
   @override
-  String get mireLedTypeUniformity => 'Uniformity + circles';
+  String get mireLedTypeUniformity => 'Uniformité + cercles';
 
   @override
   String mireLedWallResolution(Object h, Object w) {
-    return 'Wall resolution: $w × $h px';
+    return 'Résolution mur: $w × $h px';
   }
 
   @override
   String get mireLedWarnPitchOutOfRange =>
-      '⚠️ Computed pitch out of range (0.5–20 mm). Check Tile cm / px.';
+      '⚠️ Pitch calculé hors plage (0.5–20 mm). Vérifie Tile cm / px.';
 
   @override
   String get mireLedWarnPitchXNotY =>
-      '⚠️ Pitch X ≠ Pitch Y (non-uniform tile). Check cm and px dimensions.';
+      '⚠️ Pitch X ≠ Pitch Y (tile non homogène). Vérifie dimensions cm et px.';
 
   @override
-  String get mireMappingSectionTitle => 'Multi-projector mapping pattern';
+  String get mireMappingSectionTitle => 'Mire mapping multi-projecteur';
 
   @override
   String mireMappingSubtitlePattern(Object n, Object orient, Object percent) {
@@ -607,7 +608,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mireMappingTypeCombo => 'Combo (zones + overlap + blend)';
 
   @override
-  String get mireMappingTypeLabel => 'Mapping type';
+  String get mireMappingTypeLabel => 'Type mapping';
 
   @override
   String get mireMappingTypeZonesOverlap => 'Zones + overlap';
@@ -622,7 +623,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mireOrientationVertical => 'Vertical';
 
   @override
-  String get mireOverlapHint => 'e.g.: 10.0';
+  String get mireOverlapHint => 'ex: 10.0';
 
   @override
   String get mireOverlapLabel => 'Overlap (%)';
@@ -639,56 +640,56 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String mireProjectorLabelPattern(Object index) {
-    return 'PROJ $index';
+    return 'PROJO $index';
   }
 
   @override
-  String get mireProjectorsNHint => 'e.g.: 2';
+  String get mireProjectorsNHint => 'ex: 2';
 
   @override
-  String get mireProjectorsNLabel => 'Number of projectors (N)';
+  String get mireProjectorsNLabel => 'Nombre de projecteurs (N)';
 
   @override
-  String get mireSimpleSectionTitle => 'Simple screen pattern';
+  String get mireSimpleSectionTitle => 'Mire écran simple';
 
   @override
-  String get mireSimpleSubtitleCheckerboard => 'Checkerboard + circles';
+  String get mireSimpleSubtitleCheckerboard => 'Damier + cercles';
 
   @override
-  String get mireSimpleSubtitleColorBars => 'Bars + ramps + circles';
+  String get mireSimpleSubtitleColorBars => 'Barres + rampes + cercles';
 
   @override
   String get mireSimpleSubtitleComboAll =>
-      'Grid + safe + 2 centered bars + circles';
+      'Grille + safe + 2 barres centrées + cercles';
 
   @override
-  String get mireSimpleSubtitleGridSafe => 'Grid + safe + circles';
+  String get mireSimpleSubtitleGridSafe => 'Grille + safe + cercles';
 
   @override
-  String get mireSimpleSubtitleUniformity => 'Uniformity + circles';
+  String get mireSimpleSubtitleUniformity => 'Uniformité + cercles';
 
   @override
-  String get mireSimpleTypeCheckerboard => 'Checkerboard + circles';
+  String get mireSimpleTypeCheckerboard => 'Damier + cercles';
 
   @override
-  String get mireSimpleTypeColorBars => 'Bars + ramps + circles';
+  String get mireSimpleTypeColorBars => 'Barres + rampes + cercles';
 
   @override
   String get mireSimpleTypeComboAll =>
-      'Combo (grid + circles + 2 centered bars)';
+      'Combo (grille + cercles + 2 barres centrées)';
 
   @override
-  String get mireSimpleTypeGridSafe => 'Grid + safe + circles';
+  String get mireSimpleTypeGridSafe => 'Grille + safe + cercles';
 
   @override
-  String get mireSimpleTypeUniformity => 'Uniformity + circles';
+  String get mireSimpleTypeUniformity => 'Uniformité + cercles';
 
   @override
-  String get mireTileMissingPx => 'Enter Tile (px) for numbering.';
+  String get mireTileMissingPx => 'Renseigne Tile (px) pour numérotation.';
 
   @override
   String mireTilesSubtitleBase(Object nx, Object ny, Object th, Object tw) {
-    return 'Tile ${tw}x$th px • Grid $nx x $ny';
+    return 'Tile ${tw}x$th px • Grille $nx x $ny';
   }
 
   @override
@@ -708,599 +709,603 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String mireTilesSubtitleWallPhys(Object hm, Object wm) {
-    return 'Wall ~ $wm×$hm m';
+    return 'Mur ~ $wm×$hm m';
   }
 
   @override
-  String get mireTypeLabel => 'Pattern type';
+  String get mireTypeLabel => 'Type de mire';
 
   @override
-  String get mireVideoComboTitle => 'VIDEO / COMBO PATTERN';
+  String get mireVideoComboTitle => 'VIDÉO / MIRE COMBO';
 
   @override
-  String get mireVideoMappingSectionTitle => 'Multi-projector mapping pattern';
+  String get mireVideoMappingSectionTitle => 'Mire mapping multi-projecteur';
 
   @override
-  String get mireVideoMappingTitle => 'VIDEO / MAPPING PATTERN';
+  String get mireVideoMappingTitle => 'VIDÉO / MIRE MAPPING';
 
   @override
-  String get mireVideoSimpleSectionTitle => 'Simple screen pattern';
+  String get mireVideoSimpleSectionTitle => 'Mire écran simple';
 
   @override
-  String get mireVideoSimpleTitle => 'VIDEO / SIMPLE PATTERN';
+  String get mireVideoSimpleTitle => 'VIDÉO / MIRE SIMPLE';
 
   @override
-  String get mireVideoTypeCheckerboard => 'Checkerboard + circles';
+  String get mireVideoTypeCheckerboard => 'Damier + cercles';
 
   @override
-  String get mireVideoTypeColorBars => 'Bars + ramps + circles';
+  String get mireVideoTypeColorBars => 'Barres + rampes + cercles';
 
   @override
-  String get mireVideoTypeCombo => 'Combo (grid + circles + 2 centered bars)';
+  String get mireVideoTypeCombo =>
+      'Combo (grille + cercles + 2 barres centrées)';
 
   @override
-  String get mireVideoTypeGridSafe => 'Grid + safe + circles';
+  String get mireVideoTypeGridSafe => 'Grille + safe + cercles';
 
   @override
-  String get mireVideoTypeUniformity => 'Uniformity + circles';
+  String get mireVideoTypeUniformity => 'Uniformité + cercles';
 
   @override
-  String get mireWallNotMultipleOfTiles => 'WALL NOT A MULTIPLE OF TILES';
+  String get mireWallNotMultipleOfTiles => 'MUR NON MULTIPLE DE TILES';
 
   @override
-  String get mireWidthPxHint => 'e.g.: 1920';
+  String get mireWidthPxHint => 'ex: 1920';
 
   @override
-  String get mireWidthPxHintMapping => 'e.g.: 3840';
+  String get mireWidthPxHintMapping => 'ex: 3840';
 
   @override
-  String get mireWidthPxLabel => 'Width (px)';
+  String get mireWidthPxLabel => 'Largeur (px)';
 
   @override
   String patchAddressLabel(Object address) {
-    return 'Address: $address';
+    return 'Adresse : $address';
   }
 
   @override
   String patchChannelsUsed(Object count) {
-    return 'Channels used: $count / 512';
+    return 'Canaux utilisés : $count / 512';
   }
 
   @override
-  String get patchConflictError => 'Address conflict (overlap).';
+  String get patchConflictError => 'Conflit d’adresses (chevauchement).';
 
   @override
-  String get patchConflictShort => 'Conflict';
+  String get patchConflictShort => 'Conflit';
 
   @override
   String patchConflicts(Object count) {
-    return 'Conflicts: $count';
+    return 'Conflits : $count';
   }
 
   @override
-  String get patchEditChannelsLabel => 'Channels';
+  String get patchEditChannelsLabel => 'Canaux';
 
   @override
-  String get patchEditHint => 'Check the mode and channel count.';
+  String get patchEditHint => 'Vérifie le mode et le nombre de canaux.';
 
   @override
   String get patchEditModeLabel => 'Mode';
 
   @override
-  String get patchEditTitle => 'Edit';
+  String get patchEditTitle => 'Édition';
 
   @override
-  String get patchEmptyUniverse => 'No fixtures in this universe.';
+  String get patchEmptyUniverse => 'Aucune machine dans cet univers.';
 
   @override
   String patchFixturesCount(Object count) {
-    return 'Fixtures: $count';
+    return 'Machines : $count';
   }
 
   @override
   String get patchHomeDisclaimer =>
-      'Indicative only. Always verify on the console.';
+      'Les résultats sont indicatifs. Vérifie toujours avec la console.';
 
   @override
   String get patchHomeImportMvrDescription =>
-      'Analyze an MVR file and load the patch as a reference.';
+      'Analyser un fichier MVR et charger le patch en référence.';
 
   @override
-  String get patchHomeImportMvrTitle => 'Import an MVR';
+  String get patchHomeImportMvrTitle => 'Importer un MVR';
 
   @override
-  String get patchHomeTitle => 'DMX Patch';
+  String get patchHomeTitle => 'Patch DMX';
 
   @override
-  String get patchHomeViewPatchDescription =>
-      'List and conflicts per universe.';
+  String get patchHomeViewPatchDescription => 'Liste et conflits par univers.';
 
   @override
-  String get patchHomeViewPatchTitle => 'View patch';
+  String get patchHomeViewPatchTitle => 'Voir le patch';
 
   @override
-  String get patchHubOpenGridButton => 'Open grid';
+  String get patchHubOpenGridButton => 'Ouvrir grille';
 
   @override
-  String get patchHubOpenMvrButton => 'Open MVR';
+  String get patchHubOpenMvrButton => 'Ouvrir MVR';
 
   @override
-  String get patchHubStateEmpty => 'No reference loaded.';
+  String get patchHubStateEmpty => 'Aucune référence chargée.';
 
   @override
   String patchHubStateLoaded(Object count) {
-    return 'Loaded: $count universes';
+    return 'Chargé : $count univers';
   }
 
   @override
-  String get patchHubStateTitle => 'State';
+  String get patchHubStateTitle => 'État';
 
   @override
-  String get patchHubTitle => 'Patch Hub';
+  String get patchHubTitle => 'Hub Patch';
 
   @override
   String get patchHubWorksiteBody =>
-      'Import an MVR or view the occupancy grid.';
+      'Importer un MVR ou consulter la grille d’occupation.';
 
   @override
-  String get patchHubWorksiteTitle => 'Worksite';
+  String get patchHubWorksiteTitle => 'Chantier';
 
   @override
-  String get patchInvalidChannelCount => 'Invalid channel count.';
+  String get patchInvalidChannelCount => 'Nombre de canaux invalide.';
 
   @override
   String get patchIssueInvalidChannelCount =>
-      'Channel count must be 1 or greater.';
+      'Le nombre de canaux doit être supérieur ou égal à 1.';
 
   @override
   String get patchIssueInvalidStartAddress =>
-      'DMX address must be between 1 and 512.';
+      'L’adresse DMX doit être comprise entre 1 et 512.';
 
   @override
-  String get patchIssueInvalidUniverse => 'Universe must be 1 or greater.';
+  String get patchIssueInvalidUniverse =>
+      'L’univers doit être supérieur ou égal à 1.';
 
   @override
   String get patchIssueRangeExceedsUniverse =>
-      'Channel range exceeds 512 in this universe.';
+      'La plage de canaux dépasse 512 dans cet univers.';
 
   @override
-  String get patchIssueUnknown => 'Unknown error.';
+  String get patchIssueUnknown => 'Erreur inconnue.';
 
   @override
-  String get patchListTitle => 'List';
+  String get patchListTitle => 'Liste';
 
   @override
   String get patchManualDisabledBody =>
-      'Patch is read-only when an MVR reference is loaded.';
+      'Le patch est en lecture seule lorsqu’une référence MVR est chargée.';
 
   @override
-  String get patchManualDisabledTitle => 'Disabled';
+  String get patchManualDisabledTitle => 'Désactivé';
 
   @override
-  String get patchManualTitle => 'Manual patch';
+  String get patchManualTitle => 'Patch manuel';
 
   @override
   String patchModeLabel(Object mode) {
-    return 'Mode: $mode';
+    return 'Mode : $mode';
   }
 
   @override
-  String get patchMvrButtonAnalyzing => 'Analyzing…';
+  String get patchMvrButtonAnalyzing => 'Analyse…';
 
   @override
-  String get patchMvrButtonLoadAsReference => 'Load as reference';
+  String get patchMvrButtonLoadAsReference => 'Charger comme référence';
 
   @override
-  String get patchMvrButtonPickFile => 'Pick a file';
+  String get patchMvrButtonPickFile => 'Choisir un fichier';
 
   @override
-  String get patchMvrClearTooltip => 'Clear';
+  String get patchMvrClearTooltip => 'Effacer';
 
   @override
-  String get patchMvrColAddress => 'Address';
+  String get patchMvrColAddress => 'Adresse';
 
   @override
-  String get patchMvrColChannels => 'Channels';
+  String get patchMvrColChannels => 'Canaux';
 
   @override
   String get patchMvrColId => 'ID';
 
   @override
-  String get patchMvrColName => 'Name';
+  String get patchMvrColName => 'Nom';
 
   @override
-  String get patchMvrColUniverse => 'Universe';
+  String get patchMvrColUniverse => 'Univers';
 
   @override
   String get patchMvrColumnsHint =>
-      'Columns: ID, Name, Universe, Address, Channels';
+      'Colonnes : ID, Nom, Univers, Adresse, Canaux';
 
   @override
   String get patchMvrFileCardHelp =>
-      'Select a .mvr file (ZIP) to analyze the patch.';
+      'Sélectionne un fichier .mvr (ZIP) pour analyser le patch.';
 
   @override
-  String get patchMvrFileCardTitle => 'File';
+  String get patchMvrFileCardTitle => 'Fichier';
 
   @override
-  String get patchMvrFilterAllUniverses => 'All universes';
+  String get patchMvrFilterAllUniverses => 'Tous les univers';
 
   @override
-  String get patchMvrFilterUniverseLabel => 'Filter by universe';
+  String get patchMvrFilterUniverseLabel => 'Filtrer par univers';
 
   @override
-  String get patchMvrModeNotProvided => 'Mode not provided';
+  String get patchMvrModeNotProvided => 'Mode non renseigné';
 
   @override
-  String get patchMvrOrderAsc => 'Ascending';
+  String get patchMvrOrderAsc => 'Croissant';
 
   @override
-  String get patchMvrOrderDesc => 'Descending';
+  String get patchMvrOrderDesc => 'Décroissant';
 
   @override
-  String get patchMvrOrderLabel => 'Order';
+  String get patchMvrOrderLabel => 'Ordre';
 
   @override
-  String get patchMvrSortAddress => 'Address';
+  String get patchMvrSortAddress => 'Adresse';
 
   @override
-  String get patchMvrSortByLabel => 'Sort by';
+  String get patchMvrSortByLabel => 'Trier par';
 
   @override
-  String get patchMvrSortChannels => 'Channels';
+  String get patchMvrSortChannels => 'Canaux';
 
   @override
   String get patchMvrSortId => 'ID';
 
   @override
-  String get patchMvrSortName => 'Name';
+  String get patchMvrSortName => 'Nom';
 
   @override
-  String get patchMvrSortUniverse => 'Universe';
+  String get patchMvrSortUniverse => 'Univers';
 
   @override
-  String get patchMvrSortUniverseThenAddress => 'Universe then address';
+  String get patchMvrSortUniverseThenAddress => 'Univers puis adresse';
 
   @override
-  String get patchMvrStatusCleared => 'Reference cleared.';
+  String get patchMvrStatusCleared => 'Référence effacée.';
 
   @override
-  String get patchMvrStatusEmptyBytes => 'Empty file.';
+  String get patchMvrStatusEmptyBytes => 'Fichier vide.';
 
   @override
-  String get patchMvrStatusExtractingZip => 'Extracting ZIP…';
+  String get patchMvrStatusExtractingZip => 'Extraction du ZIP…';
 
   @override
   String patchMvrStatusFilePickFailed(Object reason) {
-    return 'File selection failed: $reason';
+    return 'Sélection de fichier impossible : $reason';
   }
 
   @override
   String patchMvrStatusFixturesFound(int count, int resolved) {
-    return 'Fixtures found: $count (multi-channel: $resolved).';
+    return 'Machines trouvées : $count (multi-canaux : $resolved).';
   }
 
   @override
-  String get patchMvrStatusLoadingGdtf => 'Loading GDTF…';
+  String get patchMvrStatusLoadingGdtf => 'Chargement des GDTF…';
 
   @override
-  String get patchMvrStatusNoContentToLoad => 'No content to load.';
+  String get patchMvrStatusNoContentToLoad => 'Aucun contenu à charger.';
 
   @override
-  String get patchMvrStatusNoFileSelected => 'No file selected.';
+  String get patchMvrStatusNoFileSelected => 'Aucun fichier sélectionné.';
 
   @override
-  String get patchMvrStatusNoUsableFixtures => 'No usable fixtures found.';
+  String get patchMvrStatusNoUsableFixtures =>
+      'Aucune machine exploitable trouvée.';
 
   @override
   String patchMvrStatusParseError(Object message) {
-    return 'Parse error: $message';
+    return 'Erreur de parsing : $message';
   }
 
   @override
-  String get patchMvrStatusParsingContent => 'Parsing content…';
+  String get patchMvrStatusParsingContent => 'Analyse du contenu…';
 
   @override
   String patchMvrStatusReferenceLoaded(int count, int skipped, int footprints) {
-    return 'Reference loaded: $count fixture(s) (skipped: $skipped, GDTF footprints: $footprints).';
+    return 'Référence chargée : $count machine(s) (ignorées : $skipped, empreintes GDTF : $footprints).';
   }
 
   @override
   String patchMvrStatusRestored(Object count) {
-    return 'Restored: $count fixtures';
+    return 'Restauration : $count machines';
   }
 
   @override
   String get patchMvrStatusSceneXmlNotFound =>
-      'scene.xml not found in the MVR.';
+      'scene.xml introuvable dans le MVR.';
 
   @override
-  String get patchMvrStatusSelectingFile => 'Selecting file…';
+  String get patchMvrStatusSelectingFile => 'Sélection du fichier…';
 
   @override
   String patchMvrStatusUnsupportedFile(Object ext) {
-    return 'Unsupported file: $ext';
+    return 'Fichier non supporté : $ext';
   }
 
   @override
-  String get patchMvrSummaryTitle => 'Summary';
+  String get patchMvrSummaryTitle => 'Résumé';
 
   @override
-  String get patchMvrTitle => 'MVR Import';
+  String get patchMvrTitle => 'Import MVR';
 
   @override
   String patchMvrUniverseItem(Object universe) {
-    return 'Universe $universe';
+    return 'Univers $universe';
   }
 
   @override
   String get patchPageTitle => 'Patch';
 
   @override
-  String get patchSummaryTitle => 'Summary';
+  String get patchSummaryTitle => 'Résumé';
 
   @override
   String get patchUniverseAppBarTitle => 'Patch';
 
   @override
   String patchUniverseConflictCount(Object count) {
-    return 'Conflicts: $count channel(s)';
+    return 'Conflits : $count canal(aux)';
   }
 
   @override
-  String get patchUniverseGridLimitedByWidth => 'Limited by screen width.';
+  String get patchUniverseGridLimitedByWidth =>
+      'Limité par la largeur de l’écran.';
 
   @override
-  String get patchUniverseGridTitle => 'Occupancy (1 to 512)';
+  String get patchUniverseGridTitle => 'Occupation (1 à 512)';
 
   @override
   String patchUniverseItem(Object universe) {
-    return 'Universe $universe';
+    return 'Univers $universe';
   }
 
   @override
-  String get patchUniverseLabel => 'Universe';
+  String get patchUniverseLabel => 'Univers';
 
   @override
-  String get patchUniverseLegendConflict => 'Conflict';
+  String get patchUniverseLegendConflict => 'Conflit';
 
   @override
-  String get patchUniverseLegendFree => 'Free';
+  String get patchUniverseLegendFree => 'Libre';
 
   @override
-  String get patchUniverseLegendOccupied => 'Occupied';
+  String get patchUniverseLegendOccupied => 'Occupé';
 
   @override
   String patchUniverseOccupantLine(
       Object channels, Object end, Object fixture, Object mode, Object start) {
-    return '• $fixture\n  $mode — $channels channel(s)\n  $start → $end';
+    return '• $fixture\n  $mode — $channels canal(aux)\n  $start → $end';
   }
 
   @override
   String patchUniverseOccupiedCount(Object count) {
-    return 'Occupied: $count / 512';
+    return 'Occupés : $count / 512';
   }
 
   @override
   String patchUniversePopupHeader(
       Object address, Object state, Object universe) {
-    return 'Universe $universe — Address $address\nState: $state';
+    return 'Univers $universe — Adresse $address\nÉtat : $state';
   }
 
   @override
   String get patchUniversePopupManyOccupants =>
-      'Multiple fixtures occupy this channel.';
+      'Plusieurs machines occupent ce canal.';
 
   @override
   String patchUniversePopupMore(Object count) {
-    return '… and $count more.';
+    return '… et $count autre(s).';
   }
 
   @override
-  String get patchUniversePopupTitleConflict => 'Conflict';
+  String get patchUniversePopupTitleConflict => 'Conflit';
 
   @override
-  String get patchUniversePopupTitleFree => 'Channel free';
+  String get patchUniversePopupTitleFree => 'Canal libre';
 
   @override
-  String get patchUniversePopupTitleOccupied => 'Channel occupied';
+  String get patchUniversePopupTitleOccupied => 'Canal occupé';
 
   @override
-  String get patchUniverseReferenceNone => 'No reference loaded';
+  String get patchUniverseReferenceNone => 'Aucune référence chargée';
 
   @override
-  String get patchUniverseReferenceReadOnly => 'Read-only (from MVR)';
+  String get patchUniverseReferenceReadOnly => 'Lecture seule (depuis MVR)';
 
   @override
-  String get patchUniverseReferenceTitle => 'Reference';
+  String get patchUniverseReferenceTitle => 'Référence';
 
   @override
-  String get patchUniverseResetConfirm => 'Reset';
+  String get patchUniverseResetConfirm => 'Réinitialiser';
 
   @override
   String get patchUniverseResetContent =>
-      'This clears the patch loaded from the MVR in the app.\nNo data in the file is modified.';
+      'Cela efface le patch chargé depuis le MVR dans l’application.\nAucune donnée du fichier n’est modifiée.';
 
   @override
-  String get patchUniverseResetTitle => 'Reset reference?';
+  String get patchUniverseResetTitle => 'Réinitialiser la référence ?';
 
   @override
-  String get patchUniverseResetTooltip => 'Reset reference';
+  String get patchUniverseResetTooltip => 'Réinitialiser la référence';
 
   @override
-  String get patchUniverseSelected => 'Selected universe';
+  String get patchUniverseSelected => 'Univers sélectionné';
 
   @override
-  String get patchUniverseStateConflict => 'Conflict';
+  String get patchUniverseStateConflict => 'Conflit';
 
   @override
-  String get patchUniverseStateFree => 'Free';
+  String get patchUniverseStateFree => 'Libre';
 
   @override
-  String get patchUniverseStateOccupied => 'Occupied';
+  String get patchUniverseStateOccupied => 'Occupé';
 
   @override
-  String get patchUniverseTapHint => 'Tap a cell to see details.';
+  String get patchUniverseTapHint => 'Touche une case pour afficher le détail.';
 
   @override
-  String get patchUniverseUniverseDropdownLabel => 'DMX Universe';
+  String get patchUniverseUniverseDropdownLabel => 'Univers DMX';
 
   @override
   String patchUniverseUniverseItem(Object universe) {
-    return 'Universe $universe';
+    return 'Univers $universe';
   }
 
   @override
-  String get patchUniverseUniverseTitle => 'Universe';
+  String get patchUniverseUniverseTitle => 'Univers';
 
   @override
-  String get patchUniverseZoomIn => 'Zoom in';
+  String get patchUniverseZoomIn => 'Agrandir';
 
   @override
-  String get patchUniverseZoomOut => 'Zoom out';
+  String get patchUniverseZoomOut => 'Réduire';
 
   @override
   String get patchUniverseZoomTitle => 'Zoom';
 
   @override
-  String get photometryBeamAngleHint2 => 'In degrees';
+  String get photometryBeamAngleHint2 => 'En degrés';
 
   @override
-  String get photometryBeamAngleHint3 => 'In degrees';
+  String get photometryBeamAngleHint3 => 'En degrés';
 
   @override
-  String get photometryBeamAngleLabel => 'Beam angle';
+  String get photometryBeamAngleLabel => 'Angle de faisceau';
 
   @override
-  String get photometryCandelaHint1 => 'Enter a value in cd';
+  String get photometryCandelaHint1 => 'Entrez une valeur en cd';
 
   @override
-  String get photometryCandelaHint2 => 'Enter a value in cd';
+  String get photometryCandelaHint2 => 'Entrez une valeur en cd';
 
   @override
   String get photometryCandelaLabel => 'Candela';
 
   @override
   String get photometryDisclaimerShort =>
-      'Indicative only. Check the manufacturer documentation.';
+      'Indication uniquement. Vérifie avec la documentation constructeur.';
 
   @override
-  String get photometryDistanceHint1 => 'In meters';
+  String get photometryDistanceHint1 => 'En mètres';
 
   @override
-  String get photometryDistanceHint3 => 'In meters';
+  String get photometryDistanceHint3 => 'En mètres';
 
   @override
   String get photometryDistanceLabel => 'Distance';
 
   @override
-  String get photometryLumensHint2 => 'Enter a value in lm';
+  String get photometryLumensHint2 => 'Entrez une valeur en lm';
 
   @override
-  String get photometryLumensHint3 => 'Enter a value in lm';
+  String get photometryLumensHint3 => 'Entrez une valeur en lm';
 
   @override
   String get photometryLumensLabel => 'Lumens';
 
   @override
-  String get photometryLuxHint => 'Enter a value in lux';
+  String get photometryLuxHint => 'Entrez une valeur en lux';
 
   @override
   String get photometryLuxLabel => 'Lux';
 
   @override
-  String get photometrySection1Title => 'Section 1';
+  String get photometrySection1Title => 'Lux <> Candela';
 
   @override
-  String get photometrySection2Title => 'Section 2';
+  String get photometrySection2Title => 'Lumens <> Candela';
 
   @override
-  String get photometrySection3Title => 'Section 3';
+  String get photometrySection3Title => 'Lumens < Lux';
 
   @override
   String photometrySummary1(Object candela, Object distance, Object lux) {
-    return 'At $distance m, $candela cd ≈ $lux lux.';
+    return 'À $distance m, $candela cd ≈ $lux lux.';
   }
 
   @override
   String photometrySummary2(Object distance, Object lumens, Object lux) {
-    return 'At $distance m, $lumens lm ≈ $lux lux (approx.).';
+    return 'À $distance m, $lumens lm ≈ $lux lux (approx.).';
   }
 
   @override
   String photometrySummary3(
       String lumens, String distance, String angle, String lux) {
-    return 'Lumens: $lumens lm — Distance: $distance m — Angle: $angle° — Lux: $lux lx.';
+    return 'Lumens : $lumens lm — Distance : $distance m — Angle : $angle° — Lux : $lux lx.';
   }
 
   @override
-  String get projectionAngleHint => 'In degrees';
+  String get projectionAngleHint => 'En degrés';
 
   @override
   String get projectionAngleLabel => 'Angle';
 
   @override
-  String get projectionAutoHelp => 'Auto: computes the missing value.';
+  String get projectionAutoHelp => 'Auto : calcule la valeur manquante.';
 
   @override
   String projectionConeAngle(Object angle) {
-    return 'Angle: $angle°';
+    return 'Angle : $angle°';
   }
 
   @override
   String projectionConeDiameter(Object diameter) {
-    return 'Diameter: $diameter m';
+    return 'Diamètre : $diameter m';
   }
 
   @override
   String projectionConeDistance(Object distance) {
-    return 'Distance: $distance m';
+    return 'Distance : $distance m';
   }
 
   @override
   String projectionDetailAngle(Object angle) {
-    return 'Angle: $angle°';
+    return 'Angle : $angle°';
   }
 
   @override
   String projectionDetailDiameter(Object diameter) {
-    return 'Diameter: $diameter m';
+    return 'Diamètre : $diameter m';
   }
 
   @override
   String projectionDetailDistance(Object distance) {
-    return 'Distance: $distance m';
+    return 'Distance : $distance m';
   }
 
   @override
-  String get projectionDiameterHint => 'In meters';
+  String get projectionDiameterHint => 'En mètres';
 
   @override
-  String get projectionDiameterLabel => 'Diameter';
+  String get projectionDiameterLabel => 'Diamètre';
 
   @override
-  String get projectionDistanceHint => 'In meters';
+  String get projectionDistanceHint => 'En mètres';
 
   @override
   String get projectionDistanceLabel => 'Distance';
 
   @override
-  String get projectionHeaderAutoActive => 'Auto active';
+  String get projectionHeaderAutoActive => 'Auto actif';
 
   @override
-  String get projectionHeaderNeedTwoValues => 'Enter at least two values.';
+  String get projectionHeaderNeedTwoValues =>
+      'Renseigne au moins deux valeurs.';
 
   @override
-  String get projectionInputsTitle => 'Inputs';
+  String get projectionInputsTitle => 'Entrées';
 
   @override
-  String get projectionResultsTitle => 'Results';
+  String get projectionResultsTitle => 'Résultats';
 
   @override
-  String get resetConsents => 'Reset consents';
+  String get resetConsents => 'Réinitialiser consentements';
 
   @override
-  String get settings => 'Settings';
+  String get settings => 'Paramètres';
 
   @override
   String videoBrightnessResult(
@@ -1313,62 +1318,63 @@ class AppLocalizationsEn extends AppLocalizations {
       Object nits,
       Object presetLabel,
       Object status) {
-    return 'Format: $format\\nArea: $area m²\\nLux (lm/m²): $lux\\nEq lux (gain): $luxEq\\nLuminance: $nits nits | $fl ft‑L\\nMinimum threshold ($presetLabel): $minFl ft‑L → $status\\nNote: indicative estimate (Lambert).';
+    return 'Format: $format\nSurface: $area m²\nLux (lm/m²): $lux\nLux eq (gain): $luxEq\nLuminance: $nits nits | $fl ft-L\nSeuil mini ($presetLabel): $minFl ft-L → $status\nNote: estimation indicative (Lambert).';
   }
 
   @override
   String get videoBrightnessSectionTitle =>
-      'Calc 4 — Lux / nits / ft‑L + threshold';
+      'Calcul 4 — Lux / nits / ft-L + seuil';
 
   @override
-  String get videoBrightnessSubtitle =>
-      'Lux / nits / ft‑L + threshold (calculation 4).';
+  String get videoBrightnessSubtitle => 'Lux / nits / ft-L + seuil (calcul 4).';
 
   @override
-  String get videoBrightnessTitle => 'Brightness';
+  String get videoBrightnessTitle => 'Luminosité';
 
   @override
-  String get videoCalc1ErrMissing => '❌ Missing data: Distance + Width.';
+  String get videoCalc1ErrMissing =>
+      '❌ Données manquantes: Distance + Largeur.';
 
   @override
   String videoCalc1Ok(Object ratio) {
-    return '✅ Throw ratio = $ratio';
+    return '✅ Ratio de projection = $ratio';
   }
 
   @override
-  String get videoCalc1Title => 'Calc 1 — Ratio (Distance / Width)';
+  String get videoCalc1Title => 'Calcul 1 — Ratio (Distance / Largeur)';
 
   @override
-  String get videoCalc2ErrMissing => '❌ Missing data: Distance + Ratio.';
+  String get videoCalc2ErrMissing => '❌ Données manquantes: Distance + Ratio.';
 
   @override
   String videoCalc2Ok(Object width) {
-    return '✅ Image width = $width m';
+    return '✅ Largeur image = $width m';
   }
 
   @override
-  String get videoCalc2Title => 'Calc 2 — Width (Distance / Ratio)';
+  String get videoCalc2Title => 'Calcul 2 — Largeur (Distance / Ratio)';
 
   @override
-  String get videoCalc3ErrMissingWidth => '❌ Missing data: Width.';
+  String get videoCalc3ErrMissingWidth => '❌ Donnée manquante: Largeur.';
 
   @override
   String videoCalc3Ok(Object format, Object height) {
-    return '✅ Height = $height m (format $format)';
+    return '✅ Hauteur = $height m (format $format)';
   }
 
   @override
-  String get videoCalc3Title => 'Calc 3 — Height (Width + Format)';
+  String get videoCalc3Title => 'Calcul 3 — Hauteur (Largeur + Format)';
 
   @override
-  String get videoCalc4ErrGt0 => '❌ Lumens/Gain/Width must be > 0.';
+  String get videoCalc4ErrGt0 => '❌ Lumens/Gain/Largeur doivent être > 0.';
 
   @override
-  String get videoCalc4ErrMissing => '❌ Missing data: Lumens + Gain + Width.';
+  String get videoCalc4ErrMissing =>
+      '❌ Données manquantes: Lumens + Gain + Largeur.';
 
   @override
   String get videoCalc4ErrMissingSimple =>
-      '❌ Missing data: Width + Lumens + Gain.';
+      '❌ Données manquantes : Largeur + Lumens + Gain.';
 
   @override
   String videoCalc4Result(
@@ -1381,84 +1387,84 @@ class AppLocalizationsEn extends AppLocalizations {
       Object nits,
       Object presetLabel,
       Object status) {
-    return 'Area: $area m² (format $format)\\nLux (lm/m²): $lux\\nEq lux (gain): $luxEq\\nLuminance: $nits nits | $fl ft‑L\\nMinimum threshold ($presetLabel): $minFl ft‑L → $status\\nNote: nits/ft‑L conversion based on a Lambertian assumption (approx).';
+    return 'Surface: $area m² (format $format)\nLux (lm/m²): $lux\nLux eq (gain): $luxEq\nLuminance: $nits nits | $fl ft-L\nSeuil mini ($presetLabel): $minFl ft-L → $status\nNote: conversion nits/ft-L basée sur une hypothèse Lambertienne (approx).';
   }
 
   @override
   String get videoCalc4Title =>
-      'Calc 4 — Brightness (lux / nits / ft‑L + threshold)';
+      'Calcul 4 — Luminosité (lux / nits / ft-L + seuil)';
 
   @override
   String get videoCalc5ErrMissing =>
-      '❌ Missing data: Total width + Overlap% + Number of projectors.';
+      '❌ Données manquantes: Largeur totale + Overlap% + Nombre de projecteurs.';
 
   @override
-  String get videoCalc5ErrNMin2 => '❌ Number of projectors must be ≥ 2.';
+  String get videoCalc5ErrNMin2 => '❌ Le nombre de projecteurs doit être ≥ 2.';
 
   @override
-  String get videoCalc5NHint => 'e.g.: 2';
+  String get videoCalc5NHint => 'ex: 2';
 
   @override
-  String get videoCalc5NLabel => 'Number of projectors (N)';
+  String get videoCalc5NLabel => 'Nombre de projecteurs (N)';
 
   @override
   String videoCalc5Result(Object format, Object hTot, Object n, Object overlapM,
       Object overlapPct, Object wPer, Object wTot) {
-    return 'Total width: $wTot m\\nN: $n | Overlap: $overlapPct% (on projector width)\\n\\n- Width per projector: $wPer m\\n- Overlap between 2 projectors: $overlapM m\\n- Total height (format $format): $hTot m';
+    return 'Largeur totale: $wTot m\nN: $n | Overlap: $overlapPct% (sur largeur projo)\n\n- Largeur par projecteur: $wPer m\n- Overlap entre 2 projos: $overlapM m\n- Hauteur totale (format $format): $hTot m';
   }
 
   @override
-  String get videoCalc5Title => 'Calc 5 — Overlap (Total width + N)';
+  String get videoCalc5Title => 'Calcul 5 — Overlap (Largeur totale + N)';
 
   @override
   String get videoCalc6ErrMissingBasics =>
-      '❌ Missing data: Total width + Distance + Overlap%.';
+      '❌ Données manquantes: Largeur totale + Distance + Overlap%.';
 
   @override
   String get videoCalc6ErrMissingRatio =>
-      '❌ Missing data: Min ratio and/or Max ratio.';
+      '❌ Données manquantes: Ratio min et/ou Ratio max.';
 
   @override
-  String get videoCalc6GainHint => 'e.g.: 1.0';
+  String get videoCalc6GainHint => 'ex: 1.0';
 
   @override
   String get videoCalc6GainLabel => 'Gain (calc 6)';
 
   @override
-  String get videoCalc6LumensPerProjectorHint => 'e.g.: 20000';
+  String get videoCalc6LumensPerProjectorHint => 'ex: 20000';
 
   @override
-  String get videoCalc6LumensPerProjectorLabel => 'Lumens per projector';
+  String get videoCalc6LumensPerProjectorLabel => 'Lumens par projecteur';
 
   @override
   String get videoCalc6LumiErrGt0 =>
-      'Brightness: ❌ Lumens/projector and gain must be > 0.';
+      'Luminosité: ❌ Lumens/projo et gain doivent être > 0.';
 
   @override
   String videoCalc6LumiForN(
       Object area, Object fl, Object lux, Object n, Object nits) {
-    return 'Estimated brightness (N=$n)\\nArea: $area m²\\nEq lux: $lux (lm/m²)\\nNits: $nits | ft‑L: $fl';
+    return 'Luminosité estimée (N=$n)\nSurface: $area m²\nLux eq: $lux (lm/m²)\nNits: $nits | ft-L: $fl';
   }
 
   @override
   String get videoCalc6LumiOptional =>
-      'Brightness (optional): enter Lumens/projector + Gain for the estimate.';
+      'Luminosité (optionnelle): renseigne Lumens/projo + Gain pour l\'estimation.';
 
   @override
   String get videoCalc6NoteIndicative =>
-      'Note: indicative estimate (real blend/overlap may reduce it slightly).';
+      'Note: estimation indicative (blend/overlap réels peuvent réduire un peu).';
 
   @override
-  String get videoCalc6RatioMaxHint => 'e.g.: 1.80';
+  String get videoCalc6RatioMaxHint => 'ex: 1.80';
 
   @override
-  String get videoCalc6RatioMaxLabel => 'Max ratio';
+  String get videoCalc6RatioMaxLabel => 'Ratio max';
 
   @override
-  String get videoCalc6RatioMinHint => 'e.g.: 1.20';
+  String get videoCalc6RatioMinHint => 'ex: 1.20';
 
   @override
-  String get videoCalc6RatioMinLabel => 'Min ratio';
+  String get videoCalc6RatioMinLabel => 'Ratio min';
 
   @override
   String videoCalc6Result(
@@ -1477,29 +1483,29 @@ class AppLocalizationsEn extends AppLocalizations {
       Object ratioMax,
       Object ratioMin,
       Object wTot) {
-    return 'Total width=$wTot m | Distance=$distance m | Overlap=$overlapPct%\\nFormat $format → Total height=$hTot m | Area=$area m²\\nMin/max ratio: $ratioMin → $ratioMax\\n\\nWidest ratio case (min) = $nMin projectors | coverage ≈ $covMin m\\n$lumiMin\\n\\nTightest ratio case (max) = $nMax projectors | coverage ≈ $covMax m\\n$lumiMax\\n\\n$note';
+    return 'Largeur totale=$wTot m | Distance=$distance m | Overlap=$overlapPct%\nFormat $format → Hauteur totale=$hTot m | Surface=$area m²\nRatio min/max: $ratioMin → $ratioMax\n\nCas ratio plus ouvert (min) = $nMin projos | couverture ≈ $covMin m\n$lumiMin\n\nCas ratio plus serré (max) = $nMax projos | couverture ≈ $covMax m\n$lumiMax\n\n$note';
   }
 
   @override
-  String get videoCalc6Title => 'Calc 6 — Auto projector count + brightness';
+  String get videoCalc6Title => 'Calcul 6 — Nb projecteurs auto + luminosité';
 
   @override
   String videoCalcLabel(Object n) {
-    return 'Calc $n';
+    return 'Calcul $n';
   }
 
   @override
-  String get videoCalculateAll => 'Calculate all';
+  String get videoCalculateAll => 'Calculer tout';
 
   @override
-  String get videoCalculationsTitle => 'Video calculations';
+  String get videoCalculationsTitle => 'Calculs vidéo';
 
   @override
-  String get videoCommonParamsTitle => 'Common parameters';
+  String get videoCommonParamsTitle => 'Paramètres communs';
 
   @override
   String videoCommonPillArea(Object value) {
-    return 'Area: $value';
+    return 'Surface: $value';
   }
 
   @override
@@ -1514,7 +1520,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String videoCommonPillHeight(Object value) {
-    return 'Height: $value';
+    return 'Hauteur: $value';
   }
 
   @override
@@ -1529,76 +1535,76 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String videoCommonPillTotalWidth(Object value) {
-    return 'Total width: $value';
+    return 'Largeur totale: $value';
   }
 
   @override
   String videoCommonPillWidth(Object value) {
-    return 'Width: $value';
+    return 'Largeur: $value';
   }
 
   @override
-  String get videoCopyAllTooltip => 'Copy all results';
+  String get videoCopyAllTooltip => 'Copier tous les résultats';
 
   @override
-  String get videoCopySummaryTooltip => 'Copy summary';
+  String get videoCopySummaryTooltip => 'Copier le résumé';
 
   @override
   String get videoDisclaimerShort =>
-      'Indicative calculations. Always check manufacturer documentation.';
+      'Calculs indicatifs. Vérifie toujours la documentation constructeur.';
 
   @override
-  String get videoDistanceHint => 'e.g.: 12.0';
+  String get videoDistanceHint => 'ex: 12.0';
 
   @override
-  String get videoDistanceLabel => 'Throw distance (m)';
+  String get videoDistanceLabel => 'Distance de projection (m)';
 
   @override
-  String get videoErrImpossibleDenom => '❌ Impossible parameters (denom ≤ 0).';
+  String get videoErrImpossibleDenom => '❌ Paramètres impossibles (denom ≤ 0).';
 
   @override
-  String get videoErrOverlapRange => '❌ Overlap% must be between 0 and 99.9.';
+  String get videoErrOverlapRange => '❌ Overlap% doit être entre 0 et 99.9.';
 
   @override
-  String get videoErrRatioGt0 => '❌ Ratio must be > 0.';
+  String get videoErrRatioGt0 => '❌ Le ratio doit être > 0.';
 
   @override
   String get videoErrTotalWidthAndDistanceGt0 =>
-      '❌ Total width and distance must be > 0.';
+      '❌ Largeur totale et distance doivent être > 0.';
 
   @override
-  String get videoErrTotalWidthGt0 => '❌ Total width must be > 0.';
+  String get videoErrTotalWidthGt0 => '❌ Largeur totale doit être > 0.';
 
   @override
-  String get videoErrWidthGt0 => '❌ Width must be > 0.';
+  String get videoErrWidthGt0 => '❌ La largeur doit être > 0.';
 
   @override
-  String get videoExportPdfTooltip => 'Export PDF';
+  String get videoExportPdfTooltip => 'Exporter PDF';
 
   @override
-  String get videoFormatLabel => 'Format (aspect ratio)';
+  String get videoFormatLabel => 'Format (ratio)';
 
   @override
-  String get videoGainHint => 'e.g.: 1.0';
+  String get videoGainHint => 'ex: 1.0';
 
   @override
   String get videoGainLabel => 'Gain';
 
   @override
-  String get videoImageWidthHint => 'e.g.: 6.0';
+  String get videoImageWidthHint => 'ex: 6.0';
 
   @override
-  String get videoImageWidthLabel => 'Image width (m)';
+  String get videoImageWidthLabel => 'Largeur d\'image (m)';
 
   @override
-  String get videoLedCalcTitle => 'Calc — Pixels / tiles';
+  String get videoLedCalcTitle => 'Calcul — Pixels / tiles';
 
   @override
-  String get videoLedErrAllGt0 => '❌ All values must be > 0.';
+  String get videoLedErrAllGt0 => '❌ Toutes les valeurs doivent être > 0.';
 
   @override
   String get videoLedErrMissingInputs =>
-      '❌ Missing data: Tiles X/Y + Tile px + Tile cm.';
+      '❌ Données manquantes : Tiles X/Y + Tile px + Tile cm.';
 
   @override
   String videoLedPitchUniform(Object value) {
@@ -1621,319 +1627,319 @@ class AppLocalizationsEn extends AppLocalizations {
       Object wallHpx,
       Object wallWm,
       Object wallWpx) {
-    return '✅ Wall resolution: $wallWpx × $wallHpx px\\n✅ Wall size: $wallWm × $wallHm m\\nTile: $tileWpx×$tileHpx px • $tileWcm×$tileHcm cm\\nComputed pitch: $pitch';
+    return '✅ Résolution mur: $wallWpx × $wallHpx px\n✅ Taille mur: $wallWm × $wallHm m\nTile: $tileWpx×$tileHpx px • $tileWcm×$tileHcm cm\nPitch calculé: $pitch';
   }
 
   @override
   String get videoLedSubtitle =>
-      'LED wall pixels based on size, pitch, tile dimensions.';
+      'Pixels du mur LED selon taille, pitch, dimension des tiles.';
 
   @override
-  String get videoLedTileHcmHint => 'e.g.: 33.28';
+  String get videoLedTileHcmHint => 'ex: 33.28';
 
   @override
-  String get videoLedTileHcmLabel => 'Tile height (cm)';
+  String get videoLedTileHcmLabel => 'Tile hauteur (cm)';
 
   @override
-  String get videoLedTileHpxHint => 'e.g.: 128';
+  String get videoLedTileHpxHint => 'ex: 128';
 
   @override
-  String get videoLedTileHpxLabel => 'Tile height (px)';
+  String get videoLedTileHpxLabel => 'Tile hauteur (px)';
 
   @override
-  String get videoLedTileWcmHint => 'e.g.: 33.28';
+  String get videoLedTileWcmHint => 'ex: 33.28';
 
   @override
-  String get videoLedTileWcmLabel => 'Tile width (cm)';
+  String get videoLedTileWcmLabel => 'Tile largeur (cm)';
 
   @override
-  String get videoLedTileWpxHint => 'e.g.: 128';
+  String get videoLedTileWpxHint => 'ex: 128';
 
   @override
-  String get videoLedTileWpxLabel => 'Tile width (px)';
+  String get videoLedTileWpxLabel => 'Tile largeur (px)';
 
   @override
-  String get videoLedTilesXHint => 'e.g.: 15';
+  String get videoLedTilesXHint => 'ex: 15';
 
   @override
-  String get videoLedTilesXLabel => 'Horizontal tiles (X)';
+  String get videoLedTilesXLabel => 'Tiles horizontales (X)';
 
   @override
-  String get videoLedTilesYHint => 'e.g.: 8';
+  String get videoLedTilesYHint => 'ex: 8';
 
   @override
-  String get videoLedTilesYLabel => 'Vertical tiles (Y)';
+  String get videoLedTilesYLabel => 'Tiles verticales (Y)';
 
   @override
   String get videoLedTitle => 'LED';
 
   @override
   String get videoLensMeasureSubtitle =>
-      'Ratio / width / height (calculations 1 to 3).';
+      'Ratio / largeur / hauteur (calculs 1 à 3).';
 
   @override
-  String get videoLensMeasureTitle => 'Lens & measurement';
+  String get videoLensMeasureTitle => 'Lentille & mesure';
 
   @override
-  String get videoLmCalc1Title => 'Calc 1 — Ratio (Distance / Width)';
+  String get videoLmCalc1Title => 'Calcul 1 — Ratio (Distance / Largeur)';
 
   @override
-  String get videoLmCalc2Title => 'Calc 2 — Width (Distance / Ratio)';
+  String get videoLmCalc2Title => 'Calcul 2 — Largeur (Distance / Ratio)';
 
   @override
-  String get videoLmCalc3Title => 'Calc 3 — Height (Width + Format)';
+  String get videoLmCalc3Title => 'Calcul 3 — Hauteur (Largeur + Format)';
 
   @override
-  String get videoLmDistanceHint => 'e.g.: 12.0';
+  String get videoLmDistanceHint => 'ex: 12.0';
 
   @override
-  String get videoLmDistanceLabel => 'Throw distance (m)';
+  String get videoLmDistanceLabel => 'Distance de projection (m)';
 
   @override
   String get videoLmErrMissingDistanceRatio =>
-      '❌ Missing data: Distance + Ratio.';
+      '❌ Données manquantes : Distance + Ratio.';
 
   @override
   String get videoLmErrMissingDistanceWidth =>
-      '❌ Missing data: Distance + Width.';
+      '❌ Données manquantes : Distance + Largeur.';
 
   @override
-  String get videoLmErrMissingWidthOnly => '❌ Missing data: Width.';
+  String get videoLmErrMissingWidthOnly => '❌ Donnée manquante : Largeur.';
 
   @override
-  String get videoLmErrRatioGt0 => '❌ Ratio must be > 0.';
+  String get videoLmErrRatioGt0 => '❌ Ratio doit être > 0.';
 
   @override
-  String get videoLmErrWidthGt0 => '❌ Width must be > 0.';
+  String get videoLmErrWidthGt0 => '❌ Largeur doit être > 0.';
 
   @override
-  String get videoLmFormatLabel => 'Format (aspect ratio)';
+  String get videoLmFormatLabel => 'Format (ratio)';
 
   @override
-  String get videoLmImageWidthHint => 'e.g.: 6.0';
+  String get videoLmImageWidthHint => 'ex: 6.0';
 
   @override
-  String get videoLmImageWidthLabel => 'Image width (m)';
+  String get videoLmImageWidthLabel => 'Largeur d\'image (m)';
 
   @override
   String videoLmResultHeight(Object format, Object height) {
-    return '✅ Height = $height m (format $format)';
+    return '✅ Hauteur = $height m (format $format)';
   }
 
   @override
   String videoLmResultRatio(Object ratio) {
-    return '✅ Throw ratio = $ratio';
+    return '✅ Ratio de projection = $ratio';
   }
 
   @override
   String videoLmResultWidth(Object width) {
-    return '✅ Image width = $width m';
+    return '✅ Largeur image = $width m';
   }
 
   @override
-  String get videoLmThrowRatioHint => 'e.g.: 1.60';
+  String get videoLmThrowRatioHint => 'ex: 1.60';
 
   @override
-  String get videoLmThrowRatioLabel => 'Throw ratio';
+  String get videoLmThrowRatioLabel => 'Ratio de projection';
 
   @override
-  String get videoLumensHint => 'e.g.: 20000';
+  String get videoLumensHint => 'ex: 20000';
 
   @override
   String get videoLumensLabel => 'Lumens (ANSI)';
 
   @override
   String get videoMireHeaderSubtitle =>
-      'Indicative patterns (alignment, focus, geometry, blend, pixel perfect).';
+      'Mires indicatives (calage, focus, géométrie, blend, pixel perfect).';
 
   @override
-  String get videoMireHeaderTitle => 'Test pattern generator';
+  String get videoMireHeaderTitle => 'Générateur de mires';
 
   @override
   String get videoMireScreenLedSubtitle =>
-      'Pattern based on W×H px (pixel perfect, uniformity, grid).';
+      'Mire selon WxH px (pixel perfect, uniformité, grille).';
 
   @override
-  String get videoMireScreenLedTitle => 'LED screen test pattern';
+  String get videoMireScreenLedTitle => 'Mire écran LED';
 
   @override
   String get videoMireScreenVideoSubtitle =>
-      'Simple (W×H px) + multi-projector mapping (N + overlap).';
+      'Simple (WxH px) + Mapping multi-projos (N + overlap).';
 
   @override
-  String get videoMireScreenVideoTitle => 'Video screen test pattern';
+  String get videoMireScreenVideoTitle => 'Mire écran vidéo';
 
   @override
-  String get videoMireTitle => 'Test patterns';
+  String get videoMireTitle => 'Mire';
 
   @override
-  String get videoMpCalc5Title => 'Calc 5 — Width per projector';
+  String get videoMpCalc5Title => 'Calcul 5 — Largeur par projecteur';
 
   @override
   String get videoMpCalc6Title =>
-      'Calc 6 — Number of projectors (min/max ratio)';
+      'Calcul 6 — Nombre de projecteurs (ratio min/max)';
 
   @override
   String videoMpCaseOpenMin(Object coverage, Object n) {
-    return 'Widest ratio case (min) = $n projectors | coverage ≈ $coverage m';
+    return 'Cas ratio plus ouvert (min) = $n projos | couverture ≈ $coverage m';
   }
 
   @override
   String videoMpCaseTightMax(Object coverage, Object n) {
-    return 'Tightest ratio case (max) = $n projectors | coverage ≈ $coverage m';
+    return 'Cas ratio plus serré (max) = $n projos | couverture ≈ $coverage m';
   }
 
   @override
-  String get videoMpDistanceHint => 'e.g.: 12.0';
+  String get videoMpDistanceHint => 'ex: 12.0';
 
   @override
-  String get videoMpDistanceLabel => 'Throw distance (m)';
+  String get videoMpDistanceLabel => 'Distance de projection (m)';
 
   @override
   String get videoMpErrImpossibleDenom =>
-      '❌ Impossible parameters (denom ≤ 0).';
+      '❌ Paramètres impossibles (denom ≤ 0).';
 
   @override
-  String get videoMpErrInvalidRatio => '❌ Invalid ratio (must be > 0).';
+  String get videoMpErrInvalidRatio => '❌ Ratio invalide (doit être > 0).';
 
   @override
   String get videoMpErrMissing5 =>
-      '❌ Missing data: Total width + Overlap% + N.';
+      '❌ Données manquantes : Largeur totale + Overlap% + N.';
 
   @override
   String get videoMpErrMissing6Main =>
-      '❌ Missing data: Total width + Distance + Overlap%.';
+      '❌ Données manquantes : Largeur totale + Distance + Overlap%.';
 
   @override
   String get videoMpErrMissingRatios =>
-      '❌ Missing data: Min ratio and/or Max ratio.';
+      '❌ Données manquantes : Ratio min et/ou Ratio max.';
 
   @override
-  String get videoMpErrNGte2 => '❌ N must be ≥ 2.';
+  String get videoMpErrNGte2 => '❌ N doit être ≥ 2.';
 
   @override
-  String get videoMpErrOverlapRange => '❌ Overlap% must be between 0 and 99.9.';
+  String get videoMpErrOverlapRange => '❌ Overlap% doit être entre 0 et 99.9.';
 
   @override
   String get videoMpErrWidthDistanceGt0 =>
-      '❌ Total width and distance must be > 0.';
+      '❌ Largeur totale et distance doivent être > 0.';
 
   @override
-  String get videoMpErrWidthGt0 => '❌ Total width must be > 0.';
+  String get videoMpErrWidthGt0 => '❌ Largeur totale doit être > 0.';
 
   @override
-  String get videoMpFormatLabel => 'Format (aspect ratio)';
+  String get videoMpFormatLabel => 'Format (ratio)';
 
   @override
-  String get videoMpGainHint => 'e.g.: 1.0';
+  String get videoMpGainHint => 'ex: 1.0';
 
   @override
   String get videoMpGainLabel => 'Gain';
 
   @override
-  String get videoMpLumensPerProjectorHint => 'e.g.: 20000';
+  String get videoMpLumensPerProjectorHint => 'ex: 20000';
 
   @override
-  String get videoMpLumensPerProjectorLabel => 'Lumens per projector';
+  String get videoMpLumensPerProjectorLabel => 'Lumens par projecteur';
 
   @override
   String get videoMpLumiErrLumensGainGt0 =>
-      'Brightness: ❌ Lumens/projector and gain must be > 0.';
+      'Luminosité: ❌ Lumens/projo et gain doivent être > 0.';
 
   @override
   String videoMpLumiEstimated(
       Object area, Object fl, Object lux, Object n, Object nits) {
-    return 'Estimated brightness (N=$n)\\nArea: $area m²\\nEq lux: $lux\\nNits: $nits | ft‑L: $fl';
+    return 'Luminosité estimée (N=$n)\nSurface: $area m²\nLux eq: $lux\nNits: $nits | ft-L: $fl';
   }
 
   @override
   String get videoMpLumiOptionalHint =>
-      'Brightness (optional): enter Lumens/projector + Gain to estimate.';
+      'Luminosité (optionnelle) : renseigne Lumens/projo + Gain pour estimer.';
 
   @override
-  String get videoMpNoteIndicative => 'Note: indicative estimate.';
+  String get videoMpNoteIndicative => 'Note: estimation indicative.';
 
   @override
-  String get videoMpOptionalLuminanceTitle => 'Optional: brightness';
+  String get videoMpOptionalLuminanceTitle => 'Optionnel : luminosité';
 
   @override
-  String get videoMpOverlapHint => 'e.g.: 10';
+  String get videoMpOverlapHint => 'ex: 10';
 
   @override
   String get videoMpOverlapLabel => 'Overlap (%)';
 
   @override
-  String get videoMpProjectorCountHint => 'e.g.: 2';
+  String get videoMpProjectorCountHint => 'ex: 2';
 
   @override
-  String get videoMpProjectorCountLabel => 'Number of projectors (N)';
+  String get videoMpProjectorCountLabel => 'Nombre de projecteurs (N)';
 
   @override
-  String get videoMpRatioMaxHint => 'e.g.: 1.80';
+  String get videoMpRatioMaxHint => 'ex: 1.80';
 
   @override
-  String get videoMpRatioMaxLabel => 'Max ratio';
+  String get videoMpRatioMaxLabel => 'Ratio max';
 
   @override
-  String get videoMpRatioMinHint => 'e.g.: 1.20';
+  String get videoMpRatioMinHint => 'ex: 1.20';
 
   @override
-  String get videoMpRatioMinLabel => 'Min ratio';
+  String get videoMpRatioMinLabel => 'Ratio min';
 
   @override
-  String get videoMpTotalWidthHint => 'e.g.: 18.0';
+  String get videoMpTotalWidthHint => 'ex: 18.0';
 
   @override
-  String get videoMpTotalWidthLabel => 'Total projection width (m)';
+  String get videoMpTotalWidthLabel => 'Largeur totale de projection (m)';
 
   @override
   String get videoMultiprojectorSubtitle =>
-      'Overlap + width/projector + number of projectors (calculations 5 & 6).';
+      'Overlap + largeur/projo + nombre de projos (calculs 5 & 6).';
 
   @override
-  String get videoMultiprojectorTitle => 'Multi-projector';
+  String get videoMultiprojectorTitle => 'Multiprojecteur';
 
   @override
-  String get videoOptionalBrightnessTitle => 'Optional: brightness';
+  String get videoOptionalBrightnessTitle => 'Optionnel : luminosité';
 
   @override
-  String get videoOverlapHint => 'e.g.: 10';
+  String get videoOverlapHint => 'ex: 10';
 
   @override
   String get videoOverlapLabel => 'Overlap (%)';
 
   @override
-  String get videoPdfCalc1 => 'Calc 1';
+  String get videoPdfCalc1 => 'Calcul 1';
 
   @override
-  String get videoPdfCalc2 => 'Calc 2';
+  String get videoPdfCalc2 => 'Calcul 2';
 
   @override
-  String get videoPdfCalc3 => 'Calc 3';
+  String get videoPdfCalc3 => 'Calcul 3';
 
   @override
-  String get videoPdfCalc4 => 'Calc 4';
+  String get videoPdfCalc4 => 'Calcul 4';
 
   @override
-  String get videoPdfCalc5 => 'Calc 5';
+  String get videoPdfCalc5 => 'Calcul 5';
 
   @override
-  String get videoPdfCalc5N => 'N (calc 5)';
+  String get videoPdfCalc5N => 'N (calc5)';
 
   @override
-  String get videoPdfCalc6 => 'Calc 6';
+  String get videoPdfCalc6 => 'Calcul 6';
 
   @override
-  String get videoPdfCalc6Gain => 'Gain (calc 6)';
+  String get videoPdfCalc6Gain => 'Gain (calc6)';
 
   @override
-  String get videoPdfCalc6LumensPerProj => 'Lumens/projector (calc 6)';
+  String get videoPdfCalc6LumensPerProj => 'Lumens/projo (calc6)';
 
   @override
-  String get videoPdfCalc6RatioMax => 'Max ratio (calc 6)';
+  String get videoPdfCalc6RatioMax => 'Ratio max (calc6)';
 
   @override
-  String get videoPdfCalc6RatioMin => 'Min ratio (calc 6)';
+  String get videoPdfCalc6RatioMin => 'Ratio min (calc6)';
 
   @override
   String get videoPdfDate => 'Date';
@@ -1948,7 +1954,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get videoPdfGain => 'Gain';
 
   @override
-  String get videoPdfImageWidth => 'Image width (m)';
+  String get videoPdfImageWidth => 'Largeur image (m)';
 
   @override
   String get videoPdfLumens => 'Lumens';
@@ -1957,113 +1963,115 @@ class AppLocalizationsEn extends AppLocalizations {
   String get videoPdfOverlap => 'Overlap (%)';
 
   @override
-  String get videoPdfParams => 'Parameters';
+  String get videoPdfParams => 'Paramètres';
 
   @override
   String get videoPdfRatio => 'Ratio';
 
   @override
-  String get videoPdfResults => 'Results';
+  String get videoPdfResults => 'Résultats';
 
   @override
-  String get videoPdfScreenPreset => 'Screen preset';
+  String get videoPdfScreenPreset => 'Preset écran';
 
   @override
-  String get videoPdfTitle => 'My Tech App – Video Export';
+  String get videoPdfTitle => 'Mon App Technique – Export Vidéo';
 
   @override
-  String get videoPdfTotalWidth => 'Total width (m)';
+  String get videoPdfTotalWidth => 'Largeur totale (m)';
 
   @override
-  String get videoPresetFrontGrey => 'Front - grey screen (gain 0.8)';
+  String get videoPresetFrontGrey => 'Front - écran gris (gain 0.8)';
 
   @override
-  String get videoPresetFrontGreyShort => 'Front - grey screen';
+  String get videoPresetFrontGreyShort => 'Front - écran gris';
 
   @override
-  String get videoPresetFrontHighGain => 'Front - high gain screen (gain 1.3)';
+  String get videoPresetFrontHighGain => 'Front - écran high gain (gain 1.3)';
 
   @override
-  String get videoPresetFrontHighGainShort => 'Front - high gain screen';
+  String get videoPresetFrontHighGainShort => 'Front - écran high gain';
 
   @override
-  String get videoPresetFrontWhite => 'Front - matte white screen (gain 1.0)';
+  String get videoPresetFrontWhite => 'Front - écran blanc mat (gain 1.0)';
 
   @override
-  String get videoPresetFrontWhiteShort => 'Front - matte white screen';
+  String get videoPresetFrontWhiteShort => 'Front - écran blanc mat';
 
   @override
-  String get videoPresetMappingDarkStone => 'Mapping - dark stone (gain 0.35)';
+  String get videoPresetMappingDarkStone =>
+      'Mapping - pierre sombre (gain 0.35)';
 
   @override
-  String get videoPresetMappingDarkStoneShort => 'Mapping - dark stone';
+  String get videoPresetMappingDarkStoneShort => 'Mapping - pierre sombre';
 
   @override
-  String get videoPresetMappingGlass => 'Mapping - glass (gain 0.15)';
+  String get videoPresetMappingGlass => 'Mapping - vitre (gain 0.15)';
 
   @override
-  String get videoPresetMappingGlassShort => 'Mapping - glass';
+  String get videoPresetMappingGlassShort => 'Mapping - vitre';
 
   @override
-  String get videoPresetMappingLightStone => 'Mapping - light stone (gain 0.6)';
+  String get videoPresetMappingLightStone =>
+      'Mapping - pierre claire (gain 0.6)';
 
   @override
-  String get videoPresetMappingLightStoneShort => 'Mapping - light stone';
+  String get videoPresetMappingLightStoneShort => 'Mapping - pierre claire';
 
   @override
-  String get videoPresetMappingMatte => 'Mapping - matte paint (gain 0.75)';
+  String get videoPresetMappingMatte => 'Mapping - peinture mate (gain 0.75)';
 
   @override
-  String get videoPresetMappingMatteShort => 'Mapping - matte paint';
+  String get videoPresetMappingMatteShort => 'Mapping - peinture mate';
 
   @override
-  String get videoPresetMappingSatin => 'Mapping - satin paint (gain 0.9)';
+  String get videoPresetMappingSatin => 'Mapping - peinture satinée (gain 0.9)';
 
   @override
-  String get videoPresetMappingSatinShort => 'Mapping - satin paint';
+  String get videoPresetMappingSatinShort => 'Mapping - peinture satinée';
 
   @override
-  String get videoPresetRearClear => 'Rear - clear screen (gain 0.9)';
+  String get videoPresetRearClear => 'Rétro - toile claire (gain 0.9)';
 
   @override
-  String get videoPresetRearClearShort => 'Rear - clear screen';
+  String get videoPresetRearClearShort => 'Rétro - toile claire';
 
   @override
-  String get videoPresetRearDiffusion => 'Rear - diffusion screen (gain 0.7)';
+  String get videoPresetRearDiffusion => 'Rétro - toile diffusion (gain 0.7)';
 
   @override
-  String get videoPresetRearDiffusionShort => 'Rear - diffusion screen';
+  String get videoPresetRearDiffusionShort => 'Rétro - toile diffusion';
 
   @override
-  String get videoScreenPresetLabel => 'Screen / Surface (preset)';
+  String get videoScreenPresetLabel => 'Écran / Support (preset)';
 
   @override
-  String get videoSummaryPillsTitle => 'Summary (pills)';
+  String get videoSummaryPillsTitle => 'Résumé (pastilles)';
 
   @override
   String get videoTestPatternSubtitle =>
-      'Create video test patterns for screens and LED walls (later).';
+      'Création de mire vidéo pour écran et mur LED (à faire après).';
 
   @override
-  String get videoTestPatternTitle => 'Test pattern';
+  String get videoTestPatternTitle => 'Mire';
 
   @override
-  String get videoThrowRatioHint => 'e.g.: 1.60';
+  String get videoThrowRatioHint => 'ex: 1.60';
 
   @override
-  String get videoThrowRatioLabel => 'Throw ratio';
+  String get videoThrowRatioLabel => 'Ratio de projection';
 
   @override
-  String get videoTitle => 'Video';
+  String get videoTitle => 'Vidéo';
 
   @override
-  String get videoToolsTitle => 'Video tools';
+  String get videoToolsTitle => 'Outils vidéo';
 
   @override
-  String get videoTotalWidthHint => 'e.g.: 18.0';
+  String get videoTotalWidthHint => 'ex: 18.0';
 
   @override
-  String get videoTotalWidthLabel => 'Total projection width (m)';
+  String get videoTotalWidthLabel => 'Largeur totale de projection (m)';
 
   @override
   String get aboutArtnetTitle => 'Art-Nand';
@@ -2361,32 +2369,32 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeRiggingTitle => 'Rigging';
 
   @override
-  String get homeRiggingSubtitle => 'Bridles: angles & sling lengths.';
+  String get homeRiggingSubtitle => 'Bridles : angles & longueurs d’élingues.';
 
   @override
   String get riggingTitle => 'Rigging';
 
   @override
-  String get riggingAngleLengthTitle => 'Bridle angle & sling length';
+  String get riggingAngleLengthTitle => 'Angle de bridle & longueur d’élingues';
 
   @override
   String get riggingSymmetryNote =>
-      'Assumption: symmetric bridle (2 identical legs). No load calculations.';
+      'Hypothèse : bridle symétrique (2 brins identiques). Aucun calcul de charge.';
 
   @override
   String get riggingInputsTitle => 'Inputs';
 
   @override
-  String get riggingSpanLabel => 'Span (distance between points)';
+  String get riggingSpanLabel => 'Span';
 
   @override
-  String get riggingSpanHint => 'e.g. 2.40';
+  String get riggingSpanHint => 'Ex : 2.40';
 
   @override
-  String get riggingDropLabel => 'Drop (vertical)';
+  String get riggingDropLabel => 'Drop';
 
   @override
-  String get riggingDropHint => 'e.g. 0.60';
+  String get riggingDropHint => 'Ex : 0.60';
 
   @override
   String get riggingUnitMeters => 'm';
@@ -2395,176 +2403,1086 @@ class AppLocalizationsEn extends AppLocalizations {
   String get riggingResultsTitle => 'Results';
 
   @override
-  String get riggingNeedPositiveValues => 'Enter values > 0.';
+  String get riggingNeedPositiveValues => 'Positive values required.';
 
   @override
-  String get riggingLegLengthLabel => 'Leg length';
+  String get riggingLegLengthLabel => 'Longueur d’un brin';
 
   @override
-  String get riggingAngleToHorizontalLabel => 'Angle to horizontal';
+  String get riggingAngleToHorizontalLabel =>
+      'Angle par rapport à l’horizontale';
 
   @override
-  String get riggingAngleToVerticalLabel => 'Angle to vertical';
+  String get riggingAngleToVerticalLabel => 'Angle par rapport à la verticale';
 
   @override
   String get riggingDisclaimerShort =>
-      'Indicative results. Validate for your context and rigging practices.';
+      'Résultats indicatifs. À valider selon ton contexte et les pratiques rigging.';
 
   @override
-  String get riggingCalcLegDropTitle => 'Length + drop → span';
+  String get riggingCalcLegDropTitle => 'Longueur + flèche → portée';
 
   @override
   String get riggingCalcLegDropHelp =>
-      'Symmetric bridle (2 legs): computes span from sling length and drop.';
+      'Élingue symétrique (2 brins) : calcule la portée à partir de la longueur d’élingue et de la flèche.';
 
   @override
-  String get riggingLegLengthInputLabel => 'Leg length';
+  String get riggingLegLengthInputLabel => 'Longueur d’un brin';
 
   @override
-  String get riggingLegLengthInputHint => 'e.g. 2.50';
+  String get riggingLegLengthInputHint => 'Ex: 2.50';
 
   @override
   String get riggingInvalidTriangle =>
-      'Impossible: length must be greater than drop.';
+      'Impossible : la longueur doit être supérieure à la flèche.';
 
   @override
-  String get riggingCalcLegAngleTitle => 'Length + angle → span + drop';
+  String get riggingCalcLegAngleTitle => 'Longueur + angle → portée + flèche';
 
   @override
   String get riggingCalcLegAngleHelp =>
-      'Symmetric bridle (2 legs): computes span and drop from sling length and angle to the horizontal.';
+      'Élingue symétrique (2 brins) : calcule portée et flèche à partir de la longueur et de l’angle par rapport à l’horizontale.';
 
   @override
-  String get riggingAngleHorizontalInputLabel => 'Angle to horizontal';
+  String get riggingAngleHorizontalInputLabel =>
+      'Angle par rapport à l’horizontale';
 
   @override
-  String get riggingAngleHorizontalInputHint => 'e.g. 30';
+  String get riggingAngleHorizontalInputHint => 'Ex: 30';
 
   @override
-  String get riggingInvalidAngle =>
-      'Invalid angle: must be between 0° and 90°.';
+  String get riggingInvalidAngle => 'Angle invalide : entre 0° et 90° (exclu).';
 
   @override
   String get riggingUnitDegrees => '°';
 
   @override
-  String get riggingCalc1Title => '2-point bridle (span + drop)';
+  String get riggingCalc1Title => 'Calculation 1';
 
   @override
   String get riggingCalc1Subtitle =>
-      'Compute sling length and angles from span and drop.';
+      'Bridle symétrique (2 brins identiques). Poids affiché (info). Aucun calcul de charge.';
 
   @override
-  String get riggingCalc2Title => 'Drop & angles from leg length';
+  String get riggingCalc2Title => 'Calculation 2';
 
   @override
-  String get riggingCalc2Subtitle =>
-      'Assumption: symmetric bridle (2 identical legs). No load calculation.';
+  String get riggingCalc2Subtitle => 'Variant with offset.';
 
   @override
-  String get riggingCalc3Title => 'Leg length & drop from an angle';
+  String get riggingCalc3Title => 'Calculation 3';
 
   @override
-  String get riggingCalc3Subtitle =>
-      'Angle to horizontal + span. No load calculation.';
+  String get riggingCalc3Subtitle => 'Variant with 2 pick points.';
 
   @override
-  String get riggingLegLengthHint => 'e.g. 4.70';
+  String get riggingLegLengthHint => 'Ex: 4.70';
 
   @override
-  String get riggingAngleHint => 'e.g. 45';
+  String get riggingAngleHint => 'Ex : 45';
 
   @override
   String get riggingInvalidGeometry =>
-      'Impossible geometry (leg too short for the span).';
+      'Géométrie impossible (longueur trop courte pour l’entraxe).';
 
   @override
   String get riggingSchemaTitle => 'Diagram';
 
   @override
   String get riggingSchemaCaption1 =>
-      'Inputs: span + drop. Outputs: sling length + angles.';
+      'Entrées : portée + flèche. Sorties : longueur d’élingue + angles.';
 
   @override
   String get riggingSchemaCaption2 =>
-      'Inputs: span + sling length. Outputs: drop + angles.';
+      'Entrées : portée + longueur d’élingue. Sorties : flèche + angles.';
 
   @override
   String get riggingSchemaCaption3 =>
-      'Inputs: span + angle (to horizontal). Outputs: drop + sling length.';
+      'Entrées : portée + angle (horizontal). Sorties : flèche + longueur.';
 
   @override
-  String get riggingAngleHInputLabel => 'Angle (to horizontal)';
+  String get riggingAngleHInputLabel => 'Angle (par rapport à l’horizontale)';
 
   @override
-  String get riggingAngleHInputHint => 'e.g. 45';
+  String get riggingAngleHInputHint => 'Ex: 45';
 
   @override
-  String get riggingDropResultLabel => 'Drop';
+  String get riggingDropResultLabel => 'Flèche (drop)';
 
   @override
-  String get riggingSchemaLabelSpan => 'Span';
+  String get riggingSchemaLabelSpan => 'Entraxe';
 
   @override
-  String get riggingSchemaLabelDrop => 'Drop';
+  String get riggingSchemaLabelDrop => 'Flèche';
 
   @override
-  String get riggingSchemaLabelLeg => 'Leg';
+  String get riggingSchemaLabelLeg => 'Brin';
 
   @override
-  String get riggingWeightLabel => 'Weight (info)';
+  String get riggingWeightLabel => 'Load';
 
   @override
   String get riggingUnitKg => 'kg';
 
   @override
-  String get riggingImpossibleGeometry =>
-      'Impossible geometry: leg length must be > (span / 2).';
+  String get riggingImpossibleGeometry => 'Impossible geometry.';
 
   @override
   String get riggingDisclaimerNoLoad =>
-      'Weight is informational only. No load/tension calculation. Validate for your rigging context.';
+      'Warning: do not use for structural sizing.';
 
   @override
   String get riggingCalcCommonSubtitle =>
-      '2-leg bridle. Weight shown (info). No load calculation.';
+      'Simple estimate – verify on the plan.';
 
   @override
   String get riggingOffCenterToggle => 'Off-center load';
 
   @override
-  String get riggingOffsetLabel => 'Offset A → load';
+  String get riggingOffsetLabel => 'Offset';
 
   @override
-  String get riggingInvalidOffset => 'Invalid offset: must be > 0 and < span.';
+  String get riggingInvalidOffset => 'Invalid offset.';
 
   @override
-  String get riggingLegLeftLabel => 'Left leg length';
+  String get riggingLegLeftLabel => 'Left leg';
 
   @override
-  String get riggingLegRightLabel => 'Right leg length';
+  String get riggingLegRightLabel => 'Right leg';
 
   @override
-  String get riggingAngleHLeftLabel => 'Angle H (left)';
+  String get riggingAngleHLeftLabel => 'Left H angle';
 
   @override
-  String get riggingAngleHRightLabel => 'Angle H (right)';
+  String get riggingAngleHRightLabel => 'Right H angle';
 
   @override
-  String get riggingAngleVLeftLabel => 'Angle V (left)';
+  String get riggingAngleVLeftLabel => 'Left V angle';
 
   @override
-  String get riggingAngleVRightLabel => 'Angle V (right)';
+  String get riggingAngleVRightLabel => 'Right V angle';
 
   @override
   String get riggingIncludedAngleLabel => 'Included angle';
 
   @override
-  String get riggingAngleHLeftInputLabel => 'Angle H (left leg)';
+  String get riggingAngleHLeftInputLabel => 'Left H angle';
 
   @override
-  String get riggingLegLeftInputLabel => 'Length (left leg)';
+  String get riggingLegLeftInputLabel => 'Left leg';
 
   @override
-  String get riggingNeedValidValues => 'Enter valid positive values.';
+  String get riggingNeedValidValues => 'Entrer des valeurs positives valides.';
+
+  @override
+  String get photometrySection4Title => 'Area & lumens';
+
+  @override
+  String get photometryAreaLabel => 'Area';
+
+  @override
+  String get photometryAreaHint4 => 'e.g., 12.5';
+
+  @override
+  String photometrySummary4(Object lumens, Object lux, Object area) {
+    return '≈ $lumens lm for $lux lx over $area m²';
+  }
+
+  @override
+  String get aboutArtnetTocConversionTitle => 'Conversions';
+
+  @override
+  String get aboutArtnetConversionIntro =>
+      'Useful conversion tools around DMX universes, Art-Net and hexadecimal values.';
+
+  @override
+  String get aboutUniverseToArtnetTitle => 'Universe → Art-Net';
+
+  @override
+  String get aboutUniverseToArtnetSubtitle =>
+      'Find Subnet + Universe (Net/Port-Address) from a DMX universe.';
+
+  @override
+  String get aboutUniverseToHexTitle => 'Universe → Hex';
+
+  @override
+  String get aboutUniverseToHexSubtitle =>
+      'Convert a universe (1…N) to index and hexadecimal value.';
+
+  @override
+  String get aboutArtnetConversionNote =>
+      'Note: Art-Net conventions can vary between consoles (addressing, 0/1 base). Always check your system documentation.';
+
+  @override
+  String get elecTocCopyText => 'Copy table of contents';
+
+  @override
+  String get elecToc1 => 'Section 1';
+
+  @override
+  String get elecToc2 => 'Section 2';
+
+  @override
+  String get elecToc3 => 'Section 3';
+
+  @override
+  String get elecToc4 => 'Section 4';
+
+  @override
+  String get elecToc5 => 'Section 5';
+
+  @override
+  String get elecToc6 => 'Section 6';
+
+  @override
+  String get elecToc7 => 'Section 7';
+
+  @override
+  String get elecKvaTitle => 'kVA → kW table (by power factor)';
+
+  @override
+  String get elecKvaFormula => 'Formula: kW = kVA × PF';
+
+  @override
+  String get elecKvaIntro =>
+      'This table provides a quick estimate of active power (kW) from apparent power (kVA).';
+
+  @override
+  String get elecKvaNote =>
+      'Indicative values. Use real PF values when you have them.';
+
+  @override
+  String get elecKvaColKva => 'kVA';
+
+  @override
+  String get elecKvaColPf08 => 'kW (PF = 0.8)';
+
+  @override
+  String get elecKvaColPf10 => 'kW (PF = 1.0)';
+
+  @override
+  String get commonTocTitle => 'Contents';
+
+  @override
+  String get commonCopySummaryTooltip => 'Copy contents';
+
+  @override
+  String get aboutLightReferenceTitle => 'Lighting reference';
+
+  @override
+  String get refCriTitle => 'CRI';
+
+  @override
+  String get refKelvinTitle => 'Color temperature (K)';
+
+  @override
+  String get refBeamFieldTitle => 'Beam / Field';
+
+  @override
+  String get refLuxTitle => 'Illuminance levels (lux)';
+
+  @override
+  String get refCriContent =>
+      'CRI measures color rendering fidelity. The higher, the more natural colors look.';
+
+  @override
+  String get refKelvinContent =>
+      'Color temperature describes the tint of white (warm to cool).';
+
+  @override
+  String get refBeamFieldContent =>
+      'Beam is the main cone angle; Field is the wider angle where intensity falls off (edge).';
+
+  @override
+  String get refBeamLegendBeam => 'Beam';
+
+  @override
+  String get refBeamLegendField => 'Field';
+
+  @override
+  String get refLuxIntro => 'Indicative illuminance references by use case.';
+
+  @override
+  String get refLuxColUse => 'Use';
+
+  @override
+  String get refLuxColLux => 'Lux';
+
+  @override
+  String get refLuxUseCorridor => 'Corridor / circulation';
+
+  @override
+  String get refLuxUseBackstage => 'Backstage / technical';
+
+  @override
+  String get refLuxUseMeeting => 'Meeting room';
+
+  @override
+  String get refLuxUseExpo => 'Exhibition / showroom';
+
+  @override
+  String get refLuxUseStageGeneral => 'Stage – general';
+
+  @override
+  String get refLuxUseStageTv => 'Stage – TV / broadcast';
+
+  @override
+  String get refLuxNote =>
+      'Values vary with standards and constraints (camera, contrast, ambience).';
+
+  @override
+  String get refLightDisclaimerShort =>
+      'Indicative references – not a standard.';
+
+  @override
+  String get refCri90 => 'Excellent (≥ 90)';
+
+  @override
+  String get refCri80 => 'Good (≈ 80)';
+
+  @override
+  String get refCriLow => 'Low (< 80)';
+
+  @override
+  String get aboutUniverseToArtnetImportantTitle => 'Important';
+
+  @override
+  String get aboutUniverseToArtnetImportantBody =>
+      'Some consoles use a 0-based scheme (Universe 0..15) while others are 1-based (Universe 1..16).';
+
+  @override
+  String get aboutUniverseToArtnetTableTitle => 'Universe → Art-Net table';
+
+  @override
+  String get aboutUniverseToArtnetTableIntro =>
+      'Typical mapping between DMX universes and Art-Net addressing.';
+
+  @override
+  String get aboutUniverseTablesDisclaimer =>
+      'Always verify your console/node convention.';
+
+  @override
+  String get aboutUniverseToArtnetColDmx => 'DMX universe';
+
+  @override
+  String get aboutUniverseToArtnetColUniHex => 'Uni (hex)';
+
+  @override
+  String aboutUniverseToArtnetSubnetTitle(
+      Object p0, Object p1, Object p2, Object p3) {
+    return 'Subnet $p0 $p1 $p2 $p3';
+  }
+
+  @override
+  String get aboutUniverseToHexPrincipleTitle => 'Principle';
+
+  @override
+  String get aboutUniverseToHexPrincipleBody =>
+      'A universe (1…N) can be converted to a 0-based index then to hexadecimal.';
+
+  @override
+  String get aboutUniverseToHexTableTitle => 'Universe → Hex table';
+
+  @override
+  String get aboutUniverseToHexTableIntro =>
+      'Conversion table DMX universe → index / hex.';
+
+  @override
+  String aboutUniverseToHexBlockTitle(Object p0, Object p1) {
+    return 'Block $p0 $p1';
+  }
+
+  @override
+  String get aboutUniverseToHexColDmx => 'DMX universe';
+
+  @override
+  String get aboutUniverseToHexColIndex => 'Index';
+
+  @override
+  String get aboutUniverseToHexColHex => 'Hex';
+
+  @override
+  String get aboutUniverseToHexNote => 'Index = Universe − 1 (0-based).';
+
+  @override
+  String get videoCameraExposureTitle => 'Camera exposure';
+
+  @override
+  String get videoCameraExposureSubtitle =>
+      'Lux → EV, ISO, shutter and aperture.';
+
+  @override
+  String get videoCamPageTitle => 'Camera exposure';
+
+  @override
+  String get videoCamInfoTitle => 'Info';
+
+  @override
+  String get videoCamIntro =>
+      'Indicative calculations linking lux, ISO, shutter and aperture.';
+
+  @override
+  String get videoCamInputsTitle => 'Inputs';
+
+  @override
+  String get videoCamLuxLabel => 'Lux';
+
+  @override
+  String get videoCamLuxHint => 'e.g., 500';
+
+  @override
+  String get videoCamIsoLabel => 'ISO';
+
+  @override
+  String get videoCamIsoHint => 'e.g., 800';
+
+  @override
+  String get videoCamShutterLabel => 'Shutter (s)';
+
+  @override
+  String get videoCamShutterHint => 'e.g., 1/50';
+
+  @override
+  String get videoCamApertureLabel => 'Aperture (f/)';
+
+  @override
+  String get videoCamApertureHint => 'e.g., 2.8';
+
+  @override
+  String get videoCamEvEmpty => '—';
+
+  @override
+  String get videoCamNote =>
+      'Indicative values: calibration depends on sensor, scene and standards.';
+
+  @override
+  String videoCamEvValue(Object ev) {
+    return 'EV $ev';
+  }
+
+  @override
+  String videoCamApertureResult(Object aperture) {
+    return 'Aperture: f/$aperture';
+  }
+
+  @override
+  String videoCamShutterResult(Object shutter) {
+    return 'Shutter: $shutter s';
+  }
+
+  @override
+  String get aboutDmxS2Title => '2) DMX frame — break, start code, channels';
+
+  @override
+  String get aboutDmxS2PillBreak => 'Break';
+
+  @override
+  String get aboutDmxS2PillStartCode => 'Start code';
+
+  @override
+  String get aboutDmxS2PillSlots512 => '512 slots';
+
+  @override
+  String get aboutDmxS2PillRefresh => 'Refresh';
+
+  @override
+  String get aboutDmxS2Intro =>
+      'A DMX frame is sent in a continuous loop. It starts with a “break” (line held low), then a start code, then up to 512 values (0–255). Each device reads only the channels it needs (based on its address and mode).';
+
+  @override
+  String get aboutDmxS2HowToReadTitle => 'Reading a frame (simple view)';
+
+  @override
+  String get aboutDmxS2HowToReadB1 =>
+      'Break + MAB: marks the start of the frame (re-sync).';
+
+  @override
+  String get aboutDmxS2HowToReadB2 =>
+      'Start code: most of the time 0x00 (lighting data).';
+
+  @override
+  String get aboutDmxS2HowToReadB3 =>
+      'Slots 1→512: each slot = 1 channel (0–255).';
+
+  @override
+  String get aboutDmxS2HowToReadB4 =>
+      'The frame repeats continuously: new values overwrite old ones.';
+
+  @override
+  String get aboutDmxS2PracticalTitle => 'In practice';
+
+  @override
+  String get aboutDmxS2PracticalB1 =>
+      'A 16-bit mode uses 2 channels for one function (e.g., Pan coarse + Pan fine).';
+
+  @override
+  String get aboutDmxS2PracticalB2 =>
+      'The more universes you send, the higher the overall load (console/nodes/network).';
+
+  @override
+  String get aboutDmxS2PracticalB3 =>
+      'If you see flicker, check cabling/termination/topology first before blaming the console.';
+
+  @override
+  String get aboutDmxS3Title => '3) DMX wiring — RS-485, topology, pinout';
+
+  @override
+  String get aboutDmxS3PillRs485 => 'RS-485';
+
+  @override
+  String get aboutDmxS3PillDaisyChain => 'Daisy-chain';
+
+  @override
+  String get aboutDmxS3PillNoY => 'No Y-split';
+
+  @override
+  String get aboutDmxS3Pill120ohm => '120 Ω';
+
+  @override
+  String get aboutDmxS3Intro =>
+      'DMX512 is based on RS-485: a differential bus that needs clean lines. Golden rule: a daisy-chain from source to fixtures, and a terminator at the end.';
+
+  @override
+  String get aboutDmxS3TopologyTitle => 'Recommended topology';
+
+  @override
+  String get aboutDmxS3TopologyB1 =>
+      'Source → Fixture 1 → Fixture 2 → … → last fixture.';
+
+  @override
+  String get aboutDmxS3TopologyB2 =>
+      'Avoid Y-splits: they create reflections (instability).';
+
+  @override
+  String get aboutDmxS3TopologyB3 =>
+      'If you need branches: use an opto-isolated DMX splitter.';
+
+  @override
+  String get aboutDmxS3PinoutTitle => 'Connector reminder';
+
+  @override
+  String get aboutDmxS3CablesTitle => 'Cables: what actually works';
+
+  @override
+  String get aboutDmxS3CablesB1 =>
+      'Use proper DMX cable (~120 Ω), not random mic cable (except short emergency).';
+
+  @override
+  String get aboutDmxS3CablesB2 =>
+      'Keep lengths reasonable and avoid tight coils near power/dimmers.';
+
+  @override
+  String get aboutDmxS3CablesB3 =>
+      'Bad cable can “work” until it doesn’t (humidity, length, load).';
+
+  @override
+  String get aboutDmxS4Title => '4) Termination & splitters — bus stability';
+
+  @override
+  String get aboutDmxS4Intro =>
+      'On an RS-485 bus, termination prevents reflections at the end of the line. Splitters (opto-isolated) create clean branches and protect the source.';
+
+  @override
+  String get aboutDmxS4TerminatorTitle => 'Termination (120 Ω): when and how';
+
+  @override
+  String get aboutDmxS4TerminatorB1 =>
+      'Add a terminator on the last device (or an XLR terminator plug).';
+
+  @override
+  String get aboutDmxS4TerminatorB2 =>
+      'One terminator per line (not everywhere).';
+
+  @override
+  String get aboutDmxS4TerminatorB3 =>
+      'Important on long runs, heavy loads, electrically noisy environments.';
+
+  @override
+  String get aboutDmxS4SplittersTitle => 'Splitters / opto-isolation';
+
+  @override
+  String get aboutDmxS4SplittersB1 =>
+      'Lets you build 2/4/8 branches without Y-splits.';
+
+  @override
+  String get aboutDmxS4SplittersB2 =>
+      'Electrical isolation reduces ground loops and protects console/node.';
+
+  @override
+  String get aboutDmxS4SplittersB3 =>
+      'Useful to re-drive the signal over long distances.';
+
+  @override
+  String get aboutDmxS5Title =>
+      '5) Troubleshooting — a simple method (fast and reliable)';
+
+  @override
+  String get aboutDmxS5Intro =>
+      'When a fixture does not respond, isolate the problem: address, mode, DMX line, or the fixture itself. Run a short checklist before rebuilding the patch.';
+
+  @override
+  String get aboutDmxS5QuickChecksTitle => 'Quick checklist';
+
+  @override
+  String get aboutDmxS5QuickB1 =>
+      'Correct DMX address? (and not 001 vs 000 depending on display).';
+
+  @override
+  String get aboutDmxS5QuickB2 => 'Correct DMX mode (channel count)?';
+
+  @override
+  String get aboutDmxS5QuickB3 =>
+      'Correct universe/output (console, node, port)?';
+
+  @override
+  String get aboutDmxS5QuickB4 =>
+      'Test with a known-good cable, replacing one element at a time.';
+
+  @override
+  String get aboutDmxS5QuickB5 =>
+      'Add/remove termination at the end of the line and observe the change.';
+
+  @override
+  String get aboutDmxS5IfFlickerTitle => 'If it flickers / drops out';
+
+  @override
+  String get aboutDmxS5IfFlickerB1 =>
+      'Look for a hidden Y-split, wrong splitter, or a dodgy XLR adaptor.';
+
+  @override
+  String get aboutDmxS5IfFlickerB2 =>
+      'Keep DMX away from power/dimmers and avoid huge cable loops.';
+
+  @override
+  String get aboutDmxS5IfFlickerB3 =>
+      'Reduce complexity: 1 universe, 1 line, 1 fixture, then rebuild.';
+
+  @override
+  String get aboutDmxS5GoldenRuleTitle => 'Golden rule';
+
+  @override
+  String get aboutDmxS5GoldenRuleBody =>
+      'You should be able to run a single fixture on a single line. If this base test fails, the issue is not “the full patch”: it’s addressing, cabling, or hardware.';
+
+  @override
+  String get aboutDmxS6Title =>
+      '6) Art-Net — DMX over IP (vocabulary and traps)';
+
+  @override
+  String get aboutDmxS6PillUdp => 'UDP';
+
+  @override
+  String get aboutDmxS6PillNodes => 'Nodes';
+
+  @override
+  String get aboutDmxS6PillBroadcast => 'Broadcast';
+
+  @override
+  String get aboutDmxS6PillUnicast => 'Unicast';
+
+  @override
+  String get aboutDmxS6Intro =>
+      'Art-Net carries DMX universes over Ethernet (UDP). A console/software sends universes on the network, and a node converts them to physical DMX outputs.';
+
+  @override
+  String get aboutDmxS6BasicsTitle => 'Key points';
+
+  @override
+  String get aboutDmxS6BasicsB1 => 'A node = network ↔ DMX (multiple ports).';
+
+  @override
+  String get aboutDmxS6BasicsB2 =>
+      'Broadcast sends to everyone (easy but can saturate).';
+
+  @override
+  String get aboutDmxS6BasicsB3 =>
+      'Unicast sends only to a target node (often more stable on big rigs).';
+
+  @override
+  String get aboutDmxS6BasicsB4 =>
+      'Watch universe indexing: Art-Net is often 0-based (DMX Universe 1 = Art-Net 0).';
+
+  @override
+  String get aboutDmxS6WhenTitle => 'When to choose Art-Net?';
+
+  @override
+  String get aboutDmxS6WhenB1 =>
+      'Small/medium rigs, quick setups, lots of compatible gear.';
+
+  @override
+  String get aboutDmxS6WhenB2 =>
+      'Great if the network is clean (proper switch/cables, no Wi-Fi).';
+
+  @override
+  String get aboutDmxS6WhenB3 =>
+      'If it saturates: move to unicast and segment the network (VLAN / dedicated LAN).';
+
+  @override
+  String get aboutDmxS7Title =>
+      '7) sACN (E1.31) — multicast, priorities, clean networking';
+
+  @override
+  String get aboutDmxS7PillE131 => 'E1.31';
+
+  @override
+  String get aboutDmxS7PillMulticast => 'Multicast';
+
+  @override
+  String get aboutDmxS7PillPriority => 'Priority';
+
+  @override
+  String get aboutDmxS7PillIgmp => 'IGMP';
+
+  @override
+  String get aboutDmxS7Intro =>
+      'sACN (ANSI E1.31) is a modern standard to carry DMX universes over IP. It is widely used in large systems thanks to multicast and priority handling.';
+
+  @override
+  String get aboutDmxS7KeyIdeasTitle => 'Key ideas';
+
+  @override
+  String get aboutDmxS7KeyIdeasB1 =>
+      'Multicast: each universe is a network “group” (nodes subscribe).';
+
+  @override
+  String get aboutDmxS7KeyIdeasB2 =>
+      'IGMP snooping on switches becomes essential at scale (otherwise you flood the LAN).';
+
+  @override
+  String get aboutDmxS7KeyIdeasB3 =>
+      'Priority: multiple sources can exist; the highest priority wins.';
+
+  @override
+  String get aboutDmxS7KeyIdeasB4 =>
+      'Just like Art-Net: clean network + decent switches/cables = stability.';
+
+  @override
+  String get aboutDmxS8Title =>
+      '8) DMX vs Art-Net vs sACN — summary (what to pick?)';
+
+  @override
+  String get aboutDmxS8Intro =>
+      'All three ultimately control channels. The difference is distribution (DMX cable vs network), scale, and robustness.';
+
+  @override
+  String get aboutDmxS8QuickTableTitle => '4-line summary';
+
+  @override
+  String get aboutDmxS8QuickB1 =>
+      'DMX: simple, robust, 1 cable = 1 line (512 channels).';
+
+  @override
+  String get aboutDmxS8QuickB2 =>
+      'Art-Net: very common, easy to deploy, watch broadcast.';
+
+  @override
+  String get aboutDmxS8QuickB3 =>
+      'sACN: more “large-system friendly”, multicast + priorities, requires a well configured network.';
+
+  @override
+  String get aboutDmxS8QuickB4 =>
+      'In all cases: documentation + incremental testing saves a lot of time.';
+
+  @override
+  String get aboutDmxS8ChooseTitle => 'Fast choice';
+
+  @override
+  String get aboutDmxS8ChooseB1 =>
+      'Small setup: direct DMX or Art-Net (simple).';
+
+  @override
+  String get aboutDmxS8ChooseB2 =>
+      'Many universes: dedicated network + nodes; Art-Net unicast or sACN.';
+
+  @override
+  String get aboutDmxS8ChooseB3 =>
+      'Very large rigs/infrastructure: sACN + properly managed IGMP switches.';
+
+  @override
+  String get aboutSunTimesTitle => 'Sun (rise / set)';
+
+  @override
+  String get aboutSunTimesSubtitle =>
+      'Pick a city and a date, sunrise/sunset times + lux reference thresholds.';
+
+  @override
+  String get sunTimesPageTitle => 'Sunrise / Sunset';
+
+  @override
+  String get sunTimesSelectionTitle => 'Settings';
+
+  @override
+  String get sunTimesCityLabel => 'City';
+
+  @override
+  String get sunTimesDateLabel => 'Date';
+
+  @override
+  String get sunTimesResultsTitle => 'Results';
+
+  @override
+  String get sunTimesSunriseLabel => 'Sunrise';
+
+  @override
+  String get sunTimesSunsetLabel => 'Sunset';
+
+  @override
+  String get sunTimesDayLengthLabel => 'Day length';
+
+  @override
+  String get sunTimesDisclaimer =>
+      'Indicative values (astronomical model). Double-check with an official source if needed (event, safety, shooting).';
+
+  @override
+  String get sunTimesThresholdTitle => 'Illuminance thresholds (quick refs)';
+
+  @override
+  String get sunTimesThresholdIntro =>
+      'Useful orders of magnitude to anticipate ambient light (highly dependent on weather, latitude, season, obstacles, light pollution).';
+
+  @override
+  String get sunTimesLuxDaylight => 'Daylight (not direct sun)';
+
+  @override
+  String get sunTimesLuxOvercast => 'Overcast (typical)';
+
+  @override
+  String get sunTimesLuxSunrise => 'Sunrise / sunset (clear)';
+
+  @override
+  String get sunTimesLuxCivilTwilight => 'Civil twilight limit (clear)';
+
+  @override
+  String get sunTimesLuxFullMoon => 'Full moon (clear)';
+
+  @override
+  String get sunTimesThresholdNote =>
+      'Tip: for “usable without additional lighting”, people often aim for > 100–300 lx. For detailed work, 500 lx and above.';
+
+  @override
+  String get sunTimesTitle => 'Sunrise / sunset';
+
+  @override
+  String get sunTimesParamsTitle => 'Settings';
+
+  @override
+  String get sunTimesPickDate => 'Pick a date';
+
+  @override
+  String get sunTimesSunrise => 'Sunrise';
+
+  @override
+  String get sunTimesSunset => 'Sunset';
+
+  @override
+  String get sunTimesDayLength => 'Day length';
+
+  @override
+  String get sunTimesPolarNote =>
+      'Note: in high-latitude areas, sunrise/sunset may not occur depending on the season.';
+
+  @override
+  String get sunTimesLuxThresholdTitle => 'Light level thresholds (reference)';
+
+  @override
+  String get sunTimesLuxBulletNightDark => 'Dark night: < 1 lux';
+
+  @override
+  String get sunTimesLuxBulletNightMoon => 'Night (moon): ~ 0.1–1 lux';
+
+  @override
+  String get sunTimesLuxBulletFullMoon => 'Full moon: ~ 0.1–0.3 lux';
+
+  @override
+  String get sunTimesLuxBulletCivilTwilight => 'Civil twilight: Sun at -6°';
+
+  @override
+  String get sunTimesLuxBulletUrbanLow => 'Low urban lighting: ~ 5–20 lux';
+
+  @override
+  String get sunTimesLuxBulletOfficeLow => 'Low office lighting: ~ 100–300 lux';
+
+  @override
+  String get sunTimesLuxBulletOfficeStd => 'Typical office: ~ 300–500 lux';
+
+  @override
+  String get sunTimesLuxBulletOutdoorDay =>
+      'Outdoor daylight: ~ 10,000–25,000 lux';
+
+  @override
+  String get sunTimesLuxBulletDirectSun => 'Direct sunlight: ~ 100,000 lux';
+
+  @override
+  String get sunTimesLuxDisclaimer =>
+      'Indicative references: weather/clouds, surroundings, season and terrain can vary a lot.';
+
+  @override
+  String get sunTimesTwilightTitle => 'Twilight: what it means';
+
+  @override
+  String get sunTimesTwilightIntro =>
+      'Twilights are defined by the Sun’s position below the horizon. These definitions are standardized.';
+
+  @override
+  String get sunTimesTwilightCivil =>
+      'Civil (-6°): usually enough ambient light to see surroundings without artificial lighting.';
+
+  @override
+  String get sunTimesTwilightNautical =>
+      'Nautical (-12°): the horizon becomes hard to distinguish; stars are visible.';
+
+  @override
+  String get sunTimesTwilightAstronomical =>
+      'Astronomical (-18°): the sky is considered “dark” (excluding light pollution).';
+
+  @override
+  String get sunTimesTwilightAnglesNote =>
+      'Angles are degrees below the horizon (negative Sun elevation).';
+
+  @override
+  String get sunTimesLabelCity => 'City';
+
+  @override
+  String get sunTimesLabelDate => 'Date';
+
+  @override
+  String get sunTimesNoteApprox =>
+      'Indicative times — may vary with altitude, refraction and weather.';
+
+  @override
+  String get sunTimesLuxBulletAstronomicalTwilight =>
+      'Astronomical twilight: Sun at -18°';
+
+  @override
+  String get sunTimesTimelineTitleStep30 => 'Timeline (30 min step)';
+
+  @override
+  String get sunTimesTimelineColTime => 'Time';
+
+  @override
+  String get sunTimesTimelineColElevation => 'Elevation';
+
+  @override
+  String get sunTimesTimelineColMarker => 'Marker';
+
+  @override
+  String get sunTimesTimelineColLux => 'Lux (order)';
+
+  @override
+  String get sunTimesTimelineFootnote =>
+      'Indicative markers (weather/clouds, surroundings, season) — useful to prep a show.';
+
+  @override
+  String get sunTimesLuxNight => 'Dark night';
+
+  @override
+  String get sunTimesLuxAstro => 'Astro twilight';
+
+  @override
+  String get sunTimesLuxNautical => 'Nautical twil.';
+
+  @override
+  String get sunTimesLuxCivil => 'Civil twilight';
+
+  @override
+  String get sunTimesLuxVeryLow => 'Very low';
+
+  @override
+  String get sunTimesLuxLow => 'Low';
+
+  @override
+  String get sunTimesLuxDay => 'Day';
+
+  @override
+  String get sunTimesLuxFullDay => 'Full daylight';
+
+  @override
+  String get sunTimesSectionSettings => 'Settings';
+
+  @override
+  String get sunTimesIntro =>
+      'Choose a city and a date. Results are indicative (rounded to 1 minute).';
+
+  @override
+  String get sunTimesSectionResults => 'Results';
+
+  @override
+  String get sunTimesResultSunrise => 'Sunrise';
+
+  @override
+  String get sunTimesResultSunset => 'Sunset';
+
+  @override
+  String get sunTimesResultCivilDawn => 'Dawn — civil twilight';
+
+  @override
+  String get sunTimesResultCivilDusk => 'Dusk — civil twilight';
+
+  @override
+  String get sunTimesResultNauticalDawn => 'Dawn — nautical twilight';
+
+  @override
+  String get sunTimesResultNauticalDusk => 'Dusk — nautical twilight';
+
+  @override
+  String get sunTimesResultAstronomicalDawn => 'Dawn — astronomical twilight';
+
+  @override
+  String get sunTimesResultAstronomicalDusk => 'Dusk — astronomical twilight';
+
+  @override
+  String get sunTimesNoData => '—';
+
+  @override
+  String get sunTimesSectionTimeline => 'Timeline';
+
+  @override
+  String get sunTimesTimelineStep30 => 'Step: 30 min';
+
+  @override
+  String get sunTimesTimelineDay => 'Day';
+
+  @override
+  String get sunTimesTimelineCivil => 'Civil';
+
+  @override
+  String get sunTimesTimelineNautical => 'Nautical';
+
+  @override
+  String get sunTimesTimelineAstronomical => 'Astronomical';
+
+  @override
+  String get sunTimesTimelineNight => 'Night';
+
+  @override
+  String get sunTimesSectionTwilight => 'What do the twilight phases mean?';
+
+  @override
+  String get sunTimesTwilightCivilTitle => 'Civil twilight (0° to −6°)';
+
+  @override
+  String get sunTimesTwilightCivilBody =>
+      'Still bright enough for many activities without strong artificial light. The first/last light of the day.';
+
+  @override
+  String get sunTimesTwilightNauticalTitle => 'Nautical twilight (−6° to −12°)';
+
+  @override
+  String get sunTimesTwilightNauticalBody =>
+      'The sky is darker; the horizon becomes hard to distinguish. Stars become clearly visible.';
+
+  @override
+  String get sunTimesTwilightAstronomicalTitle =>
+      'Astronomical twilight (−12° to −18°)';
+
+  @override
+  String get sunTimesTwilightAstronomicalBody =>
+      'Almost full darkness. Beyond −18°, it’s commonly considered full night.';
+
+  @override
+  String get sunTimesSectionLux => 'Light levels (reference)';
+
+  @override
+  String get sunTimesLuxNote =>
+      'These are rough orders of magnitude. Weather changes everything.';
 }

@@ -19,7 +19,6 @@ class _AboutSacnPageState extends State<AboutSacnPage> {
   final _k5Perf = GlobalKey();
   final _k6Rdm = GlobalKey();
   final _k7Diagrams = GlobalKey();
-  final _k7bAssets = GlobalKey();
   final _k8Checklist = GlobalKey();
 
   @override
@@ -65,66 +64,44 @@ class _AboutSacnPageState extends State<AboutSacnPage> {
                   copyToClipboard(context, txt);
                 },
                 items: [
-                  _TocItem('1) À quoi sert sACN ?', onTap: () => _goTo(_k1Basics)),
-                  _TocItem('2) Univers (numérotation)', onTap: () => _goTo(_k2Universe)),
-                  _TocItem('3) Multicast / Unicast + IGMP', onTap: () => _goTo(_k3Multicast)),
-                  _TocItem('4) Priorités (multi-sources)', onTap: () => _goTo(_k4Priorities)),
+                  _TocItem('1) À quoi sert sACN ?',
+                      onTap: () => _goTo(_k1Basics)),
+                  _TocItem('2) Univers (numérotation)',
+                      onTap: () => _goTo(_k2Universe)),
+                  _TocItem('3) Multicast / Unicast + IGMP',
+                      onTap: () => _goTo(_k3Multicast)),
+                  _TocItem('4) Priorités (multi-sources)',
+                      onTap: () => _goTo(_k4Priorities)),
                   _TocItem('5) Limites / perfs', onTap: () => _goTo(_k5Perf)),
-                  _TocItem('6) RDM & sACN (proxy / selon matériel)', onTap: () => _goTo(_k6Rdm)),
+                  _TocItem('6) RDM & sACN (proxy / selon matériel)',
+                      onTap: () => _goTo(_k6Rdm)),
                   _TocItem('7) Schémas', onTap: () => _goTo(_k7Diagrams)),
-                  _TocItem('7bis) Images (assets)', onTap: () => _goTo(_k7bAssets)),
                   _TocItem('8) Checklist', onTap: () => _goTo(_k8Checklist)),
                 ],
               ),
               const SizedBox(height: 12),
-
               _Anchor(key: _k1Basics),
               const _Section1Basics(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k2Universe),
               const _Section2Universe(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k3Multicast),
               const _Section3Multicast(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k4Priorities),
               const _Section4Priorities(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k5Perf),
               const _Section5Perf(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k6Rdm),
               const _Section6Rdm(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k7Diagrams),
               const _Section7Diagrams(),
               const SizedBox(height: 12),
-
-              _Anchor(key: _k7bAssets),
-              _Section7bAssets(
-                onCopy: () {
-                  final txt = '''
-Assets recommandés (optionnels)
-- assets/images/network/switch.png
-- assets/images/network/igmp.png
-- assets/images/network/node.png
-
-pubspec.yaml (exemple)
-flutter:
-  assets:
-    - assets/images/network/
-'''.trim();
-                  copyToClipboard(context, txt);
-                },
-              ),
               const SizedBox(height: 12),
-
               _Anchor(key: _k8Checklist),
               _Section8Checklist(
                 onCopy: () {
@@ -137,11 +114,11 @@ sACN (E1.31) — Checklist terrain
 ☐ Priorités: vérifier sources multiples (console/backup)
 ☐ Mapping univers ↔ ports node vérifié
 ☐ Wi-Fi évité en prod
-'''.trim();
+'''
+                      .trim();
                   copyToClipboard(context, txt);
                 },
               ),
-
               const SizedBox(height: 18),
               const _FooterNote(),
             ],
@@ -424,38 +401,6 @@ class _Section7Diagrams extends StatelessWidget {
   }
 }
 
-class _Section7bAssets extends StatelessWidget {
-  const _Section7bAssets({required this.onCopy});
-  final VoidCallback onCopy;
-
-  @override
-  Widget build(BuildContext context) {
-    return ExpandSectionCard(
-      title: '7bis) Images (assets)',
-      icon: Icons.image_outlined,
-      trailing: IconButton(
-        tooltip: 'Copier liste assets',
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _Paragraph("Optionnel: illustrer switch/IGMP/nodes avec des assets locaux."),
-          SizedBox(height: 10),
-          _AssetRow(
-            items: [
-              _AssetSpec(label: 'Switch', assetPath: 'assets/images/network/switch.png', hint: 'Managed = utile si IGMP/VLAN'),
-              _AssetSpec(label: 'IGMP', assetPath: 'assets/images/network/igmp.png', hint: 'Snooping/Querier'),
-              _AssetSpec(label: 'Node', assetPath: 'assets/images/network/node.png', hint: 'IP → DMX'),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 class _Section8Checklist extends StatelessWidget {
   const _Section8Checklist({required this.onCopy});
   final VoidCallback onCopy;
@@ -512,112 +457,6 @@ class _DiagramBox extends StatelessWidget {
   }
 }
 
-class _AssetSpec {
-  const _AssetSpec({required this.label, required this.assetPath, required this.hint});
-  final String label;
-  final String assetPath;
-  final String hint;
-}
-
-class _AssetRow extends StatelessWidget {
-  const _AssetRow({required this.items});
-  final List<_AssetSpec> items;
-
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (ctx, c) {
-        final isNarrow = c.maxWidth < 520;
-        if (isNarrow) {
-          return Column(
-            children: items
-                .map((it) => Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: _AssetTile(spec: it),
-                    ))
-                .toList(),
-          );
-        }
-        return Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            for (int i = 0; i < items.length; i++) ...[
-              Expanded(child: _AssetTile(spec: items[i])),
-              if (i != items.length - 1) const SizedBox(width: 10),
-            ],
-          ],
-        );
-      },
-    );
-  }
-}
-
-class _AssetTile extends StatelessWidget {
-  const _AssetTile({required this.spec});
-  final _AssetSpec spec;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xFF0B0B0B),
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: Colors.white12),
-      ),
-      padding: const EdgeInsets.all(12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            spec.label,
-            style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w900, fontSize: 13.5),
-          ),
-          const SizedBox(height: 8),
-          AspectRatio(
-            aspectRatio: 16 / 9,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.06),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.white12),
-                ),
-                child: Image.asset(
-                  spec.assetPath,
-                  fit: BoxFit.contain,
-                  errorBuilder: (context, error, stack) {
-                    return Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(Icons.image_not_supported, color: Colors.white.withValues(alpha: 0.45)),
-                          const SizedBox(height: 6),
-                          Text(
-                            'Asset manquant',
-                            style: TextStyle(color: Colors.white.withValues(alpha: 0.65), fontWeight: FontWeight.w800),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(spec.hint, style: TextStyle(color: Colors.white.withValues(alpha: 0.78), height: 1.25, fontSize: 12.5)),
-          const SizedBox(height: 8),
-          Text(
-            spec.assetPath,
-            style: TextStyle(fontFamily: 'monospace', fontSize: 11.8, color: Colors.white.withValues(alpha: 0.55)),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 /// =======================
 /// DIAGRAMS (inchangés)
 /// =======================
@@ -666,8 +505,11 @@ class _SacnMulticastPainter extends CustomPainter {
   }
 
   void _grid(Canvas canvas, Size size) {
-    canvas.drawRect(Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
-    final faint = Paint()..color = Colors.white.withValues(alpha: 0.16)..strokeWidth = 1;
+    canvas.drawRect(
+        Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
+    final faint = Paint()
+      ..color = Colors.white.withValues(alpha: 0.16)
+      ..strokeWidth = 1;
     final step = size.shortestSide / 10;
     for (double x = 0; x <= size.width; x += step) {
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), faint);
@@ -677,16 +519,22 @@ class _SacnMulticastPainter extends CustomPainter {
     }
   }
 
-  void _box(Canvas canvas, Size size, Offset center, String label, {required bool accent}) {
+  void _box(Canvas canvas, Size size, Offset center, String label,
+      {required bool accent}) {
     final w = size.width * 0.22;
     final h = size.height * 0.22;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.05));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.05));
 
     final fill = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.18) : Colors.white.withValues(alpha: 0.08);
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.18)
+          : Colors.white.withValues(alpha: 0.08);
     final border = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.60) : Colors.white.withValues(alpha: 0.30)
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.60)
+          : Colors.white.withValues(alpha: 0.30)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 
@@ -706,12 +554,16 @@ class _SacnMulticastPainter extends CustomPainter {
     final w = size.width * 0.08;
     final h = size.height * 0.12;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.04));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.04));
 
     canvas.drawRRect(rr, Paint()..color = Colors.white.withValues(alpha: 0.07));
     canvas.drawRRect(
       rr,
-      Paint()..color = Colors.white.withValues(alpha: 0.20)..style = PaintingStyle.stroke..strokeWidth = 2,
+      Paint()
+        ..color = Colors.white.withValues(alpha: 0.20)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 2,
     );
 
     final tp = _Text.tp(
@@ -763,8 +615,11 @@ class _SacnPriorityPainter extends CustomPainter {
   }
 
   void _grid(Canvas canvas, Size size) {
-    canvas.drawRect(Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
-    final faint = Paint()..color = Colors.white.withValues(alpha: 0.16)..strokeWidth = 1;
+    canvas.drawRect(
+        Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
+    final faint = Paint()
+      ..color = Colors.white.withValues(alpha: 0.16)
+      ..strokeWidth = 1;
     final step = size.shortestSide / 10;
     for (double x = 0; x <= size.width; x += step) {
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), faint);
@@ -774,16 +629,22 @@ class _SacnPriorityPainter extends CustomPainter {
     }
   }
 
-  void _box(Canvas canvas, Size size, Offset center, String label, {required bool accent}) {
+  void _box(Canvas canvas, Size size, Offset center, String label,
+      {required bool accent}) {
     final w = size.width * 0.24;
     final h = size.height * 0.22;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.05));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.05));
 
     final fill = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.18) : Colors.white.withValues(alpha: 0.08);
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.18)
+          : Colors.white.withValues(alpha: 0.08);
     final border = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.60) : Colors.white.withValues(alpha: 0.30)
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.60)
+          : Colors.white.withValues(alpha: 0.30)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 
@@ -821,7 +682,10 @@ class _Subtitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w900, fontSize: 14.5),
+      style: TextStyle(
+          color: Colors.white.withValues(alpha: 0.92),
+          fontWeight: FontWeight.w900,
+          fontSize: 14.5),
     );
   }
 }
@@ -834,7 +698,10 @@ class _Paragraph extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35, fontSize: 13.5),
+      style: TextStyle(
+          color: Colors.white.withValues(alpha: 0.80),
+          height: 1.35,
+          fontSize: 13.5),
     );
   }
 }
@@ -853,11 +720,17 @@ class _BulletList extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('•  ', style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35)),
+                  Text('•  ',
+                      style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.80),
+                          height: 1.35)),
                   Expanded(
                     child: Text(
                       s,
-                      style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35, fontSize: 13.5),
+                      style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.80),
+                          height: 1.35,
+                          fontSize: 13.5),
                     ),
                   ),
                 ],
@@ -888,7 +761,10 @@ class _Callout extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w900, fontSize: 13.5),
+            style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.92),
+                fontWeight: FontWeight.w900,
+                fontSize: 13.5),
           ),
           const SizedBox(height: 8),
           _BulletList(items: bullets),
@@ -913,11 +789,19 @@ class _FooterNote extends StatelessWidget {
 }
 
 class _Text {
-  static TextPainter tp(String s, {required double fontSize, required Color color, required FontWeight weight}) {
+  static TextPainter tp(String s,
+      {required double fontSize,
+      required Color color,
+      required FontWeight weight}) {
     final t = TextPainter(
       text: TextSpan(
         text: s,
-        style: TextStyle(fontSize: fontSize, color: color, fontWeight: weight, fontFamily: 'monospace', height: 1.15),
+        style: TextStyle(
+            fontSize: fontSize,
+            color: color,
+            fontWeight: weight,
+            fontFamily: 'monospace',
+            height: 1.15),
       ),
       textDirection: TextDirection.ltr,
       textAlign: TextAlign.left,
@@ -941,7 +825,10 @@ class _Text {
     canvas.drawRRect(r, Paint()..color = Colors.black.withValues(alpha: 0.45));
     canvas.drawRRect(
       r,
-      Paint()..color = Colors.white.withValues(alpha: 0.14)..style = PaintingStyle.stroke..strokeWidth = 1.5,
+      Paint()
+        ..color = Colors.white.withValues(alpha: 0.14)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.5,
     );
     tp.paint(canvas, Offset(pos.dx + pad, pos.dy + pad));
   }
@@ -979,16 +866,20 @@ class _TocCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     onTap: it.onTap,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 12),
                       child: Row(
                         children: [
                           Expanded(
                             child: Text(
                               it.label,
-                              style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w800),
+                              style: TextStyle(
+                                  color: Colors.white.withValues(alpha: 0.92),
+                                  fontWeight: FontWeight.w800),
                             ),
                           ),
-                          Icon(Icons.chevron_right, color: Colors.white.withValues(alpha: 0.55)),
+                          Icon(Icons.chevron_right,
+                              color: Colors.white.withValues(alpha: 0.55)),
                         ],
                       ),
                     ),

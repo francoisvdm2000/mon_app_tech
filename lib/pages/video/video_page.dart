@@ -7,6 +7,7 @@ import 'video_brightness_page.dart';
 import 'video_multiprojecteur_page.dart';
 import 'video_led_page.dart';
 import 'video_mire_page.dart';
+import 'video_camera_exposure_page.dart';
 
 class PageVideo extends StatelessWidget {
   const PageVideo({super.key});
@@ -37,6 +38,16 @@ class PageVideo extends StatelessWidget {
               icon: Icons.brightness_6,
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const VideoBrightnessPage()),
+              ),
+            ),
+            const SizedBox(height: 12),
+            _TileCard(
+              title: loc.videoCameraExposureTitle,
+              subtitle: loc.videoCameraExposureSubtitle,
+              icon: Icons.videocam,
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (_) => const VideoCameraExposurePage()),
               ),
             ),
             const SizedBox(height: 12),

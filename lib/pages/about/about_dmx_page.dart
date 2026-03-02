@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, MiniPill, copyToClipboard
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 class AboutDmxPage extends StatefulWidget {
   const AboutDmxPage({super.key});
@@ -282,39 +283,147 @@ class _Section2Frame extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '2) Trame DMX — break, start code, canaux',
+      title: loc.aboutDmxS2Title,
       icon: Icons.timeline,
-      child: const Text('... (garde ton contenu existant)'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              MiniPill(loc.aboutDmxS2PillBreak),
+              MiniPill(loc.aboutDmxS2PillStartCode),
+              MiniPill(loc.aboutDmxS2PillSlots512),
+              MiniPill(loc.aboutDmxS2PillRefresh),
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Paragraph(loc.aboutDmxS2Intro),
+          const SizedBox(height: 10),
+          _DiagramBox(painter: const _DmxTimingPainter(), aspect: 16 / 6),
+          const SizedBox(height: 10),
+          _Callout(
+            title: loc.aboutDmxS2HowToReadTitle,
+            bullets: [
+              loc.aboutDmxS2HowToReadB1,
+              loc.aboutDmxS2HowToReadB2,
+              loc.aboutDmxS2HowToReadB3,
+              loc.aboutDmxS2HowToReadB4,
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutDmxS2PracticalTitle),
+          const SizedBox(height: 6),
+          _BulletList(items: [
+            loc.aboutDmxS2PracticalB1,
+            loc.aboutDmxS2PracticalB2,
+            loc.aboutDmxS2PracticalB3,
+          ]),
+        ],
+      ),
     );
   }
 }
+
 
 class _Section3Cabling extends StatelessWidget {
   const _Section3Cabling();
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '3) Câblage RS-485 — topologie & câble',
+      title: loc.aboutDmxS3Title,
       icon: Icons.cable,
-      child: const Text('... (garde ton contenu existant)'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              MiniPill(loc.aboutDmxS3PillRs485),
+              MiniPill(loc.aboutDmxS3PillDaisyChain),
+              MiniPill(loc.aboutDmxS3PillNoY),
+              MiniPill(loc.aboutDmxS3Pill120ohm),
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Paragraph(loc.aboutDmxS3Intro),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutDmxS3TopologyTitle),
+          const SizedBox(height: 6),
+          _DiagramBox(painter: const _DmxChainPainter(), aspect: 16 / 7),
+          const SizedBox(height: 10),
+          _BulletList(items: [
+            loc.aboutDmxS3TopologyB1,
+            loc.aboutDmxS3TopologyB2,
+            loc.aboutDmxS3TopologyB3,
+          ]),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutDmxS3PinoutTitle),
+          const SizedBox(height: 6),
+          _DiagramBox(painter: const _Xlr5PinoutPainter(), aspect: 16 / 7),
+          const SizedBox(height: 10),
+          _Callout(
+            title: loc.aboutDmxS3CablesTitle,
+            bullets: [
+              loc.aboutDmxS3CablesB1,
+              loc.aboutDmxS3CablesB2,
+              loc.aboutDmxS3CablesB3,
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
+
 
 class _Section4TerminationSplitters extends StatelessWidget {
   const _Section4TerminationSplitters();
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '4) Terminaison & splitters — éviter les réflexions',
-      icon: Icons.power,
-      child: const Text('... (garde ton contenu existant)'),
+      title: loc.aboutDmxS4Title,
+      icon: Icons.call_split,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _Paragraph(loc.aboutDmxS4Intro),
+          const SizedBox(height: 10),
+          _DiagramBox(painter: const _TerminatorPainter(), aspect: 16 / 6),
+          const SizedBox(height: 10),
+          _Callout(
+            title: loc.aboutDmxS4TerminatorTitle,
+            bullets: [
+              loc.aboutDmxS4TerminatorB1,
+              loc.aboutDmxS4TerminatorB2,
+              loc.aboutDmxS4TerminatorB3,
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutDmxS4SplittersTitle),
+          const SizedBox(height: 6),
+          _BulletList(items: [
+            loc.aboutDmxS4SplittersB1,
+            loc.aboutDmxS4SplittersB2,
+            loc.aboutDmxS4SplittersB3,
+          ]),
+        ],
+      ),
     );
   }
 }
+
 
 class _Section4bRdm extends StatelessWidget {
   const _Section4bRdm();
@@ -334,52 +443,179 @@ class _Section5Troubleshooting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '5) Dépannage terrain — symptômes → causes',
-      icon: Icons.bug_report,
-      child: const Text('... (garde ton contenu existant)'),
+      title: loc.aboutDmxS5Title,
+      icon: Icons.build_circle,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _Paragraph(loc.aboutDmxS5Intro),
+          const SizedBox(height: 10),
+          _Callout(
+            title: loc.aboutDmxS5QuickChecksTitle,
+            bullets: [
+              loc.aboutDmxS5QuickB1,
+              loc.aboutDmxS5QuickB2,
+              loc.aboutDmxS5QuickB3,
+              loc.aboutDmxS5QuickB4,
+              loc.aboutDmxS5QuickB5,
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutDmxS5IfFlickerTitle),
+          const SizedBox(height: 6),
+          _BulletList(items: [
+            loc.aboutDmxS5IfFlickerB1,
+            loc.aboutDmxS5IfFlickerB2,
+            loc.aboutDmxS5IfFlickerB3,
+          ]),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutDmxS5GoldenRuleTitle),
+          const SizedBox(height: 6),
+          _Paragraph(loc.aboutDmxS5GoldenRuleBody),
+        ],
+      ),
     );
   }
 }
+
 
 class _Section6ArtNet extends StatelessWidget {
   const _Section6ArtNet();
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '6) Art-Net — repères terrain',
+      title: loc.aboutDmxS6Title,
       icon: Icons.router,
-      child: const Text('... (garde ton contenu existant)'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              MiniPill(loc.aboutDmxS6PillUdp),
+              MiniPill(loc.aboutDmxS6PillNodes),
+              MiniPill(loc.aboutDmxS6PillBroadcast),
+              MiniPill(loc.aboutDmxS6PillUnicast),
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Paragraph(loc.aboutDmxS6Intro),
+          const SizedBox(height: 10),
+          _DiagramBox(painter: const _IpDmxPainter(), aspect: 16 / 7),
+          const SizedBox(height: 10),
+          _Callout(
+            title: loc.aboutDmxS6BasicsTitle,
+            bullets: [
+              loc.aboutDmxS6BasicsB1,
+              loc.aboutDmxS6BasicsB2,
+              loc.aboutDmxS6BasicsB3,
+              loc.aboutDmxS6BasicsB4,
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutDmxS6WhenTitle),
+          const SizedBox(height: 6),
+          _BulletList(items: [
+            loc.aboutDmxS6WhenB1,
+            loc.aboutDmxS6WhenB2,
+            loc.aboutDmxS6WhenB3,
+          ]),
+        ],
+      ),
     );
   }
 }
+
 
 class _Section7Sacn extends StatelessWidget {
   const _Section7Sacn();
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '7) sACN / E1.31 — multicast, IGMP, priorités',
+      title: loc.aboutDmxS7Title,
       icon: Icons.wifi_tethering,
-      child: const Text('... (garde ton contenu existant)'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              MiniPill(loc.aboutDmxS7PillE131),
+              MiniPill(loc.aboutDmxS7PillMulticast),
+              MiniPill(loc.aboutDmxS7PillPriority),
+              MiniPill(loc.aboutDmxS7PillIgmp),
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Paragraph(loc.aboutDmxS7Intro),
+          const SizedBox(height: 10),
+          _DiagramBox(painter: const _SacnMulticastPainter(), aspect: 16 / 7),
+          const SizedBox(height: 10),
+          _Callout(
+            title: loc.aboutDmxS7KeyIdeasTitle,
+            bullets: [
+              loc.aboutDmxS7KeyIdeasB1,
+              loc.aboutDmxS7KeyIdeasB2,
+              loc.aboutDmxS7KeyIdeasB3,
+              loc.aboutDmxS7KeyIdeasB4,
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
+
 
 class _Section8Compare extends StatelessWidget {
   const _Section8Compare();
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '8) DMX vs Art-Net vs sACN — choisir',
+      title: loc.aboutDmxS8Title,
       icon: Icons.compare_arrows,
-      child: const Text('... (garde ton contenu existant)'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _Paragraph(loc.aboutDmxS8Intro),
+          const SizedBox(height: 10),
+          _Callout(
+            title: loc.aboutDmxS8QuickTableTitle,
+            bullets: [
+              loc.aboutDmxS8QuickB1,
+              loc.aboutDmxS8QuickB2,
+              loc.aboutDmxS8QuickB3,
+              loc.aboutDmxS8QuickB4,
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutDmxS8ChooseTitle),
+          const SizedBox(height: 6),
+          _BulletList(items: [
+            loc.aboutDmxS8ChooseB1,
+            loc.aboutDmxS8ChooseB2,
+            loc.aboutDmxS8ChooseB3,
+          ]),
+        ],
+      ),
     );
   }
 }
+
 
 class _Section9Diagrams extends StatelessWidget {
   const _Section9Diagrams();

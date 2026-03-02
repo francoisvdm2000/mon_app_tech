@@ -12,8 +12,6 @@ class PhotometryPage extends StatefulWidget {
 }
 
 class _PhotometryPageState extends State<PhotometryPage> {
-  bool _didInitDependencies = false;
-
   // Outil 1 : lux <-> candela avec distance
   final _lux1 = TextEditingController();
   final _candela1 = TextEditingController();
@@ -29,11 +27,17 @@ class _PhotometryPageState extends State<PhotometryPage> {
   final _distance3 = TextEditingController();
   final _angle3 = TextEditingController();
 
+  // Outil 4 : lumens depuis lux + surface
+  final _lux4 = TextEditingController();
+  final _area4 = TextEditingController();
+
   bool _isUpdating = false;
+  bool _l10nReady = false;
 
   String _summary1 = '';
   String _summary2 = '';
   String _summary3 = '';
+  String _summary4 = '';
 
   @override
   void initState() {
@@ -49,21 +53,27 @@ class _PhotometryPageState extends State<PhotometryPage> {
       _lumens3,
       _distance3,
       _angle3,
+      _lux4,
+      _area4,
     ]) {
       c.addListener(_recomputeAll);
     }
 
-    // _recomputeAll() uses localization (context), so it is triggered in didChangeDependencies.
+    // NOTE: first compute must wait for Localizations (AppLocalizations.of(context)).
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    if (_didInitDependencies) return;
-    _didInitDependencies = true;
-    _recomputeAll();
-  }
+    if (_l10nReady) return;
+    _l10nReady = true;
 
+    // Localizations/Theme are ready after the first frame.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      _recomputeAll();
+    });
+  }
 
   @override
   void dispose() {
@@ -77,6 +87,8 @@ class _PhotometryPageState extends State<PhotometryPage> {
       _lumens3,
       _distance3,
       _angle3,
+      _lux4,
+      _area4,
     ]) {
       c.dispose();
     }
@@ -114,18 +126,23 @@ class _PhotometryPageState extends State<PhotometryPage> {
       _lumens3,
       _distance3,
       _angle3,
+      _lux4,
+      _area4,
     ]) {
       c.clear();
     }
     _isUpdating = false;
-    // _recomputeAll() uses localization (context), so it is triggered in didChangeDependencies.
+    _recomputeAll();
   }
 
   void _recomputeAll() {
+    if (!mounted) return;
+    if (!_l10nReady) return;
     if (_isUpdating) return;
     _recompute1();
     _recompute2();
     _recompute3();
+    _recompute4();
   }
 
   void _recompute1() {
@@ -223,8 +240,11 @@ class _PhotometryPageState extends State<PhotometryPage> {
 
     final loc = AppLocalizations.of(context);
     setState(() {
-      _summary2 = loc.photometrySummary2(_fmt(lm2, decimals: 0),
-          _fmt(cd2, decimals: 0), _fmt(a2, decimals: 1));
+      _summary2 = loc.photometrySummary2(
+        _fmt(lm2, decimals: 0),
+        _fmt(cd2, decimals: 0),
+        _fmt(a2, decimals: 1),
+      );
     });
   }
 
@@ -253,8 +273,39 @@ class _PhotometryPageState extends State<PhotometryPage> {
 
     final loc = AppLocalizations.of(context);
     setState(() {
-      _summary3 = loc.photometrySummary3(_fmt(lm2, decimals: 0),
-          _fmt(d2, decimals: 2), _fmt(a2, decimals: 1), _fmt(lux, decimals: 0));
+      _summary3 = loc.photometrySummary3(
+        _fmt(lm2, decimals: 0),
+        _fmt(d2, decimals: 2),
+        _fmt(a2, decimals: 1),
+        _fmt(lux, decimals: 0),
+      );
+    });
+  }
+
+  void _recompute4() {
+    final lux = _parse(_lux4.text);
+    final area = _parse(_area4.text);
+
+    double lumens = 0.0;
+    if (_ok(lux) && _ok(area)) {
+      final l = lux!;
+      final s = area!;
+      lumens = PhotometryCalculations.lumensFromLuxAndArea(
+        lux: l,
+        areaSquareMeter: s,
+      );
+    }
+
+    final lux2 = lux ?? 0.0;
+    final area2 = area ?? 0.0;
+
+    final loc = AppLocalizations.of(context);
+    setState(() {
+      _summary4 = loc.photometrySummary4(
+        _fmt(lux2, decimals: 1),
+        _fmt(area2, decimals: 2),
+        _fmt(lumens, decimals: 0),
+      );
     });
   }
 
@@ -278,6 +329,7 @@ class _PhotometryPageState extends State<PhotometryPage> {
         child: Column(
           children: [
             ExpandSectionCard(
+              // Section 1 : Lux <> Candela
               title: loc.photometrySection1Title,
               icon: Icons.light_mode,
               initiallyExpanded: true,
@@ -322,6 +374,7 @@ class _PhotometryPageState extends State<PhotometryPage> {
             ),
             const SizedBox(height: 14),
             ExpandSectionCard(
+              // Section 2 : Lux <> Candela (titre renommé comme demandé)
               title: loc.photometrySection2Title,
               icon: Icons.flash_on,
               initiallyExpanded: false,
@@ -366,6 +419,7 @@ class _PhotometryPageState extends State<PhotometryPage> {
             ),
             const SizedBox(height: 14),
             ExpandSectionCard(
+              // Section 3 : Lumen > Lux
               title: loc.photometrySection3Title,
               icon: Icons.calculate,
               initiallyExpanded: false,
@@ -405,6 +459,40 @@ class _PhotometryPageState extends State<PhotometryPage> {
                   ),
                   const SizedBox(height: 10),
                   ResultBox(_summary3),
+                ],
+              ),
+            ),
+            const SizedBox(height: 14),
+            ExpandSectionCard(
+              // Section 4 : Lux > Lumen
+              title: loc.photometrySection4Title,
+              icon: Icons.swap_horiz,
+              initiallyExpanded: false,
+              child: Column(
+                children: [
+                  TextField(
+                    controller: _lux4,
+                    keyboardType:
+                        const TextInputType.numberWithOptions(decimal: true),
+                    inputFormatters: [numFormatter],
+                    decoration: InputDecoration(
+                      labelText: loc.photometryLuxLabel,
+                      hintText: loc.photometryLuxHint,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  TextField(
+                    controller: _area4,
+                    keyboardType:
+                        const TextInputType.numberWithOptions(decimal: true),
+                    inputFormatters: [numFormatter],
+                    decoration: InputDecoration(
+                      labelText: loc.photometryAreaLabel,
+                      hintText: loc.photometryAreaHint4,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  ResultBox(_summary4),
                 ],
               ),
             ),

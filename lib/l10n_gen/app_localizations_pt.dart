@@ -1212,13 +1212,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get photometryLuxLabel => 'Lux';
 
   @override
-  String get photometrySection1Title => 'Section 1';
+  String get photometrySection1Title => 'Lux <> Candela';
 
   @override
-  String get photometrySection2Title => 'Section 2';
+  String get photometrySection2Title => 'Lumens <> Candela';
 
   @override
-  String get photometrySection3Title => 'Section 3';
+  String get photometrySection3Title => 'Lumens < Lux';
 
   @override
   String photometrySummary1(Object candela, Object distance, Object lux) {
@@ -2576,4 +2576,926 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get riggingNeedValidValues => 'Entrer des valeurs positives valides.';
+
+  @override
+  String get photometrySection4Title => 'Lux → Lumen';
+
+  @override
+  String get photometryAreaLabel => 'Surface (m²)';
+
+  @override
+  String get photometryAreaHint4 => 'Ex: 12.5';
+
+  @override
+  String photometrySummary4(Object lumens, Object lux, Object area) {
+    return 'E = $lux lx • S = $area m² → Φ = $lumens lm';
+  }
+
+  @override
+  String get aboutArtnetTocConversionTitle => 'Conversions';
+
+  @override
+  String get aboutArtnetConversionIntro =>
+      'Outils de conversion utiles autour des univers DMX, Art-Net et des valeurs hexadécimales.';
+
+  @override
+  String get aboutUniverseToArtnetTitle => 'Univers → Art-Net';
+
+  @override
+  String get aboutUniverseToArtnetSubtitle =>
+      'Trouver Subnet + Universe (Net/Port-Address) à partir d’un univers DMX.';
+
+  @override
+  String get aboutUniverseToHexTitle => 'Univers → Hex';
+
+  @override
+  String get aboutUniverseToHexSubtitle =>
+      'Convertir un univers (1…N) en index et valeur hexadécimale.';
+
+  @override
+  String get aboutArtnetConversionNote =>
+      'Note : les conventions Art-Net peuvent varier selon les consoles (adressage, base 0/1). Vérifie toujours la documentation de ton système.';
+
+  @override
+  String get elecTocCopyText => 'Copier le sommaire';
+
+  @override
+  String get elecToc1 => 'Section 1';
+
+  @override
+  String get elecToc2 => 'Section 2';
+
+  @override
+  String get elecToc3 => 'Section 3';
+
+  @override
+  String get elecToc4 => 'Section 4';
+
+  @override
+  String get elecToc5 => 'Section 5';
+
+  @override
+  String get elecToc6 => 'Section 6';
+
+  @override
+  String get elecToc7 => 'Section 7';
+
+  @override
+  String get elecKvaTitle => 'Table kVA → kW (selon cos φ)';
+
+  @override
+  String get elecKvaFormula => 'Formule : kW = kVA × cos φ';
+
+  @override
+  String get elecKvaIntro =>
+      'Cette table donne une estimation rapide de la puissance active (kW) à partir d’une puissance apparente (kVA).';
+
+  @override
+  String get elecKvaNote =>
+      'Valeurs indicatives. Utilise les valeurs réelles de cos φ quand tu les connais.';
+
+  @override
+  String get elecKvaColKva => 'kVA';
+
+  @override
+  String get elecKvaColPf08 => 'kW (cos φ = 0,8)';
+
+  @override
+  String get elecKvaColPf10 => 'kW (cos φ = 1,0)';
+
+  @override
+  String get commonTocTitle => 'Sommaire';
+
+  @override
+  String get commonCopySummaryTooltip => 'Copier le sommaire';
+
+  @override
+  String get aboutLightReferenceTitle => 'Références lumière';
+
+  @override
+  String get refCriTitle => 'IRC / CRI';
+
+  @override
+  String get refKelvinTitle => 'Température de couleur (K)';
+
+  @override
+  String get refBeamFieldTitle => 'Beam / Field';
+
+  @override
+  String get refLuxTitle => 'Niveaux d’éclairement (lux)';
+
+  @override
+  String get refCriContent =>
+      'L’IRC (CRI) mesure la fidélité des couleurs. Plus il est élevé, plus les couleurs paraissent naturelles.';
+
+  @override
+  String get refKelvinContent =>
+      'La température de couleur décrit la teinte de blanc (chaud à froid).';
+
+  @override
+  String get refBeamFieldContent =>
+      'Le Beam est l’angle du faisceau principal ; le Field l’angle où l’intensité devient faible (bordure).';
+
+  @override
+  String get refBeamLegendBeam => 'Beam';
+
+  @override
+  String get refBeamLegendField => 'Field';
+
+  @override
+  String get refLuxIntro =>
+      'Références indicatives d’éclairement selon l’usage.';
+
+  @override
+  String get refLuxColUse => 'Usage';
+
+  @override
+  String get refLuxColLux => 'Lux';
+
+  @override
+  String get refLuxUseCorridor => 'Couloir / circulation';
+
+  @override
+  String get refLuxUseBackstage => 'Backstage / technique';
+
+  @override
+  String get refLuxUseMeeting => 'Salle de réunion';
+
+  @override
+  String get refLuxUseExpo => 'Expo / showroom';
+
+  @override
+  String get refLuxUseStageGeneral => 'Scène – général';
+
+  @override
+  String get refLuxUseStageTv => 'Scène – TV / captation';
+
+  @override
+  String get refLuxNote =>
+      'Ces valeurs varient selon les normes et les contraintes (caméra, contraste, ambiance).';
+
+  @override
+  String get refLightDisclaimerShort =>
+      'Références indicatives – pas une norme.';
+
+  @override
+  String get refCri90 => 'Excellent (≥ 90)';
+
+  @override
+  String get refCri80 => 'Bon (≈ 80)';
+
+  @override
+  String get refCriLow => 'Faible (< 80)';
+
+  @override
+  String get aboutUniverseToArtnetImportantTitle => 'Important';
+
+  @override
+  String get aboutUniverseToArtnetImportantBody =>
+      'Certaines consoles utilisent une base 0 (Universe 0..15) et d’autres une base 1 (Universe 1..16).';
+
+  @override
+  String get aboutUniverseToArtnetTableTitle => 'Table Univers → Art-Net';
+
+  @override
+  String get aboutUniverseToArtnetTableIntro =>
+      'Correspondance typique entre univers DMX et adressage Art-Net.';
+
+  @override
+  String get aboutUniverseTablesDisclaimer =>
+      'Vérifie toujours la convention de ta console / node.';
+
+  @override
+  String get aboutUniverseToArtnetColDmx => 'Univers DMX';
+
+  @override
+  String get aboutUniverseToArtnetColUniHex => 'Uni (hex)';
+
+  @override
+  String aboutUniverseToArtnetSubnetTitle(
+      Object p0, Object p1, Object p2, Object p3) {
+    return 'Subnet $p0 $p1 $p2 $p3';
+  }
+
+  @override
+  String get aboutUniverseToHexPrincipleTitle => 'Principe';
+
+  @override
+  String get aboutUniverseToHexPrincipleBody =>
+      'Un univers (1…N) peut être converti en index (base 0) puis en hexadécimal.';
+
+  @override
+  String get aboutUniverseToHexTableTitle => 'Table Univers → Hex';
+
+  @override
+  String get aboutUniverseToHexTableIntro =>
+      'Table de conversion univers DMX → index / hex.';
+
+  @override
+  String aboutUniverseToHexBlockTitle(Object p0, Object p1) {
+    return 'Bloc $p0 $p1';
+  }
+
+  @override
+  String get aboutUniverseToHexColDmx => 'Univers DMX';
+
+  @override
+  String get aboutUniverseToHexColIndex => 'Index';
+
+  @override
+  String get aboutUniverseToHexColHex => 'Hex';
+
+  @override
+  String get aboutUniverseToHexNote => 'Index = Univers − 1 (base 0).';
+
+  @override
+  String get videoCameraExposureTitle => 'Exposition caméra';
+
+  @override
+  String get videoCameraExposureSubtitle =>
+      'Lux → EV, ISO, vitesse et ouverture.';
+
+  @override
+  String get videoCamPageTitle => 'Exposition caméra';
+
+  @override
+  String get videoCamInfoTitle => 'Info';
+
+  @override
+  String get videoCamIntro =>
+      'Calculs indicatifs pour relier lux, ISO, vitesse et ouverture.';
+
+  @override
+  String get videoCamInputsTitle => 'Entrées';
+
+  @override
+  String get videoCamLuxLabel => 'Lux';
+
+  @override
+  String get videoCamLuxHint => 'Ex: 500';
+
+  @override
+  String get videoCamIsoLabel => 'ISO';
+
+  @override
+  String get videoCamIsoHint => 'Ex: 800';
+
+  @override
+  String get videoCamShutterLabel => 'Vitesse (s)';
+
+  @override
+  String get videoCamShutterHint => 'Ex: 1/50';
+
+  @override
+  String get videoCamApertureLabel => 'Ouverture (f/)';
+
+  @override
+  String get videoCamApertureHint => 'Ex: 2.8';
+
+  @override
+  String get videoCamEvEmpty => '—';
+
+  @override
+  String get videoCamNote =>
+      'Valeurs indicatives : la calibration dépend du capteur, de la scène et des normes.';
+
+  @override
+  String videoCamEvValue(Object ev) {
+    return 'EV $ev';
+  }
+
+  @override
+  String videoCamApertureResult(Object aperture) {
+    return 'Ouverture : f/$aperture';
+  }
+
+  @override
+  String videoCamShutterResult(Object shutter) {
+    return 'Vitesse : $shutter s';
+  }
+
+  @override
+  String get aboutDmxS2Title => '2) Trame DMX — break, start code, canaux';
+
+  @override
+  String get aboutDmxS2PillBreak => 'Break';
+
+  @override
+  String get aboutDmxS2PillStartCode => 'Start code';
+
+  @override
+  String get aboutDmxS2PillSlots512 => '512 slots';
+
+  @override
+  String get aboutDmxS2PillRefresh => 'Refresh';
+
+  @override
+  String get aboutDmxS2Intro =>
+      'Une trame DMX est envoyée en boucle. Elle commence par un « break » (silence), puis un start code, puis jusqu’à 512 valeurs (0–255). Chaque appareil lit uniquement les canaux qui le concernent (selon son adresse et son mode).';
+
+  @override
+  String get aboutDmxS2HowToReadTitle => 'Lire une trame (très simplement)';
+
+  @override
+  String get aboutDmxS2HowToReadB1 =>
+      'Break + MAB : marque le début de la trame (resynchronisation).';
+
+  @override
+  String get aboutDmxS2HowToReadB2 =>
+      'Start code : le plus souvent 0x00 (données d’éclairage).';
+
+  @override
+  String get aboutDmxS2HowToReadB3 =>
+      'Slots 1→512 : chaque slot = 1 canal (0–255).';
+
+  @override
+  String get aboutDmxS2HowToReadB4 =>
+      'La trame recommence en continu : c’est normal d’« écraser » l’ancienne valeur.';
+
+  @override
+  String get aboutDmxS2PracticalTitle => 'En pratique';
+
+  @override
+  String get aboutDmxS2PracticalB1 =>
+      'Un mode 16-bit utilise 2 canaux pour une même fonction (ex: Pan coarse + Pan fine).';
+
+  @override
+  String get aboutDmxS2PracticalB2 =>
+      'Plus tu envoies d’univers, plus la charge globale (consoles/nodes/réseau) augmente.';
+
+  @override
+  String get aboutDmxS2PracticalB3 =>
+      'Si tu as du flicker, pense d’abord câble/termination/branchements avant de soupçonner la console.';
+
+  @override
+  String get aboutDmxS3Title => '3) Câblage DMX — RS-485, topologie, pinout';
+
+  @override
+  String get aboutDmxS3PillRs485 => 'RS-485';
+
+  @override
+  String get aboutDmxS3PillDaisyChain => 'Daisy-chain';
+
+  @override
+  String get aboutDmxS3PillNoY => 'Pas de Y';
+
+  @override
+  String get aboutDmxS3Pill120ohm => '120 Ω';
+
+  @override
+  String get aboutDmxS3Intro =>
+      'DMX512 est basé sur RS-485 : un bus différentiel qui aime les lignes propres. La règle d’or : une chaîne (daisy-chain) de la source vers les appareils, puis une terminaison à la fin.';
+
+  @override
+  String get aboutDmxS3TopologyTitle => 'Topologie recommandée';
+
+  @override
+  String get aboutDmxS3TopologyB1 =>
+      'Source → Appareil 1 → Appareil 2 → … → dernier appareil.';
+
+  @override
+  String get aboutDmxS3TopologyB2 =>
+      'Évite les dérivations en Y : elles créent des réflexions (instabilité).';
+
+  @override
+  String get aboutDmxS3TopologyB3 =>
+      'Si tu dois faire des branches : utilise un splitter DMX opto-isolé.';
+
+  @override
+  String get aboutDmxS3PinoutTitle => 'Connectique (rappel)';
+
+  @override
+  String get aboutDmxS3CablesTitle => 'Câbles : ce qui marche vraiment';
+
+  @override
+  String get aboutDmxS3CablesB1 =>
+      'Utilise un câble DMX (impédance ~120 Ω), pas un micro aléatoire (sauf dépannage court).';
+
+  @override
+  String get aboutDmxS3CablesB2 =>
+      'Garde les longueurs raisonnables et évite les enroulements serrés près d’alim/gradateurs.';
+
+  @override
+  String get aboutDmxS3CablesB3 =>
+      'Un mauvais câble = parfois « ça marche »… jusqu’au jour où non (humidité, longueur, charge).';
+
+  @override
+  String get aboutDmxS4Title => '4) Terminaison & splitters — stabilité du bus';
+
+  @override
+  String get aboutDmxS4Intro =>
+      'Sur un bus RS-485, la terminaison évite les réflexions en bout de ligne. Les splitters (opto-isolés) servent à créer des branches propres et à protéger la source.';
+
+  @override
+  String get aboutDmxS4TerminatorTitle =>
+      'Terminaison (120 Ω) : quand et comment';
+
+  @override
+  String get aboutDmxS4TerminatorB1 =>
+      'Met une terminaison sur le dernier appareil (ou un bouchon XLR).';
+
+  @override
+  String get aboutDmxS4TerminatorB2 =>
+      'Une seule terminaison par ligne (pas partout).';
+
+  @override
+  String get aboutDmxS4TerminatorB3 =>
+      'Indispensable sur longues lignes, grosses charges, environnements bruyants.';
+
+  @override
+  String get aboutDmxS4SplittersTitle => 'Splitters / opto-isolation';
+
+  @override
+  String get aboutDmxS4SplittersB1 =>
+      'Permet de faire 2, 4, 8 branches sans « Y ».';
+
+  @override
+  String get aboutDmxS4SplittersB2 =>
+      'Isole électriquement : limite les boucles de masse et protège la console/node.';
+
+  @override
+  String get aboutDmxS4SplittersB3 =>
+      'Pratique pour “re-driver” un signal sur de longues distances.';
+
+  @override
+  String get aboutDmxS5Title =>
+      '5) Dépannage — méthode simple (rapide et fiable)';
+
+  @override
+  String get aboutDmxS5Intro =>
+      'Quand un appareil ne répond pas, la clé est d’isoler : est-ce l’adresse, le mode, la ligne DMX, ou l’appareil ? Suis une checklist courte avant de tout reconfigurer.';
+
+  @override
+  String get aboutDmxS5QuickChecksTitle => 'Checklist rapide';
+
+  @override
+  String get aboutDmxS5QuickB1 =>
+      'Adresse DMX correcte ? (et pas 001 vs 000 selon l’écran).';
+
+  @override
+  String get aboutDmxS5QuickB2 => 'Bon mode DMX (nombre de canaux) ?';
+
+  @override
+  String get aboutDmxS5QuickB3 =>
+      'Bon univers / sortie (console, node, port) ?';
+
+  @override
+  String get aboutDmxS5QuickB4 =>
+      'Teste avec un câble connu OK, puis en remplaçant un par un.';
+
+  @override
+  String get aboutDmxS5QuickB5 =>
+      'Ajoute/retire une terminaison au bout de la ligne pour voir l’effet.';
+
+  @override
+  String get aboutDmxS5IfFlickerTitle => 'Si ça flicker / décroche';
+
+  @override
+  String get aboutDmxS5IfFlickerB1 =>
+      'Cherche un “Y” caché, un splitter non adapté, ou un mauvais adaptateur XLR.';
+
+  @override
+  String get aboutDmxS5IfFlickerB2 =>
+      'Éloigne DMX des alimentations/gradateurs, évite les grandes boucles de câble.';
+
+  @override
+  String get aboutDmxS5IfFlickerB3 =>
+      'Réduis la complexité : 1 univers, 1 ligne, 1 appareil, puis tu reconstruis.';
+
+  @override
+  String get aboutDmxS5GoldenRuleTitle => 'Règle d’or';
+
+  @override
+  String get aboutDmxS5GoldenRuleBody =>
+      'Tu dois pouvoir faire fonctionner un seul appareil sur une seule ligne. Si ce test de base échoue, le problème n’est pas « le patch complet » : c’est l’adressage, le câblage, ou le matériel.';
+
+  @override
+  String get aboutDmxS6Title =>
+      '6) Art-Net — DMX sur IP (vocabulaire et pièges)';
+
+  @override
+  String get aboutDmxS6PillUdp => 'UDP';
+
+  @override
+  String get aboutDmxS6PillNodes => 'Nodes';
+
+  @override
+  String get aboutDmxS6PillBroadcast => 'Broadcast';
+
+  @override
+  String get aboutDmxS6PillUnicast => 'Unicast';
+
+  @override
+  String get aboutDmxS6Intro =>
+      'Art-Net transporte des univers DMX via Ethernet (UDP). Une console/logiciel envoie des univers sur le réseau, et un node les convertit en sorties DMX physiques.';
+
+  @override
+  String get aboutDmxS6BasicsTitle => 'À retenir';
+
+  @override
+  String get aboutDmxS6BasicsB1 => 'Un node = réseau ↔ DMX (plusieurs ports).';
+
+  @override
+  String get aboutDmxS6BasicsB2 =>
+      'Broadcast envoie à tout le monde (simple mais peut saturer).';
+
+  @override
+  String get aboutDmxS6BasicsB3 =>
+      'Unicast envoie seulement au node ciblé (souvent plus stable sur gros rigs).';
+
+  @override
+  String get aboutDmxS6BasicsB4 =>
+      'Attention au comptage d’univers : souvent Art-Net commence à 0 (Univers 1 DMX = 0 Art-Net).';
+
+  @override
+  String get aboutDmxS6WhenTitle => 'Quand choisir Art-Net ?';
+
+  @override
+  String get aboutDmxS6WhenB1 =>
+      'Petits/moyens rigs, set-ups rapides, beaucoup de matériel compatible.';
+
+  @override
+  String get aboutDmxS6WhenB2 =>
+      'OK si le réseau est propre (switch correct, câbles, pas de Wi-Fi).';
+
+  @override
+  String get aboutDmxS6WhenB3 =>
+      'Si ça sature : passe en unicast et segmente le réseau (VLAN / réseau dédié).';
+
+  @override
+  String get aboutDmxS7Title =>
+      '7) sACN (E1.31) — multicast, priorités, réseau propre';
+
+  @override
+  String get aboutDmxS7PillE131 => 'E1.31';
+
+  @override
+  String get aboutDmxS7PillMulticast => 'Multicast';
+
+  @override
+  String get aboutDmxS7PillPriority => 'Priorité';
+
+  @override
+  String get aboutDmxS7PillIgmp => 'IGMP';
+
+  @override
+  String get aboutDmxS7Intro =>
+      'sACN (ANSI E1.31) est un standard moderne pour transporter des univers DMX sur IP. Il est très utilisé en grands systèmes car il gère bien le multicast et les priorités.';
+
+  @override
+  String get aboutDmxS7KeyIdeasTitle => 'Idées clés';
+
+  @override
+  String get aboutDmxS7KeyIdeasB1 =>
+      'Multicast : un univers est un “groupe” réseau (les nodes s’abonnent).';
+
+  @override
+  String get aboutDmxS7KeyIdeasB2 =>
+      'IGMP snooping sur les switches = indispensable à grande échelle (sinon ça inonde).';
+
+  @override
+  String get aboutDmxS7KeyIdeasB3 =>
+      'Priorité : plusieurs sources possibles, celle avec la plus haute priorité gagne.';
+
+  @override
+  String get aboutDmxS7KeyIdeasB4 =>
+      'Comme Art-Net : réseau propre + câbles/switch de qualité = stabilité.';
+
+  @override
+  String get aboutDmxS8Title =>
+      '8) DMX vs Art-Net vs sACN — résumé (quoi choisir ?)';
+
+  @override
+  String get aboutDmxS8Intro =>
+      'Les trois font la même chose au final : piloter des canaux. La différence se joue sur la distribution (câble DMX vs réseau), l’échelle, et la robustesse.';
+
+  @override
+  String get aboutDmxS8QuickTableTitle => 'Résumé en 4 lignes';
+
+  @override
+  String get aboutDmxS8QuickB1 =>
+      'DMX : simple, robuste, 1 câble = 1 ligne (512 canaux).';
+
+  @override
+  String get aboutDmxS8QuickB2 =>
+      'Art-Net : très courant, facile à déployer, attention au broadcast.';
+
+  @override
+  String get aboutDmxS8QuickB3 =>
+      'sACN : plus “pro grands systèmes”, multicast + priorités, demande un réseau bien configuré.';
+
+  @override
+  String get aboutDmxS8QuickB4 =>
+      'Dans tous les cas : documentation + test progressif = gain de temps énorme.';
+
+  @override
+  String get aboutDmxS8ChooseTitle => 'Choix rapide';
+
+  @override
+  String get aboutDmxS8ChooseB1 =>
+      'Petit set-up : DMX direct ou Art-Net (simple).';
+
+  @override
+  String get aboutDmxS8ChooseB2 =>
+      'Beaucoup d’univers : réseau dédié + nodes ; Art-Net en unicast ou sACN.';
+
+  @override
+  String get aboutDmxS8ChooseB3 =>
+      'Très gros rigs / infrastructures : sACN + switches/IGMP bien gérés.';
+
+  @override
+  String get aboutSunTimesTitle => 'Soleil (lever / coucher)';
+
+  @override
+  String get aboutSunTimesSubtitle =>
+      'Choix d’une ville et d’une date, heures de lever/coucher + seuils (lux).';
+
+  @override
+  String get sunTimesPageTitle => 'Lever / coucher du soleil';
+
+  @override
+  String get sunTimesSelectionTitle => 'Paramètres';
+
+  @override
+  String get sunTimesCityLabel => 'Cidade';
+
+  @override
+  String get sunTimesDateLabel => 'Data';
+
+  @override
+  String get sunTimesResultsTitle => 'Resultados';
+
+  @override
+  String get sunTimesSunriseLabel => 'Lever du soleil';
+
+  @override
+  String get sunTimesSunsetLabel => 'Coucher du soleil';
+
+  @override
+  String get sunTimesDayLengthLabel => 'Durée du jour';
+
+  @override
+  String get sunTimesDisclaimer =>
+      'Valeurs indicatives (modèle astronomique). Vérifie avec une source officielle si nécessaire (événement, sécurité, tournage).';
+
+  @override
+  String get sunTimesThresholdTitle => 'Seuils de luminosité (repères)';
+
+  @override
+  String get sunTimesThresholdIntro =>
+      'Ordres de grandeur utiles pour anticiper la lumière ambiante (très variable selon météo, latitude, saison, obstacles, pollution lumineuse).';
+
+  @override
+  String get sunTimesLuxDaylight => 'Plein jour (hors soleil direct)';
+
+  @override
+  String get sunTimesLuxOvercast => 'Ciel couvert (typique)';
+
+  @override
+  String get sunTimesLuxSunrise => 'Lever / coucher (clair)';
+
+  @override
+  String get sunTimesLuxCivilTwilight => 'Limite crépuscule civil (clair)';
+
+  @override
+  String get sunTimesLuxFullMoon => 'Pleine lune (clair)';
+
+  @override
+  String get sunTimesThresholdNote =>
+      'Astuce : pour un repérage “utilisable sans éclairage”, on vise souvent > 100–300 lx. Pour un travail fin, plutôt 500 lx et +.';
+
+  @override
+  String get sunTimesTitle => 'Nascer / pôr do sol';
+
+  @override
+  String get sunTimesParamsTitle => 'Configurações';
+
+  @override
+  String get sunTimesPickDate => 'Escolher data';
+
+  @override
+  String get sunTimesSunrise => 'Nascer do sol';
+
+  @override
+  String get sunTimesSunset => 'Pôr do sol';
+
+  @override
+  String get sunTimesDayLength => 'Duração do dia';
+
+  @override
+  String get sunTimesPolarNote =>
+      'Se o sol não nascer/pôr (perto dos polos), o valor pode não estar disponível.';
+
+  @override
+  String get sunTimesLuxThresholdTitle =>
+      'Limiares de luminosidade (indicativos)';
+
+  @override
+  String get sunTimesLuxBulletNightDark =>
+      '~0.001–0.01 lux: Noite escura (sem lua).';
+
+  @override
+  String get sunTimesLuxBulletNightMoon =>
+      '~0.01–0.1 lux: Noite com lua / céu limpo.';
+
+  @override
+  String get sunTimesLuxBulletFullMoon =>
+      '~0.3 lux: Lua cheia (ordem de grandeza).';
+
+  @override
+  String get sunTimesLuxBulletCivilTwilight =>
+      '~3.4 lux: Crepúsculo civil (sol a -6°).';
+
+  @override
+  String get sunTimesLuxBulletUrbanLow =>
+      '~10–50 lux: Iluminação urbana fraca / manhã cedo.';
+
+  @override
+  String get sunTimesLuxBulletOfficeLow =>
+      '~100 lux: Escritório fraco / corredor bem iluminado.';
+
+  @override
+  String get sunTimesLuxBulletOfficeStd => '~500 lux: Escritório “padrão”.';
+
+  @override
+  String get sunTimesLuxBulletOutdoorDay =>
+      '~1 000–10 000 lux: Dia nublado a ensolarado.';
+
+  @override
+  String get sunTimesLuxBulletDirectSun =>
+      '~100 000 lux: Sol direto (meio-dia, céu limpo).';
+
+  @override
+  String get sunTimesLuxDisclaimer =>
+      '⚠️ Indicativo. Clima, obstáculos, latitude/altitude e exposição alteram bastante a iluminância real.';
+
+  @override
+  String get sunTimesTwilightTitle => 'Crepúsculos: o que significam?';
+
+  @override
+  String get sunTimesTwilightIntro =>
+      'Os crepúsculos são definidos pelo ângulo do sol abaixo do horizonte, padronizando a transição entre dia e noite.';
+
+  @override
+  String get sunTimesTwilightCivil => 'Crepúsculo civil: sol entre 0° e -6°.';
+
+  @override
+  String get sunTimesTwilightNautical =>
+      'Crepúsculo náutico: sol entre -6° e -12°.';
+
+  @override
+  String get sunTimesTwilightAstronomical =>
+      'Crepúsculo astronômico: sol entre -12° e -18°.';
+
+  @override
+  String get sunTimesTwilightAnglesNote =>
+      'Abaixo de -18°, geralmente é considerado “noite” (sem iluminação difusa do sol).';
+
+  @override
+  String get sunTimesLabelCity => 'Ville';
+
+  @override
+  String get sunTimesLabelDate => 'Date';
+
+  @override
+  String get sunTimesNoteApprox =>
+      'Heures indicatives — peuvent varier selon l’altitude, la réfraction et la météo.';
+
+  @override
+  String get sunTimesLuxBulletAstronomicalTwilight =>
+      'Crépuscule astronomique : Soleil à -18°';
+
+  @override
+  String get sunTimesTimelineTitleStep30 => 'Timeline (pas 30 min)';
+
+  @override
+  String get sunTimesTimelineColTime => 'Heure';
+
+  @override
+  String get sunTimesTimelineColElevation => 'Élévation';
+
+  @override
+  String get sunTimesTimelineColMarker => 'Repère';
+
+  @override
+  String get sunTimesTimelineColLux => 'Lux (ordre)';
+
+  @override
+  String get sunTimesTimelineFootnote =>
+      'Repères indicatifs (météo/nuages, environnement, saison) — utile pour préparer un show.';
+
+  @override
+  String get sunTimesLuxNight => 'Nuit noire';
+
+  @override
+  String get sunTimesLuxAstro => 'Crépuscule astro';
+
+  @override
+  String get sunTimesLuxNautical => 'Crépuscule naut.';
+
+  @override
+  String get sunTimesLuxCivil => 'Crépuscule civil';
+
+  @override
+  String get sunTimesLuxVeryLow => 'Très faible';
+
+  @override
+  String get sunTimesLuxLow => 'Faible';
+
+  @override
+  String get sunTimesLuxDay => 'Jour';
+
+  @override
+  String get sunTimesLuxFullDay => 'Plein jour';
+
+  @override
+  String get sunTimesSectionSettings => 'Paramètres';
+
+  @override
+  String get sunTimesIntro =>
+      'Choisis une ville et une date. Les horaires sont indicatifs (arrondis).';
+
+  @override
+  String get sunTimesSectionResults => 'Résultats';
+
+  @override
+  String get sunTimesResultSunrise => 'Lever du soleil';
+
+  @override
+  String get sunTimesResultSunset => 'Coucher du soleil';
+
+  @override
+  String get sunTimesResultCivilDawn => 'Aube civile';
+
+  @override
+  String get sunTimesResultCivilDusk => 'Crépuscule civil';
+
+  @override
+  String get sunTimesResultNauticalDawn => 'Aube nautique';
+
+  @override
+  String get sunTimesResultNauticalDusk => 'Crépuscule nautique';
+
+  @override
+  String get sunTimesResultAstronomicalDawn => 'Aube astronomique';
+
+  @override
+  String get sunTimesResultAstronomicalDusk => 'Crépuscule astronomique';
+
+  @override
+  String get sunTimesNoData => '—';
+
+  @override
+  String get sunTimesSectionTimeline => 'Timeline (pas de 30 min)';
+
+  @override
+  String get sunTimesTimelineStep30 => 'Pas: 30 min';
+
+  @override
+  String get sunTimesTimelineDay => 'Jour';
+
+  @override
+  String get sunTimesTimelineCivil => 'Civil';
+
+  @override
+  String get sunTimesTimelineNautical => 'Nautique';
+
+  @override
+  String get sunTimesTimelineAstronomical => 'Astronomique';
+
+  @override
+  String get sunTimesTimelineNight => 'Nuit';
+
+  @override
+  String get sunTimesSectionTwilight =>
+      'À quoi correspondent les crépuscules ?';
+
+  @override
+  String get sunTimesTwilightCivilTitle => 'Civil (≈ 0° à −6°)';
+
+  @override
+  String get sunTimesTwilightCivilBody =>
+      'Fin/début de journée. On distingue encore bien le paysage.';
+
+  @override
+  String get sunTimesTwilightNauticalTitle => 'Nautique (≈ −6° à −12°)';
+
+  @override
+  String get sunTimesTwilightNauticalBody =>
+      'La ligne d’horizon devient difficile à distinguer. Le ciel est nettement plus sombre.';
+
+  @override
+  String get sunTimesTwilightAstronomicalTitle =>
+      'Astronomique (≈ −12° à −18°)';
+
+  @override
+  String get sunTimesTwilightAstronomicalBody =>
+      'Le ciel est proche de la nuit complète (peu de lumière résiduelle).';
+
+  @override
+  String get sunTimesSectionLux => 'Seuils de luminosité (repères)';
+
+  @override
+  String get sunTimesLuxNote =>
+      'Ces valeurs sont des repères typiques (météo, saison, environnement → variations).';
 }

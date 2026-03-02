@@ -20,8 +20,7 @@ class _AboutNetworkPageState extends State<AboutNetworkPage> {
   final _k5Wifi = GlobalKey();
   final _k6Switch = GlobalKey();
   final _k7Diagrams = GlobalKey();
-  final _k7bAssets = GlobalKey();
-  final _k8Checklist = GlobalKey();
+final _k8Checklist = GlobalKey();
 
   void _goTo(GlobalKey key) {
     final ctx = key.currentContext;
@@ -73,8 +72,7 @@ class _AboutNetworkPageState extends State<AboutNetworkPage> {
                   _TocItem('5) Wi-Fi vs filaire', onTap: () => _goTo(_k5Wifi)),
                   _TocItem('6) Switch: ce qu’il faut', onTap: () => _goTo(_k6Switch)),
                   _TocItem('7) Schémas', onTap: () => _goTo(_k7Diagrams)),
-                  _TocItem('7bis) Images (assets)', onTap: () => _goTo(_k7bAssets)),
-                  _TocItem('8) Checklist', onTap: () => _goTo(_k8Checklist)),
+_TocItem('8) Checklist', onTap: () => _goTo(_k8Checklist)),
                 ],
               ),
               const SizedBox(height: 12),
@@ -105,26 +103,6 @@ class _AboutNetworkPageState extends State<AboutNetworkPage> {
 
               _Anchor(key: _k7Diagrams),
               const _Section7Diagrams(),
-              const SizedBox(height: 12),
-
-              _Anchor(key: _k7bAssets),
-              _Section7bAssets(
-                onCopy: () {
-                  final txt = '''
-Assets recommandés (optionnels)
-- assets/images/connectors/rj45.png
-- assets/images/network/switch.png
-- assets/images/network/ap.png
-
-pubspec.yaml (exemple)
-flutter:
-  assets:
-    - assets/images/connectors/
-    - assets/images/network/
-'''.trim();
-                  copyToClipboard(context, txt);
-                },
-              ),
               const SizedBox(height: 12),
 
               _Anchor(key: _k8Checklist),
@@ -412,38 +390,6 @@ class _Section7Diagrams extends StatelessWidget {
   }
 }
 
-class _Section7bAssets extends StatelessWidget {
-  const _Section7bAssets({required this.onCopy});
-
-  final VoidCallback onCopy;
-
-  @override
-  Widget build(BuildContext context) {
-    return ExpandSectionCard(
-      title: '7bis) Images (assets)',
-      icon: Icons.image_outlined,
-      trailing: IconButton(
-        tooltip: 'Copier liste assets',
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _Paragraph("Optionnel: illustrer RJ45, switch, point d’accès Wi-Fi."),
-          SizedBox(height: 10),
-          _AssetRow(
-            items: [
-              _AssetSpec(label: 'RJ45', assetPath: 'assets/images/connectors/rj45.png', hint: 'Ethernet cuivre'),
-              _AssetSpec(label: 'Switch', assetPath: 'assets/images/network/switch.png', hint: 'Géré si VLAN/IGMP'),
-              _AssetSpec(label: 'AP Wi-Fi', assetPath: 'assets/images/network/ap.png', hint: 'Confort UI, pas prod critique'),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 class _Section8Checklist extends StatelessWidget {
   const _Section8Checklist({required this.onCopy});
@@ -504,111 +450,8 @@ class _DiagramBox extends StatelessWidget {
   }
 }
 
-class _AssetSpec {
-  const _AssetSpec({required this.label, required this.assetPath, required this.hint});
-  final String label;
-  final String assetPath;
-  final String hint;
-}
 
-class _AssetRow extends StatelessWidget {
-  const _AssetRow({required this.items});
-  final List<_AssetSpec> items;
 
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (ctx, c) {
-        final isNarrow = c.maxWidth < 520;
-        if (isNarrow) {
-          return Column(
-            children: items
-                .map((it) => Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: _AssetTile(spec: it),
-                    ))
-                .toList(),
-          );
-        }
-        return Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            for (int i = 0; i < items.length; i++) ...[
-              Expanded(child: _AssetTile(spec: items[i])),
-              if (i != items.length - 1) const SizedBox(width: 10),
-            ],
-          ],
-        );
-      },
-    );
-  }
-}
-
-class _AssetTile extends StatelessWidget {
-  const _AssetTile({required this.spec});
-  final _AssetSpec spec;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xFF0B0B0B),
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: Colors.white12),
-      ),
-      padding: const EdgeInsets.all(12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            spec.label,
-            style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w900, fontSize: 13.5),
-          ),
-          const SizedBox(height: 8),
-          AspectRatio(
-            aspectRatio: 16 / 9,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.06),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.white12),
-                ),
-                child: Image.asset(
-                  spec.assetPath,
-                  fit: BoxFit.contain,
-                  errorBuilder: (context, error, stack) {
-                    return Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(Icons.image_not_supported, color: Colors.white.withValues(alpha: 0.45)),
-                          const SizedBox(height: 6),
-                          Text(
-                            'Asset manquant',
-                            style: TextStyle(color: Colors.white.withValues(alpha: 0.65), fontWeight: FontWeight.w800),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(spec.hint, style: TextStyle(color: Colors.white.withValues(alpha: 0.78), height: 1.25, fontSize: 12.5)),
-          const SizedBox(height: 8),
-          Text(
-            spec.assetPath,
-            style: TextStyle(fontFamily: 'monospace', fontSize: 11.8, color: Colors.white.withValues(alpha: 0.55)),
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 class _VlanPainter extends CustomPainter {
   const _VlanPainter();

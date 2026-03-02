@@ -33,7 +33,9 @@ class PhotometryCalculations {
     required double beamAngleDegree,
   }) {
     if (candela <= 0) return 0.0;
-    final omega = solidAngleSteradianFromBeamAngle(beamAngleDegree: beamAngleDegree);
+    final omega = solidAngleSteradianFromBeamAngle(
+      beamAngleDegree: beamAngleDegree,
+    );
     if (omega <= 0) return 0.0;
     return candela * omega;
   }
@@ -43,7 +45,9 @@ class PhotometryCalculations {
     required double beamAngleDegree,
   }) {
     if (lumens <= 0) return 0.0;
-    final omega = solidAngleSteradianFromBeamAngle(beamAngleDegree: beamAngleDegree);
+    final omega = solidAngleSteradianFromBeamAngle(
+      beamAngleDegree: beamAngleDegree,
+    );
     if (omega <= 0) return 0.0;
     return lumens / omega;
   }
@@ -60,5 +64,14 @@ class PhotometryCalculations {
     final area = pi * pow(radius, 2);
     if (area <= 0) return 0.0;
     return lumens / area;
+  }
+
+  // NOUVEAU : Lux -> Lumen (Φ = E × S)
+  static double lumensFromLuxAndArea({
+    required double lux,
+    required double areaSquareMeter,
+  }) {
+    if (lux <= 0 || areaSquareMeter <= 0) return 0.0;
+    return lux * areaSquareMeter;
   }
 }

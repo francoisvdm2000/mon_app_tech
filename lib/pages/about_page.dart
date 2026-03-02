@@ -8,6 +8,7 @@ import 'about/about_sacn_page.dart';
 import 'about/about_ip_basics_page.dart';
 import 'about/about_network_page.dart';
 import 'about/about_video_page.dart';
+import 'about/about_sun_times_page.dart';
 import 'about/about_electricite_page.dart';
 import 'about/about_informatique_page.dart';
 import 'about/about_reseau_page.dart';
@@ -112,6 +113,15 @@ class PageAbout extends StatelessWidget {
                       icon: Icons.usb,
                       onTap: () =>
                           _open(context, const AboutInformatiquePage()),
+                    ),
+                  ),
+
+                  sized(
+                    _NavTile(
+                      title: loc.aboutSunTimesTitle,
+                      subtitle: loc.aboutSunTimesSubtitle,
+                      icon: Icons.wb_sunny,
+                      onTap: () => _open(context, const AboutSunTimesPage()),
                     ),
                   ),
                 ],

@@ -2223,19 +2223,19 @@ abstract class AppLocalizations {
   /// No description provided for @photometrySection1Title.
   ///
   /// In fr, this message translates to:
-  /// **'Section 1'**
+  /// **'Lux <> Candela'**
   String get photometrySection1Title;
 
   /// No description provided for @photometrySection2Title.
   ///
   /// In fr, this message translates to:
-  /// **'Section 2'**
+  /// **'Lumens <> Candela'**
   String get photometrySection2Title;
 
   /// No description provided for @photometrySection3Title.
   ///
   /// In fr, this message translates to:
-  /// **'Section 3'**
+  /// **'Lumens < Lux'**
   String get photometrySection3Title;
 
   /// No description provided for @photometrySummary1.
@@ -4629,6 +4629,1615 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Entrer des valeurs positives valides.'**
   String get riggingNeedValidValues;
+
+  /// No description provided for @photometrySection4Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lux → Lumen'**
+  String get photometrySection4Title;
+
+  /// No description provided for @photometryAreaLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Surface (m²)'**
+  String get photometryAreaLabel;
+
+  /// No description provided for @photometryAreaHint4.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex: 12.5'**
+  String get photometryAreaHint4;
+
+  /// No description provided for @photometrySummary4.
+  ///
+  /// In fr, this message translates to:
+  /// **'E = {lux} lx • S = {area} m² → Φ = {lumens} lm'**
+  String photometrySummary4(Object lumens, Object lux, Object area);
+
+  /// No description provided for @aboutArtnetTocConversionTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conversions'**
+  String get aboutArtnetTocConversionTitle;
+
+  /// No description provided for @aboutArtnetConversionIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Outils de conversion utiles autour des univers DMX, Art-Net et des valeurs hexadécimales.'**
+  String get aboutArtnetConversionIntro;
+
+  /// No description provided for @aboutUniverseToArtnetTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers → Art-Net'**
+  String get aboutUniverseToArtnetTitle;
+
+  /// No description provided for @aboutUniverseToArtnetSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Trouver Subnet + Universe (Net/Port-Address) à partir d’un univers DMX.'**
+  String get aboutUniverseToArtnetSubtitle;
+
+  /// No description provided for @aboutUniverseToHexTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers → Hex'**
+  String get aboutUniverseToHexTitle;
+
+  /// No description provided for @aboutUniverseToHexSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Convertir un univers (1…N) en index et valeur hexadécimale.'**
+  String get aboutUniverseToHexSubtitle;
+
+  /// No description provided for @aboutArtnetConversionNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Note : les conventions Art-Net peuvent varier selon les consoles (adressage, base 0/1). Vérifie toujours la documentation de ton système.'**
+  String get aboutArtnetConversionNote;
+
+  /// No description provided for @elecTocCopyText.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier le sommaire'**
+  String get elecTocCopyText;
+
+  /// No description provided for @elecToc1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Section 1'**
+  String get elecToc1;
+
+  /// No description provided for @elecToc2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Section 2'**
+  String get elecToc2;
+
+  /// No description provided for @elecToc3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Section 3'**
+  String get elecToc3;
+
+  /// No description provided for @elecToc4.
+  ///
+  /// In fr, this message translates to:
+  /// **'Section 4'**
+  String get elecToc4;
+
+  /// No description provided for @elecToc5.
+  ///
+  /// In fr, this message translates to:
+  /// **'Section 5'**
+  String get elecToc5;
+
+  /// No description provided for @elecToc6.
+  ///
+  /// In fr, this message translates to:
+  /// **'Section 6'**
+  String get elecToc6;
+
+  /// No description provided for @elecToc7.
+  ///
+  /// In fr, this message translates to:
+  /// **'Section 7'**
+  String get elecToc7;
+
+  /// No description provided for @elecKvaTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Table kVA → kW (selon cos φ)'**
+  String get elecKvaTitle;
+
+  /// No description provided for @elecKvaFormula.
+  ///
+  /// In fr, this message translates to:
+  /// **'Formule : kW = kVA × cos φ'**
+  String get elecKvaFormula;
+
+  /// No description provided for @elecKvaIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cette table donne une estimation rapide de la puissance active (kW) à partir d’une puissance apparente (kVA).'**
+  String get elecKvaIntro;
+
+  /// No description provided for @elecKvaNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeurs indicatives. Utilise les valeurs réelles de cos φ quand tu les connais.'**
+  String get elecKvaNote;
+
+  /// No description provided for @elecKvaColKva.
+  ///
+  /// In fr, this message translates to:
+  /// **'kVA'**
+  String get elecKvaColKva;
+
+  /// No description provided for @elecKvaColPf08.
+  ///
+  /// In fr, this message translates to:
+  /// **'kW (cos φ = 0,8)'**
+  String get elecKvaColPf08;
+
+  /// No description provided for @elecKvaColPf10.
+  ///
+  /// In fr, this message translates to:
+  /// **'kW (cos φ = 1,0)'**
+  String get elecKvaColPf10;
+
+  /// No description provided for @commonTocTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sommaire'**
+  String get commonTocTitle;
+
+  /// No description provided for @commonCopySummaryTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier le sommaire'**
+  String get commonCopySummaryTooltip;
+
+  /// No description provided for @aboutLightReferenceTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Références lumière'**
+  String get aboutLightReferenceTitle;
+
+  /// No description provided for @refCriTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'IRC / CRI'**
+  String get refCriTitle;
+
+  /// No description provided for @refKelvinTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Température de couleur (K)'**
+  String get refKelvinTitle;
+
+  /// No description provided for @refBeamFieldTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Beam / Field'**
+  String get refBeamFieldTitle;
+
+  /// No description provided for @refLuxTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Niveaux d’éclairement (lux)'**
+  String get refLuxTitle;
+
+  /// No description provided for @refCriContent.
+  ///
+  /// In fr, this message translates to:
+  /// **'L’IRC (CRI) mesure la fidélité des couleurs. Plus il est élevé, plus les couleurs paraissent naturelles.'**
+  String get refCriContent;
+
+  /// No description provided for @refKelvinContent.
+  ///
+  /// In fr, this message translates to:
+  /// **'La température de couleur décrit la teinte de blanc (chaud à froid).'**
+  String get refKelvinContent;
+
+  /// No description provided for @refBeamFieldContent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le Beam est l’angle du faisceau principal ; le Field l’angle où l’intensité devient faible (bordure).'**
+  String get refBeamFieldContent;
+
+  /// No description provided for @refBeamLegendBeam.
+  ///
+  /// In fr, this message translates to:
+  /// **'Beam'**
+  String get refBeamLegendBeam;
+
+  /// No description provided for @refBeamLegendField.
+  ///
+  /// In fr, this message translates to:
+  /// **'Field'**
+  String get refBeamLegendField;
+
+  /// No description provided for @refLuxIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Références indicatives d’éclairement selon l’usage.'**
+  String get refLuxIntro;
+
+  /// No description provided for @refLuxColUse.
+  ///
+  /// In fr, this message translates to:
+  /// **'Usage'**
+  String get refLuxColUse;
+
+  /// No description provided for @refLuxColLux.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lux'**
+  String get refLuxColLux;
+
+  /// No description provided for @refLuxUseCorridor.
+  ///
+  /// In fr, this message translates to:
+  /// **'Couloir / circulation'**
+  String get refLuxUseCorridor;
+
+  /// No description provided for @refLuxUseBackstage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Backstage / technique'**
+  String get refLuxUseBackstage;
+
+  /// No description provided for @refLuxUseMeeting.
+  ///
+  /// In fr, this message translates to:
+  /// **'Salle de réunion'**
+  String get refLuxUseMeeting;
+
+  /// No description provided for @refLuxUseExpo.
+  ///
+  /// In fr, this message translates to:
+  /// **'Expo / showroom'**
+  String get refLuxUseExpo;
+
+  /// No description provided for @refLuxUseStageGeneral.
+  ///
+  /// In fr, this message translates to:
+  /// **'Scène – général'**
+  String get refLuxUseStageGeneral;
+
+  /// No description provided for @refLuxUseStageTv.
+  ///
+  /// In fr, this message translates to:
+  /// **'Scène – TV / captation'**
+  String get refLuxUseStageTv;
+
+  /// No description provided for @refLuxNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ces valeurs varient selon les normes et les contraintes (caméra, contraste, ambiance).'**
+  String get refLuxNote;
+
+  /// No description provided for @refLightDisclaimerShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Références indicatives – pas une norme.'**
+  String get refLightDisclaimerShort;
+
+  /// No description provided for @refCri90.
+  ///
+  /// In fr, this message translates to:
+  /// **'Excellent (≥ 90)'**
+  String get refCri90;
+
+  /// No description provided for @refCri80.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bon (≈ 80)'**
+  String get refCri80;
+
+  /// No description provided for @refCriLow.
+  ///
+  /// In fr, this message translates to:
+  /// **'Faible (< 80)'**
+  String get refCriLow;
+
+  /// No description provided for @aboutUniverseToArtnetImportantTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Important'**
+  String get aboutUniverseToArtnetImportantTitle;
+
+  /// No description provided for @aboutUniverseToArtnetImportantBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'Certaines consoles utilisent une base 0 (Universe 0..15) et d’autres une base 1 (Universe 1..16).'**
+  String get aboutUniverseToArtnetImportantBody;
+
+  /// No description provided for @aboutUniverseToArtnetTableTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Table Univers → Art-Net'**
+  String get aboutUniverseToArtnetTableTitle;
+
+  /// No description provided for @aboutUniverseToArtnetTableIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Correspondance typique entre univers DMX et adressage Art-Net.'**
+  String get aboutUniverseToArtnetTableIntro;
+
+  /// No description provided for @aboutUniverseTablesDisclaimer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vérifie toujours la convention de ta console / node.'**
+  String get aboutUniverseTablesDisclaimer;
+
+  /// No description provided for @aboutUniverseToArtnetColDmx.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers DMX'**
+  String get aboutUniverseToArtnetColDmx;
+
+  /// No description provided for @aboutUniverseToArtnetColUniHex.
+  ///
+  /// In fr, this message translates to:
+  /// **'Uni (hex)'**
+  String get aboutUniverseToArtnetColUniHex;
+
+  /// No description provided for @aboutUniverseToArtnetSubnetTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Subnet {p0} {p1} {p2} {p3}'**
+  String aboutUniverseToArtnetSubnetTitle(
+      Object p0, Object p1, Object p2, Object p3);
+
+  /// No description provided for @aboutUniverseToHexPrincipleTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Principe'**
+  String get aboutUniverseToHexPrincipleTitle;
+
+  /// No description provided for @aboutUniverseToHexPrincipleBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'Un univers (1…N) peut être converti en index (base 0) puis en hexadécimal.'**
+  String get aboutUniverseToHexPrincipleBody;
+
+  /// No description provided for @aboutUniverseToHexTableTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Table Univers → Hex'**
+  String get aboutUniverseToHexTableTitle;
+
+  /// No description provided for @aboutUniverseToHexTableIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Table de conversion univers DMX → index / hex.'**
+  String get aboutUniverseToHexTableIntro;
+
+  /// No description provided for @aboutUniverseToHexBlockTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bloc {p0} {p1}'**
+  String aboutUniverseToHexBlockTitle(Object p0, Object p1);
+
+  /// No description provided for @aboutUniverseToHexColDmx.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers DMX'**
+  String get aboutUniverseToHexColDmx;
+
+  /// No description provided for @aboutUniverseToHexColIndex.
+  ///
+  /// In fr, this message translates to:
+  /// **'Index'**
+  String get aboutUniverseToHexColIndex;
+
+  /// No description provided for @aboutUniverseToHexColHex.
+  ///
+  /// In fr, this message translates to:
+  /// **'Hex'**
+  String get aboutUniverseToHexColHex;
+
+  /// No description provided for @aboutUniverseToHexNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Index = Univers − 1 (base 0).'**
+  String get aboutUniverseToHexNote;
+
+  /// No description provided for @videoCameraExposureTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exposition caméra'**
+  String get videoCameraExposureTitle;
+
+  /// No description provided for @videoCameraExposureSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lux → EV, ISO, vitesse et ouverture.'**
+  String get videoCameraExposureSubtitle;
+
+  /// No description provided for @videoCamPageTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exposition caméra'**
+  String get videoCamPageTitle;
+
+  /// No description provided for @videoCamInfoTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Info'**
+  String get videoCamInfoTitle;
+
+  /// No description provided for @videoCamIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculs indicatifs pour relier lux, ISO, vitesse et ouverture.'**
+  String get videoCamIntro;
+
+  /// No description provided for @videoCamInputsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entrées'**
+  String get videoCamInputsTitle;
+
+  /// No description provided for @videoCamLuxLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lux'**
+  String get videoCamLuxLabel;
+
+  /// No description provided for @videoCamLuxHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex: 500'**
+  String get videoCamLuxHint;
+
+  /// No description provided for @videoCamIsoLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'ISO'**
+  String get videoCamIsoLabel;
+
+  /// No description provided for @videoCamIsoHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex: 800'**
+  String get videoCamIsoHint;
+
+  /// No description provided for @videoCamShutterLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vitesse (s)'**
+  String get videoCamShutterLabel;
+
+  /// No description provided for @videoCamShutterHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex: 1/50'**
+  String get videoCamShutterHint;
+
+  /// No description provided for @videoCamApertureLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ouverture (f/)'**
+  String get videoCamApertureLabel;
+
+  /// No description provided for @videoCamApertureHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex: 2.8'**
+  String get videoCamApertureHint;
+
+  /// No description provided for @videoCamEvEmpty.
+  ///
+  /// In fr, this message translates to:
+  /// **'—'**
+  String get videoCamEvEmpty;
+
+  /// No description provided for @videoCamNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeurs indicatives : la calibration dépend du capteur, de la scène et des normes.'**
+  String get videoCamNote;
+
+  /// No description provided for @videoCamEvValue.
+  ///
+  /// In fr, this message translates to:
+  /// **'EV {ev}'**
+  String videoCamEvValue(Object ev);
+
+  /// No description provided for @videoCamApertureResult.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ouverture : f/{aperture}'**
+  String videoCamApertureResult(Object aperture);
+
+  /// No description provided for @videoCamShutterResult.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vitesse : {shutter} s'**
+  String videoCamShutterResult(Object shutter);
+
+  /// No description provided for @aboutDmxS2Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) Trame DMX — break, start code, canaux'**
+  String get aboutDmxS2Title;
+
+  /// No description provided for @aboutDmxS2PillBreak.
+  ///
+  /// In fr, this message translates to:
+  /// **'Break'**
+  String get aboutDmxS2PillBreak;
+
+  /// No description provided for @aboutDmxS2PillStartCode.
+  ///
+  /// In fr, this message translates to:
+  /// **'Start code'**
+  String get aboutDmxS2PillStartCode;
+
+  /// No description provided for @aboutDmxS2PillSlots512.
+  ///
+  /// In fr, this message translates to:
+  /// **'512 slots'**
+  String get aboutDmxS2PillSlots512;
+
+  /// No description provided for @aboutDmxS2PillRefresh.
+  ///
+  /// In fr, this message translates to:
+  /// **'Refresh'**
+  String get aboutDmxS2PillRefresh;
+
+  /// No description provided for @aboutDmxS2Intro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Une trame DMX est envoyée en boucle. Elle commence par un « break » (silence), puis un start code, puis jusqu’à 512 valeurs (0–255). Chaque appareil lit uniquement les canaux qui le concernent (selon son adresse et son mode).'**
+  String get aboutDmxS2Intro;
+
+  /// No description provided for @aboutDmxS2HowToReadTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lire une trame (très simplement)'**
+  String get aboutDmxS2HowToReadTitle;
+
+  /// No description provided for @aboutDmxS2HowToReadB1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Break + MAB : marque le début de la trame (resynchronisation).'**
+  String get aboutDmxS2HowToReadB1;
+
+  /// No description provided for @aboutDmxS2HowToReadB2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Start code : le plus souvent 0x00 (données d’éclairage).'**
+  String get aboutDmxS2HowToReadB2;
+
+  /// No description provided for @aboutDmxS2HowToReadB3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Slots 1→512 : chaque slot = 1 canal (0–255).'**
+  String get aboutDmxS2HowToReadB3;
+
+  /// No description provided for @aboutDmxS2HowToReadB4.
+  ///
+  /// In fr, this message translates to:
+  /// **'La trame recommence en continu : c’est normal d’« écraser » l’ancienne valeur.'**
+  String get aboutDmxS2HowToReadB4;
+
+  /// No description provided for @aboutDmxS2PracticalTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'En pratique'**
+  String get aboutDmxS2PracticalTitle;
+
+  /// No description provided for @aboutDmxS2PracticalB1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Un mode 16-bit utilise 2 canaux pour une même fonction (ex: Pan coarse + Pan fine).'**
+  String get aboutDmxS2PracticalB1;
+
+  /// No description provided for @aboutDmxS2PracticalB2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Plus tu envoies d’univers, plus la charge globale (consoles/nodes/réseau) augmente.'**
+  String get aboutDmxS2PracticalB2;
+
+  /// No description provided for @aboutDmxS2PracticalB3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Si tu as du flicker, pense d’abord câble/termination/branchements avant de soupçonner la console.'**
+  String get aboutDmxS2PracticalB3;
+
+  /// No description provided for @aboutDmxS3Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) Câblage DMX — RS-485, topologie, pinout'**
+  String get aboutDmxS3Title;
+
+  /// No description provided for @aboutDmxS3PillRs485.
+  ///
+  /// In fr, this message translates to:
+  /// **'RS-485'**
+  String get aboutDmxS3PillRs485;
+
+  /// No description provided for @aboutDmxS3PillDaisyChain.
+  ///
+  /// In fr, this message translates to:
+  /// **'Daisy-chain'**
+  String get aboutDmxS3PillDaisyChain;
+
+  /// No description provided for @aboutDmxS3PillNoY.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas de Y'**
+  String get aboutDmxS3PillNoY;
+
+  /// No description provided for @aboutDmxS3Pill120ohm.
+  ///
+  /// In fr, this message translates to:
+  /// **'120 Ω'**
+  String get aboutDmxS3Pill120ohm;
+
+  /// No description provided for @aboutDmxS3Intro.
+  ///
+  /// In fr, this message translates to:
+  /// **'DMX512 est basé sur RS-485 : un bus différentiel qui aime les lignes propres. La règle d’or : une chaîne (daisy-chain) de la source vers les appareils, puis une terminaison à la fin.'**
+  String get aboutDmxS3Intro;
+
+  /// No description provided for @aboutDmxS3TopologyTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Topologie recommandée'**
+  String get aboutDmxS3TopologyTitle;
+
+  /// No description provided for @aboutDmxS3TopologyB1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Source → Appareil 1 → Appareil 2 → … → dernier appareil.'**
+  String get aboutDmxS3TopologyB1;
+
+  /// No description provided for @aboutDmxS3TopologyB2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Évite les dérivations en Y : elles créent des réflexions (instabilité).'**
+  String get aboutDmxS3TopologyB2;
+
+  /// No description provided for @aboutDmxS3TopologyB3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Si tu dois faire des branches : utilise un splitter DMX opto-isolé.'**
+  String get aboutDmxS3TopologyB3;
+
+  /// No description provided for @aboutDmxS3PinoutTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Connectique (rappel)'**
+  String get aboutDmxS3PinoutTitle;
+
+  /// No description provided for @aboutDmxS3CablesTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Câbles : ce qui marche vraiment'**
+  String get aboutDmxS3CablesTitle;
+
+  /// No description provided for @aboutDmxS3CablesB1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Utilise un câble DMX (impédance ~120 Ω), pas un micro aléatoire (sauf dépannage court).'**
+  String get aboutDmxS3CablesB1;
+
+  /// No description provided for @aboutDmxS3CablesB2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Garde les longueurs raisonnables et évite les enroulements serrés près d’alim/gradateurs.'**
+  String get aboutDmxS3CablesB2;
+
+  /// No description provided for @aboutDmxS3CablesB3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Un mauvais câble = parfois « ça marche »… jusqu’au jour où non (humidité, longueur, charge).'**
+  String get aboutDmxS3CablesB3;
+
+  /// No description provided for @aboutDmxS4Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) Terminaison & splitters — stabilité du bus'**
+  String get aboutDmxS4Title;
+
+  /// No description provided for @aboutDmxS4Intro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sur un bus RS-485, la terminaison évite les réflexions en bout de ligne. Les splitters (opto-isolés) servent à créer des branches propres et à protéger la source.'**
+  String get aboutDmxS4Intro;
+
+  /// No description provided for @aboutDmxS4TerminatorTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Terminaison (120 Ω) : quand et comment'**
+  String get aboutDmxS4TerminatorTitle;
+
+  /// No description provided for @aboutDmxS4TerminatorB1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Met une terminaison sur le dernier appareil (ou un bouchon XLR).'**
+  String get aboutDmxS4TerminatorB1;
+
+  /// No description provided for @aboutDmxS4TerminatorB2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Une seule terminaison par ligne (pas partout).'**
+  String get aboutDmxS4TerminatorB2;
+
+  /// No description provided for @aboutDmxS4TerminatorB3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Indispensable sur longues lignes, grosses charges, environnements bruyants.'**
+  String get aboutDmxS4TerminatorB3;
+
+  /// No description provided for @aboutDmxS4SplittersTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Splitters / opto-isolation'**
+  String get aboutDmxS4SplittersTitle;
+
+  /// No description provided for @aboutDmxS4SplittersB1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Permet de faire 2, 4, 8 branches sans « Y ».'**
+  String get aboutDmxS4SplittersB1;
+
+  /// No description provided for @aboutDmxS4SplittersB2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Isole électriquement : limite les boucles de masse et protège la console/node.'**
+  String get aboutDmxS4SplittersB2;
+
+  /// No description provided for @aboutDmxS4SplittersB3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pratique pour “re-driver” un signal sur de longues distances.'**
+  String get aboutDmxS4SplittersB3;
+
+  /// No description provided for @aboutDmxS5Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) Dépannage — méthode simple (rapide et fiable)'**
+  String get aboutDmxS5Title;
+
+  /// No description provided for @aboutDmxS5Intro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Quand un appareil ne répond pas, la clé est d’isoler : est-ce l’adresse, le mode, la ligne DMX, ou l’appareil ? Suis une checklist courte avant de tout reconfigurer.'**
+  String get aboutDmxS5Intro;
+
+  /// No description provided for @aboutDmxS5QuickChecksTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Checklist rapide'**
+  String get aboutDmxS5QuickChecksTitle;
+
+  /// No description provided for @aboutDmxS5QuickB1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse DMX correcte ? (et pas 001 vs 000 selon l’écran).'**
+  String get aboutDmxS5QuickB1;
+
+  /// No description provided for @aboutDmxS5QuickB2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bon mode DMX (nombre de canaux) ?'**
+  String get aboutDmxS5QuickB2;
+
+  /// No description provided for @aboutDmxS5QuickB3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bon univers / sortie (console, node, port) ?'**
+  String get aboutDmxS5QuickB3;
+
+  /// No description provided for @aboutDmxS5QuickB4.
+  ///
+  /// In fr, this message translates to:
+  /// **'Teste avec un câble connu OK, puis en remplaçant un par un.'**
+  String get aboutDmxS5QuickB4;
+
+  /// No description provided for @aboutDmxS5QuickB5.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajoute/retire une terminaison au bout de la ligne pour voir l’effet.'**
+  String get aboutDmxS5QuickB5;
+
+  /// No description provided for @aboutDmxS5IfFlickerTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Si ça flicker / décroche'**
+  String get aboutDmxS5IfFlickerTitle;
+
+  /// No description provided for @aboutDmxS5IfFlickerB1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cherche un “Y” caché, un splitter non adapté, ou un mauvais adaptateur XLR.'**
+  String get aboutDmxS5IfFlickerB1;
+
+  /// No description provided for @aboutDmxS5IfFlickerB2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Éloigne DMX des alimentations/gradateurs, évite les grandes boucles de câble.'**
+  String get aboutDmxS5IfFlickerB2;
+
+  /// No description provided for @aboutDmxS5IfFlickerB3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réduis la complexité : 1 univers, 1 ligne, 1 appareil, puis tu reconstruis.'**
+  String get aboutDmxS5IfFlickerB3;
+
+  /// No description provided for @aboutDmxS5GoldenRuleTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Règle d’or'**
+  String get aboutDmxS5GoldenRuleTitle;
+
+  /// No description provided for @aboutDmxS5GoldenRuleBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tu dois pouvoir faire fonctionner un seul appareil sur une seule ligne. Si ce test de base échoue, le problème n’est pas « le patch complet » : c’est l’adressage, le câblage, ou le matériel.'**
+  String get aboutDmxS5GoldenRuleBody;
+
+  /// No description provided for @aboutDmxS6Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'6) Art-Net — DMX sur IP (vocabulaire et pièges)'**
+  String get aboutDmxS6Title;
+
+  /// No description provided for @aboutDmxS6PillUdp.
+  ///
+  /// In fr, this message translates to:
+  /// **'UDP'**
+  String get aboutDmxS6PillUdp;
+
+  /// No description provided for @aboutDmxS6PillNodes.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nodes'**
+  String get aboutDmxS6PillNodes;
+
+  /// No description provided for @aboutDmxS6PillBroadcast.
+  ///
+  /// In fr, this message translates to:
+  /// **'Broadcast'**
+  String get aboutDmxS6PillBroadcast;
+
+  /// No description provided for @aboutDmxS6PillUnicast.
+  ///
+  /// In fr, this message translates to:
+  /// **'Unicast'**
+  String get aboutDmxS6PillUnicast;
+
+  /// No description provided for @aboutDmxS6Intro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Art-Net transporte des univers DMX via Ethernet (UDP). Une console/logiciel envoie des univers sur le réseau, et un node les convertit en sorties DMX physiques.'**
+  String get aboutDmxS6Intro;
+
+  /// No description provided for @aboutDmxS6BasicsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'À retenir'**
+  String get aboutDmxS6BasicsTitle;
+
+  /// No description provided for @aboutDmxS6BasicsB1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Un node = réseau ↔ DMX (plusieurs ports).'**
+  String get aboutDmxS6BasicsB1;
+
+  /// No description provided for @aboutDmxS6BasicsB2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Broadcast envoie à tout le monde (simple mais peut saturer).'**
+  String get aboutDmxS6BasicsB2;
+
+  /// No description provided for @aboutDmxS6BasicsB3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Unicast envoie seulement au node ciblé (souvent plus stable sur gros rigs).'**
+  String get aboutDmxS6BasicsB3;
+
+  /// No description provided for @aboutDmxS6BasicsB4.
+  ///
+  /// In fr, this message translates to:
+  /// **'Attention au comptage d’univers : souvent Art-Net commence à 0 (Univers 1 DMX = 0 Art-Net).'**
+  String get aboutDmxS6BasicsB4;
+
+  /// No description provided for @aboutDmxS6WhenTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Quand choisir Art-Net ?'**
+  String get aboutDmxS6WhenTitle;
+
+  /// No description provided for @aboutDmxS6WhenB1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Petits/moyens rigs, set-ups rapides, beaucoup de matériel compatible.'**
+  String get aboutDmxS6WhenB1;
+
+  /// No description provided for @aboutDmxS6WhenB2.
+  ///
+  /// In fr, this message translates to:
+  /// **'OK si le réseau est propre (switch correct, câbles, pas de Wi-Fi).'**
+  String get aboutDmxS6WhenB2;
+
+  /// No description provided for @aboutDmxS6WhenB3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Si ça sature : passe en unicast et segmente le réseau (VLAN / réseau dédié).'**
+  String get aboutDmxS6WhenB3;
+
+  /// No description provided for @aboutDmxS7Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'7) sACN (E1.31) — multicast, priorités, réseau propre'**
+  String get aboutDmxS7Title;
+
+  /// No description provided for @aboutDmxS7PillE131.
+  ///
+  /// In fr, this message translates to:
+  /// **'E1.31'**
+  String get aboutDmxS7PillE131;
+
+  /// No description provided for @aboutDmxS7PillMulticast.
+  ///
+  /// In fr, this message translates to:
+  /// **'Multicast'**
+  String get aboutDmxS7PillMulticast;
+
+  /// No description provided for @aboutDmxS7PillPriority.
+  ///
+  /// In fr, this message translates to:
+  /// **'Priorité'**
+  String get aboutDmxS7PillPriority;
+
+  /// No description provided for @aboutDmxS7PillIgmp.
+  ///
+  /// In fr, this message translates to:
+  /// **'IGMP'**
+  String get aboutDmxS7PillIgmp;
+
+  /// No description provided for @aboutDmxS7Intro.
+  ///
+  /// In fr, this message translates to:
+  /// **'sACN (ANSI E1.31) est un standard moderne pour transporter des univers DMX sur IP. Il est très utilisé en grands systèmes car il gère bien le multicast et les priorités.'**
+  String get aboutDmxS7Intro;
+
+  /// No description provided for @aboutDmxS7KeyIdeasTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Idées clés'**
+  String get aboutDmxS7KeyIdeasTitle;
+
+  /// No description provided for @aboutDmxS7KeyIdeasB1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Multicast : un univers est un “groupe” réseau (les nodes s’abonnent).'**
+  String get aboutDmxS7KeyIdeasB1;
+
+  /// No description provided for @aboutDmxS7KeyIdeasB2.
+  ///
+  /// In fr, this message translates to:
+  /// **'IGMP snooping sur les switches = indispensable à grande échelle (sinon ça inonde).'**
+  String get aboutDmxS7KeyIdeasB2;
+
+  /// No description provided for @aboutDmxS7KeyIdeasB3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Priorité : plusieurs sources possibles, celle avec la plus haute priorité gagne.'**
+  String get aboutDmxS7KeyIdeasB3;
+
+  /// No description provided for @aboutDmxS7KeyIdeasB4.
+  ///
+  /// In fr, this message translates to:
+  /// **'Comme Art-Net : réseau propre + câbles/switch de qualité = stabilité.'**
+  String get aboutDmxS7KeyIdeasB4;
+
+  /// No description provided for @aboutDmxS8Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'8) DMX vs Art-Net vs sACN — résumé (quoi choisir ?)'**
+  String get aboutDmxS8Title;
+
+  /// No description provided for @aboutDmxS8Intro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Les trois font la même chose au final : piloter des canaux. La différence se joue sur la distribution (câble DMX vs réseau), l’échelle, et la robustesse.'**
+  String get aboutDmxS8Intro;
+
+  /// No description provided for @aboutDmxS8QuickTableTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résumé en 4 lignes'**
+  String get aboutDmxS8QuickTableTitle;
+
+  /// No description provided for @aboutDmxS8QuickB1.
+  ///
+  /// In fr, this message translates to:
+  /// **'DMX : simple, robuste, 1 câble = 1 ligne (512 canaux).'**
+  String get aboutDmxS8QuickB1;
+
+  /// No description provided for @aboutDmxS8QuickB2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Art-Net : très courant, facile à déployer, attention au broadcast.'**
+  String get aboutDmxS8QuickB2;
+
+  /// No description provided for @aboutDmxS8QuickB3.
+  ///
+  /// In fr, this message translates to:
+  /// **'sACN : plus “pro grands systèmes”, multicast + priorités, demande un réseau bien configuré.'**
+  String get aboutDmxS8QuickB3;
+
+  /// No description provided for @aboutDmxS8QuickB4.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dans tous les cas : documentation + test progressif = gain de temps énorme.'**
+  String get aboutDmxS8QuickB4;
+
+  /// No description provided for @aboutDmxS8ChooseTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Choix rapide'**
+  String get aboutDmxS8ChooseTitle;
+
+  /// No description provided for @aboutDmxS8ChooseB1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Petit set-up : DMX direct ou Art-Net (simple).'**
+  String get aboutDmxS8ChooseB1;
+
+  /// No description provided for @aboutDmxS8ChooseB2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Beaucoup d’univers : réseau dédié + nodes ; Art-Net en unicast ou sACN.'**
+  String get aboutDmxS8ChooseB2;
+
+  /// No description provided for @aboutDmxS8ChooseB3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Très gros rigs / infrastructures : sACN + switches/IGMP bien gérés.'**
+  String get aboutDmxS8ChooseB3;
+
+  /// No description provided for @aboutSunTimesTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Soleil (lever / coucher)'**
+  String get aboutSunTimesTitle;
+
+  /// No description provided for @aboutSunTimesSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Choix d’une ville et d’une date, heures de lever/coucher + seuils (lux).'**
+  String get aboutSunTimesSubtitle;
+
+  /// No description provided for @sunTimesPageTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lever / coucher du soleil'**
+  String get sunTimesPageTitle;
+
+  /// No description provided for @sunTimesSelectionTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Paramètres'**
+  String get sunTimesSelectionTitle;
+
+  /// No description provided for @sunTimesCityLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ville'**
+  String get sunTimesCityLabel;
+
+  /// No description provided for @sunTimesDateLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Date'**
+  String get sunTimesDateLabel;
+
+  /// No description provided for @sunTimesResultsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résultats'**
+  String get sunTimesResultsTitle;
+
+  /// No description provided for @sunTimesSunriseLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lever du soleil'**
+  String get sunTimesSunriseLabel;
+
+  /// No description provided for @sunTimesSunsetLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Coucher du soleil'**
+  String get sunTimesSunsetLabel;
+
+  /// No description provided for @sunTimesDayLengthLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Durée du jour'**
+  String get sunTimesDayLengthLabel;
+
+  /// No description provided for @sunTimesDisclaimer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeurs indicatives (modèle astronomique). Vérifie avec une source officielle si nécessaire (événement, sécurité, tournage).'**
+  String get sunTimesDisclaimer;
+
+  /// No description provided for @sunTimesThresholdTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Seuils de luminosité (repères)'**
+  String get sunTimesThresholdTitle;
+
+  /// No description provided for @sunTimesThresholdIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ordres de grandeur utiles pour anticiper la lumière ambiante (très variable selon météo, latitude, saison, obstacles, pollution lumineuse).'**
+  String get sunTimesThresholdIntro;
+
+  /// No description provided for @sunTimesLuxDaylight.
+  ///
+  /// In fr, this message translates to:
+  /// **'Plein jour (hors soleil direct)'**
+  String get sunTimesLuxDaylight;
+
+  /// No description provided for @sunTimesLuxOvercast.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ciel couvert (typique)'**
+  String get sunTimesLuxOvercast;
+
+  /// No description provided for @sunTimesLuxSunrise.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lever / coucher (clair)'**
+  String get sunTimesLuxSunrise;
+
+  /// No description provided for @sunTimesLuxCivilTwilight.
+  ///
+  /// In fr, this message translates to:
+  /// **'Limite crépuscule civil (clair)'**
+  String get sunTimesLuxCivilTwilight;
+
+  /// No description provided for @sunTimesLuxFullMoon.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pleine lune (clair)'**
+  String get sunTimesLuxFullMoon;
+
+  /// No description provided for @sunTimesThresholdNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Astuce : pour un repérage “utilisable sans éclairage”, on vise souvent > 100–300 lx. Pour un travail fin, plutôt 500 lx et +.'**
+  String get sunTimesThresholdNote;
+
+  /// No description provided for @sunTimesTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lever / coucher du soleil'**
+  String get sunTimesTitle;
+
+  /// No description provided for @sunTimesParamsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Paramètres'**
+  String get sunTimesParamsTitle;
+
+  /// No description provided for @sunTimesPickDate.
+  ///
+  /// In fr, this message translates to:
+  /// **'Choisir une date'**
+  String get sunTimesPickDate;
+
+  /// No description provided for @sunTimesSunrise.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lever'**
+  String get sunTimesSunrise;
+
+  /// No description provided for @sunTimesSunset.
+  ///
+  /// In fr, this message translates to:
+  /// **'Coucher'**
+  String get sunTimesSunset;
+
+  /// No description provided for @sunTimesDayLength.
+  ///
+  /// In fr, this message translates to:
+  /// **'Durée du jour'**
+  String get sunTimesDayLength;
+
+  /// No description provided for @sunTimesPolarNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Note : dans les zones proches des pôles, lever/coucher peuvent être absents selon la saison.'**
+  String get sunTimesPolarNote;
+
+  /// No description provided for @sunTimesLuxThresholdTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Seuils de luminosité (repères)'**
+  String get sunTimesLuxThresholdTitle;
+
+  /// No description provided for @sunTimesLuxBulletNightDark.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nuit noire : < 1 lux'**
+  String get sunTimesLuxBulletNightDark;
+
+  /// No description provided for @sunTimesLuxBulletNightMoon.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nuit (lune) : ~ 0,1–1 lux'**
+  String get sunTimesLuxBulletNightMoon;
+
+  /// No description provided for @sunTimesLuxBulletFullMoon.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pleine lune : ~ 0,1–0,3 lux'**
+  String get sunTimesLuxBulletFullMoon;
+
+  /// No description provided for @sunTimesLuxBulletCivilTwilight.
+  ///
+  /// In fr, this message translates to:
+  /// **'Crépuscule civil : Soleil à -6°'**
+  String get sunTimesLuxBulletCivilTwilight;
+
+  /// No description provided for @sunTimesLuxBulletUrbanLow.
+  ///
+  /// In fr, this message translates to:
+  /// **'Éclairage urbain faible : ~ 5–20 lux'**
+  String get sunTimesLuxBulletUrbanLow;
+
+  /// No description provided for @sunTimesLuxBulletOfficeLow.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bureau faible : ~ 100–300 lux'**
+  String get sunTimesLuxBulletOfficeLow;
+
+  /// No description provided for @sunTimesLuxBulletOfficeStd.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bureau standard : ~ 300–500 lux'**
+  String get sunTimesLuxBulletOfficeStd;
+
+  /// No description provided for @sunTimesLuxBulletOutdoorDay.
+  ///
+  /// In fr, this message translates to:
+  /// **'Extérieur jour : ~ 10 000–25 000 lux'**
+  String get sunTimesLuxBulletOutdoorDay;
+
+  /// No description provided for @sunTimesLuxBulletDirectSun.
+  ///
+  /// In fr, this message translates to:
+  /// **'Soleil direct : ~ 100 000 lux'**
+  String get sunTimesLuxBulletDirectSun;
+
+  /// No description provided for @sunTimesLuxDisclaimer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Repères indicatifs : météo/nuages, environnement, saison et relief peuvent fortement varier.'**
+  String get sunTimesLuxDisclaimer;
+
+  /// No description provided for @sunTimesTwilightTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Crépuscules : à quoi ça correspond'**
+  String get sunTimesTwilightTitle;
+
+  /// No description provided for @sunTimesTwilightIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Les crépuscules sont définis par la hauteur du Soleil sous l’horizon. Ces définitions sont standardisées.'**
+  String get sunTimesTwilightIntro;
+
+  /// No description provided for @sunTimesTwilightCivil.
+  ///
+  /// In fr, this message translates to:
+  /// **'Civil (-6°) : lumière encore suffisante pour distinguer l’environnement sans éclairage artificiel.'**
+  String get sunTimesTwilightCivil;
+
+  /// No description provided for @sunTimesTwilightNautical.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nautique (-12°) : l’horizon devient difficile à distinguer ; étoiles visibles.'**
+  String get sunTimesTwilightNautical;
+
+  /// No description provided for @sunTimesTwilightAstronomical.
+  ///
+  /// In fr, this message translates to:
+  /// **'Astronomique (-18°) : le ciel est considéré comme “noir” (hors pollution lumineise).'**
+  String get sunTimesTwilightAstronomical;
+
+  /// No description provided for @sunTimesTwilightAnglesNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angles exprimés en degrés sous l’horizon (Soleil négatif).'**
+  String get sunTimesTwilightAnglesNote;
+
+  /// No description provided for @sunTimesLabelCity.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ville'**
+  String get sunTimesLabelCity;
+
+  /// No description provided for @sunTimesLabelDate.
+  ///
+  /// In fr, this message translates to:
+  /// **'Date'**
+  String get sunTimesLabelDate;
+
+  /// No description provided for @sunTimesNoteApprox.
+  ///
+  /// In fr, this message translates to:
+  /// **'Heures indicatives — peuvent varier selon l’altitude, la réfraction et la météo.'**
+  String get sunTimesNoteApprox;
+
+  /// No description provided for @sunTimesLuxBulletAstronomicalTwilight.
+  ///
+  /// In fr, this message translates to:
+  /// **'Crépuscule astronomique : Soleil à -18°'**
+  String get sunTimesLuxBulletAstronomicalTwilight;
+
+  /// No description provided for @sunTimesTimelineTitleStep30.
+  ///
+  /// In fr, this message translates to:
+  /// **'Timeline (pas 30 min)'**
+  String get sunTimesTimelineTitleStep30;
+
+  /// No description provided for @sunTimesTimelineColTime.
+  ///
+  /// In fr, this message translates to:
+  /// **'Heure'**
+  String get sunTimesTimelineColTime;
+
+  /// No description provided for @sunTimesTimelineColElevation.
+  ///
+  /// In fr, this message translates to:
+  /// **'Élévation'**
+  String get sunTimesTimelineColElevation;
+
+  /// No description provided for @sunTimesTimelineColMarker.
+  ///
+  /// In fr, this message translates to:
+  /// **'Repère'**
+  String get sunTimesTimelineColMarker;
+
+  /// No description provided for @sunTimesTimelineColLux.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lux (ordre)'**
+  String get sunTimesTimelineColLux;
+
+  /// No description provided for @sunTimesTimelineFootnote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Repères indicatifs (météo/nuages, environnement, saison) — utile pour préparer un show.'**
+  String get sunTimesTimelineFootnote;
+
+  /// No description provided for @sunTimesLuxNight.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nuit noire'**
+  String get sunTimesLuxNight;
+
+  /// No description provided for @sunTimesLuxAstro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Crépuscule astro'**
+  String get sunTimesLuxAstro;
+
+  /// No description provided for @sunTimesLuxNautical.
+  ///
+  /// In fr, this message translates to:
+  /// **'Crépuscule naut.'**
+  String get sunTimesLuxNautical;
+
+  /// No description provided for @sunTimesLuxCivil.
+  ///
+  /// In fr, this message translates to:
+  /// **'Crépuscule civil'**
+  String get sunTimesLuxCivil;
+
+  /// No description provided for @sunTimesLuxVeryLow.
+  ///
+  /// In fr, this message translates to:
+  /// **'Très faible'**
+  String get sunTimesLuxVeryLow;
+
+  /// No description provided for @sunTimesLuxLow.
+  ///
+  /// In fr, this message translates to:
+  /// **'Faible'**
+  String get sunTimesLuxLow;
+
+  /// No description provided for @sunTimesLuxDay.
+  ///
+  /// In fr, this message translates to:
+  /// **'Jour'**
+  String get sunTimesLuxDay;
+
+  /// No description provided for @sunTimesLuxFullDay.
+  ///
+  /// In fr, this message translates to:
+  /// **'Plein jour'**
+  String get sunTimesLuxFullDay;
+
+  /// No description provided for @sunTimesSectionSettings.
+  ///
+  /// In fr, this message translates to:
+  /// **'Paramètres'**
+  String get sunTimesSectionSettings;
+
+  /// No description provided for @sunTimesIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Choisis une ville et une date. Les horaires sont indicatifs (arrondis).'**
+  String get sunTimesIntro;
+
+  /// No description provided for @sunTimesSectionResults.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résultats'**
+  String get sunTimesSectionResults;
+
+  /// No description provided for @sunTimesResultSunrise.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lever du soleil'**
+  String get sunTimesResultSunrise;
+
+  /// No description provided for @sunTimesResultSunset.
+  ///
+  /// In fr, this message translates to:
+  /// **'Coucher du soleil'**
+  String get sunTimesResultSunset;
+
+  /// No description provided for @sunTimesResultCivilDawn.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aube civile'**
+  String get sunTimesResultCivilDawn;
+
+  /// No description provided for @sunTimesResultCivilDusk.
+  ///
+  /// In fr, this message translates to:
+  /// **'Crépuscule civil'**
+  String get sunTimesResultCivilDusk;
+
+  /// No description provided for @sunTimesResultNauticalDawn.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aube nautique'**
+  String get sunTimesResultNauticalDawn;
+
+  /// No description provided for @sunTimesResultNauticalDusk.
+  ///
+  /// In fr, this message translates to:
+  /// **'Crépuscule nautique'**
+  String get sunTimesResultNauticalDusk;
+
+  /// No description provided for @sunTimesResultAstronomicalDawn.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aube astronomique'**
+  String get sunTimesResultAstronomicalDawn;
+
+  /// No description provided for @sunTimesResultAstronomicalDusk.
+  ///
+  /// In fr, this message translates to:
+  /// **'Crépuscule astronomique'**
+  String get sunTimesResultAstronomicalDusk;
+
+  /// No description provided for @sunTimesNoData.
+  ///
+  /// In fr, this message translates to:
+  /// **'—'**
+  String get sunTimesNoData;
+
+  /// No description provided for @sunTimesSectionTimeline.
+  ///
+  /// In fr, this message translates to:
+  /// **'Timeline (pas de 30 min)'**
+  String get sunTimesSectionTimeline;
+
+  /// No description provided for @sunTimesTimelineStep30.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas: 30 min'**
+  String get sunTimesTimelineStep30;
+
+  /// No description provided for @sunTimesTimelineDay.
+  ///
+  /// In fr, this message translates to:
+  /// **'Jour'**
+  String get sunTimesTimelineDay;
+
+  /// No description provided for @sunTimesTimelineCivil.
+  ///
+  /// In fr, this message translates to:
+  /// **'Civil'**
+  String get sunTimesTimelineCivil;
+
+  /// No description provided for @sunTimesTimelineNautical.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nautique'**
+  String get sunTimesTimelineNautical;
+
+  /// No description provided for @sunTimesTimelineAstronomical.
+  ///
+  /// In fr, this message translates to:
+  /// **'Astronomique'**
+  String get sunTimesTimelineAstronomical;
+
+  /// No description provided for @sunTimesTimelineNight.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nuit'**
+  String get sunTimesTimelineNight;
+
+  /// No description provided for @sunTimesSectionTwilight.
+  ///
+  /// In fr, this message translates to:
+  /// **'À quoi correspondent les crépuscules ?'**
+  String get sunTimesSectionTwilight;
+
+  /// No description provided for @sunTimesTwilightCivilTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Civil (≈ 0° à −6°)'**
+  String get sunTimesTwilightCivilTitle;
+
+  /// No description provided for @sunTimesTwilightCivilBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fin/début de journée. On distingue encore bien le paysage.'**
+  String get sunTimesTwilightCivilBody;
+
+  /// No description provided for @sunTimesTwilightNauticalTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nautique (≈ −6° à −12°)'**
+  String get sunTimesTwilightNauticalTitle;
+
+  /// No description provided for @sunTimesTwilightNauticalBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'La ligne d’horizon devient difficile à distinguer. Le ciel est nettement plus sombre.'**
+  String get sunTimesTwilightNauticalBody;
+
+  /// No description provided for @sunTimesTwilightAstronomicalTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Astronomique (≈ −12° à −18°)'**
+  String get sunTimesTwilightAstronomicalTitle;
+
+  /// No description provided for @sunTimesTwilightAstronomicalBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le ciel est proche de la nuit complète (peu de lumière résiduelle).'**
+  String get sunTimesTwilightAstronomicalBody;
+
+  /// No description provided for @sunTimesSectionLux.
+  ///
+  /// In fr, this message translates to:
+  /// **'Seuils de luminosité (repères)'**
+  String get sunTimesSectionLux;
+
+  /// No description provided for @sunTimesLuxNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ces valeurs sont des repères typiques (météo, saison, environnement → variations).'**
+  String get sunTimesLuxNote;
 }
 
 class _AppLocalizationsDelegate
