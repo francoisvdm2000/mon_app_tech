@@ -6238,6 +6238,42 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Ces valeurs sont des repères typiques (météo, saison, environnement → variations).'**
   String get sunTimesLuxNote;
+
+  /// En-tête de colonne : subnet Art-Net (0–15).
+  ///
+  /// In fr, this message translates to:
+  /// **'Subnet'**
+  String get aboutUniverseToArtnetColSubnet;
+
+  /// En-tête de colonne : univers Art-Net (0–15).
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers'**
+  String get aboutUniverseToArtnetColUniverse;
+
+  /// Video LED page result label
+  ///
+  /// In fr, this message translates to:
+  /// **'Résolution mur'**
+  String get videoLedResultWallResolution;
+
+  /// Video LED page result label
+  ///
+  /// In fr, this message translates to:
+  /// **'Taille mur'**
+  String get videoLedResultWallSize;
+
+  /// Video LED page result label
+  ///
+  /// In fr, this message translates to:
+  /// **'Dalle'**
+  String get videoLedResultTile;
+
+  /// Video LED page result label
+  ///
+  /// In fr, this message translates to:
+  /// **'Pitch'**
+  String get videoLedResultPitch;
 }
 
 class _AppLocalizationsDelegate

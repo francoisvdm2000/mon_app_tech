@@ -599,7 +599,13 @@
     "sunTimesTwilightAstronomicalTitle",
     "sunTimesTwilightAstronomicalBody",
     "sunTimesSectionLux",
-    "sunTimesLuxNote"
+    "sunTimesLuxNote",
+    "aboutUniverseToArtnetColSubnet",
+    "aboutUniverseToArtnetColUniverse",
+    "videoLedResultWallResolution",
+    "videoLedResultWallSize",
+    "videoLedResultTile",
+    "videoLedResultPitch"
   ],
 
   "en": [
@@ -1811,7 +1817,13 @@
     "sunTimesTwilightAstronomicalTitle",
     "sunTimesTwilightAstronomicalBody",
     "sunTimesSectionLux",
-    "sunTimesLuxNote"
+    "sunTimesLuxNote",
+    "aboutUniverseToArtnetColSubnet",
+    "aboutUniverseToArtnetColUniverse",
+    "videoLedResultWallResolution",
+    "videoLedResultWallSize",
+    "videoLedResultTile",
+    "videoLedResultPitch"
   ],
 
   "nl": [
@@ -2414,7 +2426,13 @@
     "sunTimesTwilightAstronomicalTitle",
     "sunTimesTwilightAstronomicalBody",
     "sunTimesSectionLux",
-    "sunTimesLuxNote"
+    "sunTimesLuxNote",
+    "aboutUniverseToArtnetColSubnet",
+    "aboutUniverseToArtnetColUniverse",
+    "videoLedResultWallResolution",
+    "videoLedResultWallSize",
+    "videoLedResultTile",
+    "videoLedResultPitch"
   ],
 
   "pt": [
@@ -3017,6 +3035,12 @@
     "sunTimesTwilightAstronomicalTitle",
     "sunTimesTwilightAstronomicalBody",
     "sunTimesSectionLux",
-    "sunTimesLuxNote"
+    "sunTimesLuxNote",
+    "aboutUniverseToArtnetColSubnet",
+    "aboutUniverseToArtnetColUniverse",
+    "videoLedResultWallResolution",
+    "videoLedResultWallSize",
+    "videoLedResultTile",
+    "videoLedResultPitch"
   ]
 }

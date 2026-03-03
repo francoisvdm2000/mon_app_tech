@@ -443,5 +443,29 @@
   "sunTimesTimelineCivil": "Civil",
   "sunTimesTimelineNautical": "Nautical",
   "sunTimesTimelineAstronomical": "Astronomical",
-  "sunTimesTimelineNight": "Night"
+  "sunTimesTimelineNight": "Night",
+  "aboutUniverseToArtnetColSubnet": "Subnet",
+  "@aboutUniverseToArtnetColSubnet": {
+    "description": "Column header: Art-Net subnet (0–15)."
+  },
+  "aboutUniverseToArtnetColUniverse": "Universe",
+  "@aboutUniverseToArtnetColUniverse": {
+    "description": "Column header: Art-Net universe (0–15)."
+  },
+  "videoLedResultWallResolution": "Wall resolution",
+  "videoLedResultWallSize": "Wall size",
+  "videoLedResultTile": "Tile",
+  "videoLedResultPitch": "Pitch",
+  "@videoLedResultWallResolution": {
+    "description": "Video LED page result label"
+  },
+  "@videoLedResultWallSize": {
+    "description": "Video LED page result label"
+  },
+  "@videoLedResultTile": {
+    "description": "Video LED page result label"
+  },
+  "@videoLedResultPitch": {
+    "description": "Video LED page result label"
+  }
 }

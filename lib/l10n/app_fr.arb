@@ -1312,5 +1312,29 @@
   "sunTimesTwilightAstronomicalTitle": "Astronomique (≈ −12° à −18°)",
   "sunTimesTwilightAstronomicalBody": "Le ciel est proche de la nuit complète (peu de lumière résiduelle).",
   "sunTimesSectionLux": "Seuils de luminosité (repères)",
-  "sunTimesLuxNote": "Ces valeurs sont des repères typiques (météo, saison, environnement → variations)."
+  "sunTimesLuxNote": "Ces valeurs sont des repères typiques (météo, saison, environnement → variations).",
+  "aboutUniverseToArtnetColSubnet": "Subnet",
+  "@aboutUniverseToArtnetColSubnet": {
+    "description": "En-tête de colonne : subnet Art-Net (0–15)."
+  },
+  "aboutUniverseToArtnetColUniverse": "Univers",
+  "@aboutUniverseToArtnetColUniverse": {
+    "description": "En-tête de colonne : univers Art-Net (0–15)."
+  },
+  "videoLedResultWallResolution": "Résolution mur",
+  "videoLedResultWallSize": "Taille mur",
+  "videoLedResultTile": "Dalle",
+  "videoLedResultPitch": "Pitch",
+  "@videoLedResultWallResolution": {
+    "description": "Video LED page result label"
+  },
+  "@videoLedResultWallSize": {
+    "description": "Video LED page result label"
+  },
+  "@videoLedResultTile": {
+    "description": "Video LED page result label"
+  },
+  "@videoLedResultPitch": {
+    "description": "Video LED page result label"
+  }
 }

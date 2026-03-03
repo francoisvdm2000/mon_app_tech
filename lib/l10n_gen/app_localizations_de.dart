@@ -3503,4 +3503,22 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get sunTimesLuxNote =>
       'Ces valeurs sont des repères typiques (météo, saison, environnement → variations).';
+
+  @override
+  String get aboutUniverseToArtnetColSubnet => 'Subnet';
+
+  @override
+  String get aboutUniverseToArtnetColUniverse => 'Univers';
+
+  @override
+  String get videoLedResultWallResolution => 'Résolution mur';
+
+  @override
+  String get videoLedResultWallSize => 'Taille mur';
+
+  @override
+  String get videoLedResultTile => 'Dalle';
+
+  @override
+  String get videoLedResultPitch => 'Pitch';
 }

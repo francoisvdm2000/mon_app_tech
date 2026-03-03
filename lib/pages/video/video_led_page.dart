@@ -166,19 +166,23 @@ class _VideoLedPageState extends State<VideoLedPage> {
       );
     }
 
+    // IMPORTANT:
+    // Ton projet a déjà eu des divergences entre les générateurs / backups l10n.
+    // Pour éviter les problèmes d’ordre de paramètres (et donc d’affichage faux),
+    // on NE compose PAS le résultat via une seule string localisée avec beaucoup de placeholders.
+    // On construit les lignes ici, avec des libellés séparés.
     setState(() {
-      // ✅ 9 arguments POSITIONNELS (d’après tes erreurs “9 positional arguments expected…”)
-      _r = loc.videoLedResult(
-        wallWpx.toString(),
-        wallHpx.toString(),
-        wallWm.toStringAsFixed(2),
-        wallHm.toStringAsFixed(2),
-        tileWpx.toString(),
-        tileHpx.toString(),
-        tileWcm.toStringAsFixed(2),
-        tileHcm.toStringAsFixed(2),
-        pitchLabel,
-      );
+      final wallRes = '${wallWpx.toString()} × ${wallHpx.toString()} px';
+      final wallSize = '${wallWm.toStringAsFixed(2)} × ${wallHm.toStringAsFixed(2)} m';
+      final tileRes = '${tileWpx.toString()}×${tileHpx.toString()} px';
+      final tileSize = '${tileWcm.toStringAsFixed(2)}×${tileHcm.toStringAsFixed(2)} cm';
+
+      _r = [
+        '✅ ${loc.videoLedResultWallResolution}: $wallRes',
+        '✅ ${loc.videoLedResultWallSize}: $wallSize',
+        '${loc.videoLedResultTile}: $tileRes • $tileSize',
+        '${loc.videoLedResultPitch}: $pitchLabel',
+      ].join('\n');
     });
   }
 

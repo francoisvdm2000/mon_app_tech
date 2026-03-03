@@ -276,6 +276,7 @@ class _VideoBrightnessPageState extends State<VideoBrightnessPage> {
                 calcLabel: loc.commonCalculate,
                 inputs: [
                   DropdownButtonFormField<String>(
+                    isExpanded: true,
                     initialValue: _format,
                     decoration:
                         InputDecoration(labelText: loc.videoFormatLabel),
@@ -310,51 +311,64 @@ class _VideoBrightnessPageState extends State<VideoBrightnessPage> {
                   ),
                   const SizedBox(height: 12),
                   DropdownButtonFormField<String>(
+                    isExpanded: true,
                     initialValue: _screenPresetKey,
                     decoration:
                         InputDecoration(labelText: loc.videoScreenPresetLabel),
                     items: [
                       DropdownMenuItem(
                         value: 'videoPresetFrontWhite',
-                        child: Text(loc.videoPresetFrontWhite),
+                        child: Text(loc.videoPresetFrontWhite, overflow: TextOverflow.ellipsis),
                       ),
                       DropdownMenuItem(
                         value: 'videoPresetFrontGrey',
-                        child: Text(loc.videoPresetFrontGrey),
+                        child: Text(loc.videoPresetFrontGrey, overflow: TextOverflow.ellipsis),
                       ),
                       DropdownMenuItem(
                         value: 'videoPresetFrontHighGain',
-                        child: Text(loc.videoPresetFrontHighGain),
+                        child: Text(loc.videoPresetFrontHighGain, overflow: TextOverflow.ellipsis),
                       ),
                       DropdownMenuItem(
                         value: 'videoPresetRearDiffusion',
-                        child: Text(loc.videoPresetRearDiffusion),
+                        child: Text(loc.videoPresetRearDiffusion, overflow: TextOverflow.ellipsis),
                       ),
                       DropdownMenuItem(
                         value: 'videoPresetRearClear',
-                        child: Text(loc.videoPresetRearClear),
+                        child: Text(loc.videoPresetRearClear, overflow: TextOverflow.ellipsis),
                       ),
                       DropdownMenuItem(
                         value: 'videoPresetMappingMatte',
-                        child: Text(loc.videoPresetMappingMatte),
+                        child: Text(loc.videoPresetMappingMatte, overflow: TextOverflow.ellipsis),
                       ),
                       DropdownMenuItem(
                         value: 'videoPresetMappingSatin',
-                        child: Text(loc.videoPresetMappingSatin),
+                        child: Text(loc.videoPresetMappingSatin, overflow: TextOverflow.ellipsis),
                       ),
                       DropdownMenuItem(
                         value: 'videoPresetMappingLightStone',
-                        child: Text(loc.videoPresetMappingLightStone),
+                        child: Text(loc.videoPresetMappingLightStone, overflow: TextOverflow.ellipsis),
                       ),
                       DropdownMenuItem(
                         value: 'videoPresetMappingDarkStone',
-                        child: Text(loc.videoPresetMappingDarkStone),
+                        child: Text(loc.videoPresetMappingDarkStone, overflow: TextOverflow.ellipsis),
                       ),
                       DropdownMenuItem(
                         value: 'videoPresetMappingGlass',
-                        child: Text(loc.videoPresetMappingGlass),
+                        child: Text(loc.videoPresetMappingGlass, overflow: TextOverflow.ellipsis),
                       ),
                     ],
+                                    selectedItemBuilder: (context) => [
+                    Text(loc.videoPresetFrontWhite, overflow: TextOverflow.ellipsis),
+                    Text(loc.videoPresetFrontGrey, overflow: TextOverflow.ellipsis),
+                    Text(loc.videoPresetFrontHighGain, overflow: TextOverflow.ellipsis),
+                    Text(loc.videoPresetRearDiffusion, overflow: TextOverflow.ellipsis),
+                    Text(loc.videoPresetRearClear, overflow: TextOverflow.ellipsis),
+                    Text(loc.videoPresetMappingMatte, overflow: TextOverflow.ellipsis),
+                    Text(loc.videoPresetMappingSatin, overflow: TextOverflow.ellipsis),
+                    Text(loc.videoPresetMappingLightStone, overflow: TextOverflow.ellipsis),
+                    Text(loc.videoPresetMappingDarkStone, overflow: TextOverflow.ellipsis),
+                    Text(loc.videoPresetMappingGlass, overflow: TextOverflow.ellipsis),
+                  ],
                     onChanged: (v) {
                       if (v == null) return;
                       _applyPresetByKey(v);

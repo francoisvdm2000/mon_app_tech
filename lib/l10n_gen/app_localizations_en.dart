@@ -3485,4 +3485,22 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get sunTimesLuxNote =>
       'These are rough orders of magnitude. Weather changes everything.';
+
+  @override
+  String get aboutUniverseToArtnetColSubnet => 'Subnet';
+
+  @override
+  String get aboutUniverseToArtnetColUniverse => 'Universe';
+
+  @override
+  String get videoLedResultWallResolution => 'Wall resolution';
+
+  @override
+  String get videoLedResultWallSize => 'Wall size';
+
+  @override
+  String get videoLedResultTile => 'Tile';
+
+  @override
+  String get videoLedResultPitch => 'Pitch';
 }
