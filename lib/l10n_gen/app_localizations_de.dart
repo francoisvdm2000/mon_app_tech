@@ -3251,6 +3251,325 @@ class AppLocalizationsDe extends AppLocalizations {
   String get bpmManualHint => 'Ex. 128';
 
   @override
+  String get commonAdd => 'Ajouter';
+
+  @override
+  String get commonEdit => 'Modifier';
+
+  @override
+  String get commonDelete => 'Supprimer';
+
+  @override
+  String get commonCopied => 'Copié dans le presse-papiers.';
+
+  @override
+  String get patchCreateGdtfTitle => 'Créer un GDTF (simple)';
+
+  @override
+  String get patchCreateGdtfSubtitle =>
+      'Création manuelle d’un device sous forme de tableau.';
+
+  @override
+  String get gdtfSimpleTitle => 'Créateur GDTF (simple)';
+
+  @override
+  String get gdtfDeviceSectionTitle => 'Appareil';
+
+  @override
+  String get gdtfChannelsSectionTitle => 'Canaux';
+
+  @override
+  String get gdtfImportJsonTitle => 'Importer JSON';
+
+  @override
+  String get gdtfExportJsonTitle => 'Exporter JSON';
+
+  @override
+  String get gdtfImportJsonHint => 'Colle le JSON ici';
+
+  @override
+  String get gdtfManufacturerLabel => 'Fabricant';
+
+  @override
+  String get gdtfModelLabel => 'Modèle';
+
+  @override
+  String get gdtfModeNameLabel => 'Nom du mode';
+
+  @override
+  String get gdtfChannelsCountLabel => 'Canaux';
+
+  @override
+  String get gdtfFootprintLabel => 'Footprint';
+
+  @override
+  String get gdtfColIndex => '#';
+
+  @override
+  String get gdtfColName => 'Nom';
+
+  @override
+  String get gdtfColDmx => 'DMX';
+
+  @override
+  String get gdtfColType => 'Type';
+
+  @override
+  String get gdtfColRes => '8/16';
+
+  @override
+  String get gdtfColDefault => 'Défaut';
+
+  @override
+  String get gdtfColActions => 'Actions';
+
+  @override
+  String get gdtfMoveUp => 'Monter';
+
+  @override
+  String get gdtfMoveDown => 'Descendre';
+
+  @override
+  String get gdtfChannelAddTitle => 'Ajouter un canal';
+
+  @override
+  String get gdtfChannelEditTitle => 'Modifier le canal';
+
+  @override
+  String get gdtfFieldName => 'Nom';
+
+  @override
+  String get gdtfFieldDmx => 'Adresse DMX';
+
+  @override
+  String get gdtfFieldType => 'Type';
+
+  @override
+  String get gdtfFieldResolution => 'Résolution';
+
+  @override
+  String get gdtfRes8 => '8-bit';
+
+  @override
+  String get gdtfRes16 => '16-bit';
+
+  @override
+  String get gdtfFieldDefault8 => 'Valeur par défaut (0–255)';
+
+  @override
+  String get gdtfFieldDefault16 => 'Valeur par défaut (0–65535)';
+
+  @override
+  String get gdtfDefaultChannelName => 'Canal';
+
+  @override
+  String get gdtfMvpHint =>
+      'MVP : export JSON (presse-papiers). L’export GDTF réel (XML+ZIP) viendra ensuite.';
+
+  @override
+  String get gdtfTypeDimmer => 'Dimmer';
+
+  @override
+  String get gdtfTypePan => 'Pan';
+
+  @override
+  String get gdtfTypeTilt => 'Tilt';
+
+  @override
+  String get gdtfTypeColor => 'Couleur';
+
+  @override
+  String get gdtfTypeGobo => 'Gobo';
+
+  @override
+  String get gdtfTypeShutter => 'Shutter';
+
+  @override
+  String get gdtfTypePrism => 'Prism';
+
+  @override
+  String get gdtfTypeZoom => 'Zoom';
+
+  @override
+  String get gdtfTypeFocus => 'Focus';
+
+  @override
+  String get gdtfTypeIris => 'Iris';
+
+  @override
+  String get gdtfTypeEffect => 'Effet';
+
+  @override
+  String get gdtfTypeCustom => 'Personnalisé';
+
+  @override
+  String get gdtfEasyTitle => 'Créer un GDTF (simple)';
+
+  @override
+  String get gdtfTemplatesTitle => 'Présélections';
+
+  @override
+  String get gdtfCreateDefaultPreset => 'Créer le preset par défaut';
+
+  @override
+  String get gdtfTemplatesHint =>
+      'Crée une base rapide (dimmer, shutter, pan, tilt, RGB, etc.) puis complète les adresses DMX et les défauts.';
+
+  @override
+  String get gdtfExportButton => 'Exporter GDTF';
+
+  @override
+  String get gdtfExportHint =>
+      'Export .gdtf minimal (description.xml) puis partage (Mail, WhatsApp, AirDrop, Drive…).';
+
+  @override
+  String get gdtfExportNeedDmx =>
+      'Ajoute au moins une adresse DMX pour exporter.';
+
+  @override
+  String get gdtfExportDone => 'GDTF exporté.';
+
+  @override
+  String get gdtfExportError => 'Impossible d’exporter le GDTF.';
+
+  @override
+  String get gdtfShareSubject => 'Fichier GDTF';
+
+  @override
+  String get gdtfShareText => 'Voici le fichier GDTF exporté.';
+
+  @override
+  String get gdtfFieldRole => 'Paramètre';
+
+  @override
+  String get gdtfDmxHint => 'Vide ou 1–512';
+
+  @override
+  String get gdtfFieldDefault => 'Défaut';
+
+  @override
+  String get gdtfDefaultHint8 => '0–255';
+
+  @override
+  String get gdtfDefaultHint16 => '0–65535';
+
+  @override
+  String get gdtfChannelDefaultName => 'Canal';
+
+  @override
+  String get gdtfRoleEmpty => 'Vide / Inconnu';
+
+  @override
+  String get gdtfRoleDimmer => 'Dimmer';
+
+  @override
+  String get gdtfRoleShutter => 'Shutter';
+
+  @override
+  String get gdtfRolePan => 'Pan';
+
+  @override
+  String get gdtfRoleTilt => 'Tilt';
+
+  @override
+  String get gdtfRoleRed => 'Rouge (R)';
+
+  @override
+  String get gdtfRoleGreen => 'Vert (G)';
+
+  @override
+  String get gdtfRoleBlue => 'Bleu (B)';
+
+  @override
+  String get gdtfRoleColor => 'Couleur';
+
+  @override
+  String get gdtfRoleGobo => 'Gobo';
+
+  @override
+  String get gdtfRoleZoom => 'Zoom';
+
+  @override
+  String get gdtfRoleFocus => 'Focus';
+
+  @override
+  String get gdtfRolePrism => 'Prism';
+
+  @override
+  String get gdtfRoleEffect => 'Effet';
+
+  @override
+  String get gdtfRoleControl => 'Control';
+
+  @override
+  String get gdtfRoleCustom => 'Custom';
+
+  @override
+  String get gdtfResUnknown => 'Vide';
+
+  @override
+  String get gdtfPresetDimmer => 'Dimmer';
+
+  @override
+  String get gdtfPresetShutter => 'Shutter';
+
+  @override
+  String get gdtfPresetPan => 'Pan';
+
+  @override
+  String get gdtfPresetTilt => 'Tilt';
+
+  @override
+  String get gdtfPresetRed => 'R';
+
+  @override
+  String get gdtfPresetGreen => 'G';
+
+  @override
+  String get gdtfPresetBlue => 'B';
+
+  @override
+  String get gdtfPresetColor1 => 'Color 1';
+
+  @override
+  String get gdtfPresetGobo1 => 'Gobo 1';
+
+  @override
+  String get gdtfPresetZoom => 'Zoom';
+
+  @override
+  String get gdtfPresetFocus => 'Focus';
+
+  @override
+  String get gdtfPresetPrism => 'Prism';
+
+  @override
+  String get gdtfPresetEffect => 'Effet';
+
+  @override
+  String get gdtfPresetControl => 'Control';
+
+  @override
+  String get commonApply => 'Appliquer';
+
+  @override
+  String get gdtfPresetLabel => 'Choix';
+
+  @override
+  String get gdtfPresetFixtureSimple => 'Fixture simple';
+
+  @override
+  String get gdtfPresetBarreLed => 'Barre LED';
+
+  @override
+  String get gdtfTemplatesHintShort =>
+      'Choisis un preset puis applique. Tu peux ensuite ajuster DMX, défauts, et réordonner par glisser-déposer.';
+
+  @override
+  String get gdtfExportNeedChannels =>
+      'Ajoute au moins un canal pour exporter.';
+
+  @override
   String get bpmManualHelp =>
       'Si un BPM manuel est saisi, il est prioritaire sur le tap tempo.';
 

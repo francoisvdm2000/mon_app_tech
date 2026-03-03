@@ -5783,6 +5783,630 @@ abstract class AppLocalizations {
   /// **'Ex. 128'**
   String get bpmManualHint;
 
+  /// No description provided for @commonAdd.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajouter'**
+  String get commonAdd;
+
+  /// No description provided for @commonEdit.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modifier'**
+  String get commonEdit;
+
+  /// No description provided for @commonDelete.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer'**
+  String get commonDelete;
+
+  /// No description provided for @commonCopied.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copié dans le presse-papiers.'**
+  String get commonCopied;
+
+  /// No description provided for @patchCreateGdtfTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Créer un GDTF (simple)'**
+  String get patchCreateGdtfTitle;
+
+  /// No description provided for @patchCreateGdtfSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Création manuelle d’un device sous forme de tableau.'**
+  String get patchCreateGdtfSubtitle;
+
+  /// No description provided for @gdtfSimpleTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Créateur GDTF (simple)'**
+  String get gdtfSimpleTitle;
+
+  /// No description provided for @gdtfDeviceSectionTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Appareil'**
+  String get gdtfDeviceSectionTitle;
+
+  /// No description provided for @gdtfChannelsSectionTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Canaux'**
+  String get gdtfChannelsSectionTitle;
+
+  /// No description provided for @gdtfImportJsonTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Importer JSON'**
+  String get gdtfImportJsonTitle;
+
+  /// No description provided for @gdtfExportJsonTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exporter JSON'**
+  String get gdtfExportJsonTitle;
+
+  /// No description provided for @gdtfImportJsonHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Colle le JSON ici'**
+  String get gdtfImportJsonHint;
+
+  /// No description provided for @gdtfManufacturerLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fabricant'**
+  String get gdtfManufacturerLabel;
+
+  /// No description provided for @gdtfModelLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modèle'**
+  String get gdtfModelLabel;
+
+  /// No description provided for @gdtfModeNameLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom du mode'**
+  String get gdtfModeNameLabel;
+
+  /// No description provided for @gdtfChannelsCountLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Canaux'**
+  String get gdtfChannelsCountLabel;
+
+  /// No description provided for @gdtfFootprintLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Footprint'**
+  String get gdtfFootprintLabel;
+
+  /// No description provided for @gdtfColIndex.
+  ///
+  /// In fr, this message translates to:
+  /// **'#'**
+  String get gdtfColIndex;
+
+  /// No description provided for @gdtfColName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom'**
+  String get gdtfColName;
+
+  /// No description provided for @gdtfColDmx.
+  ///
+  /// In fr, this message translates to:
+  /// **'DMX'**
+  String get gdtfColDmx;
+
+  /// No description provided for @gdtfColType.
+  ///
+  /// In fr, this message translates to:
+  /// **'Type'**
+  String get gdtfColType;
+
+  /// No description provided for @gdtfColRes.
+  ///
+  /// In fr, this message translates to:
+  /// **'8/16'**
+  String get gdtfColRes;
+
+  /// No description provided for @gdtfColDefault.
+  ///
+  /// In fr, this message translates to:
+  /// **'Défaut'**
+  String get gdtfColDefault;
+
+  /// No description provided for @gdtfColActions.
+  ///
+  /// In fr, this message translates to:
+  /// **'Actions'**
+  String get gdtfColActions;
+
+  /// No description provided for @gdtfMoveUp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Monter'**
+  String get gdtfMoveUp;
+
+  /// No description provided for @gdtfMoveDown.
+  ///
+  /// In fr, this message translates to:
+  /// **'Descendre'**
+  String get gdtfMoveDown;
+
+  /// No description provided for @gdtfChannelAddTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajouter un canal'**
+  String get gdtfChannelAddTitle;
+
+  /// No description provided for @gdtfChannelEditTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modifier le canal'**
+  String get gdtfChannelEditTitle;
+
+  /// No description provided for @gdtfFieldName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom'**
+  String get gdtfFieldName;
+
+  /// No description provided for @gdtfFieldDmx.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse DMX'**
+  String get gdtfFieldDmx;
+
+  /// No description provided for @gdtfFieldType.
+  ///
+  /// In fr, this message translates to:
+  /// **'Type'**
+  String get gdtfFieldType;
+
+  /// No description provided for @gdtfFieldResolution.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résolution'**
+  String get gdtfFieldResolution;
+
+  /// No description provided for @gdtfRes8.
+  ///
+  /// In fr, this message translates to:
+  /// **'8-bit'**
+  String get gdtfRes8;
+
+  /// No description provided for @gdtfRes16.
+  ///
+  /// In fr, this message translates to:
+  /// **'16-bit'**
+  String get gdtfRes16;
+
+  /// No description provided for @gdtfFieldDefault8.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeur par défaut (0–255)'**
+  String get gdtfFieldDefault8;
+
+  /// No description provided for @gdtfFieldDefault16.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeur par défaut (0–65535)'**
+  String get gdtfFieldDefault16;
+
+  /// No description provided for @gdtfDefaultChannelName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Canal'**
+  String get gdtfDefaultChannelName;
+
+  /// No description provided for @gdtfMvpHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'MVP : export JSON (presse-papiers). L’export GDTF réel (XML+ZIP) viendra ensuite.'**
+  String get gdtfMvpHint;
+
+  /// No description provided for @gdtfTypeDimmer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dimmer'**
+  String get gdtfTypeDimmer;
+
+  /// No description provided for @gdtfTypePan.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pan'**
+  String get gdtfTypePan;
+
+  /// No description provided for @gdtfTypeTilt.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tilt'**
+  String get gdtfTypeTilt;
+
+  /// No description provided for @gdtfTypeColor.
+  ///
+  /// In fr, this message translates to:
+  /// **'Couleur'**
+  String get gdtfTypeColor;
+
+  /// No description provided for @gdtfTypeGobo.
+  ///
+  /// In fr, this message translates to:
+  /// **'Gobo'**
+  String get gdtfTypeGobo;
+
+  /// No description provided for @gdtfTypeShutter.
+  ///
+  /// In fr, this message translates to:
+  /// **'Shutter'**
+  String get gdtfTypeShutter;
+
+  /// No description provided for @gdtfTypePrism.
+  ///
+  /// In fr, this message translates to:
+  /// **'Prism'**
+  String get gdtfTypePrism;
+
+  /// No description provided for @gdtfTypeZoom.
+  ///
+  /// In fr, this message translates to:
+  /// **'Zoom'**
+  String get gdtfTypeZoom;
+
+  /// No description provided for @gdtfTypeFocus.
+  ///
+  /// In fr, this message translates to:
+  /// **'Focus'**
+  String get gdtfTypeFocus;
+
+  /// No description provided for @gdtfTypeIris.
+  ///
+  /// In fr, this message translates to:
+  /// **'Iris'**
+  String get gdtfTypeIris;
+
+  /// No description provided for @gdtfTypeEffect.
+  ///
+  /// In fr, this message translates to:
+  /// **'Effet'**
+  String get gdtfTypeEffect;
+
+  /// No description provided for @gdtfTypeCustom.
+  ///
+  /// In fr, this message translates to:
+  /// **'Personnalisé'**
+  String get gdtfTypeCustom;
+
+  /// No description provided for @gdtfEasyTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Créer un GDTF (simple)'**
+  String get gdtfEasyTitle;
+
+  /// No description provided for @gdtfTemplatesTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Présélections'**
+  String get gdtfTemplatesTitle;
+
+  /// No description provided for @gdtfCreateDefaultPreset.
+  ///
+  /// In fr, this message translates to:
+  /// **'Créer le preset par défaut'**
+  String get gdtfCreateDefaultPreset;
+
+  /// No description provided for @gdtfTemplatesHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Crée une base rapide (dimmer, shutter, pan, tilt, RGB, etc.) puis complète les adresses DMX et les défauts.'**
+  String get gdtfTemplatesHint;
+
+  /// No description provided for @gdtfExportButton.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exporter GDTF'**
+  String get gdtfExportButton;
+
+  /// No description provided for @gdtfExportHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Export .gdtf minimal (description.xml) puis partage (Mail, WhatsApp, AirDrop, Drive…).'**
+  String get gdtfExportHint;
+
+  /// No description provided for @gdtfExportNeedDmx.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajoute au moins une adresse DMX pour exporter.'**
+  String get gdtfExportNeedDmx;
+
+  /// No description provided for @gdtfExportDone.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF exporté.'**
+  String get gdtfExportDone;
+
+  /// No description provided for @gdtfExportError.
+  ///
+  /// In fr, this message translates to:
+  /// **'Impossible d’exporter le GDTF.'**
+  String get gdtfExportError;
+
+  /// No description provided for @gdtfShareSubject.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fichier GDTF'**
+  String get gdtfShareSubject;
+
+  /// No description provided for @gdtfShareText.
+  ///
+  /// In fr, this message translates to:
+  /// **'Voici le fichier GDTF exporté.'**
+  String get gdtfShareText;
+
+  /// No description provided for @gdtfFieldRole.
+  ///
+  /// In fr, this message translates to:
+  /// **'Paramètre'**
+  String get gdtfFieldRole;
+
+  /// No description provided for @gdtfDmxHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vide ou 1–512'**
+  String get gdtfDmxHint;
+
+  /// No description provided for @gdtfFieldDefault.
+  ///
+  /// In fr, this message translates to:
+  /// **'Défaut'**
+  String get gdtfFieldDefault;
+
+  /// No description provided for @gdtfDefaultHint8.
+  ///
+  /// In fr, this message translates to:
+  /// **'0–255'**
+  String get gdtfDefaultHint8;
+
+  /// No description provided for @gdtfDefaultHint16.
+  ///
+  /// In fr, this message translates to:
+  /// **'0–65535'**
+  String get gdtfDefaultHint16;
+
+  /// No description provided for @gdtfChannelDefaultName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Canal'**
+  String get gdtfChannelDefaultName;
+
+  /// No description provided for @gdtfRoleEmpty.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vide / Inconnu'**
+  String get gdtfRoleEmpty;
+
+  /// No description provided for @gdtfRoleDimmer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dimmer'**
+  String get gdtfRoleDimmer;
+
+  /// No description provided for @gdtfRoleShutter.
+  ///
+  /// In fr, this message translates to:
+  /// **'Shutter'**
+  String get gdtfRoleShutter;
+
+  /// No description provided for @gdtfRolePan.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pan'**
+  String get gdtfRolePan;
+
+  /// No description provided for @gdtfRoleTilt.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tilt'**
+  String get gdtfRoleTilt;
+
+  /// No description provided for @gdtfRoleRed.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rouge (R)'**
+  String get gdtfRoleRed;
+
+  /// No description provided for @gdtfRoleGreen.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vert (G)'**
+  String get gdtfRoleGreen;
+
+  /// No description provided for @gdtfRoleBlue.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bleu (B)'**
+  String get gdtfRoleBlue;
+
+  /// No description provided for @gdtfRoleColor.
+  ///
+  /// In fr, this message translates to:
+  /// **'Couleur'**
+  String get gdtfRoleColor;
+
+  /// No description provided for @gdtfRoleGobo.
+  ///
+  /// In fr, this message translates to:
+  /// **'Gobo'**
+  String get gdtfRoleGobo;
+
+  /// No description provided for @gdtfRoleZoom.
+  ///
+  /// In fr, this message translates to:
+  /// **'Zoom'**
+  String get gdtfRoleZoom;
+
+  /// No description provided for @gdtfRoleFocus.
+  ///
+  /// In fr, this message translates to:
+  /// **'Focus'**
+  String get gdtfRoleFocus;
+
+  /// No description provided for @gdtfRolePrism.
+  ///
+  /// In fr, this message translates to:
+  /// **'Prism'**
+  String get gdtfRolePrism;
+
+  /// No description provided for @gdtfRoleEffect.
+  ///
+  /// In fr, this message translates to:
+  /// **'Effet'**
+  String get gdtfRoleEffect;
+
+  /// No description provided for @gdtfRoleControl.
+  ///
+  /// In fr, this message translates to:
+  /// **'Control'**
+  String get gdtfRoleControl;
+
+  /// No description provided for @gdtfRoleCustom.
+  ///
+  /// In fr, this message translates to:
+  /// **'Custom'**
+  String get gdtfRoleCustom;
+
+  /// No description provided for @gdtfResUnknown.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vide'**
+  String get gdtfResUnknown;
+
+  /// No description provided for @gdtfPresetDimmer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dimmer'**
+  String get gdtfPresetDimmer;
+
+  /// No description provided for @gdtfPresetShutter.
+  ///
+  /// In fr, this message translates to:
+  /// **'Shutter'**
+  String get gdtfPresetShutter;
+
+  /// No description provided for @gdtfPresetPan.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pan'**
+  String get gdtfPresetPan;
+
+  /// No description provided for @gdtfPresetTilt.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tilt'**
+  String get gdtfPresetTilt;
+
+  /// No description provided for @gdtfPresetRed.
+  ///
+  /// In fr, this message translates to:
+  /// **'R'**
+  String get gdtfPresetRed;
+
+  /// No description provided for @gdtfPresetGreen.
+  ///
+  /// In fr, this message translates to:
+  /// **'G'**
+  String get gdtfPresetGreen;
+
+  /// No description provided for @gdtfPresetBlue.
+  ///
+  /// In fr, this message translates to:
+  /// **'B'**
+  String get gdtfPresetBlue;
+
+  /// No description provided for @gdtfPresetColor1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Color 1'**
+  String get gdtfPresetColor1;
+
+  /// No description provided for @gdtfPresetGobo1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Gobo 1'**
+  String get gdtfPresetGobo1;
+
+  /// No description provided for @gdtfPresetZoom.
+  ///
+  /// In fr, this message translates to:
+  /// **'Zoom'**
+  String get gdtfPresetZoom;
+
+  /// No description provided for @gdtfPresetFocus.
+  ///
+  /// In fr, this message translates to:
+  /// **'Focus'**
+  String get gdtfPresetFocus;
+
+  /// No description provided for @gdtfPresetPrism.
+  ///
+  /// In fr, this message translates to:
+  /// **'Prism'**
+  String get gdtfPresetPrism;
+
+  /// No description provided for @gdtfPresetEffect.
+  ///
+  /// In fr, this message translates to:
+  /// **'Effet'**
+  String get gdtfPresetEffect;
+
+  /// No description provided for @gdtfPresetControl.
+  ///
+  /// In fr, this message translates to:
+  /// **'Control'**
+  String get gdtfPresetControl;
+
+  /// No description provided for @commonApply.
+  ///
+  /// In fr, this message translates to:
+  /// **'Appliquer'**
+  String get commonApply;
+
+  /// No description provided for @gdtfPresetLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Choix'**
+  String get gdtfPresetLabel;
+
+  /// No description provided for @gdtfPresetFixtureSimple.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fixture simple'**
+  String get gdtfPresetFixtureSimple;
+
+  /// No description provided for @gdtfPresetBarreLed.
+  ///
+  /// In fr, this message translates to:
+  /// **'Barre LED'**
+  String get gdtfPresetBarreLed;
+
+  /// No description provided for @gdtfTemplatesHintShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Choisis un preset puis applique. Tu peux ensuite ajuster DMX, défauts, et réordonner par glisser-déposer.'**
+  String get gdtfTemplatesHintShort;
+
+  /// No description provided for @gdtfExportNeedChannels.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajoute au moins un canal pour exporter.'**
+  String get gdtfExportNeedChannels;
+
   /// No description provided for @bpmManualHelp.
   ///
   /// In fr, this message translates to:
