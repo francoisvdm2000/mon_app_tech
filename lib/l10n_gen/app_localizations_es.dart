@@ -3219,6 +3219,98 @@ class AppLocalizationsEs extends AppLocalizations {
       'Choix d’une ville et d’une date, heures de lever/coucher + seuils (lux).';
 
   @override
+  String get homeBpmTitle => 'BPM';
+
+  @override
+  String get homeBpmSubtitle => 'Tap tempo, conversion BPM ↔ ms, Hz, mesure.';
+
+  @override
+  String get bpmTitle => 'BPM';
+
+  @override
+  String get bpmTapTitle => 'Tap tempo';
+
+  @override
+  String get bpmTapButton => 'Taper';
+
+  @override
+  String get bpmResetTap => 'Réinitialiser les taps';
+
+  @override
+  String get bpmDetectedLabel => 'BPM détecté';
+
+  @override
+  String get bpmTapHint =>
+      'Tape plusieurs fois (idéalement 4 à 8 taps) pour obtenir une moyenne stable.';
+
+  @override
+  String get bpmManualTitle => 'BPM manuel';
+
+  @override
+  String get bpmManualLabel => 'BPM';
+
+  @override
+  String get bpmManualHint => 'Ex. 128';
+
+  @override
+  String get bpmManualHelp =>
+      'Si un BPM manuel est saisi, il est prioritaire sur le tap tempo.';
+
+  @override
+  String get bpmConversionsTitle => 'Conversions';
+
+  @override
+  String get bpmActiveLabel => 'BPM actif';
+
+  @override
+  String get bpmMsPerBeat => 'Durée d’un beat';
+
+  @override
+  String get bpmHz => 'Fréquence';
+
+  @override
+  String get bpmSecPerBar44 => 'Durée d’une mesure (4/4)';
+
+  @override
+  String get bpmDisclaimer =>
+      'Indication approximative. Vérifie au métronome si c’est critique.';
+
+  @override
+  String get laserToolsTitle => 'Outils';
+
+  @override
+  String get laserBeamSizeTitle => 'Taille du faisceau';
+
+  @override
+  String get laserBeamSizeSubtitle =>
+      'Diamètre, rayon et surface du spot à une distance donnée.';
+
+  @override
+  String get laserBeamInputsTitle => 'Paramètres';
+
+  @override
+  String get laserBeamDistanceLabel => 'Distance';
+
+  @override
+  String get laserBeamDistanceHint => 'm (ex. 12)';
+
+  @override
+  String get laserBeamFormulaHint =>
+      'Calcul : D(z) = D0 + θ · z (θ en rad, angle plein).';
+
+  @override
+  String get laserBeamResultsTitle => 'Résultats';
+
+  @override
+  String get laserBeamDiameterAtDistance => 'Diamètre à la distance';
+
+  @override
+  String get laserBeamRadiusAtDistance => 'Rayon à la distance';
+
+  @override
+  String get laserBeamAreaAtDistance => 'Surface du spot';
+
+  @override
   String get sunTimesPageTitle => 'Lever / coucher du soleil';
 
   @override

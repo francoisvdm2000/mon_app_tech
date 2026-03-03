@@ -5717,6 +5717,180 @@ abstract class AppLocalizations {
   /// **'Choix d’une ville et d’une date, heures de lever/coucher + seuils (lux).'**
   String get aboutSunTimesSubtitle;
 
+  /// No description provided for @homeBpmTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'BPM'**
+  String get homeBpmTitle;
+
+  /// No description provided for @homeBpmSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tap tempo, conversion BPM ↔ ms, Hz, mesure.'**
+  String get homeBpmSubtitle;
+
+  /// No description provided for @bpmTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'BPM'**
+  String get bpmTitle;
+
+  /// No description provided for @bpmTapTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tap tempo'**
+  String get bpmTapTitle;
+
+  /// No description provided for @bpmTapButton.
+  ///
+  /// In fr, this message translates to:
+  /// **'Taper'**
+  String get bpmTapButton;
+
+  /// No description provided for @bpmResetTap.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réinitialiser les taps'**
+  String get bpmResetTap;
+
+  /// No description provided for @bpmDetectedLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'BPM détecté'**
+  String get bpmDetectedLabel;
+
+  /// No description provided for @bpmTapHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tape plusieurs fois (idéalement 4 à 8 taps) pour obtenir une moyenne stable.'**
+  String get bpmTapHint;
+
+  /// No description provided for @bpmManualTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'BPM manuel'**
+  String get bpmManualTitle;
+
+  /// No description provided for @bpmManualLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'BPM'**
+  String get bpmManualLabel;
+
+  /// No description provided for @bpmManualHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 128'**
+  String get bpmManualHint;
+
+  /// No description provided for @bpmManualHelp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Si un BPM manuel est saisi, il est prioritaire sur le tap tempo.'**
+  String get bpmManualHelp;
+
+  /// No description provided for @bpmConversionsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conversions'**
+  String get bpmConversionsTitle;
+
+  /// No description provided for @bpmActiveLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'BPM actif'**
+  String get bpmActiveLabel;
+
+  /// No description provided for @bpmMsPerBeat.
+  ///
+  /// In fr, this message translates to:
+  /// **'Durée d’un beat'**
+  String get bpmMsPerBeat;
+
+  /// No description provided for @bpmHz.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fréquence'**
+  String get bpmHz;
+
+  /// No description provided for @bpmSecPerBar44.
+  ///
+  /// In fr, this message translates to:
+  /// **'Durée d’une mesure (4/4)'**
+  String get bpmSecPerBar44;
+
+  /// No description provided for @bpmDisclaimer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Indication approximative. Vérifie au métronome si c’est critique.'**
+  String get bpmDisclaimer;
+
+  /// No description provided for @laserToolsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Outils'**
+  String get laserToolsTitle;
+
+  /// No description provided for @laserBeamSizeTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Taille du faisceau'**
+  String get laserBeamSizeTitle;
+
+  /// No description provided for @laserBeamSizeSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Diamètre, rayon et surface du spot à une distance donnée.'**
+  String get laserBeamSizeSubtitle;
+
+  /// No description provided for @laserBeamInputsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Paramètres'**
+  String get laserBeamInputsTitle;
+
+  /// No description provided for @laserBeamDistanceLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Distance'**
+  String get laserBeamDistanceLabel;
+
+  /// No description provided for @laserBeamDistanceHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'m (ex. 12)'**
+  String get laserBeamDistanceHint;
+
+  /// No description provided for @laserBeamFormulaHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul : D(z) = D0 + θ · z (θ en rad, angle plein).'**
+  String get laserBeamFormulaHint;
+
+  /// No description provided for @laserBeamResultsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résultats'**
+  String get laserBeamResultsTitle;
+
+  /// No description provided for @laserBeamDiameterAtDistance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Diamètre à la distance'**
+  String get laserBeamDiameterAtDistance;
+
+  /// No description provided for @laserBeamRadiusAtDistance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rayon à la distance'**
+  String get laserBeamRadiusAtDistance;
+
+  /// No description provided for @laserBeamAreaAtDistance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Surface du spot'**
+  String get laserBeamAreaAtDistance;
+
   /// No description provided for @sunTimesPageTitle.
   ///
   /// In fr, this message translates to:

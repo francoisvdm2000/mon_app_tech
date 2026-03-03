@@ -5,6 +5,7 @@ import '../app/ui/widgets.dart'; // numFormatter, SectionCard, ExpandSectionCard
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'laser/laser_calculations.dart';
 import 'laser/laser_storage.dart';
+import 'laser/laser_beam_size_page.dart';
 
 class LaserPage extends StatefulWidget {
   const LaserPage({super.key});
@@ -418,6 +419,40 @@ class _LaserPageState extends State<LaserPage> {
           padding: EdgeInsets.fromLTRB(16, 12, 16, 16 + bottomPad),
           child: Column(
             children: [
+              SectionCard(
+                title: loc.laserToolsTitle,
+                icon: Icons.build_outlined,
+                child: Column(
+                  children: [
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: const Icon(Icons.straighten),
+                      title: Text(
+                        loc.laserBeamSizeTitle,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      subtitle: Text(
+                        loc.laserBeamSizeSubtitle,
+                        style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.65),
+                        ),
+                      ),
+                      trailing: const Icon(Icons.chevron_right),
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const LaserBeamSizePage(),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 12),
               SectionCard(
                 title: loc.laserInputsTitle,
                 icon: Icons.tune,

@@ -8,6 +8,7 @@ import 'mentions_page.dart';
 import 'lumiere_page.dart';
 import 'laser_page.dart';
 import 'video/video_page.dart';
+import 'tools/bpm_page.dart';
 import 'laser/laser_consent_dialog.dart';
 import 'settings_page.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -322,6 +323,13 @@ class _PageAccueilState extends State<PageAccueil> {
                 title: loc.homeLaserTitle,
                 subtitle: loc.homeLaserSubtitle,
                 onTap: _goToLaserWithConsent,
+              ),
+              const SizedBox(height: 12),
+              _homeTile(
+                icon: Icons.speed,
+                title: loc.homeBpmTitle,
+                subtitle: loc.homeBpmSubtitle,
+                onTap: () => _push(const BpmPage()),
               ),
               const SizedBox(height: 12),
               _homeTile(
