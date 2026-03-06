@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, ExpandSectionCard, MiniPill, copyToClipboard
-import 'about_universe_to_artnet_table_page.dart';
 
 class AboutArtNetPage extends StatefulWidget {
   const AboutArtNetPage({super.key});
@@ -74,11 +73,6 @@ class _AboutArtNetPageState extends State<AboutArtNetPage> {
                   _TocItem('6) Schémas (réseau / unicast vs broadcast)', onTap: () => _goTo(_k6Diagrams)),
                   _TocItem('6bis) Images (assets) — RJ45/switch/câbles', onTap: () => _goTo(_k6bAssets)),
                   _TocItem('7) Checklist rapide', onTap: () => _goTo(_k7Checklist)),
-                  _TocItem('Conversion / tables (Univers 1..256)', onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => const AboutUniverseToArtNetTablePage()),
-                    );
-                  }),
                 ],
               ),
 
@@ -308,9 +302,10 @@ class _Section4NodesRdm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SectionCard(
+    return ExpandSectionCard(
       title: '4) Nodes, splitters & RDM',
       icon: Icons.device_hub,
+      initiallyExpanded: false,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: const [

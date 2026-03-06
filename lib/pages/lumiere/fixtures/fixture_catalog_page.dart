@@ -1,9 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+// lib/pages/lumiere/fixtures/fixture_catalog_page.dart
+import 'dart:convert';
 
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
-import 'fixture_hybrid_repository.dart';
-import 'fixture_models.dart';
+
+import '../../../app/ui/widgets.dart';
 
 class FixtureCatalogPage extends StatefulWidget {
   const FixtureCatalogPage({super.key});
@@ -12,358 +14,247 @@ class FixtureCatalogPage extends StatefulWidget {
   State<FixtureCatalogPage> createState() => _FixtureCatalogPageState();
 }
 
-class _FixtureCatalogPageState extends State<FixtureCatalogPage>
-    with SingleTickerProviderStateMixin {
-  final FixtureHybridRepository _repo = FixtureHybridRepository();
-
-  FixtureCatalog? _catalog;
-  bool _loading = true;
-  bool _refreshing = false;
-
-  String? _manufacturerName;
-  String? _type;
-  String? _productName;
-  String? _dmxModeName;
-
-  late final AnimationController _spinController;
+class _FixtureCatalogPageState extends State<FixtureCatalogPage> {
+  late Future<Map<String, dynamic>> _catalogFuture;
 
   @override
   void initState() {
     super.initState();
-    _spinController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    _boot();
+    _catalogFuture = _loadCatalog();
   }
 
-  @override
-  void dispose() {
-    _spinController.dispose();
-    super.dispose();
+  Future<Map<String, dynamic>> _loadCatalog() async {
+    // Chargement du catalogue depuis assets (inchangé)
+    final raw =
+        await rootBundle.loadString('assets/fixtures/fixtures_catalog.json');
+    return json.decode(raw) as Map<String, dynamic>;
   }
 
-  Future<void> _boot() async {
-    try {
-      final initial = await _repo.loadInitialFast();
-      if (!mounted) return;
-      setState(() {
-        _catalog = initial;
-        _loading = false;
-      });
-
-      final remote = await _repo.refreshRemote();
-      if (!mounted) return;
-      if (remote != null) {
-        setState(() => _catalog = remote);
-      }
-    } catch (_) {
-      if (!mounted) return;
-      setState(() => _loading = false);
-    }
-  }
-
-  Future<void> _forceRefreshRemote() async {
-    final loc = AppLocalizations.of(context);
-
-    setState(() => _refreshing = true);
-    _spinController.repeat();
-
-    try {
-      await _repo.clearCache();
-      final remote = await _repo.refreshRemote();
-      if (!mounted) return;
-
-      if (remote == null) {
-        final err = _repo.lastError.trim();
-        final msg = err.isEmpty
-            ? loc.catalogSyncFailedUnknown
-            : loc.catalogSyncFailed(err);
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text(msg)));
-      } else {
-        setState(() => _catalog = remote);
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(loc.catalogUpdated)),
-        );
-      }
-    } catch (e) {
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(loc.catalogSyncError(e.toString()))),
-      );
-    } finally {
-      if (mounted) {
-        setState(() {
-          _refreshing = false;
-          _spinController.stop();
-        });
-      }
-    }
-  }
-
-  String _formatDate(DateTime d) {
-    String two(int v) => v.toString().padLeft(2, '0');
-    return '${two(d.day)}/${two(d.month)}/${d.year}';
-  }
-
-  String _formatIntOrNA(AppLocalizations loc, int? value, String unit) {
-    if (value == null || value <= 0) return loc.catalogNotProvided;
-    return '$value $unit';
-  }
-
-  String _formatDoubleOrNA(AppLocalizations loc, double? value, String unit) {
-    if (value == null || value <= 0) return loc.catalogNotProvided;
-    final s =
-        (value % 1 == 0) ? value.toStringAsFixed(0) : value.toStringAsFixed(1);
-    return '$s $unit';
+  void _reload() {
+    setState(() {
+      _catalogFuture = _loadCatalog();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    if (_loading || _catalog == null) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(loc.fixtureCatalog_catalogue),
+        actions: [
+          IconButton(
+            tooltip: loc.fixtureCatalog_mettre_a_jour,
+            icon: const Icon(Icons.refresh),
+            onPressed: _reload,
+          ),
+        ],
+      ),
+      body: FutureBuilder<Map<String, dynamic>>(
+        future: _catalogFuture,
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            if (snapshot.hasError) {
+              return Center(child: Text(snapshot.error.toString()));
+            }
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          final data = snapshot.data!;
+          final manufacturers =
+              (data['manufacturers'] as List<dynamic>? ?? const <dynamic>[]);
+          final types = (data['types'] as List<dynamic>? ?? const <dynamic>[]);
+          final products =
+              (data['products'] as List<dynamic>? ?? const <dynamic>[]);
+
+          // Collecte des modes DMX uniques (inchangé)
+          final modeNames = <String>{};
+          for (final p in products) {
+            final modes =
+                (p as Map<String, dynamic>)['dmxModes'] as List<dynamic>?;
+            if (modes == null) continue;
+            for (final m in modes) {
+              final name = (m as Map<String, dynamic>)['name']?.toString();
+              if (name != null && name.trim().isNotEmpty) {
+                modeNames.add(name.trim());
+              }
+            }
+          }
+          final modeNamesSorted = modeNames.toList()..sort();
+
+          return ListView(
+            padding: const EdgeInsets.all(16),
+            children: [
+              SectionCard(
+                icon: Icons.lightbulb,
+                title: loc.fixtureCatalog_constructeur_manufacturers_length(
+                    manufacturers.length),
+                child: Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    for (final m in manufacturers)
+                      Chip(label: Text(m.toString())),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 12),
+              SectionCard(
+                icon: Icons.settings,
+                title: loc.fixtureCatalog_type_de_projecteur_types_length(
+                    types.length),
+                child: Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    for (final t in types) Chip(label: Text(t.toString())),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 12),
+              SectionCard(
+                icon: Icons.list,
+                title:
+                    loc.fixtureCatalog_modele_products_length(products.length),
+                child: Column(
+                  children: [
+                    for (final p in products)
+                      _ProductTile(product: p as Map<String, dynamic>),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 12),
+              SectionCard(
+                icon: Icons.info,
+                title: loc.fixtureCatalog_mode_dmx_modenames_length(
+                    modeNamesSorted.length),
+                child: Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    for (final name in modeNamesSorted) Chip(label: Text(name)),
+                  ],
+                ),
+              ),
+            ],
+          );
+        },
+      ),
+    );
+  }
+}
+
+class _ProductTile extends StatelessWidget {
+  const _ProductTile({required this.product});
+
+  final Map<String, dynamic> product;
+
+  @override
+  Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
+    final manufacturer = product['manufacturer']?.toString() ?? '';
+    final model = product['model']?.toString() ?? '';
+    final type = product['type']?.toString() ?? '';
+
+    final manualUrl = product['manualUrl']?.toString();
+    final dmxChartUrl = product['dmxChartUrl']?.toString();
+
+    final dmxModes =
+        (product['dmxModes'] as List<dynamic>? ?? const <dynamic>[])
+            .cast<Map<String, dynamic>>();
+
+    String? formatValue(dynamic v) {
+      if (v == null) return null;
+      final s = v.toString().trim();
+      if (s.isEmpty) return null;
+      return s;
+    }
+
+    // Infos simples (inchangé, juste labels localisés)
+    final channels = formatValue(product['dmxChannels']);
+    final weight = formatValue(product['weightKg']);
+    final power = formatValue(product['powerW']);
+    final lumens = formatValue(product['lumens']);
+
+    Widget infoLine(String label, String? value) {
+      final v = value ?? loc.common_non_renseigne;
+      return Padding(
+        padding: const EdgeInsets.only(top: 2),
+        child: Text(loc.common_label_value(label, v),
+            style: Theme.of(context).textTheme.bodySmall),
       );
     }
 
-    final manufacturers = _catalog!.manufacturers;
-
-    final selectedManufacturer = manufacturers
-        .where((m) => m.name == _manufacturerName)
-        .cast<Manufacturer?>()
-        .firstWhere((m) => true, orElse: () => null);
-
-    final types = selectedManufacturer == null
-        ? <String>[]
-        : selectedManufacturer.products.map((p) => p.type).toSet().toList()
-      ..sort();
-
-    final products = (selectedManufacturer == null || _type == null)
-        ? <Product>[]
-        : selectedManufacturer.products.where((p) => p.type == _type).toList()
-      ..sort((a, b) => a.name.compareTo(b.name));
-
-    final selectedProduct = products
-        .where((p) => p.name == _productName)
-        .cast<Product?>()
-        .firstWhere((p) => true, orElse: () => null);
-
-    final modes = selectedProduct?.modes ?? <DmxMode>[];
-    final modeNames = modes.map((m) => m.name).toList();
-
-    final effectiveModeName = modeNames.isEmpty
-        ? null
-        : (modeNames.contains(_dmxModeName) ? _dmxModeName : modeNames.first);
-
-    final effectiveMode = (effectiveModeName == null)
-        ? null
-        : modes.firstWhere((m) => m.name == effectiveModeName);
-
-    final dmxValue = selectedProduct == null
-        ? null
-        : modes.isNotEmpty
-            ? effectiveMode?.dmxChannels
-            : selectedProduct.dmxChannels;
-
-    final lastUpdate = _formatDate(_catalog!.updatedAt);
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(loc.lightCatalogTitle),
-        actions: [
-          if (_refreshing)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: RotationTransition(
-                turns: _spinController,
-                child: const Icon(Icons.sync),
+    return Card(
+      margin: const EdgeInsets.symmetric(vertical: 6),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              '$manufacturer — $model',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            if (type.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.only(top: 2),
+                child: Text(type, style: Theme.of(context).textTheme.bodySmall),
               ),
-            )
-          else
-            IconButton(
-              tooltip: loc.catalogUpdateTooltip,
-              icon: const Icon(Icons.cloud_download),
-              onPressed: _forceRefreshRemote,
-            ),
-          IconButton(
-            tooltip: loc.catalogResetTooltip,
-            icon: const Icon(Icons.refresh),
-            onPressed: () {
-              setState(() {
-                _manufacturerName = null;
-                _type = null;
-                _productName = null;
-                _dmxModeName = null;
-              });
-            },
-          ),
-        ],
-      ),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 16),
-            child: Text(
-              loc.catalogLastUpdate(lastUpdate),
-              style: const TextStyle(fontStyle: FontStyle.italic),
-            ),
-          ),
-          _dropdown<String>(
-            title: loc.catalogManufacturerTitle(manufacturers.length),
-            value: _manufacturerName,
-            items: manufacturers.map((m) => m.name).toList(),
-            onChanged: (v) {
-              setState(() {
-                _manufacturerName = v;
-                _type = null;
-                _productName = null;
-                _dmxModeName = null;
-              });
-            },
-          ),
-          _dropdown<String>(
-            title: loc.catalogTypeTitle(types.length),
-            value: _type,
-            items: types,
-            onChanged: (v) {
-              setState(() {
-                _type = v;
-                _productName = null;
-                _dmxModeName = null;
-              });
-            },
-          ),
-          _dropdown<String>(
-            title: loc.catalogModelTitle(products.length),
-            value: _productName,
-            items: products.map((p) => p.name).toList(),
-            onChanged: (v) {
-              setState(() {
-                _productName = v;
-                _dmxModeName = null;
-              });
-            },
-          ),
-          _dropdown<String>(
-            title: loc.catalogDmxModeTitle(modeNames.length),
-            value: effectiveModeName,
-            items: modeNames,
-            labelBuilder: (name) {
-              final m = modes.firstWhere((x) => x.name == name);
-              return loc.catalogDmxModeItem(m.name, m.dmxChannels);
-            },
-            onChanged: modeNames.isEmpty
-                ? null
-                : (v) {
-                    setState(() => _dmxModeName = v);
-                  },
-          ),
-          const SizedBox(height: 24),
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _info(
-                    loc.catalogInfoDmxChannels,
-                    dmxValue?.toString() ?? loc.catalogNotProvided,
-                  ),
-                  _info(
-                    loc.catalogInfoWeight,
-                    _formatDoubleOrNA(
-                        loc, selectedProduct?.weightKilogram, 'kg'),
-                  ),
-                  _info(
-                    loc.catalogInfoPower,
-                    _formatIntOrNA(loc, selectedProduct?.powerWatt, 'W'),
-                  ),
-                  _info(
-                    loc.catalogInfoLuminousFlux,
-                    _formatIntOrNA(
-                        loc, selectedProduct?.luminousFluxLumen, 'lm'),
-                  ),
-                  const SizedBox(height: 16),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: ElevatedButton.icon(
-                          icon: const Icon(Icons.menu_book),
-                          label: Text(loc.catalogOpenManual),
-                          onPressed: selectedProduct?.manualUrl == null
-                              ? null
-                              : () => launchUrl(
-                                  Uri.parse(selectedProduct!.manualUrl!)),
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: ElevatedButton.icon(
-                          icon: const Icon(Icons.schema),
-                          label: Text(loc.catalogOpenDmxChart),
-                          onPressed: selectedProduct?.dmxChartUrl == null
-                              ? null
-                              : () => launchUrl(
-                                  Uri.parse(selectedProduct!.dmxChartUrl!)),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+            const SizedBox(height: 8),
+            infoLine(loc.fixtureCatalog_canaux_dmx, channels),
+            infoLine(
+                loc.fixtureCatalog_poids, weight == null ? null : '$weight kg'),
+            infoLine(loc.fixtureCatalog_puissance,
+                power == null ? null : '$power W'),
+            infoLine(loc.fixtureCatalog_flux_lumineux,
+                lumens == null ? null : '$lumens lm'),
+            if (dmxModes.isNotEmpty) ...[
+              const SizedBox(height: 8),
+              Text(
+                loc.fixtureCatalog_dmx_section,
+                style: Theme.of(context).textTheme.labelLarge,
               ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _dropdown<T>({
-    required String title,
-    required T? value,
-    required List<T> items,
-    required ValueChanged<T?>? onChanged,
-    String Function(T)? labelBuilder,
-  }) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          const SizedBox(height: 6),
-          DropdownButtonFormField<T>(
-            initialValue: value,
-            items: items
-                .map(
-                  (e) => DropdownMenuItem<T>(
-                    value: e,
-                    child: Text(labelBuilder?.call(e) ?? e.toString()),
+              const SizedBox(height: 4),
+              for (final m in dmxModes)
+                Padding(
+                  padding: const EdgeInsets.only(top: 2),
+                  child: Text(
+                    loc.fixtureCatalog_mode_label(
+                      m['name']?.toString() ?? '',
+                      (m['dmxChannels'] is int)
+                          ? m['dmxChannels'] as int
+                          : int.tryParse(m['dmxChannels']?.toString() ?? '') ??
+                              0,
+                    ),
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
-                )
-                .toList(),
-            onChanged: items.isEmpty ? null : onChanged,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
+                ),
+            ],
+            const SizedBox(height: 10),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                if (manualUrl != null && manualUrl.trim().isNotEmpty)
+                  OutlinedButton.icon(
+                    onPressed: () => openUrl(context, manualUrl),
+                    icon: const Icon(Icons.menu_book),
+                    label: Text(loc.fixtureCatalog_ouvrir_le_manuel),
+                  ),
+                if (dmxChartUrl != null && dmxChartUrl.trim().isNotEmpty)
+                  OutlinedButton.icon(
+                    onPressed: () => openUrl(context, dmxChartUrl),
+                    icon: const Icon(Icons.table_chart),
+                    label: Text(loc.fixtureCatalog_ouvrir_la_charte_dmx),
+                  ),
+              ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    );
-  }
-
-  Widget _info(String label, String value) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8),
-      child: Text('$label : $value'),
     );
   }
 }

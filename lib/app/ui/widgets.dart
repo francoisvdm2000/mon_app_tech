@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 /// =======================
 /// FORMATTERS
@@ -215,6 +217,12 @@ Future<void> copyToClipboard(BuildContext context, String text) async {
   if (!context.mounted) return;
 
   ScaffoldMessenger.of(context).showSnackBar(
-    const SnackBar(content: Text('Copié dans le presse-papiers.')),
+    SnackBar(content: Text(AppLocalizations.of(context).common_copie_dans_le_presse_papiers)),
   );
+}
+
+Future<void> openUrl(BuildContext context, String url) async {
+  final uri = Uri.tryParse(url);
+  if (uri == null) return;
+  await launchUrl(uri, mode: LaunchMode.externalApplication);
 }

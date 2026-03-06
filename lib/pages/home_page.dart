@@ -25,17 +25,12 @@ class _PageAccueilState extends State<PageAccueil> {
   static const String _kContactEmail = 'info@openwhite.eu';
   static const String _kCatalogFormUrl = 'https://forms.gle/ymhsrLXyZioCoqUa6';
 
-  String _txt(BuildContext context, {required String fr, required String en}) {
-    final lang = Localizations.localeOf(context).languageCode.toLowerCase();
-    return lang == 'fr' ? fr : en;
-  }
-
   Future<void> _contactEmail(BuildContext context) async {
     final uri = Uri(
       scheme: 'mailto',
       path: _kContactEmail,
       queryParameters: {
-        'subject': 'Mon App Tech - Contact',
+        'subject': AppLocalizations.of(context).homeContactEmailSubject,
       },
     );
 
@@ -43,9 +38,7 @@ class _PageAccueilState extends State<PageAccueil> {
     if (!ok && context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-            content: Text(_txt(context,
-                fr: 'Impossible d\'ouvrir l\'email.',
-                en: 'Unable to open email app.'))),
+            content: Text(AppLocalizations.of(context).homeErrorOpenEmail)),
       );
     }
   }
@@ -55,10 +48,7 @@ class _PageAccueilState extends State<PageAccueil> {
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!ok && context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-            content: Text(_txt(context,
-                fr: 'Impossible d\'ouvrir le formulaire.',
-                en: 'Unable to open the form.'))),
+        SnackBar(content: Text(AppLocalizations.of(context).homeErrorOpenForm)),
       );
     }
   }
@@ -93,9 +83,9 @@ class _PageAccueilState extends State<PageAccueil> {
 
     final loc = AppLocalizations.of(context);
 
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text(loc.consentsReset)));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(loc.consentsReset)),
+    );
 
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => _showDisclaimerDialog(),
@@ -279,7 +269,7 @@ class _PageAccueilState extends State<PageAccueil> {
             ),
             const Divider(),
             ListTile(
-              title: Text(_txt(context, fr: 'Contact', en: 'Contact')),
+              title: Text(loc.homeDrawerContact),
               leading: const Icon(Icons.mail_outline),
               onTap: () async {
                 Navigator.pop(context);
@@ -287,8 +277,7 @@ class _PageAccueilState extends State<PageAccueil> {
               },
             ),
             ListTile(
-              title: Text(_txt(context,
-                  fr: 'Proposer un article', en: 'Suggest an item')),
+              title: Text(loc.homeDrawerSuggestItem),
               leading: const Icon(Icons.playlist_add),
               onTap: () async {
                 Navigator.pop(context);

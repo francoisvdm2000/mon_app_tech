@@ -1,10 +1,6 @@
 import 'dart:typed_data';
-import 'package:flutter/material.dart';
 
-Future<void> exportPngBytes(
-  BuildContext context,
-  Uint8List bytes,
-  String filename,
-) async {
-  // Stub : ne fait rien
+Future<void> exportPngBytes(Uint8List bytes, String filename) async {
+  // Plateforme non supportée (rare)
+  throw UnsupportedError('PNG export not supported on this platform');
 }

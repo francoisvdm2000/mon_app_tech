@@ -106,521 +106,11 @@ abstract class AppLocalizations {
     Locale('pt')
   ];
 
-  /// No description provided for @aboutArtNetSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers DMX sur Ethernet/UDP, nodes, broadcast vs unicast.\nLimites réelles, stabilité réseau, RDM selon matériel.'**
-  String get aboutArtNetSubtitle;
-
-  /// No description provided for @aboutArtNetTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Art-Net — DMX sur IP (nodes, unicast/broadcast)'**
-  String get aboutArtNetTitle;
-
-  /// No description provided for @aboutCablingFiberSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Cat5e→Cat8, fibre OM3/OM4/OS2, LC/SC/MPO, distances typiques, bonnes pratiques show.'**
-  String get aboutCablingFiberSubtitle;
-
-  /// No description provided for @aboutCablingFiberTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Réseau — RJ45 / Fibre / débits & longueurs'**
-  String get aboutCablingFiberTitle;
-
-  /// No description provided for @aboutComputingSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Débits utiles, versions, limites réelles, pièges marketing.'**
-  String get aboutComputingSubtitle;
-
-  /// No description provided for @aboutComputingTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Informatique — USB / HDMI / DP / SATA / NVMe…'**
-  String get aboutComputingTitle;
-
-  /// No description provided for @aboutDmxSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers, adresses, trames, câblage RS-485, terminaison, erreurs terrain.\nInclut schémas + checklist.'**
-  String get aboutDmxSubtitle;
-
-  /// No description provided for @aboutDmxTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'DMX'**
-  String get aboutDmxTitle;
-
-  /// No description provided for @aboutElectricitySubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Connecteurs, mono/tri, tableaux kW rapides (16A→400A), pièges terrain.'**
-  String get aboutElectricitySubtitle;
-
-  /// No description provided for @aboutElectricityTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Électrique — Schuko / P17 / puissances'**
-  String get aboutElectricityTitle;
-
-  /// No description provided for @aboutIpBasicsSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Comprendre IP, masque, passerelle, DHCP vs statique.\nExemples concrets (2.x, 10.x, 192.168.x) + checklist.'**
-  String get aboutIpBasicsSubtitle;
-
-  /// No description provided for @aboutIpBasicsTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Bases IP'**
-  String get aboutIpBasicsTitle;
-
-  /// No description provided for @aboutLightNetworkSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Architecture simple et robuste pour Art-Net/sACN.\nVLAN, IGMP snooping/querier, Wi-Fi (jitter), switchs, schémas + checklist.'**
-  String get aboutLightNetworkSubtitle;
-
-  /// No description provided for @aboutLightNetworkTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Réseau lumière — VLAN, IGMP, Wi-Fi vs filaire'**
-  String get aboutLightNetworkTitle;
-
-  /// No description provided for @aboutSacnSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Standard DMX sur IP orienté réseau “pro”.\nMulticast/unicast, IGMP snooping/querier, priorités multi-sources.'**
-  String get aboutSacnSubtitle;
-
-  /// No description provided for @aboutSacnTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'sACN'**
-  String get aboutSacnTitle;
-
-  /// No description provided for @aboutVideoSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Choisir selon latence, fiabilité, câblage, réseau LAN vs WAN.\nTableaux + schéma.'**
-  String get aboutVideoSubtitle;
-
-  /// No description provided for @aboutVideoTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Vidéo'**
-  String get aboutVideoTitle;
-
   /// No description provided for @appTitle.
   ///
   /// In fr, this message translates to:
   /// **'Mon App Tech'**
   String get appTitle;
-
-  /// No description provided for @catalogDmxModeItem.
-  ///
-  /// In fr, this message translates to:
-  /// **'{name} — {channels} canaux'**
-  String catalogDmxModeItem(Object channels, Object name);
-
-  /// No description provided for @catalogDmxModeTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mode DMX ({count})'**
-  String catalogDmxModeTitle(Object count);
-
-  /// No description provided for @catalogInfoDmxChannels.
-  ///
-  /// In fr, this message translates to:
-  /// **'Canaux DMX'**
-  String get catalogInfoDmxChannels;
-
-  /// No description provided for @catalogInfoLuminousFlux.
-  ///
-  /// In fr, this message translates to:
-  /// **'Flux lumineux'**
-  String get catalogInfoLuminousFlux;
-
-  /// No description provided for @catalogInfoPower.
-  ///
-  /// In fr, this message translates to:
-  /// **'Puissance'**
-  String get catalogInfoPower;
-
-  /// No description provided for @catalogInfoWeight.
-  ///
-  /// In fr, this message translates to:
-  /// **'Poids'**
-  String get catalogInfoWeight;
-
-  /// No description provided for @catalogLastUpdate.
-  ///
-  /// In fr, this message translates to:
-  /// **'Dernière mise à jour : {date}'**
-  String catalogLastUpdate(Object date);
-
-  /// No description provided for @catalogManufacturerTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Constructeur ({count})'**
-  String catalogManufacturerTitle(Object count);
-
-  /// No description provided for @catalogModelTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Modèle ({count})'**
-  String catalogModelTitle(Object count);
-
-  /// No description provided for @catalogNotProvided.
-  ///
-  /// In fr, this message translates to:
-  /// **'Non renseigné'**
-  String get catalogNotProvided;
-
-  /// No description provided for @catalogOpenDmxChart.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ouvrir la table DMX'**
-  String get catalogOpenDmxChart;
-
-  /// No description provided for @catalogOpenManual.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ouvrir le manuel'**
-  String get catalogOpenManual;
-
-  /// No description provided for @catalogResetTooltip.
-  ///
-  /// In fr, this message translates to:
-  /// **'Réinitialiser'**
-  String get catalogResetTooltip;
-
-  /// No description provided for @catalogSyncError.
-  ///
-  /// In fr, this message translates to:
-  /// **'Erreur : {message}'**
-  String catalogSyncError(Object message);
-
-  /// No description provided for @catalogSyncFailed.
-  ///
-  /// In fr, this message translates to:
-  /// **'Échec de synchronisation : {reason}'**
-  String catalogSyncFailed(Object reason);
-
-  /// No description provided for @catalogSyncFailedUnknown.
-  ///
-  /// In fr, this message translates to:
-  /// **'Échec de synchronisation (raison inconnue).'**
-  String get catalogSyncFailedUnknown;
-
-  /// No description provided for @catalogTypeTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Type ({count})'**
-  String catalogTypeTitle(Object count);
-
-  /// No description provided for @catalogUpdateTooltip.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mettre à jour'**
-  String get catalogUpdateTooltip;
-
-  /// No description provided for @catalogUpdated.
-  ///
-  /// In fr, this message translates to:
-  /// **'Catalogue mis à jour.'**
-  String get catalogUpdated;
-
-  /// No description provided for @commonCalculate.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calculer'**
-  String get commonCalculate;
-
-  /// No description provided for @commonCancel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Annuler'**
-  String get commonCancel;
-
-  /// No description provided for @commonCopyResultTooltip.
-  ///
-  /// In fr, this message translates to:
-  /// **'Copier le résultat'**
-  String get commonCopyResultTooltip;
-
-  /// No description provided for @commonDash.
-  ///
-  /// In fr, this message translates to:
-  /// **'—'**
-  String get commonDash;
-
-  /// No description provided for @commonNone.
-  ///
-  /// In fr, this message translates to:
-  /// **'Aucun enregistrement'**
-  String get commonNone;
-
-  /// No description provided for @commonOk.
-  ///
-  /// In fr, this message translates to:
-  /// **'OK'**
-  String get commonOk;
-
-  /// No description provided for @commonOkWithCheck.
-  ///
-  /// In fr, this message translates to:
-  /// **'OK ✅'**
-  String get commonOkWithCheck;
-
-  /// No description provided for @commonRename.
-  ///
-  /// In fr, this message translates to:
-  /// **'Renommer'**
-  String get commonRename;
-
-  /// No description provided for @commonReset.
-  ///
-  /// In fr, this message translates to:
-  /// **'Reset'**
-  String get commonReset;
-
-  /// No description provided for @commonSave.
-  ///
-  /// In fr, this message translates to:
-  /// **'Enregistrer'**
-  String get commonSave;
-
-  /// No description provided for @commonSearch.
-  ///
-  /// In fr, this message translates to:
-  /// **'Rechercher'**
-  String get commonSearch;
-
-  /// No description provided for @commonTooLowWithCross.
-  ///
-  /// In fr, this message translates to:
-  /// **'Trop faible ❌'**
-  String get commonTooLowWithCross;
-
-  /// No description provided for @commonUnitMeter.
-  ///
-  /// In fr, this message translates to:
-  /// **'m'**
-  String get commonUnitMeter;
-
-  /// No description provided for @consentsReset.
-  ///
-  /// In fr, this message translates to:
-  /// **'Consentements réinitialisés.'**
-  String get consentsReset;
-
-  /// No description provided for @dipSwitchAddressHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ex : 1 à 512'**
-  String get dipSwitchAddressHint;
-
-  /// No description provided for @dipSwitchAddressLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Adresse DMX'**
-  String get dipSwitchAddressLabel;
-
-  /// No description provided for @dipSwitchChannelUnit.
-  ///
-  /// In fr, this message translates to:
-  /// **'canal'**
-  String get dipSwitchChannelUnit;
-
-  /// No description provided for @dipSwitchEndOfUniverseWarning.
-  ///
-  /// In fr, this message translates to:
-  /// **'Attention : fin d’univers DMX atteinte.'**
-  String get dipSwitchEndOfUniverseWarning;
-
-  /// No description provided for @dipSwitchInputsTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entrées'**
-  String get dipSwitchInputsTitle;
-
-  /// No description provided for @dipSwitchIntervalHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ex : 4 (canaux)'**
-  String get dipSwitchIntervalHint;
-
-  /// No description provided for @dipSwitchIntervalLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Intervalle'**
-  String get dipSwitchIntervalLabel;
-
-  /// No description provided for @dipSwitchModeAddressDirect.
-  ///
-  /// In fr, this message translates to:
-  /// **'Adresse directe'**
-  String get dipSwitchModeAddressDirect;
-
-  /// No description provided for @dipSwitchModeAddressMinusOne.
-  ///
-  /// In fr, this message translates to:
-  /// **'Adresse - 1'**
-  String get dipSwitchModeAddressMinusOne;
-
-  /// No description provided for @dipSwitchNextAddressButton.
-  ///
-  /// In fr, this message translates to:
-  /// **'Adresse suivante'**
-  String get dipSwitchNextAddressButton;
-
-  /// No description provided for @dipSwitchOffLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'OFF'**
-  String get dipSwitchOffLabel;
-
-  /// No description provided for @dipSwitchOnLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'ON'**
-  String get dipSwitchOnLabel;
-
-  /// No description provided for @dipSwitchResetTooltip.
-  ///
-  /// In fr, this message translates to:
-  /// **'Réinitialiser'**
-  String get dipSwitchResetTooltip;
-
-  /// No description provided for @dipSwitchResultAddressLine.
-  ///
-  /// In fr, this message translates to:
-  /// **'Adresse : {address}'**
-  String dipSwitchResultAddressLine(Object address);
-
-  /// No description provided for @dipSwitchResultAddressNotProvided.
-  ///
-  /// In fr, this message translates to:
-  /// **'Adresse non renseignée'**
-  String get dipSwitchResultAddressNotProvided;
-
-  /// No description provided for @dipSwitchResultBinaryValueLine.
-  ///
-  /// In fr, this message translates to:
-  /// **'Binaire : {binary}'**
-  String dipSwitchResultBinaryValueLine(Object binary);
-
-  /// No description provided for @dipSwitchResultHeader.
-  ///
-  /// In fr, this message translates to:
-  /// **'Résultat'**
-  String get dipSwitchResultHeader;
-
-  /// No description provided for @dipSwitchResultIntervalLine.
-  ///
-  /// In fr, this message translates to:
-  /// **'Intervalle : {start} → {end}'**
-  String dipSwitchResultIntervalLine(Object end, Object start);
-
-  /// No description provided for @dipSwitchResultModeLine.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mode : {mode}'**
-  String dipSwitchResultModeLine(Object mode);
-
-  /// No description provided for @dipSwitchScrollHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Fais défiler pour voir tous les switchs.'**
-  String get dipSwitchScrollHint;
-
-  /// No description provided for @dipSwitchSectionTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Switchs'**
-  String get dipSwitchSectionTitle;
-
-  /// No description provided for @dipSwitchSummaryTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Résumé'**
-  String get dipSwitchSummaryTitle;
-
-  /// No description provided for @dipSwitchSwitchLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Switch {index}'**
-  String dipSwitchSwitchLabel(Object index);
-
-  /// No description provided for @dipSwitchUseAddressMinusOneLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Utiliser le mode Adresse - 1'**
-  String get dipSwitchUseAddressMinusOneLabel;
-
-  /// No description provided for @disclaimerAccept.
-  ///
-  /// In fr, this message translates to:
-  /// **'J\'accepte'**
-  String get disclaimerAccept;
-
-  /// No description provided for @disclaimerCertify.
-  ///
-  /// In fr, this message translates to:
-  /// **'Je certifie avoir lu et accepté ces conditions.'**
-  String get disclaimerCertify;
-
-  /// No description provided for @disclaimerText.
-  ///
-  /// In fr, this message translates to:
-  /// **'UTILISATION À TITRE INDICATIF UNIQUEMENT\n\nLes calculs fournis par cette application (vidéo, lumière, laser) sont donnés à titre informatif et indicatif.\nIls ne remplacent en aucun cas :\n- des calculs certifiés,\n- des études techniques,\n- les normes officielles en vigueur,\n- ni la validation par un professionnel qualifié.\n\nRESPONSABILITÉ\nL’éditeur de cette application ne peut être tenu responsable d’erreurs de calcul, d’omissions, de dommages matériels,\nd’accidents corporels, ou de tout incident survenant lors de l’installation, de l’exploitation ou de l’utilisation des équipements.\n\nVIDÉO & PROJECTION\nLes résultats (tailles, ratios, luminosité, overlaps, etc.) reposent sur des modèles théoriques et peuvent varier selon :\noptique, zoom, uniformité, environnement lumineux, support, réglages, etc.\nToujours vérifier avec les documentations constructeur officielles.\n\nLUMIÈRE\nLes calculs sont indicatifs et ne tienent pas compte de toutes les conditions réelles (tolérances, pertes optiques,\ndégradation des sources, normes locales, conditions ambiantes…).\n\nLASER – SÉCURITÉ\nLes calculs NOHD, SZED et CZED sont basés sur des hypothèses standards et des seuils théoriques.\nIls ne prennent pas en compte notamment :\n- instruments optiques (jumelles, caméras, télescopes…),\n- conditions atmosphériques (brouillard, pluie, poussière…),\n- réflexions imprévues, usages détournés, réglages spécifiques.\nL’utilisation d’un système laser implique une responsabilité directe de l’opérateur et une analyse de risques adaptée.\n\nACCEPTATION DES RISQUES\nEn utilisant cette application, l’utilisateur reconnaît :\n- avoir pris connaissance des règles de sécurité applicables,\n- être seul responsable de ses installations,\n- assumer l’entière responsabilité des risques liés à l’utilisation des équipements (vidéo, lumière, laser),\n- vérifier systématiquement les données avec les manuels constructeurs officiels.'**
-  String get disclaimerText;
-
-  /// No description provided for @disclaimerTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'⚠️ AVERTISSEMENT LÉGAL & NON-RESPONSABILITÉ'**
-  String get disclaimerTitle;
-
-  /// No description provided for @homeLaserSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calculs et sécurité laser (consentement requis à chaque entrée).'**
-  String get homeLaserSubtitle;
-
-  /// No description provided for @homeLaserTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Laser'**
-  String get homeLaserTitle;
-
-  /// No description provided for @homeLightSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Taille de projection, dip-switch DMX, photométrie, catalogue, patch DMX.'**
-  String get homeLightSubtitle;
-
-  /// No description provided for @homeLightTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Lumière'**
-  String get homeLightTitle;
-
-  /// No description provided for @homeReferencesSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'DMX / réseau / vidéo : fiches & repères terrain.'**
-  String get homeReferencesSubtitle;
-
-  /// No description provided for @homeReferencesTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Références'**
-  String get homeReferencesTitle;
 
   /// No description provided for @homeTitle.
   ///
@@ -628,17 +118,17 @@ abstract class AppLocalizations {
   /// **'Accueil'**
   String get homeTitle;
 
-  /// No description provided for @homeVideoSubtitle.
+  /// No description provided for @menuTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Lentille & mesure, luminosité, multiprojecteur, LED et mires.'**
-  String get homeVideoSubtitle;
+  /// **'Menu'**
+  String get menuTitle;
 
-  /// No description provided for @homeVideoTitle.
+  /// No description provided for @settings.
   ///
   /// In fr, this message translates to:
-  /// **'Vidéo'**
-  String get homeVideoTitle;
+  /// **'Paramètres'**
+  String get settings;
 
   /// No description provided for @language.
   ///
@@ -658,35 +148,95 @@ abstract class AppLocalizations {
   /// **'Langue du téléphone'**
   String get languageSystemCurrent;
 
-  /// No description provided for @laserAdviceFullPower.
+  /// No description provided for @legalNotices.
   ///
   /// In fr, this message translates to:
-  /// **'Pleine puissance autorisée (100 %)'**
-  String get laserAdviceFullPower;
+  /// **'Mentions légales'**
+  String get legalNotices;
 
-  /// No description provided for @laserAdviceMaxRecommended.
+  /// No description provided for @resetConsents.
   ///
   /// In fr, this message translates to:
-  /// **'Puissance maximale conseillée : {percent}'**
-  String laserAdviceMaxRecommended(Object percent);
+  /// **'Réinitialiser consentements'**
+  String get resetConsents;
 
-  /// No description provided for @laserConsentCheckboxLabel.
+  /// No description provided for @consentsReset.
   ///
   /// In fr, this message translates to:
-  /// **'J’accepte et je comprends les risques.'**
-  String get laserConsentCheckboxLabel;
+  /// **'Consentements réinitialisés.'**
+  String get consentsReset;
 
-  /// No description provided for @laserConsentContinue.
+  /// No description provided for @homeVideoTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Continuer'**
-  String get laserConsentContinue;
+  /// **'Vidéo'**
+  String get homeVideoTitle;
 
-  /// No description provided for @laserConsentText.
+  /// No description provided for @homeVideoSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'ACCÈS À LA PARTIE LASER\n\nLa partie LASER de cette application concerne des calculs de sécurité (ex : NOHD, SZED, CZED).\nCes calculs sont indicatifs et ne remplacent pas :\n- une analyse de risques,\n- les normes en vigueur,\n- les procédures d’exploitation,\n- ni la validation par une personne qualifiée.\n\nIMPORTANT\n- Risque de lésions oculaires / cutanées en cas de mauvaise utilisation.\n- Le calcul peut être faux si les paramètres entrés sont incomplets, erronés ou si le contexte réel diffère (optique,\n  conditions atmosphériques, réflexions, alignement, etc.).\n- L’opérateur est seul responsable de l’installation, de l’exploitation et de la conformité.\n\nEn validant, vous confirmez :\n- comprendre les risques,\n- respecter les règles de sécurité applicables,\n- assumer l’entière responsabilité en cas de négligence ou mauvaise utilisation.'**
-  String get laserConsentText;
+  /// **'Lentille & mesure, luminosité, multiprojecteur, LED et mires.'**
+  String get homeVideoSubtitle;
+
+  /// No description provided for @homeLightTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lumière'**
+  String get homeLightTitle;
+
+  /// No description provided for @homeLightSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Taille de projection, dip-switch DMX, photométrie, catalogue, patch DMX.'**
+  String get homeLightSubtitle;
+
+  /// No description provided for @homeLaserTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Laser'**
+  String get homeLaserTitle;
+
+  /// No description provided for @homeLaserSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculs et sécurité laser (consentement requis à chaque entrée).'**
+  String get homeLaserSubtitle;
+
+  /// No description provided for @homeReferencesTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Références'**
+  String get homeReferencesTitle;
+
+  /// No description provided for @homeReferencesSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'DMX / réseau / vidéo : fiches & repères terrain.'**
+  String get homeReferencesSubtitle;
+
+  /// No description provided for @disclaimerTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'⚠️ AVERTISSEMENT LÉGAL & NON-RESPONSABILITÉ'**
+  String get disclaimerTitle;
+
+  /// No description provided for @disclaimerText.
+  ///
+  /// In fr, this message translates to:
+  /// **'UTILISATION À TITRE INDICATIF UNIQUEMENT\n\nLes calculs fournis par cette application (vidéo, lumière, laser) sont donnés à titre informatif et indicatif.\nIls ne remplacent en aucun cas :\n- des calculs certifiés,\n- des études techniques,\n- les normes officielles en vigueur,\n- ni la validation par un professionnel qualifié.\n\nRESPONSABILITÉ\nL’éditeur de cette application ne peut être tenu responsable d’erreurs de calcul, d’omissions, de dommages matériels,\nd’accidents corporels, ou de tout incident survenant lors de l’installation, de l’exploitation ou de l’utilisation des équipements.\n\nVIDÉO & PROJECTION\nLes résultats (tailles, ratios, luminosité, overlaps, etc.) reposent sur des modèles théoriques et peuvent varier selon :\noptique, zoom, uniformité, environnement lumineux, support, réglages, etc.\nToujours vérifier avec les documentations constructeur officielles.\n\nLUMIÈRE\nLes calculs sont indicatifs et ne tienent pas compte de toutes les conditions réelles (tolérances, pertes optiques,\ndégradation des sources, normes locales, conditions ambiantes…).\n\nLASER – SÉCURITÉ\nLes calculs NOHD, SZED et CZED sont basés sur des hypothèses standards et des seuils théoriques.\nIls ne prennent pas en compte notamment :\n- instruments optiques (jumelles, caméras, télescopes…),\n- conditions atmosphériques (brouillard, pluie, poussière…),\n- réflexions imprévues, usages détournés, réglages spécifiques.\nL’utilisation d’un système laser implique une responsabilité directe de l’opérateur et une analyse de risques adaptée.\n\nACCEPTATION DES RISQUES\nEn utilisant cette application, l’utilisateur reconnaît :\n- avoir pris connaissance des règles de sécurité applicables,\n- être seul responsable de ses installations,\n- assumer l’entière responsabilité des risques liés à l’utilisation des équipements (vidéo, lumière, laser),\n- vérifier systématiquement les données avec les manuels constructeurs officiels.'**
+  String get disclaimerText;
+
+  /// No description provided for @disclaimerCertify.
+  ///
+  /// In fr, this message translates to:
+  /// **'Je certifie avoir lu et accepté ces conditions.'**
+  String get disclaimerCertify;
+
+  /// No description provided for @disclaimerAccept.
+  ///
+  /// In fr, this message translates to:
+  /// **'J\'accepte'**
+  String get disclaimerAccept;
 
   /// No description provided for @laserConsentTitle.
   ///
@@ -694,35 +244,191 @@ abstract class AppLocalizations {
   /// **'🔴 CONSENTEMENT LASER (OBLIGATOIRE)'**
   String get laserConsentTitle;
 
-  /// No description provided for @laserDiameterHint.
+  /// No description provided for @laserConsentText.
   ///
   /// In fr, this message translates to:
-  /// **'ex: 3.0'**
-  String get laserDiameterHint;
+  /// **'ACCÈS À LA PARTIE LASER\n\nLa partie LASER de cette application concerne des calculs de sécurité (ex : NOHD, SZED, CZED).\nCes calculs sont indicatifs et ne remplacent pas :\n- une analyse de risques,\n- les normes en vigueur,\n- les procédures d’exploitation,\n- ni la validation par une personne qualifiée.\n\nIMPORTANT\n- Risque de lésions oculaires / cutanées en cas de mauvaise utilisation.\n- Le calcul peut être faux si les paramètres entrés sont incomplets, erronés ou si le contexte réel diffère (optique,\n  conditions atmosphériques, réflexions, alignement, etc.).\n- L’opérateur est seul responsable de l’installation, de l’exploitation et de la conformité.\n\nEn validant, vous confirmez :\n- comprendre les risques,\n- respecter les règles de sécurité applicables,\n- assumer l’entière responsabilité en cas de négligence ou mauvaise utilisation.'**
+  String get laserConsentText;
 
-  /// No description provided for @laserDiameterLabel.
+  /// No description provided for @commonCancel.
   ///
   /// In fr, this message translates to:
-  /// **'Diamètre de sortie (mm)'**
-  String get laserDiameterLabel;
+  /// **'Annuler'**
+  String get commonCancel;
 
-  /// No description provided for @laserDisclaimerShort.
+  /// No description provided for @commonSave.
   ///
   /// In fr, this message translates to:
-  /// **'Calcul indicatif. Ne remplace pas une analyse de sécurité laser.'**
-  String get laserDisclaimerShort;
+  /// **'Enregistrer'**
+  String get commonSave;
 
-  /// No description provided for @laserDivergenceHint.
+  /// No description provided for @commonRename.
   ///
   /// In fr, this message translates to:
-  /// **'ex: 1.2'**
-  String get laserDivergenceHint;
+  /// **'Renommer'**
+  String get commonRename;
 
-  /// No description provided for @laserDivergenceLabel.
+  /// No description provided for @commonSearch.
   ///
   /// In fr, this message translates to:
-  /// **'Divergence (mrad)'**
-  String get laserDivergenceLabel;
+  /// **'Rechercher'**
+  String get commonSearch;
+
+  /// No description provided for @commonNone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun enregistrement'**
+  String get commonNone;
+
+  /// No description provided for @commonCalculate.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculer'**
+  String get commonCalculate;
+
+  /// No description provided for @commonCopyResultTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier le résultat'**
+  String get commonCopyResultTooltip;
+
+  /// No description provided for @commonUnitMeter.
+  ///
+  /// In fr, this message translates to:
+  /// **'m'**
+  String get commonUnitMeter;
+
+  /// No description provided for @commonReset.
+  ///
+  /// In fr, this message translates to:
+  /// **'Reset'**
+  String get commonReset;
+
+  /// No description provided for @commonOkWithCheck.
+  ///
+  /// In fr, this message translates to:
+  /// **'OK ✅'**
+  String get commonOkWithCheck;
+
+  /// No description provided for @commonTooLowWithCross.
+  ///
+  /// In fr, this message translates to:
+  /// **'Trop faible ❌'**
+  String get commonTooLowWithCross;
+
+  /// No description provided for @elecTocCopyText.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier le texte'**
+  String get elecTocCopyText;
+
+  /// No description provided for @elecKvaTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conversion kVA'**
+  String get elecKvaTitle;
+
+  /// No description provided for @elecKvaFormula.
+  ///
+  /// In fr, this message translates to:
+  /// **'Formule'**
+  String get elecKvaFormula;
+
+  /// No description provided for @elecKvaIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul de puissance apparente'**
+  String get elecKvaIntro;
+
+  /// No description provided for @elecKvaNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeur indicative'**
+  String get elecKvaNote;
+
+  /// No description provided for @elecKvaColKva.
+  ///
+  /// In fr, this message translates to:
+  /// **'kVA'**
+  String get elecKvaColKva;
+
+  /// No description provided for @elecKvaColPf08.
+  ///
+  /// In fr, this message translates to:
+  /// **'cosφ 0.8'**
+  String get elecKvaColPf08;
+
+  /// No description provided for @elecKvaColPf10.
+  ///
+  /// In fr, this message translates to:
+  /// **'cosφ 1.0'**
+  String get elecKvaColPf10;
+
+  /// No description provided for @lightProjectionTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Taille de projection'**
+  String get lightProjectionTitle;
+
+  /// No description provided for @lightProjectionDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul indicatif de la taille de tache selon l’angle, la distance et le diamètre.'**
+  String get lightProjectionDescription;
+
+  /// No description provided for @lightDmxSwitchTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip-switch DMX'**
+  String get lightDmxSwitchTitle;
+
+  /// No description provided for @lightDmxSwitchDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conversion indicative entre adresse DMX et interrupteurs, avec navigation par intervalle.'**
+  String get lightDmxSwitchDescription;
+
+  /// No description provided for @lightPhotometryTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photométrie'**
+  String get lightPhotometryTitle;
+
+  /// No description provided for @lightPhotometryDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conversions indicatives entre lux, candela et lumen, avec distance et angle.'**
+  String get lightPhotometryDescription;
+
+  /// No description provided for @lightCatalogTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Catalogue'**
+  String get lightCatalogTitle;
+
+  /// No description provided for @lightCatalogDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sélection par constructeur, type et produit, avec informations et manuel.'**
+  String get lightCatalogDescription;
+
+  /// No description provided for @lightPatchTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch DMX'**
+  String get lightPatchTitle;
+
+  /// No description provided for @lightPatchDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Importer un fichier MVR ou créer un patch manuellement depuis la librairie.'**
+  String get lightPatchDescription;
+
+  /// No description provided for @lightDisclaimerShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Outils indicatifs. Vérifie toujours la documentation constructeur.'**
+  String get lightDisclaimerShort;
 
   /// No description provided for @laserInputsTitle.
   ///
@@ -730,29 +436,11 @@ abstract class AppLocalizations {
   /// **'Entrées'**
   String get laserInputsTitle;
 
-  /// No description provided for @laserInvalidInputs.
+  /// No description provided for @laserPowerLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Veuillez entrer une puissance, une divergence et un diamètre valides.'**
-  String get laserInvalidInputs;
-
-  /// No description provided for @laserNameUpdated.
-  ///
-  /// In fr, this message translates to:
-  /// **'Nom mis à jour.'**
-  String get laserNameUpdated;
-
-  /// No description provided for @laserNormativeParamsBody.
-  ///
-  /// In fr, this message translates to:
-  /// **'MPE pour la distance nominale de danger oculaire (NOHD) : 25,4 W/m²\n(Norme IEC 60825-1, édition 3.0)\n\nMPE pour la distance d’exposition de la zone sensible (SZED) : 1 W/m²\n(Norme ANSI Z136.6)\n\nMPE pour la distance d’exposition de la zone critique (CZED) : 0,05 W/m²\n(Norme ANSI Z136.6)'**
-  String get laserNormativeParamsBody;
-
-  /// No description provided for @laserNormativeParamsTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Paramètres de sécurité retenus'**
-  String get laserNormativeParamsTitle;
+  /// **'Puissance (mW)'**
+  String get laserPowerLabel;
 
   /// No description provided for @laserPowerHint.
   ///
@@ -760,47 +448,29 @@ abstract class AppLocalizations {
   /// **'ex: 5000'**
   String get laserPowerHint;
 
-  /// No description provided for @laserPowerLabel.
+  /// No description provided for @laserDivergenceLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Puissance (mW)'**
-  String get laserPowerLabel;
+  /// **'Divergence (mrad)'**
+  String get laserDivergenceLabel;
 
-  /// No description provided for @laserPresetAdded.
+  /// No description provided for @laserDivergenceHint.
   ///
   /// In fr, this message translates to:
-  /// **'Enregistrement ajouté.'**
-  String get laserPresetAdded;
+  /// **'ex: 1.2'**
+  String get laserDivergenceHint;
 
-  /// No description provided for @laserPresetDeleted.
+  /// No description provided for @laserDiameterLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Enregistrement supprimé.'**
-  String get laserPresetDeleted;
+  /// **'Diamètre de sortie (mm)'**
+  String get laserDiameterLabel;
 
-  /// No description provided for @laserPresetSubtitle.
+  /// No description provided for @laserDiameterHint.
   ///
   /// In fr, this message translates to:
-  /// **'P: {p} mW • Div: {div} mrad • Ø: {diam} mm'**
-  String laserPresetSubtitle(Object diam, Object div, Object p);
-
-  /// No description provided for @laserProjectorNameLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Nom du projecteur'**
-  String get laserProjectorNameLabel;
-
-  /// No description provided for @laserRenameProjectorTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Renommer le projecteur'**
-  String get laserRenameProjectorTitle;
-
-  /// No description provided for @laserSafetyResultsTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Résultats de sécurité'**
-  String get laserSafetyResultsTitle;
+  /// **'ex: 3.0'**
+  String get laserDiameterHint;
 
   /// No description provided for @laserSaveCurrentProjector.
   ///
@@ -808,41 +478,11 @@ abstract class AppLocalizations {
   /// **'Enregistrer ce projecteur'**
   String get laserSaveCurrentProjector;
 
-  /// No description provided for @laserSaveProjectorTitle.
+  /// No description provided for @laserSafetyResultsTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Enregistrer un projecteur'**
-  String get laserSaveProjectorTitle;
-
-  /// No description provided for @laserSavedProjectorsTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Projecteurs enregistrés'**
-  String get laserSavedProjectorsTitle;
-
-  /// No description provided for @laserSearchHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: “RGB 5W”'**
-  String get laserSearchHint;
-
-  /// No description provided for @laserTargetDistanceHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 10'**
-  String get laserTargetDistanceHint;
-
-  /// No description provided for @laserTargetDistanceLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Distance cible (m)'**
-  String get laserTargetDistanceLabel;
-
-  /// No description provided for @laserZoneCzedDesc.
-  ///
-  /// In fr, this message translates to:
-  /// **'Zone critique'**
-  String get laserZoneCzedDesc;
+  /// **'Résultats de sécurité'**
+  String get laserSafetyResultsTitle;
 
   /// No description provided for @laserZoneNohdDesc.
   ///
@@ -856,1879 +496,233 @@ abstract class AppLocalizations {
   /// **'Zone sensible'**
   String get laserZoneSzedDesc;
 
-  /// No description provided for @legalNotices.
+  /// No description provided for @laserZoneCzedDesc.
   ///
   /// In fr, this message translates to:
-  /// **'Mentions légales'**
-  String get legalNotices;
+  /// **'Zone critique'**
+  String get laserZoneCzedDesc;
 
-  /// No description provided for @lightCatalogDescription.
+  /// No description provided for @laserTargetDistanceLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Sélection par constructeur, type et produit, avec informations et manuel.'**
-  String get lightCatalogDescription;
+  /// **'Distance cible (m)'**
+  String get laserTargetDistanceLabel;
 
-  /// No description provided for @lightCatalogTitle.
+  /// No description provided for @laserTargetDistanceHint.
   ///
   /// In fr, this message translates to:
-  /// **'Catalogue'**
-  String get lightCatalogTitle;
+  /// **'ex: 10'**
+  String get laserTargetDistanceHint;
 
-  /// No description provided for @lightDisclaimerShort.
+  /// No description provided for @laserAdviceFullPower.
   ///
   /// In fr, this message translates to:
-  /// **'Outils indicatifs. Vérifie toujours la documentation constructeur.'**
-  String get lightDisclaimerShort;
+  /// **'Pleine puissance autorisée (100 %)'**
+  String get laserAdviceFullPower;
 
-  /// No description provided for @lightDmxSwitchDescription.
+  /// No description provided for @laserAdviceMaxRecommended.
   ///
   /// In fr, this message translates to:
-  /// **'Conversion indicative entre adresse DMX et interrupteurs, avec navigation par intervalle.'**
-  String get lightDmxSwitchDescription;
+  /// **'Laser Advice Max Recommended : {p0}'**
+  String laserAdviceMaxRecommended(Object p0);
 
-  /// No description provided for @lightDmxSwitchTitle.
+  /// No description provided for @laserSavedProjectorsTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Dip-switch DMX'**
-  String get lightDmxSwitchTitle;
+  /// **'Projecteurs enregistrés'**
+  String get laserSavedProjectorsTitle;
 
-  /// No description provided for @lightPatchDescription.
+  /// No description provided for @laserSearchHint.
   ///
   /// In fr, this message translates to:
-  /// **'Importer et visualiser un fichier MVR.'**
-  String get lightPatchDescription;
+  /// **'ex: “RGB 5W”'**
+  String get laserSearchHint;
 
-  /// No description provided for @lightPatchTitle.
+  /// No description provided for @laserPresetSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Patch DMX'**
-  String get lightPatchTitle;
+  /// **'Laser Preset Subtitle : {p0} · {p1} · {p2}'**
+  String laserPresetSubtitle(Object p0, Object p1, Object p2);
 
-  /// No description provided for @lightPhotometryDescription.
+  /// No description provided for @laserSaveProjectorTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Conversions indicatives entre lux, candela et lumen, avec distance et angle.'**
-  String get lightPhotometryDescription;
+  /// **'Enregistrer un projecteur'**
+  String get laserSaveProjectorTitle;
 
-  /// No description provided for @lightPhotometryTitle.
+  /// No description provided for @laserRenameProjectorTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Photométrie'**
-  String get lightPhotometryTitle;
+  /// **'Renommer le projecteur'**
+  String get laserRenameProjectorTitle;
 
-  /// No description provided for @lightProjectionDescription.
+  /// No description provided for @laserProjectorNameLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Calcul indicatif de la taille de tache selon l’angle, la distance et le diamètre.'**
-  String get lightProjectionDescription;
+  /// **'Nom du projecteur'**
+  String get laserProjectorNameLabel;
 
-  /// No description provided for @lightProjectionTitle.
+  /// No description provided for @laserInvalidInputs.
   ///
   /// In fr, this message translates to:
-  /// **'Taille de projection'**
-  String get lightProjectionTitle;
+  /// **'Veuillez entrer une puissance, une divergence et un diamètre valides.'**
+  String get laserInvalidInputs;
 
-  /// No description provided for @menuTitle.
+  /// No description provided for @laserPresetAdded.
   ///
   /// In fr, this message translates to:
-  /// **'Menu'**
-  String get menuTitle;
+  /// **'Enregistrement ajouté.'**
+  String get laserPresetAdded;
 
-  /// No description provided for @mireBlendLabel.
+  /// No description provided for @laserPresetDeleted.
   ///
   /// In fr, this message translates to:
-  /// **'BLEND'**
-  String get mireBlendLabel;
+  /// **'Enregistrement supprimé.'**
+  String get laserPresetDeleted;
 
-  /// No description provided for @mireDash.
+  /// No description provided for @laserNameUpdated.
   ///
   /// In fr, this message translates to:
-  /// **'—'**
-  String get mireDash;
+  /// **'Nom mis à jour.'**
+  String get laserNameUpdated;
 
-  /// No description provided for @mireErrInvalidOverlap.
+  /// No description provided for @laserNormativeParamsTitle.
   ///
   /// In fr, this message translates to:
-  /// **'❌ Overlap invalide (0 à 99.9).'**
-  String get mireErrInvalidOverlap;
+  /// **'Paramètres de sécurité retenus'**
+  String get laserNormativeParamsTitle;
 
-  /// No description provided for @mireErrInvalidProjectors.
+  /// No description provided for @laserNormativeParamsBody.
   ///
   /// In fr, this message translates to:
-  /// **'❌ Nombre de projecteurs invalide (N > 0).'**
-  String get mireErrInvalidProjectors;
+  /// **'MPE pour la distance nominale de danger oculaire (NOHD) : 25,4 W/m²\n(Norme IEC 60825-1, édition 3.0)\n\nMPE pour la distance d’exposition de la zone sensible (SZED) : 1 W/m²\n(Norme ANSI Z136.6)\n\nMPE pour la distance d’exposition de la zone critique (CZED) : 0,05 W/m²\n(Norme ANSI Z136.6)'**
+  String get laserNormativeParamsBody;
 
-  /// No description provided for @mireErrInvalidWHpx.
+  /// No description provided for @laserDisclaimerShort.
   ///
   /// In fr, this message translates to:
-  /// **'❌ Largeur/hauteur invalides (px).'**
-  String get mireErrInvalidWHpx;
+  /// **'Calcul indicatif. Ne remplace pas une analyse de sécurité laser.'**
+  String get laserDisclaimerShort;
 
-  /// No description provided for @mireExportPng.
+  /// No description provided for @aboutDmxTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Exporter PNG'**
-  String get mireExportPng;
+  /// **'DMX — fonctionnement (simple & complet)'**
+  String get aboutDmxTitle;
 
-  /// No description provided for @mireHeightPxHint.
+  /// No description provided for @aboutDmxSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'ex: 1080'**
-  String get mireHeightPxHint;
+  /// **'Univers, adresses, trames, câblage RS-485, terminaison, erreurs terrain.\nInclut schémas + checklist.'**
+  String get aboutDmxSubtitle;
 
-  /// No description provided for @mireHeightPxHintMapping.
+  /// No description provided for @aboutArtNetTitle.
   ///
   /// In fr, this message translates to:
-  /// **'ex: 2160'**
-  String get mireHeightPxHintMapping;
+  /// **'Art-Net — DMX sur IP (nodes, unicast/broadcast)'**
+  String get aboutArtNetTitle;
 
-  /// No description provided for @mireHeightPxLabel.
+  /// No description provided for @aboutArtNetSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Hauteur (px)'**
-  String get mireHeightPxLabel;
+  /// **'Univers DMX sur Ethernet/UDP, nodes, broadcast vs unicast.\nLimites réelles, stabilité réseau, RDM selon matériel.'**
+  String get aboutArtNetSubtitle;
 
-  /// No description provided for @mireLedErrTileCm.
+  /// No description provided for @aboutSacnTitle.
   ///
   /// In fr, this message translates to:
-  /// **'❌ Renseigne Tile cm (largeur/hauteur >0).'**
-  String get mireLedErrTileCm;
+  /// **'sACN / E1.31 — multicast, IGMP, priorités'**
+  String get aboutSacnTitle;
 
-  /// No description provided for @mireLedErrTilePx.
+  /// No description provided for @aboutSacnSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'❌ Renseigne Tile px (largeur/hauteur >0).'**
-  String get mireLedErrTilePx;
+  /// **'Standard DMX sur IP orienté réseau “pro”.\nMulticast/unicast, IGMP snooping/querier, priorités multi-sources.'**
+  String get aboutSacnSubtitle;
 
-  /// No description provided for @mireLedErrTilesXY.
+  /// No description provided for @aboutIpBasicsTitle.
   ///
   /// In fr, this message translates to:
-  /// **'❌ Renseigne Tiles X/Y (>0).'**
-  String get mireLedErrTilesXY;
+  /// **'Réseau — bases IP / masque / DHCP (essentiel)'**
+  String get aboutIpBasicsTitle;
 
-  /// No description provided for @mireLedParamsTitle.
+  /// No description provided for @aboutIpBasicsSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Paramètres mur LED'**
-  String get mireLedParamsTitle;
+  /// **'Comprendre IP, masque, passerelle, DHCP vs statique.\nExemples concrets (2.x, 10.x, 192.168.x) + checklist.'**
+  String get aboutIpBasicsSubtitle;
 
-  /// No description provided for @mireLedPitchComputed.
+  /// No description provided for @aboutLightNetworkTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Pitch calculé: {pitch}'**
-  String mireLedPitchComputed(Object pitch);
+  /// **'Réseau lumière — VLAN, IGMP, Wi-Fi vs filaire'**
+  String get aboutLightNetworkTitle;
 
-  /// No description provided for @mireLedSubtitleColorBars.
+  /// No description provided for @aboutLightNetworkSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Barres + rampes + cercles'**
-  String get mireLedSubtitleColorBars;
+  /// **'Architecture simple et robuste pour Art-Net/sACN.\nVLAN, IGMP snooping/querier, Wi-Fi (jitter), switchs, schémas + checklist.'**
+  String get aboutLightNetworkSubtitle;
 
-  /// No description provided for @mireLedSubtitleGridLabels.
+  /// No description provided for @aboutCablingFiberTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Grille + repères + cercles'**
-  String get mireLedSubtitleGridLabels;
+  /// **'Réseau — RJ45 / Fibre / débits & longueurs'**
+  String get aboutCablingFiberTitle;
 
-  /// No description provided for @mireLedSubtitlePixelPerfect.
+  /// No description provided for @aboutCablingFiberSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Pixel perfect + cercles'**
-  String get mireLedSubtitlePixelPerfect;
+  /// **'Cat5e→Cat8, fibre OM3/OM4/OS2, LC/SC/MPO, distances typiques, bonnes pratiques show.'**
+  String get aboutCablingFiberSubtitle;
 
-  /// No description provided for @mireLedSubtitleUniformity.
+  /// No description provided for @aboutVideoTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Uniformité + cercles'**
-  String get mireLedSubtitleUniformity;
+  /// **'Vidéo — SDI / NDI / IP (SRT/RTMP)'**
+  String get aboutVideoTitle;
 
-  /// No description provided for @mireLedTileHcmLabel.
+  /// No description provided for @aboutVideoSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Tile hauteur (cm)'**
-  String get mireLedTileHcmLabel;
+  /// **'Choisir selon latence, fiabilité, câblage, réseau LAN vs WAN.\nTableaux + schéma.'**
+  String get aboutVideoSubtitle;
 
-  /// No description provided for @mireLedTileHpxLabel.
+  /// No description provided for @aboutElectricityTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Tile hauteur (px)'**
-  String get mireLedTileHpxLabel;
+  /// **'Électrique — Schuko / P17 / puissances'**
+  String get aboutElectricityTitle;
 
-  /// No description provided for @mireLedTileWcmLabel.
+  /// No description provided for @aboutElectricitySubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Tile largeur (cm)'**
-  String get mireLedTileWcmLabel;
+  /// **'Connecteurs, mono/tri, tableaux kW rapides (16A→400A), pièges terrain.'**
+  String get aboutElectricitySubtitle;
 
-  /// No description provided for @mireLedTileWpxLabel.
+  /// No description provided for @aboutComputingTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Tile largeur (px)'**
-  String get mireLedTileWpxLabel;
+  /// **'Informatique — USB / HDMI / DP / SATA / NVMe…'**
+  String get aboutComputingTitle;
 
-  /// No description provided for @mireLedTilesIdTitle.
+  /// No description provided for @aboutComputingSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'LED / ID TILES'**
-  String get mireLedTilesIdTitle;
+  /// **'Débits utiles, versions, limites réelles, pièges marketing.'**
+  String get aboutComputingSubtitle;
 
-  /// No description provided for @mireLedTilesXLabel.
+  /// No description provided for @videoTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Tiles horizontales (X)'**
-  String get mireLedTilesXLabel;
+  /// **'Vidéo'**
+  String get videoTitle;
 
-  /// No description provided for @mireLedTilesYLabel.
+  /// No description provided for @videoToolsTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Tiles verticales (Y)'**
-  String get mireLedTilesYLabel;
-
-  /// No description provided for @mireLedTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'LED / MIRE'**
-  String get mireLedTitle;
-
-  /// No description provided for @mireLedTypeColorBars.
-  ///
-  /// In fr, this message translates to:
-  /// **'Barres + rampes + cercles'**
-  String get mireLedTypeColorBars;
-
-  /// No description provided for @mireLedTypeGridLabels.
-  ///
-  /// In fr, this message translates to:
-  /// **'Grille + repères + cercles'**
-  String get mireLedTypeGridLabels;
-
-  /// No description provided for @mireLedTypePixelPerfect.
-  ///
-  /// In fr, this message translates to:
-  /// **'Pixel perfect + cercles'**
-  String get mireLedTypePixelPerfect;
-
-  /// No description provided for @mireLedTypeTilesId.
-  ///
-  /// In fr, this message translates to:
-  /// **'Tiles ID (numéro + couleurs)'**
-  String get mireLedTypeTilesId;
-
-  /// No description provided for @mireLedTypeUniformity.
-  ///
-  /// In fr, this message translates to:
-  /// **'Uniformité + cercles'**
-  String get mireLedTypeUniformity;
-
-  /// No description provided for @mireLedWallResolution.
-  ///
-  /// In fr, this message translates to:
-  /// **'Résolution mur: {w} × {h} px'**
-  String mireLedWallResolution(Object h, Object w);
-
-  /// No description provided for @mireLedWarnPitchOutOfRange.
-  ///
-  /// In fr, this message translates to:
-  /// **'⚠️ Pitch calculé hors plage (0.5–20 mm). Vérifie Tile cm / px.'**
-  String get mireLedWarnPitchOutOfRange;
-
-  /// No description provided for @mireLedWarnPitchXNotY.
-  ///
-  /// In fr, this message translates to:
-  /// **'⚠️ Pitch X ≠ Pitch Y (tile non homogène). Vérifie dimensions cm et px.'**
-  String get mireLedWarnPitchXNotY;
-
-  /// No description provided for @mireMappingSectionTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mire mapping multi-projecteur'**
-  String get mireMappingSectionTitle;
-
-  /// No description provided for @mireMappingSubtitlePattern.
-  ///
-  /// In fr, this message translates to:
-  /// **'N={n} • Overlap {percent}% • {orient}'**
-  String mireMappingSubtitlePattern(Object n, Object orient, Object percent);
-
-  /// No description provided for @mireMappingTypeBlendRamps.
-  ///
-  /// In fr, this message translates to:
-  /// **'Blend ramps'**
-  String get mireMappingTypeBlendRamps;
-
-  /// No description provided for @mireMappingTypeCombo.
-  ///
-  /// In fr, this message translates to:
-  /// **'Combo (zones + overlap + blend)'**
-  String get mireMappingTypeCombo;
-
-  /// No description provided for @mireMappingTypeLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Type mapping'**
-  String get mireMappingTypeLabel;
-
-  /// No description provided for @mireMappingTypeZonesOverlap.
-  ///
-  /// In fr, this message translates to:
-  /// **'Zones + overlap'**
-  String get mireMappingTypeZonesOverlap;
-
-  /// No description provided for @mireOrientationHorizontal.
-  ///
-  /// In fr, this message translates to:
-  /// **'Horizontal'**
-  String get mireOrientationHorizontal;
-
-  /// No description provided for @mireOrientationLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Orientation'**
-  String get mireOrientationLabel;
-
-  /// No description provided for @mireOrientationVertical.
-  ///
-  /// In fr, this message translates to:
-  /// **'Vertical'**
-  String get mireOrientationVertical;
-
-  /// No description provided for @mireOverlapHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 10.0'**
-  String get mireOverlapHint;
-
-  /// No description provided for @mireOverlapLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Overlap (%)'**
-  String get mireOverlapLabel;
-
-  /// No description provided for @mirePitchEqual.
-  ///
-  /// In fr, this message translates to:
-  /// **'{value} mm'**
-  String mirePitchEqual(Object value);
-
-  /// No description provided for @mirePitchXY.
-  ///
-  /// In fr, this message translates to:
-  /// **'X {x} mm • Y {y} mm'**
-  String mirePitchXY(Object x, Object y);
-
-  /// No description provided for @mireProjectorLabelPattern.
-  ///
-  /// In fr, this message translates to:
-  /// **'PROJO {index}'**
-  String mireProjectorLabelPattern(Object index);
-
-  /// No description provided for @mireProjectorsNHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 2'**
-  String get mireProjectorsNHint;
-
-  /// No description provided for @mireProjectorsNLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Nombre de projecteurs (N)'**
-  String get mireProjectorsNLabel;
-
-  /// No description provided for @mireSimpleSectionTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mire écran simple'**
-  String get mireSimpleSectionTitle;
-
-  /// No description provided for @mireSimpleSubtitleCheckerboard.
-  ///
-  /// In fr, this message translates to:
-  /// **'Damier + cercles'**
-  String get mireSimpleSubtitleCheckerboard;
-
-  /// No description provided for @mireSimpleSubtitleColorBars.
-  ///
-  /// In fr, this message translates to:
-  /// **'Barres + rampes + cercles'**
-  String get mireSimpleSubtitleColorBars;
-
-  /// No description provided for @mireSimpleSubtitleComboAll.
-  ///
-  /// In fr, this message translates to:
-  /// **'Grille + safe + 2 barres centrées + cercles'**
-  String get mireSimpleSubtitleComboAll;
-
-  /// No description provided for @mireSimpleSubtitleGridSafe.
-  ///
-  /// In fr, this message translates to:
-  /// **'Grille + safe + cercles'**
-  String get mireSimpleSubtitleGridSafe;
-
-  /// No description provided for @mireSimpleSubtitleUniformity.
-  ///
-  /// In fr, this message translates to:
-  /// **'Uniformité + cercles'**
-  String get mireSimpleSubtitleUniformity;
-
-  /// No description provided for @mireSimpleTypeCheckerboard.
-  ///
-  /// In fr, this message translates to:
-  /// **'Damier + cercles'**
-  String get mireSimpleTypeCheckerboard;
-
-  /// No description provided for @mireSimpleTypeColorBars.
-  ///
-  /// In fr, this message translates to:
-  /// **'Barres + rampes + cercles'**
-  String get mireSimpleTypeColorBars;
-
-  /// No description provided for @mireSimpleTypeComboAll.
-  ///
-  /// In fr, this message translates to:
-  /// **'Combo (grille + cercles + 2 barres centrées)'**
-  String get mireSimpleTypeComboAll;
-
-  /// No description provided for @mireSimpleTypeGridSafe.
-  ///
-  /// In fr, this message translates to:
-  /// **'Grille + safe + cercles'**
-  String get mireSimpleTypeGridSafe;
-
-  /// No description provided for @mireSimpleTypeUniformity.
-  ///
-  /// In fr, this message translates to:
-  /// **'Uniformité + cercles'**
-  String get mireSimpleTypeUniformity;
-
-  /// No description provided for @mireTileMissingPx.
-  ///
-  /// In fr, this message translates to:
-  /// **'Renseigne Tile (px) pour numérotation.'**
-  String get mireTileMissingPx;
-
-  /// No description provided for @mireTilesSubtitleBase.
-  ///
-  /// In fr, this message translates to:
-  /// **'Tile {tw}x{th} px • Grille {nx} x {ny}'**
-  String mireTilesSubtitleBase(Object nx, Object ny, Object th, Object tw);
-
-  /// No description provided for @mireTilesSubtitlePitchEq.
-  ///
-  /// In fr, this message translates to:
-  /// **'Pitch ~ {pitch} mm'**
-  String mireTilesSubtitlePitchEq(Object pitch);
-
-  /// No description provided for @mireTilesSubtitlePitchXY.
-  ///
-  /// In fr, this message translates to:
-  /// **'Pitch X {px} • Y {py} mm'**
-  String mireTilesSubtitlePitchXY(Object px, Object py);
-
-  /// No description provided for @mireTilesSubtitleTilePhys.
-  ///
-  /// In fr, this message translates to:
-  /// **'Tile {wcm}×{hcm} cm'**
-  String mireTilesSubtitleTilePhys(Object hcm, Object wcm);
-
-  /// No description provided for @mireTilesSubtitleWallPhys.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mur ~ {wm}×{hm} m'**
-  String mireTilesSubtitleWallPhys(Object hm, Object wm);
-
-  /// No description provided for @mireTypeLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Type de mire'**
-  String get mireTypeLabel;
-
-  /// No description provided for @mireVideoComboTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'VIDÉO / MIRE COMBO'**
-  String get mireVideoComboTitle;
-
-  /// No description provided for @mireVideoMappingSectionTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mire mapping multi-projecteur'**
-  String get mireVideoMappingSectionTitle;
-
-  /// No description provided for @mireVideoMappingTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'VIDÉO / MIRE MAPPING'**
-  String get mireVideoMappingTitle;
-
-  /// No description provided for @mireVideoSimpleSectionTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mire écran simple'**
-  String get mireVideoSimpleSectionTitle;
-
-  /// No description provided for @mireVideoSimpleTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'VIDÉO / MIRE SIMPLE'**
-  String get mireVideoSimpleTitle;
-
-  /// No description provided for @mireVideoTypeCheckerboard.
-  ///
-  /// In fr, this message translates to:
-  /// **'Damier + cercles'**
-  String get mireVideoTypeCheckerboard;
-
-  /// No description provided for @mireVideoTypeColorBars.
-  ///
-  /// In fr, this message translates to:
-  /// **'Barres + rampes + cercles'**
-  String get mireVideoTypeColorBars;
-
-  /// No description provided for @mireVideoTypeCombo.
-  ///
-  /// In fr, this message translates to:
-  /// **'Combo (grille + cercles + 2 barres centrées)'**
-  String get mireVideoTypeCombo;
-
-  /// No description provided for @mireVideoTypeGridSafe.
-  ///
-  /// In fr, this message translates to:
-  /// **'Grille + safe + cercles'**
-  String get mireVideoTypeGridSafe;
-
-  /// No description provided for @mireVideoTypeUniformity.
-  ///
-  /// In fr, this message translates to:
-  /// **'Uniformité + cercles'**
-  String get mireVideoTypeUniformity;
-
-  /// No description provided for @mireWallNotMultipleOfTiles.
-  ///
-  /// In fr, this message translates to:
-  /// **'MUR NON MULTIPLE DE TILES'**
-  String get mireWallNotMultipleOfTiles;
-
-  /// No description provided for @mireWidthPxHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 1920'**
-  String get mireWidthPxHint;
-
-  /// No description provided for @mireWidthPxHintMapping.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 3840'**
-  String get mireWidthPxHintMapping;
-
-  /// No description provided for @mireWidthPxLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Largeur (px)'**
-  String get mireWidthPxLabel;
-
-  /// No description provided for @patchAddressLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Adresse : {address}'**
-  String patchAddressLabel(Object address);
-
-  /// No description provided for @patchChannelsUsed.
-  ///
-  /// In fr, this message translates to:
-  /// **'Canaux utilisés : {count} / 512'**
-  String patchChannelsUsed(Object count);
-
-  /// No description provided for @patchConflictError.
-  ///
-  /// In fr, this message translates to:
-  /// **'Conflit d’adresses (chevauchement).'**
-  String get patchConflictError;
-
-  /// No description provided for @patchConflictShort.
-  ///
-  /// In fr, this message translates to:
-  /// **'Conflit'**
-  String get patchConflictShort;
-
-  /// No description provided for @patchConflicts.
-  ///
-  /// In fr, this message translates to:
-  /// **'Conflits : {count}'**
-  String patchConflicts(Object count);
-
-  /// No description provided for @patchEditChannelsLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Canaux'**
-  String get patchEditChannelsLabel;
-
-  /// No description provided for @patchEditHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Vérifie le mode et le nombre de canaux.'**
-  String get patchEditHint;
-
-  /// No description provided for @patchEditModeLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mode'**
-  String get patchEditModeLabel;
-
-  /// No description provided for @patchEditTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Édition'**
-  String get patchEditTitle;
-
-  /// No description provided for @patchEmptyUniverse.
-  ///
-  /// In fr, this message translates to:
-  /// **'Aucune machine dans cet univers.'**
-  String get patchEmptyUniverse;
-
-  /// No description provided for @patchFixturesCount.
-  ///
-  /// In fr, this message translates to:
-  /// **'Machines : {count}'**
-  String patchFixturesCount(Object count);
-
-  /// No description provided for @patchHomeDisclaimer.
-  ///
-  /// In fr, this message translates to:
-  /// **'Les résultats sont indicatifs. Vérifie toujours avec la console.'**
-  String get patchHomeDisclaimer;
-
-  /// No description provided for @patchHomeImportMvrDescription.
-  ///
-  /// In fr, this message translates to:
-  /// **'Analyser un fichier MVR et charger le patch en référence.'**
-  String get patchHomeImportMvrDescription;
-
-  /// No description provided for @patchHomeImportMvrTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Importer un MVR'**
-  String get patchHomeImportMvrTitle;
-
-  /// No description provided for @patchHomeTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Patch DMX'**
-  String get patchHomeTitle;
-
-  /// No description provided for @patchHomeViewPatchDescription.
-  ///
-  /// In fr, this message translates to:
-  /// **'Liste et conflits par univers.'**
-  String get patchHomeViewPatchDescription;
-
-  /// No description provided for @patchHomeViewPatchTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Voir le patch'**
-  String get patchHomeViewPatchTitle;
-
-  /// No description provided for @patchHubOpenGridButton.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ouvrir grille'**
-  String get patchHubOpenGridButton;
-
-  /// No description provided for @patchHubOpenMvrButton.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ouvrir MVR'**
-  String get patchHubOpenMvrButton;
-
-  /// No description provided for @patchHubStateEmpty.
-  ///
-  /// In fr, this message translates to:
-  /// **'Aucune référence chargée.'**
-  String get patchHubStateEmpty;
-
-  /// No description provided for @patchHubStateLoaded.
-  ///
-  /// In fr, this message translates to:
-  /// **'Chargé : {count} univers'**
-  String patchHubStateLoaded(Object count);
-
-  /// No description provided for @patchHubStateTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'État'**
-  String get patchHubStateTitle;
-
-  /// No description provided for @patchHubTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Hub Patch'**
-  String get patchHubTitle;
-
-  /// No description provided for @patchHubWorksiteBody.
-  ///
-  /// In fr, this message translates to:
-  /// **'Importer un MVR ou consulter la grille d’occupation.'**
-  String get patchHubWorksiteBody;
-
-  /// No description provided for @patchHubWorksiteTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Chantier'**
-  String get patchHubWorksiteTitle;
-
-  /// No description provided for @patchInvalidChannelCount.
-  ///
-  /// In fr, this message translates to:
-  /// **'Nombre de canaux invalide.'**
-  String get patchInvalidChannelCount;
-
-  /// No description provided for @patchIssueInvalidChannelCount.
-  ///
-  /// In fr, this message translates to:
-  /// **'Le nombre de canaux doit être supérieur ou égal à 1.'**
-  String get patchIssueInvalidChannelCount;
-
-  /// No description provided for @patchIssueInvalidStartAddress.
-  ///
-  /// In fr, this message translates to:
-  /// **'L’adresse DMX doit être comprise entre 1 et 512.'**
-  String get patchIssueInvalidStartAddress;
-
-  /// No description provided for @patchIssueInvalidUniverse.
-  ///
-  /// In fr, this message translates to:
-  /// **'L’univers doit être supérieur ou égal à 1.'**
-  String get patchIssueInvalidUniverse;
-
-  /// No description provided for @patchIssueRangeExceedsUniverse.
-  ///
-  /// In fr, this message translates to:
-  /// **'La plage de canaux dépasse 512 dans cet univers.'**
-  String get patchIssueRangeExceedsUniverse;
-
-  /// No description provided for @patchIssueUnknown.
-  ///
-  /// In fr, this message translates to:
-  /// **'Erreur inconnue.'**
-  String get patchIssueUnknown;
-
-  /// No description provided for @patchListTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Liste'**
-  String get patchListTitle;
-
-  /// No description provided for @patchManualDisabledBody.
-  ///
-  /// In fr, this message translates to:
-  /// **'Le patch est en lecture seule lorsqu’une référence MVR est chargée.'**
-  String get patchManualDisabledBody;
-
-  /// No description provided for @patchManualDisabledTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Désactivé'**
-  String get patchManualDisabledTitle;
-
-  /// No description provided for @patchManualTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Patch manuel'**
-  String get patchManualTitle;
-
-  /// No description provided for @patchModeLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mode : {mode}'**
-  String patchModeLabel(Object mode);
-
-  /// No description provided for @patchMvrButtonAnalyzing.
-  ///
-  /// In fr, this message translates to:
-  /// **'Analyse…'**
-  String get patchMvrButtonAnalyzing;
-
-  /// No description provided for @patchMvrButtonLoadAsReference.
-  ///
-  /// In fr, this message translates to:
-  /// **'Charger comme référence'**
-  String get patchMvrButtonLoadAsReference;
-
-  /// No description provided for @patchMvrButtonPickFile.
-  ///
-  /// In fr, this message translates to:
-  /// **'Choisir un fichier'**
-  String get patchMvrButtonPickFile;
-
-  /// No description provided for @patchMvrClearTooltip.
-  ///
-  /// In fr, this message translates to:
-  /// **'Effacer'**
-  String get patchMvrClearTooltip;
-
-  /// No description provided for @patchMvrColAddress.
-  ///
-  /// In fr, this message translates to:
-  /// **'Adresse'**
-  String get patchMvrColAddress;
-
-  /// No description provided for @patchMvrColChannels.
-  ///
-  /// In fr, this message translates to:
-  /// **'Canaux'**
-  String get patchMvrColChannels;
-
-  /// No description provided for @patchMvrColId.
-  ///
-  /// In fr, this message translates to:
-  /// **'ID'**
-  String get patchMvrColId;
-
-  /// No description provided for @patchMvrColName.
-  ///
-  /// In fr, this message translates to:
-  /// **'Nom'**
-  String get patchMvrColName;
-
-  /// No description provided for @patchMvrColUniverse.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers'**
-  String get patchMvrColUniverse;
-
-  /// No description provided for @patchMvrColumnsHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Colonnes : ID, Nom, Univers, Adresse, Canaux'**
-  String get patchMvrColumnsHint;
-
-  /// No description provided for @patchMvrFileCardHelp.
-  ///
-  /// In fr, this message translates to:
-  /// **'Sélectionne un fichier .mvr (ZIP) pour analyser le patch.'**
-  String get patchMvrFileCardHelp;
-
-  /// No description provided for @patchMvrFileCardTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Fichier'**
-  String get patchMvrFileCardTitle;
-
-  /// No description provided for @patchMvrFilterAllUniverses.
-  ///
-  /// In fr, this message translates to:
-  /// **'Tous les univers'**
-  String get patchMvrFilterAllUniverses;
-
-  /// No description provided for @patchMvrFilterUniverseLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Filtrer par univers'**
-  String get patchMvrFilterUniverseLabel;
-
-  /// No description provided for @patchMvrModeNotProvided.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mode non renseigné'**
-  String get patchMvrModeNotProvided;
-
-  /// No description provided for @patchMvrOrderAsc.
-  ///
-  /// In fr, this message translates to:
-  /// **'Croissant'**
-  String get patchMvrOrderAsc;
-
-  /// No description provided for @patchMvrOrderDesc.
-  ///
-  /// In fr, this message translates to:
-  /// **'Décroissant'**
-  String get patchMvrOrderDesc;
-
-  /// No description provided for @patchMvrOrderLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ordre'**
-  String get patchMvrOrderLabel;
-
-  /// No description provided for @patchMvrSortAddress.
-  ///
-  /// In fr, this message translates to:
-  /// **'Adresse'**
-  String get patchMvrSortAddress;
-
-  /// No description provided for @patchMvrSortByLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Trier par'**
-  String get patchMvrSortByLabel;
-
-  /// No description provided for @patchMvrSortChannels.
-  ///
-  /// In fr, this message translates to:
-  /// **'Canaux'**
-  String get patchMvrSortChannels;
-
-  /// No description provided for @patchMvrSortId.
-  ///
-  /// In fr, this message translates to:
-  /// **'ID'**
-  String get patchMvrSortId;
-
-  /// No description provided for @patchMvrSortName.
-  ///
-  /// In fr, this message translates to:
-  /// **'Nom'**
-  String get patchMvrSortName;
-
-  /// No description provided for @patchMvrSortUniverse.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers'**
-  String get patchMvrSortUniverse;
-
-  /// No description provided for @patchMvrSortUniverseThenAddress.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers puis adresse'**
-  String get patchMvrSortUniverseThenAddress;
-
-  /// No description provided for @patchMvrStatusCleared.
-  ///
-  /// In fr, this message translates to:
-  /// **'Référence effacée.'**
-  String get patchMvrStatusCleared;
-
-  /// No description provided for @patchMvrStatusEmptyBytes.
-  ///
-  /// In fr, this message translates to:
-  /// **'Fichier vide.'**
-  String get patchMvrStatusEmptyBytes;
-
-  /// No description provided for @patchMvrStatusExtractingZip.
-  ///
-  /// In fr, this message translates to:
-  /// **'Extraction du ZIP…'**
-  String get patchMvrStatusExtractingZip;
-
-  /// No description provided for @patchMvrStatusFilePickFailed.
-  ///
-  /// In fr, this message translates to:
-  /// **'Sélection de fichier impossible : {reason}'**
-  String patchMvrStatusFilePickFailed(Object reason);
-
-  ///
-  ///
-  /// In fr, this message translates to:
-  /// **'Machines trouvées : {count} (multi-canaux : {resolved}).'**
-  String patchMvrStatusFixturesFound(int count, int resolved);
-
-  /// No description provided for @patchMvrStatusLoadingGdtf.
-  ///
-  /// In fr, this message translates to:
-  /// **'Chargement des GDTF…'**
-  String get patchMvrStatusLoadingGdtf;
-
-  /// No description provided for @patchMvrStatusNoContentToLoad.
-  ///
-  /// In fr, this message translates to:
-  /// **'Aucun contenu à charger.'**
-  String get patchMvrStatusNoContentToLoad;
-
-  /// No description provided for @patchMvrStatusNoFileSelected.
-  ///
-  /// In fr, this message translates to:
-  /// **'Aucun fichier sélectionné.'**
-  String get patchMvrStatusNoFileSelected;
-
-  /// No description provided for @patchMvrStatusNoUsableFixtures.
-  ///
-  /// In fr, this message translates to:
-  /// **'Aucune machine exploitable trouvée.'**
-  String get patchMvrStatusNoUsableFixtures;
-
-  /// No description provided for @patchMvrStatusParseError.
-  ///
-  /// In fr, this message translates to:
-  /// **'Erreur de parsing : {message}'**
-  String patchMvrStatusParseError(Object message);
-
-  /// No description provided for @patchMvrStatusParsingContent.
-  ///
-  /// In fr, this message translates to:
-  /// **'Analyse du contenu…'**
-  String get patchMvrStatusParsingContent;
-
-  ///
-  ///
-  /// In fr, this message translates to:
-  /// **'Référence chargée : {count} machine(s) (ignorées : {skipped}, empreintes GDTF : {footprints}).'**
-  String patchMvrStatusReferenceLoaded(int count, int skipped, int footprints);
-
-  /// No description provided for @patchMvrStatusRestored.
-  ///
-  /// In fr, this message translates to:
-  /// **'Restauration : {count} machines'**
-  String patchMvrStatusRestored(Object count);
-
-  /// No description provided for @patchMvrStatusSceneXmlNotFound.
-  ///
-  /// In fr, this message translates to:
-  /// **'scene.xml introuvable dans le MVR.'**
-  String get patchMvrStatusSceneXmlNotFound;
-
-  /// No description provided for @patchMvrStatusSelectingFile.
-  ///
-  /// In fr, this message translates to:
-  /// **'Sélection du fichier…'**
-  String get patchMvrStatusSelectingFile;
-
-  /// No description provided for @patchMvrStatusUnsupportedFile.
-  ///
-  /// In fr, this message translates to:
-  /// **'Fichier non supporté : {ext}'**
-  String patchMvrStatusUnsupportedFile(Object ext);
-
-  /// No description provided for @patchMvrSummaryTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Résumé'**
-  String get patchMvrSummaryTitle;
-
-  /// No description provided for @patchMvrTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Import MVR'**
-  String get patchMvrTitle;
-
-  /// No description provided for @patchMvrUniverseItem.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers {universe}'**
-  String patchMvrUniverseItem(Object universe);
-
-  /// No description provided for @patchPageTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Patch'**
-  String get patchPageTitle;
-
-  /// No description provided for @patchSummaryTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Résumé'**
-  String get patchSummaryTitle;
-
-  /// No description provided for @patchUniverseAppBarTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Patch'**
-  String get patchUniverseAppBarTitle;
-
-  /// No description provided for @patchUniverseConflictCount.
-  ///
-  /// In fr, this message translates to:
-  /// **'Conflits : {count} canal(aux)'**
-  String patchUniverseConflictCount(Object count);
-
-  /// No description provided for @patchUniverseGridLimitedByWidth.
-  ///
-  /// In fr, this message translates to:
-  /// **'Limité par la largeur de l’écran.'**
-  String get patchUniverseGridLimitedByWidth;
-
-  /// No description provided for @patchUniverseGridTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Occupation (1 à 512)'**
-  String get patchUniverseGridTitle;
-
-  /// No description provided for @patchUniverseItem.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers {universe}'**
-  String patchUniverseItem(Object universe);
-
-  /// No description provided for @patchUniverseLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers'**
-  String get patchUniverseLabel;
-
-  /// No description provided for @patchUniverseLegendConflict.
-  ///
-  /// In fr, this message translates to:
-  /// **'Conflit'**
-  String get patchUniverseLegendConflict;
-
-  /// No description provided for @patchUniverseLegendFree.
-  ///
-  /// In fr, this message translates to:
-  /// **'Libre'**
-  String get patchUniverseLegendFree;
-
-  /// No description provided for @patchUniverseLegendOccupied.
-  ///
-  /// In fr, this message translates to:
-  /// **'Occupé'**
-  String get patchUniverseLegendOccupied;
-
-  /// No description provided for @patchUniverseOccupantLine.
-  ///
-  /// In fr, this message translates to:
-  /// **'• {fixture}\n  {mode} — {channels} canal(aux)\n  {start} → {end}'**
-  String patchUniverseOccupantLine(
-      Object channels, Object end, Object fixture, Object mode, Object start);
-
-  /// No description provided for @patchUniverseOccupiedCount.
-  ///
-  /// In fr, this message translates to:
-  /// **'Occupés : {count} / 512'**
-  String patchUniverseOccupiedCount(Object count);
-
-  /// No description provided for @patchUniversePopupHeader.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers {universe} — Adresse {address}\nÉtat : {state}'**
-  String patchUniversePopupHeader(
-      Object address, Object state, Object universe);
-
-  /// No description provided for @patchUniversePopupManyOccupants.
-  ///
-  /// In fr, this message translates to:
-  /// **'Plusieurs machines occupent ce canal.'**
-  String get patchUniversePopupManyOccupants;
-
-  /// No description provided for @patchUniversePopupMore.
-  ///
-  /// In fr, this message translates to:
-  /// **'… et {count} autre(s).'**
-  String patchUniversePopupMore(Object count);
-
-  /// No description provided for @patchUniversePopupTitleConflict.
-  ///
-  /// In fr, this message translates to:
-  /// **'Conflit'**
-  String get patchUniversePopupTitleConflict;
-
-  /// No description provided for @patchUniversePopupTitleFree.
-  ///
-  /// In fr, this message translates to:
-  /// **'Canal libre'**
-  String get patchUniversePopupTitleFree;
-
-  /// No description provided for @patchUniversePopupTitleOccupied.
-  ///
-  /// In fr, this message translates to:
-  /// **'Canal occupé'**
-  String get patchUniversePopupTitleOccupied;
-
-  /// No description provided for @patchUniverseReferenceNone.
-  ///
-  /// In fr, this message translates to:
-  /// **'Aucune référence chargée'**
-  String get patchUniverseReferenceNone;
-
-  /// No description provided for @patchUniverseReferenceReadOnly.
-  ///
-  /// In fr, this message translates to:
-  /// **'Lecture seule (depuis MVR)'**
-  String get patchUniverseReferenceReadOnly;
-
-  /// No description provided for @patchUniverseReferenceTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Référence'**
-  String get patchUniverseReferenceTitle;
-
-  /// No description provided for @patchUniverseResetConfirm.
-  ///
-  /// In fr, this message translates to:
-  /// **'Réinitialiser'**
-  String get patchUniverseResetConfirm;
-
-  /// No description provided for @patchUniverseResetContent.
-  ///
-  /// In fr, this message translates to:
-  /// **'Cela efface le patch chargé depuis le MVR dans l’application.\nAucune donnée du fichier n’est modifiée.'**
-  String get patchUniverseResetContent;
-
-  /// No description provided for @patchUniverseResetTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Réinitialiser la référence ?'**
-  String get patchUniverseResetTitle;
-
-  /// No description provided for @patchUniverseResetTooltip.
-  ///
-  /// In fr, this message translates to:
-  /// **'Réinitialiser la référence'**
-  String get patchUniverseResetTooltip;
-
-  /// No description provided for @patchUniverseSelected.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers sélectionné'**
-  String get patchUniverseSelected;
-
-  /// No description provided for @patchUniverseStateConflict.
-  ///
-  /// In fr, this message translates to:
-  /// **'Conflit'**
-  String get patchUniverseStateConflict;
-
-  /// No description provided for @patchUniverseStateFree.
-  ///
-  /// In fr, this message translates to:
-  /// **'Libre'**
-  String get patchUniverseStateFree;
-
-  /// No description provided for @patchUniverseStateOccupied.
-  ///
-  /// In fr, this message translates to:
-  /// **'Occupé'**
-  String get patchUniverseStateOccupied;
-
-  /// No description provided for @patchUniverseTapHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Touche une case pour afficher le détail.'**
-  String get patchUniverseTapHint;
-
-  /// No description provided for @patchUniverseUniverseDropdownLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers DMX'**
-  String get patchUniverseUniverseDropdownLabel;
-
-  /// No description provided for @patchUniverseUniverseItem.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers {universe}'**
-  String patchUniverseUniverseItem(Object universe);
-
-  /// No description provided for @patchUniverseUniverseTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers'**
-  String get patchUniverseUniverseTitle;
-
-  /// No description provided for @patchUniverseZoomIn.
-  ///
-  /// In fr, this message translates to:
-  /// **'Agrandir'**
-  String get patchUniverseZoomIn;
-
-  /// No description provided for @patchUniverseZoomOut.
-  ///
-  /// In fr, this message translates to:
-  /// **'Réduire'**
-  String get patchUniverseZoomOut;
-
-  /// No description provided for @patchUniverseZoomTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Zoom'**
-  String get patchUniverseZoomTitle;
-
-  /// No description provided for @photometryBeamAngleHint2.
-  ///
-  /// In fr, this message translates to:
-  /// **'En degrés'**
-  String get photometryBeamAngleHint2;
-
-  /// No description provided for @photometryBeamAngleHint3.
-  ///
-  /// In fr, this message translates to:
-  /// **'En degrés'**
-  String get photometryBeamAngleHint3;
-
-  /// No description provided for @photometryBeamAngleLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle de faisceau'**
-  String get photometryBeamAngleLabel;
-
-  /// No description provided for @photometryCandelaHint1.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entrez une valeur en cd'**
-  String get photometryCandelaHint1;
-
-  /// No description provided for @photometryCandelaHint2.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entrez une valeur en cd'**
-  String get photometryCandelaHint2;
-
-  /// No description provided for @photometryCandelaLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Candela'**
-  String get photometryCandelaLabel;
-
-  /// No description provided for @photometryDisclaimerShort.
-  ///
-  /// In fr, this message translates to:
-  /// **'Indication uniquement. Vérifie avec la documentation constructeur.'**
-  String get photometryDisclaimerShort;
-
-  /// No description provided for @photometryDistanceHint1.
-  ///
-  /// In fr, this message translates to:
-  /// **'En mètres'**
-  String get photometryDistanceHint1;
-
-  /// No description provided for @photometryDistanceHint3.
-  ///
-  /// In fr, this message translates to:
-  /// **'En mètres'**
-  String get photometryDistanceHint3;
-
-  /// No description provided for @photometryDistanceLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Distance'**
-  String get photometryDistanceLabel;
-
-  /// No description provided for @photometryLumensHint2.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entrez une valeur en lm'**
-  String get photometryLumensHint2;
-
-  /// No description provided for @photometryLumensHint3.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entrez une valeur en lm'**
-  String get photometryLumensHint3;
-
-  /// No description provided for @photometryLumensLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Lumens'**
-  String get photometryLumensLabel;
-
-  /// No description provided for @photometryLuxHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entrez une valeur en lux'**
-  String get photometryLuxHint;
-
-  /// No description provided for @photometryLuxLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Lux'**
-  String get photometryLuxLabel;
-
-  /// No description provided for @photometrySection1Title.
-  ///
-  /// In fr, this message translates to:
-  /// **'Lux <> Candela'**
-  String get photometrySection1Title;
-
-  /// No description provided for @photometrySection2Title.
-  ///
-  /// In fr, this message translates to:
-  /// **'Lumens <> Candela'**
-  String get photometrySection2Title;
-
-  /// No description provided for @photometrySection3Title.
-  ///
-  /// In fr, this message translates to:
-  /// **'Lumens < Lux'**
-  String get photometrySection3Title;
-
-  /// No description provided for @photometrySummary1.
-  ///
-  /// In fr, this message translates to:
-  /// **'À {distance} m, {candela} cd ≈ {lux} lux.'**
-  String photometrySummary1(Object candela, Object distance, Object lux);
-
-  /// No description provided for @photometrySummary2.
-  ///
-  /// In fr, this message translates to:
-  /// **'À {distance} m, {lumens} lm ≈ {lux} lux (approx.).'**
-  String photometrySummary2(Object distance, Object lumens, Object lux);
-
-  ///
-  ///
-  /// In fr, this message translates to:
-  /// **'Lumens : {lumens} lm — Distance : {distance} m — Angle : {angle}° — Lux : {lux} lx.'**
-  String photometrySummary3(
-      String lumens, String distance, String angle, String lux);
-
-  /// No description provided for @projectionAngleHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'En degrés'**
-  String get projectionAngleHint;
-
-  /// No description provided for @projectionAngleLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle'**
-  String get projectionAngleLabel;
-
-  /// No description provided for @projectionAutoHelp.
-  ///
-  /// In fr, this message translates to:
-  /// **'Auto : calcule la valeur manquante.'**
-  String get projectionAutoHelp;
-
-  /// No description provided for @projectionConeAngle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle : {angle}°'**
-  String projectionConeAngle(Object angle);
-
-  /// No description provided for @projectionConeDiameter.
-  ///
-  /// In fr, this message translates to:
-  /// **'Diamètre : {diameter} m'**
-  String projectionConeDiameter(Object diameter);
-
-  /// No description provided for @projectionConeDistance.
-  ///
-  /// In fr, this message translates to:
-  /// **'Distance : {distance} m'**
-  String projectionConeDistance(Object distance);
-
-  /// No description provided for @projectionDetailAngle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle : {angle}°'**
-  String projectionDetailAngle(Object angle);
-
-  /// No description provided for @projectionDetailDiameter.
-  ///
-  /// In fr, this message translates to:
-  /// **'Diamètre : {diameter} m'**
-  String projectionDetailDiameter(Object diameter);
-
-  /// No description provided for @projectionDetailDistance.
-  ///
-  /// In fr, this message translates to:
-  /// **'Distance : {distance} m'**
-  String projectionDetailDistance(Object distance);
-
-  /// No description provided for @projectionDiameterHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'En mètres'**
-  String get projectionDiameterHint;
-
-  /// No description provided for @projectionDiameterLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Diamètre'**
-  String get projectionDiameterLabel;
-
-  /// No description provided for @projectionDistanceHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'En mètres'**
-  String get projectionDistanceHint;
-
-  /// No description provided for @projectionDistanceLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Distance'**
-  String get projectionDistanceLabel;
-
-  /// No description provided for @projectionHeaderAutoActive.
-  ///
-  /// In fr, this message translates to:
-  /// **'Auto actif'**
-  String get projectionHeaderAutoActive;
-
-  /// No description provided for @projectionHeaderNeedTwoValues.
-  ///
-  /// In fr, this message translates to:
-  /// **'Renseigne au moins deux valeurs.'**
-  String get projectionHeaderNeedTwoValues;
-
-  /// No description provided for @projectionInputsTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entrées'**
-  String get projectionInputsTitle;
-
-  /// No description provided for @projectionResultsTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Résultats'**
-  String get projectionResultsTitle;
-
-  /// No description provided for @resetConsents.
-  ///
-  /// In fr, this message translates to:
-  /// **'Réinitialiser consentements'**
-  String get resetConsents;
-
-  /// No description provided for @settings.
-  ///
-  /// In fr, this message translates to:
-  /// **'Paramètres'**
-  String get settings;
-
-  /// No description provided for @videoBrightnessResult.
-  ///
-  /// In fr, this message translates to:
-  /// **'Format: {format}\nSurface: {area} m²\nLux (lm/m²): {lux}\nLux eq (gain): {luxEq}\nLuminance: {nits} nits | {fl} ft-L\nSeuil mini ({presetLabel}): {minFl} ft-L → {status}\nNote: estimation indicative (Lambert).'**
-  String videoBrightnessResult(
-      Object area,
-      Object fl,
-      Object format,
-      Object lux,
-      Object luxEq,
-      Object minFl,
-      Object nits,
-      Object presetLabel,
-      Object status);
-
-  /// No description provided for @videoBrightnessSectionTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calcul 4 — Lux / nits / ft-L + seuil'**
-  String get videoBrightnessSectionTitle;
-
-  /// No description provided for @videoBrightnessSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Lux / nits / ft-L + seuil (calcul 4).'**
-  String get videoBrightnessSubtitle;
-
-  /// No description provided for @videoBrightnessTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Luminosité'**
-  String get videoBrightnessTitle;
-
-  /// No description provided for @videoCalc1ErrMissing.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Données manquantes: Distance + Largeur.'**
-  String get videoCalc1ErrMissing;
-
-  /// No description provided for @videoCalc1Ok.
-  ///
-  /// In fr, this message translates to:
-  /// **'✅ Ratio de projection = {ratio}'**
-  String videoCalc1Ok(Object ratio);
-
-  /// No description provided for @videoCalc1Title.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calcul 1 — Ratio (Distance / Largeur)'**
-  String get videoCalc1Title;
-
-  /// No description provided for @videoCalc2ErrMissing.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Données manquantes: Distance + Ratio.'**
-  String get videoCalc2ErrMissing;
-
-  /// No description provided for @videoCalc2Ok.
-  ///
-  /// In fr, this message translates to:
-  /// **'✅ Largeur image = {width} m'**
-  String videoCalc2Ok(Object width);
-
-  /// No description provided for @videoCalc2Title.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calcul 2 — Largeur (Distance / Ratio)'**
-  String get videoCalc2Title;
-
-  /// No description provided for @videoCalc3ErrMissingWidth.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Donnée manquante: Largeur.'**
-  String get videoCalc3ErrMissingWidth;
-
-  /// No description provided for @videoCalc3Ok.
-  ///
-  /// In fr, this message translates to:
-  /// **'✅ Hauteur = {height} m (format {format})'**
-  String videoCalc3Ok(Object format, Object height);
-
-  /// No description provided for @videoCalc3Title.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calcul 3 — Hauteur (Largeur + Format)'**
-  String get videoCalc3Title;
-
-  /// No description provided for @videoCalc4ErrGt0.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Lumens/Gain/Largeur doivent être > 0.'**
-  String get videoCalc4ErrGt0;
-
-  /// No description provided for @videoCalc4ErrMissing.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Données manquantes: Lumens + Gain + Largeur.'**
-  String get videoCalc4ErrMissing;
-
-  /// No description provided for @videoCalc4ErrMissingSimple.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Données manquantes : Largeur + Lumens + Gain.'**
-  String get videoCalc4ErrMissingSimple;
-
-  /// No description provided for @videoCalc4Result.
-  ///
-  /// In fr, this message translates to:
-  /// **'Surface: {area} m² (format {format})\nLux (lm/m²): {lux}\nLux eq (gain): {luxEq}\nLuminance: {nits} nits | {fl} ft-L\nSeuil mini ({presetLabel}): {minFl} ft-L → {status}\nNote: conversion nits/ft-L basée sur une hypothèse Lambertienne (approx).'**
-  String videoCalc4Result(
-      Object area,
-      Object fl,
-      Object format,
-      Object lux,
-      Object luxEq,
-      Object minFl,
-      Object nits,
-      Object presetLabel,
-      Object status);
-
-  /// No description provided for @videoCalc4Title.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calcul 4 — Luminosité (lux / nits / ft-L + seuil)'**
-  String get videoCalc4Title;
-
-  /// No description provided for @videoCalc5ErrMissing.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Données manquantes: Largeur totale + Overlap% + Nombre de projecteurs.'**
-  String get videoCalc5ErrMissing;
-
-  /// No description provided for @videoCalc5ErrNMin2.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Le nombre de projecteurs doit être ≥ 2.'**
-  String get videoCalc5ErrNMin2;
-
-  /// No description provided for @videoCalc5NHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 2'**
-  String get videoCalc5NHint;
-
-  /// No description provided for @videoCalc5NLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Nombre de projecteurs (N)'**
-  String get videoCalc5NLabel;
-
-  /// No description provided for @videoCalc5Result.
-  ///
-  /// In fr, this message translates to:
-  /// **'Largeur totale: {wTot} m\nN: {n} | Overlap: {overlapPct}% (sur largeur projo)\n\n- Largeur par projecteur: {wPer} m\n- Overlap entre 2 projos: {overlapM} m\n- Hauteur totale (format {format}): {hTot} m'**
-  String videoCalc5Result(Object format, Object hTot, Object n, Object overlapM,
-      Object overlapPct, Object wPer, Object wTot);
-
-  /// No description provided for @videoCalc5Title.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calcul 5 — Overlap (Largeur totale + N)'**
-  String get videoCalc5Title;
-
-  /// No description provided for @videoCalc6ErrMissingBasics.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Données manquantes: Largeur totale + Distance + Overlap%.'**
-  String get videoCalc6ErrMissingBasics;
-
-  /// No description provided for @videoCalc6ErrMissingRatio.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Données manquantes: Ratio min et/ou Ratio max.'**
-  String get videoCalc6ErrMissingRatio;
-
-  /// No description provided for @videoCalc6GainHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 1.0'**
-  String get videoCalc6GainHint;
-
-  /// No description provided for @videoCalc6GainLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Gain (calc 6)'**
-  String get videoCalc6GainLabel;
-
-  /// No description provided for @videoCalc6LumensPerProjectorHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 20000'**
-  String get videoCalc6LumensPerProjectorHint;
-
-  /// No description provided for @videoCalc6LumensPerProjectorLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Lumens par projecteur'**
-  String get videoCalc6LumensPerProjectorLabel;
-
-  /// No description provided for @videoCalc6LumiErrGt0.
-  ///
-  /// In fr, this message translates to:
-  /// **'Luminosité: ❌ Lumens/projo et gain doivent être > 0.'**
-  String get videoCalc6LumiErrGt0;
-
-  /// No description provided for @videoCalc6LumiForN.
-  ///
-  /// In fr, this message translates to:
-  /// **'Luminosité estimée (N={n})\nSurface: {area} m²\nLux eq: {lux} (lm/m²)\nNits: {nits} | ft-L: {fl}'**
-  String videoCalc6LumiForN(
-      Object area, Object fl, Object lux, Object n, Object nits);
-
-  /// No description provided for @videoCalc6LumiOptional.
-  ///
-  /// In fr, this message translates to:
-  /// **'Luminosité (optionnelle): renseigne Lumens/projo + Gain pour l\'estimation.'**
-  String get videoCalc6LumiOptional;
-
-  /// No description provided for @videoCalc6NoteIndicative.
-  ///
-  /// In fr, this message translates to:
-  /// **'Note: estimation indicative (blend/overlap réels peuvent réduire un peu).'**
-  String get videoCalc6NoteIndicative;
-
-  /// No description provided for @videoCalc6RatioMaxHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 1.80'**
-  String get videoCalc6RatioMaxHint;
-
-  /// No description provided for @videoCalc6RatioMaxLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ratio max'**
-  String get videoCalc6RatioMaxLabel;
-
-  /// No description provided for @videoCalc6RatioMinHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 1.20'**
-  String get videoCalc6RatioMinHint;
-
-  /// No description provided for @videoCalc6RatioMinLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ratio min'**
-  String get videoCalc6RatioMinLabel;
-
-  /// No description provided for @videoCalc6Result.
-  ///
-  /// In fr, this message translates to:
-  /// **'Largeur totale={wTot} m | Distance={distance} m | Overlap={overlapPct}%\nFormat {format} → Hauteur totale={hTot} m | Surface={area} m²\nRatio min/max: {ratioMin} → {ratioMax}\n\nCas ratio plus ouvert (min) = {nMin} projos | couverture ≈ {covMin} m\n{lumiMin}\n\nCas ratio plus serré (max) = {nMax} projos | couverture ≈ {covMax} m\n{lumiMax}\n\n{note}'**
-  String videoCalc6Result(
-      Object area,
-      Object covMax,
-      Object covMin,
-      Object distance,
-      Object format,
-      Object hTot,
-      Object lumiMax,
-      Object lumiMin,
-      Object nMax,
-      Object nMin,
-      Object note,
-      Object overlapPct,
-      Object ratioMax,
-      Object ratioMin,
-      Object wTot);
-
-  /// No description provided for @videoCalc6Title.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calcul 6 — Nb projecteurs auto + luminosité'**
-  String get videoCalc6Title;
-
-  /// No description provided for @videoCalcLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calcul {n}'**
-  String videoCalcLabel(Object n);
-
-  /// No description provided for @videoCalculateAll.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calculer tout'**
-  String get videoCalculateAll;
-
-  /// No description provided for @videoCalculationsTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calculs vidéo'**
-  String get videoCalculationsTitle;
-
-  /// No description provided for @videoCommonParamsTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Paramètres communs'**
-  String get videoCommonParamsTitle;
-
-  /// No description provided for @videoCommonPillArea.
-  ///
-  /// In fr, this message translates to:
-  /// **'Surface: {value}'**
-  String videoCommonPillArea(Object value);
-
-  /// No description provided for @videoCommonPillDistance.
-  ///
-  /// In fr, this message translates to:
-  /// **'Distance: {value}'**
-  String videoCommonPillDistance(Object value);
-
-  /// No description provided for @videoCommonPillFormat.
-  ///
-  /// In fr, this message translates to:
-  /// **'Format: {format}'**
-  String videoCommonPillFormat(Object format);
-
-  /// No description provided for @videoCommonPillHeight.
-  ///
-  /// In fr, this message translates to:
-  /// **'Hauteur: {value}'**
-  String videoCommonPillHeight(Object value);
-
-  /// No description provided for @videoCommonPillOverlap.
-  ///
-  /// In fr, this message translates to:
-  /// **'Overlap: {value}'**
-  String videoCommonPillOverlap(Object value);
-
-  /// No description provided for @videoCommonPillRatio.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ratio: {value}'**
-  String videoCommonPillRatio(Object value);
-
-  /// No description provided for @videoCommonPillTotalWidth.
-  ///
-  /// In fr, this message translates to:
-  /// **'Largeur totale: {value}'**
-  String videoCommonPillTotalWidth(Object value);
-
-  /// No description provided for @videoCommonPillWidth.
-  ///
-  /// In fr, this message translates to:
-  /// **'Largeur: {value}'**
-  String videoCommonPillWidth(Object value);
-
-  /// No description provided for @videoCopyAllTooltip.
-  ///
-  /// In fr, this message translates to:
-  /// **'Copier tous les résultats'**
-  String get videoCopyAllTooltip;
-
-  /// No description provided for @videoCopySummaryTooltip.
-  ///
-  /// In fr, this message translates to:
-  /// **'Copier le résumé'**
-  String get videoCopySummaryTooltip;
+  /// **'Outils vidéo'**
+  String get videoToolsTitle;
 
   /// No description provided for @videoDisclaimerShort.
   ///
@@ -2736,218 +730,11 @@ abstract class AppLocalizations {
   /// **'Calculs indicatifs. Vérifie toujours la documentation constructeur.'**
   String get videoDisclaimerShort;
 
-  /// No description provided for @videoDistanceHint.
+  /// No description provided for @videoLensMeasureTitle.
   ///
   /// In fr, this message translates to:
-  /// **'ex: 12.0'**
-  String get videoDistanceHint;
-
-  /// No description provided for @videoDistanceLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Distance de projection (m)'**
-  String get videoDistanceLabel;
-
-  /// No description provided for @videoErrImpossibleDenom.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Paramètres impossibles (denom ≤ 0).'**
-  String get videoErrImpossibleDenom;
-
-  /// No description provided for @videoErrOverlapRange.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Overlap% doit être entre 0 et 99.9.'**
-  String get videoErrOverlapRange;
-
-  /// No description provided for @videoErrRatioGt0.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Le ratio doit être > 0.'**
-  String get videoErrRatioGt0;
-
-  /// No description provided for @videoErrTotalWidthAndDistanceGt0.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Largeur totale et distance doivent être > 0.'**
-  String get videoErrTotalWidthAndDistanceGt0;
-
-  /// No description provided for @videoErrTotalWidthGt0.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Largeur totale doit être > 0.'**
-  String get videoErrTotalWidthGt0;
-
-  /// No description provided for @videoErrWidthGt0.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ La largeur doit être > 0.'**
-  String get videoErrWidthGt0;
-
-  /// No description provided for @videoExportPdfTooltip.
-  ///
-  /// In fr, this message translates to:
-  /// **'Exporter PDF'**
-  String get videoExportPdfTooltip;
-
-  /// No description provided for @videoFormatLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Format (ratio)'**
-  String get videoFormatLabel;
-
-  /// No description provided for @videoGainHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 1.0'**
-  String get videoGainHint;
-
-  /// No description provided for @videoGainLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Gain'**
-  String get videoGainLabel;
-
-  /// No description provided for @videoImageWidthHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 6.0'**
-  String get videoImageWidthHint;
-
-  /// No description provided for @videoImageWidthLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Largeur d\'image (m)'**
-  String get videoImageWidthLabel;
-
-  /// No description provided for @videoLedCalcTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calcul — Pixels / tiles'**
-  String get videoLedCalcTitle;
-
-  /// No description provided for @videoLedErrAllGt0.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Toutes les valeurs doivent être > 0.'**
-  String get videoLedErrAllGt0;
-
-  /// No description provided for @videoLedErrMissingInputs.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Données manquantes : Tiles X/Y + Tile px + Tile cm.'**
-  String get videoLedErrMissingInputs;
-
-  /// No description provided for @videoLedPitchUniform.
-  ///
-  /// In fr, this message translates to:
-  /// **'{value} mm'**
-  String videoLedPitchUniform(Object value);
-
-  /// No description provided for @videoLedPitchXY.
-  ///
-  /// In fr, this message translates to:
-  /// **'X {x} mm • Y {y} mm'**
-  String videoLedPitchXY(Object x, Object y);
-
-  /// No description provided for @videoLedResult.
-  ///
-  /// In fr, this message translates to:
-  /// **'✅ Résolution mur: {wallWpx} × {wallHpx} px\n✅ Taille mur: {wallWm} × {wallHm} m\nTile: {tileWpx}×{tileHpx} px • {tileWcm}×{tileHcm} cm\nPitch calculé: {pitch}'**
-  String videoLedResult(
-      Object pitch,
-      Object tileHcm,
-      Object tileHpx,
-      Object tileWcm,
-      Object tileWpx,
-      Object wallHm,
-      Object wallHpx,
-      Object wallWm,
-      Object wallWpx);
-
-  /// No description provided for @videoLedSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Pixels du mur LED selon taille, pitch, dimension des tiles.'**
-  String get videoLedSubtitle;
-
-  /// No description provided for @videoLedTileHcmHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 33.28'**
-  String get videoLedTileHcmHint;
-
-  /// No description provided for @videoLedTileHcmLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Tile hauteur (cm)'**
-  String get videoLedTileHcmLabel;
-
-  /// No description provided for @videoLedTileHpxHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 128'**
-  String get videoLedTileHpxHint;
-
-  /// No description provided for @videoLedTileHpxLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Tile hauteur (px)'**
-  String get videoLedTileHpxLabel;
-
-  /// No description provided for @videoLedTileWcmHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 33.28'**
-  String get videoLedTileWcmHint;
-
-  /// No description provided for @videoLedTileWcmLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Tile largeur (cm)'**
-  String get videoLedTileWcmLabel;
-
-  /// No description provided for @videoLedTileWpxHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 128'**
-  String get videoLedTileWpxHint;
-
-  /// No description provided for @videoLedTileWpxLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Tile largeur (px)'**
-  String get videoLedTileWpxLabel;
-
-  /// No description provided for @videoLedTilesXHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 15'**
-  String get videoLedTilesXHint;
-
-  /// No description provided for @videoLedTilesXLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Tiles horizontales (X)'**
-  String get videoLedTilesXLabel;
-
-  /// No description provided for @videoLedTilesYHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 8'**
-  String get videoLedTilesYHint;
-
-  /// No description provided for @videoLedTilesYLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Tiles verticales (Y)'**
-  String get videoLedTilesYLabel;
-
-  /// No description provided for @videoLedTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'LED'**
-  String get videoLedTitle;
+  /// **'Lentille & mesure'**
+  String get videoLensMeasureTitle;
 
   /// No description provided for @videoLensMeasureSubtitle.
   ///
@@ -2955,11 +742,270 @@ abstract class AppLocalizations {
   /// **'Ratio / largeur / hauteur (calculs 1 à 3).'**
   String get videoLensMeasureSubtitle;
 
-  /// No description provided for @videoLensMeasureTitle.
+  /// No description provided for @videoBrightnessTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Lentille & mesure'**
-  String get videoLensMeasureTitle;
+  /// **'Luminosité'**
+  String get videoBrightnessTitle;
+
+  /// No description provided for @videoBrightnessSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lux / nits / ft-L + seuil (calcul 4).'**
+  String get videoBrightnessSubtitle;
+
+  /// No description provided for @videoMultiprojectorTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Multiprojecteur'**
+  String get videoMultiprojectorTitle;
+
+  /// No description provided for @videoMultiprojectorSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Overlap + largeur/projo + nombre de projos (calculs 5 & 6).'**
+  String get videoMultiprojectorSubtitle;
+
+  /// No description provided for @videoLedTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'LED'**
+  String get videoLedTitle;
+
+  /// No description provided for @videoLedSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pixels du mur LED selon taille, pitch, dimension des tiles.'**
+  String get videoLedSubtitle;
+
+  /// No description provided for @videoTestPatternTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mire'**
+  String get videoTestPatternTitle;
+
+  /// No description provided for @videoTestPatternSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Création de mire vidéo pour écran et mur LED (à faire après).'**
+  String get videoTestPatternSubtitle;
+
+  /// No description provided for @videoMpFormatLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Format (ratio)'**
+  String get videoMpFormatLabel;
+
+  /// No description provided for @videoMpCalc5Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul 5 — Largeur par projecteur'**
+  String get videoMpCalc5Title;
+
+  /// No description provided for @videoMpCalc6Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul 6 — Nombre de projecteurs (ratio min/max)'**
+  String get videoMpCalc6Title;
+
+  /// No description provided for @videoMpTotalWidthLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Largeur totale de projection (m)'**
+  String get videoMpTotalWidthLabel;
+
+  /// No description provided for @videoMpTotalWidthHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 18.0'**
+  String get videoMpTotalWidthHint;
+
+  /// No description provided for @videoMpDistanceLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Distance de projection (m)'**
+  String get videoMpDistanceLabel;
+
+  /// No description provided for @videoMpDistanceHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 12.0'**
+  String get videoMpDistanceHint;
+
+  /// No description provided for @videoMpOverlapLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Overlap (%)'**
+  String get videoMpOverlapLabel;
+
+  /// No description provided for @videoMpOverlapHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 10'**
+  String get videoMpOverlapHint;
+
+  /// No description provided for @videoMpProjectorCountLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nombre de projecteurs (N)'**
+  String get videoMpProjectorCountLabel;
+
+  /// No description provided for @videoMpProjectorCountHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 2'**
+  String get videoMpProjectorCountHint;
+
+  /// No description provided for @videoMpRatioMinLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ratio min'**
+  String get videoMpRatioMinLabel;
+
+  /// No description provided for @videoMpRatioMinHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 1.20'**
+  String get videoMpRatioMinHint;
+
+  /// No description provided for @videoMpRatioMaxLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ratio max'**
+  String get videoMpRatioMaxLabel;
+
+  /// No description provided for @videoMpRatioMaxHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 1.80'**
+  String get videoMpRatioMaxHint;
+
+  /// No description provided for @videoMpOptionalLuminanceTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Optionnel : luminosité'**
+  String get videoMpOptionalLuminanceTitle;
+
+  /// No description provided for @videoMpLumensPerProjectorLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lumens par projecteur'**
+  String get videoMpLumensPerProjectorLabel;
+
+  /// No description provided for @videoMpLumensPerProjectorHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 20000'**
+  String get videoMpLumensPerProjectorHint;
+
+  /// No description provided for @videoMpGainLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Gain'**
+  String get videoMpGainLabel;
+
+  /// No description provided for @videoMpGainHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 1.0'**
+  String get videoMpGainHint;
+
+  /// No description provided for @videoMpErrMissing5.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Données manquantes : Largeur totale + Overlap% + N.'**
+  String get videoMpErrMissing5;
+
+  /// No description provided for @videoMpErrWidthGt0.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Largeur totale doit être > 0.'**
+  String get videoMpErrWidthGt0;
+
+  /// No description provided for @videoMpErrNGte2.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ N doit être ≥ 2.'**
+  String get videoMpErrNGte2;
+
+  /// No description provided for @videoMpErrOverlapRange.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Overlap% doit être entre 0 et 99.9.'**
+  String get videoMpErrOverlapRange;
+
+  /// No description provided for @videoMpErrImpossibleDenom.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Paramètres impossibles (denom ≤ 0).'**
+  String get videoMpErrImpossibleDenom;
+
+  /// No description provided for @videoMpErrMissing6Main.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Données manquantes : Largeur totale + Distance + Overlap%.'**
+  String get videoMpErrMissing6Main;
+
+  /// No description provided for @videoMpErrWidthDistanceGt0.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Largeur totale et distance doivent être > 0.'**
+  String get videoMpErrWidthDistanceGt0;
+
+  /// No description provided for @videoMpErrMissingRatios.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Données manquantes : Ratio min et/ou Ratio max.'**
+  String get videoMpErrMissingRatios;
+
+  /// No description provided for @videoMpErrInvalidRatio.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Ratio invalide (doit être > 0).'**
+  String get videoMpErrInvalidRatio;
+
+  /// No description provided for @videoMpLumiOptionalHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Luminosité (optionnelle) : renseigne Lumens/projo + Gain pour estimer.'**
+  String get videoMpLumiOptionalHint;
+
+  /// No description provided for @videoMpLumiErrLumensGainGt0.
+  ///
+  /// In fr, this message translates to:
+  /// **'Luminosité: ❌ Lumens/projo et gain doivent être > 0.'**
+  String get videoMpLumiErrLumensGainGt0;
+
+  /// No description provided for @videoMpCaseOpenMin.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Mp Case Open Min : {p0} · {p1}'**
+  String videoMpCaseOpenMin(Object p0, Object p1);
+
+  /// No description provided for @videoMpCaseTightMax.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Mp Case Tight Max : {p0} · {p1}'**
+  String videoMpCaseTightMax(Object p0, Object p1);
+
+  /// No description provided for @videoMpLumiEstimated.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Mp Lumi Estimated : {p0} · {p1} · {p2} · {p3} · {p4}'**
+  String videoMpLumiEstimated(
+      Object p0, Object p1, Object p2, Object p3, Object p4);
+
+  /// No description provided for @videoMpNoteIndicative.
+  ///
+  /// In fr, this message translates to:
+  /// **'Note: estimation indicative.'**
+  String get videoMpNoteIndicative;
+
+  /// No description provided for @videoLmFormatLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Format (ratio)'**
+  String get videoLmFormatLabel;
 
   /// No description provided for @videoLmCalc1Title.
   ///
@@ -2979,59 +1025,17 @@ abstract class AppLocalizations {
   /// **'Calcul 3 — Hauteur (Largeur + Format)'**
   String get videoLmCalc3Title;
 
-  /// No description provided for @videoLmDistanceHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 12.0'**
-  String get videoLmDistanceHint;
-
   /// No description provided for @videoLmDistanceLabel.
   ///
   /// In fr, this message translates to:
   /// **'Distance de projection (m)'**
   String get videoLmDistanceLabel;
 
-  /// No description provided for @videoLmErrMissingDistanceRatio.
+  /// No description provided for @videoLmDistanceHint.
   ///
   /// In fr, this message translates to:
-  /// **'❌ Données manquantes : Distance + Ratio.'**
-  String get videoLmErrMissingDistanceRatio;
-
-  /// No description provided for @videoLmErrMissingDistanceWidth.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Données manquantes : Distance + Largeur.'**
-  String get videoLmErrMissingDistanceWidth;
-
-  /// No description provided for @videoLmErrMissingWidthOnly.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Donnée manquante : Largeur.'**
-  String get videoLmErrMissingWidthOnly;
-
-  /// No description provided for @videoLmErrRatioGt0.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Ratio doit être > 0.'**
-  String get videoLmErrRatioGt0;
-
-  /// No description provided for @videoLmErrWidthGt0.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Largeur doit être > 0.'**
-  String get videoLmErrWidthGt0;
-
-  /// No description provided for @videoLmFormatLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Format (ratio)'**
-  String get videoLmFormatLabel;
-
-  /// No description provided for @videoLmImageWidthHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 6.0'**
-  String get videoLmImageWidthHint;
+  /// **'ex: 12.0'**
+  String get videoLmDistanceHint;
 
   /// No description provided for @videoLmImageWidthLabel.
   ///
@@ -3039,29 +1043,11 @@ abstract class AppLocalizations {
   /// **'Largeur d\'image (m)'**
   String get videoLmImageWidthLabel;
 
-  /// No description provided for @videoLmResultHeight.
+  /// No description provided for @videoLmImageWidthHint.
   ///
   /// In fr, this message translates to:
-  /// **'✅ Hauteur = {height} m (format {format})'**
-  String videoLmResultHeight(Object format, Object height);
-
-  /// No description provided for @videoLmResultRatio.
-  ///
-  /// In fr, this message translates to:
-  /// **'✅ Ratio de projection = {ratio}'**
-  String videoLmResultRatio(Object ratio);
-
-  /// No description provided for @videoLmResultWidth.
-  ///
-  /// In fr, this message translates to:
-  /// **'✅ Largeur image = {width} m'**
-  String videoLmResultWidth(Object width);
-
-  /// No description provided for @videoLmThrowRatioHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 1.60'**
-  String get videoLmThrowRatioHint;
+  /// **'ex: 6.0'**
+  String get videoLmImageWidthHint;
 
   /// No description provided for @videoLmThrowRatioLabel.
   ///
@@ -3069,11 +1055,260 @@ abstract class AppLocalizations {
   /// **'Ratio de projection'**
   String get videoLmThrowRatioLabel;
 
-  /// No description provided for @videoLumensHint.
+  /// No description provided for @videoLmThrowRatioHint.
   ///
   /// In fr, this message translates to:
-  /// **'ex: 20000'**
-  String get videoLumensHint;
+  /// **'ex: 1.60'**
+  String get videoLmThrowRatioHint;
+
+  /// No description provided for @videoLmErrMissingDistanceWidth.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Données manquantes : Distance + Largeur.'**
+  String get videoLmErrMissingDistanceWidth;
+
+  /// No description provided for @videoLmErrMissingDistanceRatio.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Données manquantes : Distance + Ratio.'**
+  String get videoLmErrMissingDistanceRatio;
+
+  /// No description provided for @videoLmErrMissingWidthOnly.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Donnée manquante : Largeur.'**
+  String get videoLmErrMissingWidthOnly;
+
+  /// No description provided for @videoLmErrWidthGt0.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Largeur doit être > 0.'**
+  String get videoLmErrWidthGt0;
+
+  /// No description provided for @videoLmErrRatioGt0.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Ratio doit être > 0.'**
+  String get videoLmErrRatioGt0;
+
+  /// No description provided for @videoLmResultRatio.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Lm Result Ratio : {p0}'**
+  String videoLmResultRatio(Object p0);
+
+  /// No description provided for @videoLmResultWidth.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Lm Result Width : {p0}'**
+  String videoLmResultWidth(Object p0);
+
+  /// No description provided for @videoLmResultHeight.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Lm Result Height : {p0} · {p1}'**
+  String videoLmResultHeight(Object p0, Object p1);
+
+  /// No description provided for @videoLedCalcTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul — Pixels / tiles'**
+  String get videoLedCalcTitle;
+
+  /// No description provided for @videoLedTilesXLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tiles horizontales (X)'**
+  String get videoLedTilesXLabel;
+
+  /// No description provided for @videoLedTilesXHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 15'**
+  String get videoLedTilesXHint;
+
+  /// No description provided for @videoLedTilesYLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tiles verticales (Y)'**
+  String get videoLedTilesYLabel;
+
+  /// No description provided for @videoLedTilesYHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 8'**
+  String get videoLedTilesYHint;
+
+  /// No description provided for @videoLedTileWpxLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tile largeur (px)'**
+  String get videoLedTileWpxLabel;
+
+  /// No description provided for @videoLedTileWpxHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 128'**
+  String get videoLedTileWpxHint;
+
+  /// No description provided for @videoLedTileHpxLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tile hauteur (px)'**
+  String get videoLedTileHpxLabel;
+
+  /// No description provided for @videoLedTileHpxHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 128'**
+  String get videoLedTileHpxHint;
+
+  /// No description provided for @videoLedTileWcmLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tile largeur (cm)'**
+  String get videoLedTileWcmLabel;
+
+  /// No description provided for @videoLedTileWcmHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 33.28'**
+  String get videoLedTileWcmHint;
+
+  /// No description provided for @videoLedTileHcmLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tile hauteur (cm)'**
+  String get videoLedTileHcmLabel;
+
+  /// No description provided for @videoLedTileHcmHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 33.28'**
+  String get videoLedTileHcmHint;
+
+  /// No description provided for @videoLedErrMissingInputs.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Données manquantes : Tiles X/Y + Tile px + Tile cm.'**
+  String get videoLedErrMissingInputs;
+
+  /// No description provided for @videoLedErrAllGt0.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Toutes les valeurs doivent être > 0.'**
+  String get videoLedErrAllGt0;
+
+  /// No description provided for @videoLedPitchUniform.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video LED Pitch Uniform : {p0}'**
+  String videoLedPitchUniform(Object p0);
+
+  /// No description provided for @videoLedPitchXY.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video LED Pitch XY : {p0} · {p1}'**
+  String videoLedPitchXY(Object p0, Object p1);
+
+  /// No description provided for @videoLedResult.
+  ///
+  /// In fr, this message translates to:
+  /// **'✅ Résolution mur: {wallWpx} × {wallHpx} px\n✅ Taille mur: {wallWm} × {wallHm} m\nTile: {tileWpx}×{tileHpx} px • {tileWcm}×{tileHcm} cm\nPitch calculé: {pitch}'**
+  String videoLedResult(
+      Object wallWpx,
+      Object wallHpx,
+      Object wallWm,
+      Object wallHm,
+      Object tileWpx,
+      Object tileHpx,
+      Object tileWcm,
+      Object tileHcm,
+      Object pitch);
+
+  /// No description provided for @videoCalculationsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculs vidéo'**
+  String get videoCalculationsTitle;
+
+  /// No description provided for @videoCopyAllTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier tous les résultats'**
+  String get videoCopyAllTooltip;
+
+  /// No description provided for @videoExportPdfTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exporter PDF'**
+  String get videoExportPdfTooltip;
+
+  /// No description provided for @videoCalculateAll.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculer tout'**
+  String get videoCalculateAll;
+
+  /// No description provided for @videoSummaryPillsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résumé (pastilles)'**
+  String get videoSummaryPillsTitle;
+
+  /// No description provided for @videoCopySummaryTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier le résumé'**
+  String get videoCopySummaryTooltip;
+
+  /// No description provided for @videoCommonParamsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Paramètres communs'**
+  String get videoCommonParamsTitle;
+
+  /// No description provided for @videoFormatLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Format (ratio)'**
+  String get videoFormatLabel;
+
+  /// No description provided for @videoDistanceLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Distance de projection (m)'**
+  String get videoDistanceLabel;
+
+  /// No description provided for @videoDistanceHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 12.0'**
+  String get videoDistanceHint;
+
+  /// No description provided for @videoImageWidthLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Largeur d\'image (m)'**
+  String get videoImageWidthLabel;
+
+  /// No description provided for @videoImageWidthHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 6.0'**
+  String get videoImageWidthHint;
+
+  /// No description provided for @videoThrowRatioLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ratio de projection'**
+  String get videoThrowRatioLabel;
+
+  /// No description provided for @videoThrowRatioHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 1.60'**
+  String get videoThrowRatioHint;
 
   /// No description provided for @videoLumensLabel.
   ///
@@ -3081,276 +1316,155 @@ abstract class AppLocalizations {
   /// **'Lumens (ANSI)'**
   String get videoLumensLabel;
 
-  /// No description provided for @videoMireHeaderSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mires indicatives (calage, focus, géométrie, blend, pixel perfect).'**
-  String get videoMireHeaderSubtitle;
-
-  /// No description provided for @videoMireHeaderTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Générateur de mires'**
-  String get videoMireHeaderTitle;
-
-  /// No description provided for @videoMireScreenLedSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mire selon WxH px (pixel perfect, uniformité, grille).'**
-  String get videoMireScreenLedSubtitle;
-
-  /// No description provided for @videoMireScreenLedTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mire écran LED'**
-  String get videoMireScreenLedTitle;
-
-  /// No description provided for @videoMireScreenVideoSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Simple (WxH px) + Mapping multi-projos (N + overlap).'**
-  String get videoMireScreenVideoSubtitle;
-
-  /// No description provided for @videoMireScreenVideoTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mire écran vidéo'**
-  String get videoMireScreenVideoTitle;
-
-  /// No description provided for @videoMireTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mire'**
-  String get videoMireTitle;
-
-  /// No description provided for @videoMpCalc5Title.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calcul 5 — Largeur par projecteur'**
-  String get videoMpCalc5Title;
-
-  /// No description provided for @videoMpCalc6Title.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calcul 6 — Nombre de projecteurs (ratio min/max)'**
-  String get videoMpCalc6Title;
-
-  /// No description provided for @videoMpCaseOpenMin.
-  ///
-  /// In fr, this message translates to:
-  /// **'Cas ratio plus ouvert (min) = {n} projos | couverture ≈ {coverage} m'**
-  String videoMpCaseOpenMin(Object coverage, Object n);
-
-  /// No description provided for @videoMpCaseTightMax.
-  ///
-  /// In fr, this message translates to:
-  /// **'Cas ratio plus serré (max) = {n} projos | couverture ≈ {coverage} m'**
-  String videoMpCaseTightMax(Object coverage, Object n);
-
-  /// No description provided for @videoMpDistanceHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 12.0'**
-  String get videoMpDistanceHint;
-
-  /// No description provided for @videoMpDistanceLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Distance de projection (m)'**
-  String get videoMpDistanceLabel;
-
-  /// No description provided for @videoMpErrImpossibleDenom.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Paramètres impossibles (denom ≤ 0).'**
-  String get videoMpErrImpossibleDenom;
-
-  /// No description provided for @videoMpErrInvalidRatio.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Ratio invalide (doit être > 0).'**
-  String get videoMpErrInvalidRatio;
-
-  /// No description provided for @videoMpErrMissing5.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Données manquantes : Largeur totale + Overlap% + N.'**
-  String get videoMpErrMissing5;
-
-  /// No description provided for @videoMpErrMissing6Main.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Données manquantes : Largeur totale + Distance + Overlap%.'**
-  String get videoMpErrMissing6Main;
-
-  /// No description provided for @videoMpErrMissingRatios.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Données manquantes : Ratio min et/ou Ratio max.'**
-  String get videoMpErrMissingRatios;
-
-  /// No description provided for @videoMpErrNGte2.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ N doit être ≥ 2.'**
-  String get videoMpErrNGte2;
-
-  /// No description provided for @videoMpErrOverlapRange.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Overlap% doit être entre 0 et 99.9.'**
-  String get videoMpErrOverlapRange;
-
-  /// No description provided for @videoMpErrWidthDistanceGt0.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Largeur totale et distance doivent être > 0.'**
-  String get videoMpErrWidthDistanceGt0;
-
-  /// No description provided for @videoMpErrWidthGt0.
-  ///
-  /// In fr, this message translates to:
-  /// **'❌ Largeur totale doit être > 0.'**
-  String get videoMpErrWidthGt0;
-
-  /// No description provided for @videoMpFormatLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Format (ratio)'**
-  String get videoMpFormatLabel;
-
-  /// No description provided for @videoMpGainHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 1.0'**
-  String get videoMpGainHint;
-
-  /// No description provided for @videoMpGainLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Gain'**
-  String get videoMpGainLabel;
-
-  /// No description provided for @videoMpLumensPerProjectorHint.
+  /// No description provided for @videoLumensHint.
   ///
   /// In fr, this message translates to:
   /// **'ex: 20000'**
-  String get videoMpLumensPerProjectorHint;
+  String get videoLumensHint;
 
-  /// No description provided for @videoMpLumensPerProjectorLabel.
+  /// No description provided for @videoGainLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Lumens par projecteur'**
-  String get videoMpLumensPerProjectorLabel;
+  /// **'Gain'**
+  String get videoGainLabel;
 
-  /// No description provided for @videoMpLumiErrLumensGainGt0.
+  /// No description provided for @videoGainHint.
   ///
   /// In fr, this message translates to:
-  /// **'Luminosité: ❌ Lumens/projo et gain doivent être > 0.'**
-  String get videoMpLumiErrLumensGainGt0;
+  /// **'ex: 1.0'**
+  String get videoGainHint;
 
-  /// No description provided for @videoMpLumiEstimated.
+  /// No description provided for @videoScreenPresetLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Luminosité estimée (N={n})\nSurface: {area} m²\nLux eq: {lux}\nNits: {nits} | ft-L: {fl}'**
-  String videoMpLumiEstimated(
-      Object area, Object fl, Object lux, Object n, Object nits);
+  /// **'Écran / Support (preset)'**
+  String get videoScreenPresetLabel;
 
-  /// No description provided for @videoMpLumiOptionalHint.
+  /// No description provided for @videoPresetFrontWhite.
   ///
   /// In fr, this message translates to:
-  /// **'Luminosité (optionnelle) : renseigne Lumens/projo + Gain pour estimer.'**
-  String get videoMpLumiOptionalHint;
+  /// **'Front - écran blanc mat (gain 1.0)'**
+  String get videoPresetFrontWhite;
 
-  /// No description provided for @videoMpNoteIndicative.
+  /// No description provided for @videoPresetFrontGrey.
   ///
   /// In fr, this message translates to:
-  /// **'Note: estimation indicative.'**
-  String get videoMpNoteIndicative;
+  /// **'Front - écran gris (gain 0.8)'**
+  String get videoPresetFrontGrey;
 
-  /// No description provided for @videoMpOptionalLuminanceTitle.
+  /// No description provided for @videoPresetFrontHighGain.
   ///
   /// In fr, this message translates to:
-  /// **'Optionnel : luminosité'**
-  String get videoMpOptionalLuminanceTitle;
+  /// **'Front - écran high gain (gain 1.3)'**
+  String get videoPresetFrontHighGain;
 
-  /// No description provided for @videoMpOverlapHint.
+  /// No description provided for @videoPresetRearDiffusion.
   ///
   /// In fr, this message translates to:
-  /// **'ex: 10'**
-  String get videoMpOverlapHint;
+  /// **'Rétro - toile diffusion (gain 0.7)'**
+  String get videoPresetRearDiffusion;
 
-  /// No description provided for @videoMpOverlapLabel.
+  /// No description provided for @videoPresetRearClear.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rétro - toile claire (gain 0.9)'**
+  String get videoPresetRearClear;
+
+  /// No description provided for @videoPresetMappingMatte.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mapping - peinture mate (gain 0.75)'**
+  String get videoPresetMappingMatte;
+
+  /// No description provided for @videoPresetMappingSatin.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mapping - peinture satinée (gain 0.9)'**
+  String get videoPresetMappingSatin;
+
+  /// No description provided for @videoPresetMappingLightStone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mapping - pierre claire (gain 0.6)'**
+  String get videoPresetMappingLightStone;
+
+  /// No description provided for @videoPresetMappingDarkStone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mapping - pierre sombre (gain 0.35)'**
+  String get videoPresetMappingDarkStone;
+
+  /// No description provided for @videoPresetMappingGlass.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mapping - vitre (gain 0.15)'**
+  String get videoPresetMappingGlass;
+
+  /// No description provided for @videoPresetFrontWhiteShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Front - écran blanc mat'**
+  String get videoPresetFrontWhiteShort;
+
+  /// No description provided for @videoPresetFrontGreyShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Front - écran gris'**
+  String get videoPresetFrontGreyShort;
+
+  /// No description provided for @videoPresetFrontHighGainShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Front - écran high gain'**
+  String get videoPresetFrontHighGainShort;
+
+  /// No description provided for @videoPresetRearDiffusionShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rétro - toile diffusion'**
+  String get videoPresetRearDiffusionShort;
+
+  /// No description provided for @videoPresetRearClearShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rétro - toile claire'**
+  String get videoPresetRearClearShort;
+
+  /// No description provided for @videoPresetMappingMatteShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mapping - peinture mate'**
+  String get videoPresetMappingMatteShort;
+
+  /// No description provided for @videoPresetMappingSatinShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mapping - peinture satinée'**
+  String get videoPresetMappingSatinShort;
+
+  /// No description provided for @videoPresetMappingLightStoneShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mapping - pierre claire'**
+  String get videoPresetMappingLightStoneShort;
+
+  /// No description provided for @videoPresetMappingDarkStoneShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mapping - pierre sombre'**
+  String get videoPresetMappingDarkStoneShort;
+
+  /// No description provided for @videoPresetMappingGlassShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mapping - vitre'**
+  String get videoPresetMappingGlassShort;
+
+  /// No description provided for @videoOverlapLabel.
   ///
   /// In fr, this message translates to:
   /// **'Overlap (%)'**
-  String get videoMpOverlapLabel;
-
-  /// No description provided for @videoMpProjectorCountHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 2'**
-  String get videoMpProjectorCountHint;
-
-  /// No description provided for @videoMpProjectorCountLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Nombre de projecteurs (N)'**
-  String get videoMpProjectorCountLabel;
-
-  /// No description provided for @videoMpRatioMaxHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 1.80'**
-  String get videoMpRatioMaxHint;
-
-  /// No description provided for @videoMpRatioMaxLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ratio max'**
-  String get videoMpRatioMaxLabel;
-
-  /// No description provided for @videoMpRatioMinHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 1.20'**
-  String get videoMpRatioMinHint;
-
-  /// No description provided for @videoMpRatioMinLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ratio min'**
-  String get videoMpRatioMinLabel;
-
-  /// No description provided for @videoMpTotalWidthHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'ex: 18.0'**
-  String get videoMpTotalWidthHint;
-
-  /// No description provided for @videoMpTotalWidthLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Largeur totale de projection (m)'**
-  String get videoMpTotalWidthLabel;
-
-  /// No description provided for @videoMultiprojectorSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Overlap + largeur/projo + nombre de projos (calculs 5 & 6).'**
-  String get videoMultiprojectorSubtitle;
-
-  /// No description provided for @videoMultiprojectorTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Multiprojecteur'**
-  String get videoMultiprojectorTitle;
-
-  /// No description provided for @videoOptionalBrightnessTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Optionnel : luminosité'**
-  String get videoOptionalBrightnessTitle;
+  String get videoOverlapLabel;
 
   /// No description provided for @videoOverlapHint.
   ///
@@ -3358,11 +1472,443 @@ abstract class AppLocalizations {
   /// **'ex: 10'**
   String get videoOverlapHint;
 
-  /// No description provided for @videoOverlapLabel.
+  /// No description provided for @videoTotalWidthLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Largeur totale de projection (m)'**
+  String get videoTotalWidthLabel;
+
+  /// No description provided for @videoTotalWidthHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 18.0'**
+  String get videoTotalWidthHint;
+
+  /// No description provided for @videoCalc1Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul 1 — Ratio (Distance / Largeur)'**
+  String get videoCalc1Title;
+
+  /// No description provided for @videoCalc2Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul 2 — Largeur (Distance / Ratio)'**
+  String get videoCalc2Title;
+
+  /// No description provided for @videoCalc3Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul 3 — Hauteur (Largeur + Format)'**
+  String get videoCalc3Title;
+
+  /// No description provided for @videoCalc4Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul 4 — Luminosité (lux / nits / ft-L + seuil)'**
+  String get videoCalc4Title;
+
+  /// No description provided for @videoCalc5Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul 5 — Overlap (Largeur totale + N)'**
+  String get videoCalc5Title;
+
+  /// No description provided for @videoCalc6Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul 6 — Nb projecteurs auto + luminosité'**
+  String get videoCalc6Title;
+
+  /// No description provided for @videoCalc5NLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nombre de projecteurs (N)'**
+  String get videoCalc5NLabel;
+
+  /// No description provided for @videoCalc5NHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 2'**
+  String get videoCalc5NHint;
+
+  /// No description provided for @videoCalc6RatioMinLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ratio min'**
+  String get videoCalc6RatioMinLabel;
+
+  /// No description provided for @videoCalc6RatioMinHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 1.20'**
+  String get videoCalc6RatioMinHint;
+
+  /// No description provided for @videoCalc6RatioMaxLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ratio max'**
+  String get videoCalc6RatioMaxLabel;
+
+  /// No description provided for @videoCalc6RatioMaxHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 1.80'**
+  String get videoCalc6RatioMaxHint;
+
+  /// No description provided for @videoOptionalBrightnessTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Optionnel : luminosité'**
+  String get videoOptionalBrightnessTitle;
+
+  /// No description provided for @videoCalc6LumensPerProjectorLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lumens par projecteur'**
+  String get videoCalc6LumensPerProjectorLabel;
+
+  /// No description provided for @videoCalc6LumensPerProjectorHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 20000'**
+  String get videoCalc6LumensPerProjectorHint;
+
+  /// No description provided for @videoCalc6GainLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Gain (calc 6)'**
+  String get videoCalc6GainLabel;
+
+  /// No description provided for @videoCalc6GainHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex: 1.0'**
+  String get videoCalc6GainHint;
+
+  /// No description provided for @videoCalc1ErrMissing.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Données manquantes: Distance + Largeur.'**
+  String get videoCalc1ErrMissing;
+
+  /// No description provided for @videoCalc2ErrMissing.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Données manquantes: Distance + Ratio.'**
+  String get videoCalc2ErrMissing;
+
+  /// No description provided for @videoCalc3ErrMissingWidth.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Donnée manquante: Largeur.'**
+  String get videoCalc3ErrMissingWidth;
+
+  /// No description provided for @videoErrWidthGt0.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ La largeur doit être > 0.'**
+  String get videoErrWidthGt0;
+
+  /// No description provided for @videoErrRatioGt0.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Le ratio doit être > 0.'**
+  String get videoErrRatioGt0;
+
+  /// No description provided for @videoCalc1Ok.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Calc1 Ok : {p0}'**
+  String videoCalc1Ok(Object p0);
+
+  /// No description provided for @videoCalc2Ok.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Calc2 Ok : {p0}'**
+  String videoCalc2Ok(Object p0);
+
+  /// No description provided for @videoCalc3Ok.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Calc3 Ok : {p0} · {p1}'**
+  String videoCalc3Ok(Object p0, Object p1);
+
+  /// No description provided for @videoCalc4ErrMissing.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Données manquantes: Lumens + Gain + Largeur.'**
+  String get videoCalc4ErrMissing;
+
+  /// No description provided for @videoCalc4ErrGt0.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Lumens/Gain/Largeur doivent être > 0.'**
+  String get videoCalc4ErrGt0;
+
+  /// No description provided for @videoCalc4Result.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Calc4 Result : {p0} · {p1} · {p2} · {p3} · {p4} · {p5} · {p6} · {p7} · {p8}'**
+  String videoCalc4Result(Object p0, Object p1, Object p2, Object p3, Object p4,
+      Object p5, Object p6, Object p7, Object p8);
+
+  /// No description provided for @videoCalc5ErrMissing.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Données manquantes: Largeur totale + Overlap% + Nombre de projecteurs.'**
+  String get videoCalc5ErrMissing;
+
+  /// No description provided for @videoErrTotalWidthGt0.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Largeur totale doit être > 0.'**
+  String get videoErrTotalWidthGt0;
+
+  /// No description provided for @videoCalc5ErrNMin2.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Le nombre de projecteurs doit être ≥ 2.'**
+  String get videoCalc5ErrNMin2;
+
+  /// No description provided for @videoErrOverlapRange.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Overlap% doit être entre 0 et 99.9.'**
+  String get videoErrOverlapRange;
+
+  /// No description provided for @videoErrImpossibleDenom.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Paramètres impossibles (denom ≤ 0).'**
+  String get videoErrImpossibleDenom;
+
+  /// No description provided for @videoCalc5Result.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Calc5 Result : {p0} · {p1} · {p2} · {p3} · {p4} · {p5} · {p6}'**
+  String videoCalc5Result(Object p0, Object p1, Object p2, Object p3, Object p4,
+      Object p5, Object p6);
+
+  /// No description provided for @videoCalc6ErrMissingBasics.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Données manquantes: Largeur totale + Distance + Overlap%.'**
+  String get videoCalc6ErrMissingBasics;
+
+  /// No description provided for @videoErrTotalWidthAndDistanceGt0.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Largeur totale et distance doivent être > 0.'**
+  String get videoErrTotalWidthAndDistanceGt0;
+
+  /// No description provided for @videoCalc6ErrMissingRatio.
+  ///
+  /// In fr, this message translates to:
+  /// **'❌ Données manquantes: Ratio min et/ou Ratio max.'**
+  String get videoCalc6ErrMissingRatio;
+
+  /// No description provided for @videoCalc6LumiOptional.
+  ///
+  /// In fr, this message translates to:
+  /// **'Luminosité (optionnelle): renseigne Lumens/projo + Gain pour l\'estimation.'**
+  String get videoCalc6LumiOptional;
+
+  /// No description provided for @videoCalc6LumiErrGt0.
+  ///
+  /// In fr, this message translates to:
+  /// **'Luminosité: ❌ Lumens/projo et gain doivent être > 0.'**
+  String get videoCalc6LumiErrGt0;
+
+  /// No description provided for @videoCalc6LumiForN.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Calc6 Lumi For N : {p0} · {p1} · {p2} · {p3} · {p4}'**
+  String videoCalc6LumiForN(
+      Object p0, Object p1, Object p2, Object p3, Object p4);
+
+  /// No description provided for @videoCalc6NoteIndicative.
+  ///
+  /// In fr, this message translates to:
+  /// **'Note: estimation indicative (blend/overlap réels peuvent réduire un peu).'**
+  String get videoCalc6NoteIndicative;
+
+  /// No description provided for @videoCalc6Result.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Calc6 Result : {p0} · {p1} · {p2} · {p3} · {p4} · {p5} · {p6} · {p7} · {p8} · {p9} · {p10} · {p11} · {p12} · {p13} · {p14}'**
+  String videoCalc6Result(
+      Object p0,
+      Object p1,
+      Object p2,
+      Object p3,
+      Object p4,
+      Object p5,
+      Object p6,
+      Object p7,
+      Object p8,
+      Object p9,
+      Object p10,
+      Object p11,
+      Object p12,
+      Object p13,
+      Object p14);
+
+  /// No description provided for @videoCommonPillFormat.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Common Pill Format : {p0}'**
+  String videoCommonPillFormat(Object p0);
+
+  /// No description provided for @videoCommonPillDistance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Common Pill Distance : {p0}'**
+  String videoCommonPillDistance(Object p0);
+
+  /// No description provided for @videoCommonPillWidth.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Common Pill Width : {p0}'**
+  String videoCommonPillWidth(Object p0);
+
+  /// No description provided for @videoCommonPillRatio.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Common Pill Ratio : {p0}'**
+  String videoCommonPillRatio(Object p0);
+
+  /// No description provided for @videoCommonPillHeight.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Common Pill Height : {p0}'**
+  String videoCommonPillHeight(Object p0);
+
+  /// No description provided for @videoCommonPillArea.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Common Pill Area : {p0}'**
+  String videoCommonPillArea(Object p0);
+
+  /// No description provided for @videoCommonPillTotalWidth.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Common Pill Total Width : {p0}'**
+  String videoCommonPillTotalWidth(Object p0);
+
+  /// No description provided for @videoCommonPillOverlap.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Common Pill Overlap : {p0}'**
+  String videoCommonPillOverlap(Object p0);
+
+  /// No description provided for @videoPdfTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mon App Technique – Export Vidéo'**
+  String get videoPdfTitle;
+
+  /// No description provided for @videoPdfDate.
+  ///
+  /// In fr, this message translates to:
+  /// **'Date'**
+  String get videoPdfDate;
+
+  /// No description provided for @videoPdfFormat.
+  ///
+  /// In fr, this message translates to:
+  /// **'Format'**
+  String get videoPdfFormat;
+
+  /// No description provided for @videoPdfDistance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Distance (m)'**
+  String get videoPdfDistance;
+
+  /// No description provided for @videoPdfImageWidth.
+  ///
+  /// In fr, this message translates to:
+  /// **'Largeur image (m)'**
+  String get videoPdfImageWidth;
+
+  /// No description provided for @videoPdfRatio.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ratio'**
+  String get videoPdfRatio;
+
+  /// No description provided for @videoPdfLumens.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lumens'**
+  String get videoPdfLumens;
+
+  /// No description provided for @videoPdfGain.
+  ///
+  /// In fr, this message translates to:
+  /// **'Gain'**
+  String get videoPdfGain;
+
+  /// No description provided for @videoPdfScreenPreset.
+  ///
+  /// In fr, this message translates to:
+  /// **'Preset écran'**
+  String get videoPdfScreenPreset;
+
+  /// No description provided for @videoPdfOverlap.
   ///
   /// In fr, this message translates to:
   /// **'Overlap (%)'**
-  String get videoOverlapLabel;
+  String get videoPdfOverlap;
+
+  /// No description provided for @videoPdfTotalWidth.
+  ///
+  /// In fr, this message translates to:
+  /// **'Largeur totale (m)'**
+  String get videoPdfTotalWidth;
+
+  /// No description provided for @videoPdfCalc5N.
+  ///
+  /// In fr, this message translates to:
+  /// **'N (calc5)'**
+  String get videoPdfCalc5N;
+
+  /// No description provided for @videoPdfCalc6RatioMin.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ratio min (calc6)'**
+  String get videoPdfCalc6RatioMin;
+
+  /// No description provided for @videoPdfCalc6RatioMax.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ratio max (calc6)'**
+  String get videoPdfCalc6RatioMax;
+
+  /// No description provided for @videoPdfCalc6LumensPerProj.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lumens/projo (calc6)'**
+  String get videoPdfCalc6LumensPerProj;
+
+  /// No description provided for @videoPdfCalc6Gain.
+  ///
+  /// In fr, this message translates to:
+  /// **'Gain (calc6)'**
+  String get videoPdfCalc6Gain;
+
+  /// No description provided for @videoPdfParams.
+  ///
+  /// In fr, this message translates to:
+  /// **'Paramètres'**
+  String get videoPdfParams;
+
+  /// No description provided for @videoPdfResults.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résultats'**
+  String get videoPdfResults;
 
   /// No description provided for @videoPdfCalc1.
   ///
@@ -3394,2340 +1940,2250 @@ abstract class AppLocalizations {
   /// **'Calcul 5'**
   String get videoPdfCalc5;
 
-  /// No description provided for @videoPdfCalc5N.
-  ///
-  /// In fr, this message translates to:
-  /// **'N (calc5)'**
-  String get videoPdfCalc5N;
-
   /// No description provided for @videoPdfCalc6.
   ///
   /// In fr, this message translates to:
   /// **'Calcul 6'**
   String get videoPdfCalc6;
 
-  /// No description provided for @videoPdfCalc6Gain.
+  /// No description provided for @videoCalcLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Gain (calc6)'**
-  String get videoPdfCalc6Gain;
+  /// **'Video Calc Label : {p0}'**
+  String videoCalcLabel(Object p0);
 
-  /// No description provided for @videoPdfCalc6LumensPerProj.
+  /// No description provided for @videoBrightnessSectionTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Lumens/projo (calc6)'**
-  String get videoPdfCalc6LumensPerProj;
+  /// **'Calcul 4 — Lux / nits / ft-L + seuil'**
+  String get videoBrightnessSectionTitle;
 
-  /// No description provided for @videoPdfCalc6RatioMax.
+  /// No description provided for @videoCalc4ErrMissingSimple.
   ///
   /// In fr, this message translates to:
-  /// **'Ratio max (calc6)'**
-  String get videoPdfCalc6RatioMax;
+  /// **'❌ Données manquantes : Largeur + Lumens + Gain.'**
+  String get videoCalc4ErrMissingSimple;
 
-  /// No description provided for @videoPdfCalc6RatioMin.
+  /// No description provided for @videoBrightnessResult.
   ///
   /// In fr, this message translates to:
-  /// **'Ratio min (calc6)'**
-  String get videoPdfCalc6RatioMin;
+  /// **'Video Brightness Result : {p0} · {p1} · {p2} · {p3} · {p4} · {p5} · {p6} · {p7} · {p8}'**
+  String videoBrightnessResult(Object p0, Object p1, Object p2, Object p3,
+      Object p4, Object p5, Object p6, Object p7, Object p8);
 
-  /// No description provided for @videoPdfDate.
-  ///
-  /// In fr, this message translates to:
-  /// **'Date'**
-  String get videoPdfDate;
-
-  /// No description provided for @videoPdfDistance.
-  ///
-  /// In fr, this message translates to:
-  /// **'Distance (m)'**
-  String get videoPdfDistance;
-
-  /// No description provided for @videoPdfFormat.
-  ///
-  /// In fr, this message translates to:
-  /// **'Format'**
-  String get videoPdfFormat;
-
-  /// No description provided for @videoPdfGain.
-  ///
-  /// In fr, this message translates to:
-  /// **'Gain'**
-  String get videoPdfGain;
-
-  /// No description provided for @videoPdfImageWidth.
-  ///
-  /// In fr, this message translates to:
-  /// **'Largeur image (m)'**
-  String get videoPdfImageWidth;
-
-  /// No description provided for @videoPdfLumens.
-  ///
-  /// In fr, this message translates to:
-  /// **'Lumens'**
-  String get videoPdfLumens;
-
-  /// No description provided for @videoPdfOverlap.
-  ///
-  /// In fr, this message translates to:
-  /// **'Overlap (%)'**
-  String get videoPdfOverlap;
-
-  /// No description provided for @videoPdfParams.
-  ///
-  /// In fr, this message translates to:
-  /// **'Paramètres'**
-  String get videoPdfParams;
-
-  /// No description provided for @videoPdfRatio.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ratio'**
-  String get videoPdfRatio;
-
-  /// No description provided for @videoPdfResults.
-  ///
-  /// In fr, this message translates to:
-  /// **'Résultats'**
-  String get videoPdfResults;
-
-  /// No description provided for @videoPdfScreenPreset.
-  ///
-  /// In fr, this message translates to:
-  /// **'Preset écran'**
-  String get videoPdfScreenPreset;
-
-  /// No description provided for @videoPdfTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mon App Technique – Export Vidéo'**
-  String get videoPdfTitle;
-
-  /// No description provided for @videoPdfTotalWidth.
-  ///
-  /// In fr, this message translates to:
-  /// **'Largeur totale (m)'**
-  String get videoPdfTotalWidth;
-
-  /// No description provided for @videoPresetFrontGrey.
-  ///
-  /// In fr, this message translates to:
-  /// **'Front - écran gris (gain 0.8)'**
-  String get videoPresetFrontGrey;
-
-  /// No description provided for @videoPresetFrontGreyShort.
-  ///
-  /// In fr, this message translates to:
-  /// **'Front - écran gris'**
-  String get videoPresetFrontGreyShort;
-
-  /// No description provided for @videoPresetFrontHighGain.
-  ///
-  /// In fr, this message translates to:
-  /// **'Front - écran high gain (gain 1.3)'**
-  String get videoPresetFrontHighGain;
-
-  /// No description provided for @videoPresetFrontHighGainShort.
-  ///
-  /// In fr, this message translates to:
-  /// **'Front - écran high gain'**
-  String get videoPresetFrontHighGainShort;
-
-  /// No description provided for @videoPresetFrontWhite.
-  ///
-  /// In fr, this message translates to:
-  /// **'Front - écran blanc mat (gain 1.0)'**
-  String get videoPresetFrontWhite;
-
-  /// No description provided for @videoPresetFrontWhiteShort.
-  ///
-  /// In fr, this message translates to:
-  /// **'Front - écran blanc mat'**
-  String get videoPresetFrontWhiteShort;
-
-  /// No description provided for @videoPresetMappingDarkStone.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mapping - pierre sombre (gain 0.35)'**
-  String get videoPresetMappingDarkStone;
-
-  /// No description provided for @videoPresetMappingDarkStoneShort.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mapping - pierre sombre'**
-  String get videoPresetMappingDarkStoneShort;
-
-  /// No description provided for @videoPresetMappingGlass.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mapping - vitre (gain 0.15)'**
-  String get videoPresetMappingGlass;
-
-  /// No description provided for @videoPresetMappingGlassShort.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mapping - vitre'**
-  String get videoPresetMappingGlassShort;
-
-  /// No description provided for @videoPresetMappingLightStone.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mapping - pierre claire (gain 0.6)'**
-  String get videoPresetMappingLightStone;
-
-  /// No description provided for @videoPresetMappingLightStoneShort.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mapping - pierre claire'**
-  String get videoPresetMappingLightStoneShort;
-
-  /// No description provided for @videoPresetMappingMatte.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mapping - peinture mate (gain 0.75)'**
-  String get videoPresetMappingMatte;
-
-  /// No description provided for @videoPresetMappingMatteShort.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mapping - peinture mate'**
-  String get videoPresetMappingMatteShort;
-
-  /// No description provided for @videoPresetMappingSatin.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mapping - peinture satinée (gain 0.9)'**
-  String get videoPresetMappingSatin;
-
-  /// No description provided for @videoPresetMappingSatinShort.
-  ///
-  /// In fr, this message translates to:
-  /// **'Mapping - peinture satinée'**
-  String get videoPresetMappingSatinShort;
-
-  /// No description provided for @videoPresetRearClear.
-  ///
-  /// In fr, this message translates to:
-  /// **'Rétro - toile claire (gain 0.9)'**
-  String get videoPresetRearClear;
-
-  /// No description provided for @videoPresetRearClearShort.
-  ///
-  /// In fr, this message translates to:
-  /// **'Rétro - toile claire'**
-  String get videoPresetRearClearShort;
-
-  /// No description provided for @videoPresetRearDiffusion.
-  ///
-  /// In fr, this message translates to:
-  /// **'Rétro - toile diffusion (gain 0.7)'**
-  String get videoPresetRearDiffusion;
-
-  /// No description provided for @videoPresetRearDiffusionShort.
-  ///
-  /// In fr, this message translates to:
-  /// **'Rétro - toile diffusion'**
-  String get videoPresetRearDiffusionShort;
-
-  /// No description provided for @videoScreenPresetLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Écran / Support (preset)'**
-  String get videoScreenPresetLabel;
-
-  /// No description provided for @videoSummaryPillsTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Résumé (pastilles)'**
-  String get videoSummaryPillsTitle;
-
-  /// No description provided for @videoTestPatternSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Création de mire vidéo pour écran et mur LED (à faire après).'**
-  String get videoTestPatternSubtitle;
-
-  /// No description provided for @videoTestPatternTitle.
+  /// No description provided for @videoMireTitle.
   ///
   /// In fr, this message translates to:
   /// **'Mire'**
-  String get videoTestPatternTitle;
+  String get videoMireTitle;
 
-  /// No description provided for @videoThrowRatioHint.
+  /// No description provided for @videoMireHeaderTitle.
   ///
   /// In fr, this message translates to:
-  /// **'ex: 1.60'**
-  String get videoThrowRatioHint;
+  /// **'Générateur de mires'**
+  String get videoMireHeaderTitle;
 
-  /// No description provided for @videoThrowRatioLabel.
+  /// No description provided for @videoMireHeaderSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Ratio de projection'**
-  String get videoThrowRatioLabel;
+  /// **'Mires indicatives (calage, focus, géométrie, blend, pixel perfect).'**
+  String get videoMireHeaderSubtitle;
 
-  /// No description provided for @videoTitle.
+  /// No description provided for @videoMireScreenVideoTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Vidéo'**
-  String get videoTitle;
+  /// **'Mire écran vidéo'**
+  String get videoMireScreenVideoTitle;
 
-  /// No description provided for @videoToolsTitle.
+  /// No description provided for @videoMireScreenVideoSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Outils vidéo'**
-  String get videoToolsTitle;
+  /// **'Simple (WxH px) + Mapping multi-projos (N + overlap).'**
+  String get videoMireScreenVideoSubtitle;
 
-  /// No description provided for @videoTotalWidthHint.
+  /// No description provided for @videoMireScreenLedTitle.
   ///
   /// In fr, this message translates to:
-  /// **'ex: 18.0'**
-  String get videoTotalWidthHint;
+  /// **'Mire écran LED'**
+  String get videoMireScreenLedTitle;
 
-  /// No description provided for @videoTotalWidthLabel.
+  /// No description provided for @videoMireScreenLedSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Largeur totale de projection (m)'**
-  String get videoTotalWidthLabel;
+  /// **'Mire selon WxH px (pixel perfect, uniformité, grille).'**
+  String get videoMireScreenLedSubtitle;
 
-  /// No description provided for @aboutArtnetTitle.
+  /// No description provided for @mireVideoSimpleTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Art-Net'**
-  String get aboutArtnetTitle;
+  /// **'VIDÉO / MIRE SIMPLE'**
+  String get mireVideoSimpleTitle;
 
-  /// No description provided for @aboutArtnetToc01.
+  /// No description provided for @mireVideoComboTitle.
   ///
   /// In fr, this message translates to:
-  /// **'1) Art-Net — c’est quoi et pourquoi'**
-  String get aboutArtnetToc01;
+  /// **'VIDÉO / MIRE COMBO'**
+  String get mireVideoComboTitle;
 
-  /// No description provided for @aboutArtnetToc02.
+  /// No description provided for @mireVideoMappingTitle.
   ///
   /// In fr, this message translates to:
-  /// **'2) Adressage & univers — mapping propre'**
-  String get aboutArtnetToc02;
+  /// **'VIDÉO / MIRE MAPPING'**
+  String get mireVideoMappingTitle;
 
-  /// No description provided for @aboutArtnetToc03.
+  /// No description provided for @mireLedTitle.
   ///
   /// In fr, this message translates to:
-  /// **'3) Limites & perf — ce qui casse en premier'**
-  String get aboutArtnetToc03;
+  /// **'LED / MIRE'**
+  String get mireLedTitle;
 
-  /// No description provided for @aboutArtnetToc04.
+  /// No description provided for @mireLedTilesIdTitle.
   ///
   /// In fr, this message translates to:
-  /// **'4) Nodes, splitters & RDM'**
-  String get aboutArtnetToc04;
+  /// **'LED / ID TILES'**
+  String get mireLedTilesIdTitle;
 
-  /// No description provided for @aboutArtnetToc05.
+  /// No description provided for @mireSimpleSubtitleGridSafe.
   ///
   /// In fr, this message translates to:
-  /// **'5) Dépannage — symptômes → causes'**
-  String get aboutArtnetToc05;
+  /// **'Grille + safe + cercles'**
+  String get mireSimpleSubtitleGridSafe;
 
-  /// No description provided for @aboutArtnetToc06.
+  /// No description provided for @mireSimpleSubtitleCheckerboard.
   ///
   /// In fr, this message translates to:
-  /// **'6) Schémas (réseau / unicast vs broadcast)'**
-  String get aboutArtnetToc06;
+  /// **'Damier + cercles'**
+  String get mireSimpleSubtitleCheckerboard;
 
-  /// No description provided for @aboutArtnetToc07.
+  /// No description provided for @mireSimpleSubtitleColorBars.
   ///
   /// In fr, this message translates to:
-  /// **'6bis) Images (assets) — RJ45/switch/câbles'**
-  String get aboutArtnetToc07;
+  /// **'Barres + rampes + cercles'**
+  String get mireSimpleSubtitleColorBars;
 
-  /// No description provided for @aboutArtnetToc08.
+  /// No description provided for @mireSimpleSubtitleUniformity.
   ///
   /// In fr, this message translates to:
-  /// **'7) Checklist rapide'**
-  String get aboutArtnetToc08;
+  /// **'Uniformité + cercles'**
+  String get mireSimpleSubtitleUniformity;
 
-  /// No description provided for @aboutDmxToc01.
+  /// No description provided for @mireSimpleSubtitleComboAll.
   ///
   /// In fr, this message translates to:
-  /// **'1) DMX, univers, adresses — la base'**
-  String get aboutDmxToc01;
+  /// **'Grille + safe + 2 barres centrées + cercles'**
+  String get mireSimpleSubtitleComboAll;
 
-  /// No description provided for @aboutDmxToc02.
+  /// No description provided for @mireLedSubtitlePixelPerfect.
   ///
   /// In fr, this message translates to:
-  /// **'2) Trame DMX — break, start code, canaux'**
-  String get aboutDmxToc02;
+  /// **'Pixel perfect + cercles'**
+  String get mireLedSubtitlePixelPerfect;
 
-  /// No description provided for @aboutDmxToc03.
+  /// No description provided for @mireLedSubtitleGridLabels.
   ///
   /// In fr, this message translates to:
-  /// **'3) Câblage RS-485 — topologie & câble'**
-  String get aboutDmxToc03;
+  /// **'Grille + repères + cercles'**
+  String get mireLedSubtitleGridLabels;
 
-  /// No description provided for @aboutDmxToc04.
+  /// No description provided for @mireLedSubtitleColorBars.
   ///
   /// In fr, this message translates to:
-  /// **'4) Terminaison & splitters — éviter les réflexions'**
-  String get aboutDmxToc04;
+  /// **'Barres + rampes + cercles'**
+  String get mireLedSubtitleColorBars;
 
-  /// No description provided for @aboutDmxToc05.
+  /// No description provided for @mireLedSubtitleUniformity.
   ///
   /// In fr, this message translates to:
-  /// **'4bis) RDM — limites & compatibilités'**
-  String get aboutDmxToc05;
+  /// **'Uniformité + cercles'**
+  String get mireLedSubtitleUniformity;
 
-  /// No description provided for @aboutDmxToc06.
+  /// No description provided for @mireMappingSubtitlePattern.
   ///
   /// In fr, this message translates to:
-  /// **'5) Dépannage terrain — symptômes → causes'**
-  String get aboutDmxToc06;
+  /// **'Mire Mapping Subtitle Pattern : {p0} · {p1} · {p2}'**
+  String mireMappingSubtitlePattern(Object p0, Object p1, Object p2);
 
-  /// No description provided for @aboutDmxToc07.
+  /// No description provided for @mireOrientationHorizontal.
   ///
   /// In fr, this message translates to:
-  /// **'6) Art-Net — repères terrain'**
-  String get aboutDmxToc07;
+  /// **'Horizontal'**
+  String get mireOrientationHorizontal;
 
-  /// No description provided for @aboutDmxToc08.
+  /// No description provided for @mireOrientationVertical.
   ///
   /// In fr, this message translates to:
-  /// **'7) sACN / E1.31 — multicast, IGMP, priorités'**
-  String get aboutDmxToc08;
+  /// **'Vertical'**
+  String get mireOrientationVertical;
 
-  /// No description provided for @aboutDmxToc09.
+  /// No description provided for @mireProjectorLabelPattern.
   ///
   /// In fr, this message translates to:
-  /// **'8) DMX vs Art-Net vs sACN — choisir'**
-  String get aboutDmxToc09;
+  /// **'Mire Projector Label Pattern : {p0}'**
+  String mireProjectorLabelPattern(Object p0);
 
-  /// No description provided for @aboutDmxToc10.
+  /// No description provided for @mireBlendLabel.
   ///
   /// In fr, this message translates to:
-  /// **'9) Schémas terrain (DMX / IP / pinout)'**
-  String get aboutDmxToc10;
+  /// **'BLEND'**
+  String get mireBlendLabel;
 
-  /// No description provided for @aboutDmxToc11.
+  /// No description provided for @mireTileMissingPx.
   ///
   /// In fr, this message translates to:
-  /// **'10) Checklist rapide'**
-  String get aboutDmxToc11;
+  /// **'Renseigne Tile (px) pour numérotation.'**
+  String get mireTileMissingPx;
 
-  /// No description provided for @aboutElectriciteTitle.
+  /// No description provided for @mireWallNotMultipleOfTiles.
   ///
   /// In fr, this message translates to:
-  /// **'Électricité'**
-  String get aboutElectriciteTitle;
+  /// **'MUR NON MULTIPLE DE TILES'**
+  String get mireWallNotMultipleOfTiles;
 
-  /// No description provided for @aboutElectriciteToc01.
+  /// No description provided for @mireTilesSubtitleBase.
   ///
   /// In fr, this message translates to:
-  /// **'1) Bases (W, A, V, kW)'**
-  String get aboutElectriciteToc01;
+  /// **'Mire Tiles Subtitle Base : {p0} · {p1} · {p2} · {p3}'**
+  String mireTilesSubtitleBase(Object p0, Object p1, Object p2, Object p3);
 
-  /// No description provided for @aboutElectriciteToc02.
+  /// No description provided for @mireTilesSubtitleTilePhys.
   ///
   /// In fr, this message translates to:
-  /// **'2) Connecteurs (Schuko / P17 / PowerCON)'**
-  String get aboutElectriciteToc02;
+  /// **'Mire Tiles Subtitle Tile Phys : {p0} · {p1}'**
+  String mireTilesSubtitleTilePhys(Object p0, Object p1);
 
-  /// No description provided for @aboutElectriciteToc03.
+  /// No description provided for @mireTilesSubtitlePitchEq.
   ///
   /// In fr, this message translates to:
-  /// **'3) Mono / Tri (ce que ça change)'**
-  String get aboutElectriciteToc03;
+  /// **'Mire Tiles Subtitle Pitch Eq : {p0}'**
+  String mireTilesSubtitlePitchEq(Object p0);
 
-  /// No description provided for @aboutElectriciteToc04.
+  /// No description provided for @mireTilesSubtitlePitchXY.
   ///
   /// In fr, this message translates to:
-  /// **'4) Table rapide (16A → 400A)'**
-  String get aboutElectriciteToc04;
+  /// **'Mire Tiles Subtitle Pitch XY : {p0} · {p1}'**
+  String mireTilesSubtitlePitchXY(Object p0, Object p1);
 
-  /// No description provided for @aboutElectriciteToc05.
+  /// No description provided for @mireTilesSubtitleWallPhys.
   ///
   /// In fr, this message translates to:
-  /// **'5) Sécurité & pièges terrain'**
-  String get aboutElectriciteToc05;
+  /// **'Mire Tiles Subtitle Wall Phys : {p0} · {p1}'**
+  String mireTilesSubtitleWallPhys(Object p0, Object p1);
 
-  /// No description provided for @aboutElectriciteToc06.
+  /// No description provided for @mireSimpleSectionTitle.
   ///
   /// In fr, this message translates to:
-  /// **'6) Checklist'**
-  String get aboutElectriciteToc06;
+  /// **'Mire écran simple'**
+  String get mireSimpleSectionTitle;
 
-  /// No description provided for @aboutInformatiqueTitle.
+  /// No description provided for @mireMappingSectionTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Informatique'**
-  String get aboutInformatiqueTitle;
+  /// **'Mire mapping multi-projecteur'**
+  String get mireMappingSectionTitle;
 
-  /// No description provided for @aboutInformatiqueToc01.
+  /// No description provided for @mireVideoSimpleSectionTitle.
   ///
   /// In fr, this message translates to:
-  /// **'1) USB / USB-C / Thunderbolt'**
-  String get aboutInformatiqueToc01;
+  /// **'Mire écran simple'**
+  String get mireVideoSimpleSectionTitle;
 
-  /// No description provided for @aboutInformatiqueToc02.
+  /// No description provided for @mireVideoMappingSectionTitle.
   ///
   /// In fr, this message translates to:
-  /// **'2) Stockage (SATA / NVMe / SSD)'**
-  String get aboutInformatiqueToc02;
+  /// **'Mire mapping multi-projecteur'**
+  String get mireVideoMappingSectionTitle;
 
-  /// No description provided for @aboutInformatiqueToc03.
+  /// No description provided for @mireWidthPxLabel.
   ///
   /// In fr, this message translates to:
-  /// **'3) Liaisons vidéo (DP / HDMI)'**
-  String get aboutInformatiqueToc03;
+  /// **'Largeur (px)'**
+  String get mireWidthPxLabel;
 
-  /// No description provided for @aboutInformatiqueToc04.
+  /// No description provided for @mireHeightPxLabel.
   ///
   /// In fr, this message translates to:
-  /// **'4) PCIe / GPU (repères)'**
-  String get aboutInformatiqueToc04;
+  /// **'Hauteur (px)'**
+  String get mireHeightPxLabel;
 
-  /// No description provided for @aboutInformatiqueToc05.
+  /// No description provided for @mireWidthPxHint.
   ///
   /// In fr, this message translates to:
-  /// **'5) Checklist (plateau)'**
-  String get aboutInformatiqueToc05;
+  /// **'ex: 1920'**
+  String get mireWidthPxHint;
 
-  /// No description provided for @aboutIpBasicsToc01.
+  /// No description provided for @mireHeightPxHint.
   ///
   /// In fr, this message translates to:
-  /// **'1) C’est quoi une IP et à quoi ça sert ?'**
-  String get aboutIpBasicsToc01;
+  /// **'ex: 1080'**
+  String get mireHeightPxHint;
 
-  /// No description provided for @aboutIpBasicsToc02.
+  /// No description provided for @mireWidthPxHintMapping.
   ///
   /// In fr, this message translates to:
-  /// **'2) Pourquoi 192.x / 10.x / 172.x ? (adresses privées)'**
-  String get aboutIpBasicsToc02;
+  /// **'ex: 3840'**
+  String get mireWidthPxHintMapping;
 
-  /// No description provided for @aboutIpBasicsToc03.
+  /// No description provided for @mireHeightPxHintMapping.
   ///
   /// In fr, this message translates to:
-  /// **'3) Masque & sous-réseaux : comprendre pour de vrai'**
-  String get aboutIpBasicsToc03;
+  /// **'ex: 2160'**
+  String get mireHeightPxHintMapping;
 
-  /// No description provided for @aboutIpBasicsToc04.
+  /// No description provided for @mireTypeLabel.
   ///
   /// In fr, this message translates to:
-  /// **'4) DHCP, passerelle, DNS : qui fait quoi ?'**
-  String get aboutIpBasicsToc04;
+  /// **'Type de mire'**
+  String get mireTypeLabel;
 
-  /// No description provided for @aboutIpBasicsToc05.
+  /// No description provided for @mireExportPng.
   ///
   /// In fr, this message translates to:
-  /// **'5) Comment deux appareils se parlent (LAN vs hors LAN)'**
-  String get aboutIpBasicsToc05;
+  /// **'Exporter PNG'**
+  String get mireExportPng;
 
-  /// No description provided for @aboutIpBasicsToc06.
+  /// No description provided for @mireErrInvalidWHpx.
   ///
   /// In fr, this message translates to:
-  /// **'6) Plans IP “show” simples (exemples prêts à copier)'**
-  String get aboutIpBasicsToc06;
+  /// **'❌ Largeur/hauteur invalides (px).'**
+  String get mireErrInvalidWHpx;
 
-  /// No description provided for @aboutIpBasicsToc07.
+  /// No description provided for @mireErrInvalidProjectors.
   ///
   /// In fr, this message translates to:
-  /// **'7) Dépannage : symptômes → causes (méthode terrain)'**
-  String get aboutIpBasicsToc07;
+  /// **'❌ Nombre de projecteurs invalide (N > 0).'**
+  String get mireErrInvalidProjectors;
 
-  /// No description provided for @aboutIpBasicsToc08.
+  /// No description provided for @mireErrInvalidOverlap.
   ///
   /// In fr, this message translates to:
-  /// **'8) Mini-exercices (vérifier vite un masque / un réseau)'**
-  String get aboutIpBasicsToc08;
+  /// **'❌ Overlap invalide (0 à 99.9).'**
+  String get mireErrInvalidOverlap;
 
-  /// No description provided for @aboutIpBasicsToc09.
+  /// No description provided for @mireSimpleTypeComboAll.
   ///
   /// In fr, this message translates to:
-  /// **'9) Checklist rapide'**
-  String get aboutIpBasicsToc09;
+  /// **'Combo (grille + cercles + 2 barres centrées)'**
+  String get mireSimpleTypeComboAll;
 
-  /// No description provided for @aboutNetworkTitle.
+  /// No description provided for @mireSimpleTypeGridSafe.
   ///
   /// In fr, this message translates to:
-  /// **'Network (EN)'**
-  String get aboutNetworkTitle;
+  /// **'Grille + safe + cercles'**
+  String get mireSimpleTypeGridSafe;
 
-  /// No description provided for @aboutNetworkToc01.
+  /// No description provided for @mireSimpleTypeColorBars.
   ///
   /// In fr, this message translates to:
-  /// **'1) Objectif: réseau stable'**
-  String get aboutNetworkToc01;
+  /// **'Barres + rampes + cercles'**
+  String get mireSimpleTypeColorBars;
 
-  /// No description provided for @aboutNetworkToc02.
+  /// No description provided for @mireSimpleTypeUniformity.
   ///
   /// In fr, this message translates to:
-  /// **'2) Plan IP (simple)'**
-  String get aboutNetworkToc02;
+  /// **'Uniformité + cercles'**
+  String get mireSimpleTypeUniformity;
 
-  /// No description provided for @aboutNetworkToc03.
+  /// No description provided for @mireSimpleTypeCheckerboard.
   ///
   /// In fr, this message translates to:
-  /// **'3) VLAN (séparation)'**
-  String get aboutNetworkToc03;
+  /// **'Damier + cercles'**
+  String get mireSimpleTypeCheckerboard;
 
-  /// No description provided for @aboutNetworkToc04.
+  /// No description provided for @mireProjectorsNLabel.
   ///
   /// In fr, this message translates to:
-  /// **'4) IGMP (sACN multicast)'**
-  String get aboutNetworkToc04;
+  /// **'Nombre de projecteurs (N)'**
+  String get mireProjectorsNLabel;
 
-  /// No description provided for @aboutNetworkToc05.
+  /// No description provided for @mireProjectorsNHint.
   ///
   /// In fr, this message translates to:
-  /// **'5) Wi-Fi vs filaire'**
-  String get aboutNetworkToc05;
+  /// **'ex: 2'**
+  String get mireProjectorsNHint;
 
-  /// No description provided for @aboutNetworkToc06.
+  /// No description provided for @mireOverlapLabel.
   ///
   /// In fr, this message translates to:
-  /// **'6) Switch: ce qu’il faut'**
-  String get aboutNetworkToc06;
+  /// **'Overlap (%)'**
+  String get mireOverlapLabel;
 
-  /// No description provided for @aboutNetworkToc07.
+  /// No description provided for @mireOverlapHint.
   ///
   /// In fr, this message translates to:
-  /// **'7) Schémas'**
-  String get aboutNetworkToc07;
+  /// **'ex: 10.0'**
+  String get mireOverlapHint;
 
-  /// No description provided for @aboutNetworkToc08.
+  /// No description provided for @mireOrientationLabel.
   ///
   /// In fr, this message translates to:
-  /// **'7bis) Images (assets)'**
-  String get aboutNetworkToc08;
+  /// **'Orientation'**
+  String get mireOrientationLabel;
 
-  /// No description provided for @aboutNetworkToc09.
+  /// No description provided for @mireMappingTypeLabel.
   ///
   /// In fr, this message translates to:
-  /// **'8) Checklist'**
-  String get aboutNetworkToc09;
+  /// **'Type mapping'**
+  String get mireMappingTypeLabel;
 
-  /// No description provided for @aboutReseauTitle.
+  /// No description provided for @mireMappingTypeCombo.
   ///
   /// In fr, this message translates to:
-  /// **'Réseau'**
-  String get aboutReseauTitle;
+  /// **'Combo (zones + overlap + blend)'**
+  String get mireMappingTypeCombo;
 
-  /// No description provided for @aboutReseauToc01.
+  /// No description provided for @mireMappingTypeZonesOverlap.
   ///
   /// In fr, this message translates to:
-  /// **'1) Bases réseau (LAN / IP / débit)'**
-  String get aboutReseauToc01;
+  /// **'Zones + overlap'**
+  String get mireMappingTypeZonesOverlap;
 
-  /// No description provided for @aboutReseauToc02.
+  /// No description provided for @mireMappingTypeBlendRamps.
   ///
   /// In fr, this message translates to:
-  /// **'2) RJ45 & catégories (Cat5e/6/6A/…)'**
-  String get aboutReseauToc02;
+  /// **'Blend ramps'**
+  String get mireMappingTypeBlendRamps;
 
-  /// No description provided for @aboutReseauToc03.
-  ///
-  /// In fr, this message translates to:
-  /// **'3) PoE (alimentation réseau)'**
-  String get aboutReseauToc03;
-
-  /// No description provided for @aboutReseauToc04.
-  ///
-  /// In fr, this message translates to:
-  /// **'4) Fibre (SM/MM) + connecteurs (LC/SC)'**
-  String get aboutReseauToc04;
-
-  /// No description provided for @aboutReseauToc05.
-  ///
-  /// In fr, this message translates to:
-  /// **'5) SFP / SFP+ / QSFP (modules)'**
-  String get aboutReseauToc05;
-
-  /// No description provided for @aboutReseauToc06.
-  ///
-  /// In fr, this message translates to:
-  /// **'6) Switches (VLAN / IGMP / QoS)'**
-  String get aboutReseauToc06;
-
-  /// No description provided for @aboutReseauToc07.
-  ///
-  /// In fr, this message translates to:
-  /// **'7) Art-Net / sACN sur réseau (conseils)'**
-  String get aboutReseauToc07;
-
-  /// No description provided for @aboutReseauToc08.
-  ///
-  /// In fr, this message translates to:
-  /// **'8) Checklist'**
-  String get aboutReseauToc08;
-
-  /// No description provided for @aboutSacnToc01.
-  ///
-  /// In fr, this message translates to:
-  /// **'1) À quoi sert sACN ?'**
-  String get aboutSacnToc01;
-
-  /// No description provided for @aboutSacnToc02.
-  ///
-  /// In fr, this message translates to:
-  /// **'2) Univers (numérotation)'**
-  String get aboutSacnToc02;
-
-  /// No description provided for @aboutSacnToc03.
-  ///
-  /// In fr, this message translates to:
-  /// **'3) Multicast / Unicast + IGMP'**
-  String get aboutSacnToc03;
-
-  /// No description provided for @aboutSacnToc04.
-  ///
-  /// In fr, this message translates to:
-  /// **'4) Priorités (multi-sources)'**
-  String get aboutSacnToc04;
-
-  /// No description provided for @aboutSacnToc05.
-  ///
-  /// In fr, this message translates to:
-  /// **'5) Limites / perfs'**
-  String get aboutSacnToc05;
-
-  /// No description provided for @aboutSacnToc06.
-  ///
-  /// In fr, this message translates to:
-  /// **'6) RDM & sACN (proxy / selon matériel)'**
-  String get aboutSacnToc06;
-
-  /// No description provided for @aboutSacnToc07.
-  ///
-  /// In fr, this message translates to:
-  /// **'7) Schémas'**
-  String get aboutSacnToc07;
-
-  /// No description provided for @aboutSacnToc08.
-  ///
-  /// In fr, this message translates to:
-  /// **'7bis) Images (assets)'**
-  String get aboutSacnToc08;
-
-  /// No description provided for @aboutSacnToc09.
-  ///
-  /// In fr, this message translates to:
-  /// **'8) Checklist'**
-  String get aboutSacnToc09;
-
-  /// No description provided for @aboutVideoToc01.
-  ///
-  /// In fr, this message translates to:
-  /// **'1) Bases vidéo (mots-clés)'**
-  String get aboutVideoToc01;
-
-  /// No description provided for @aboutVideoToc02.
-  ///
-  /// In fr, this message translates to:
-  /// **'2) Résolution & FPS'**
-  String get aboutVideoToc02;
-
-  /// No description provided for @aboutVideoToc03.
-  ///
-  /// In fr, this message translates to:
-  /// **'3) Couleur (4:4:4 / 4:2:2 / 10-bit)'**
-  String get aboutVideoToc03;
-
-  /// No description provided for @aboutVideoToc04.
-  ///
-  /// In fr, this message translates to:
-  /// **'4) Sync (Genlock / Timecode)'**
-  String get aboutVideoToc04;
-
-  /// No description provided for @aboutVideoToc05.
-  ///
-  /// In fr, this message translates to:
-  /// **'5) Câbles & distances'**
-  String get aboutVideoToc05;
-
-  /// No description provided for @aboutVideoToc06.
-  ///
-  /// In fr, this message translates to:
-  /// **'6) SDI (3G / 6G / 12G)'**
-  String get aboutVideoToc06;
-
-  /// No description provided for @aboutVideoToc07.
-  ///
-  /// In fr, this message translates to:
-  /// **'7) HDMI — terrain'**
-  String get aboutVideoToc07;
-
-  /// No description provided for @aboutVideoToc08.
-  ///
-  /// In fr, this message translates to:
-  /// **'8) NDI — quand / pourquoi / limites'**
-  String get aboutVideoToc08;
-
-  /// No description provided for @aboutVideoToc09.
-  ///
-  /// In fr, this message translates to:
-  /// **'9) Mapping / LED / multi-projo'**
-  String get aboutVideoToc09;
-
-  /// No description provided for @aboutVideoToc10.
-  ///
-  /// In fr, this message translates to:
-  /// **'10) Checklist terrain'**
-  String get aboutVideoToc10;
-
-  /// No description provided for @aboutTileDmxTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'DMX — fonctionnement (simple & complet)'**
-  String get aboutTileDmxTitle;
-
-  /// No description provided for @aboutTileArtnetTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Art-Net — DMX sur IP (nodes, unicast/broadcast)'**
-  String get aboutTileArtnetTitle;
-
-  /// No description provided for @aboutTileSacnTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'sACN / E1.31 — multicast, IGMP, priorités'**
-  String get aboutTileSacnTitle;
-
-  /// No description provided for @aboutTileIpBasicsTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Réseau — bases IP / masque / DHCP (essentiel)'**
-  String get aboutTileIpBasicsTitle;
-
-  /// No description provided for @aboutTileReseauTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Réseau — RJ45 / Fibre / débits & longueurs'**
-  String get aboutTileReseauTitle;
-
-  /// No description provided for @aboutTileNetworkTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Réseau lumière — VLAN, IGMP, Wi-Fi vs filaire'**
-  String get aboutTileNetworkTitle;
-
-  /// No description provided for @aboutTileVideoTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Vidéo — SDI / NDI / IP (SRT/RTMP)'**
-  String get aboutTileVideoTitle;
-
-  /// No description provided for @aboutTileElectriciteTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Électrique — Schuko / P17 / puissances'**
-  String get aboutTileElectriciteTitle;
-
-  /// No description provided for @aboutTileElectriciteSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Connecteurs, mono/tri, tableaux kW rapides (16A→400A), pièges terrain.'**
-  String get aboutTileElectriciteSubtitle;
-
-  /// No description provided for @aboutTileInformatiqueTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Informatique — USB / HDMI / DP / SATA / NVMe…'**
-  String get aboutTileInformatiqueTitle;
-
-  /// No description provided for @aboutTileInformatiqueSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Débits utiles, versions, limites réelles, pièges marketing.'**
-  String get aboutTileInformatiqueSubtitle;
-
-  /// No description provided for @aboutTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'À propos'**
-  String get aboutTitle;
-
-  /// No description provided for @homeRiggingTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Rigging'**
-  String get homeRiggingTitle;
-
-  /// No description provided for @homeRiggingSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Bridles : angles & longueurs d’élingues.'**
-  String get homeRiggingSubtitle;
-
-  /// No description provided for @riggingTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Rigging'**
-  String get riggingTitle;
-
-  /// No description provided for @riggingAngleLengthTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle de bridle & longueur d’élingues'**
-  String get riggingAngleLengthTitle;
-
-  /// No description provided for @riggingSymmetryNote.
-  ///
-  /// In fr, this message translates to:
-  /// **'Hypothèse : bridle symétrique (2 brins identiques). Aucun calcul de charge.'**
-  String get riggingSymmetryNote;
-
-  /// No description provided for @riggingInputsTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entrées'**
-  String get riggingInputsTitle;
-
-  /// No description provided for @riggingSpanLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entraxe (distance entre points)'**
-  String get riggingSpanLabel;
-
-  /// No description provided for @riggingSpanHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ex : 2.40'**
-  String get riggingSpanHint;
-
-  /// No description provided for @riggingDropLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Flèche (drop vertical)'**
-  String get riggingDropLabel;
-
-  /// No description provided for @riggingDropHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ex : 0.60'**
-  String get riggingDropHint;
-
-  /// No description provided for @riggingUnitMeters.
-  ///
-  /// In fr, this message translates to:
-  /// **'m'**
-  String get riggingUnitMeters;
-
-  /// No description provided for @riggingResultsTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Résultats'**
-  String get riggingResultsTitle;
-
-  /// No description provided for @riggingNeedPositiveValues.
-  ///
-  /// In fr, this message translates to:
-  /// **'Renseigne des valeurs > 0.'**
-  String get riggingNeedPositiveValues;
-
-  /// No description provided for @riggingLegLengthLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Longueur d’un brin'**
-  String get riggingLegLengthLabel;
-
-  /// No description provided for @riggingAngleToHorizontalLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle par rapport à l’horizontale'**
-  String get riggingAngleToHorizontalLabel;
-
-  /// No description provided for @riggingAngleToVerticalLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle par rapport à la verticale'**
-  String get riggingAngleToVerticalLabel;
-
-  /// No description provided for @riggingDisclaimerShort.
-  ///
-  /// In fr, this message translates to:
-  /// **'Résultats indicatifs. À valider selon ton contexte et les pratiques rigging.'**
-  String get riggingDisclaimerShort;
-
-  /// No description provided for @riggingCalcLegDropTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Longueur + flèche → portée'**
-  String get riggingCalcLegDropTitle;
-
-  /// No description provided for @riggingCalcLegDropHelp.
-  ///
-  /// In fr, this message translates to:
-  /// **'Élingue symétrique (2 brins) : calcule la portée à partir de la longueur d’élingue et de la flèche.'**
-  String get riggingCalcLegDropHelp;
-
-  /// No description provided for @riggingLegLengthInputLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Longueur d’un brin'**
-  String get riggingLegLengthInputLabel;
-
-  /// No description provided for @riggingLegLengthInputHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ex: 2.50'**
-  String get riggingLegLengthInputHint;
-
-  /// No description provided for @riggingInvalidTriangle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Impossible : la longueur doit être supérieure à la flèche.'**
-  String get riggingInvalidTriangle;
-
-  /// No description provided for @riggingCalcLegAngleTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Longueur + angle → portée + flèche'**
-  String get riggingCalcLegAngleTitle;
-
-  /// No description provided for @riggingCalcLegAngleHelp.
-  ///
-  /// In fr, this message translates to:
-  /// **'Élingue symétrique (2 brins) : calcule portée et flèche à partir de la longueur et de l’angle par rapport à l’horizontale.'**
-  String get riggingCalcLegAngleHelp;
-
-  /// No description provided for @riggingAngleHorizontalInputLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle par rapport à l’horizontale'**
-  String get riggingAngleHorizontalInputLabel;
-
-  /// No description provided for @riggingAngleHorizontalInputHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ex: 30'**
-  String get riggingAngleHorizontalInputHint;
-
-  /// No description provided for @riggingInvalidAngle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle invalide : entre 0° et 90° (exclu).'**
-  String get riggingInvalidAngle;
-
-  /// No description provided for @riggingUnitDegrees.
-  ///
-  /// In fr, this message translates to:
-  /// **'°'**
-  String get riggingUnitDegrees;
-
-  /// No description provided for @riggingCalc1Title.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entraxe + flèche → longueur & angles'**
-  String get riggingCalc1Title;
-
-  /// No description provided for @riggingCalc1Subtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Bridle symétrique (2 brins identiques). Poids affiché (info). Aucun calcul de charge.'**
-  String get riggingCalc1Subtitle;
-
-  /// No description provided for @riggingCalc2Title.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entraxe + angle(H) → flèche & longueur'**
-  String get riggingCalc2Title;
-
-  /// No description provided for @riggingCalc2Subtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle par rapport à l\'horizontale. Bridle symétrique. Aucun calcul de charge.'**
-  String get riggingCalc2Subtitle;
-
-  /// No description provided for @riggingCalc3Title.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entraxe + longueur → flèche & angles'**
-  String get riggingCalc3Title;
-
-  /// No description provided for @riggingCalc3Subtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Longueur d’un brin connue. Bridle symétrique. Aucun calcul de charge.'**
-  String get riggingCalc3Subtitle;
-
-  /// No description provided for @riggingLegLengthHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ex: 4.70'**
-  String get riggingLegLengthHint;
-
-  /// No description provided for @riggingAngleHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ex : 45'**
-  String get riggingAngleHint;
-
-  /// No description provided for @riggingInvalidGeometry.
-  ///
-  /// In fr, this message translates to:
-  /// **'Géométrie impossible (longueur trop courte pour l’entraxe).'**
-  String get riggingInvalidGeometry;
-
-  /// No description provided for @riggingSchemaTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Schéma'**
-  String get riggingSchemaTitle;
-
-  /// No description provided for @riggingSchemaCaption1.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entrées : portée + flèche. Sorties : longueur d’élingue + angles.'**
-  String get riggingSchemaCaption1;
-
-  /// No description provided for @riggingSchemaCaption2.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entrées : portée + longueur d’élingue. Sorties : flèche + angles.'**
-  String get riggingSchemaCaption2;
-
-  /// No description provided for @riggingSchemaCaption3.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entrées : portée + angle (horizontal). Sorties : flèche + longueur.'**
-  String get riggingSchemaCaption3;
-
-  /// No description provided for @riggingAngleHInputLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle (par rapport à l’horizontale)'**
-  String get riggingAngleHInputLabel;
-
-  /// No description provided for @riggingAngleHInputHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ex: 45'**
-  String get riggingAngleHInputHint;
-
-  /// No description provided for @riggingDropResultLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Flèche (drop)'**
-  String get riggingDropResultLabel;
-
-  /// No description provided for @riggingSchemaLabelSpan.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entraxe'**
-  String get riggingSchemaLabelSpan;
-
-  /// No description provided for @riggingSchemaLabelDrop.
-  ///
-  /// In fr, this message translates to:
-  /// **'Flèche'**
-  String get riggingSchemaLabelDrop;
-
-  /// No description provided for @riggingSchemaLabelLeg.
-  ///
-  /// In fr, this message translates to:
-  /// **'Brin'**
-  String get riggingSchemaLabelLeg;
-
-  /// No description provided for @riggingWeightLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Poids (info)'**
-  String get riggingWeightLabel;
-
-  /// No description provided for @riggingUnitKg.
-  ///
-  /// In fr, this message translates to:
-  /// **'kg'**
-  String get riggingUnitKg;
-
-  /// No description provided for @riggingImpossibleGeometry.
-  ///
-  /// In fr, this message translates to:
-  /// **'Géométrie impossible : la longueur d’un brin doit être > (entraxe / 2).'**
-  String get riggingImpossibleGeometry;
-
-  /// No description provided for @riggingDisclaimerNoLoad.
-  ///
-  /// In fr, this message translates to:
-  /// **'Poids affiché à titre indicatif. Aucun calcul de charge / tension. Valide selon ton contexte rigging.'**
-  String get riggingDisclaimerNoLoad;
-
-  /// No description provided for @riggingCalcCommonSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Bridle 2 brins. Poids affiché (info). Aucun calcul de charge.'**
-  String get riggingCalcCommonSubtitle;
-
-  /// No description provided for @riggingOffCenterToggle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Charge décentrée'**
-  String get riggingOffCenterToggle;
-
-  /// No description provided for @riggingOffsetLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Offset A → charge'**
-  String get riggingOffsetLabel;
-
-  /// No description provided for @riggingInvalidOffset.
-  ///
-  /// In fr, this message translates to:
-  /// **'Offset invalide : doit être > 0 et < entraxe.'**
-  String get riggingInvalidOffset;
-
-  /// No description provided for @riggingLegLeftLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Longueur brin gauche'**
-  String get riggingLegLeftLabel;
-
-  /// No description provided for @riggingLegRightLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Longueur brin droit'**
-  String get riggingLegRightLabel;
-
-  /// No description provided for @riggingAngleHLeftLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle H (gauche)'**
-  String get riggingAngleHLeftLabel;
-
-  /// No description provided for @riggingAngleHRightLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle H (droit)'**
-  String get riggingAngleHRightLabel;
-
-  /// No description provided for @riggingAngleVLeftLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle V (gauche)'**
-  String get riggingAngleVLeftLabel;
-
-  /// No description provided for @riggingAngleVRightLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle V (droit)'**
-  String get riggingAngleVRightLabel;
-
-  /// No description provided for @riggingIncludedAngleLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle entre brins'**
-  String get riggingIncludedAngleLabel;
-
-  /// No description provided for @riggingAngleHLeftInputLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Angle H (brin gauche)'**
-  String get riggingAngleHLeftInputLabel;
-
-  /// No description provided for @riggingLegLeftInputLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Longueur (brin gauche)'**
-  String get riggingLegLeftInputLabel;
-
-  /// No description provided for @riggingNeedValidValues.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entrer des valeurs positives valides.'**
-  String get riggingNeedValidValues;
-
-  /// No description provided for @photometrySection4Title.
-  ///
-  /// In fr, this message translates to:
-  /// **'Lux → Lumen'**
-  String get photometrySection4Title;
-
-  /// No description provided for @photometryAreaLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Surface (m²)'**
-  String get photometryAreaLabel;
-
-  /// No description provided for @photometryAreaHint4.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ex: 12.5'**
-  String get photometryAreaHint4;
-
-  /// No description provided for @photometrySummary4.
-  ///
-  /// In fr, this message translates to:
-  /// **'E = {lux} lx • S = {area} m² → Φ = {lumens} lm'**
-  String photometrySummary4(Object lumens, Object lux, Object area);
-
-  /// No description provided for @aboutArtnetTocConversionTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Conversions'**
-  String get aboutArtnetTocConversionTitle;
-
-  /// No description provided for @aboutArtnetConversionIntro.
-  ///
-  /// In fr, this message translates to:
-  /// **'Outils de conversion utiles autour des univers DMX, Art-Net et des valeurs hexadécimales.'**
-  String get aboutArtnetConversionIntro;
-
-  /// No description provided for @aboutUniverseToArtnetTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers → Art-Net'**
-  String get aboutUniverseToArtnetTitle;
-
-  /// No description provided for @aboutUniverseToArtnetSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Trouver Subnet + Universe (Net/Port-Address) à partir d’un univers DMX.'**
-  String get aboutUniverseToArtnetSubtitle;
-
-  /// No description provided for @aboutUniverseToHexTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers → Hex'**
-  String get aboutUniverseToHexTitle;
-
-  /// No description provided for @aboutUniverseToHexSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Convertir un univers (1…N) en index et valeur hexadécimale.'**
-  String get aboutUniverseToHexSubtitle;
-
-  /// No description provided for @aboutArtnetConversionNote.
-  ///
-  /// In fr, this message translates to:
-  /// **'Note : les conventions Art-Net peuvent varier selon les consoles (adressage, base 0/1). Vérifie toujours la documentation de ton système.'**
-  String get aboutArtnetConversionNote;
-
-  /// No description provided for @elecTocCopyText.
-  ///
-  /// In fr, this message translates to:
-  /// **'Copier le sommaire'**
-  String get elecTocCopyText;
-
-  /// No description provided for @elecToc1.
-  ///
-  /// In fr, this message translates to:
-  /// **'Section 1'**
-  String get elecToc1;
-
-  /// No description provided for @elecToc2.
-  ///
-  /// In fr, this message translates to:
-  /// **'Section 2'**
-  String get elecToc2;
-
-  /// No description provided for @elecToc3.
-  ///
-  /// In fr, this message translates to:
-  /// **'Section 3'**
-  String get elecToc3;
-
-  /// No description provided for @elecToc4.
-  ///
-  /// In fr, this message translates to:
-  /// **'Section 4'**
-  String get elecToc4;
-
-  /// No description provided for @elecToc5.
-  ///
-  /// In fr, this message translates to:
-  /// **'Section 5'**
-  String get elecToc5;
-
-  /// No description provided for @elecToc6.
-  ///
-  /// In fr, this message translates to:
-  /// **'Section 6'**
-  String get elecToc6;
-
-  /// No description provided for @elecToc7.
-  ///
-  /// In fr, this message translates to:
-  /// **'Section 7'**
-  String get elecToc7;
-
-  /// No description provided for @elecKvaTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Table kVA → kW (selon cos φ)'**
-  String get elecKvaTitle;
-
-  /// No description provided for @elecKvaFormula.
-  ///
-  /// In fr, this message translates to:
-  /// **'Formule : kW = kVA × cos φ'**
-  String get elecKvaFormula;
-
-  /// No description provided for @elecKvaIntro.
-  ///
-  /// In fr, this message translates to:
-  /// **'Cette table donne une estimation rapide de la puissance active (kW) à partir d’une puissance apparente (kVA).'**
-  String get elecKvaIntro;
-
-  /// No description provided for @elecKvaNote.
-  ///
-  /// In fr, this message translates to:
-  /// **'Valeurs indicatives. Utilise les valeurs réelles de cos φ quand tu les connais.'**
-  String get elecKvaNote;
-
-  /// No description provided for @elecKvaColKva.
-  ///
-  /// In fr, this message translates to:
-  /// **'kVA'**
-  String get elecKvaColKva;
-
-  /// No description provided for @elecKvaColPf08.
-  ///
-  /// In fr, this message translates to:
-  /// **'kW (cos φ = 0,8)'**
-  String get elecKvaColPf08;
-
-  /// No description provided for @elecKvaColPf10.
-  ///
-  /// In fr, this message translates to:
-  /// **'kW (cos φ = 1,0)'**
-  String get elecKvaColPf10;
-
-  /// No description provided for @commonTocTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Sommaire'**
-  String get commonTocTitle;
-
-  /// No description provided for @commonCopySummaryTooltip.
-  ///
-  /// In fr, this message translates to:
-  /// **'Copier le sommaire'**
-  String get commonCopySummaryTooltip;
-
-  /// No description provided for @aboutLightReferenceTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Références lumière'**
-  String get aboutLightReferenceTitle;
-
-  /// No description provided for @refCriTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'IRC / CRI'**
-  String get refCriTitle;
-
-  /// No description provided for @refKelvinTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Température de couleur (K)'**
-  String get refKelvinTitle;
-
-  /// No description provided for @refBeamFieldTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Beam / Field'**
-  String get refBeamFieldTitle;
-
-  /// No description provided for @refLuxTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Niveaux d’éclairement (lux)'**
-  String get refLuxTitle;
-
-  /// No description provided for @refCriContent.
-  ///
-  /// In fr, this message translates to:
-  /// **'L’IRC (CRI) mesure la fidélité des couleurs. Plus il est élevé, plus les couleurs paraissent naturelles.'**
-  String get refCriContent;
-
-  /// No description provided for @refKelvinContent.
-  ///
-  /// In fr, this message translates to:
-  /// **'La température de couleur décrit la teinte de blanc (chaud à froid).'**
-  String get refKelvinContent;
-
-  /// No description provided for @refBeamFieldContent.
-  ///
-  /// In fr, this message translates to:
-  /// **'Le Beam est l’angle du faisceau principal ; le Field l’angle où l’intensité devient faible (bordure).'**
-  String get refBeamFieldContent;
-
-  /// No description provided for @refBeamLegendBeam.
-  ///
-  /// In fr, this message translates to:
-  /// **'Beam'**
-  String get refBeamLegendBeam;
-
-  /// No description provided for @refBeamLegendField.
-  ///
-  /// In fr, this message translates to:
-  /// **'Field'**
-  String get refBeamLegendField;
-
-  /// No description provided for @refLuxIntro.
-  ///
-  /// In fr, this message translates to:
-  /// **'Références indicatives d’éclairement selon l’usage.'**
-  String get refLuxIntro;
-
-  /// No description provided for @refLuxColUse.
-  ///
-  /// In fr, this message translates to:
-  /// **'Usage'**
-  String get refLuxColUse;
-
-  /// No description provided for @refLuxColLux.
-  ///
-  /// In fr, this message translates to:
-  /// **'Lux'**
-  String get refLuxColLux;
-
-  /// No description provided for @refLuxUseCorridor.
-  ///
-  /// In fr, this message translates to:
-  /// **'Couloir / circulation'**
-  String get refLuxUseCorridor;
-
-  /// No description provided for @refLuxUseBackstage.
-  ///
-  /// In fr, this message translates to:
-  /// **'Backstage / technique'**
-  String get refLuxUseBackstage;
-
-  /// No description provided for @refLuxUseMeeting.
-  ///
-  /// In fr, this message translates to:
-  /// **'Salle de réunion'**
-  String get refLuxUseMeeting;
-
-  /// No description provided for @refLuxUseExpo.
-  ///
-  /// In fr, this message translates to:
-  /// **'Expo / showroom'**
-  String get refLuxUseExpo;
-
-  /// No description provided for @refLuxUseStageGeneral.
-  ///
-  /// In fr, this message translates to:
-  /// **'Scène – général'**
-  String get refLuxUseStageGeneral;
-
-  /// No description provided for @refLuxUseStageTv.
-  ///
-  /// In fr, this message translates to:
-  /// **'Scène – TV / captation'**
-  String get refLuxUseStageTv;
-
-  /// No description provided for @refLuxNote.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ces valeurs varient selon les normes et les contraintes (caméra, contraste, ambiance).'**
-  String get refLuxNote;
-
-  /// No description provided for @refLightDisclaimerShort.
-  ///
-  /// In fr, this message translates to:
-  /// **'Références indicatives – pas une norme.'**
-  String get refLightDisclaimerShort;
-
-  /// No description provided for @refCri90.
-  ///
-  /// In fr, this message translates to:
-  /// **'Excellent (≥ 90)'**
-  String get refCri90;
-
-  /// No description provided for @refCri80.
-  ///
-  /// In fr, this message translates to:
-  /// **'Bon (≈ 80)'**
-  String get refCri80;
-
-  /// No description provided for @refCriLow.
-  ///
-  /// In fr, this message translates to:
-  /// **'Faible (< 80)'**
-  String get refCriLow;
-
-  /// No description provided for @aboutUniverseToArtnetImportantTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Important'**
-  String get aboutUniverseToArtnetImportantTitle;
-
-  /// No description provided for @aboutUniverseToArtnetImportantBody.
-  ///
-  /// In fr, this message translates to:
-  /// **'Certaines consoles utilisent une base 0 (Universe 0..15) et d’autres une base 1 (Universe 1..16).'**
-  String get aboutUniverseToArtnetImportantBody;
-
-  /// No description provided for @aboutUniverseToArtnetTableTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Table Univers → Art-Net'**
-  String get aboutUniverseToArtnetTableTitle;
-
-  /// No description provided for @aboutUniverseToArtnetTableIntro.
-  ///
-  /// In fr, this message translates to:
-  /// **'Correspondance typique entre univers DMX et adressage Art-Net.'**
-  String get aboutUniverseToArtnetTableIntro;
-
-  /// No description provided for @aboutUniverseTablesDisclaimer.
-  ///
-  /// In fr, this message translates to:
-  /// **'Vérifie toujours la convention de ta console / node.'**
-  String get aboutUniverseTablesDisclaimer;
-
-  /// No description provided for @aboutUniverseToArtnetColDmx.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers DMX'**
-  String get aboutUniverseToArtnetColDmx;
-
-  /// No description provided for @aboutUniverseToArtnetColUniHex.
-  ///
-  /// In fr, this message translates to:
-  /// **'Uni (hex)'**
-  String get aboutUniverseToArtnetColUniHex;
-
-  /// No description provided for @aboutUniverseToArtnetSubnetTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Subnet {p0} {p1} {p2} {p3}'**
-  String aboutUniverseToArtnetSubnetTitle(
-      Object p0, Object p1, Object p2, Object p3);
-
-  /// No description provided for @aboutUniverseToHexPrincipleTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Principe'**
-  String get aboutUniverseToHexPrincipleTitle;
-
-  /// No description provided for @aboutUniverseToHexPrincipleBody.
-  ///
-  /// In fr, this message translates to:
-  /// **'Un univers (1…N) peut être converti en index (base 0) puis en hexadécimal.'**
-  String get aboutUniverseToHexPrincipleBody;
-
-  /// No description provided for @aboutUniverseToHexTableTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Table Univers → Hex'**
-  String get aboutUniverseToHexTableTitle;
-
-  /// No description provided for @aboutUniverseToHexTableIntro.
-  ///
-  /// In fr, this message translates to:
-  /// **'Table de conversion univers DMX → index / hex.'**
-  String get aboutUniverseToHexTableIntro;
-
-  /// No description provided for @aboutUniverseToHexBlockTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Bloc {p0} {p1}'**
-  String aboutUniverseToHexBlockTitle(Object p0, Object p1);
-
-  /// No description provided for @aboutUniverseToHexColDmx.
-  ///
-  /// In fr, this message translates to:
-  /// **'Univers DMX'**
-  String get aboutUniverseToHexColDmx;
-
-  /// No description provided for @aboutUniverseToHexColIndex.
-  ///
-  /// In fr, this message translates to:
-  /// **'Index'**
-  String get aboutUniverseToHexColIndex;
-
-  /// No description provided for @aboutUniverseToHexColHex.
-  ///
-  /// In fr, this message translates to:
-  /// **'Hex'**
-  String get aboutUniverseToHexColHex;
-
-  /// No description provided for @aboutUniverseToHexNote.
-  ///
-  /// In fr, this message translates to:
-  /// **'Index = Univers − 1 (base 0).'**
-  String get aboutUniverseToHexNote;
-
-  /// No description provided for @videoCameraExposureTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Exposition caméra'**
-  String get videoCameraExposureTitle;
-
-  /// No description provided for @videoCameraExposureSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Lux → EV, ISO, vitesse et ouverture.'**
-  String get videoCameraExposureSubtitle;
-
-  /// No description provided for @videoCamPageTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Exposition caméra'**
-  String get videoCamPageTitle;
-
-  /// No description provided for @videoCamInfoTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Info'**
-  String get videoCamInfoTitle;
-
-  /// No description provided for @videoCamIntro.
-  ///
-  /// In fr, this message translates to:
-  /// **'Calculs indicatifs pour relier lux, ISO, vitesse et ouverture.'**
-  String get videoCamIntro;
-
-  /// No description provided for @videoCamInputsTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Entrées'**
-  String get videoCamInputsTitle;
-
-  /// No description provided for @videoCamLuxLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Lux'**
-  String get videoCamLuxLabel;
-
-  /// No description provided for @videoCamLuxHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ex: 500'**
-  String get videoCamLuxHint;
-
-  /// No description provided for @videoCamIsoLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'ISO'**
-  String get videoCamIsoLabel;
-
-  /// No description provided for @videoCamIsoHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ex: 800'**
-  String get videoCamIsoHint;
-
-  /// No description provided for @videoCamShutterLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Vitesse (s)'**
-  String get videoCamShutterLabel;
-
-  /// No description provided for @videoCamShutterHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ex: 1/50'**
-  String get videoCamShutterHint;
-
-  /// No description provided for @videoCamApertureLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ouverture (f/)'**
-  String get videoCamApertureLabel;
-
-  /// No description provided for @videoCamApertureHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ex: 2.8'**
-  String get videoCamApertureHint;
-
-  /// No description provided for @videoCamEvEmpty.
+  /// No description provided for @mireDash.
   ///
   /// In fr, this message translates to:
   /// **'—'**
-  String get videoCamEvEmpty;
+  String get mireDash;
 
-  /// No description provided for @videoCamNote.
+  /// No description provided for @mirePitchEqual.
   ///
   /// In fr, this message translates to:
-  /// **'Valeurs indicatives : la calibration dépend du capteur, de la scène et des normes.'**
-  String get videoCamNote;
+  /// **'Mire Pitch Equal : {p0}'**
+  String mirePitchEqual(Object p0);
 
-  /// No description provided for @videoCamEvValue.
+  /// No description provided for @mirePitchXY.
   ///
   /// In fr, this message translates to:
-  /// **'EV {ev}'**
-  String videoCamEvValue(Object ev);
+  /// **'Mire Pitch XY : {p0} · {p1}'**
+  String mirePitchXY(Object p0, Object p1);
 
-  /// No description provided for @videoCamApertureResult.
+  /// No description provided for @mireLedParamsTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Ouverture : f/{aperture}'**
-  String videoCamApertureResult(Object aperture);
+  /// **'Paramètres mur LED'**
+  String get mireLedParamsTitle;
 
-  /// No description provided for @videoCamShutterResult.
+  /// No description provided for @mireLedTilesXLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Vitesse : {shutter} s'**
-  String videoCamShutterResult(Object shutter);
+  /// **'Tiles horizontales (X)'**
+  String get mireLedTilesXLabel;
 
-  /// No description provided for @aboutDmxS2Title.
+  /// No description provided for @mireLedTilesYLabel.
   ///
   /// In fr, this message translates to:
-  /// **'2) Trame DMX — break, start code, canaux'**
-  String get aboutDmxS2Title;
+  /// **'Tiles verticales (Y)'**
+  String get mireLedTilesYLabel;
 
-  /// No description provided for @aboutDmxS2PillBreak.
+  /// No description provided for @mireLedTileWpxLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Break'**
-  String get aboutDmxS2PillBreak;
+  /// **'Tile largeur (px)'**
+  String get mireLedTileWpxLabel;
 
-  /// No description provided for @aboutDmxS2PillStartCode.
+  /// No description provided for @mireLedTileHpxLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Start code'**
-  String get aboutDmxS2PillStartCode;
+  /// **'Tile hauteur (px)'**
+  String get mireLedTileHpxLabel;
 
-  /// No description provided for @aboutDmxS2PillSlots512.
+  /// No description provided for @mireLedTileWcmLabel.
   ///
   /// In fr, this message translates to:
-  /// **'512 slots'**
-  String get aboutDmxS2PillSlots512;
+  /// **'Tile largeur (cm)'**
+  String get mireLedTileWcmLabel;
 
-  /// No description provided for @aboutDmxS2PillRefresh.
+  /// No description provided for @mireLedTileHcmLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Refresh'**
-  String get aboutDmxS2PillRefresh;
+  /// **'Tile hauteur (cm)'**
+  String get mireLedTileHcmLabel;
 
-  /// No description provided for @aboutDmxS2Intro.
+  /// No description provided for @mireLedWallResolution.
   ///
   /// In fr, this message translates to:
-  /// **'Une trame DMX est envoyée en boucle. Elle commence par un « break » (silence), puis un start code, puis jusqu’à 512 valeurs (0–255). Chaque appareil lit uniquement les canaux qui le concernent (selon son adresse et son mode).'**
-  String get aboutDmxS2Intro;
+  /// **'Mire LED Wall Resolution : {p0} · {p1}'**
+  String mireLedWallResolution(Object p0, Object p1);
 
-  /// No description provided for @aboutDmxS2HowToReadTitle.
+  /// No description provided for @mireLedPitchComputed.
   ///
   /// In fr, this message translates to:
-  /// **'Lire une trame (très simplement)'**
-  String get aboutDmxS2HowToReadTitle;
+  /// **'Mire LED Pitch Computed : {p0}'**
+  String mireLedPitchComputed(Object p0);
 
-  /// No description provided for @aboutDmxS2HowToReadB1.
+  /// No description provided for @mireLedErrTilesXY.
   ///
   /// In fr, this message translates to:
-  /// **'Break + MAB : marque le début de la trame (resynchronisation).'**
-  String get aboutDmxS2HowToReadB1;
+  /// **'❌ Renseigne Tiles X/Y (>0).'**
+  String get mireLedErrTilesXY;
 
-  /// No description provided for @aboutDmxS2HowToReadB2.
+  /// No description provided for @mireLedErrTilePx.
   ///
   /// In fr, this message translates to:
-  /// **'Start code : le plus souvent 0x00 (données d’éclairage).'**
-  String get aboutDmxS2HowToReadB2;
+  /// **'❌ Renseigne Tile px (largeur/hauteur >0).'**
+  String get mireLedErrTilePx;
 
-  /// No description provided for @aboutDmxS2HowToReadB3.
+  /// No description provided for @mireLedErrTileCm.
   ///
   /// In fr, this message translates to:
-  /// **'Slots 1→512 : chaque slot = 1 canal (0–255).'**
-  String get aboutDmxS2HowToReadB3;
+  /// **'❌ Renseigne Tile cm (largeur/hauteur >0).'**
+  String get mireLedErrTileCm;
 
-  /// No description provided for @aboutDmxS2HowToReadB4.
+  /// No description provided for @mireLedWarnPitchOutOfRange.
   ///
   /// In fr, this message translates to:
-  /// **'La trame recommence en continu : c’est normal d’« écraser » l’ancienne valeur.'**
-  String get aboutDmxS2HowToReadB4;
+  /// **'⚠️ Pitch calculé hors plage (0.5–20 mm). Vérifie Tile cm / px.'**
+  String get mireLedWarnPitchOutOfRange;
 
-  /// No description provided for @aboutDmxS2PracticalTitle.
+  /// No description provided for @mireLedWarnPitchXNotY.
   ///
   /// In fr, this message translates to:
-  /// **'En pratique'**
-  String get aboutDmxS2PracticalTitle;
+  /// **'⚠️ Pitch X ≠ Pitch Y (tile non homogène). Vérifie dimensions cm et px.'**
+  String get mireLedWarnPitchXNotY;
 
-  /// No description provided for @aboutDmxS2PracticalB1.
+  /// No description provided for @mireLedTypeTilesId.
   ///
   /// In fr, this message translates to:
-  /// **'Un mode 16-bit utilise 2 canaux pour une même fonction (ex: Pan coarse + Pan fine).'**
-  String get aboutDmxS2PracticalB1;
+  /// **'Tiles ID (numéro + couleurs)'**
+  String get mireLedTypeTilesId;
 
-  /// No description provided for @aboutDmxS2PracticalB2.
+  /// No description provided for @mireLedTypePixelPerfect.
   ///
   /// In fr, this message translates to:
-  /// **'Plus tu envoies d’univers, plus la charge globale (consoles/nodes/réseau) augmente.'**
-  String get aboutDmxS2PracticalB2;
+  /// **'Pixel perfect + cercles'**
+  String get mireLedTypePixelPerfect;
 
-  /// No description provided for @aboutDmxS2PracticalB3.
+  /// No description provided for @mireLedTypeGridLabels.
   ///
   /// In fr, this message translates to:
-  /// **'Si tu as du flicker, pense d’abord câble/termination/branchements avant de soupçonner la console.'**
-  String get aboutDmxS2PracticalB3;
+  /// **'Grille + repères + cercles'**
+  String get mireLedTypeGridLabels;
 
-  /// No description provided for @aboutDmxS3Title.
+  /// No description provided for @mireLedTypeColorBars.
   ///
   /// In fr, this message translates to:
-  /// **'3) Câblage DMX — RS-485, topologie, pinout'**
-  String get aboutDmxS3Title;
+  /// **'Barres + rampes + cercles'**
+  String get mireLedTypeColorBars;
 
-  /// No description provided for @aboutDmxS3PillRs485.
+  /// No description provided for @mireLedTypeUniformity.
   ///
   /// In fr, this message translates to:
-  /// **'RS-485'**
-  String get aboutDmxS3PillRs485;
+  /// **'Uniformité + cercles'**
+  String get mireLedTypeUniformity;
 
-  /// No description provided for @aboutDmxS3PillDaisyChain.
+  /// No description provided for @mireVideoTypeCombo.
   ///
   /// In fr, this message translates to:
-  /// **'Daisy-chain'**
-  String get aboutDmxS3PillDaisyChain;
+  /// **'Combo (grille + cercles + 2 barres centrées)'**
+  String get mireVideoTypeCombo;
 
-  /// No description provided for @aboutDmxS3PillNoY.
+  /// No description provided for @mireVideoTypeGridSafe.
   ///
   /// In fr, this message translates to:
-  /// **'Pas de Y'**
-  String get aboutDmxS3PillNoY;
+  /// **'Grille + safe + cercles'**
+  String get mireVideoTypeGridSafe;
 
-  /// No description provided for @aboutDmxS3Pill120ohm.
+  /// No description provided for @mireVideoTypeColorBars.
   ///
   /// In fr, this message translates to:
-  /// **'120 Ω'**
-  String get aboutDmxS3Pill120ohm;
+  /// **'Barres + rampes + cercles'**
+  String get mireVideoTypeColorBars;
 
-  /// No description provided for @aboutDmxS3Intro.
+  /// No description provided for @mireVideoTypeUniformity.
   ///
   /// In fr, this message translates to:
-  /// **'DMX512 est basé sur RS-485 : un bus différentiel qui aime les lignes propres. La règle d’or : une chaîne (daisy-chain) de la source vers les appareils, puis une terminaison à la fin.'**
-  String get aboutDmxS3Intro;
+  /// **'Uniformité + cercles'**
+  String get mireVideoTypeUniformity;
 
-  /// No description provided for @aboutDmxS3TopologyTitle.
+  /// No description provided for @mireVideoTypeCheckerboard.
   ///
   /// In fr, this message translates to:
-  /// **'Topologie recommandée'**
-  String get aboutDmxS3TopologyTitle;
+  /// **'Damier + cercles'**
+  String get mireVideoTypeCheckerboard;
 
-  /// No description provided for @aboutDmxS3TopologyB1.
+  /// No description provided for @laserConsentCheckboxLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Source → Appareil 1 → Appareil 2 → … → dernier appareil.'**
-  String get aboutDmxS3TopologyB1;
+  /// **'Je comprends les risques et j’assume ma responsabilité.'**
+  String get laserConsentCheckboxLabel;
 
-  /// No description provided for @aboutDmxS3TopologyB2.
+  /// No description provided for @laserConsentAcceptContinue.
   ///
   /// In fr, this message translates to:
-  /// **'Évite les dérivations en Y : elles créent des réflexions (instabilité).'**
-  String get aboutDmxS3TopologyB2;
+  /// **'J\'accepte et continuer'**
+  String get laserConsentAcceptContinue;
 
-  /// No description provided for @aboutDmxS3TopologyB3.
+  /// No description provided for @laserConsentContinue.
   ///
   /// In fr, this message translates to:
-  /// **'Si tu dois faire des branches : utilise un splitter DMX opto-isolé.'**
-  String get aboutDmxS3TopologyB3;
+  /// **'J\'accepte et continuer'**
+  String get laserConsentContinue;
 
-  /// No description provided for @aboutDmxS3PinoutTitle.
+  /// No description provided for @laserZoneLabelNohd.
   ///
   /// In fr, this message translates to:
-  /// **'Connectique (rappel)'**
-  String get aboutDmxS3PinoutTitle;
+  /// **'NOHD'**
+  String get laserZoneLabelNohd;
 
-  /// No description provided for @aboutDmxS3CablesTitle.
+  /// No description provided for @laserZoneLabelSzed.
   ///
   /// In fr, this message translates to:
-  /// **'Câbles : ce qui marche vraiment'**
-  String get aboutDmxS3CablesTitle;
+  /// **'SZED'**
+  String get laserZoneLabelSzed;
 
-  /// No description provided for @aboutDmxS3CablesB1.
+  /// No description provided for @laserZoneLabelCzed.
   ///
   /// In fr, this message translates to:
-  /// **'Utilise un câble DMX (impédance ~120 Ω), pas un micro aléatoire (sauf dépannage court).'**
-  String get aboutDmxS3CablesB1;
+  /// **'CZED'**
+  String get laserZoneLabelCzed;
 
-  /// No description provided for @aboutDmxS3CablesB2.
+  /// No description provided for @laserValueMeter.
   ///
   /// In fr, this message translates to:
-  /// **'Garde les longueurs raisonnables et évite les enroulements serrés près d’alim/gradateurs.'**
-  String get aboutDmxS3CablesB2;
+  /// **'{value} m'**
+  String laserValueMeter(Object value);
 
-  /// No description provided for @aboutDmxS3CablesB3.
+  /// No description provided for @laserPercentValue.
   ///
   /// In fr, this message translates to:
-  /// **'Un mauvais câble = parfois « ça marche »… jusqu’au jour où non (humidité, longueur, charge).'**
-  String get aboutDmxS3CablesB3;
+  /// **'{value} %'**
+  String laserPercentValue(Object value);
 
-  /// No description provided for @aboutDmxS4Title.
+  /// No description provided for @laserLegalDisclaimerText.
   ///
   /// In fr, this message translates to:
-  /// **'4) Terminaison & splitters — stabilité du bus'**
-  String get aboutDmxS4Title;
+  /// **'AVERTISSEMENT LÉGAL ET CLAUSE DE NON-RESPONSABILITÉ\n\nL\'utilisation de ce calculateur est strictement réservée à titre informatif et indicatif.\nLes résultats obtenus ne constituent pas une expertise technique et ne sauraient engager la responsabilité de l\'éditeur en cas d\'erreur de calcul, d\'omission ou d\'accident survenus lors de l\'installation ou de l\'exploitation du matériel.\n\nCalculs NOHD et Instruments Optiques :\nDans certaines circonstances, des instruments optiques spéciaux (jumelles, télescopes) peuvent être utilisés pour visualiser le laser à une distance plus éloignée.\nCe fait doit être pris en compte lors de la détermination du NOHD.\nDans le calcul ci-joint, aucun instrument optique n\'est pris en compte, car il est très peu probable que cela doive être pris en compte dans l\'industrie courante du laser.\nCependant, il incombe à l\'opérateur de procéder à une évaluation appropriée des risques pour la sécurité.\n\nZones d\'Interférence Visuelle (SZED et CZED) :\nLes calculs des distances SZED (aveuglement temporaire) et CZED (éblouissement) sont basés sur des seuils d\'éclairement énergétique standards pour la vision humaine.\nCes valeurs ne sont valables que pour un observateur dont l\'œil est adapté à l\'obscurité (conditions de spectacle).\nCes résultats ne tiennent pas compte des conditions atmosphériques (brume, pluie, pollution) qui peuvent réduire ou diffuser la portée théorique du faisceau.\n\nParamètres Techniques :\nLe calculateur n\'est applicable que pour les sources laser en mode continu (CW) et n\'est valable que pour la plage de longueur d\'onde de 400 à 700 nm – paramètres standards pour les systèmes laser de spectacle.\n\nAcceptation des Risques :\nCe calculateur est fourni \"tel quel\".\nNous ne garantissons pas l\'exactitude et la précision des résultats.\nEn activant cet outil, l\'utilisateur reconnaît être un professionnel formé aux règles de sécurité en vigueur et accepte l\'entière responsabilité des risques liés à la mise en œuvre des équipements (laser, lumière, vidéo).\nVérifiez systématiquement les données avec les manuels constructeurs officiels.'**
+  String get laserLegalDisclaimerText;
 
-  /// No description provided for @aboutDmxS4Intro.
+  /// No description provided for @laserLegalDisclaimerTextLong.
   ///
   /// In fr, this message translates to:
-  /// **'Sur un bus RS-485, la terminaison évite les réflexions en bout de ligne. Les splitters (opto-isolés) servent à créer des branches propres et à protéger la source.'**
-  String get aboutDmxS4Intro;
+  /// **'AVERTISSEMENT LÉGAL ET CLAUSE DE NON-RESPONSABILITÉ\n\nL\'utilisation de ce calculateur est strictement réservée à titre informatif et indicatif.\nLes résultats obtenus ne constituent pas une expertise technique et ne sauraient engager la responsabilité de l\'éditeur en cas d\'erreur de calcul, d\'omission ou d\'accident survenus lors de l\'installation ou de l\'exploitation du matériel.\n\nCalculs NOHD et Instruments Optiques :\nDans certaines circonstances, des instruments optiques spéciaux (jumelles, télescopes) peuvent être utilisés pour visualiser le laser à une distance plus éloignée.\nCe fait doit être pris en compte lors de la détermination du NOHD.\nDans le calcul ci-joint, aucun instrument optique n\'est pris en compte, car il est très peu probable que cela doive être pris en compte dans l\'industrie courante du laser.\nCependant, il incombe à l\'opérateur de procéder à une évaluation appropriée des risques pour la sécurité.\n\nZones d\'Interférence Visuelle (SZED et CZED) :\nLes calculs des distances SZED (aveuglement temporaire) et CZED (éblouissement) sont basés sur des seuils d\'éclairement énergétique standards pour la vision humaine.\nCes valeurs ne sont valables que pour un observateur dont l\'œil est adapté à l\'obscurité (conditions de spectacle).\nCes résultats ne tiennent pas compte des conditions atmosphériques (brume, pluie, pollution) qui peuvent réduire ou diffuser la portée théorique du faisceau.\n\nParamètres Techniques :\nLe calculateur n\'est applicable que pour les sources laser en mode continu (CW) et n\'est valable que pour la plage de longueur d\'onde de 400 à 700 nm – paramètres standards pour les systèmes laser de spectacle.\n\nAcceptation des Risques :\nCe calculateur est fourni \"tel quel\".\nNous ne garantissons pas l\'exactitude et la précision des résultats.\nEn activant cet outil, l\'utilisateur reconnaît être un professionnel formé aux règles de sécurité en vigueur et accepte l\'entière responsabilité des risques liés à la mise en œuvre des équipements (laser, lumière, vidéo).\nVérifiez systématiquement les données avec les manuels constructeurs officiels.'**
+  String get laserLegalDisclaimerTextLong;
 
-  /// No description provided for @aboutDmxS4TerminatorTitle.
+  /// No description provided for @common_copie_dans_le_presse_papiers.
   ///
   /// In fr, this message translates to:
-  /// **'Terminaison (120 Ω) : quand et comment'**
-  String get aboutDmxS4TerminatorTitle;
+  /// **'Copié dans le presse-papiers.'**
+  String get common_copie_dans_le_presse_papiers;
 
-  /// No description provided for @aboutDmxS4TerminatorB1.
+  /// No description provided for @mireEcranVideo_mires_ecran_video.
   ///
   /// In fr, this message translates to:
-  /// **'Met une terminaison sur le dernier appareil (ou un bouchon XLR).'**
-  String get aboutDmxS4TerminatorB1;
+  /// **'Mires écran vidéo'**
+  String get mireEcranVideo_mires_ecran_video;
 
-  /// No description provided for @aboutDmxS4TerminatorB2.
+  /// No description provided for @mireEcranVideo_exporter_png.
   ///
   /// In fr, this message translates to:
-  /// **'Une seule terminaison par ligne (pas partout).'**
-  String get aboutDmxS4TerminatorB2;
+  /// **'Exporter PNG'**
+  String get mireEcranVideo_exporter_png;
 
-  /// No description provided for @aboutDmxS4TerminatorB3.
+  /// No description provided for @mireEcranVideo_exporter_png_2.
   ///
   /// In fr, this message translates to:
-  /// **'Indispensable sur longues lignes, grosses charges, environnements bruyants.'**
-  String get aboutDmxS4TerminatorB3;
+  /// **'Exporter PNG'**
+  String get mireEcranVideo_exporter_png_2;
 
-  /// No description provided for @aboutDmxS4SplittersTitle.
+  /// No description provided for @mireEcranVideo_combo_grille_cercles_2_barres_centrees.
   ///
   /// In fr, this message translates to:
-  /// **'Splitters / opto-isolation'**
-  String get aboutDmxS4SplittersTitle;
+  /// **'Combo (grille + cercles + 2 barres centrées)'**
+  String get mireEcranVideo_combo_grille_cercles_2_barres_centrees;
 
-  /// No description provided for @aboutDmxS4SplittersB1.
+  /// No description provided for @mireEcranVideo_grille_safe_cercles.
   ///
   /// In fr, this message translates to:
-  /// **'Permet de faire 2, 4, 8 branches sans « Y ».'**
-  String get aboutDmxS4SplittersB1;
+  /// **'Grille + safe + cercles'**
+  String get mireEcranVideo_grille_safe_cercles;
 
-  /// No description provided for @aboutDmxS4SplittersB2.
+  /// No description provided for @mireEcranVideo_barres_rampes_cercles.
   ///
   /// In fr, this message translates to:
-  /// **'Isole électriquement : limite les boucles de masse et protège la console/node.'**
-  String get aboutDmxS4SplittersB2;
+  /// **'Barres + rampes + cercles'**
+  String get mireEcranVideo_barres_rampes_cercles;
 
-  /// No description provided for @aboutDmxS4SplittersB3.
+  /// No description provided for @mireEcranVideo_uniformite_cercles.
   ///
   /// In fr, this message translates to:
-  /// **'Pratique pour “re-driver” un signal sur de longues distances.'**
-  String get aboutDmxS4SplittersB3;
+  /// **'Uniformité + cercles'**
+  String get mireEcranVideo_uniformite_cercles;
 
-  /// No description provided for @aboutDmxS5Title.
+  /// No description provided for @mireEcranVideo_damier_cercles.
   ///
   /// In fr, this message translates to:
-  /// **'5) Dépannage — méthode simple (rapide et fiable)'**
-  String get aboutDmxS5Title;
+  /// **'Damier + cercles'**
+  String get mireEcranVideo_damier_cercles;
 
-  /// No description provided for @aboutDmxS5Intro.
+  /// No description provided for @mireEcranVideo_horizontal.
   ///
   /// In fr, this message translates to:
-  /// **'Quand un appareil ne répond pas, la clé est d’isoler : est-ce l’adresse, le mode, la ligne DMX, ou l’appareil ? Suis une checklist courte avant de tout reconfigurer.'**
-  String get aboutDmxS5Intro;
+  /// **'Horizontal'**
+  String get mireEcranVideo_horizontal;
 
-  /// No description provided for @aboutDmxS5QuickChecksTitle.
+  /// No description provided for @mireEcranVideo_vertical.
   ///
   /// In fr, this message translates to:
-  /// **'Checklist rapide'**
-  String get aboutDmxS5QuickChecksTitle;
+  /// **'Vertical'**
+  String get mireEcranVideo_vertical;
 
-  /// No description provided for @aboutDmxS5QuickB1.
+  /// No description provided for @mireEcranVideo_combo_zones_overlap_blend.
   ///
   /// In fr, this message translates to:
-  /// **'Adresse DMX correcte ? (et pas 001 vs 000 selon l’écran).'**
-  String get aboutDmxS5QuickB1;
+  /// **'Combo (zones + overlap + blend)'**
+  String get mireEcranVideo_combo_zones_overlap_blend;
 
-  /// No description provided for @aboutDmxS5QuickB2.
+  /// No description provided for @mireEcranVideo_zones_overlap.
   ///
   /// In fr, this message translates to:
-  /// **'Bon mode DMX (nombre de canaux) ?'**
-  String get aboutDmxS5QuickB2;
+  /// **'Zones + overlap'**
+  String get mireEcranVideo_zones_overlap;
 
-  /// No description provided for @aboutDmxS5QuickB3.
+  /// No description provided for @mireEcranVideo_blend_ramps.
   ///
   /// In fr, this message translates to:
-  /// **'Bon univers / sortie (console, node, port) ?'**
-  String get aboutDmxS5QuickB3;
+  /// **'Blend ramps'**
+  String get mireEcranVideo_blend_ramps;
 
-  /// No description provided for @aboutDmxS5QuickB4.
+  /// No description provided for @mireEcranVideo_mire_ecran_simple.
   ///
   /// In fr, this message translates to:
-  /// **'Teste avec un câble connu OK, puis en remplaçant un par un.'**
-  String get aboutDmxS5QuickB4;
+  /// **'Mire écran simple'**
+  String get mireEcranVideo_mire_ecran_simple;
 
-  /// No description provided for @aboutDmxS5QuickB5.
+  /// No description provided for @mireEcranVideo_mire_mapping_multi_projecteur.
   ///
   /// In fr, this message translates to:
-  /// **'Ajoute/retire une terminaison au bout de la ligne pour voir l’effet.'**
-  String get aboutDmxS5QuickB5;
+  /// **'Mire mapping multi-projecteur'**
+  String get mireEcranVideo_mire_mapping_multi_projecteur;
 
-  /// No description provided for @aboutDmxS5IfFlickerTitle.
+  /// No description provided for @mireEcranVideo_largeur_px.
   ///
   /// In fr, this message translates to:
-  /// **'Si ça flicker / décroche'**
-  String get aboutDmxS5IfFlickerTitle;
+  /// **'Largeur (px)'**
+  String get mireEcranVideo_largeur_px;
 
-  /// No description provided for @aboutDmxS5IfFlickerB1.
+  /// No description provided for @mireEcranVideo_hauteur_px.
   ///
   /// In fr, this message translates to:
-  /// **'Cherche un “Y” caché, un splitter non adapté, ou un mauvais adaptateur XLR.'**
-  String get aboutDmxS5IfFlickerB1;
+  /// **'Hauteur (px)'**
+  String get mireEcranVideo_hauteur_px;
 
-  /// No description provided for @aboutDmxS5IfFlickerB2.
+  /// No description provided for @mireEcranVideo_largeur_px_2.
   ///
   /// In fr, this message translates to:
-  /// **'Éloigne DMX des alimentations/gradateurs, évite les grandes boucles de câble.'**
-  String get aboutDmxS5IfFlickerB2;
+  /// **'Largeur (px)'**
+  String get mireEcranVideo_largeur_px_2;
 
-  /// No description provided for @aboutDmxS5IfFlickerB3.
+  /// No description provided for @mireEcranVideo_hauteur_px_2.
   ///
   /// In fr, this message translates to:
-  /// **'Réduis la complexité : 1 univers, 1 ligne, 1 appareil, puis tu reconstruis.'**
-  String get aboutDmxS5IfFlickerB3;
+  /// **'Hauteur (px)'**
+  String get mireEcranVideo_hauteur_px_2;
 
-  /// No description provided for @aboutDmxS5GoldenRuleTitle.
+  /// No description provided for @mireEcranVideo_nombre_de_projecteurs_n.
   ///
   /// In fr, this message translates to:
-  /// **'Règle d’or'**
-  String get aboutDmxS5GoldenRuleTitle;
+  /// **'Nombre de projecteurs (N)'**
+  String get mireEcranVideo_nombre_de_projecteurs_n;
 
-  /// No description provided for @aboutDmxS5GoldenRuleBody.
+  /// No description provided for @mireEcranVideo_overlap.
   ///
   /// In fr, this message translates to:
-  /// **'Tu dois pouvoir faire fonctionner un seul appareil sur une seule ligne. Si ce test de base échoue, le problème n’est pas « le patch complet » : c’est l’adressage, le câblage, ou le matériel.'**
-  String get aboutDmxS5GoldenRuleBody;
+  /// **'Overlap (%)'**
+  String get mireEcranVideo_overlap;
 
-  /// No description provided for @aboutDmxS6Title.
+  /// No description provided for @mireEcranVideo_ex_1920.
   ///
   /// In fr, this message translates to:
-  /// **'6) Art-Net — DMX sur IP (vocabulaire et pièges)'**
-  String get aboutDmxS6Title;
+  /// **'ex: 1920'**
+  String get mireEcranVideo_ex_1920;
 
-  /// No description provided for @aboutDmxS6PillUdp.
+  /// No description provided for @mireEcranVideo_ex_1080.
   ///
   /// In fr, this message translates to:
-  /// **'UDP'**
-  String get aboutDmxS6PillUdp;
+  /// **'ex: 1080'**
+  String get mireEcranVideo_ex_1080;
 
-  /// No description provided for @aboutDmxS6PillNodes.
+  /// No description provided for @mireEcranVideo_ex_3840.
   ///
   /// In fr, this message translates to:
-  /// **'Nodes'**
-  String get aboutDmxS6PillNodes;
+  /// **'ex: 3840'**
+  String get mireEcranVideo_ex_3840;
 
-  /// No description provided for @aboutDmxS6PillBroadcast.
+  /// No description provided for @mireEcranVideo_ex_2160.
   ///
   /// In fr, this message translates to:
-  /// **'Broadcast'**
-  String get aboutDmxS6PillBroadcast;
+  /// **'ex: 2160'**
+  String get mireEcranVideo_ex_2160;
 
-  /// No description provided for @aboutDmxS6PillUnicast.
+  /// No description provided for @mireEcranVideo_ex_2.
   ///
   /// In fr, this message translates to:
-  /// **'Unicast'**
-  String get aboutDmxS6PillUnicast;
+  /// **'ex: 2'**
+  String get mireEcranVideo_ex_2;
 
-  /// No description provided for @aboutDmxS6Intro.
+  /// No description provided for @mireEcranVideo_ex_10_0.
   ///
   /// In fr, this message translates to:
-  /// **'Art-Net transporte des univers DMX via Ethernet (UDP). Une console/logiciel envoie des univers sur le réseau, et un node les convertit en sorties DMX physiques.'**
-  String get aboutDmxS6Intro;
+  /// **'ex: 10.0'**
+  String get mireEcranVideo_ex_10_0;
 
-  /// No description provided for @aboutDmxS6BasicsTitle.
+  /// No description provided for @aboutRegistry_dmx_fonctionnement_simple_complet.
+  ///
+  /// In fr, this message translates to:
+  /// **'DMX — fonctionnement (simple & complet)'**
+  String get aboutRegistry_dmx_fonctionnement_simple_complet;
+
+  /// No description provided for @aboutRegistry_univers_adresses_trames_cablage_rs_485_t.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers, adresses, trames, câblage RS-485, terminaison, erreurs terrain.\\n'**
+  String get aboutRegistry_univers_adresses_trames_cablage_rs_485_t;
+
+  /// No description provided for @aboutRegistry_art_net_dmx_sur_ip_nodes_unicast_broadca.
+  ///
+  /// In fr, this message translates to:
+  /// **'Art-Net — DMX sur IP (nodes, unicast/broadcast)'**
+  String get aboutRegistry_art_net_dmx_sur_ip_nodes_unicast_broadca;
+
+  /// No description provided for @aboutRegistry_univers_dmx_sur_ethernet_udp_nodes_broad.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers DMX sur Ethernet/UDP, nodes, broadcast vs unicast.\\n'**
+  String get aboutRegistry_univers_dmx_sur_ethernet_udp_nodes_broad;
+
+  /// No description provided for @aboutRegistry_sacn_e1_31_multicast_igmp_priorites.
+  ///
+  /// In fr, this message translates to:
+  /// **'sACN / E1.31 — multicast, IGMP, priorités'**
+  String get aboutRegistry_sacn_e1_31_multicast_igmp_priorites;
+
+  /// No description provided for @aboutRegistry_standard_dmx_sur_ip_oriente_reseau_pro_n.
+  ///
+  /// In fr, this message translates to:
+  /// **'Standard DMX sur IP orienté réseau pro.\\n'**
+  String get aboutRegistry_standard_dmx_sur_ip_oriente_reseau_pro_n;
+
+  /// No description provided for @aboutRegistry_reseau_bases_ip_masque_dhcp_essentiel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réseau — bases IP / masque / DHCP (essentiel)'**
+  String get aboutRegistry_reseau_bases_ip_masque_dhcp_essentiel;
+
+  /// No description provided for @aboutRegistry_comprendre_ip_masque_passerelle_dhcp_vs_.
+  ///
+  /// In fr, this message translates to:
+  /// **'Comprendre IP, masque, passerelle, DHCP vs statique.\\n'**
+  String get aboutRegistry_comprendre_ip_masque_passerelle_dhcp_vs_;
+
+  /// No description provided for @aboutRegistry_reseau_rj45_fibre_debits_longueurs.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réseau — RJ45 / Fibre / débits & longueurs'**
+  String get aboutRegistry_reseau_rj45_fibre_debits_longueurs;
+
+  /// No description provided for @aboutRegistry_cat5e_cat8_fibre_om3_om4_os2_lc_sc_mpo_d.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cat5e→Cat8, fibre OM3/OM4/OS2, LC/SC/MPO, distances typiques, bonnes pratiques show.'**
+  String get aboutRegistry_cat5e_cat8_fibre_om3_om4_os2_lc_sc_mpo_d;
+
+  /// No description provided for @aboutRegistry_reseau_lumiere_vlan_igmp_wi_fi_vs_filair.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réseau lumière — VLAN, IGMP, Wi-Fi vs filaire'**
+  String get aboutRegistry_reseau_lumiere_vlan_igmp_wi_fi_vs_filair;
+
+  /// No description provided for @aboutRegistry_architecture_simple_et_robuste_pour_art_.
+  ///
+  /// In fr, this message translates to:
+  /// **'Architecture simple et robuste pour Art-Net/sACN.\\n'**
+  String get aboutRegistry_architecture_simple_et_robuste_pour_art_;
+
+  /// No description provided for @aboutRegistry_video_sdi_ndi_ip_srt_rtmp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vidéo — SDI / NDI / IP (SRT/RTMP)'**
+  String get aboutRegistry_video_sdi_ndi_ip_srt_rtmp;
+
+  /// No description provided for @aboutRegistry_choisir_selon_latence_fiabilite_cablage_.
+  ///
+  /// In fr, this message translates to:
+  /// **'Choisir selon latence, fiabilité, câblage, réseau LAN vs WAN.\\n'**
+  String get aboutRegistry_choisir_selon_latence_fiabilite_cablage_;
+
+  /// No description provided for @aboutRegistry_electrique_schuko_p17_puissances.
+  ///
+  /// In fr, this message translates to:
+  /// **'Électrique — Schuko / P17 / puissances'**
+  String get aboutRegistry_electrique_schuko_p17_puissances;
+
+  /// No description provided for @aboutRegistry_connecteurs_mono_tri_tableaux_kw_rapides.
+  ///
+  /// In fr, this message translates to:
+  /// **'Connecteurs, mono/tri, tableaux kW rapides (16A→400A), pièges terrain.'**
+  String get aboutRegistry_connecteurs_mono_tri_tableaux_kw_rapides;
+
+  /// No description provided for @aboutRegistry_informatique_usb_hdmi_dp_sata_nvme.
+  ///
+  /// In fr, this message translates to:
+  /// **'Informatique — USB / HDMI / DP / SATA / NVMe…'**
+  String get aboutRegistry_informatique_usb_hdmi_dp_sata_nvme;
+
+  /// No description provided for @aboutRegistry_debits_utiles_versions_limites_reelles_p.
+  ///
+  /// In fr, this message translates to:
+  /// **'Débits utiles, versions, limites réelles, pièges marketing.'**
+  String get aboutRegistry_debits_utiles_versions_limites_reelles_p;
+
+  /// No description provided for @fixtureCatalog_catalogue.
+  ///
+  /// In fr, this message translates to:
+  /// **'Catalogue'**
+  String get fixtureCatalog_catalogue;
+
+  /// No description provided for @fixtureCatalog_ouvrir_le_manuel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ouvrir le manuel'**
+  String get fixtureCatalog_ouvrir_le_manuel;
+
+  /// No description provided for @fixtureCatalog_ouvrir_la_charte_dmx.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ouvrir la charte DMX'**
+  String get fixtureCatalog_ouvrir_la_charte_dmx;
+
+  /// No description provided for @fixtureCatalog_catalogue_mis_a_jour.
+  ///
+  /// In fr, this message translates to:
+  /// **'Catalogue mis à jour.'**
+  String get fixtureCatalog_catalogue_mis_a_jour;
+
+  /// Auto-generated placeholders for L10n.
+  ///
+  /// In fr, this message translates to:
+  /// **'Échec synchronisation : {error}'**
+  String fixtureCatalog_echec_synchronisation_e(Object error);
+
+  /// Auto-generated placeholders for L10n.
+  ///
+  /// In fr, this message translates to:
+  /// **'{label} : {value}'**
+  String fixtureCatalog_label_value(Object label, Object value);
+
+  /// No description provided for @fixtureCatalog_constructeur_manufacturers_length.
+  ///
+  /// In fr, this message translates to:
+  /// **'FixtureCatalog constructeur manufacturers length : {p0}'**
+  String fixtureCatalog_constructeur_manufacturers_length(Object p0);
+
+  /// No description provided for @fixtureCatalog_type_de_projecteur_types_length.
+  ///
+  /// In fr, this message translates to:
+  /// **'FixtureCatalog type de projecteur types length : {p0}'**
+  String fixtureCatalog_type_de_projecteur_types_length(Object p0);
+
+  /// No description provided for @fixtureCatalog_modele_products_length.
+  ///
+  /// In fr, this message translates to:
+  /// **'FixtureCatalog modele products length : {p0}'**
+  String fixtureCatalog_modele_products_length(Object p0);
+
+  /// No description provided for @fixtureCatalog_mode_dmx_modenames_length.
+  ///
+  /// In fr, this message translates to:
+  /// **'FixtureCatalog mode DMX modenames length : {p0}'**
+  String fixtureCatalog_mode_dmx_modenames_length(Object p0);
+
+  /// No description provided for @fixtureCatalog_mettre_a_jour.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mettre à jour'**
+  String get fixtureCatalog_mettre_a_jour;
+
+  /// No description provided for @fixtureCatalog_reinitialiser.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réinitialiser'**
+  String get fixtureCatalog_reinitialiser;
+
+  /// No description provided for @aboutInformatique_informatique_reperes_terrain.
+  ///
+  /// In fr, this message translates to:
+  /// **'Informatique — repères terrain'**
+  String get aboutInformatique_informatique_reperes_terrain;
+
+  /// No description provided for @aboutInformatique_sommaire.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sommaire'**
+  String get aboutInformatique_sommaire;
+
+  /// No description provided for @aboutInformatique_1_usb_usb_c_thunderbolt.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) USB / USB-C / Thunderbolt'**
+  String get aboutInformatique_1_usb_usb_c_thunderbolt;
+
+  /// No description provided for @aboutInformatique_point_critique.
+  ///
+  /// In fr, this message translates to:
+  /// **'Point critique'**
+  String get aboutInformatique_point_critique;
+
+  /// No description provided for @aboutInformatique_reperes_vitesses_ordre_de_grandeur.
+  ///
+  /// In fr, this message translates to:
+  /// **'Repères vitesses (ordre de grandeur)'**
+  String get aboutInformatique_reperes_vitesses_ordre_de_grandeur;
+
+  /// No description provided for @aboutInformatique_2_stockage_sata_nvme_ssd.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) Stockage (SATA / NVMe / SSD)'**
+  String get aboutInformatique_2_stockage_sata_nvme_ssd;
+
+  /// No description provided for @aboutInformatique_sata_vs_nvme.
+  ///
+  /// In fr, this message translates to:
+  /// **'SATA vs NVMe'**
+  String get aboutInformatique_sata_vs_nvme;
+
+  /// No description provided for @aboutInformatique_terrain_video.
+  ///
+  /// In fr, this message translates to:
+  /// **'Terrain vidéo'**
+  String get aboutInformatique_terrain_video;
+
+  /// No description provided for @aboutInformatique_3_liaisons_video_dp_hdmi.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) Liaisons vidéo (DP / HDMI)'**
+  String get aboutInformatique_3_liaisons_video_dp_hdmi;
+
+  /// No description provided for @aboutInformatique_repere_important.
+  ///
+  /// In fr, this message translates to:
+  /// **'Repère important'**
+  String get aboutInformatique_repere_important;
+
+  /// No description provided for @aboutInformatique_dp_vs_hdmi_tres_simplifie.
+  ///
+  /// In fr, this message translates to:
+  /// **'DP vs HDMI (très simplifié)'**
+  String get aboutInformatique_dp_vs_hdmi_tres_simplifie;
+
+  /// No description provided for @aboutInformatique_4_pcie_gpu_reperes.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) PCIe / GPU (repères)'**
+  String get aboutInformatique_4_pcie_gpu_reperes;
+
+  /// No description provided for @aboutInformatique_terrain.
+  ///
+  /// In fr, this message translates to:
+  /// **'Terrain'**
+  String get aboutInformatique_terrain;
+
+  /// No description provided for @aboutInformatique_5_checklist_plateau.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) Checklist (plateau)'**
+  String get aboutInformatique_5_checklist_plateau;
+
+  /// No description provided for @aboutInformatique_rapide.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rapide'**
+  String get aboutInformatique_rapide;
+
+  /// No description provided for @aboutInformatique_copier_resume.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier résumé'**
+  String get aboutInformatique_copier_resume;
+
+  /// No description provided for @aboutInformatique_copier.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier'**
+  String get aboutInformatique_copier;
+
+  /// No description provided for @aboutElectricite_electrique_reperes_terrain.
+  ///
+  /// In fr, this message translates to:
+  /// **'Électrique — repères terrain'**
+  String get aboutElectricite_electrique_reperes_terrain;
+
+  /// No description provided for @aboutElectricite_sommaire.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sommaire'**
+  String get aboutElectricite_sommaire;
+
+  /// No description provided for @aboutElectricite_1_bases_w_a_v_kw.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) Bases (W, A, V, kW)'**
+  String get aboutElectricite_1_bases_w_a_v_kw;
+
+  /// No description provided for @aboutElectricite_3_formules_utiles.
+  ///
+  /// In fr, this message translates to:
+  /// **'3 formules utiles'**
+  String get aboutElectricite_3_formules_utiles;
+
+  /// No description provided for @aboutElectricite_reperes_terrain.
+  ///
+  /// In fr, this message translates to:
+  /// **'Repères terrain'**
+  String get aboutElectricite_reperes_terrain;
+
+  /// No description provided for @aboutElectricite_2_connecteurs_schuko_p17_powercon.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) Connecteurs (Schuko / P17 / PowerCON)'**
+  String get aboutElectricite_2_connecteurs_schuko_p17_powercon;
+
+  /// No description provided for @aboutElectricite_schuko_prises_domestiques.
+  ///
+  /// In fr, this message translates to:
+  /// **'Schuko (prises domestiques)'**
+  String get aboutElectricite_schuko_prises_domestiques;
+
+  /// No description provided for @aboutElectricite_p17_cee_bleu_rouge.
+  ///
+  /// In fr, this message translates to:
+  /// **'P17 / CEE (bleu/rouge)'**
+  String get aboutElectricite_p17_cee_bleu_rouge;
+
+  /// No description provided for @aboutElectricite_powercon_audio_eclairage.
+  ///
+  /// In fr, this message translates to:
+  /// **'PowerCON (audio/éclairage)'**
+  String get aboutElectricite_powercon_audio_eclairage;
+
+  /// No description provided for @aboutElectricite_3_mono_tri_ce_que_ca_change.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) Mono / Tri (ce que ça change)'**
+  String get aboutElectricite_3_mono_tri_ce_que_ca_change;
+
+  /// No description provided for @aboutElectricite_pieges_frequents.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pièges fréquents'**
+  String get aboutElectricite_pieges_frequents;
+
+  /// No description provided for @aboutElectricite_methode_simple.
+  ///
+  /// In fr, this message translates to:
+  /// **'Méthode simple'**
+  String get aboutElectricite_methode_simple;
+
+  /// No description provided for @aboutElectricite_4_table_rapide_16a_400a.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) Table rapide (16A → 400A)'**
+  String get aboutElectricite_4_table_rapide_16a_400a;
+
+  /// No description provided for @aboutElectricite_important.
+  ///
+  /// In fr, this message translates to:
+  /// **'Important'**
+  String get aboutElectricite_important;
+
+  /// No description provided for @aboutElectricite_5_securite_pieges_terrain.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) Sécurité & pièges terrain'**
+  String get aboutElectricite_5_securite_pieges_terrain;
+
+  /// No description provided for @aboutElectricite_a_ne_pas_faire.
+  ///
+  /// In fr, this message translates to:
+  /// **'À ne pas faire'**
+  String get aboutElectricite_a_ne_pas_faire;
+
+  /// No description provided for @aboutElectricite_signaux_d_alerte.
+  ///
+  /// In fr, this message translates to:
+  /// **'Signaux d’alerte'**
+  String get aboutElectricite_signaux_d_alerte;
+
+  /// No description provided for @aboutElectricite_6_checklist.
+  ///
+  /// In fr, this message translates to:
+  /// **'6) Checklist'**
+  String get aboutElectricite_6_checklist;
+
+  /// No description provided for @aboutElectricite_rapide.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rapide'**
+  String get aboutElectricite_rapide;
+
+  /// No description provided for @aboutElectricite_copier_resume.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier résumé'**
+  String get aboutElectricite_copier_resume;
+
+  /// No description provided for @aboutElectricite_copier.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier'**
+  String get aboutElectricite_copier;
+
+  /// No description provided for @aboutNetwork_reseau_lumiere_vlan_igmp_wi_fi.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réseau lumière — VLAN, IGMP, Wi-Fi'**
+  String get aboutNetwork_reseau_lumiere_vlan_igmp_wi_fi;
+
+  /// No description provided for @aboutNetwork_1_objectif_reseau_stable.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) Objectif: réseau stable'**
+  String get aboutNetwork_1_objectif_reseau_stable;
+
+  /// No description provided for @aboutNetwork_regle_de_base.
+  ///
+  /// In fr, this message translates to:
+  /// **'Règle de base'**
+  String get aboutNetwork_regle_de_base;
+
+  /// No description provided for @aboutNetwork_2_plan_ip_simple.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) Plan IP (simple)'**
+  String get aboutNetwork_2_plan_ip_simple;
+
+  /// No description provided for @aboutNetwork_exemple_de_plan_simple.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exemple de plan (simple)'**
+  String get aboutNetwork_exemple_de_plan_simple;
+
+  /// No description provided for @aboutNetwork_3_vlan_separation.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) VLAN (séparation)'**
+  String get aboutNetwork_3_vlan_separation;
+
+  /// No description provided for @aboutNetwork_ce_que_tu_gagnes.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ce que tu gagnes'**
+  String get aboutNetwork_ce_que_tu_gagnes;
+
+  /// No description provided for @aboutNetwork_4_igmp_sacn_multicast.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) IGMP (sACN multicast)'**
+  String get aboutNetwork_4_igmp_sacn_multicast;
+
+  /// No description provided for @aboutNetwork_igmp_querier_idee_simple.
+  ///
+  /// In fr, this message translates to:
+  /// **'IGMP querier (idée simple)'**
+  String get aboutNetwork_igmp_querier_idee_simple;
+
+  /// No description provided for @aboutNetwork_5_wi_fi_vs_filaire.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) Wi-Fi vs filaire'**
+  String get aboutNetwork_5_wi_fi_vs_filaire;
+
+  /// No description provided for @aboutNetwork_regle_simple.
+  ///
+  /// In fr, this message translates to:
+  /// **'Règle simple'**
+  String get aboutNetwork_regle_simple;
+
+  /// No description provided for @aboutNetwork_6_switch_ce_qu_il_faut.
+  ///
+  /// In fr, this message translates to:
+  /// **'6) Switch: ce qu’il faut'**
+  String get aboutNetwork_6_switch_ce_qu_il_faut;
+
+  /// No description provided for @aboutNetwork_minimum_recommande.
+  ///
+  /// In fr, this message translates to:
+  /// **'Minimum recommandé'**
+  String get aboutNetwork_minimum_recommande;
+
+  /// No description provided for @aboutNetwork_7_schemas.
+  ///
+  /// In fr, this message translates to:
+  /// **'7) Schémas'**
+  String get aboutNetwork_7_schemas;
+
+  /// No description provided for @aboutNetwork_7bis_images_assets.
+  ///
+  /// In fr, this message translates to:
+  /// **'7bis) Images (assets)'**
+  String get aboutNetwork_7bis_images_assets;
+
+  /// No description provided for @aboutNetwork_8_checklist.
+  ///
+  /// In fr, this message translates to:
+  /// **'8) Checklist'**
+  String get aboutNetwork_8_checklist;
+
+  /// No description provided for @aboutNetwork_avant_d_ouvrir_wireshark.
+  ///
+  /// In fr, this message translates to:
+  /// **'Avant d’ouvrir Wireshark 😄'**
+  String get aboutNetwork_avant_d_ouvrir_wireshark;
+
+  /// No description provided for @aboutNetwork_sommaire.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sommaire'**
+  String get aboutNetwork_sommaire;
+
+  /// No description provided for @aboutNetwork_copier_liste_assets.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier liste assets'**
+  String get aboutNetwork_copier_liste_assets;
+
+  /// No description provided for @aboutNetwork_copier.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier'**
+  String get aboutNetwork_copier;
+
+  /// No description provided for @aboutNetwork_copier_reperes.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier repères'**
+  String get aboutNetwork_copier_reperes;
+
+  /// No description provided for @aboutVideo_video_reperes_terrain.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vidéo — repères terrain'**
+  String get aboutVideo_video_reperes_terrain;
+
+  /// No description provided for @aboutVideo_sommaire.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sommaire'**
+  String get aboutVideo_sommaire;
+
+  /// No description provided for @aboutVideo_1_bases_video_mots_cles.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) Bases vidéo (mots-clés)'**
+  String get aboutVideo_1_bases_video_mots_cles;
+
+  /// No description provided for @aboutVideo_vocabulaire_utile.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vocabulaire utile'**
+  String get aboutVideo_vocabulaire_utile;
+
+  /// No description provided for @aboutVideo_2_resolution_fps.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) Résolution & FPS'**
+  String get aboutVideo_2_resolution_fps;
+
+  /// No description provided for @aboutVideo_resolution.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résolution'**
+  String get aboutVideo_resolution;
+
+  /// No description provided for @aboutVideo_fps.
+  ///
+  /// In fr, this message translates to:
+  /// **'FPS'**
+  String get aboutVideo_fps;
+
+  /// No description provided for @aboutVideo_3_couleur_4_4_4_4_2_2_10_bit.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) Couleur (4:4:4 / 4:2:2 / 10-bit)'**
+  String get aboutVideo_3_couleur_4_4_4_4_2_2_10_bit;
+
+  /// No description provided for @aboutVideo_sampling.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sampling'**
+  String get aboutVideo_sampling;
+
+  /// No description provided for @aboutVideo_bit_depth.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bit depth'**
+  String get aboutVideo_bit_depth;
+
+  /// No description provided for @aboutVideo_4_sync_genlock_timecode.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) Sync (Genlock / Timecode)'**
+  String get aboutVideo_4_sync_genlock_timecode;
+
+  /// No description provided for @aboutVideo_genlock.
+  ///
+  /// In fr, this message translates to:
+  /// **'Genlock'**
+  String get aboutVideo_genlock;
+
+  /// No description provided for @aboutVideo_timecode.
+  ///
+  /// In fr, this message translates to:
+  /// **'Timecode'**
+  String get aboutVideo_timecode;
+
+  /// No description provided for @aboutVideo_5_cables_distances.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) Câbles & distances'**
+  String get aboutVideo_5_cables_distances;
+
+  /// No description provided for @aboutVideo_regles_simples.
+  ///
+  /// In fr, this message translates to:
+  /// **'Règles simples'**
+  String get aboutVideo_regles_simples;
+
+  /// No description provided for @aboutVideo_6_sdi_3g_6g_12g.
+  ///
+  /// In fr, this message translates to:
+  /// **'6) SDI (3G / 6G / 12G)'**
+  String get aboutVideo_6_sdi_3g_6g_12g;
+
+  /// No description provided for @aboutVideo_reperes.
+  ///
+  /// In fr, this message translates to:
+  /// **'Repères'**
+  String get aboutVideo_reperes;
+
+  /// No description provided for @aboutVideo_7_hdmi_terrain.
+  ///
+  /// In fr, this message translates to:
+  /// **'7) HDMI — terrain'**
+  String get aboutVideo_7_hdmi_terrain;
+
+  /// No description provided for @aboutVideo_a_surveiller.
+  ///
+  /// In fr, this message translates to:
+  /// **'À surveiller'**
+  String get aboutVideo_a_surveiller;
+
+  /// No description provided for @aboutVideo_8_ndi.
+  ///
+  /// In fr, this message translates to:
+  /// **'8) NDI'**
+  String get aboutVideo_8_ndi;
+
+  /// No description provided for @aboutVideo_ip_video.
+  ///
+  /// In fr, this message translates to:
+  /// **'IP vidéo'**
+  String get aboutVideo_ip_video;
+
+  /// No description provided for @aboutVideo_9_mapping_led_multi_projo.
+  ///
+  /// In fr, this message translates to:
+  /// **'9) Mapping / LED / multi-projo'**
+  String get aboutVideo_9_mapping_led_multi_projo;
+
+  /// No description provided for @aboutVideo_terrain.
+  ///
+  /// In fr, this message translates to:
+  /// **'Terrain'**
+  String get aboutVideo_terrain;
+
+  /// No description provided for @aboutVideo_10_checklist_terrain.
+  ///
+  /// In fr, this message translates to:
+  /// **'10) Checklist terrain'**
+  String get aboutVideo_10_checklist_terrain;
+
+  /// No description provided for @aboutVideo_avant_de_paniquer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Avant de paniquer'**
+  String get aboutVideo_avant_de_paniquer;
+
+  /// No description provided for @aboutVideo_copier_resume.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier résumé'**
+  String get aboutVideo_copier_resume;
+
+  /// No description provided for @aboutArtnet_art_net_univers_dmx_sur_ip_simple_comple.
+  ///
+  /// In fr, this message translates to:
+  /// **'Art-Net — univers DMX sur IP (simple & complet)'**
+  String get aboutArtnet_art_net_univers_dmx_sur_ip_simple_comple;
+
+  /// No description provided for @aboutArtnet_1_art_net_c_est_quoi_et_pourquoi.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) Art-Net — c’est quoi et pourquoi'**
+  String get aboutArtnet_1_art_net_c_est_quoi_et_pourquoi;
+
+  /// No description provided for @aboutArtnet_pourquoi_c_est_utile.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pourquoi c’est utile'**
+  String get aboutArtnet_pourquoi_c_est_utile;
+
+  /// No description provided for @aboutArtnet_2_adressage_univers_mapping_propre.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) Adressage & univers — mapping propre'**
+  String get aboutArtnet_2_adressage_univers_mapping_propre;
+
+  /// No description provided for @aboutArtnet_methode_simple_qui_evite_80_des_erreurs.
+  ///
+  /// In fr, this message translates to:
+  /// **'Méthode simple (qui évite 80% des erreurs)'**
+  String get aboutArtnet_methode_simple_qui_evite_80_des_erreurs;
+
+  /// No description provided for @aboutArtnet_3_limites_perf_ce_qui_casse_en_premier.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) Limites & perf — ce qui casse en premier'**
+  String get aboutArtnet_3_limites_perf_ce_qui_casse_en_premier;
+
+  /// No description provided for @aboutArtnet_les_limites_reelles_dans_l_ordre.
+  ///
+  /// In fr, this message translates to:
+  /// **'Les limites “réelles” (dans l’ordre)'**
+  String get aboutArtnet_les_limites_reelles_dans_l_ordre;
+
+  /// No description provided for @aboutArtnet_4_nodes_splitters_rdm.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) Nodes, splitters & RDM'**
+  String get aboutArtnet_4_nodes_splitters_rdm;
+
+  /// No description provided for @aboutArtnet_rdm_sur_art_net_support_variable.
+  ///
+  /// In fr, this message translates to:
+  /// **'RDM sur Art-Net (support variable)'**
+  String get aboutArtnet_rdm_sur_art_net_support_variable;
+
+  /// No description provided for @aboutArtnet_5_depannage_symptomes_causes.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) Dépannage — symptômes → causes'**
+  String get aboutArtnet_5_depannage_symptomes_causes;
+
+  /// No description provided for @aboutArtnet_symptomes_causes_probables.
+  ///
+  /// In fr, this message translates to:
+  /// **'Symptômes → causes probables'**
+  String get aboutArtnet_symptomes_causes_probables;
+
+  /// No description provided for @aboutArtnet_6_schemas_reseau_unicast_vs_broadcast.
+  ///
+  /// In fr, this message translates to:
+  /// **'6) Schémas (réseau / unicast vs broadcast)'**
+  String get aboutArtnet_6_schemas_reseau_unicast_vs_broadcast;
+
+  /// No description provided for @aboutArtnet_6bis_images_assets_rj45_switch_cables.
+  ///
+  /// In fr, this message translates to:
+  /// **'6bis) Images (assets) — RJ45/switch/câbles'**
+  String get aboutArtnet_6bis_images_assets_rj45_switch_cables;
+
+  /// No description provided for @aboutArtnet_7_checklist_rapide.
+  ///
+  /// In fr, this message translates to:
+  /// **'7) Checklist rapide'**
+  String get aboutArtnet_7_checklist_rapide;
+
+  /// No description provided for @aboutArtnet_avant_de_paniquer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Avant de paniquer'**
+  String get aboutArtnet_avant_de_paniquer;
+
+  /// No description provided for @aboutArtnet_sommaire.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sommaire'**
+  String get aboutArtnet_sommaire;
+
+  /// No description provided for @aboutArtnet_copier_liste_assets.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier liste assets'**
+  String get aboutArtnet_copier_liste_assets;
+
+  /// No description provided for @aboutArtnet_copier_la_checklist.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier la checklist'**
+  String get aboutArtnet_copier_la_checklist;
+
+  /// No description provided for @aboutArtnet_copier_reperes.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier repères'**
+  String get aboutArtnet_copier_reperes;
+
+  /// No description provided for @aboutReseau_reseau_reperes_terrain.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réseau — repères terrain'**
+  String get aboutReseau_reseau_reperes_terrain;
+
+  /// No description provided for @aboutReseau_sommaire.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sommaire'**
+  String get aboutReseau_sommaire;
+
+  /// No description provided for @aboutReseau_1_bases_reseau_lan_ip_debit.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) Bases réseau (LAN / IP / débit)'**
+  String get aboutReseau_1_bases_reseau_lan_ip_debit;
+
+  /// No description provided for @aboutReseau_les_3_idees_simples.
+  ///
+  /// In fr, this message translates to:
+  /// **'Les 3 idées simples'**
+  String get aboutReseau_les_3_idees_simples;
+
+  /// No description provided for @aboutReseau_topologie_show_propre.
+  ///
+  /// In fr, this message translates to:
+  /// **'Topologie show (propre)'**
+  String get aboutReseau_topologie_show_propre;
+
+  /// No description provided for @aboutReseau_2_rj45_categories_cat5e_6_6a.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) RJ45 & catégories (Cat5e/6/6A/…)'**
+  String get aboutReseau_2_rj45_categories_cat5e_6_6a;
+
+  /// No description provided for @aboutReseau_reperes_rapides.
+  ///
+  /// In fr, this message translates to:
+  /// **'Repères rapides'**
+  String get aboutReseau_reperes_rapides;
+
+  /// No description provided for @aboutReseau_terrain.
+  ///
+  /// In fr, this message translates to:
+  /// **'Terrain'**
+  String get aboutReseau_terrain;
+
+  /// No description provided for @aboutReseau_3_poe_alimentation_reseau.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) PoE (alimentation réseau)'**
+  String get aboutReseau_3_poe_alimentation_reseau;
+
+  /// No description provided for @aboutReseau_reperes.
+  ///
+  /// In fr, this message translates to:
+  /// **'Repères'**
+  String get aboutReseau_reperes;
+
+  /// No description provided for @aboutReseau_4_fibre_sm_mm_connecteurs_lc_sc.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) Fibre (SM/MM) + connecteurs (LC/SC)'**
+  String get aboutReseau_4_fibre_sm_mm_connecteurs_lc_sc;
+
+  /// No description provided for @aboutReseau_pourquoi_la_fibre_en_show.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pourquoi la fibre en show'**
+  String get aboutReseau_pourquoi_la_fibre_en_show;
+
+  /// No description provided for @aboutReseau_multimode_vs_monomode_repere_simple.
+  ///
+  /// In fr, this message translates to:
+  /// **'Multimode vs Monomode (repère simple)'**
+  String get aboutReseau_multimode_vs_monomode_repere_simple;
+
+  /// No description provided for @aboutReseau_connecteurs.
+  ///
+  /// In fr, this message translates to:
+  /// **'Connecteurs'**
+  String get aboutReseau_connecteurs;
+
+  /// No description provided for @aboutReseau_5_sfp_sfp_qsfp_modules.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) SFP / SFP+ / QSFP (modules)'**
+  String get aboutReseau_5_sfp_sfp_qsfp_modules;
+
+  /// No description provided for @aboutReseau_reperes_2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Repères'**
+  String get aboutReseau_reperes_2;
+
+  /// No description provided for @aboutReseau_6_switches_vlan_igmp_qos.
+  ///
+  /// In fr, this message translates to:
+  /// **'6) Switches (VLAN / IGMP / QoS)'**
+  String get aboutReseau_6_switches_vlan_igmp_qos;
+
+  /// No description provided for @aboutReseau_fonctions_utiles_en_spectacle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fonctions utiles en spectacle'**
+  String get aboutReseau_fonctions_utiles_en_spectacle;
+
+  /// No description provided for @aboutReseau_erreurs_frequentes.
+  ///
+  /// In fr, this message translates to:
+  /// **'Erreurs fréquentes'**
+  String get aboutReseau_erreurs_frequentes;
+
+  /// No description provided for @aboutReseau_7_art_net_sacn_sur_reseau_conseils.
+  ///
+  /// In fr, this message translates to:
+  /// **'7) Art-Net / sACN sur réseau (conseils)'**
+  String get aboutReseau_7_art_net_sacn_sur_reseau_conseils;
+
+  /// No description provided for @aboutReseau_art_net_terrain.
+  ///
+  /// In fr, this message translates to:
+  /// **'Art-Net (terrain)'**
+  String get aboutReseau_art_net_terrain;
+
+  /// No description provided for @aboutReseau_sacn_terrain.
+  ///
+  /// In fr, this message translates to:
+  /// **'sACN (terrain)'**
+  String get aboutReseau_sacn_terrain;
+
+  /// No description provided for @aboutReseau_8_checklist.
+  ///
+  /// In fr, this message translates to:
+  /// **'8) Checklist'**
+  String get aboutReseau_8_checklist;
+
+  /// No description provided for @aboutReseau_rapide.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rapide'**
+  String get aboutReseau_rapide;
+
+  /// No description provided for @aboutReseau_copier_resume.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier résumé'**
+  String get aboutReseau_copier_resume;
+
+  /// No description provided for @aboutReseau_copier.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier'**
+  String get aboutReseau_copier;
+
+  /// No description provided for @aboutSacn_sacn_e1_31_multicast_priorites.
+  ///
+  /// In fr, this message translates to:
+  /// **'sACN / E1.31 — multicast & priorités'**
+  String get aboutSacn_sacn_e1_31_multicast_priorites;
+
+  /// No description provided for @aboutSacn_1_a_quoi_sert_sacn.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) À quoi sert sACN ?'**
+  String get aboutSacn_1_a_quoi_sert_sacn;
+
+  /// No description provided for @aboutSacn_quand_c_est_top.
+  ///
+  /// In fr, this message translates to:
+  /// **'Quand c’est top'**
+  String get aboutSacn_quand_c_est_top;
+
+  /// No description provided for @aboutSacn_2_univers_numerotation.
+  ///
+  /// In fr, this message translates to:
+  /// **'2) Univers (numérotation)'**
+  String get aboutSacn_2_univers_numerotation;
+
+  /// No description provided for @aboutSacn_erreur_classique.
+  ///
+  /// In fr, this message translates to:
+  /// **'Erreur classique'**
+  String get aboutSacn_erreur_classique;
+
+  /// No description provided for @aboutSacn_3_multicast_unicast_igmp.
+  ///
+  /// In fr, this message translates to:
+  /// **'3) Multicast / Unicast + IGMP'**
+  String get aboutSacn_3_multicast_unicast_igmp;
+
+  /// No description provided for @aboutSacn_igmp_snooping_pourquoi_c_est_important.
+  ///
+  /// In fr, this message translates to:
+  /// **'IGMP snooping (pourquoi c’est important)'**
+  String get aboutSacn_igmp_snooping_pourquoi_c_est_important;
+
+  /// No description provided for @aboutSacn_4_priorites_multi_sources.
+  ///
+  /// In fr, this message translates to:
+  /// **'4) Priorités (multi-sources)'**
+  String get aboutSacn_4_priorites_multi_sources;
+
+  /// No description provided for @aboutSacn_pieges.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pièges'**
+  String get aboutSacn_pieges;
+
+  /// No description provided for @aboutSacn_5_limites_perfs.
+  ///
+  /// In fr, this message translates to:
+  /// **'5) Limites / perfs'**
+  String get aboutSacn_5_limites_perfs;
+
+  /// No description provided for @aboutSacn_ce_qui_casse_en_premier.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ce qui casse en premier'**
+  String get aboutSacn_ce_qui_casse_en_premier;
+
+  /// No description provided for @aboutSacn_6_rdm_sacn_proxy_selon_materiel.
+  ///
+  /// In fr, this message translates to:
+  /// **'6) RDM & sACN (proxy / selon matériel)'**
+  String get aboutSacn_6_rdm_sacn_proxy_selon_materiel;
+
+  /// No description provided for @aboutSacn_a_verifier_dans_la_doc_du_node.
+  ///
+  /// In fr, this message translates to:
+  /// **'À vérifier dans la doc du node'**
+  String get aboutSacn_a_verifier_dans_la_doc_du_node;
+
+  /// No description provided for @aboutSacn_7_schemas.
+  ///
+  /// In fr, this message translates to:
+  /// **'7) Schémas'**
+  String get aboutSacn_7_schemas;
+
+  /// No description provided for @aboutSacn_7bis_images_assets.
+  ///
+  /// In fr, this message translates to:
+  /// **'7bis) Images (assets)'**
+  String get aboutSacn_7bis_images_assets;
+
+  /// No description provided for @aboutSacn_8_checklist.
+  ///
+  /// In fr, this message translates to:
+  /// **'8) Checklist'**
+  String get aboutSacn_8_checklist;
+
+  /// No description provided for @aboutSacn_avant_d_accuser_le_protocole.
+  ///
+  /// In fr, this message translates to:
+  /// **'Avant d’accuser “le protocole”'**
+  String get aboutSacn_avant_d_accuser_le_protocole;
+
+  /// No description provided for @aboutSacn_sommaire.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sommaire'**
+  String get aboutSacn_sommaire;
+
+  /// No description provided for @aboutSacn_copier_liste_assets.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier liste assets'**
+  String get aboutSacn_copier_liste_assets;
+
+  /// No description provided for @aboutSacn_copier.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier'**
+  String get aboutSacn_copier;
+
+  /// No description provided for @aboutSacn_copier_reperes.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier repères'**
+  String get aboutSacn_copier_reperes;
+
+  /// No description provided for @aboutDmx_dmx_fonctionnement_simple_complet.
+  ///
+  /// In fr, this message translates to:
+  /// **'DMX — fonctionnement (simple & complet)'**
+  String get aboutDmx_dmx_fonctionnement_simple_complet;
+
+  /// No description provided for @aboutDmx_garde_ton_contenu_existant.
+  ///
+  /// In fr, this message translates to:
+  /// **'... (garde ton contenu existant)'**
+  String get aboutDmx_garde_ton_contenu_existant;
+
+  /// No description provided for @aboutDmx_garde_ton_contenu_existant_2.
+  ///
+  /// In fr, this message translates to:
+  /// **'... (garde ton contenu existant)'**
+  String get aboutDmx_garde_ton_contenu_existant_2;
+
+  /// No description provided for @aboutDmx_garde_ton_contenu_existant_3.
+  ///
+  /// In fr, this message translates to:
+  /// **'... (garde ton contenu existant)'**
+  String get aboutDmx_garde_ton_contenu_existant_3;
+
+  /// No description provided for @aboutDmx_garde_ton_contenu_existant_4.
+  ///
+  /// In fr, this message translates to:
+  /// **'... (garde ton contenu existant)'**
+  String get aboutDmx_garde_ton_contenu_existant_4;
+
+  /// No description provided for @aboutDmx_garde_ton_contenu_existant_5.
+  ///
+  /// In fr, this message translates to:
+  /// **'... (garde ton contenu existant)'**
+  String get aboutDmx_garde_ton_contenu_existant_5;
+
+  /// No description provided for @aboutDmx_garde_ton_contenu_existant_6.
+  ///
+  /// In fr, this message translates to:
+  /// **'... (garde ton contenu existant)'**
+  String get aboutDmx_garde_ton_contenu_existant_6;
+
+  /// No description provided for @aboutDmx_garde_ton_contenu_existant_7.
+  ///
+  /// In fr, this message translates to:
+  /// **'... (garde ton contenu existant)'**
+  String get aboutDmx_garde_ton_contenu_existant_7;
+
+  /// No description provided for @aboutDmx_garde_ton_contenu_existant_8.
+  ///
+  /// In fr, this message translates to:
+  /// **'... (garde ton contenu existant)'**
+  String get aboutDmx_garde_ton_contenu_existant_8;
+
+  /// No description provided for @aboutDmx_sommaire.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sommaire'**
+  String get aboutDmx_sommaire;
+
+  /// No description provided for @aboutDmx_1_dmx_univers_adresses_la_base.
+  ///
+  /// In fr, this message translates to:
+  /// **'1) DMX, univers, adresses — la base'**
+  String get aboutDmx_1_dmx_univers_adresses_la_base;
+
+  /// No description provided for @aboutDmx_a_retenir.
   ///
   /// In fr, this message translates to:
   /// **'À retenir'**
-  String get aboutDmxS6BasicsTitle;
+  String get aboutDmx_a_retenir;
 
-  /// No description provided for @aboutDmxS6BasicsB1.
+  /// No description provided for @aboutDmx_2_trame_dmx_break_start_code_canaux.
   ///
   /// In fr, this message translates to:
-  /// **'Un node = réseau ↔ DMX (plusieurs ports).'**
-  String get aboutDmxS6BasicsB1;
+  /// **'2) Trame DMX — break, start code, canaux'**
+  String get aboutDmx_2_trame_dmx_break_start_code_canaux;
 
-  /// No description provided for @aboutDmxS6BasicsB2.
+  /// No description provided for @aboutDmx_3_cablage_rs_485_topologie_cable.
   ///
   /// In fr, this message translates to:
-  /// **'Broadcast envoie à tout le monde (simple mais peut saturer).'**
-  String get aboutDmxS6BasicsB2;
+  /// **'3) Câblage RS-485 — topologie & câble'**
+  String get aboutDmx_3_cablage_rs_485_topologie_cable;
 
-  /// No description provided for @aboutDmxS6BasicsB3.
+  /// No description provided for @aboutDmx_4_terminaison_splitters_eviter_les_refle.
   ///
   /// In fr, this message translates to:
-  /// **'Unicast envoie seulement au node ciblé (souvent plus stable sur gros rigs).'**
-  String get aboutDmxS6BasicsB3;
+  /// **'4) Terminaison & splitters — éviter les réflexions'**
+  String get aboutDmx_4_terminaison_splitters_eviter_les_refle;
 
-  /// No description provided for @aboutDmxS6BasicsB4.
+  /// No description provided for @aboutDmx_4bis_rdm_limites_compatibilites.
   ///
   /// In fr, this message translates to:
-  /// **'Attention au comptage d’univers : souvent Art-Net commence à 0 (Univers 1 DMX = 0 Art-Net).'**
-  String get aboutDmxS6BasicsB4;
+  /// **'4bis) RDM — limites & compatibilités'**
+  String get aboutDmx_4bis_rdm_limites_compatibilites;
 
-  /// No description provided for @aboutDmxS6WhenTitle.
+  /// No description provided for @aboutDmx_5_depannage_terrain_symptomes_causes.
   ///
   /// In fr, this message translates to:
-  /// **'Quand choisir Art-Net ?'**
-  String get aboutDmxS6WhenTitle;
+  /// **'5) Dépannage terrain — symptômes → causes'**
+  String get aboutDmx_5_depannage_terrain_symptomes_causes;
 
-  /// No description provided for @aboutDmxS6WhenB1.
+  /// No description provided for @aboutDmx_6_art_net_reperes_terrain.
   ///
   /// In fr, this message translates to:
-  /// **'Petits/moyens rigs, set-ups rapides, beaucoup de matériel compatible.'**
-  String get aboutDmxS6WhenB1;
+  /// **'6) Art-Net — repères terrain'**
+  String get aboutDmx_6_art_net_reperes_terrain;
 
-  /// No description provided for @aboutDmxS6WhenB2.
+  /// No description provided for @aboutDmx_7_sacn_e1_31_multicast_igmp_priorites.
   ///
   /// In fr, this message translates to:
-  /// **'OK si le réseau est propre (switch correct, câbles, pas de Wi-Fi).'**
-  String get aboutDmxS6WhenB2;
+  /// **'7) sACN / E1.31 — multicast, IGMP, priorités'**
+  String get aboutDmx_7_sacn_e1_31_multicast_igmp_priorites;
 
-  /// No description provided for @aboutDmxS6WhenB3.
+  /// No description provided for @aboutDmx_8_dmx_vs_art_net_vs_sacn_choisir.
   ///
   /// In fr, this message translates to:
-  /// **'Si ça sature : passe en unicast et segmente le réseau (VLAN / réseau dédié).'**
-  String get aboutDmxS6WhenB3;
+  /// **'8) DMX vs Art-Net vs sACN — choisir'**
+  String get aboutDmx_8_dmx_vs_art_net_vs_sacn_choisir;
 
-  /// No description provided for @aboutDmxS7Title.
+  /// No description provided for @aboutDmx_9_schemas_terrain_dmx_ip_pinout.
   ///
   /// In fr, this message translates to:
-  /// **'7) sACN (E1.31) — multicast, priorités, réseau propre'**
-  String get aboutDmxS7Title;
+  /// **'9) Schémas terrain (DMX / IP / pinout)'**
+  String get aboutDmx_9_schemas_terrain_dmx_ip_pinout;
 
-  /// No description provided for @aboutDmxS7PillE131.
+  /// No description provided for @aboutDmx_10_checklist_rapide.
   ///
   /// In fr, this message translates to:
-  /// **'E1.31'**
-  String get aboutDmxS7PillE131;
+  /// **'10) Checklist rapide'**
+  String get aboutDmx_10_checklist_rapide;
 
-  /// No description provided for @aboutDmxS7PillMulticast.
+  /// No description provided for @aboutDmx_avant_de_paniquer.
   ///
   /// In fr, this message translates to:
-  /// **'Multicast'**
-  String get aboutDmxS7PillMulticast;
+  /// **'Avant de paniquer'**
+  String get aboutDmx_avant_de_paniquer;
 
-  /// No description provided for @aboutDmxS7PillPriority.
+  /// No description provided for @aboutDmx_copier_resume.
   ///
   /// In fr, this message translates to:
-  /// **'Priorité'**
-  String get aboutDmxS7PillPriority;
+  /// **'Copier résumé'**
+  String get aboutDmx_copier_resume;
 
-  /// No description provided for @aboutDmxS7PillIgmp.
+  /// No description provided for @aboutDmx_copier_la_checklist.
   ///
   /// In fr, this message translates to:
-  /// **'IGMP'**
-  String get aboutDmxS7PillIgmp;
+  /// **'Copier la checklist'**
+  String get aboutDmx_copier_la_checklist;
 
-  /// No description provided for @aboutDmxS7Intro.
+  /// No description provided for @aboutIpBasics_reseau_bases_ip_masque_dhcp_essentiel.
   ///
   /// In fr, this message translates to:
-  /// **'sACN (ANSI E1.31) est un standard moderne pour transporter des univers DMX sur IP. Il est très utilisé en grands systèmes car il gère bien le multicast et les priorités.'**
-  String get aboutDmxS7Intro;
+  /// **'Réseau — bases IP / masque / DHCP (essentiel)'**
+  String get aboutIpBasics_reseau_bases_ip_masque_dhcp_essentiel;
 
-  /// No description provided for @aboutDmxS7KeyIdeasTitle.
+  /// No description provided for @aboutIpBasics_sommaire.
   ///
   /// In fr, this message translates to:
-  /// **'Idées clés'**
-  String get aboutDmxS7KeyIdeasTitle;
+  /// **'Sommaire'**
+  String get aboutIpBasics_sommaire;
 
-  /// No description provided for @aboutDmxS7KeyIdeasB1.
+  /// No description provided for @aboutIpBasics_1_c_est_quoi_une_ip_et_a_quoi_ca_sert.
   ///
   /// In fr, this message translates to:
-  /// **'Multicast : un univers est un “groupe” réseau (les nodes s’abonnent).'**
-  String get aboutDmxS7KeyIdeasB1;
+  /// **'1) C’est quoi une IP et à quoi ça sert ?'**
+  String get aboutIpBasics_1_c_est_quoi_une_ip_et_a_quoi_ca_sert;
 
-  /// No description provided for @aboutDmxS7KeyIdeasB2.
+  /// No description provided for @aboutIpBasics_image_mentale.
   ///
   /// In fr, this message translates to:
-  /// **'IGMP snooping sur les switches = indispensable à grande échelle (sinon ça inonde).'**
-  String get aboutDmxS7KeyIdeasB2;
+  /// **'Image mentale'**
+  String get aboutIpBasics_image_mentale;
 
-  /// No description provided for @aboutDmxS7KeyIdeasB3.
+  /// No description provided for @aboutIpBasics_2_pourquoi_192_x_10_x_172_x_adresses_pri.
   ///
   /// In fr, this message translates to:
-  /// **'Priorité : plusieurs sources possibles, celle avec la plus haute priorité gagne.'**
-  String get aboutDmxS7KeyIdeasB3;
+  /// **'2) Pourquoi 192.x / 10.x / 172.x ? (adresses privées)'**
+  String get aboutIpBasics_2_pourquoi_192_x_10_x_172_x_adresses_pri;
 
-  /// No description provided for @aboutDmxS7KeyIdeasB4.
+  /// No description provided for @aboutIpBasics_les_3_grandes_plages_privees_lan.
   ///
   /// In fr, this message translates to:
-  /// **'Comme Art-Net : réseau propre + câbles/switch de qualité = stabilité.'**
-  String get aboutDmxS7KeyIdeasB4;
+  /// **'Les 3 grandes plages privées (LAN)'**
+  String get aboutIpBasics_les_3_grandes_plages_privees_lan;
 
-  /// No description provided for @aboutDmxS8Title.
+  /// No description provided for @aboutIpBasics_3_masque_sous_reseaux_comprendre_pour_de.
   ///
   /// In fr, this message translates to:
-  /// **'8) DMX vs Art-Net vs sACN — résumé (quoi choisir ?)'**
-  String get aboutDmxS8Title;
+  /// **'3) Masque & sous-réseaux : comprendre pour de vrai'**
+  String get aboutIpBasics_3_masque_sous_reseaux_comprendre_pour_de;
 
-  /// No description provided for @aboutDmxS8Intro.
+  /// No description provided for @aboutIpBasics_masques_les_plus_courants.
   ///
   /// In fr, this message translates to:
-  /// **'Les trois font la même chose au final : piloter des canaux. La différence se joue sur la distribution (câble DMX vs réseau), l’échelle, et la robustesse.'**
-  String get aboutDmxS8Intro;
+  /// **'Masques les plus courants'**
+  String get aboutIpBasics_masques_les_plus_courants;
 
-  /// No description provided for @aboutDmxS8QuickTableTitle.
+  /// No description provided for @aboutIpBasics_masque_adresse_de_broadcast_tres_utile_a.
   ///
   /// In fr, this message translates to:
-  /// **'Résumé en 4 lignes'**
-  String get aboutDmxS8QuickTableTitle;
+  /// **'Masque → adresse de broadcast (très utile à comprendre)'**
+  String get aboutIpBasics_masque_adresse_de_broadcast_tres_utile_a;
 
-  /// No description provided for @aboutDmxS8QuickB1.
+  /// No description provided for @aboutIpBasics_piege_classique.
   ///
   /// In fr, this message translates to:
-  /// **'DMX : simple, robuste, 1 câble = 1 ligne (512 canaux).'**
-  String get aboutDmxS8QuickB1;
+  /// **'Piège classique'**
+  String get aboutIpBasics_piege_classique;
 
-  /// No description provided for @aboutDmxS8QuickB2.
+  /// No description provided for @aboutIpBasics_4_dhcp_passerelle_dns_qui_fait_quoi.
   ///
   /// In fr, this message translates to:
-  /// **'Art-Net : très courant, facile à déployer, attention au broadcast.'**
-  String get aboutDmxS8QuickB2;
+  /// **'4) DHCP, passerelle, DNS : qui fait quoi ?'**
+  String get aboutIpBasics_4_dhcp_passerelle_dns_qui_fait_quoi;
 
-  /// No description provided for @aboutDmxS8QuickB3.
+  /// No description provided for @aboutIpBasics_passerelle_gateway.
   ///
   /// In fr, this message translates to:
-  /// **'sACN : plus “pro grands systèmes”, multicast + priorités, demande un réseau bien configuré.'**
-  String get aboutDmxS8QuickB3;
+  /// **'Passerelle (gateway)'**
+  String get aboutIpBasics_passerelle_gateway;
 
-  /// No description provided for @aboutDmxS8QuickB4.
+  /// No description provided for @aboutIpBasics_dns.
   ///
   /// In fr, this message translates to:
-  /// **'Dans tous les cas : documentation + test progressif = gain de temps énorme.'**
-  String get aboutDmxS8QuickB4;
+  /// **'DNS'**
+  String get aboutIpBasics_dns;
 
-  /// No description provided for @aboutDmxS8ChooseTitle.
+  /// No description provided for @aboutIpBasics_5_comment_deux_appareils_se_parlent_lan_.
   ///
   /// In fr, this message translates to:
-  /// **'Choix rapide'**
-  String get aboutDmxS8ChooseTitle;
+  /// **'5) Comment deux appareils se parlent (LAN vs hors LAN)'**
+  String get aboutIpBasics_5_comment_deux_appareils_se_parlent_lan_;
 
-  /// No description provided for @aboutDmxS8ChooseB1.
+  /// No description provided for @aboutIpBasics_exemple_facile.
   ///
   /// In fr, this message translates to:
-  /// **'Petit set-up : DMX direct ou Art-Net (simple).'**
-  String get aboutDmxS8ChooseB1;
+  /// **'Exemple (facile)'**
+  String get aboutIpBasics_exemple_facile;
 
-  /// No description provided for @aboutDmxS8ChooseB2.
+  /// No description provided for @aboutIpBasics_broadcast_vs_unicast_bonus_utile.
   ///
   /// In fr, this message translates to:
-  /// **'Beaucoup d’univers : réseau dédié + nodes ; Art-Net en unicast ou sACN.'**
-  String get aboutDmxS8ChooseB2;
+  /// **'Broadcast vs unicast (bonus utile)'**
+  String get aboutIpBasics_broadcast_vs_unicast_bonus_utile;
 
-  /// No description provided for @aboutDmxS8ChooseB3.
+  /// No description provided for @aboutIpBasics_6_plans_ip_show_simples_exemples_prets_a.
   ///
   /// In fr, this message translates to:
-  /// **'Très gros rigs / infrastructures : sACN + switches/IGMP bien gérés.'**
-  String get aboutDmxS8ChooseB3;
+  /// **'6) Plans IP “show” simples (exemples prêts à copier)'**
+  String get aboutIpBasics_6_plans_ip_show_simples_exemples_prets_a;
 
-  /// No description provided for @aboutSunTimesTitle.
+  /// No description provided for @aboutIpBasics_pourquoi_ca_marche_bien.
   ///
   /// In fr, this message translates to:
-  /// **'Soleil (lever / coucher)'**
-  String get aboutSunTimesTitle;
+  /// **'Pourquoi ça marche bien'**
+  String get aboutIpBasics_pourquoi_ca_marche_bien;
 
-  /// No description provided for @aboutSunTimesSubtitle.
+  /// No description provided for @aboutIpBasics_quand_l_utiliser.
   ///
   /// In fr, this message translates to:
-  /// **'Choix d’une ville et d’une date, heures de lever/coucher + seuils (lux).'**
-  String get aboutSunTimesSubtitle;
+  /// **'Quand l’utiliser'**
+  String get aboutIpBasics_quand_l_utiliser;
 
-  /// No description provided for @homeBpmTitle.
+  /// No description provided for @aboutIpBasics_attention.
   ///
   /// In fr, this message translates to:
-  /// **'BPM'**
-  String get homeBpmTitle;
+  /// **'Attention'**
+  String get aboutIpBasics_attention;
 
-  /// No description provided for @homeBpmSubtitle.
+  /// No description provided for @aboutIpBasics_7_depannage_symptomes_causes_methode_ter.
   ///
   /// In fr, this message translates to:
-  /// **'Tap tempo, conversion BPM ↔ ms, Hz, mesure.'**
-  String get homeBpmSubtitle;
+  /// **'7) Dépannage : symptômes → causes (méthode terrain)'**
+  String get aboutIpBasics_7_depannage_symptomes_causes_methode_ter;
+
+  /// No description provided for @aboutIpBasics_symptomes_causes_probables.
+  ///
+  /// In fr, this message translates to:
+  /// **'Symptômes → causes probables'**
+  String get aboutIpBasics_symptomes_causes_probables;
+
+  /// No description provided for @aboutIpBasics_piege_tres_frequent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Piège très fréquent'**
+  String get aboutIpBasics_piege_tres_frequent;
+
+  /// No description provided for @aboutIpBasics_8_mini_exercices_verifier_vite_un_masque.
+  ///
+  /// In fr, this message translates to:
+  /// **'8) Mini-exercices (vérifier vite un masque / un réseau)'**
+  String get aboutIpBasics_8_mini_exercices_verifier_vite_un_masque;
+
+  /// No description provided for @aboutIpBasics_astuce_visuelle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Astuce visuelle'**
+  String get aboutIpBasics_astuce_visuelle;
+
+  /// No description provided for @aboutIpBasics_9_checklist_rapide.
+  ///
+  /// In fr, this message translates to:
+  /// **'9) Checklist rapide'**
+  String get aboutIpBasics_9_checklist_rapide;
+
+  /// No description provided for @aboutIpBasics_avant_de_chercher_midi_a_14h.
+  ///
+  /// In fr, this message translates to:
+  /// **'Avant de chercher midi à 14h'**
+  String get aboutIpBasics_avant_de_chercher_midi_a_14h;
+
+  /// No description provided for @aboutIpBasics_copier_memo.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier mémo'**
+  String get aboutIpBasics_copier_memo;
+
+  /// No description provided for @aboutIpBasics_copier_la_checklist.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier la checklist'**
+  String get aboutIpBasics_copier_la_checklist;
+
+  /// No description provided for @common_non_renseigne.
+  ///
+  /// In fr, this message translates to:
+  /// **'Non renseigné'**
+  String get common_non_renseigne;
+
+  /// No description provided for @common_label_value.
+  ///
+  /// In fr, this message translates to:
+  /// **'Common label value : {p0} · {p1}'**
+  String common_label_value(Object p0, Object p1);
+
+  /// No description provided for @fixtureCatalog_mode_label.
+  ///
+  /// In fr, this message translates to:
+  /// **'FixtureCatalog mode label : {p0} · {p1}'**
+  String fixtureCatalog_mode_label(Object p0, Object p1);
+
+  /// No description provided for @fixtureCatalog_canaux_dmx.
+  ///
+  /// In fr, this message translates to:
+  /// **'Canaux DMX'**
+  String get fixtureCatalog_canaux_dmx;
+
+  /// No description provided for @fixtureCatalog_poids.
+  ///
+  /// In fr, this message translates to:
+  /// **'Poids'**
+  String get fixtureCatalog_poids;
+
+  /// No description provided for @fixtureCatalog_puissance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance'**
+  String get fixtureCatalog_puissance;
+
+  /// No description provided for @fixtureCatalog_flux_lumineux.
+  ///
+  /// In fr, this message translates to:
+  /// **'Flux lumineux'**
+  String get fixtureCatalog_flux_lumineux;
 
   /// No description provided for @bpmTitle.
   ///
@@ -5750,7 +4206,7 @@ abstract class AppLocalizations {
   /// No description provided for @bpmResetTap.
   ///
   /// In fr, this message translates to:
-  /// **'Réinitialiser les taps'**
+  /// **'Réinitialiser'**
   String get bpmResetTap;
 
   /// No description provided for @bpmDetectedLabel.
@@ -5762,13 +4218,13 @@ abstract class AppLocalizations {
   /// No description provided for @bpmTapHint.
   ///
   /// In fr, this message translates to:
-  /// **'Tape plusieurs fois (idéalement 4 à 8 taps) pour obtenir une moyenne stable.'**
+  /// **'Tape au moins 4 fois pour stabiliser.'**
   String get bpmTapHint;
 
   /// No description provided for @bpmManualTitle.
   ///
   /// In fr, this message translates to:
-  /// **'BPM manuel'**
+  /// **'Saisie manuelle'**
   String get bpmManualTitle;
 
   /// No description provided for @bpmManualLabel.
@@ -5780,637 +4236,13 @@ abstract class AppLocalizations {
   /// No description provided for @bpmManualHint.
   ///
   /// In fr, this message translates to:
-  /// **'Ex. 128'**
+  /// **'ex : 128'**
   String get bpmManualHint;
-
-  /// No description provided for @commonAdd.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ajouter'**
-  String get commonAdd;
-
-  /// No description provided for @commonEdit.
-  ///
-  /// In fr, this message translates to:
-  /// **'Modifier'**
-  String get commonEdit;
-
-  /// No description provided for @commonDelete.
-  ///
-  /// In fr, this message translates to:
-  /// **'Supprimer'**
-  String get commonDelete;
-
-  /// No description provided for @commonCopied.
-  ///
-  /// In fr, this message translates to:
-  /// **'Copié dans le presse-papiers.'**
-  String get commonCopied;
-
-  /// No description provided for @patchCreateGdtfTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Créer un GDTF (simple)'**
-  String get patchCreateGdtfTitle;
-
-  /// No description provided for @patchCreateGdtfSubtitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Création manuelle d’un device sous forme de tableau.'**
-  String get patchCreateGdtfSubtitle;
-
-  /// No description provided for @gdtfSimpleTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Créateur GDTF (simple)'**
-  String get gdtfSimpleTitle;
-
-  /// No description provided for @gdtfDeviceSectionTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Appareil'**
-  String get gdtfDeviceSectionTitle;
-
-  /// No description provided for @gdtfChannelsSectionTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Canaux'**
-  String get gdtfChannelsSectionTitle;
-
-  /// No description provided for @gdtfImportJsonTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Importer JSON'**
-  String get gdtfImportJsonTitle;
-
-  /// No description provided for @gdtfExportJsonTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Exporter JSON'**
-  String get gdtfExportJsonTitle;
-
-  /// No description provided for @gdtfImportJsonHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Colle le JSON ici'**
-  String get gdtfImportJsonHint;
-
-  /// No description provided for @gdtfManufacturerLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Fabricant'**
-  String get gdtfManufacturerLabel;
-
-  /// No description provided for @gdtfModelLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Modèle'**
-  String get gdtfModelLabel;
-
-  /// No description provided for @gdtfModeNameLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Nom du mode'**
-  String get gdtfModeNameLabel;
-
-  /// No description provided for @gdtfChannelsCountLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Canaux'**
-  String get gdtfChannelsCountLabel;
-
-  /// No description provided for @gdtfFootprintLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Footprint'**
-  String get gdtfFootprintLabel;
-
-  /// No description provided for @gdtfColIndex.
-  ///
-  /// In fr, this message translates to:
-  /// **'#'**
-  String get gdtfColIndex;
-
-  /// No description provided for @gdtfColName.
-  ///
-  /// In fr, this message translates to:
-  /// **'Nom'**
-  String get gdtfColName;
-
-  /// No description provided for @gdtfColDmx.
-  ///
-  /// In fr, this message translates to:
-  /// **'DMX'**
-  String get gdtfColDmx;
-
-  /// No description provided for @gdtfColType.
-  ///
-  /// In fr, this message translates to:
-  /// **'Type'**
-  String get gdtfColType;
-
-  /// No description provided for @gdtfColRes.
-  ///
-  /// In fr, this message translates to:
-  /// **'8/16'**
-  String get gdtfColRes;
-
-  /// No description provided for @gdtfColDefault.
-  ///
-  /// In fr, this message translates to:
-  /// **'Défaut'**
-  String get gdtfColDefault;
-
-  /// No description provided for @gdtfColActions.
-  ///
-  /// In fr, this message translates to:
-  /// **'Actions'**
-  String get gdtfColActions;
-
-  /// No description provided for @gdtfMoveUp.
-  ///
-  /// In fr, this message translates to:
-  /// **'Monter'**
-  String get gdtfMoveUp;
-
-  /// No description provided for @gdtfMoveDown.
-  ///
-  /// In fr, this message translates to:
-  /// **'Descendre'**
-  String get gdtfMoveDown;
-
-  /// No description provided for @gdtfChannelAddTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ajouter un canal'**
-  String get gdtfChannelAddTitle;
-
-  /// No description provided for @gdtfChannelEditTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Modifier le canal'**
-  String get gdtfChannelEditTitle;
-
-  /// No description provided for @gdtfFieldName.
-  ///
-  /// In fr, this message translates to:
-  /// **'Nom'**
-  String get gdtfFieldName;
-
-  /// No description provided for @gdtfFieldDmx.
-  ///
-  /// In fr, this message translates to:
-  /// **'Adresse DMX'**
-  String get gdtfFieldDmx;
-
-  /// No description provided for @gdtfFieldType.
-  ///
-  /// In fr, this message translates to:
-  /// **'Type'**
-  String get gdtfFieldType;
-
-  /// No description provided for @gdtfFieldResolution.
-  ///
-  /// In fr, this message translates to:
-  /// **'Résolution'**
-  String get gdtfFieldResolution;
-
-  /// No description provided for @gdtfRes8.
-  ///
-  /// In fr, this message translates to:
-  /// **'8-bit'**
-  String get gdtfRes8;
-
-  /// No description provided for @gdtfRes16.
-  ///
-  /// In fr, this message translates to:
-  /// **'16-bit'**
-  String get gdtfRes16;
-
-  /// No description provided for @gdtfFieldDefault8.
-  ///
-  /// In fr, this message translates to:
-  /// **'Valeur par défaut (0–255)'**
-  String get gdtfFieldDefault8;
-
-  /// No description provided for @gdtfFieldDefault16.
-  ///
-  /// In fr, this message translates to:
-  /// **'Valeur par défaut (0–65535)'**
-  String get gdtfFieldDefault16;
-
-  /// No description provided for @gdtfDefaultChannelName.
-  ///
-  /// In fr, this message translates to:
-  /// **'Canal'**
-  String get gdtfDefaultChannelName;
-
-  /// No description provided for @gdtfMvpHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'MVP : export JSON (presse-papiers). L’export GDTF réel (XML+ZIP) viendra ensuite.'**
-  String get gdtfMvpHint;
-
-  /// No description provided for @gdtfTypeDimmer.
-  ///
-  /// In fr, this message translates to:
-  /// **'Dimmer'**
-  String get gdtfTypeDimmer;
-
-  /// No description provided for @gdtfTypePan.
-  ///
-  /// In fr, this message translates to:
-  /// **'Pan'**
-  String get gdtfTypePan;
-
-  /// No description provided for @gdtfTypeTilt.
-  ///
-  /// In fr, this message translates to:
-  /// **'Tilt'**
-  String get gdtfTypeTilt;
-
-  /// No description provided for @gdtfTypeColor.
-  ///
-  /// In fr, this message translates to:
-  /// **'Couleur'**
-  String get gdtfTypeColor;
-
-  /// No description provided for @gdtfTypeGobo.
-  ///
-  /// In fr, this message translates to:
-  /// **'Gobo'**
-  String get gdtfTypeGobo;
-
-  /// No description provided for @gdtfTypeShutter.
-  ///
-  /// In fr, this message translates to:
-  /// **'Shutter'**
-  String get gdtfTypeShutter;
-
-  /// No description provided for @gdtfTypePrism.
-  ///
-  /// In fr, this message translates to:
-  /// **'Prism'**
-  String get gdtfTypePrism;
-
-  /// No description provided for @gdtfTypeZoom.
-  ///
-  /// In fr, this message translates to:
-  /// **'Zoom'**
-  String get gdtfTypeZoom;
-
-  /// No description provided for @gdtfTypeFocus.
-  ///
-  /// In fr, this message translates to:
-  /// **'Focus'**
-  String get gdtfTypeFocus;
-
-  /// No description provided for @gdtfTypeIris.
-  ///
-  /// In fr, this message translates to:
-  /// **'Iris'**
-  String get gdtfTypeIris;
-
-  /// No description provided for @gdtfTypeEffect.
-  ///
-  /// In fr, this message translates to:
-  /// **'Effet'**
-  String get gdtfTypeEffect;
-
-  /// No description provided for @gdtfTypeCustom.
-  ///
-  /// In fr, this message translates to:
-  /// **'Personnalisé'**
-  String get gdtfTypeCustom;
-
-  /// No description provided for @gdtfEasyTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Créer un GDTF (simple)'**
-  String get gdtfEasyTitle;
-
-  /// No description provided for @gdtfTemplatesTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Présélections'**
-  String get gdtfTemplatesTitle;
-
-  /// No description provided for @gdtfCreateDefaultPreset.
-  ///
-  /// In fr, this message translates to:
-  /// **'Créer le preset par défaut'**
-  String get gdtfCreateDefaultPreset;
-
-  /// No description provided for @gdtfTemplatesHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Crée une base rapide (dimmer, shutter, pan, tilt, RGB, etc.) puis complète les adresses DMX et les défauts.'**
-  String get gdtfTemplatesHint;
-
-  /// No description provided for @gdtfExportButton.
-  ///
-  /// In fr, this message translates to:
-  /// **'Exporter GDTF'**
-  String get gdtfExportButton;
-
-  /// No description provided for @gdtfExportHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Export .gdtf minimal (description.xml) puis partage (Mail, WhatsApp, AirDrop, Drive…).'**
-  String get gdtfExportHint;
-
-  /// No description provided for @gdtfExportNeedDmx.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ajoute au moins une adresse DMX pour exporter.'**
-  String get gdtfExportNeedDmx;
-
-  /// No description provided for @gdtfExportDone.
-  ///
-  /// In fr, this message translates to:
-  /// **'GDTF exporté.'**
-  String get gdtfExportDone;
-
-  /// No description provided for @gdtfExportError.
-  ///
-  /// In fr, this message translates to:
-  /// **'Impossible d’exporter le GDTF.'**
-  String get gdtfExportError;
-
-  /// No description provided for @gdtfShareSubject.
-  ///
-  /// In fr, this message translates to:
-  /// **'Fichier GDTF'**
-  String get gdtfShareSubject;
-
-  /// No description provided for @gdtfShareText.
-  ///
-  /// In fr, this message translates to:
-  /// **'Voici le fichier GDTF exporté.'**
-  String get gdtfShareText;
-
-  /// No description provided for @gdtfFieldRole.
-  ///
-  /// In fr, this message translates to:
-  /// **'Paramètre'**
-  String get gdtfFieldRole;
-
-  /// No description provided for @gdtfDmxHint.
-  ///
-  /// In fr, this message translates to:
-  /// **'Vide ou 1–512'**
-  String get gdtfDmxHint;
-
-  /// No description provided for @gdtfFieldDefault.
-  ///
-  /// In fr, this message translates to:
-  /// **'Défaut'**
-  String get gdtfFieldDefault;
-
-  /// No description provided for @gdtfDefaultHint8.
-  ///
-  /// In fr, this message translates to:
-  /// **'0–255'**
-  String get gdtfDefaultHint8;
-
-  /// No description provided for @gdtfDefaultHint16.
-  ///
-  /// In fr, this message translates to:
-  /// **'0–65535'**
-  String get gdtfDefaultHint16;
-
-  /// No description provided for @gdtfChannelDefaultName.
-  ///
-  /// In fr, this message translates to:
-  /// **'Canal'**
-  String get gdtfChannelDefaultName;
-
-  /// No description provided for @gdtfRoleEmpty.
-  ///
-  /// In fr, this message translates to:
-  /// **'Vide / Inconnu'**
-  String get gdtfRoleEmpty;
-
-  /// No description provided for @gdtfRoleDimmer.
-  ///
-  /// In fr, this message translates to:
-  /// **'Dimmer'**
-  String get gdtfRoleDimmer;
-
-  /// No description provided for @gdtfRoleShutter.
-  ///
-  /// In fr, this message translates to:
-  /// **'Shutter'**
-  String get gdtfRoleShutter;
-
-  /// No description provided for @gdtfRolePan.
-  ///
-  /// In fr, this message translates to:
-  /// **'Pan'**
-  String get gdtfRolePan;
-
-  /// No description provided for @gdtfRoleTilt.
-  ///
-  /// In fr, this message translates to:
-  /// **'Tilt'**
-  String get gdtfRoleTilt;
-
-  /// No description provided for @gdtfRoleRed.
-  ///
-  /// In fr, this message translates to:
-  /// **'Rouge (R)'**
-  String get gdtfRoleRed;
-
-  /// No description provided for @gdtfRoleGreen.
-  ///
-  /// In fr, this message translates to:
-  /// **'Vert (G)'**
-  String get gdtfRoleGreen;
-
-  /// No description provided for @gdtfRoleBlue.
-  ///
-  /// In fr, this message translates to:
-  /// **'Bleu (B)'**
-  String get gdtfRoleBlue;
-
-  /// No description provided for @gdtfRoleColor.
-  ///
-  /// In fr, this message translates to:
-  /// **'Couleur'**
-  String get gdtfRoleColor;
-
-  /// No description provided for @gdtfRoleGobo.
-  ///
-  /// In fr, this message translates to:
-  /// **'Gobo'**
-  String get gdtfRoleGobo;
-
-  /// No description provided for @gdtfRoleZoom.
-  ///
-  /// In fr, this message translates to:
-  /// **'Zoom'**
-  String get gdtfRoleZoom;
-
-  /// No description provided for @gdtfRoleFocus.
-  ///
-  /// In fr, this message translates to:
-  /// **'Focus'**
-  String get gdtfRoleFocus;
-
-  /// No description provided for @gdtfRolePrism.
-  ///
-  /// In fr, this message translates to:
-  /// **'Prism'**
-  String get gdtfRolePrism;
-
-  /// No description provided for @gdtfRoleEffect.
-  ///
-  /// In fr, this message translates to:
-  /// **'Effet'**
-  String get gdtfRoleEffect;
-
-  /// No description provided for @gdtfRoleControl.
-  ///
-  /// In fr, this message translates to:
-  /// **'Control'**
-  String get gdtfRoleControl;
-
-  /// No description provided for @gdtfRoleCustom.
-  ///
-  /// In fr, this message translates to:
-  /// **'Custom'**
-  String get gdtfRoleCustom;
-
-  /// No description provided for @gdtfResUnknown.
-  ///
-  /// In fr, this message translates to:
-  /// **'Vide'**
-  String get gdtfResUnknown;
-
-  /// No description provided for @gdtfPresetDimmer.
-  ///
-  /// In fr, this message translates to:
-  /// **'Dimmer'**
-  String get gdtfPresetDimmer;
-
-  /// No description provided for @gdtfPresetShutter.
-  ///
-  /// In fr, this message translates to:
-  /// **'Shutter'**
-  String get gdtfPresetShutter;
-
-  /// No description provided for @gdtfPresetPan.
-  ///
-  /// In fr, this message translates to:
-  /// **'Pan'**
-  String get gdtfPresetPan;
-
-  /// No description provided for @gdtfPresetTilt.
-  ///
-  /// In fr, this message translates to:
-  /// **'Tilt'**
-  String get gdtfPresetTilt;
-
-  /// No description provided for @gdtfPresetRed.
-  ///
-  /// In fr, this message translates to:
-  /// **'R'**
-  String get gdtfPresetRed;
-
-  /// No description provided for @gdtfPresetGreen.
-  ///
-  /// In fr, this message translates to:
-  /// **'G'**
-  String get gdtfPresetGreen;
-
-  /// No description provided for @gdtfPresetBlue.
-  ///
-  /// In fr, this message translates to:
-  /// **'B'**
-  String get gdtfPresetBlue;
-
-  /// No description provided for @gdtfPresetColor1.
-  ///
-  /// In fr, this message translates to:
-  /// **'Color 1'**
-  String get gdtfPresetColor1;
-
-  /// No description provided for @gdtfPresetGobo1.
-  ///
-  /// In fr, this message translates to:
-  /// **'Gobo 1'**
-  String get gdtfPresetGobo1;
-
-  /// No description provided for @gdtfPresetZoom.
-  ///
-  /// In fr, this message translates to:
-  /// **'Zoom'**
-  String get gdtfPresetZoom;
-
-  /// No description provided for @gdtfPresetFocus.
-  ///
-  /// In fr, this message translates to:
-  /// **'Focus'**
-  String get gdtfPresetFocus;
-
-  /// No description provided for @gdtfPresetPrism.
-  ///
-  /// In fr, this message translates to:
-  /// **'Prism'**
-  String get gdtfPresetPrism;
-
-  /// No description provided for @gdtfPresetEffect.
-  ///
-  /// In fr, this message translates to:
-  /// **'Effet'**
-  String get gdtfPresetEffect;
-
-  /// No description provided for @gdtfPresetControl.
-  ///
-  /// In fr, this message translates to:
-  /// **'Control'**
-  String get gdtfPresetControl;
-
-  /// No description provided for @commonApply.
-  ///
-  /// In fr, this message translates to:
-  /// **'Appliquer'**
-  String get commonApply;
-
-  /// No description provided for @gdtfPresetLabel.
-  ///
-  /// In fr, this message translates to:
-  /// **'Choix'**
-  String get gdtfPresetLabel;
-
-  /// No description provided for @gdtfPresetFixtureSimple.
-  ///
-  /// In fr, this message translates to:
-  /// **'Fixture simple'**
-  String get gdtfPresetFixtureSimple;
-
-  /// No description provided for @gdtfPresetBarreLed.
-  ///
-  /// In fr, this message translates to:
-  /// **'Barre LED'**
-  String get gdtfPresetBarreLed;
-
-  /// No description provided for @gdtfTemplatesHintShort.
-  ///
-  /// In fr, this message translates to:
-  /// **'Choisis un preset puis applique. Tu peux ensuite ajuster DMX, défauts, et réordonner par glisser-déposer.'**
-  String get gdtfTemplatesHintShort;
-
-  /// No description provided for @gdtfExportNeedChannels.
-  ///
-  /// In fr, this message translates to:
-  /// **'Ajoute au moins un canal pour exporter.'**
-  String get gdtfExportNeedChannels;
 
   /// No description provided for @bpmManualHelp.
   ///
   /// In fr, this message translates to:
-  /// **'Si un BPM manuel est saisi, il est prioritaire sur le tap tempo.'**
+  /// **'Entre une valeur, puis l’app calcule les conversions.'**
   String get bpmManualHelp;
 
   /// No description provided for @bpmConversionsTitle.
@@ -6422,656 +4254,2391 @@ abstract class AppLocalizations {
   /// No description provided for @bpmActiveLabel.
   ///
   /// In fr, this message translates to:
-  /// **'BPM actif'**
+  /// **'Actif'**
   String get bpmActiveLabel;
 
   /// No description provided for @bpmMsPerBeat.
   ///
   /// In fr, this message translates to:
-  /// **'Durée d’un beat'**
+  /// **'ms / beat'**
   String get bpmMsPerBeat;
 
   /// No description provided for @bpmHz.
   ///
   /// In fr, this message translates to:
-  /// **'Fréquence'**
+  /// **'Hz'**
   String get bpmHz;
 
   /// No description provided for @bpmSecPerBar44.
   ///
   /// In fr, this message translates to:
-  /// **'Durée d’une mesure (4/4)'**
+  /// **'s / mesure (4/4)'**
   String get bpmSecPerBar44;
 
   /// No description provided for @bpmDisclaimer.
   ///
   /// In fr, this message translates to:
-  /// **'Indication approximative. Vérifie au métronome si c’est critique.'**
+  /// **'Indicatif — dépend du swing, des subdivisions et du timecode.'**
   String get bpmDisclaimer;
 
-  /// No description provided for @laserToolsTitle.
+  /// No description provided for @fixtureCatalog_dmx_section.
   ///
   /// In fr, this message translates to:
-  /// **'Outils'**
-  String get laserToolsTitle;
+  /// **'DMX'**
+  String get fixtureCatalog_dmx_section;
 
-  /// No description provided for @laserBeamSizeTitle.
+  /// No description provided for @aboutLightReferenceTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Taille du faisceau'**
-  String get laserBeamSizeTitle;
+  /// **'About Light Reference Title'**
+  String get aboutLightReferenceTitle;
 
-  /// No description provided for @laserBeamSizeSubtitle.
+  /// No description provided for @aboutSunTimesSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Diamètre, rayon et surface du spot à une distance donnée.'**
-  String get laserBeamSizeSubtitle;
+  /// **'About Sun Times Subtitle'**
+  String get aboutSunTimesSubtitle;
 
-  /// No description provided for @laserBeamInputsTitle.
+  /// No description provided for @aboutSunTimesTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Paramètres'**
-  String get laserBeamInputsTitle;
+  /// **'About Sun Times Title'**
+  String get aboutSunTimesTitle;
 
-  /// No description provided for @laserBeamDistanceLabel.
+  /// No description provided for @commonAdd.
   ///
   /// In fr, this message translates to:
-  /// **'Distance'**
-  String get laserBeamDistanceLabel;
+  /// **'Common Add'**
+  String get commonAdd;
 
-  /// No description provided for @laserBeamDistanceHint.
+  /// No description provided for @commonApply.
   ///
   /// In fr, this message translates to:
-  /// **'m (ex. 12)'**
-  String get laserBeamDistanceHint;
+  /// **'Common Apply'**
+  String get commonApply;
 
-  /// No description provided for @laserBeamFormulaHint.
+  /// No description provided for @commonCopySummaryTooltip.
   ///
   /// In fr, this message translates to:
-  /// **'Calcul : D(z) = D0 + θ · z (θ en rad, angle plein).'**
-  String get laserBeamFormulaHint;
+  /// **'Common Copy Summary Tooltip'**
+  String get commonCopySummaryTooltip;
 
-  /// No description provided for @laserBeamResultsTitle.
+  /// No description provided for @commonDash.
   ///
   /// In fr, this message translates to:
-  /// **'Résultats'**
-  String get laserBeamResultsTitle;
+  /// **'Common Dash'**
+  String get commonDash;
 
-  /// No description provided for @laserBeamDiameterAtDistance.
+  /// No description provided for @commonDelete.
   ///
   /// In fr, this message translates to:
-  /// **'Diamètre à la distance'**
-  String get laserBeamDiameterAtDistance;
+  /// **'Common Delete'**
+  String get commonDelete;
 
-  /// No description provided for @laserBeamRadiusAtDistance.
+  /// No description provided for @commonOk.
   ///
   /// In fr, this message translates to:
-  /// **'Rayon à la distance'**
-  String get laserBeamRadiusAtDistance;
+  /// **'Common Ok'**
+  String get commonOk;
+
+  /// No description provided for @commonTocTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Common Toc Title'**
+  String get commonTocTitle;
+
+  /// No description provided for @dipSwitchAddressHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Address Hint'**
+  String get dipSwitchAddressHint;
+
+  /// No description provided for @dipSwitchAddressLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Address Label'**
+  String get dipSwitchAddressLabel;
+
+  /// No description provided for @dipSwitchChannelUnit.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Channel Unit'**
+  String get dipSwitchChannelUnit;
+
+  /// No description provided for @dipSwitchInputsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Inputs Title'**
+  String get dipSwitchInputsTitle;
+
+  /// No description provided for @dipSwitchIntervalHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Interval Hint'**
+  String get dipSwitchIntervalHint;
+
+  /// No description provided for @dipSwitchIntervalLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Interval Label'**
+  String get dipSwitchIntervalLabel;
+
+  /// No description provided for @dipSwitchModeAddressDirect.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Mode Address Direct'**
+  String get dipSwitchModeAddressDirect;
+
+  /// No description provided for @dipSwitchModeAddressMinusOne.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Mode Address Minus One'**
+  String get dipSwitchModeAddressMinusOne;
+
+  /// No description provided for @dipSwitchNextAddressButton.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Next Address Button'**
+  String get dipSwitchNextAddressButton;
+
+  /// No description provided for @dipSwitchOffLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Off Label'**
+  String get dipSwitchOffLabel;
+
+  /// No description provided for @dipSwitchOnLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch On Label'**
+  String get dipSwitchOnLabel;
+
+  /// No description provided for @dipSwitchResetTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Reset Tooltip'**
+  String get dipSwitchResetTooltip;
+
+  /// No description provided for @dipSwitchResultAddressLine.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Result Address Line : {p0}'**
+  String dipSwitchResultAddressLine(Object p0);
+
+  /// No description provided for @dipSwitchResultAddressNotProvided.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Result Address Not Provided'**
+  String get dipSwitchResultAddressNotProvided;
+
+  /// No description provided for @dipSwitchResultBinaryValueLine.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Result Binary Value Line : {p0}'**
+  String dipSwitchResultBinaryValueLine(Object p0);
+
+  /// No description provided for @dipSwitchResultHeader.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Result Header'**
+  String get dipSwitchResultHeader;
+
+  /// No description provided for @dipSwitchResultIntervalLine.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Result Interval Line : {p0} · {p1}'**
+  String dipSwitchResultIntervalLine(Object p0, Object p1);
+
+  /// No description provided for @dipSwitchResultModeLine.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Result Mode Line : {p0}'**
+  String dipSwitchResultModeLine(Object p0);
+
+  /// No description provided for @dipSwitchScrollHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Scroll Hint'**
+  String get dipSwitchScrollHint;
+
+  /// No description provided for @dipSwitchSectionTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Section Title'**
+  String get dipSwitchSectionTitle;
+
+  /// No description provided for @dipSwitchSwitchLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Switch Label : {p0}'**
+  String dipSwitchSwitchLabel(Object p0);
+
+  /// No description provided for @dipSwitchUseAddressMinusOneLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dip Switch Use Address Minus One Label'**
+  String get dipSwitchUseAddressMinusOneLabel;
+
+  /// No description provided for @gdtfChannelDefaultName.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Channel Default Name'**
+  String get gdtfChannelDefaultName;
+
+  /// No description provided for @gdtfChannelsCountLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Channels Count Label'**
+  String get gdtfChannelsCountLabel;
+
+  /// No description provided for @gdtfChannelsSectionTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Channels Section Title'**
+  String get gdtfChannelsSectionTitle;
+
+  /// No description provided for @gdtfDeviceSectionTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Device Section Title'**
+  String get gdtfDeviceSectionTitle;
+
+  /// No description provided for @gdtfEasyTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Easy Title'**
+  String get gdtfEasyTitle;
+
+  /// No description provided for @gdtfExportButton.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Export Button'**
+  String get gdtfExportButton;
+
+  /// No description provided for @gdtfExportDone.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Export Done'**
+  String get gdtfExportDone;
+
+  /// No description provided for @gdtfExportError.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Export Error'**
+  String get gdtfExportError;
+
+  /// No description provided for @gdtfExportHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Export Hint'**
+  String get gdtfExportHint;
+
+  /// No description provided for @gdtfExportNeedChannels.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Export Need Channels'**
+  String get gdtfExportNeedChannels;
+
+  /// No description provided for @gdtfFieldDefault.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Field Default'**
+  String get gdtfFieldDefault;
+
+  /// No description provided for @gdtfFieldName.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Field Name'**
+  String get gdtfFieldName;
+
+  /// No description provided for @gdtfFieldResolution.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Field Resolution'**
+  String get gdtfFieldResolution;
+
+  /// No description provided for @gdtfFieldRole.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Field Role'**
+  String get gdtfFieldRole;
+
+  /// No description provided for @gdtfFootprintLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Footprint Label'**
+  String get gdtfFootprintLabel;
+
+  /// No description provided for @gdtfManufacturerLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Manufacturer Label'**
+  String get gdtfManufacturerLabel;
+
+  /// No description provided for @gdtfModeNameLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Mode Name Label'**
+  String get gdtfModeNameLabel;
+
+  /// No description provided for @gdtfModelLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Model Label'**
+  String get gdtfModelLabel;
+
+  /// No description provided for @gdtfPresetBarreLed.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Barre LED'**
+  String get gdtfPresetBarreLed;
+
+  /// No description provided for @gdtfPresetBlue.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Blue'**
+  String get gdtfPresetBlue;
+
+  /// No description provided for @gdtfPresetColor1.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Color1'**
+  String get gdtfPresetColor1;
+
+  /// No description provided for @gdtfPresetControl.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Control'**
+  String get gdtfPresetControl;
+
+  /// No description provided for @gdtfPresetDimmer.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Dimmer'**
+  String get gdtfPresetDimmer;
+
+  /// No description provided for @gdtfPresetEffect.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Effect'**
+  String get gdtfPresetEffect;
+
+  /// No description provided for @gdtfPresetFixtureSimple.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Fixture Simple'**
+  String get gdtfPresetFixtureSimple;
+
+  /// No description provided for @gdtfPresetFocus.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Focus'**
+  String get gdtfPresetFocus;
+
+  /// No description provided for @gdtfPresetGobo1.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Gobo1'**
+  String get gdtfPresetGobo1;
+
+  /// No description provided for @gdtfPresetGreen.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Green'**
+  String get gdtfPresetGreen;
+
+  /// No description provided for @gdtfPresetLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Label'**
+  String get gdtfPresetLabel;
+
+  /// No description provided for @gdtfPresetPan.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Pan'**
+  String get gdtfPresetPan;
+
+  /// No description provided for @gdtfPresetPrism.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Prism'**
+  String get gdtfPresetPrism;
+
+  /// No description provided for @gdtfPresetRed.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Red'**
+  String get gdtfPresetRed;
+
+  /// No description provided for @gdtfPresetShutter.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Shutter'**
+  String get gdtfPresetShutter;
+
+  /// No description provided for @gdtfPresetTilt.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Tilt'**
+  String get gdtfPresetTilt;
+
+  /// No description provided for @gdtfPresetZoom.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Preset Zoom'**
+  String get gdtfPresetZoom;
+
+  /// No description provided for @gdtfRes16.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Res16'**
+  String get gdtfRes16;
+
+  /// No description provided for @gdtfRes8.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Res8'**
+  String get gdtfRes8;
+
+  /// No description provided for @gdtfRoleBlue.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Role Blue'**
+  String get gdtfRoleBlue;
+
+  /// No description provided for @gdtfRoleColor.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Role Color'**
+  String get gdtfRoleColor;
+
+  /// No description provided for @gdtfRoleControl.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Role Control'**
+  String get gdtfRoleControl;
+
+  /// No description provided for @gdtfRoleCustom.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Role Custom'**
+  String get gdtfRoleCustom;
+
+  /// No description provided for @gdtfRoleDimmer.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Role Dimmer'**
+  String get gdtfRoleDimmer;
+
+  /// No description provided for @gdtfRoleEffect.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Role Effect'**
+  String get gdtfRoleEffect;
+
+  /// No description provided for @gdtfRoleEmpty.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Role Empty'**
+  String get gdtfRoleEmpty;
+
+  /// No description provided for @gdtfRoleFocus.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Role Focus'**
+  String get gdtfRoleFocus;
+
+  /// No description provided for @gdtfRoleGobo.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Role Gobo'**
+  String get gdtfRoleGobo;
+
+  /// No description provided for @gdtfRoleGreen.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Role Green'**
+  String get gdtfRoleGreen;
+
+  /// No description provided for @gdtfRolePan.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Role Pan'**
+  String get gdtfRolePan;
+
+  /// No description provided for @gdtfRolePrism.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Role Prism'**
+  String get gdtfRolePrism;
+
+  /// No description provided for @gdtfRoleRed.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Role Red'**
+  String get gdtfRoleRed;
+
+  /// No description provided for @gdtfRoleShutter.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Role Shutter'**
+  String get gdtfRoleShutter;
+
+  /// No description provided for @gdtfRoleTilt.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Role Tilt'**
+  String get gdtfRoleTilt;
+
+  /// No description provided for @gdtfRoleZoom.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Role Zoom'**
+  String get gdtfRoleZoom;
+
+  /// No description provided for @gdtfShareSubject.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Share Subject'**
+  String get gdtfShareSubject;
+
+  /// No description provided for @gdtfShareText.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Share Text'**
+  String get gdtfShareText;
+
+  /// No description provided for @gdtfTemplatesHintShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Templates Hint Short'**
+  String get gdtfTemplatesHintShort;
+
+  /// No description provided for @gdtfTemplatesTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF Templates Title'**
+  String get gdtfTemplatesTitle;
+
+  /// No description provided for @homeBpmSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Home Bpm Subtitle'**
+  String get homeBpmSubtitle;
+
+  /// No description provided for @homeBpmTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Home Bpm Title'**
+  String get homeBpmTitle;
+
+  /// No description provided for @homeDrawerContact.
+  ///
+  /// In fr, this message translates to:
+  /// **'Home Drawer Contact'**
+  String get homeDrawerContact;
+
+  /// No description provided for @homeDrawerSuggestItem.
+  ///
+  /// In fr, this message translates to:
+  /// **'Home Drawer Suggest Item'**
+  String get homeDrawerSuggestItem;
 
   /// No description provided for @laserBeamAreaAtDistance.
   ///
   /// In fr, this message translates to:
-  /// **'Surface du spot'**
+  /// **'Laser Beam Area At Distance'**
   String get laserBeamAreaAtDistance;
 
-  /// No description provided for @sunTimesPageTitle.
+  /// No description provided for @laserBeamDiameterAtDistance.
   ///
   /// In fr, this message translates to:
-  /// **'Lever / coucher du soleil'**
-  String get sunTimesPageTitle;
+  /// **'Laser Beam Diameter At Distance'**
+  String get laserBeamDiameterAtDistance;
 
-  /// No description provided for @sunTimesSelectionTitle.
+  /// No description provided for @laserBeamDistanceHint.
   ///
   /// In fr, this message translates to:
-  /// **'Paramètres'**
-  String get sunTimesSelectionTitle;
+  /// **'Laser Beam Distance Hint'**
+  String get laserBeamDistanceHint;
 
-  /// No description provided for @sunTimesCityLabel.
+  /// No description provided for @laserBeamDistanceLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Ville'**
-  String get sunTimesCityLabel;
+  /// **'Laser Beam Distance Label'**
+  String get laserBeamDistanceLabel;
 
-  /// No description provided for @sunTimesDateLabel.
+  /// No description provided for @laserBeamFormulaHint.
   ///
   /// In fr, this message translates to:
-  /// **'Date'**
-  String get sunTimesDateLabel;
+  /// **'Laser Beam Formula Hint'**
+  String get laserBeamFormulaHint;
 
-  /// No description provided for @sunTimesResultsTitle.
+  /// No description provided for @laserBeamInputsTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Résultats'**
-  String get sunTimesResultsTitle;
+  /// **'Laser Beam Inputs Title'**
+  String get laserBeamInputsTitle;
 
-  /// No description provided for @sunTimesSunriseLabel.
+  /// No description provided for @laserBeamRadiusAtDistance.
   ///
   /// In fr, this message translates to:
-  /// **'Lever du soleil'**
-  String get sunTimesSunriseLabel;
+  /// **'Laser Beam Radius At Distance'**
+  String get laserBeamRadiusAtDistance;
 
-  /// No description provided for @sunTimesSunsetLabel.
+  /// No description provided for @laserBeamResultsTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Coucher du soleil'**
-  String get sunTimesSunsetLabel;
+  /// **'Laser Beam Results Title'**
+  String get laserBeamResultsTitle;
 
-  /// No description provided for @sunTimesDayLengthLabel.
+  /// No description provided for @laserBeamSizeSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Durée du jour'**
-  String get sunTimesDayLengthLabel;
+  /// **'Laser Beam Size Subtitle'**
+  String get laserBeamSizeSubtitle;
 
-  /// No description provided for @sunTimesDisclaimer.
+  /// No description provided for @laserBeamSizeTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Valeurs indicatives (modèle astronomique). Vérifie avec une source officielle si nécessaire (événement, sécurité, tournage).'**
-  String get sunTimesDisclaimer;
+  /// **'Laser Beam Size Title'**
+  String get laserBeamSizeTitle;
 
-  /// No description provided for @sunTimesThresholdTitle.
+  /// No description provided for @laserToolsTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Seuils de luminosité (repères)'**
-  String get sunTimesThresholdTitle;
+  /// **'Laser Tools Title'**
+  String get laserToolsTitle;
 
-  /// No description provided for @sunTimesThresholdIntro.
+  /// No description provided for @patchAddressLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Ordres de grandeur utiles pour anticiper la lumière ambiante (très variable selon météo, latitude, saison, obstacles, pollution lumineuse).'**
-  String get sunTimesThresholdIntro;
+  /// **'Patch Address Label : {p0}'**
+  String patchAddressLabel(Object p0);
 
-  /// No description provided for @sunTimesLuxDaylight.
+  /// No description provided for @patchChannelsUsed.
   ///
   /// In fr, this message translates to:
-  /// **'Plein jour (hors soleil direct)'**
-  String get sunTimesLuxDaylight;
+  /// **'Patch Channels Used : {p0}'**
+  String patchChannelsUsed(Object p0);
 
-  /// No description provided for @sunTimesLuxOvercast.
+  /// No description provided for @patchConflictError.
   ///
   /// In fr, this message translates to:
-  /// **'Ciel couvert (typique)'**
-  String get sunTimesLuxOvercast;
+  /// **'Patch Conflict Error'**
+  String get patchConflictError;
 
-  /// No description provided for @sunTimesLuxSunrise.
+  /// No description provided for @patchConflictShort.
   ///
   /// In fr, this message translates to:
-  /// **'Lever / coucher (clair)'**
-  String get sunTimesLuxSunrise;
+  /// **'Patch Conflict Short'**
+  String get patchConflictShort;
 
-  /// No description provided for @sunTimesLuxCivilTwilight.
+  /// No description provided for @patchConflicts.
   ///
   /// In fr, this message translates to:
-  /// **'Limite crépuscule civil (clair)'**
-  String get sunTimesLuxCivilTwilight;
+  /// **'Patch Conflicts : {p0}'**
+  String patchConflicts(Object p0);
 
-  /// No description provided for @sunTimesLuxFullMoon.
+  /// No description provided for @patchCreateGdtfSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Pleine lune (clair)'**
-  String get sunTimesLuxFullMoon;
+  /// **'Patch Create GDTF Subtitle'**
+  String get patchCreateGdtfSubtitle;
 
-  /// No description provided for @sunTimesThresholdNote.
+  /// No description provided for @patchCreateGdtfTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Astuce : pour un repérage “utilisable sans éclairage”, on vise souvent > 100–300 lx. Pour un travail fin, plutôt 500 lx et +.'**
-  String get sunTimesThresholdNote;
+  /// **'Patch Create GDTF Title'**
+  String get patchCreateGdtfTitle;
 
-  /// No description provided for @sunTimesTitle.
+  /// No description provided for @patchEditChannelsLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Lever / coucher du soleil'**
-  String get sunTimesTitle;
+  /// **'Patch Edit Channels Label'**
+  String get patchEditChannelsLabel;
 
-  /// No description provided for @sunTimesParamsTitle.
+  /// No description provided for @patchEditHint.
   ///
   /// In fr, this message translates to:
-  /// **'Paramètres'**
-  String get sunTimesParamsTitle;
+  /// **'Patch Edit Hint'**
+  String get patchEditHint;
 
-  /// No description provided for @sunTimesPickDate.
+  /// No description provided for @patchEditModeLabel.
   ///
   /// In fr, this message translates to:
-  /// **'Choisir une date'**
-  String get sunTimesPickDate;
+  /// **'Patch Edit Mode Label'**
+  String get patchEditModeLabel;
 
-  /// No description provided for @sunTimesSunrise.
+  /// No description provided for @patchEditTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Lever'**
-  String get sunTimesSunrise;
+  /// **'Patch Edit Title'**
+  String get patchEditTitle;
 
-  /// No description provided for @sunTimesSunset.
+  /// No description provided for @patchEmptyUniverse.
   ///
   /// In fr, this message translates to:
-  /// **'Coucher'**
-  String get sunTimesSunset;
+  /// **'Patch Empty Universe'**
+  String get patchEmptyUniverse;
 
-  /// No description provided for @sunTimesDayLength.
+  /// No description provided for @patchFixturesCount.
   ///
   /// In fr, this message translates to:
-  /// **'Durée du jour'**
-  String get sunTimesDayLength;
+  /// **'Patch Fixtures Count : {p0}'**
+  String patchFixturesCount(Object p0);
 
-  /// No description provided for @sunTimesPolarNote.
+  /// No description provided for @patchHomeDisclaimer.
   ///
   /// In fr, this message translates to:
-  /// **'Note : dans les zones proches des pôles, lever/coucher peuvent être absents selon la saison.'**
-  String get sunTimesPolarNote;
+  /// **'Patch Home Disclaimer'**
+  String get patchHomeDisclaimer;
 
-  /// No description provided for @sunTimesLuxThresholdTitle.
+  /// No description provided for @patchHomeImportMvrDescription.
   ///
   /// In fr, this message translates to:
-  /// **'Seuils de luminosité (repères)'**
-  String get sunTimesLuxThresholdTitle;
+  /// **'Patch Home Import MVR Description'**
+  String get patchHomeImportMvrDescription;
 
-  /// No description provided for @sunTimesLuxBulletNightDark.
+  /// No description provided for @patchHomeImportMvrTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Nuit noire : < 1 lux'**
-  String get sunTimesLuxBulletNightDark;
+  /// **'Patch Home Import MVR Title'**
+  String get patchHomeImportMvrTitle;
 
-  /// No description provided for @sunTimesLuxBulletNightMoon.
+  /// No description provided for @patchHomeTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Nuit (lune) : ~ 0,1–1 lux'**
-  String get sunTimesLuxBulletNightMoon;
+  /// **'Patch Home Title'**
+  String get patchHomeTitle;
 
-  /// No description provided for @sunTimesLuxBulletFullMoon.
+  /// No description provided for @patchHomeViewPatchDescription.
   ///
   /// In fr, this message translates to:
-  /// **'Pleine lune : ~ 0,1–0,3 lux'**
-  String get sunTimesLuxBulletFullMoon;
+  /// **'Patch Home View Patch Description'**
+  String get patchHomeViewPatchDescription;
 
-  /// No description provided for @sunTimesLuxBulletCivilTwilight.
+  /// No description provided for @patchHomeViewPatchTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Crépuscule civil : Soleil à -6°'**
-  String get sunTimesLuxBulletCivilTwilight;
+  /// **'Patch Home View Patch Title'**
+  String get patchHomeViewPatchTitle;
 
-  /// No description provided for @sunTimesLuxBulletUrbanLow.
+  /// No description provided for @patchHubOpenGridButton.
   ///
   /// In fr, this message translates to:
-  /// **'Éclairage urbain faible : ~ 5–20 lux'**
-  String get sunTimesLuxBulletUrbanLow;
+  /// **'Patch Hub Open Grid Button'**
+  String get patchHubOpenGridButton;
 
-  /// No description provided for @sunTimesLuxBulletOfficeLow.
+  /// No description provided for @patchHubOpenMvrButton.
   ///
   /// In fr, this message translates to:
-  /// **'Bureau faible : ~ 100–300 lux'**
-  String get sunTimesLuxBulletOfficeLow;
+  /// **'Patch Hub Open MVR Button'**
+  String get patchHubOpenMvrButton;
 
-  /// No description provided for @sunTimesLuxBulletOfficeStd.
+  /// No description provided for @patchHubStateEmpty.
   ///
   /// In fr, this message translates to:
-  /// **'Bureau standard : ~ 300–500 lux'**
-  String get sunTimesLuxBulletOfficeStd;
+  /// **'Patch Hub State Empty'**
+  String get patchHubStateEmpty;
 
-  /// No description provided for @sunTimesLuxBulletOutdoorDay.
+  /// No description provided for @patchHubStateLoaded.
   ///
   /// In fr, this message translates to:
-  /// **'Extérieur jour : ~ 10 000–25 000 lux'**
-  String get sunTimesLuxBulletOutdoorDay;
+  /// **'Patch Hub State Loaded : {p0}'**
+  String patchHubStateLoaded(Object p0);
 
-  /// No description provided for @sunTimesLuxBulletDirectSun.
+  /// No description provided for @patchHubStateTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Soleil direct : ~ 100 000 lux'**
-  String get sunTimesLuxBulletDirectSun;
+  /// **'Patch Hub State Title'**
+  String get patchHubStateTitle;
 
-  /// No description provided for @sunTimesLuxDisclaimer.
+  /// No description provided for @patchHubTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Repères indicatifs : météo/nuages, environnement, saison et relief peuvent fortement varier.'**
-  String get sunTimesLuxDisclaimer;
+  /// **'Patch Hub Title'**
+  String get patchHubTitle;
 
-  /// No description provided for @sunTimesTwilightTitle.
+  /// No description provided for @patchHubWorksiteBody.
   ///
   /// In fr, this message translates to:
-  /// **'Crépuscules : à quoi ça correspond'**
-  String get sunTimesTwilightTitle;
+  /// **'Patch Hub Worksite Body'**
+  String get patchHubWorksiteBody;
 
-  /// No description provided for @sunTimesTwilightIntro.
+  /// No description provided for @patchHubWorksiteTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Les crépuscules sont définis par la hauteur du Soleil sous l’horizon. Ces définitions sont standardisées.'**
-  String get sunTimesTwilightIntro;
+  /// **'Patch Hub Worksite Title'**
+  String get patchHubWorksiteTitle;
 
-  /// No description provided for @sunTimesTwilightCivil.
+  /// No description provided for @patchInvalidChannelCount.
   ///
   /// In fr, this message translates to:
-  /// **'Civil (-6°) : lumière encore suffisante pour distinguer l’environnement sans éclairage artificiel.'**
-  String get sunTimesTwilightCivil;
+  /// **'Patch Invalid Channel Count'**
+  String get patchInvalidChannelCount;
 
-  /// No description provided for @sunTimesTwilightNautical.
+  /// No description provided for @patchIssueInvalidChannelCount.
   ///
   /// In fr, this message translates to:
-  /// **'Nautique (-12°) : l’horizon devient difficile à distinguer ; étoiles visibles.'**
-  String get sunTimesTwilightNautical;
+  /// **'Patch Issue Invalid Channel Count'**
+  String get patchIssueInvalidChannelCount;
 
-  /// No description provided for @sunTimesTwilightAstronomical.
+  /// No description provided for @patchIssueInvalidStartAddress.
   ///
   /// In fr, this message translates to:
-  /// **'Astronomique (-18°) : le ciel est considéré comme “noir” (hors pollution lumineise).'**
-  String get sunTimesTwilightAstronomical;
+  /// **'Patch Issue Invalid Start Address'**
+  String get patchIssueInvalidStartAddress;
 
-  /// No description provided for @sunTimesTwilightAnglesNote.
+  /// No description provided for @patchIssueInvalidUniverse.
   ///
   /// In fr, this message translates to:
-  /// **'Angles exprimés en degrés sous l’horizon (Soleil négatif).'**
-  String get sunTimesTwilightAnglesNote;
+  /// **'Patch Issue Invalid Universe'**
+  String get patchIssueInvalidUniverse;
+
+  /// No description provided for @patchIssueRangeExceedsUniverse.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Issue Range Exceeds Universe'**
+  String get patchIssueRangeExceedsUniverse;
+
+  /// No description provided for @patchListTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch List Title'**
+  String get patchListTitle;
+
+  /// No description provided for @patchManualDisabledBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Manual Disabled Body'**
+  String get patchManualDisabledBody;
+
+  /// No description provided for @patchManualDisabledTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Manual Disabled Title'**
+  String get patchManualDisabledTitle;
+
+  /// No description provided for @patchManualTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Manual Title'**
+  String get patchManualTitle;
+
+  /// No description provided for @patchModeLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Mode Label : {p0}'**
+  String patchModeLabel(Object p0);
+
+  /// No description provided for @patchMvrButtonAnalyzing.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Button Analyzing'**
+  String get patchMvrButtonAnalyzing;
+
+  /// No description provided for @patchMvrButtonLoadAsReference.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Button Load As Reference'**
+  String get patchMvrButtonLoadAsReference;
+
+  /// No description provided for @patchMvrButtonPickFile.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Button Pick File'**
+  String get patchMvrButtonPickFile;
+
+  /// No description provided for @patchMvrClearTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Clear Tooltip'**
+  String get patchMvrClearTooltip;
+
+  /// No description provided for @patchMvrColAddress.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Col Address'**
+  String get patchMvrColAddress;
+
+  /// No description provided for @patchMvrColChannels.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Col Channels'**
+  String get patchMvrColChannels;
+
+  /// No description provided for @patchMvrColId.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Col Id'**
+  String get patchMvrColId;
+
+  /// No description provided for @patchMvrColName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Col Name'**
+  String get patchMvrColName;
+
+  /// No description provided for @patchMvrColUniverse.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Col Universe'**
+  String get patchMvrColUniverse;
+
+  /// No description provided for @patchMvrColumnsHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Columns Hint'**
+  String get patchMvrColumnsHint;
+
+  /// No description provided for @patchMvrFileCardHelp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR File Card Help'**
+  String get patchMvrFileCardHelp;
+
+  /// No description provided for @patchMvrFileCardTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR File Card Title'**
+  String get patchMvrFileCardTitle;
+
+  /// No description provided for @patchMvrFilterAllUniverses.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Filter All Universes'**
+  String get patchMvrFilterAllUniverses;
+
+  /// No description provided for @patchMvrFilterUniverseLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Filter Universe Label'**
+  String get patchMvrFilterUniverseLabel;
+
+  /// No description provided for @patchMvrModeNotProvided.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Mode Not Provided'**
+  String get patchMvrModeNotProvided;
+
+  /// No description provided for @patchMvrOrderAsc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Order Asc'**
+  String get patchMvrOrderAsc;
+
+  /// No description provided for @patchMvrOrderDesc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Order Desc'**
+  String get patchMvrOrderDesc;
+
+  /// No description provided for @patchMvrOrderLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Order Label'**
+  String get patchMvrOrderLabel;
+
+  /// No description provided for @patchMvrSortAddress.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Sort Address'**
+  String get patchMvrSortAddress;
+
+  /// No description provided for @patchMvrSortByLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Sort By Label'**
+  String get patchMvrSortByLabel;
+
+  /// No description provided for @patchMvrSortChannels.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Sort Channels'**
+  String get patchMvrSortChannels;
+
+  /// No description provided for @patchMvrSortId.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Sort Id'**
+  String get patchMvrSortId;
+
+  /// No description provided for @patchMvrSortName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Sort Name'**
+  String get patchMvrSortName;
+
+  /// No description provided for @patchMvrSortUniverse.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Sort Universe'**
+  String get patchMvrSortUniverse;
+
+  /// No description provided for @patchMvrSortUniverseThenAddress.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Sort Universe Then Address'**
+  String get patchMvrSortUniverseThenAddress;
+
+  /// No description provided for @patchMvrStatusCleared.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Status Cleared'**
+  String get patchMvrStatusCleared;
+
+  /// No description provided for @patchMvrStatusEmptyBytes.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Status Empty Bytes'**
+  String get patchMvrStatusEmptyBytes;
+
+  /// No description provided for @patchMvrStatusExtractingZip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Status Extracting Zip'**
+  String get patchMvrStatusExtractingZip;
+
+  /// No description provided for @patchMvrStatusFilePickFailed.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Status File Pick Failed : {p0}'**
+  String patchMvrStatusFilePickFailed(Object p0);
+
+  /// No description provided for @patchMvrStatusFixturesFound.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Status Fixtures Found : {p0} · {p1}'**
+  String patchMvrStatusFixturesFound(Object p0, Object p1);
+
+  /// No description provided for @patchMvrStatusLoadingGdtf.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Status Loading GDTF'**
+  String get patchMvrStatusLoadingGdtf;
+
+  /// No description provided for @patchMvrStatusNoContentToLoad.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Status No Content To Load'**
+  String get patchMvrStatusNoContentToLoad;
+
+  /// No description provided for @patchMvrStatusNoFileSelected.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Status No File Selected'**
+  String get patchMvrStatusNoFileSelected;
+
+  /// No description provided for @patchMvrStatusNoUsableFixtures.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Status No Usable Fixtures'**
+  String get patchMvrStatusNoUsableFixtures;
+
+  /// No description provided for @patchMvrStatusParseError.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Status Parse Error : {p0}'**
+  String patchMvrStatusParseError(Object p0);
+
+  /// No description provided for @patchMvrStatusParsingContent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Status Parsing Content'**
+  String get patchMvrStatusParsingContent;
+
+  /// No description provided for @patchMvrStatusReferenceLoaded.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Status Reference Loaded : {p0} · {p1} · {p2}'**
+  String patchMvrStatusReferenceLoaded(Object p0, Object p1, Object p2);
+
+  /// No description provided for @patchMvrStatusRestored.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Status Restored : {p0}'**
+  String patchMvrStatusRestored(Object p0);
+
+  /// No description provided for @patchMvrStatusSceneXmlNotFound.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Status Scene Xml Not Found'**
+  String get patchMvrStatusSceneXmlNotFound;
+
+  /// No description provided for @patchMvrStatusSelectingFile.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Status Selecting File'**
+  String get patchMvrStatusSelectingFile;
+
+  /// No description provided for @patchMvrStatusUnsupportedFile.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Status Unsupported File : {p0}'**
+  String patchMvrStatusUnsupportedFile(Object p0);
+
+  /// No description provided for @patchMvrSummaryTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Summary Title'**
+  String get patchMvrSummaryTitle;
+
+  /// No description provided for @patchMvrTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Title'**
+  String get patchMvrTitle;
+
+  /// No description provided for @patchMvrUniverseItem.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch MVR Universe Item : {p0}'**
+  String patchMvrUniverseItem(Object p0);
+
+  /// No description provided for @patchPageTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Page Title'**
+  String get patchPageTitle;
+
+  /// No description provided for @patchSummaryTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Summary Title'**
+  String get patchSummaryTitle;
+
+  /// No description provided for @patchUniverseAppBarTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe App Bar Title'**
+  String get patchUniverseAppBarTitle;
+
+  /// No description provided for @patchUniverseConflictCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Conflict Count : {p0}'**
+  String patchUniverseConflictCount(Object p0);
+
+  /// No description provided for @patchUniverseGridLimitedByWidth.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Grid Limited By Width'**
+  String get patchUniverseGridLimitedByWidth;
+
+  /// No description provided for @patchUniverseGridTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Grid Title'**
+  String get patchUniverseGridTitle;
+
+  /// No description provided for @patchUniverseItem.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Item : {p0}'**
+  String patchUniverseItem(Object p0);
+
+  /// No description provided for @patchUniverseLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Label'**
+  String get patchUniverseLabel;
+
+  /// No description provided for @patchUniverseLegendConflict.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Legend Conflict'**
+  String get patchUniverseLegendConflict;
+
+  /// No description provided for @patchUniverseLegendFree.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Legend Free'**
+  String get patchUniverseLegendFree;
+
+  /// No description provided for @patchUniverseLegendOccupied.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Legend Occupied'**
+  String get patchUniverseLegendOccupied;
+
+  /// No description provided for @patchUniverseOccupantLine.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Occupant Line : {p0} · {p1} · {p2} · {p3} · {p4}'**
+  String patchUniverseOccupantLine(
+      Object p0, Object p1, Object p2, Object p3, Object p4);
+
+  /// No description provided for @patchUniverseOccupiedCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Occupied Count : {p0}'**
+  String patchUniverseOccupiedCount(Object p0);
+
+  /// No description provided for @patchUniversePopupHeader.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Popup Header : {p0} · {p1} · {p2}'**
+  String patchUniversePopupHeader(Object p0, Object p1, Object p2);
+
+  /// No description provided for @patchUniversePopupManyOccupants.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Popup Many Occupants'**
+  String get patchUniversePopupManyOccupants;
+
+  /// No description provided for @patchUniversePopupMore.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Popup More : {p0}'**
+  String patchUniversePopupMore(Object p0);
+
+  /// No description provided for @patchUniversePopupTitleConflict.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Popup Title Conflict'**
+  String get patchUniversePopupTitleConflict;
+
+  /// No description provided for @patchUniversePopupTitleFree.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Popup Title Free'**
+  String get patchUniversePopupTitleFree;
+
+  /// No description provided for @patchUniversePopupTitleOccupied.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Popup Title Occupied'**
+  String get patchUniversePopupTitleOccupied;
+
+  /// No description provided for @patchUniverseReferenceNone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Reference None'**
+  String get patchUniverseReferenceNone;
+
+  /// No description provided for @patchUniverseReferenceReadOnly.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Reference Read Only'**
+  String get patchUniverseReferenceReadOnly;
+
+  /// No description provided for @patchUniverseReferenceTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Reference Title'**
+  String get patchUniverseReferenceTitle;
+
+  /// No description provided for @patchUniverseResetConfirm.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Reset Confirm'**
+  String get patchUniverseResetConfirm;
+
+  /// No description provided for @patchUniverseResetContent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Reset Content'**
+  String get patchUniverseResetContent;
+
+  /// No description provided for @patchUniverseResetTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Reset Title'**
+  String get patchUniverseResetTitle;
+
+  /// No description provided for @patchUniverseResetTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Reset Tooltip'**
+  String get patchUniverseResetTooltip;
+
+  /// No description provided for @patchUniverseSelected.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Selected'**
+  String get patchUniverseSelected;
+
+  /// No description provided for @patchUniverseStateConflict.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe State Conflict'**
+  String get patchUniverseStateConflict;
+
+  /// No description provided for @patchUniverseStateFree.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe State Free'**
+  String get patchUniverseStateFree;
+
+  /// No description provided for @patchUniverseStateOccupied.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe State Occupied'**
+  String get patchUniverseStateOccupied;
+
+  /// No description provided for @patchUniverseTapHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Tap Hint'**
+  String get patchUniverseTapHint;
+
+  /// No description provided for @patchUniverseUniverseDropdownLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Universe Dropdown Label'**
+  String get patchUniverseUniverseDropdownLabel;
+
+  /// No description provided for @patchUniverseUniverseItem.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Universe Item : {p0}'**
+  String patchUniverseUniverseItem(Object p0);
+
+  /// No description provided for @patchUniverseUniverseTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Universe Title'**
+  String get patchUniverseUniverseTitle;
+
+  /// No description provided for @patchUniverseZoomIn.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Zoom In'**
+  String get patchUniverseZoomIn;
+
+  /// No description provided for @patchUniverseZoomOut.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Zoom Out'**
+  String get patchUniverseZoomOut;
+
+  /// No description provided for @patchUniverseZoomTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch Universe Zoom Title'**
+  String get patchUniverseZoomTitle;
+
+  /// No description provided for @photometryAreaHint4.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Area Hint4'**
+  String get photometryAreaHint4;
+
+  /// No description provided for @photometryAreaLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Area Label'**
+  String get photometryAreaLabel;
+
+  /// No description provided for @photometryBeamAngleHint2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Beam Angle Hint2'**
+  String get photometryBeamAngleHint2;
+
+  /// No description provided for @photometryBeamAngleHint3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Beam Angle Hint3'**
+  String get photometryBeamAngleHint3;
+
+  /// No description provided for @photometryBeamAngleLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Beam Angle Label'**
+  String get photometryBeamAngleLabel;
+
+  /// No description provided for @photometryCandelaHint1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Candela Hint1'**
+  String get photometryCandelaHint1;
+
+  /// No description provided for @photometryCandelaHint2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Candela Hint2'**
+  String get photometryCandelaHint2;
+
+  /// No description provided for @photometryCandelaLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Candela Label'**
+  String get photometryCandelaLabel;
+
+  /// No description provided for @photometryDisclaimerShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Disclaimer Short'**
+  String get photometryDisclaimerShort;
+
+  /// No description provided for @photometryDistanceHint1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Distance Hint1'**
+  String get photometryDistanceHint1;
+
+  /// No description provided for @photometryDistanceHint3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Distance Hint3'**
+  String get photometryDistanceHint3;
+
+  /// No description provided for @photometryDistanceLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Distance Label'**
+  String get photometryDistanceLabel;
+
+  /// No description provided for @photometryLumensHint2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Lumens Hint2'**
+  String get photometryLumensHint2;
+
+  /// No description provided for @photometryLumensHint3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Lumens Hint3'**
+  String get photometryLumensHint3;
+
+  /// No description provided for @photometryLumensLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Lumens Label'**
+  String get photometryLumensLabel;
+
+  /// No description provided for @photometryLuxHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Lux Hint'**
+  String get photometryLuxHint;
+
+  /// No description provided for @photometryLuxLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Lux Label'**
+  String get photometryLuxLabel;
+
+  /// No description provided for @photometrySection1Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Section1 Title'**
+  String get photometrySection1Title;
+
+  /// No description provided for @photometrySection2Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Section2 Title'**
+  String get photometrySection2Title;
+
+  /// No description provided for @photometrySection3Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Section3 Title'**
+  String get photometrySection3Title;
+
+  /// No description provided for @photometrySection4Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Section4 Title'**
+  String get photometrySection4Title;
+
+  /// No description provided for @photometrySummary1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Summary1 : {p0} · {p1} · {p2}'**
+  String photometrySummary1(Object p0, Object p1, Object p2);
+
+  /// No description provided for @photometrySummary2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Summary2 : {p0} · {p1} · {p2}'**
+  String photometrySummary2(Object p0, Object p1, Object p2);
+
+  /// No description provided for @photometrySummary3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Summary3 : {p0} · {p1} · {p2} · {p3}'**
+  String photometrySummary3(Object p0, Object p1, Object p2, Object p3);
+
+  /// No description provided for @photometrySummary4.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photometry Summary4 : {p0} · {p1} · {p2}'**
+  String photometrySummary4(Object p0, Object p1, Object p2);
+
+  /// No description provided for @projectionAngleHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Angle Hint'**
+  String get projectionAngleHint;
+
+  /// No description provided for @projectionAngleLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Angle Label'**
+  String get projectionAngleLabel;
+
+  /// No description provided for @projectionAutoHelp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Auto Help'**
+  String get projectionAutoHelp;
+
+  /// No description provided for @projectionConeAngle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Cone Angle : {p0}'**
+  String projectionConeAngle(Object p0);
+
+  /// No description provided for @projectionConeDiameter.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Cone Diameter : {p0}'**
+  String projectionConeDiameter(Object p0);
+
+  /// No description provided for @projectionConeDistance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Cone Distance : {p0}'**
+  String projectionConeDistance(Object p0);
+
+  /// No description provided for @projectionDetailAngle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Detail Angle : {p0}'**
+  String projectionDetailAngle(Object p0);
+
+  /// No description provided for @projectionDetailDiameter.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Detail Diameter : {p0}'**
+  String projectionDetailDiameter(Object p0);
+
+  /// No description provided for @projectionDetailDistance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Detail Distance : {p0}'**
+  String projectionDetailDistance(Object p0);
+
+  /// No description provided for @projectionDiameterHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Diameter Hint'**
+  String get projectionDiameterHint;
+
+  /// No description provided for @projectionDiameterLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Diameter Label'**
+  String get projectionDiameterLabel;
+
+  /// No description provided for @projectionDistanceHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Distance Hint'**
+  String get projectionDistanceHint;
+
+  /// No description provided for @projectionDistanceLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Distance Label'**
+  String get projectionDistanceLabel;
+
+  /// No description provided for @projectionHeaderAutoActive.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Header Auto Active'**
+  String get projectionHeaderAutoActive;
+
+  /// No description provided for @projectionHeaderNeedTwoValues.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Header Need Two Values'**
+  String get projectionHeaderNeedTwoValues;
+
+  /// No description provided for @projectionInputsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Inputs Title'**
+  String get projectionInputsTitle;
+
+  /// No description provided for @projectionResultsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projection Results Title'**
+  String get projectionResultsTitle;
+
+  /// No description provided for @refBeamFieldContent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Beam Field Content'**
+  String get refBeamFieldContent;
+
+  /// No description provided for @refBeamFieldTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Beam Field Title'**
+  String get refBeamFieldTitle;
+
+  /// No description provided for @refBeamLegendBeam.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Beam Legend Beam'**
+  String get refBeamLegendBeam;
+
+  /// No description provided for @refBeamLegendField.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Beam Legend Field'**
+  String get refBeamLegendField;
+
+  /// No description provided for @refCri80.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Cri80'**
+  String get refCri80;
+
+  /// No description provided for @refCri90.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Cri90'**
+  String get refCri90;
+
+  /// No description provided for @refCriContent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Cri Content'**
+  String get refCriContent;
+
+  /// No description provided for @refCriLow.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Cri Low'**
+  String get refCriLow;
+
+  /// No description provided for @refCriTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Cri Title'**
+  String get refCriTitle;
+
+  /// No description provided for @refKelvinContent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Kelvin Content'**
+  String get refKelvinContent;
+
+  /// No description provided for @refKelvinTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Kelvin Title'**
+  String get refKelvinTitle;
+
+  /// No description provided for @refLightDisclaimerShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Light Disclaimer Short'**
+  String get refLightDisclaimerShort;
+
+  /// No description provided for @refLuxColLux.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Lux Col Lux'**
+  String get refLuxColLux;
+
+  /// No description provided for @refLuxColUse.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Lux Col Use'**
+  String get refLuxColUse;
+
+  /// No description provided for @refLuxIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Lux Intro'**
+  String get refLuxIntro;
+
+  /// No description provided for @refLuxNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Lux Note'**
+  String get refLuxNote;
+
+  /// No description provided for @refLuxTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Lux Title'**
+  String get refLuxTitle;
+
+  /// No description provided for @refLuxUseBackstage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Lux Use Backstage'**
+  String get refLuxUseBackstage;
+
+  /// No description provided for @refLuxUseCorridor.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Lux Use Corridor'**
+  String get refLuxUseCorridor;
+
+  /// No description provided for @refLuxUseExpo.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Lux Use Expo'**
+  String get refLuxUseExpo;
+
+  /// No description provided for @refLuxUseMeeting.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Lux Use Meeting'**
+  String get refLuxUseMeeting;
+
+  /// No description provided for @refLuxUseStageGeneral.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Lux Use Stage General'**
+  String get refLuxUseStageGeneral;
+
+  /// No description provided for @refLuxUseStageTv.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ref Lux Use Stage Tv'**
+  String get refLuxUseStageTv;
+
+  /// No description provided for @riggingAngleHLeftInputLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Angle HLeft Input Label'**
+  String get riggingAngleHLeftInputLabel;
+
+  /// No description provided for @riggingAngleHLeftLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Angle HLeft Label'**
+  String get riggingAngleHLeftLabel;
+
+  /// No description provided for @riggingAngleHRightLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Angle HRight Label'**
+  String get riggingAngleHRightLabel;
+
+  /// No description provided for @riggingAngleVLeftLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Angle VLeft Label'**
+  String get riggingAngleVLeftLabel;
+
+  /// No description provided for @riggingAngleVRightLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Angle VRight Label'**
+  String get riggingAngleVRightLabel;
+
+  /// No description provided for @riggingCalc1Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Calc1 Title'**
+  String get riggingCalc1Title;
+
+  /// No description provided for @riggingCalc2Subtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Calc2 Subtitle'**
+  String get riggingCalc2Subtitle;
+
+  /// No description provided for @riggingCalc2Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Calc2 Title'**
+  String get riggingCalc2Title;
+
+  /// No description provided for @riggingCalc3Subtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Calc3 Subtitle'**
+  String get riggingCalc3Subtitle;
+
+  /// No description provided for @riggingCalc3Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Calc3 Title'**
+  String get riggingCalc3Title;
+
+  /// No description provided for @riggingCalcCommonSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Calc Common Subtitle'**
+  String get riggingCalcCommonSubtitle;
+
+  /// No description provided for @riggingDisclaimerNoLoad.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Disclaimer No Load'**
+  String get riggingDisclaimerNoLoad;
+
+  /// No description provided for @riggingDropLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Drop Label'**
+  String get riggingDropLabel;
+
+  /// No description provided for @riggingImpossibleGeometry.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Impossible Geometry'**
+  String get riggingImpossibleGeometry;
+
+  /// No description provided for @riggingIncludedAngleLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Included Angle Label'**
+  String get riggingIncludedAngleLabel;
+
+  /// No description provided for @riggingInputsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Inputs Title'**
+  String get riggingInputsTitle;
+
+  /// No description provided for @riggingInvalidOffset.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Invalid Offset'**
+  String get riggingInvalidOffset;
+
+  /// No description provided for @riggingLegLeftInputLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Leg Left Input Label'**
+  String get riggingLegLeftInputLabel;
+
+  /// No description provided for @riggingLegLeftLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Leg Left Label'**
+  String get riggingLegLeftLabel;
+
+  /// No description provided for @riggingLegRightLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Leg Right Label'**
+  String get riggingLegRightLabel;
+
+  /// No description provided for @riggingNeedPositiveValues.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Need Positive Values'**
+  String get riggingNeedPositiveValues;
+
+  /// No description provided for @riggingOffCenterToggle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Off Center Toggle'**
+  String get riggingOffCenterToggle;
+
+  /// No description provided for @riggingOffsetLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Offset Label'**
+  String get riggingOffsetLabel;
+
+  /// No description provided for @riggingResultsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Results Title'**
+  String get riggingResultsTitle;
+
+  /// No description provided for @riggingSchemaTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Schema Title'**
+  String get riggingSchemaTitle;
+
+  /// No description provided for @riggingSpanLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Span Label'**
+  String get riggingSpanLabel;
+
+  /// No description provided for @riggingTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Title'**
+  String get riggingTitle;
+
+  /// No description provided for @riggingUnitKg.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Unit kg'**
+  String get riggingUnitKg;
+
+  /// No description provided for @riggingUnitMeters.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Unit Meters'**
+  String get riggingUnitMeters;
+
+  /// No description provided for @riggingWeightLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging Weight Label'**
+  String get riggingWeightLabel;
+
+  /// No description provided for @sunTimesIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Intro'**
+  String get sunTimesIntro;
 
   /// No description provided for @sunTimesLabelCity.
   ///
   /// In fr, this message translates to:
-  /// **'Ville'**
+  /// **'Sun Times Label City'**
   String get sunTimesLabelCity;
 
   /// No description provided for @sunTimesLabelDate.
   ///
   /// In fr, this message translates to:
-  /// **'Date'**
+  /// **'Sun Times Label Date'**
   String get sunTimesLabelDate;
-
-  /// No description provided for @sunTimesNoteApprox.
-  ///
-  /// In fr, this message translates to:
-  /// **'Heures indicatives — peuvent varier selon l’altitude, la réfraction et la météo.'**
-  String get sunTimesNoteApprox;
-
-  /// No description provided for @sunTimesLuxBulletAstronomicalTwilight.
-  ///
-  /// In fr, this message translates to:
-  /// **'Crépuscule astronomique : Soleil à -18°'**
-  String get sunTimesLuxBulletAstronomicalTwilight;
-
-  /// No description provided for @sunTimesTimelineTitleStep30.
-  ///
-  /// In fr, this message translates to:
-  /// **'Timeline (pas 30 min)'**
-  String get sunTimesTimelineTitleStep30;
-
-  /// No description provided for @sunTimesTimelineColTime.
-  ///
-  /// In fr, this message translates to:
-  /// **'Heure'**
-  String get sunTimesTimelineColTime;
-
-  /// No description provided for @sunTimesTimelineColElevation.
-  ///
-  /// In fr, this message translates to:
-  /// **'Élévation'**
-  String get sunTimesTimelineColElevation;
-
-  /// No description provided for @sunTimesTimelineColMarker.
-  ///
-  /// In fr, this message translates to:
-  /// **'Repère'**
-  String get sunTimesTimelineColMarker;
-
-  /// No description provided for @sunTimesTimelineColLux.
-  ///
-  /// In fr, this message translates to:
-  /// **'Lux (ordre)'**
-  String get sunTimesTimelineColLux;
-
-  /// No description provided for @sunTimesTimelineFootnote.
-  ///
-  /// In fr, this message translates to:
-  /// **'Repères indicatifs (météo/nuages, environnement, saison) — utile pour préparer un show.'**
-  String get sunTimesTimelineFootnote;
-
-  /// No description provided for @sunTimesLuxNight.
-  ///
-  /// In fr, this message translates to:
-  /// **'Nuit noire'**
-  String get sunTimesLuxNight;
 
   /// No description provided for @sunTimesLuxAstro.
   ///
   /// In fr, this message translates to:
-  /// **'Crépuscule astro'**
+  /// **'Sun Times Lux Astro'**
   String get sunTimesLuxAstro;
-
-  /// No description provided for @sunTimesLuxNautical.
-  ///
-  /// In fr, this message translates to:
-  /// **'Crépuscule naut.'**
-  String get sunTimesLuxNautical;
 
   /// No description provided for @sunTimesLuxCivil.
   ///
   /// In fr, this message translates to:
-  /// **'Crépuscule civil'**
+  /// **'Sun Times Lux Civil'**
   String get sunTimesLuxCivil;
-
-  /// No description provided for @sunTimesLuxVeryLow.
-  ///
-  /// In fr, this message translates to:
-  /// **'Très faible'**
-  String get sunTimesLuxVeryLow;
-
-  /// No description provided for @sunTimesLuxLow.
-  ///
-  /// In fr, this message translates to:
-  /// **'Faible'**
-  String get sunTimesLuxLow;
 
   /// No description provided for @sunTimesLuxDay.
   ///
   /// In fr, this message translates to:
-  /// **'Jour'**
+  /// **'Sun Times Lux Day'**
   String get sunTimesLuxDay;
 
   /// No description provided for @sunTimesLuxFullDay.
   ///
   /// In fr, this message translates to:
-  /// **'Plein jour'**
+  /// **'Sun Times Lux Full Day'**
   String get sunTimesLuxFullDay;
 
-  /// No description provided for @sunTimesSectionSettings.
+  /// No description provided for @sunTimesLuxLow.
   ///
   /// In fr, this message translates to:
-  /// **'Paramètres'**
-  String get sunTimesSectionSettings;
+  /// **'Sun Times Lux Low'**
+  String get sunTimesLuxLow;
 
-  /// No description provided for @sunTimesIntro.
+  /// No description provided for @sunTimesLuxNautical.
   ///
   /// In fr, this message translates to:
-  /// **'Choisis une ville et une date. Les horaires sont indicatifs (arrondis).'**
-  String get sunTimesIntro;
+  /// **'Sun Times Lux Nautical'**
+  String get sunTimesLuxNautical;
 
-  /// No description provided for @sunTimesSectionResults.
+  /// No description provided for @sunTimesLuxNight.
   ///
   /// In fr, this message translates to:
-  /// **'Résultats'**
-  String get sunTimesSectionResults;
+  /// **'Sun Times Lux Night'**
+  String get sunTimesLuxNight;
 
-  /// No description provided for @sunTimesResultSunrise.
+  /// No description provided for @sunTimesLuxNote.
   ///
   /// In fr, this message translates to:
-  /// **'Lever du soleil'**
-  String get sunTimesResultSunrise;
+  /// **'Sun Times Lux Note'**
+  String get sunTimesLuxNote;
 
-  /// No description provided for @sunTimesResultSunset.
+  /// No description provided for @sunTimesLuxVeryLow.
   ///
   /// In fr, this message translates to:
-  /// **'Coucher du soleil'**
-  String get sunTimesResultSunset;
+  /// **'Sun Times Lux Very Low'**
+  String get sunTimesLuxVeryLow;
 
-  /// No description provided for @sunTimesResultCivilDawn.
+  /// No description provided for @sunTimesNoData.
   ///
   /// In fr, this message translates to:
-  /// **'Aube civile'**
-  String get sunTimesResultCivilDawn;
+  /// **'Sun Times No Data'**
+  String get sunTimesNoData;
 
-  /// No description provided for @sunTimesResultCivilDusk.
+  /// No description provided for @sunTimesNoteApprox.
   ///
   /// In fr, this message translates to:
-  /// **'Crépuscule civil'**
-  String get sunTimesResultCivilDusk;
-
-  /// No description provided for @sunTimesResultNauticalDawn.
-  ///
-  /// In fr, this message translates to:
-  /// **'Aube nautique'**
-  String get sunTimesResultNauticalDawn;
-
-  /// No description provided for @sunTimesResultNauticalDusk.
-  ///
-  /// In fr, this message translates to:
-  /// **'Crépuscule nautique'**
-  String get sunTimesResultNauticalDusk;
+  /// **'Sun Times Note Approx'**
+  String get sunTimesNoteApprox;
 
   /// No description provided for @sunTimesResultAstronomicalDawn.
   ///
   /// In fr, this message translates to:
-  /// **'Aube astronomique'**
+  /// **'Sun Times Result Astronomical Dawn'**
   String get sunTimesResultAstronomicalDawn;
 
   /// No description provided for @sunTimesResultAstronomicalDusk.
   ///
   /// In fr, this message translates to:
-  /// **'Crépuscule astronomique'**
+  /// **'Sun Times Result Astronomical Dusk'**
   String get sunTimesResultAstronomicalDusk;
 
-  /// No description provided for @sunTimesNoData.
+  /// No description provided for @sunTimesResultCivilDawn.
   ///
   /// In fr, this message translates to:
-  /// **'—'**
-  String get sunTimesNoData;
+  /// **'Sun Times Result Civil Dawn'**
+  String get sunTimesResultCivilDawn;
 
-  /// No description provided for @sunTimesSectionTimeline.
+  /// No description provided for @sunTimesResultCivilDusk.
   ///
   /// In fr, this message translates to:
-  /// **'Timeline (pas de 30 min)'**
-  String get sunTimesSectionTimeline;
+  /// **'Sun Times Result Civil Dusk'**
+  String get sunTimesResultCivilDusk;
 
-  /// No description provided for @sunTimesTimelineStep30.
+  /// No description provided for @sunTimesResultNauticalDawn.
   ///
   /// In fr, this message translates to:
-  /// **'Pas: 30 min'**
-  String get sunTimesTimelineStep30;
+  /// **'Sun Times Result Nautical Dawn'**
+  String get sunTimesResultNauticalDawn;
 
-  /// No description provided for @sunTimesTimelineDay.
+  /// No description provided for @sunTimesResultNauticalDusk.
   ///
   /// In fr, this message translates to:
-  /// **'Jour'**
-  String get sunTimesTimelineDay;
+  /// **'Sun Times Result Nautical Dusk'**
+  String get sunTimesResultNauticalDusk;
 
-  /// No description provided for @sunTimesTimelineCivil.
+  /// No description provided for @sunTimesResultSunrise.
   ///
   /// In fr, this message translates to:
-  /// **'Civil'**
-  String get sunTimesTimelineCivil;
+  /// **'Sun Times Result Sunrise'**
+  String get sunTimesResultSunrise;
 
-  /// No description provided for @sunTimesTimelineNautical.
+  /// No description provided for @sunTimesResultSunset.
   ///
   /// In fr, this message translates to:
-  /// **'Nautique'**
-  String get sunTimesTimelineNautical;
-
-  /// No description provided for @sunTimesTimelineAstronomical.
-  ///
-  /// In fr, this message translates to:
-  /// **'Astronomique'**
-  String get sunTimesTimelineAstronomical;
-
-  /// No description provided for @sunTimesTimelineNight.
-  ///
-  /// In fr, this message translates to:
-  /// **'Nuit'**
-  String get sunTimesTimelineNight;
-
-  /// No description provided for @sunTimesSectionTwilight.
-  ///
-  /// In fr, this message translates to:
-  /// **'À quoi correspondent les crépuscules ?'**
-  String get sunTimesSectionTwilight;
-
-  /// No description provided for @sunTimesTwilightCivilTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Civil (≈ 0° à −6°)'**
-  String get sunTimesTwilightCivilTitle;
-
-  /// No description provided for @sunTimesTwilightCivilBody.
-  ///
-  /// In fr, this message translates to:
-  /// **'Fin/début de journée. On distingue encore bien le paysage.'**
-  String get sunTimesTwilightCivilBody;
-
-  /// No description provided for @sunTimesTwilightNauticalTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Nautique (≈ −6° à −12°)'**
-  String get sunTimesTwilightNauticalTitle;
-
-  /// No description provided for @sunTimesTwilightNauticalBody.
-  ///
-  /// In fr, this message translates to:
-  /// **'La ligne d’horizon devient difficile à distinguer. Le ciel est nettement plus sombre.'**
-  String get sunTimesTwilightNauticalBody;
-
-  /// No description provided for @sunTimesTwilightAstronomicalTitle.
-  ///
-  /// In fr, this message translates to:
-  /// **'Astronomique (≈ −12° à −18°)'**
-  String get sunTimesTwilightAstronomicalTitle;
-
-  /// No description provided for @sunTimesTwilightAstronomicalBody.
-  ///
-  /// In fr, this message translates to:
-  /// **'Le ciel est proche de la nuit complète (peu de lumière résiduelle).'**
-  String get sunTimesTwilightAstronomicalBody;
+  /// **'Sun Times Result Sunset'**
+  String get sunTimesResultSunset;
 
   /// No description provided for @sunTimesSectionLux.
   ///
   /// In fr, this message translates to:
-  /// **'Seuils de luminosité (repères)'**
+  /// **'Sun Times Section Lux'**
   String get sunTimesSectionLux;
 
-  /// No description provided for @sunTimesLuxNote.
+  /// No description provided for @sunTimesSectionResults.
   ///
   /// In fr, this message translates to:
-  /// **'Ces valeurs sont des repères typiques (météo, saison, environnement → variations).'**
-  String get sunTimesLuxNote;
+  /// **'Sun Times Section Results'**
+  String get sunTimesSectionResults;
 
-  /// En-tête de colonne : subnet Art-Net (0–15).
+  /// No description provided for @sunTimesSectionSettings.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Section Settings'**
+  String get sunTimesSectionSettings;
+
+  /// No description provided for @sunTimesSectionTimeline.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Section Timeline'**
+  String get sunTimesSectionTimeline;
+
+  /// No description provided for @sunTimesSectionTwilight.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Section Twilight'**
+  String get sunTimesSectionTwilight;
+
+  /// No description provided for @sunTimesTimelineAstronomical.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Timeline Astronomical'**
+  String get sunTimesTimelineAstronomical;
+
+  /// No description provided for @sunTimesTimelineCivil.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Timeline Civil'**
+  String get sunTimesTimelineCivil;
+
+  /// No description provided for @sunTimesTimelineDay.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Timeline Day'**
+  String get sunTimesTimelineDay;
+
+  /// No description provided for @sunTimesTimelineNautical.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Timeline Nautical'**
+  String get sunTimesTimelineNautical;
+
+  /// No description provided for @sunTimesTimelineNight.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Timeline Night'**
+  String get sunTimesTimelineNight;
+
+  /// No description provided for @sunTimesTimelineStep30.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Timeline Step30'**
+  String get sunTimesTimelineStep30;
+
+  /// No description provided for @sunTimesTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Title'**
+  String get sunTimesTitle;
+
+  /// No description provided for @sunTimesTwilightAstronomicalBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Twilight Astronomical Body'**
+  String get sunTimesTwilightAstronomicalBody;
+
+  /// No description provided for @sunTimesTwilightAstronomicalTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Twilight Astronomical Title'**
+  String get sunTimesTwilightAstronomicalTitle;
+
+  /// No description provided for @sunTimesTwilightCivilBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Twilight Civil Body'**
+  String get sunTimesTwilightCivilBody;
+
+  /// No description provided for @sunTimesTwilightCivilTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Twilight Civil Title'**
+  String get sunTimesTwilightCivilTitle;
+
+  /// No description provided for @sunTimesTwilightIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Twilight Intro'**
+  String get sunTimesTwilightIntro;
+
+  /// No description provided for @sunTimesTwilightNauticalBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Twilight Nautical Body'**
+  String get sunTimesTwilightNauticalBody;
+
+  /// No description provided for @sunTimesTwilightNauticalTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sun Times Twilight Nautical Title'**
+  String get sunTimesTwilightNauticalTitle;
+
+  /// No description provided for @videoCamApertureHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam Aperture Hint'**
+  String get videoCamApertureHint;
+
+  /// No description provided for @videoCamApertureLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam Aperture Label'**
+  String get videoCamApertureLabel;
+
+  /// No description provided for @videoCamApertureResult.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam Aperture Result : {p0}'**
+  String videoCamApertureResult(Object p0);
+
+  /// No description provided for @videoCamEvEmpty.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam EV Empty'**
+  String get videoCamEvEmpty;
+
+  /// No description provided for @videoCamEvValue.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam EV Value : {p0}'**
+  String videoCamEvValue(Object p0);
+
+  /// No description provided for @videoCamInfoTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam Info Title'**
+  String get videoCamInfoTitle;
+
+  /// No description provided for @videoCamInputsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam Inputs Title'**
+  String get videoCamInputsTitle;
+
+  /// No description provided for @videoCamIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam Intro'**
+  String get videoCamIntro;
+
+  /// No description provided for @videoCamIsoHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam Iso Hint'**
+  String get videoCamIsoHint;
+
+  /// No description provided for @videoCamIsoLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam Iso Label'**
+  String get videoCamIsoLabel;
+
+  /// No description provided for @videoCamLuxHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam Lux Hint'**
+  String get videoCamLuxHint;
+
+  /// No description provided for @videoCamLuxLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam Lux Label'**
+  String get videoCamLuxLabel;
+
+  /// No description provided for @videoCamNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam Note'**
+  String get videoCamNote;
+
+  /// No description provided for @videoCamPageTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam Page Title'**
+  String get videoCamPageTitle;
+
+  /// No description provided for @videoCamShutterHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam Shutter Hint'**
+  String get videoCamShutterHint;
+
+  /// No description provided for @videoCamShutterLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam Shutter Label'**
+  String get videoCamShutterLabel;
+
+  /// No description provided for @videoCamShutterResult.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Cam Shutter Result : {p0}'**
+  String videoCamShutterResult(Object p0);
+
+  /// No description provided for @videoCameraExposureSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Camera Exposure Subtitle'**
+  String get videoCameraExposureSubtitle;
+
+  /// No description provided for @videoCameraExposureTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video Camera Exposure Title'**
+  String get videoCameraExposureTitle;
+
+  /// No description provided for @videoLedResultPitch.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video LED Result Pitch'**
+  String get videoLedResultPitch;
+
+  /// No description provided for @videoLedResultTile.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video LED Result Tile'**
+  String get videoLedResultTile;
+
+  /// No description provided for @videoLedResultWallResolution.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video LED Result Wall Resolution'**
+  String get videoLedResultWallResolution;
+
+  /// No description provided for @videoLedResultWallSize.
+  ///
+  /// In fr, this message translates to:
+  /// **'Video LED Result Wall Size'**
+  String get videoLedResultWallSize;
+
+  ///
+  ///
+  /// In fr, this message translates to:
+  /// **'DMX (univers)'**
+  String get aboutUniverseToArtnetColDmx;
+
+  ///
   ///
   /// In fr, this message translates to:
   /// **'Subnet'**
   String get aboutUniverseToArtnetColSubnet;
 
-  /// En-tête de colonne : univers Art-Net (0–15).
+  ///
   ///
   /// In fr, this message translates to:
   /// **'Univers'**
   String get aboutUniverseToArtnetColUniverse;
 
-  /// Video LED page result label
+  ///
   ///
   /// In fr, this message translates to:
-  /// **'Résolution mur'**
-  String get videoLedResultWallResolution;
+  /// **'Uni (hex)'**
+  String get aboutUniverseToArtnetColUniHex;
 
-  /// Video LED page result label
+  ///
   ///
   /// In fr, this message translates to:
-  /// **'Taille mur'**
-  String get videoLedResultWallSize;
+  /// **'Univers DMX → Art-Net'**
+  String get aboutUniverseToArtnetTitle;
 
-  /// Video LED page result label
+  ///
   ///
   /// In fr, this message translates to:
-  /// **'Dalle'**
-  String get videoLedResultTile;
+  /// **'Table de conversion'**
+  String get aboutUniverseToArtnetTableTitle;
 
-  /// Video LED page result label
+  ///
   ///
   /// In fr, this message translates to:
-  /// **'Pitch'**
-  String get videoLedResultPitch;
+  /// **'Correspondance pratique entre l’univers DMX (sACN) et les champs Art-Net (Subnet/Universe).'**
+  String get aboutUniverseToArtnetTableIntro;
+
+  ///
+  ///
+  /// In fr, this message translates to:
+  /// **'Note : certaines consoles, nodes ou logiciels peuvent numéroter à partir de 0 ou 1 selon le contexte. Vérifie toujours la documentation.'**
+  String get aboutUniverseTablesDisclaimer;
+
+  ///
+  ///
+  /// In fr, this message translates to:
+  /// **'Mon App Tech – Contact'**
+  String get homeContactEmailSubject;
+
+  ///
+  ///
+  /// In fr, this message translates to:
+  /// **'Impossible d’ouvrir l’application e‑mail.'**
+  String get homeErrorOpenEmail;
+
+  ///
+  ///
+  /// In fr, this message translates to:
+  /// **'Impossible d’ouvrir le formulaire.'**
+  String get homeErrorOpenForm;
 }
 
 class _AppLocalizationsDelegate
