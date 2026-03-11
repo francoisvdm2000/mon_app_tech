@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, copyToClipboard
+import '../../l10n_gen/app_localizations.dart';
 
 class AboutVideoPage extends StatefulWidget {
   const AboutVideoPage({super.key});
@@ -42,10 +43,11 @@ class _AboutVideoPageState extends State<AboutVideoPage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Vidéo — repères terrain')),
+      appBar: AppBar(title: Text(loc.aboutVideoPageTitle)),
       body: SafeArea(
         bottom: true,
         child: SingleChildScrollView(
@@ -55,84 +57,57 @@ class _AboutVideoPageState extends State<AboutVideoPage> {
             children: [
               _TocCard(
                 onCopy: () {
-                  final txt = '''
-VIDÉO — repères terrain
-• Résolution = taille (px). FPS = fluidité / latence.
-• 4:2:2 / 4:4:4 + 10-bit = qualité couleur.
-• SDI = robuste + longue distance.
-• HDMI = fragile + court.
-• NDI = IP (réseau), dépend du LAN.
-• Genlock / Timecode = synchro.
-'''.trim();
-                  copyToClipboard(context, txt);
+                  copyToClipboard(context, loc.aboutVideoSummaryCopy.trim());
                 },
                 items: [
-                  _TocItem('1) Bases vidéo (mots-clés)', onTap: () => _goTo(_kBasics)),
-                  _TocItem('2) Résolution & FPS', onTap: () => _goTo(_kResFps)),
-                  _TocItem('3) Couleur (4:4:4 / 4:2:2 / 10-bit)', onTap: () => _goTo(_kColor)),
-                  _TocItem('4) Sync (Genlock / Timecode)', onTap: () => _goTo(_kSync)),
-                  _TocItem('5) Câbles & distances', onTap: () => _goTo(_kCables)),
-                  _TocItem('6) SDI (3G / 6G / 12G)', onTap: () => _goTo(_kSdi)),
-                  _TocItem('7) HDMI — terrain', onTap: () => _goTo(_kHdmi)),
-                  _TocItem('8) NDI — quand / pourquoi / limites', onTap: () => _goTo(_kNdi)),
-                  _TocItem('9) Mapping / LED / multi-projo', onTap: () => _goTo(_kMappingLed)),
-                  _TocItem('10) Checklist terrain', onTap: () => _goTo(_kChecklist)),
+                  _TocItem(loc.aboutVideoToc1, onTap: () => _goTo(_kBasics)),
+                  _TocItem(loc.aboutVideoToc2, onTap: () => _goTo(_kResFps)),
+                  _TocItem(loc.aboutVideoToc3, onTap: () => _goTo(_kColor)),
+                  _TocItem(loc.aboutVideoToc4, onTap: () => _goTo(_kSync)),
+                  _TocItem(loc.aboutVideoToc5, onTap: () => _goTo(_kCables)),
+                  _TocItem(loc.aboutVideoToc6, onTap: () => _goTo(_kSdi)),
+                  _TocItem(loc.aboutVideoToc7, onTap: () => _goTo(_kHdmi)),
+                  _TocItem(loc.aboutVideoToc8, onTap: () => _goTo(_kNdi)),
+                  _TocItem(loc.aboutVideoToc9,
+                      onTap: () => _goTo(_kMappingLed)),
+                  _TocItem(loc.aboutVideoToc10,
+                      onTap: () => _goTo(_kChecklist)),
                 ],
               ),
               const SizedBox(height: 12),
-
               _Anchor(key: _kBasics),
               const _Section1Basics(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kResFps),
               const _Section2ResFps(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kColor),
               const _Section3Color(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kSync),
               const _Section4Sync(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kCables),
               const _Section5Cables(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kSdi),
               const _Section6Sdi(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kHdmi),
               const _Section7Hdmi(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kNdi),
               const _Section8Ndi(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kMappingLed),
               const _Section9Mapping(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kChecklist),
               _Section10Checklist(
                 onCopy: () {
-                  final txt = '''
-VIDÉO — Checklist
-☐ Même résolution & FPS partout
-☐ HDMI : EDID / HDCP maîtrisés
-☐ SDI : câble 75Ω + bon standard
-☐ NDI/IP : LAN propre (switch, débit)
-☐ Genlock / Timecode si synchro requise
-☐ Tester source → écran direct
-'''.trim();
-                  copyToClipboard(context, txt);
+                  copyToClipboard(context, loc.aboutVideoChecklistCopy.trim());
                 },
               ),
-
               const SizedBox(height: 18),
               const _FooterNote(),
             ],
@@ -155,11 +130,13 @@ class _TocCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: 'Sommaire',
+      title: loc.commonTocTitle,
       icon: Icons.menu_book,
       trailing: IconButton(
-        tooltip: 'Copier résumé',
+        tooltip: loc.commonCopySummaryTooltip,
         icon: const Icon(Icons.copy, color: Colors.white70),
         onPressed: onCopy,
       ),
@@ -175,7 +152,8 @@ class _TocCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     onTap: it.onTap,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 12),
                       child: Row(
                         children: [
                           Expanded(
@@ -187,7 +165,8 @@ class _TocCard extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Icon(Icons.chevron_right, color: Colors.white.withValues(alpha: 0.55)),
+                          Icon(Icons.chevron_right,
+                              color: Colors.white.withValues(alpha: 0.55)),
                         ],
                       ),
                     ),
@@ -216,25 +195,24 @@ class _Section1Basics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '1) Bases vidéo (mots-clés)',
+      title: loc.aboutVideoToc1,
       icon: Icons.video_library,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _Paragraph(
-            "La vidéo, c’est une image (pixels) envoyée à un rythme (FPS), avec une structure couleur "
-            "(sampling / bit depth), transportée par un lien (SDI / HDMI / IP) et parfois synchronisée.",
-          ),
-          SizedBox(height: 10),
+          _Paragraph(loc.aboutVideoSection1Paragraph),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Vocabulaire utile',
+            title: loc.aboutVideoSection1Title,
             bullets: [
-              'Résolution : largeur×hauteur (px).',
-              'FPS : fluidité / latence.',
-              'Progressif (p) vs entrelacé (i).',
-              'Codec : compression (H.264, H.265…).',
-              'Latency : critique en live.',
+              loc.aboutVideoSection1Bullet1,
+              loc.aboutVideoSection1Bullet2,
+              loc.aboutVideoSection1Bullet3,
+              loc.aboutVideoSection1Bullet4,
+              loc.aboutVideoSection1Bullet5,
             ],
           ),
         ],
@@ -248,28 +226,30 @@ class _Section2ResFps extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '2) Résolution & FPS',
+      title: loc.aboutVideoToc2,
       icon: Icons.aspect_ratio,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _Callout(
-            title: 'Résolution',
+            title: loc.aboutVideoSection2Title,
             bullets: [
-              '1080p = 1920×1080.',
-              '4K UHD = 3840×2160.',
-              'DCI 4K = 4096×2160 (cinéma).',
-              'Plus de pixels = plus de débit.',
+              loc.aboutVideoSection2Bullet1,
+              loc.aboutVideoSection2Bullet2,
+              loc.aboutVideoSection2Bullet3,
+              loc.aboutVideoSection2Bullet4,
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'FPS',
+            title: loc.aboutVideoSection2Title2,
             bullets: [
-              '25/50 : standard Europe.',
-              '30/60 : standard US / devices.',
-              'Éviter de mixer 50 et 60 sans conversion.',
+              loc.aboutVideoSection2Bullet5,
+              loc.aboutVideoSection2Bullet6,
+              loc.aboutVideoSection2Bullet7,
             ],
           ),
         ],
@@ -283,26 +263,28 @@ class _Section3Color extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '3) Couleur (4:4:4 / 4:2:2 / 10-bit)',
+      title: loc.aboutVideoToc3,
       icon: Icons.palette,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _Callout(
-            title: 'Sampling',
+            title: loc.aboutVideoSection3Title,
             bullets: [
-              '4:4:4 : graphismes / keying.',
-              '4:2:2 : pro courant.',
-              '4:2:0 : fichiers / stream.',
+              loc.aboutVideoSection3Bullet1,
+              loc.aboutVideoSection3Bullet2,
+              loc.aboutVideoSection3Bullet3,
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Bit depth',
+            title: loc.aboutVideoSection3Title2,
             bullets: [
-              '8-bit : standard.',
-              '10-bit : meilleurs dégradés (HDR / LED).',
+              loc.aboutVideoSection3Bullet4,
+              loc.aboutVideoSection3Bullet5,
             ],
           ),
         ],
@@ -316,25 +298,27 @@ class _Section4Sync extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '4) Sync (Genlock / Timecode)',
+      title: loc.aboutVideoToc4,
       icon: Icons.sync,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _Callout(
-            title: 'Genlock',
+            title: loc.aboutVideoSection4Title,
             bullets: [
-              'Synchronise le rafraîchissement image.',
-              'Utile en multi-cam / LED / broadcast.',
+              loc.aboutVideoSection4Bullet1,
+              loc.aboutVideoSection4Bullet2,
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Timecode',
+            title: loc.aboutVideoSection4Title2,
             bullets: [
-              'Synchronisation temporelle.',
-              'Ne remplace pas le genlock.',
+              loc.aboutVideoSection4Bullet3,
+              loc.aboutVideoSection4Bullet4,
             ],
           ),
         ],
@@ -348,20 +332,17 @@ class _Section5Cables extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '5) Câbles & distances',
+      title: loc.aboutVideoToc5,
       icon: Icons.cable,
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _Callout(
-            title: 'Règles simples',
-            bullets: [
-              'HDMI : fragile, court.',
-              'SDI : robuste, long.',
-              'Fibre : très long + EMI free.',
-            ],
-          ),
+      child: _Callout(
+        title: loc.aboutVideoSection5Title,
+        bullets: [
+          loc.aboutVideoSection5Bullet1,
+          loc.aboutVideoSection5Bullet2,
+          loc.aboutVideoSection5Bullet3,
         ],
       ),
     );
@@ -373,15 +354,17 @@ class _Section6Sdi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '6) SDI (3G / 6G / 12G)',
+      title: loc.aboutVideoToc6,
       icon: Icons.settings_input_hdmi,
-      child: const _Callout(
-        title: 'Repères',
+      child: _Callout(
+        title: loc.aboutVideoSection6Title,
         bullets: [
-          '3G : 1080p60',
-          '6G : 2160p30',
-          '12G : 2160p60',
+          loc.aboutVideoSection6Bullet1,
+          loc.aboutVideoSection6Bullet2,
+          loc.aboutVideoSection6Bullet3,
         ],
       ),
     );
@@ -393,15 +376,17 @@ class _Section7Hdmi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '7) HDMI — terrain',
+      title: loc.aboutVideoToc7,
       icon: Icons.tv,
-      child: const _Callout(
-        title: 'À surveiller',
+      child: _Callout(
+        title: loc.aboutVideoSection7Title,
         bullets: [
-          'EDID',
-          'HDCP',
-          'Longueurs',
+          loc.aboutVideoSection7Bullet1,
+          loc.aboutVideoSection7Bullet2,
+          loc.aboutVideoSection7Bullet3,
         ],
       ),
     );
@@ -413,15 +398,17 @@ class _Section8Ndi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '8) NDI',
+      title: loc.aboutVideoToc8,
       icon: Icons.lan,
-      child: const _Callout(
-        title: 'IP vidéo',
+      child: _Callout(
+        title: loc.aboutVideoSection8Title,
         bullets: [
-          'Flexible.',
-          'Charge réseau.',
-          'LAN propre requis.',
+          loc.aboutVideoSection8Bullet1,
+          loc.aboutVideoSection8Bullet2,
+          loc.aboutVideoSection8Bullet3,
         ],
       ),
     );
@@ -433,15 +420,17 @@ class _Section9Mapping extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '9) Mapping / LED / multi-projo',
+      title: loc.aboutVideoToc9,
       icon: Icons.grid_view,
-      child: const _Callout(
-        title: 'Terrain',
+      child: _Callout(
+        title: loc.aboutVideoSection9Title,
         bullets: [
-          'Même résolution / FPS.',
-          'Mapping correct.',
-          'Tester avec mires.',
+          loc.aboutVideoSection9Bullet1,
+          loc.aboutVideoSection9Bullet2,
+          loc.aboutVideoSection9Bullet3,
         ],
       ),
     );
@@ -454,19 +443,22 @@ class _Section10Checklist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '10) Checklist terrain',
+      title: loc.aboutVideoToc10,
       icon: Icons.checklist,
       trailing: IconButton(
+        tooltip: loc.aboutVideoChecklistCopyTooltip,
         icon: const Icon(Icons.copy, color: Colors.white70),
         onPressed: onCopy,
       ),
-      child: const _Callout(
-        title: 'Avant de paniquer',
+      child: _Callout(
+        title: loc.aboutVideoChecklistTitle,
         bullets: [
-          'Vérifier résolution / FPS.',
-          'Tester source → écran.',
-          'Simplifier la chaîne.',
+          loc.aboutVideoChecklistBullet1,
+          loc.aboutVideoChecklistBullet2,
+          loc.aboutVideoChecklistBullet3,
         ],
       ),
     );
@@ -491,7 +483,10 @@ class _Paragraph extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35, fontSize: 13.5),
+      style: TextStyle(
+          color: Colors.white.withValues(alpha: 0.80),
+          height: 1.35,
+          fontSize: 13.5),
     );
   }
 }
@@ -515,13 +510,16 @@ class _Callout extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w900),
+            style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.92),
+                fontWeight: FontWeight.w900),
           ),
           const SizedBox(height: 8),
           ...bullets.map(
             (b) => Text(
               '• $b',
-              style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35),
+              style: TextStyle(
+                  color: Colors.white.withValues(alpha: 0.80), height: 1.35),
             ),
           ),
         ],
@@ -535,11 +533,12 @@ class _FooterNote extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      "Info indicative (terrain). Les comportements varient selon matériels.\n"
-      "Objectif : comprendre vite et dépanner proprement.",
+    final loc = AppLocalizations.of(context);
+
+    return Text(
+      loc.aboutVideoFooterNote,
       textAlign: TextAlign.center,
-      style: TextStyle(color: Colors.white38, fontSize: 12),
+      style: const TextStyle(color: Colors.white38, fontSize: 12),
     );
   }
 }

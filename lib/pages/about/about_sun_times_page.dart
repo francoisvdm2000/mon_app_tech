@@ -88,8 +88,10 @@ class _AboutSunTimesPageState extends State<AboutSunTimesPage> {
                   onPick: (d) => setState(() => _date = d),
                 ),
                 const SizedBox(height: 12),
-                Text(loc.sunTimesNoteApprox,
-                    style: Theme.of(context).textTheme.bodySmall),
+                Text(
+                  loc.sunTimesNoteApprox,
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
               ],
             ),
           ),
@@ -99,38 +101,86 @@ class _AboutSunTimesPageState extends State<AboutSunTimesPage> {
             child: Column(
               children: [
                 _kv(
-                    loc.sunTimesResultSunrise,
-                    _fmtTime(loc, res.sunrise, _city.utcOffsetHours,
-                        _city.dstRule, _date)),
+                  loc.sunTimesResultSunrise,
+                  _fmtTime(
+                    loc,
+                    res.sunrise,
+                    _city.utcOffsetHours,
+                    _city.dstRule,
+                    _date,
+                  ),
+                ),
                 _kv(
-                    loc.sunTimesResultSunset,
-                    _fmtTime(loc, res.sunset, _city.utcOffsetHours,
-                        _city.dstRule, _date)),
+                  loc.sunTimesResultSunset,
+                  _fmtTime(
+                    loc,
+                    res.sunset,
+                    _city.utcOffsetHours,
+                    _city.dstRule,
+                    _date,
+                  ),
+                ),
                 const Divider(height: 18),
                 _kv(
-                    loc.sunTimesResultCivilDawn,
-                    _fmtTime(loc, res.civilDawn, _city.utcOffsetHours,
-                        _city.dstRule, _date)),
+                  loc.sunTimesResultCivilDawn,
+                  _fmtTime(
+                    loc,
+                    res.civilDawn,
+                    _city.utcOffsetHours,
+                    _city.dstRule,
+                    _date,
+                  ),
+                ),
                 _kv(
-                    loc.sunTimesResultCivilDusk,
-                    _fmtTime(loc, res.civilDusk, _city.utcOffsetHours,
-                        _city.dstRule, _date)),
+                  loc.sunTimesResultCivilDusk,
+                  _fmtTime(
+                    loc,
+                    res.civilDusk,
+                    _city.utcOffsetHours,
+                    _city.dstRule,
+                    _date,
+                  ),
+                ),
                 _kv(
-                    loc.sunTimesResultNauticalDawn,
-                    _fmtTime(loc, res.nauticalDawn, _city.utcOffsetHours,
-                        _city.dstRule, _date)),
+                  loc.sunTimesResultNauticalDawn,
+                  _fmtTime(
+                    loc,
+                    res.nauticalDawn,
+                    _city.utcOffsetHours,
+                    _city.dstRule,
+                    _date,
+                  ),
+                ),
                 _kv(
-                    loc.sunTimesResultNauticalDusk,
-                    _fmtTime(loc, res.nauticalDusk, _city.utcOffsetHours,
-                        _city.dstRule, _date)),
+                  loc.sunTimesResultNauticalDusk,
+                  _fmtTime(
+                    loc,
+                    res.nauticalDusk,
+                    _city.utcOffsetHours,
+                    _city.dstRule,
+                    _date,
+                  ),
+                ),
                 _kv(
-                    loc.sunTimesResultAstronomicalDawn,
-                    _fmtTime(loc, res.astroDawn, _city.utcOffsetHours,
-                        _city.dstRule, _date)),
+                  loc.sunTimesResultAstronomicalDawn,
+                  _fmtTime(
+                    loc,
+                    res.astroDawn,
+                    _city.utcOffsetHours,
+                    _city.dstRule,
+                    _date,
+                  ),
+                ),
                 _kv(
-                    loc.sunTimesResultAstronomicalDusk,
-                    _fmtTime(loc, res.astroDusk, _city.utcOffsetHours,
-                        _city.dstRule, _date)),
+                  loc.sunTimesResultAstronomicalDusk,
+                  _fmtTime(
+                    loc,
+                    res.astroDusk,
+                    _city.utcOffsetHours,
+                    _city.dstRule,
+                    _date,
+                  ),
+                ),
               ],
             ),
           ),
@@ -140,8 +190,10 @@ class _AboutSunTimesPageState extends State<AboutSunTimesPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(loc.sunTimesTimelineStep30,
-                    style: Theme.of(context).textTheme.bodySmall),
+                Text(
+                  loc.sunTimesTimelineStep30,
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
                 const SizedBox(height: 12),
                 _Timeline30(
                   date: _date,
@@ -168,12 +220,14 @@ class _AboutSunTimesPageState extends State<AboutSunTimesPage> {
                 Text(loc.sunTimesTwilightIntro),
                 const SizedBox(height: 10),
                 _bulletTitleBody(
-                    title: loc.sunTimesTwilightCivilTitle,
-                    body: loc.sunTimesTwilightCivilBody),
+                  title: loc.sunTimesTwilightCivilTitle,
+                  body: loc.sunTimesTwilightCivilBody,
+                ),
                 const SizedBox(height: 8),
                 _bulletTitleBody(
-                    title: loc.sunTimesTwilightNauticalTitle,
-                    body: loc.sunTimesTwilightNauticalBody),
+                  title: loc.sunTimesTwilightNauticalTitle,
+                  body: loc.sunTimesTwilightNauticalBody,
+                ),
                 const SizedBox(height: 8),
                 _bulletTitleBody(
                   title: loc.sunTimesTwilightAstronomicalTitle,
@@ -196,8 +250,10 @@ class _AboutSunTimesPageState extends State<AboutSunTimesPage> {
                 _kv(loc.sunTimesLuxDay, '200–10 000 lx'),
                 _kv(loc.sunTimesLuxFullDay, '10 000–100 000 lx'),
                 const SizedBox(height: 10),
-                Text(loc.sunTimesLuxNote,
-                    style: Theme.of(context).textTheme.bodySmall),
+                Text(
+                  loc.sunTimesLuxNote,
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
               ],
             ),
           ),
@@ -239,9 +295,10 @@ Widget _card({required String title, required Widget child}) {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title,
-              style:
-                  const TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+          Text(
+            title,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+          ),
           const SizedBox(height: 10),
           child,
         ],

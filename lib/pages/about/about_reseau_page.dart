@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, copyToClipboard
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 class AboutReseauPage extends StatefulWidget {
   const AboutReseauPage({super.key});
@@ -40,10 +41,11 @@ class _AboutReseauPageState extends State<AboutReseauPage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Réseau — repères terrain')),
+      appBar: AppBar(title: Text(loc.aboutReseauPageTitle)),
       body: SafeArea(
         bottom: true,
         child: SingleChildScrollView(
@@ -53,74 +55,51 @@ class _AboutReseauPageState extends State<AboutReseauPage> {
             children: [
               _TocCard(
                 onCopy: () {
-                  final txt = '''
-RÉSEAU — repères terrain
-• RJ45 : Cat5e/6/6A → 1G/10G selon distance.
-• Fibre : longue distance + immunité EMI.
-• Switch : IGMP important pour sACN multicast.
-• VLAN : séparer lumière/vidéo/IT = stabilité.
-'''
-                      .trim();
+                  final txt = loc.aboutReseauSummaryCopy.trim();
                   copyToClipboard(context, txt);
                 },
                 items: [
-                  _TocItem('1) Bases réseau (LAN / IP / débit)', onTap: () => _goTo(_kBasics)),
-                  _TocItem('2) RJ45 & catégories (Cat5e/6/6A/…)', onTap: () => _goTo(_kRj45)),
-                  _TocItem('3) PoE (alimentation réseau)', onTap: () => _goTo(_kPoE)),
-                  _TocItem('4) Fibre (SM/MM) + connecteurs (LC/SC)', onTap: () => _goTo(_kFiber)),
-                  _TocItem('5) SFP / SFP+ / QSFP (modules)', onTap: () => _goTo(_kSfp)),
-                  _TocItem('6) Switches (VLAN / IGMP / QoS)', onTap: () => _goTo(_kSwitch)),
-                  _TocItem('7) Art-Net / sACN sur réseau (conseils)', onTap: () => _goTo(_kArtNetSacn)),
-                  _TocItem('8) Checklist', onTap: () => _goTo(_kChecklist)),
+                  _TocItem(loc.aboutReseauToc1, onTap: () => _goTo(_kBasics)),
+                  _TocItem(loc.aboutReseauToc2, onTap: () => _goTo(_kRj45)),
+                  _TocItem(loc.aboutReseauToc3, onTap: () => _goTo(_kPoE)),
+                  _TocItem(loc.aboutReseauToc4, onTap: () => _goTo(_kFiber)),
+                  _TocItem(loc.aboutReseauToc5, onTap: () => _goTo(_kSfp)),
+                  _TocItem(loc.aboutReseauToc6, onTap: () => _goTo(_kSwitch)),
+                  _TocItem(loc.aboutReseauToc7,
+                      onTap: () => _goTo(_kArtNetSacn)),
+                  _TocItem(loc.aboutReseauToc8,
+                      onTap: () => _goTo(_kChecklist)),
                 ],
               ),
               const SizedBox(height: 12),
-
               _Anchor(key: _kBasics),
               const _Section1Basics(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kRj45),
               const _Section2Rj45(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kPoE),
               const _Section3Poe(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kFiber),
               const _Section4Fiber(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kSfp),
               const _Section5Sfp(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kSwitch),
               const _Section6Switch(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kArtNetSacn),
               const _Section7ArtNetSacn(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kChecklist),
               _Section8Checklist(
                 onCopy: () {
-                  final txt = '''
-RÉSEAU — Checklist
-☐ Plan IP clair (plage / masques)
-☐ Switch correct (IGMP si sACN multicast)
-☐ VLAN si plusieurs “mondes” (lumière/vidéo/IT)
-☐ Câbles testés + étiquetés
-☐ Fibre : modules compatibles + connecteurs propres
-☐ Éviter boucles (STP) + éviter Wi-Fi public sur show LAN
-'''
-                      .trim();
+                  final txt = loc.aboutReseauChecklistCopy.trim();
                   copyToClipboard(context, txt);
                 },
               ),
-
               const SizedBox(height: 18),
               const _FooterNote(),
             ],
@@ -146,11 +125,13 @@ class _TocCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: 'Sommaire',
+      title: loc.commonTocTitle,
       icon: Icons.router,
       trailing: IconButton(
-        tooltip: 'Copier résumé',
+        tooltip: loc.commonCopySummaryTooltip,
         icon: const Icon(Icons.copy, color: Colors.white70),
         onPressed: onCopy,
       ),
@@ -166,7 +147,8 @@ class _TocCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     onTap: it.onTap,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 12),
                       child: Row(
                         children: [
                           Expanded(
@@ -178,7 +160,8 @@ class _TocCard extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Icon(Icons.chevron_right, color: Colors.white.withValues(alpha: 0.55)),
+                          Icon(Icons.chevron_right,
+                              color: Colors.white.withValues(alpha: 0.55)),
                         ],
                       ),
                     ),
@@ -207,27 +190,29 @@ class _Section1Basics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '1) Bases réseau (LAN / IP / débit)',
+      title: loc.aboutReseauToc1,
       icon: Icons.lan,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _Callout(
-            title: 'Les 3 idées simples',
+            title: loc.aboutReseauSection1Title,
             bullets: [
-              'IP = adresse (ex: 10.0.0.50).',
-              'LAN = réseau local via switch (pas “internet”).',
-              'Débit = capacité (1G, 10G…), mais la stabilité dépend aussi du switch.',
+              loc.aboutReseauSection1Bullet1,
+              loc.aboutReseauSection1Bullet2,
+              loc.aboutReseauSection1Bullet3,
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Topologie show (propre)',
+            title: loc.aboutReseauSection1Title2,
             bullets: [
-              'Console/PC → switch central → nodes/serveurs.',
-              'Évite les “daisy-chain réseau” au hasard.',
-              'Si possible : un réseau dédié show (pas le Wi-Fi public).',
+              loc.aboutReseauSection1Bullet4,
+              loc.aboutReseauSection1Bullet5,
+              loc.aboutReseauSection1Bullet6,
             ],
           ),
         ],
@@ -241,28 +226,30 @@ class _Section2Rj45 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '2) RJ45 & catégories (Cat5e/6/6A/…)',
+      title: loc.aboutReseauToc2,
       icon: Icons.settings_ethernet,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _Callout(
-            title: 'Repères rapides',
+            title: loc.aboutReseauSection2Title,
             bullets: [
-              'Cat5e : 1 Gbit/s “classique” (jusqu’à 100m).',
-              'Cat6 : 1G/10G (10G plutôt sur distances plus courtes).',
-              'Cat6A : 10G jusqu’à 100m (repère pratique).',
-              'Au-delà : Cat7/8 existent, mais Cat6A est souvent le sweet spot terrain.',
+              loc.aboutReseauSection2Bullet1,
+              loc.aboutReseauSection2Bullet2,
+              loc.aboutReseauSection2Bullet3,
+              loc.aboutReseauSection2Bullet4,
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Terrain',
+            title: loc.aboutReseauSection2Title2,
             bullets: [
-              'Toujours tester/étiqueter les câbles (surtout quand c’est loué).',
-              'Évite les connecteurs abîmés : un RJ45 “fatigué” = pannes fantômes.',
-              'Prévoir du 10G si tu fais vidéo IP lourde.',
+              loc.aboutReseauSection2Bullet5,
+              loc.aboutReseauSection2Bullet6,
+              loc.aboutReseauSection2Bullet7,
             ],
           ),
         ],
@@ -276,23 +263,22 @@ class _Section3Poe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '3) PoE (alimentation réseau)',
+      title: loc.aboutReseauToc3,
       icon: Icons.power,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _Paragraph(
-            "PoE permet d’alimenter des équipements via RJ45 (cam IP, AP Wi-Fi, petits nodes…). "
-            "Le point critique : le budget PoE total du switch.",
-          ),
-          SizedBox(height: 10),
+          _Paragraph(loc.aboutReseauSection3Paragraph),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Repères',
+            title: loc.aboutReseauSection3Title,
             bullets: [
-              'PoE (802.3af) ≈ 15W, PoE+ (802.3at) ≈ 30W, PoE++/bt plus haut.',
-              'Le switch a un “budget” total (ex: 120W).',
-              'Si tu dépasses le budget : certains ports ne s’allument plus / reboot.',
+              loc.aboutReseauSection3Bullet1,
+              loc.aboutReseauSection3Bullet2,
+              loc.aboutReseauSection3Bullet3,
             ],
           ),
         ],
@@ -306,36 +292,38 @@ class _Section4Fiber extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '4) Fibre (SM/MM) + connecteurs (LC/SC)',
+      title: loc.aboutReseauToc4,
       icon: Icons.cable,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _Callout(
-            title: 'Pourquoi la fibre en show',
+            title: loc.aboutReseauSection4Title,
             bullets: [
-              'Très longues distances.',
-              'Immunité aux parasites (EMI), top en environnements chargés.',
-              'Pratique pour relier FOH ↔ plateau ↔ régie.',
+              loc.aboutReseauSection4Bullet1,
+              loc.aboutReseauSection4Bullet2,
+              loc.aboutReseauSection4Bullet3,
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Multimode vs Monomode (repère simple)',
+            title: loc.aboutReseauSection4Title2,
             bullets: [
-              'Multimode (MM) : distances “moyennes” (souvent bâtiment / plateau).',
-              'Monomode (SM) : très longues distances.',
-              'Les modules (SFP) doivent matcher le type de fibre.',
+              loc.aboutReseauSection4Bullet4,
+              loc.aboutReseauSection4Bullet5,
+              loc.aboutReseauSection4Bullet6,
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Connecteurs',
+            title: loc.aboutReseauSection4Title3,
             bullets: [
-              'LC : petit, très courant sur SFP.',
-              'SC : plus gros, courant en infrastructure.',
-              'Toujours protéger/clean (poussière = pertes).',
+              loc.aboutReseauSection4Bullet7,
+              loc.aboutReseauSection4Bullet8,
+              loc.aboutReseauSection4Bullet9,
             ],
           ),
         ],
@@ -349,26 +337,25 @@ class _Section5Sfp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '5) SFP / SFP+ / QSFP (modules)',
+      title: loc.aboutReseauToc5,
       icon: Icons.memory,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _Callout(
-            title: 'Repères',
+            title: loc.aboutReseauSection5Title,
             bullets: [
-              'SFP : souvent 1G.',
-              'SFP+ : souvent 10G.',
-              'QSFP/QSFP+ : 40G (selon usage).',
-              'Un module = vitesse + type fibre + longueur (tout doit être cohérent).',
+              loc.aboutReseauSection5Bullet1,
+              loc.aboutReseauSection5Bullet2,
+              loc.aboutReseauSection5Bullet3,
+              loc.aboutReseauSection5Bullet4,
             ],
           ),
-          SizedBox(height: 10),
-          _Paragraph(
-            "En pratique : prends des modules compatibles avec le switch (et idéalement du même fournisseur/modèle) "
-            "pour éviter les surprises.",
-          ),
+          const SizedBox(height: 10),
+          _Paragraph(loc.aboutReseauSection5Paragraph),
         ],
       ),
     );
@@ -380,27 +367,29 @@ class _Section6Switch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '6) Switches (VLAN / IGMP / QoS)',
+      title: loc.aboutReseauToc6,
       icon: Icons.hub,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _Callout(
-            title: 'Fonctions utiles en spectacle',
+            title: loc.aboutReseauSection6Title,
             bullets: [
-              'VLAN : séparer lumière / vidéo / IT.',
-              'IGMP snooping : indispensable si tu utilises sACN multicast à grande échelle.',
-              'QoS : utile si tu mixes beaucoup de flux (selon contexte).',
+              loc.aboutReseauSection6Bullet1,
+              loc.aboutReseauSection6Bullet2,
+              loc.aboutReseauSection6Bullet3,
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Erreurs fréquentes',
+            title: loc.aboutReseauSection6Title2,
             bullets: [
-              'Switch “cheap” qui flood le multicast → réseau qui s’écroule.',
-              'Boucle réseau sans STP → tempête de broadcast.',
-              'Wi-Fi public sur le même LAN que le show → instabilité.',
+              loc.aboutReseauSection6Bullet4,
+              loc.aboutReseauSection6Bullet5,
+              loc.aboutReseauSection6Bullet6,
             ],
           ),
         ],
@@ -414,27 +403,29 @@ class _Section7ArtNetSacn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '7) Art-Net / sACN sur réseau (conseils)',
+      title: loc.aboutReseauToc7,
       icon: Icons.lightbulb_outline,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _Callout(
-            title: 'Art-Net (terrain)',
+            title: loc.aboutReseauSection7Title,
             bullets: [
-              'Souvent simple à mettre en place.',
-              'Broadcast possible sur petit LAN dédié, mais unicast est plus propre.',
-              'Mapping univers/ports = point numéro 1 à vérifier.',
+              loc.aboutReseauSection7Bullet1,
+              loc.aboutReseauSection7Bullet2,
+              loc.aboutReseauSection7Bullet3,
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'sACN (terrain)',
+            title: loc.aboutReseauSection7Title2,
             bullets: [
-              'Multicast : efficace, mais exige un switch correct (IGMP).',
-              'Priorités : utile si plusieurs sources.',
-              'Sur gros shows : sACN + IGMP est souvent le choix “propre”.',
+              loc.aboutReseauSection7Bullet4,
+              loc.aboutReseauSection7Bullet5,
+              loc.aboutReseauSection7Bullet6,
             ],
           ),
         ],
@@ -450,20 +441,22 @@ class _Section8Checklist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '8) Checklist',
+      title: loc.aboutReseauToc8,
       icon: Icons.checklist,
       trailing: IconButton(
-        tooltip: 'Copier',
+        tooltip: loc.aboutReseauChecklistCopyTooltip,
         icon: const Icon(Icons.copy, color: Colors.white70),
         onPressed: onCopy,
       ),
-      child: const _Callout(
-        title: 'Rapide',
+      child: _Callout(
+        title: loc.aboutReseauChecklistTitle,
         bullets: [
-          'Switch correct + câbles propres.',
-          'IGMP si sACN multicast.',
-          'Séparer les usages (VLAN).',
+          loc.aboutReseauChecklistBullet1,
+          loc.aboutReseauChecklistBullet2,
+          loc.aboutReseauChecklistBullet3,
         ],
       ),
     );
@@ -541,11 +534,16 @@ class _Bullet extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('•  ', style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35)),
+          Text('•  ',
+              style: TextStyle(
+                  color: Colors.white.withValues(alpha: 0.80), height: 1.35)),
           Expanded(
             child: Text(
               text,
-              style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35, fontSize: 13.5),
+              style: TextStyle(
+                  color: Colors.white.withValues(alpha: 0.80),
+                  height: 1.35,
+                  fontSize: 13.5),
             ),
           ),
         ],
@@ -559,11 +557,12 @@ class _FooterNote extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      "Info indicative (terrain). Les capacités exactes varient selon matériel / câbles / modules.\n"
-      "Objectif : repères simples + méthode fiable.",
+    final loc = AppLocalizations.of(context);
+
+    return Text(
+      loc.aboutReseauFooterNote,
       textAlign: TextAlign.center,
-      style: TextStyle(color: Colors.white38, fontSize: 12, height: 1.35),
+      style: const TextStyle(color: Colors.white38, fontSize: 12, height: 1.35),
     );
   }
 }

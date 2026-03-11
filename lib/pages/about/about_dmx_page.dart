@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, MiniPill, copyToClipboard
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 class AboutDmxPage extends StatefulWidget {
   const AboutDmxPage({super.key});
@@ -44,11 +45,12 @@ class _AboutDmxPageState extends State<AboutDmxPage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('DMX — fonctionnement (simple & complet)'),
+        title: Text(loc.aboutDmxPageTitle),
       ),
       body: SafeArea(
         bottom: true,
@@ -60,98 +62,90 @@ class _AboutDmxPageState extends State<AboutDmxPage> {
               _TocCard(
                 onCopy: () {
                   final txt = [
-                    'DMX = RS-485, 512 canaux (slots) par univers, valeurs 0–255 (8-bit).',
-                    'Timing: 250 kbaud, univers plein ≈ ~44 Hz (ordre de grandeur).',
-                    'Topologie: daisy-chain (pas de Y passif). Terminaison 120Ω sur le dernier.',
-                    'RDM = DMX bidirectionnel (config/monitoring) → compatibilités splitters/nodes à vérifier.',
-                    'Art-Net / sACN = univers DMX transportés sur Ethernet/IP via nodes.',
-                    'sACN = multicast + priorités (IGMP snooping recommandé).',
+                    loc.aboutDmxSummaryLine1,
+                    loc.aboutDmxSummaryLine2,
+                    loc.aboutDmxSummaryLine3,
+                    loc.aboutDmxSummaryLine4,
+                    loc.aboutDmxSummaryLine5,
+                    loc.aboutDmxSummaryLine6,
                   ].join('\n');
                   copyToClipboard(context, txt);
                 },
                 items: [
-                  _TocItem('1) DMX, univers, adresses — la base', onTap: () => _goTo(_k1Basics)),
-                  _TocItem('2) Trame DMX — break, start code, canaux', onTap: () => _goTo(_k2Frame)),
-                  _TocItem('3) Câblage RS-485 — topologie & câble', onTap: () => _goTo(_k3Cabling)),
-                  _TocItem('4) Terminaison & splitters — éviter les réflexions', onTap: () => _goTo(_k4Termination)),
-                  _TocItem('4bis) RDM — limites & compatibilités', onTap: () => _goTo(_k4bRdm)),
-                  _TocItem('5) Dépannage terrain — symptômes → causes', onTap: () => _goTo(_k5Troubleshooting)),
-                  _TocItem('6) Art-Net — repères terrain', onTap: () => _goTo(_k6ArtNet)),
-                  _TocItem('7) sACN / E1.31 — multicast, IGMP, priorités', onTap: () => _goTo(_k7Sacn)),
-                  _TocItem('8) DMX vs Art-Net vs sACN — choisir', onTap: () => _goTo(_k8Compare)),
-                  _TocItem('9) Schémas terrain (DMX / IP / pinout)', onTap: () => _goTo(_k9Diagrams)),
-                  _TocItem('10) Checklist rapide', onTap: () => _goTo(_k10Checklist)),
+                  _TocItem(loc.aboutDmxToc1, onTap: () => _goTo(_k1Basics)),
+                  _TocItem(loc.aboutDmxToc2, onTap: () => _goTo(_k2Frame)),
+                  _TocItem(loc.aboutDmxToc3, onTap: () => _goTo(_k3Cabling)),
+                  _TocItem(loc.aboutDmxToc4,
+                      onTap: () => _goTo(_k4Termination)),
+                  _TocItem(loc.aboutDmxToc4bis, onTap: () => _goTo(_k4bRdm)),
+                  _TocItem(loc.aboutDmxToc5,
+                      onTap: () => _goTo(_k5Troubleshooting)),
+                  _TocItem(loc.aboutDmxToc6, onTap: () => _goTo(_k6ArtNet)),
+                  _TocItem(loc.aboutDmxToc7, onTap: () => _goTo(_k7Sacn)),
+                  _TocItem(loc.aboutDmxToc8, onTap: () => _goTo(_k8Compare)),
+                  _TocItem(loc.aboutDmxToc9, onTap: () => _goTo(_k9Diagrams)),
+                  _TocItem(loc.aboutDmxToc10,
+                      onTap: () => _goTo(_k10Checklist)),
                 ],
               ),
               const SizedBox(height: 12),
-
               _Anchor(key: _k1Basics),
               const _Section1Basics(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k2Frame),
               const _Section2Frame(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k3Cabling),
               const _Section3Cabling(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k4Termination),
               const _Section4TerminationSplitters(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k4bRdm),
               const _Section4bRdm(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k5Troubleshooting),
               const _Section5Troubleshooting(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k6ArtNet),
               const _Section6ArtNet(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k7Sacn),
               const _Section7Sacn(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k8Compare),
               const _Section8Compare(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k9Diagrams),
               const _Section9Diagrams(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k10Checklist),
               _Section10Checklist(
                 onCopy: () {
                   final txt = '''
-DMX — Checklist terrain
-☐ Mode appareil correct (nombre de canaux)
-☐ Adresse DMX correcte (pas de chevauchement)
-☐ Daisy-chain (pas de Y passif)
-☐ Terminaison 120Ω sur le dernier appareil
-☐ Câble DMX/RS-485 (paire torsadée 120Ω) si possible
-☐ Splitter opto si plusieurs branches
-☐ Éloigner DMX des sources parasites (alims, dimmers) si possible
-☐ Si RDM: vérifier compatibilité splitter/node + câblage impeccable
+${loc.aboutDmxChecklistCopyTitle}
+☐ ${loc.aboutDmxChecklistCopyB1}
+☐ ${loc.aboutDmxChecklistCopyB2}
+☐ ${loc.aboutDmxChecklistCopyB3}
+☐ ${loc.aboutDmxChecklistCopyB4}
+☐ ${loc.aboutDmxChecklistCopyB5}
+☐ ${loc.aboutDmxChecklistCopyB6}
+☐ ${loc.aboutDmxChecklistCopyB7}
+☐ ${loc.aboutDmxChecklistCopyB8}
 
-Art-Net / sACN — Checklist terrain
-☐ Réseau dédié si possible (ou VLAN)
-☐ Switch correct; IGMP snooping recommandé (sACN multicast)
-☐ Unicast (souvent) ou multicast maîtrisé (éviter flood)
-☐ Mapping univers ↔ ports/node vérifié
-☐ IP plan clair (adresses, masque, DHCP vs statique)
-'''.trim();
+${loc.aboutDmxChecklistCopyTitle2}
+☐ ${loc.aboutDmxChecklistCopyB9}
+☐ ${loc.aboutDmxChecklistCopyB10}
+☐ ${loc.aboutDmxChecklistCopyB11}
+☐ ${loc.aboutDmxChecklistCopyB12}
+☐ ${loc.aboutDmxChecklistCopyB13}
+'''
+                      .trim();
                   copyToClipboard(context, txt);
                 },
               ),
-
               const SizedBox(height: 18),
-              const _FooterNote(),
+              _FooterNote(),
             ],
           ),
         ),
@@ -175,11 +169,12 @@ class _TocCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     return SectionCard(
-      title: 'Sommaire',
+      title: loc.commonTocTitle,
       icon: Icons.list_alt,
       trailing: IconButton(
-        tooltip: 'Copier résumé',
+        tooltip: loc.commonCopySummaryTooltip,
         icon: const Icon(Icons.copy, color: Colors.white70),
         onPressed: onCopy,
       ),
@@ -195,7 +190,8 @@ class _TocCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     onTap: it.onTap,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 12),
                       child: Row(
                         children: [
                           Expanded(
@@ -207,7 +203,8 @@ class _TocCard extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Icon(Icons.chevron_right, color: Colors.white.withValues(alpha: 0.55)),
+                          Icon(Icons.chevron_right,
+                              color: Colors.white.withValues(alpha: 0.55)),
                         ],
                       ),
                     ),
@@ -237,34 +234,31 @@ class _Section1Basics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     return SectionCard(
-      title: '1) DMX, univers, adresses — la base',
+      title: loc.aboutDmxS1Title,
       icon: Icons.view_stream,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           Wrap(
             spacing: 8,
             runSpacing: 8,
             children: [
-              MiniPill('1 univers = 512 slots'),
-              MiniPill('0–255 (8-bit)'),
-              MiniPill('16-bit = 2 canaux'),
+              MiniPill(loc.aboutDmxS1Pill1),
+              MiniPill(loc.aboutDmxS1Pill2),
+              MiniPill(loc.aboutDmxS1Pill3),
             ],
           ),
           SizedBox(height: 10),
-          _Paragraph(
-            "DMX512 est un protocole de contrôle très utilisé en spectacle (lumière, effets, dimmers). "
-            "C’est un flux série (RS-485) qui envoie en boucle une “trame” contenant jusqu’à 512 valeurs. "
-            "Chaque valeur = un canal (0→255).",
-          ),
+          _Paragraph(loc.aboutDmxS1Intro),
           SizedBox(height: 10),
           _Callout(
-            title: 'À retenir',
+            title: loc.aboutDmxS1RememberTitle,
             bullets: [
-              '1 univers DMX = 512 canaux (slots) numérotés 1→512.',
-              'Un appareil écoute une adresse de départ (ex: 101) et consomme N canaux (selon son mode).',
-              'Le contrôleur renvoie tout en continu : si tu arrêtes d’émettre, les appareils “gèlent” (ou passent en fallback).',
+              loc.aboutDmxS1RememberB1,
+              loc.aboutDmxS1RememberB2,
+              loc.aboutDmxS1RememberB3,
             ],
           ),
         ],
@@ -282,10 +276,48 @@ class _Section2Frame extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '2) Trame DMX — break, start code, canaux',
+      title: loc.aboutDmxS2Title,
       icon: Icons.timeline,
-      child: const Text('... (garde ton contenu existant)'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              MiniPill(loc.aboutDmxS2PillBreak),
+              MiniPill(loc.aboutDmxS2PillStartCode),
+              MiniPill(loc.aboutDmxS2PillSlots512),
+              MiniPill(loc.aboutDmxS2PillRefresh),
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Paragraph(loc.aboutDmxS2Intro),
+          const SizedBox(height: 10),
+          _DiagramBox(painter: _DmxTimingPainter(loc: loc), aspect: 16 / 6),
+          const SizedBox(height: 10),
+          _Callout(
+            title: loc.aboutDmxS2HowToReadTitle,
+            bullets: [
+              loc.aboutDmxS2HowToReadB1,
+              loc.aboutDmxS2HowToReadB2,
+              loc.aboutDmxS2HowToReadB3,
+              loc.aboutDmxS2HowToReadB4,
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutDmxS2PracticalTitle),
+          const SizedBox(height: 6),
+          _BulletList(items: [
+            loc.aboutDmxS2PracticalB1,
+            loc.aboutDmxS2PracticalB2,
+            loc.aboutDmxS2PracticalB3,
+          ]),
+        ],
+      ),
     );
   }
 }
@@ -295,10 +327,51 @@ class _Section3Cabling extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '3) Câblage RS-485 — topologie & câble',
+      title: loc.aboutDmxS3Title,
       icon: Icons.cable,
-      child: const Text('... (garde ton contenu existant)'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              MiniPill(loc.aboutDmxS3PillRs485),
+              MiniPill(loc.aboutDmxS3PillDaisyChain),
+              MiniPill(loc.aboutDmxS3PillNoY),
+              MiniPill(loc.aboutDmxS3Pill120ohm),
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Paragraph(loc.aboutDmxS3Intro),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutDmxS3TopologyTitle),
+          const SizedBox(height: 6),
+          _DiagramBox(painter: _DmxChainPainter(loc: loc), aspect: 16 / 7),
+          const SizedBox(height: 10),
+          _BulletList(items: [
+            loc.aboutDmxS3TopologyB1,
+            loc.aboutDmxS3TopologyB2,
+            loc.aboutDmxS3TopologyB3,
+          ]),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutDmxS3PinoutTitle),
+          const SizedBox(height: 6),
+          _DiagramBox(painter: _Xlr5PinoutPainter(loc: loc), aspect: 16 / 7),
+          const SizedBox(height: 10),
+          _Callout(
+            title: loc.aboutDmxS3CablesTitle,
+            bullets: [
+              loc.aboutDmxS3CablesB1,
+              loc.aboutDmxS3CablesB2,
+              loc.aboutDmxS3CablesB3,
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
@@ -308,10 +381,36 @@ class _Section4TerminationSplitters extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '4) Terminaison & splitters — éviter les réflexions',
-      icon: Icons.power,
-      child: const Text('... (garde ton contenu existant)'),
+      title: loc.aboutDmxS4Title,
+      icon: Icons.call_split,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _Paragraph(loc.aboutDmxS4Intro),
+          const SizedBox(height: 10),
+          _DiagramBox(painter: _TerminatorPainter(loc: loc), aspect: 16 / 6),
+          const SizedBox(height: 10),
+          _Callout(
+            title: loc.aboutDmxS4TerminatorTitle,
+            bullets: [
+              loc.aboutDmxS4TerminatorB1,
+              loc.aboutDmxS4TerminatorB2,
+              loc.aboutDmxS4TerminatorB3,
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutDmxS4SplittersTitle),
+          const SizedBox(height: 6),
+          _BulletList(items: [
+            loc.aboutDmxS4SplittersB1,
+            loc.aboutDmxS4SplittersB2,
+            loc.aboutDmxS4SplittersB3,
+          ]),
+        ],
+      ),
     );
   }
 }
@@ -321,10 +420,11 @@ class _Section4bRdm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     return SectionCard(
-      title: '4bis) RDM — limites & compatibilités',
+      title: loc.aboutDmxS4bisTitle,
       icon: Icons.settings_input_component,
-      child: const Text('... (garde ton contenu existant)'),
+      child: Text(loc.aboutDmxS4bisPlaceholder),
     );
   }
 }
@@ -334,10 +434,40 @@ class _Section5Troubleshooting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '5) Dépannage terrain — symptômes → causes',
-      icon: Icons.bug_report,
-      child: const Text('... (garde ton contenu existant)'),
+      title: loc.aboutDmxS5Title,
+      icon: Icons.build_circle,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _Paragraph(loc.aboutDmxS5Intro),
+          const SizedBox(height: 10),
+          _Callout(
+            title: loc.aboutDmxS5QuickChecksTitle,
+            bullets: [
+              loc.aboutDmxS5QuickB1,
+              loc.aboutDmxS5QuickB2,
+              loc.aboutDmxS5QuickB3,
+              loc.aboutDmxS5QuickB4,
+              loc.aboutDmxS5QuickB5,
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutDmxS5IfFlickerTitle),
+          const SizedBox(height: 6),
+          _BulletList(items: [
+            loc.aboutDmxS5IfFlickerB1,
+            loc.aboutDmxS5IfFlickerB2,
+            loc.aboutDmxS5IfFlickerB3,
+          ]),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutDmxS5GoldenRuleTitle),
+          const SizedBox(height: 6),
+          _Paragraph(loc.aboutDmxS5GoldenRuleBody),
+        ],
+      ),
     );
   }
 }
@@ -347,10 +477,48 @@ class _Section6ArtNet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '6) Art-Net — repères terrain',
+      title: loc.aboutDmxS6Title,
       icon: Icons.router,
-      child: const Text('... (garde ton contenu existant)'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              MiniPill(loc.aboutDmxS6PillUdp),
+              MiniPill(loc.aboutDmxS6PillNodes),
+              MiniPill(loc.aboutDmxS6PillBroadcast),
+              MiniPill(loc.aboutDmxS6PillUnicast),
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Paragraph(loc.aboutDmxS6Intro),
+          const SizedBox(height: 10),
+          _DiagramBox(painter: _IpDmxPainter(loc: loc), aspect: 16 / 7),
+          const SizedBox(height: 10),
+          _Callout(
+            title: loc.aboutDmxS6BasicsTitle,
+            bullets: [
+              loc.aboutDmxS6BasicsB1,
+              loc.aboutDmxS6BasicsB2,
+              loc.aboutDmxS6BasicsB3,
+              loc.aboutDmxS6BasicsB4,
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutDmxS6WhenTitle),
+          const SizedBox(height: 6),
+          _BulletList(items: [
+            loc.aboutDmxS6WhenB1,
+            loc.aboutDmxS6WhenB2,
+            loc.aboutDmxS6WhenB3,
+          ]),
+        ],
+      ),
     );
   }
 }
@@ -360,10 +528,40 @@ class _Section7Sacn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '7) sACN / E1.31 — multicast, IGMP, priorités',
+      title: loc.aboutDmxS7Title,
       icon: Icons.wifi_tethering,
-      child: const Text('... (garde ton contenu existant)'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              MiniPill(loc.aboutDmxS7PillE131),
+              MiniPill(loc.aboutDmxS7PillMulticast),
+              MiniPill(loc.aboutDmxS7PillPriority),
+              MiniPill(loc.aboutDmxS7PillIgmp),
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Paragraph(loc.aboutDmxS7Intro),
+          const SizedBox(height: 10),
+          _DiagramBox(painter: _SacnMulticastPainter(loc: loc), aspect: 16 / 7),
+          const SizedBox(height: 10),
+          _Callout(
+            title: loc.aboutDmxS7KeyIdeasTitle,
+            bullets: [
+              loc.aboutDmxS7KeyIdeasB1,
+              loc.aboutDmxS7KeyIdeasB2,
+              loc.aboutDmxS7KeyIdeasB3,
+              loc.aboutDmxS7KeyIdeasB4,
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
@@ -373,10 +571,35 @@ class _Section8Compare extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '8) DMX vs Art-Net vs sACN — choisir',
+      title: loc.aboutDmxS8Title,
       icon: Icons.compare_arrows,
-      child: const Text('... (garde ton contenu existant)'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _Paragraph(loc.aboutDmxS8Intro),
+          const SizedBox(height: 10),
+          _Callout(
+            title: loc.aboutDmxS8QuickTableTitle,
+            bullets: [
+              loc.aboutDmxS8QuickB1,
+              loc.aboutDmxS8QuickB2,
+              loc.aboutDmxS8QuickB3,
+              loc.aboutDmxS8QuickB4,
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutDmxS8ChooseTitle),
+          const SizedBox(height: 6),
+          _BulletList(items: [
+            loc.aboutDmxS8ChooseB1,
+            loc.aboutDmxS8ChooseB2,
+            loc.aboutDmxS8ChooseB3,
+          ]),
+        ],
+      ),
     );
   }
 }
@@ -386,45 +609,43 @@ class _Section9Diagrams extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     return SectionCard(
-      title: '9) Schémas terrain (DMX / IP / pinout)',
+      title: loc.aboutDmxS9Title,
       icon: Icons.schema,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _Subtitle('Timing DMX (break / MAB / slots)'),
+          _Subtitle(loc.aboutDmxS9Diagram1),
           SizedBox(height: 10),
-          _DiagramBox(painter: _DmxTimingPainter(), aspect: 16 / 6.8),
+          _DiagramBox(painter: _DmxTimingPainter(loc: loc), aspect: 16 / 6.8),
           SizedBox(height: 14),
-
-          _Subtitle('Topologie DMX : daisy-chain'),
+          _Subtitle(loc.aboutDmxS9Diagram2),
           SizedBox(height: 10),
-          _DiagramBox(painter: _DmxChainPainter(), aspect: 16 / 6.8),
+          _DiagramBox(painter: _DmxChainPainter(loc: loc), aspect: 16 / 6.8),
           SizedBox(height: 14),
-
-          _Subtitle('Terminaison 120Ω'),
+          _Subtitle(loc.aboutDmxS9Diagram3),
           SizedBox(height: 10),
-          _DiagramBox(painter: _TerminatorPainter(), aspect: 16 / 6.8),
+          _DiagramBox(painter: _TerminatorPainter(loc: loc), aspect: 16 / 6.8),
           SizedBox(height: 14),
-
-          _Subtitle('sACN multicast : rappel IGMP (réseau)'),
+          _Subtitle(loc.aboutDmxS9Diagram4),
           SizedBox(height: 10),
-          _DiagramBox(painter: _SacnMulticastPainter(), aspect: 16 / 6.8),
+          _DiagramBox(
+              painter: _SacnMulticastPainter(loc: loc), aspect: 16 / 6.8),
           SizedBox(height: 14),
-
-          _Subtitle('IP → nodes → DMX (Art-Net / sACN)'),
+          _Subtitle(loc.aboutDmxS9Diagram5),
           SizedBox(height: 10),
-          _DiagramBox(painter: _IpDmxPainter(), aspect: 16 / 6.8),
+          _DiagramBox(painter: _IpDmxPainter(loc: loc), aspect: 16 / 6.8),
           SizedBox(height: 14),
-
-          _Subtitle('Pinout XLR5 (DMX)'),
+          _Subtitle(loc.aboutDmxS9Diagram6),
           SizedBox(height: 10),
-          _DiagramBox(painter: _Xlr5PinoutPainter(), aspect: 16 / 7.8),
+          _DiagramBox(painter: _Xlr5PinoutPainter(loc: loc), aspect: 16 / 7.8),
         ],
       ),
     );
   }
 }
+
 class _Section10Checklist extends StatelessWidget {
   const _Section10Checklist({required this.onCopy});
 
@@ -432,39 +653,39 @@ class _Section10Checklist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     return SectionCard(
-      title: '10) Checklist rapide',
+      title: loc.aboutDmxS10Title,
       icon: Icons.checklist,
       trailing: IconButton(
-        tooltip: 'Copier la checklist',
+        tooltip: loc.aboutDmxS10CopyTooltip,
         icon: const Icon(Icons.copy, color: Colors.white70),
         onPressed: onCopy,
       ),
-      child: const _Callout(
-        title: 'Avant de paniquer',
+      child: _Callout(
+        title: loc.aboutDmxS10CalloutTitle,
         bullets: [
-          'Mode appareil + adresse DMX (toujours vérifier).',
-          'Chaîne courte avec un câble “connu OK” pour isoler.',
-          'Daisy-chain (pas de Y passif).',
-          'Terminaison 120Ω sur le dernier appareil uniquement.',
-          'Splitter opto si plusieurs branches.',
-          'Si RDM : compat splitter/node + câblage impeccable.',
-          'En IP (Art-Net/sACN) : switch correct, IGMP pour sACN multicast, unicast si doute.',
+          loc.aboutDmxS10B1,
+          loc.aboutDmxS10B2,
+          loc.aboutDmxS10B3,
+          loc.aboutDmxS10B4,
+          loc.aboutDmxS10B5,
+          loc.aboutDmxS10B6,
+          loc.aboutDmxS10B7,
         ],
       ),
     );
   }
 }
 
-
 class _FooterNote extends StatelessWidget {
   const _FooterNote();
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      "Info indicative (terrain). Les comportements exacts peuvent varier selon consoles, nodes, switchs et firmwares.\n"
-      "Objectif ici : comprendre et dépanner vite, avec une méthode fiable.",
+    final loc = AppLocalizations.of(context);
+    return Text(
+      loc.aboutDmxFooterNote,
       textAlign: TextAlign.center,
       style: TextStyle(color: Colors.white38, fontSize: 12, height: 1.35),
     );
@@ -523,7 +744,6 @@ class _DiagramBox extends StatelessWidget {
   }
 }
 
-
 class _Paragraph extends StatelessWidget {
   const _Paragraph(this.text);
   final String text;
@@ -555,11 +775,17 @@ class _BulletList extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('•  ', style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35)),
+                  Text('•  ',
+                      style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.80),
+                          height: 1.35)),
                   Expanded(
                     child: Text(
                       s,
-                      style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35, fontSize: 13.5),
+                      style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.80),
+                          height: 1.35,
+                          fontSize: 13.5),
                     ),
                   ),
                 ],
@@ -590,7 +816,10 @@ class _Callout extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w900, fontSize: 13.5),
+            style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.92),
+                fontWeight: FontWeight.w900,
+                fontSize: 13.5),
           ),
           const SizedBox(height: 8),
           _BulletList(items: bullets),
@@ -600,13 +829,13 @@ class _Callout extends StatelessWidget {
   }
 }
 
-
 /// =======================
 /// DIAGRAMS (CustomPainter)
 /// =======================
 
 class _DmxTimingPainter extends CustomPainter {
-  const _DmxTimingPainter();
+  const _DmxTimingPainter({required this.loc});
+  final AppLocalizations loc;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -658,7 +887,8 @@ class _DmxTimingPainter extends CustomPainter {
 
     canvas.drawLine(Offset(left, y), Offset(xBreakEnd, y), accentBreak);
     canvas.drawLine(Offset(xBreakEnd, y), Offset(xMabEnd, y), accentMab);
-    canvas.drawLine(Offset(xStartCodeEnd, y), Offset(xSlotsEnd, y), accentSlots);
+    canvas.drawLine(
+        Offset(xStartCodeEnd, y), Offset(xSlotsEnd, y), accentSlots);
 
     _tick(canvas, Offset(xBreakEnd, y), size);
     _tick(canvas, Offset(xMabEnd, y), size);
@@ -669,7 +899,7 @@ class _DmxTimingPainter extends CustomPainter {
       canvas,
       Offset(left, size.height * 0.12),
       _Text.tp(
-        'BREAK',
+        loc.aboutDmxPainterBreak,
         fontSize: size.shortestSide * 0.070,
         color: Colors.white.withValues(alpha: 0.92),
         weight: FontWeight.w900,
@@ -679,7 +909,7 @@ class _DmxTimingPainter extends CustomPainter {
       canvas,
       Offset(xBreakEnd - size.width * 0.03, size.height * 0.25),
       _Text.tp(
-        'MAB',
+        loc.aboutDmxPainterMab,
         fontSize: size.shortestSide * 0.060,
         color: Colors.white.withValues(alpha: 0.90),
         weight: FontWeight.w900,
@@ -689,7 +919,7 @@ class _DmxTimingPainter extends CustomPainter {
       canvas,
       Offset(xMabEnd + size.width * 0.02, size.height * 0.12),
       _Text.tp(
-        'Start\ncode',
+        loc.aboutDmxPainterStartCode,
         fontSize: size.shortestSide * 0.058,
         color: Colors.white.withValues(alpha: 0.90),
         weight: FontWeight.w900,
@@ -699,7 +929,7 @@ class _DmxTimingPainter extends CustomPainter {
       canvas,
       Offset(xStartCodeEnd + size.width * 0.05, size.height * 0.20),
       _Text.tp(
-        'Slots 1…N\n(jusqu’à 512)',
+        loc.aboutDmxPainterSlots,
         fontSize: size.shortestSide * 0.058,
         color: Colors.white.withValues(alpha: 0.92),
         weight: FontWeight.w900,
@@ -707,7 +937,7 @@ class _DmxTimingPainter extends CustomPainter {
     );
 
     final foot = _Text.tp(
-      'Boucle (refresh) — univers plein ≈ ~44 Hz (ordre de grandeur)',
+      loc.aboutDmxPainterRefresh,
       fontSize: size.shortestSide * 0.052,
       color: Colors.white.withValues(alpha: 0.85),
       weight: FontWeight.w800,
@@ -719,7 +949,8 @@ class _DmxTimingPainter extends CustomPainter {
     final paint = Paint()
       ..color = Colors.white.withValues(alpha: 0.45)
       ..strokeWidth = 2;
-    canvas.drawLine(p.translate(0, -size.height * 0.10), p.translate(0, size.height * 0.10), paint);
+    canvas.drawLine(p.translate(0, -size.height * 0.10),
+        p.translate(0, size.height * 0.10), paint);
   }
 
   @override
@@ -727,7 +958,8 @@ class _DmxTimingPainter extends CustomPainter {
 }
 
 class _SacnMulticastPainter extends CustomPainter {
-  const _SacnMulticastPainter();
+  const _SacnMulticastPainter({required this.loc});
+  final AppLocalizations loc;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -769,18 +1001,19 @@ class _SacnMulticastPainter extends CustomPainter {
     canvas.drawLine(group, r2, stroke);
     canvas.drawLine(group, r3, stroke);
 
-    _box(canvas, size, src1, 'SOURCE A\n(prio 100)', accent: false);
-    _box(canvas, size, src2, 'SOURCE B\n(prio 90)', accent: false);
+    _box(canvas, size, src1, loc.aboutDmxPainterSourceA, accent: false);
+    _box(canvas, size, src2, loc.aboutDmxPainterSourceB, accent: false);
 
-    _box(canvas, size, sw, 'SWITCH\nIGMP snooping', accent: true);
-    _box(canvas, size, group, 'MULTICAST\nUniverse U', accent: true);
+    _box(canvas, size, sw, loc.aboutDmxPainterSwitchIgmp, accent: true);
+    _box(canvas, size, group, loc.aboutDmxPainterMulticastUniverse,
+        accent: true);
 
-    _small(canvas, size, r1, 'RX');
-    _small(canvas, size, r2, 'RX');
-    _small(canvas, size, r3, 'RX');
+    _small(canvas, size, r1, loc.aboutDmxPainterRx);
+    _small(canvas, size, r2, loc.aboutDmxPainterRx);
+    _small(canvas, size, r3, loc.aboutDmxPainterRx);
 
     final tp = _Text.tp(
-      'Sans IGMP : flood\nAvec IGMP : seulement ports abonnés',
+      loc.aboutDmxPainterIgmpNote,
       fontSize: size.shortestSide * 0.060,
       color: Colors.white.withValues(alpha: 0.90),
       weight: FontWeight.w900,
@@ -788,17 +1021,23 @@ class _SacnMulticastPainter extends CustomPainter {
     _Text.paintLabel(canvas, Offset(size.width * 0.08, size.height * 0.80), tp);
   }
 
-  void _box(Canvas canvas, Size size, Offset center, String label, {required bool accent}) {
+  void _box(Canvas canvas, Size size, Offset center, String label,
+      {required bool accent}) {
     final w = size.width * 0.22;
     final h = size.height * 0.22;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.05));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.05));
 
     final fill = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.18) : Colors.white.withValues(alpha: 0.08);
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.18)
+          : Colors.white.withValues(alpha: 0.08);
 
     final border = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.60) : Colors.white.withValues(alpha: 0.30)
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.60)
+          : Colors.white.withValues(alpha: 0.30)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 
@@ -818,7 +1057,8 @@ class _SacnMulticastPainter extends CustomPainter {
     final w = size.width * 0.08;
     final h = size.height * 0.12;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.04));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.04));
 
     canvas.drawRRect(rr, Paint()..color = Colors.white.withValues(alpha: 0.07));
     canvas.drawRRect(
@@ -843,7 +1083,8 @@ class _SacnMulticastPainter extends CustomPainter {
 }
 
 class _DmxChainPainter extends CustomPainter {
-  const _DmxChainPainter();
+  const _DmxChainPainter({required this.loc});
+  final AppLocalizations loc;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -872,11 +1113,12 @@ class _DmxChainPainter extends CustomPainter {
     final dx = size.width * 0.18;
 
     final nodes = <_Node>[
-      _Node('CONSOLE', Offset(x0, y)),
-      _Node('FIX 1', Offset(x0 + dx, y)),
-      _Node('FIX 2', Offset(x0 + dx * 2, y)),
-      _Node('FIX 3', Offset(x0 + dx * 3, y)),
-      _Node('TERM\n120Ω', Offset(x0 + dx * 4, y), isTerminator: true),
+      _Node(loc.aboutDmxPainterConsole, Offset(x0, y)),
+      _Node(loc.aboutDmxPainterFix1, Offset(x0 + dx, y)),
+      _Node(loc.aboutDmxPainterFix2, Offset(x0 + dx * 2, y)),
+      _Node(loc.aboutDmxPainterFix3, Offset(x0 + dx * 3, y)),
+      _Node(loc.aboutDmxPainterTerm120, Offset(x0 + dx * 4, y),
+          isTerminator: true),
     ];
 
     for (int i = 0; i < nodes.length - 1; i++) {
@@ -889,7 +1131,7 @@ class _DmxChainPainter extends CustomPainter {
 
     final warnPos = Offset(size.width * 0.68, size.height * 0.18);
     final tp = _Text.tp(
-      '✅ Daisy-chain\n❌ Pas de Y passif',
+      loc.aboutDmxPainterDaisyChainNote,
       fontSize: size.shortestSide * 0.07,
       color: Colors.white.withValues(alpha: 0.92),
       weight: FontWeight.w900,
@@ -897,17 +1139,23 @@ class _DmxChainPainter extends CustomPainter {
     _Text.paintLabel(canvas, warnPos, tp);
   }
 
-  void _drawBox(Canvas canvas, Size size, Offset center, String label, {bool isTerminator = false}) {
+  void _drawBox(Canvas canvas, Size size, Offset center, String label,
+      {bool isTerminator = false}) {
     final w = size.width * 0.16;
     final h = size.height * 0.18;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.05));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.05));
 
     final fill = Paint()
-      ..color = isTerminator ? Colors.redAccent.withValues(alpha: 0.18) : Colors.white.withValues(alpha: 0.08);
+      ..color = isTerminator
+          ? Colors.redAccent.withValues(alpha: 0.18)
+          : Colors.white.withValues(alpha: 0.08);
 
     final border = Paint()
-      ..color = isTerminator ? Colors.redAccent.withValues(alpha: 0.65) : Colors.white.withValues(alpha: 0.30)
+      ..color = isTerminator
+          ? Colors.redAccent.withValues(alpha: 0.65)
+          : Colors.white.withValues(alpha: 0.30)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 
@@ -928,7 +1176,8 @@ class _DmxChainPainter extends CustomPainter {
 }
 
 class _Xlr5PinoutPainter extends CustomPainter {
-  const _Xlr5PinoutPainter();
+  const _Xlr5PinoutPainter({required this.loc});
+  final AppLocalizations loc;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -980,7 +1229,10 @@ class _Xlr5PinoutPainter extends CustomPainter {
         color: const Color(0xFF0B0B0B),
         weight: FontWeight.w900,
       );
-      _Text.center(canvas, Rect.fromCenter(center: e.value, width: r * 0.22, height: r * 0.22), tp);
+      _Text.center(
+          canvas,
+          Rect.fromCenter(center: e.value, width: r * 0.22, height: r * 0.22),
+          tp);
     }
 
     final rightX = size.width * 0.58;
@@ -989,23 +1241,27 @@ class _Xlr5PinoutPainter extends CustomPainter {
     _label(
       canvas,
       Offset(rightX, topY),
-      'XLR5 (DMX) — repère rapide',
+      loc.aboutDmxPainterXlr5Title,
       size.shortestSide * 0.070,
       Colors.white.withValues(alpha: 0.94),
       FontWeight.w900,
     );
 
     final bullets = [
-      'Pin 1 : Shield / masse',
-      'Pin 2 : Data−',
-      'Pin 3 : Data+',
-      'Pin 4/5 : “data 2” (rare / optionnel)',
-      'En pratique : XLR3 souvent utilisé (1/2/3)',
+      loc.aboutDmxPainterPin1,
+      loc.aboutDmxPainterPin2,
+      loc.aboutDmxPainterPin3,
+      loc.aboutDmxPainterPin45,
+      loc.aboutDmxPainterXlr3Practice,
     ];
-    _bulletBox(canvas, Rect.fromLTWH(rightX, topY + 22, size.width * 0.38, size.height * 0.60), bullets);
+    _bulletBox(
+        canvas,
+        Rect.fromLTWH(rightX, topY + 22, size.width * 0.38, size.height * 0.60),
+        bullets);
   }
 
-  void _label(Canvas c, Offset p, String s, double fs, Color col, FontWeight w) {
+  void _label(
+      Canvas c, Offset p, String s, double fs, Color col, FontWeight w) {
     final tp = _Text.tp(s, fontSize: fs, color: col, weight: w);
     tp.paint(c, p);
   }
@@ -1039,7 +1295,8 @@ class _Xlr5PinoutPainter extends CustomPainter {
 }
 
 class _TerminatorPainter extends CustomPainter {
-  const _TerminatorPainter();
+  const _TerminatorPainter({required this.loc});
+  final AppLocalizations loc;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -1068,10 +1325,14 @@ class _TerminatorPainter extends CustomPainter {
 
     canvas.drawLine(Offset(x0, y), Offset(x1, y), line);
 
-    _box(canvas, size, Offset(size.width * 0.60, y), 'DERNIER\nAPPAREIL', accent: false);
-    _box(canvas, size, Offset(size.width * 0.84, y), 'TERM\n120Ω', accent: true);
+    _box(canvas, size, Offset(size.width * 0.60, y),
+        loc.aboutDmxPainterLastFixture,
+        accent: false);
+    _box(canvas, size, Offset(size.width * 0.84, y), loc.aboutDmxPainterTerm120,
+        accent: true);
 
-    _label(canvas, Offset(size.width * 0.10, size.height * 0.14), 'Terminaison = 120Ω en fin de ligne', size.shortestSide * 0.075);
+    _label(canvas, Offset(size.width * 0.10, size.height * 0.14),
+        loc.aboutDmxPainterTerminationLine, size.shortestSide * 0.075);
 
     final rr = Rect.fromCenter(
       center: Offset(size.width * 0.84, size.height * 0.23),
@@ -1091,7 +1352,7 @@ class _TerminatorPainter extends CustomPainter {
     );
 
     final tp = _Text.tp(
-      '120Ω\nentre\nData− et Data+',
+      loc.aboutDmxPainter120Between,
       fontSize: size.shortestSide * 0.060,
       color: Colors.white.withValues(alpha: 0.90),
       weight: FontWeight.w900,
@@ -1099,25 +1360,32 @@ class _TerminatorPainter extends CustomPainter {
     _Text.center(canvas, rr, tp);
 
     final tip = _Text.tp(
-      '✅ Une seule terminaison\n❌ Pas au milieu\n❌ Pas sur chaque branche',
+      loc.aboutDmxPainterOneTermination,
       fontSize: size.shortestSide * 0.055,
       color: Colors.white.withValues(alpha: 0.88),
       weight: FontWeight.w800,
     );
-    _Text.paintLabel(canvas, Offset(size.width * 0.10, size.height * 0.70), tip);
+    _Text.paintLabel(
+        canvas, Offset(size.width * 0.10, size.height * 0.70), tip);
   }
 
-  void _box(Canvas canvas, Size size, Offset center, String label, {required bool accent}) {
+  void _box(Canvas canvas, Size size, Offset center, String label,
+      {required bool accent}) {
     final w = size.width * 0.18;
     final h = size.height * 0.20;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.05));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.05));
 
     final fill = Paint()
-      ..color = accent ? Colors.redAccent.withValues(alpha: 0.18) : Colors.white.withValues(alpha: 0.08);
+      ..color = accent
+          ? Colors.redAccent.withValues(alpha: 0.18)
+          : Colors.white.withValues(alpha: 0.08);
 
     final border = Paint()
-      ..color = accent ? Colors.redAccent.withValues(alpha: 0.65) : Colors.white.withValues(alpha: 0.30)
+      ..color = accent
+          ? Colors.redAccent.withValues(alpha: 0.65)
+          : Colors.white.withValues(alpha: 0.30)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 
@@ -1148,7 +1416,8 @@ class _TerminatorPainter extends CustomPainter {
 }
 
 class _IpDmxPainter extends CustomPainter {
-  const _IpDmxPainter();
+  const _IpDmxPainter({required this.loc});
+  final AppLocalizations loc;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -1197,18 +1466,18 @@ class _IpDmxPainter extends CustomPainter {
     canvas.drawLine(node2, fix3, dmxStroke);
     canvas.drawLine(node2, fix4, dmxStroke);
 
-    _box(canvas, size, console, 'CONSOLE\nArt-Net / sACN', accent: false);
-    _box(canvas, size, sw, 'SWITCH\n(IGMP pour sACN)', accent: true);
-    _box(canvas, size, node1, 'NODE 1\nDMX OUT', accent: false);
-    _box(canvas, size, node2, 'NODE 2\nDMX OUT', accent: false);
+    _box(canvas, size, console, loc.aboutDmxPainterConsoleIp, accent: false);
+    _box(canvas, size, sw, loc.aboutDmxPainterSwitchSacn, accent: true);
+    _box(canvas, size, node1, loc.aboutDmxPainterNode1, accent: false);
+    _box(canvas, size, node2, loc.aboutDmxPainterNode2, accent: false);
 
-    _small(canvas, size, fix1, 'FIX');
-    _small(canvas, size, fix2, 'FIX');
-    _small(canvas, size, fix3, 'FIX');
-    _small(canvas, size, fix4, 'FIX');
+    _small(canvas, size, fix1, loc.aboutDmxPainterFix);
+    _small(canvas, size, fix2, loc.aboutDmxPainterFix);
+    _small(canvas, size, fix3, loc.aboutDmxPainterFix);
+    _small(canvas, size, fix4, loc.aboutDmxPainterFix);
 
     final tp = _Text.tp(
-      '✅ Beaucoup d’univers\n✅ Nodes proches des machines',
+      loc.aboutDmxPainterManyUniverses,
       fontSize: size.shortestSide * 0.07,
       color: Colors.white.withValues(alpha: 0.90),
       weight: FontWeight.w900,
@@ -1216,17 +1485,23 @@ class _IpDmxPainter extends CustomPainter {
     _Text.paintLabel(canvas, Offset(size.width * 0.08, size.height * 0.70), tp);
   }
 
-  void _box(Canvas canvas, Size size, Offset center, String label, {required bool accent}) {
+  void _box(Canvas canvas, Size size, Offset center, String label,
+      {required bool accent}) {
     final w = size.width * 0.22;
     final h = size.height * 0.22;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.05));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.05));
 
     final fill = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.18) : Colors.white.withValues(alpha: 0.08);
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.18)
+          : Colors.white.withValues(alpha: 0.08);
 
     final border = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.60) : Colors.white.withValues(alpha: 0.30)
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.60)
+          : Colors.white.withValues(alpha: 0.30)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 
@@ -1246,7 +1521,8 @@ class _IpDmxPainter extends CustomPainter {
     final w = size.width * 0.08;
     final h = size.height * 0.12;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.04));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.04));
 
     canvas.drawRRect(rr, Paint()..color = Colors.white.withValues(alpha: 0.07));
     canvas.drawRRect(

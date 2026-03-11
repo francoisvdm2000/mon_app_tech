@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, ExpandSectionCard, MiniPill, copyToClipboard
+import 'about_universe_to_artnet_table_page.dart';
 
 class AboutArtNetPage extends StatefulWidget {
   const AboutArtNetPage({super.key});
@@ -40,11 +42,12 @@ class _AboutArtNetPageState extends State<AboutArtNetPage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Art-Net — univers DMX sur IP (simple & complet)'),
+        title: Text(loc.aboutArtnetPageTitle),
       ),
       body: SafeArea(
         bottom: true,
@@ -54,93 +57,104 @@ class _AboutArtNetPageState extends State<AboutArtNetPage> {
           child: Column(
             children: [
               _TocCard(
+                title: loc.aboutArtnetTocTitle,
+                copyTooltip: loc.aboutArtnetTocCopyTooltip,
                 onCopy: () {
                   final txt = [
-                    'Art-Net = DMX sur Ethernet via UDP.',
-                    'Échelle: beaucoup d’univers via nodes (DMX-out) distribués.',
-                    'Diffusion: broadcast (simple mais flood) ou unicast (plus propre).',
-                    'Limites réelles: Wi-Fi, switch basique, firmware nodes, réglages univers/mapping.',
-                    'RDM: possible via “RDM proxy” selon nodes (support variable).',
+                    loc.aboutArtnetCopyLine1,
+                    loc.aboutArtnetCopyLine2,
+                    loc.aboutArtnetCopyLine3,
+                    loc.aboutArtnetCopyLine4,
+                    loc.aboutArtnetCopyLine5,
                   ].join('\n');
                   copyToClipboard(context, txt);
                 },
                 items: [
-                  _TocItem('1) Art-Net — c’est quoi et pourquoi', onTap: () => _goTo(_k1Basics)),
-                  _TocItem('2) Adressage & univers — mapping propre', onTap: () => _goTo(_k2Addressing)),
-                  _TocItem('3) Limites & perf — ce qui casse en premier', onTap: () => _goTo(_k3Limits)),
-                  _TocItem('4) Nodes, splitters & RDM', onTap: () => _goTo(_k4NodesRdm)),
-                  _TocItem('5) Dépannage — symptômes → causes', onTap: () => _goTo(_k5Troubleshooting)),
-                  _TocItem('6) Schémas (réseau / unicast vs broadcast)', onTap: () => _goTo(_k6Diagrams)),
-                  _TocItem('6bis) Images (assets) — RJ45/switch/câbles', onTap: () => _goTo(_k6bAssets)),
-                  _TocItem('7) Checklist rapide', onTap: () => _goTo(_k7Checklist)),
+                  _TocItem(loc.aboutArtnetSection1Title,
+                      onTap: () => _goTo(_k1Basics)),
+                  _TocItem(loc.aboutArtnetSection2Title,
+                      onTap: () => _goTo(_k2Addressing)),
+                  _TocItem(loc.aboutArtnetSection3Title,
+                      onTap: () => _goTo(_k3Limits)),
+                  _TocItem(loc.aboutArtnetSection4Title,
+                      onTap: () => _goTo(_k4NodesRdm)),
+                  _TocItem(loc.aboutArtnetSection5Title,
+                      onTap: () => _goTo(_k5Troubleshooting)),
+                  _TocItem(loc.aboutArtnetSection6Title,
+                      onTap: () => _goTo(_k6Diagrams)),
+                  _TocItem(loc.aboutArtnetSection6bTitle,
+                      onTap: () => _goTo(_k6bAssets)),
+                  _TocItem(loc.aboutArtnetSection7Title,
+                      onTap: () => _goTo(_k7Checklist)),
+                  _TocItem(
+                    loc.aboutArtnetConversionTablesTitle,
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (_) =>
+                                const AboutUniverseToArtNetTablePage()),
+                      );
+                    },
+                  ),
                 ],
               ),
-
               const SizedBox(height: 12),
-
               _Anchor(key: _k1Basics),
               const _Section1Basics(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k2Addressing),
               const _Section2Addressing(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k3Limits),
               const _Section3Limits(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k4NodesRdm),
               const _Section4NodesRdm(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k5Troubleshooting),
               const _Section5Troubleshooting(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k6Diagrams),
               const _Section6Diagrams(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k6bAssets),
               _Section6bAssets(
                 onCopy: () {
                   final txt = '''
-Assets recommandés (optionnels)
+${loc.aboutArtnetAssetsCopyTitle}
 - assets/images/connectors/rj45.png
 - assets/images/network/switch.png
 - assets/images/cables/ethernet_cat5e_cat6.png
 - assets/images/cables/ethernet_short_patch.png
 
-pubspec.yaml (exemple)
+pubspec.yaml (${loc.aboutArtnetExampleLabel})
 flutter:
   assets:
     - assets/images/connectors/
     - assets/images/network/
     - assets/images/cables/
-'''.trim();
+'''
+                      .trim();
                   copyToClipboard(context, txt);
                 },
               ),
               const SizedBox(height: 12),
-
               _Anchor(key: _k7Checklist),
               _Section7Checklist(
                 onCopy: () {
                   final txt = '''
-Art-Net — Checklist terrain
-☐ Réseau dédié si possible (ou VLAN)
-☐ IP plan clair (DHCP vs statique), masque cohérent
-☐ Unicast si réseau chargé (éviter broadcast flood)
-☐ Univers ↔ node/port vérifiés (mapping)
-☐ Switch correct (éviter hubs / vieux switchs instables)
-☐ Wi-Fi évité si show critique (préférer filaire)
-☐ Si RDM: node “RDM proxy” confirmé + câblage DMX stable
-'''.trim();
+${loc.aboutArtnetChecklistCopyTitle}
+☐ ${loc.aboutArtnetChecklistBullet1}
+☐ ${loc.aboutArtnetChecklistBullet2}
+☐ ${loc.aboutArtnetChecklistBullet3}
+☐ ${loc.aboutArtnetChecklistBullet4}
+☐ ${loc.aboutArtnetChecklistBullet5}
+☐ ${loc.aboutArtnetChecklistBullet6}
+'''
+                      .trim();
                   copyToClipboard(context, txt);
                 },
               ),
-
               const SizedBox(height: 18),
               const _FooterNote(),
             ],
@@ -160,42 +174,42 @@ class _Section1Basics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '1) Art-Net — c’est quoi et pourquoi',
+      title: loc.aboutArtnetSection1Title,
       icon: Icons.router,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           Wrap(
             spacing: 8,
             runSpacing: 8,
             children: [
-              MiniPill('UDP'),
-              MiniPill('Univers DMX sur IP'),
-              MiniPill('Nodes DMX-out'),
+              MiniPill(loc.aboutArtnetPillUdp),
+              MiniPill(loc.aboutArtnetPillUniversIp),
+              MiniPill(loc.aboutArtnetPillNodesDmxOut),
             ],
           ),
-          SizedBox(height: 10),
-          _Paragraph(
-            "Art-Net transporte des univers DMX sur un réseau Ethernet (IP). "
-            "Au lieu de tirer une ligne DMX par univers, tu envoies des “paquets” sur le réseau, "
-            "et un node convertit en DMX près des machines.",
-          ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
+          _Paragraph(loc.aboutArtnetSection1Paragraph),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Pourquoi c’est utile',
+            title: loc.aboutArtnetSection1CalloutTitle,
             bullets: [
-              'Scalable : beaucoup d’univers sur un seul câble réseau.',
-              'Distribution : nodes proches des projecteurs/dimmers → moins de longues lignes DMX.',
-              'Patch flexible : changer un univers ou déplacer un node est rapide.',
+              loc.aboutArtnetSection1Bullet1,
+              loc.aboutArtnetSection1Bullet2,
+              loc.aboutArtnetSection1Bullet3,
             ],
           ),
-          SizedBox(height: 10),
-          _Subtitle('Deux mots à retenir'),
-          _BulletList(items: [
-            'Art-Net ne remplace pas le DMX : il le transporte sur IP.',
-            'La stabilité dépend souvent plus du réseau (switch, Wi-Fi, broadcast) que du protocole.',
-          ]),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutArtnetSection1Subtitle),
+          _BulletList(
+            items: [
+              loc.aboutArtnetSection1SubBullet1,
+              loc.aboutArtnetSection1SubBullet2,
+            ],
+          ),
         ],
       ),
     );
@@ -207,49 +221,52 @@ class _Section2Addressing extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '2) Adressage & univers — mapping propre',
+      title: loc.aboutArtnetSection2Title,
       icon: Icons.map,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           Wrap(
             spacing: 8,
             runSpacing: 8,
             children: [
-              MiniPill('Univers'),
-              MiniPill('Node / Port'),
-              MiniPill('Mapping'),
+              MiniPill(loc.aboutArtnetSection2PillUniverse),
+              MiniPill(loc.aboutArtnetSection2PillNodePort),
+              MiniPill(loc.aboutArtnetSection2PillMapping),
             ],
           ),
-          SizedBox(height: 10),
-          _Paragraph(
-            "Ton objectif : que chaque univers émis par la source arrive au bon node (et au bon port DMX) "
-            "sans ambiguïté. La plupart des pannes Art-Net = mauvais univers, mauvais subnet/net, ou broadcast qui sature.",
-          ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
+          _Paragraph(loc.aboutArtnetSection2Paragraph),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Méthode simple (qui évite 80% des erreurs)',
+            title: loc.aboutArtnetSection2CalloutTitle,
             bullets: [
-              '1) Écris sur papier: “Univers 1 → Node A port 1”, “Univers 2 → Node A port 2”, etc.',
-              '2) Mets des IP stables (DHCP réservé ou statiques).',
-              '3) Préfère l’unicast si tu as plus d’un node ou un réseau partagé.',
+              loc.aboutArtnetSection2Bullet1,
+              loc.aboutArtnetSection2Bullet2,
+              loc.aboutArtnetSection2Bullet3,
             ],
           ),
-          SizedBox(height: 10),
-          _Subtitle('Broadcast vs Unicast'),
-          _BulletList(items: [
-            'Broadcast : tu envoies à tout le monde → facile mais peut “flood” un switch.',
-            'Unicast : tu envoies vers l’IP du node → plus propre et prévisible.',
-            'En show: si doute → unicast.',
-          ]),
-          SizedBox(height: 10),
-          _Subtitle('Univers : pratique terrain'),
-          _BulletList(items: [
-            'Garde une numérotation simple (ex: 1…N).',
-            'Évite “un univers partout” : documente tes mappings.',
-            'Sur certains setups, “Net/Subnet/Universe” existent : pense “mapping”, pas “magie”.',
-          ]),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutArtnetSection2Subtitle1),
+          _BulletList(
+            items: [
+              loc.aboutArtnetSection2SubBullet1,
+              loc.aboutArtnetSection2SubBullet2,
+              loc.aboutArtnetSection2SubBullet3,
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutArtnetSection2Subtitle2),
+          _BulletList(
+            items: [
+              loc.aboutArtnetSection2SubBullet4,
+              loc.aboutArtnetSection2SubBullet5,
+              loc.aboutArtnetSection2SubBullet6,
+            ],
+          ),
         ],
       ),
     );
@@ -261,36 +278,42 @@ class _Section3Limits extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '3) Limites & perf — ce qui casse en premier',
+      title: loc.aboutArtnetSection3Title,
       icon: Icons.speed,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           _Callout(
-            title: 'Les limites “réelles” (dans l’ordre)',
+            title: loc.aboutArtnetSection3CalloutTitle,
             bullets: [
-              'Wi-Fi : latence variable + pertes → flicker ou décrochages.',
-              'Broadcast : surcharge un LAN (tout le monde reçoit tout).',
-              'Switch “bas de gamme” : buffers limités, gestion multicast/broadcast médiocre.',
-              'Nodes : limite firmware/CPU (nb d’univers, fréquence, options).',
-              'PC/source : driver, charge CPU, antivirus, carte réseau, etc.',
+              loc.aboutArtnetSection3Bullet1,
+              loc.aboutArtnetSection3Bullet2,
+              loc.aboutArtnetSection3Bullet3,
+              loc.aboutArtnetSection3Bullet4,
+              loc.aboutArtnetSection3Bullet5,
             ],
           ),
-          SizedBox(height: 10),
-          _Subtitle('Vitesse de refresh'),
-          _BulletList(items: [
-            'Le DMX “classique” est souvent ~20–44 fps selon trame.',
-            'Sur IP, tu peux envoyer plus, mais les nodes ne suivent pas toujours (et ce n’est pas toujours utile).',
-            'Stabilité > fréquence : mieux vaut stable à 30–40 fps que “vite” mais instable.',
-          ]),
-          SizedBox(height: 10),
-          _Subtitle('Règles simples'),
-          _BulletList(items: [
-            'Réseau dédié (ou VLAN).',
-            'Unicast si plusieurs nodes.',
-            'Filaire pour les shows critiques.',
-          ]),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutArtnetSection3Subtitle1),
+          _BulletList(
+            items: [
+              loc.aboutArtnetSection3SubBullet1,
+              loc.aboutArtnetSection3SubBullet2,
+              loc.aboutArtnetSection3SubBullet3,
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutArtnetSection3Subtitle2),
+          _BulletList(
+            items: [
+              loc.aboutArtnetSection3SubBullet4,
+              loc.aboutArtnetSection3SubBullet5,
+              loc.aboutArtnetSection3SubBullet6,
+            ],
+          ),
         ],
       ),
     );
@@ -302,40 +325,42 @@ class _Section4NodesRdm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ExpandSectionCard(
-      title: '4) Nodes, splitters & RDM',
+    final loc = AppLocalizations.of(context);
+
+    return SectionCard(
+      title: loc.aboutArtnetSection4Title,
       icon: Icons.device_hub,
-      initiallyExpanded: false,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
-          _Paragraph(
-            "Un node = IP → DMX. Il peut avoir 1, 2, 4, 8 ports DMX. "
-            "La stabilité dépend du node ET du câblage DMX côté sortie (terminaison, topologie, splitters).",
-          ),
-          SizedBox(height: 10),
-          _Subtitle('Nodes vs Splitters'),
-          _BulletList(items: [
-            'Node : convertit IP→DMX (et parfois DMX→IP).',
-            'Splitter DMX : distribue une ligne DMX en branches (opto conseillé).',
-            'Bon design : IP jusqu’au plus près, puis DMX court et propre.',
-          ]),
-          SizedBox(height: 10),
-          _Callout(
-            title: 'RDM sur Art-Net (support variable)',
-            bullets: [
-              'Certains nodes supportent un “RDM proxy” : la console voit/configure les appareils RDM via IP.',
-              'D’autres ne supportent RDM du tout, ou partiellement.',
-              'Un splitter opto “classique” peut bloquer le retour RDM (selon modèle).',
-              'Conseil: si tu veux RDM, choisis explicitement du matériel marqué RDM compatible.',
+        children: [
+          _Paragraph(loc.aboutArtnetSection4Paragraph),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutArtnetSection4Subtitle1),
+          _BulletList(
+            items: [
+              loc.aboutArtnetSection4SubBullet1,
+              loc.aboutArtnetSection4SubBullet2,
+              loc.aboutArtnetSection4SubBullet3,
             ],
           ),
-          SizedBox(height: 10),
-          _Subtitle('Bon réflexe terrain'),
-          _BulletList(items: [
-            'Si DMX instable : règle DMX d’abord (terminaison, câble, Y passif) puis seulement IP.',
-            'Si RDM instable : désactive RDM pour vérifier que le DMX pur est stable.',
-          ]),
+          const SizedBox(height: 10),
+          _Callout(
+            title: loc.aboutArtnetSection4CalloutTitle,
+            bullets: [
+              loc.aboutArtnetSection4Bullet1,
+              loc.aboutArtnetSection4Bullet2,
+              loc.aboutArtnetSection4Bullet3,
+              loc.aboutArtnetSection4Bullet4,
+            ],
+          ),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutArtnetSection4Subtitle2),
+          _BulletList(
+            items: [
+              loc.aboutArtnetSection4SubBullet4,
+              loc.aboutArtnetSection4SubBullet5,
+            ],
+          ),
         ],
       ),
     );
@@ -347,30 +372,34 @@ class _Section5Troubleshooting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '5) Dépannage — symptômes → causes',
+      title: loc.aboutArtnetSection5Title,
       icon: Icons.bug_report,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           _Callout(
-            title: 'Symptômes → causes probables',
+            title: loc.aboutArtnetSection5CalloutTitle,
             bullets: [
-              'Flicker sur tout le plateau → Wi-Fi, broadcast flood, switch saturé.',
-              'Un node OK, l’autre non → univers/mapping, IP, unicast mal configuré.',
-              'Décrochages aléatoires → câble RJ45 défectueux, switch instable, PC qui droppe des paquets.',
-              'Un seul port DMX d’un node KO → câble DMX, terminaison, appareil qui casse la ligne.',
-              'RDM discovery impossible → node/splitter non compatible RDM, câblage DMX “borderline”.',
+              loc.aboutArtnetSection5Bullet1,
+              loc.aboutArtnetSection5Bullet2,
+              loc.aboutArtnetSection5Bullet3,
+              loc.aboutArtnetSection5Bullet4,
+              loc.aboutArtnetSection5Bullet5,
             ],
           ),
-          SizedBox(height: 10),
-          _Subtitle('Méthode rapide'),
-          _BulletList(items: [
-            '1) Passe en unicast vers un seul node (test simple).',
-            '2) Vérifie univers/mapping (papier + node config).',
-            '3) Test en filaire direct (PC → switch → node) avec câble connu OK.',
-            '4) Isole le DMX : node → 1 appareil + terminaison.',
-          ]),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutArtnetSection5Subtitle),
+          _BulletList(
+            items: [
+              loc.aboutArtnetSection5SubBullet1,
+              loc.aboutArtnetSection5SubBullet2,
+              loc.aboutArtnetSection5SubBullet3,
+              loc.aboutArtnetSection5SubBullet4,
+            ],
+          ),
         ],
       ),
     );
@@ -382,19 +411,41 @@ class _Section6Diagrams extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '6) Schémas (réseau / unicast vs broadcast)',
+      title: loc.aboutArtnetSection6Title,
       icon: Icons.schema,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
-          _Subtitle('Architecture propre (IP → nodes → DMX court)'),
-          SizedBox(height: 10),
-          _DiagramBox(painter: _ArtNetTopologyPainter()),
-          SizedBox(height: 14),
-          _Subtitle('Broadcast vs Unicast (idée)'),
-          SizedBox(height: 10),
-          _DiagramBox(aspect: 16 / 6.8, painter: _UnicastBroadcastPainter()),
+        children: [
+          _Subtitle(loc.aboutArtnetSection6Subtitle1),
+          const SizedBox(height: 10),
+          _DiagramBox(
+            painter: _ArtNetTopologyPainter(
+              sourceLabel: loc.aboutArtnetDiagramSourceLabel,
+              switchLabel: loc.aboutArtnetDiagramSwitchLabel,
+              node1Label: loc.aboutArtnetDiagramNode1Label,
+              node2Label: loc.aboutArtnetDiagramNode2Label,
+              fixLabel: loc.aboutArtnetDiagramFixLabel,
+              infoLabel: loc.aboutArtnetDiagramInfoLabel,
+            ),
+          ),
+          const SizedBox(height: 14),
+          _Subtitle(loc.aboutArtnetSection6Subtitle2),
+          const SizedBox(height: 10),
+          _DiagramBox(
+            aspect: 16 / 6.8,
+            painter: _UnicastBroadcastPainter(
+              sourceLabel: loc.aboutArtnetDiagramSourceShortLabel,
+              switchLabel: loc.aboutArtnetDiagramSwitchLabel,
+              nodeALabel: loc.aboutArtnetDiagramNodeALabel,
+              nodeBLabel: loc.aboutArtnetDiagramNodeBLabel,
+              nodeCLabel: loc.aboutArtnetDiagramNodeCLabel,
+              unicastLabel: loc.aboutArtnetDiagramUnicastLabel,
+              broadcastLabel: loc.aboutArtnetDiagramBroadcastLabel,
+            ),
+          ),
         ],
       ),
     );
@@ -407,36 +458,39 @@ class _Section6bAssets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return ExpandSectionCard(
-      title: '6bis) Images (assets) — RJ45/switch/câbles',
+      title: loc.aboutArtnetSection6bTitle,
       icon: Icons.image_outlined,
       trailing: IconButton(
-        tooltip: 'Copier liste assets',
+        tooltip: loc.aboutArtnetAssetsCopyTooltip,
         icon: const Icon(Icons.copy, color: Colors.white70),
         onPressed: onCopy,
       ),
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _Paragraph(
-            "Section prévue pour illustrer le réseau (RJ45, switch, câbles). "
-            "Si les assets n’existent pas, l’app affiche un fallback propre.",
-          ),
-          SizedBox(height: 10),
-          _Subtitle('Exemples'),
-          SizedBox(height: 10),
+          _Paragraph(loc.aboutArtnetAssetsParagraph),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutArtnetAssetsExamplesTitle),
+          const SizedBox(height: 10),
           _AssetRow(
             items: [
-              _AssetSpec(label: 'RJ45', assetPath: 'assets/images/connectors/rj45.png', hint: 'Connecteur Ethernet'),
               _AssetSpec(
-                label: 'Switch',
-                assetPath: 'assets/images/network/switch.png',
-                hint: 'Switch (idéalement géré si IGMP/VLAN)',
+                label: loc.aboutArtnetAssetsRj45Label,
+                assetPath: 'assets/images/connectors/rj45.png',
+                hint: loc.aboutArtnetAssetsRj45Hint,
               ),
               _AssetSpec(
-                label: 'Câble Ethernet',
+                label: loc.aboutArtnetAssetsSwitchLabel,
+                assetPath: 'assets/images/network/switch.png',
+                hint: loc.aboutArtnetAssetsSwitchHint,
+              ),
+              _AssetSpec(
+                label: loc.aboutArtnetAssetsCableLabel,
                 assetPath: 'assets/images/cables/ethernet_cat5e_cat6.png',
-                hint: 'Cat5e/Cat6 = base fiable',
+                hint: loc.aboutArtnetAssetsCableHint,
               ),
             ],
           ),
@@ -452,22 +506,24 @@ class _Section7Checklist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '7) Checklist rapide',
+      title: loc.aboutArtnetSection7Title,
       icon: Icons.checklist,
       trailing: IconButton(
-        tooltip: 'Copier la checklist',
+        tooltip: loc.aboutArtnetChecklistCopyTooltip,
         icon: const Icon(Icons.copy, color: Colors.white70),
         onPressed: onCopy,
       ),
-      child: const _Callout(
-        title: 'Avant de paniquer',
+      child: _Callout(
+        title: loc.aboutArtnetChecklistTitle,
         bullets: [
-          'Unicast si plusieurs nodes.',
-          'Réseau dédié (ou VLAN) si possible.',
-          'Filaire pour show critique.',
-          'Univers/mapping documentés.',
-          'Test IP simple → 1 node → 1 appareil + terminaison.',
+          loc.aboutArtnetChecklistBullet1,
+          loc.aboutArtnetChecklistBullet2,
+          loc.aboutArtnetChecklistBullet3,
+          loc.aboutArtnetChecklistBullet4,
+          loc.aboutArtnetChecklistBullet5,
         ],
       ),
     );
@@ -479,18 +535,25 @@ class _Section7Checklist extends StatelessWidget {
 /// =======================
 
 class _TocCard extends StatelessWidget {
-  const _TocCard({required this.items, required this.onCopy});
+  const _TocCard({
+    required this.title,
+    required this.copyTooltip,
+    required this.items,
+    required this.onCopy,
+  });
 
+  final String title;
+  final String copyTooltip;
   final List<_TocItem> items;
   final VoidCallback onCopy;
 
   @override
   Widget build(BuildContext context) {
     return SectionCard(
-      title: 'Sommaire',
+      title: title,
       icon: Icons.list_alt,
       trailing: IconButton(
-        tooltip: 'Copier repères',
+        tooltip: copyTooltip,
         icon: const Icon(Icons.copy, color: Colors.white70),
         onPressed: onCopy,
       ),
@@ -506,16 +569,21 @@ class _TocCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     onTap: it.onTap,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 12),
                       child: Row(
                         children: [
                           Expanded(
                             child: Text(
                               it.label,
-                              style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w800),
+                              style: TextStyle(
+                                color: Colors.white.withValues(alpha: 0.92),
+                                fontWeight: FontWeight.w800,
+                              ),
                             ),
                           ),
-                          Icon(Icons.chevron_right, color: Colors.white.withValues(alpha: 0.55)),
+                          Icon(Icons.chevron_right,
+                              color: Colors.white.withValues(alpha: 0.55)),
                         ],
                       ),
                     ),
@@ -546,11 +614,12 @@ class _FooterNote extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      "Info indicative (terrain). Selon nodes/switch/firmwares, le comportement peut varier.\n"
-      "Objectif ici : comprendre et diagnostiquer vite.",
+    final loc = AppLocalizations.of(context);
+
+    return Text(
+      loc.aboutArtnetFooterNote,
       textAlign: TextAlign.center,
-      style: TextStyle(color: Colors.white38, fontSize: 12, height: 1.35),
+      style: const TextStyle(color: Colors.white38, fontSize: 12, height: 1.35),
     );
   }
 }
@@ -563,7 +632,11 @@ class _Subtitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w900, fontSize: 14.5),
+      style: TextStyle(
+        color: Colors.white.withValues(alpha: 0.92),
+        fontWeight: FontWeight.w900,
+        fontSize: 14.5,
+      ),
     );
   }
 }
@@ -576,7 +649,11 @@ class _Paragraph extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35, fontSize: 13.5),
+      style: TextStyle(
+        color: Colors.white.withValues(alpha: 0.80),
+        height: 1.35,
+        fontSize: 13.5,
+      ),
     );
   }
 }
@@ -595,11 +672,18 @@ class _BulletList extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('•  ', style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35)),
+                  Text('•  ',
+                      style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.80),
+                          height: 1.35)),
                   Expanded(
                     child: Text(
                       s,
-                      style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35, fontSize: 13.5),
+                      style: TextStyle(
+                        color: Colors.white.withValues(alpha: 0.80),
+                        height: 1.35,
+                        fontSize: 13.5,
+                      ),
                     ),
                   ),
                 ],
@@ -630,7 +714,11 @@ class _Callout extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w900, fontSize: 13.5),
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.92),
+              fontWeight: FontWeight.w900,
+              fontSize: 13.5,
+            ),
           ),
           const SizedBox(height: 8),
           _BulletList(items: bullets),
@@ -670,7 +758,21 @@ class _DiagramBox extends StatelessWidget {
 }
 
 class _ArtNetTopologyPainter extends CustomPainter {
-  const _ArtNetTopologyPainter();
+  const _ArtNetTopologyPainter({
+    required this.sourceLabel,
+    required this.switchLabel,
+    required this.node1Label,
+    required this.node2Label,
+    required this.fixLabel,
+    required this.infoLabel,
+  });
+
+  final String sourceLabel;
+  final String switchLabel;
+  final String node1Label;
+  final String node2Label;
+  final String fixLabel;
+  final String infoLabel;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -705,21 +807,21 @@ class _ArtNetTopologyPainter extends CustomPainter {
     canvas.drawLine(node2, fix3, dmxStroke);
     canvas.drawLine(node2, fix4, dmxStroke);
 
-    _Box.draw(canvas, size, console, 'SOURCE\n(PC/console)', accent: false);
-    _Box.draw(canvas, size, sw, 'SWITCH', accent: true);
-    _Box.draw(canvas, size, node1, 'NODE 1\nDMX OUT', accent: false);
-    _Box.draw(canvas, size, node2, 'NODE 2\nDMX OUT', accent: false);
+    _Box.draw(canvas, size, console, sourceLabel, accent: false);
+    _Box.draw(canvas, size, sw, switchLabel, accent: true);
+    _Box.draw(canvas, size, node1, node1Label, accent: false);
+    _Box.draw(canvas, size, node2, node2Label, accent: false);
 
-    _Box.small(canvas, size, fix1, 'FIX');
-    _Box.small(canvas, size, fix2, 'FIX');
-    _Box.small(canvas, size, fix3, 'FIX');
-    _Box.small(canvas, size, fix4, 'FIX');
+    _Box.small(canvas, size, fix1, fixLabel);
+    _Box.small(canvas, size, fix2, fixLabel);
+    _Box.small(canvas, size, fix3, fixLabel);
+    _Box.small(canvas, size, fix4, fixLabel);
 
     _Text.paintLabel(
       canvas,
       Offset(size.width * 0.08, size.height * 0.70),
       _Text.tp(
-        'IP long / DMX court',
+        infoLabel,
         fontSize: size.shortestSide * 0.065,
         color: Colors.white.withValues(alpha: 0.90),
         weight: FontWeight.w900,
@@ -732,7 +834,23 @@ class _ArtNetTopologyPainter extends CustomPainter {
 }
 
 class _UnicastBroadcastPainter extends CustomPainter {
-  const _UnicastBroadcastPainter();
+  const _UnicastBroadcastPainter({
+    required this.sourceLabel,
+    required this.switchLabel,
+    required this.nodeALabel,
+    required this.nodeBLabel,
+    required this.nodeCLabel,
+    required this.unicastLabel,
+    required this.broadcastLabel,
+  });
+
+  final String sourceLabel;
+  final String switchLabel;
+  final String nodeALabel;
+  final String nodeBLabel;
+  final String nodeCLabel;
+  final String unicastLabel;
+  final String broadcastLabel;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -760,17 +878,17 @@ class _UnicastBroadcastPainter extends CustomPainter {
     canvas.drawLine(sw, n2, stroke);
     canvas.drawLine(sw, n3, faintStroke);
 
-    _Box.draw(canvas, size, src, 'SOURCE', accent: false);
-    _Box.draw(canvas, size, sw, 'SWITCH', accent: true);
-    _Box.draw(canvas, size, n1, 'NODE A', accent: false);
-    _Box.draw(canvas, size, n2, 'NODE B', accent: false);
-    _Box.draw(canvas, size, n3, 'NODE C', accent: false);
+    _Box.draw(canvas, size, src, sourceLabel, accent: false);
+    _Box.draw(canvas, size, sw, switchLabel, accent: true);
+    _Box.draw(canvas, size, n1, nodeALabel, accent: false);
+    _Box.draw(canvas, size, n2, nodeBLabel, accent: false);
+    _Box.draw(canvas, size, n3, nodeCLabel, accent: false);
 
     _Text.paintLabel(
       canvas,
       Offset(size.width * 0.06, size.height * 0.10),
       _Text.tp(
-        'Unicast: paquets vers un node',
+        unicastLabel,
         fontSize: size.shortestSide * 0.055,
         color: Colors.white.withValues(alpha: 0.90),
         weight: FontWeight.w900,
@@ -780,7 +898,7 @@ class _UnicastBroadcastPainter extends CustomPainter {
       canvas,
       Offset(size.width * 0.06, size.height * 0.80),
       _Text.tp(
-        'Broadcast: tout le monde reçoit',
+        broadcastLabel,
         fontSize: size.shortestSide * 0.055,
         color: Colors.white.withValues(alpha: 0.85),
         weight: FontWeight.w900,
@@ -797,7 +915,8 @@ class _UnicastBroadcastPainter extends CustomPainter {
 /// =======================
 
 class _AssetSpec {
-  const _AssetSpec({required this.label, required this.assetPath, required this.hint});
+  const _AssetSpec(
+      {required this.label, required this.assetPath, required this.hint});
   final String label;
   final String assetPath;
   final String hint;
@@ -815,10 +934,12 @@ class _AssetRow extends StatelessWidget {
         if (isNarrow) {
           return Column(
             children: items
-                .map((it) => Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: _AssetTile(spec: it),
-                    ))
+                .map(
+                  (it) => Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: _AssetTile(spec: it),
+                  ),
+                )
                 .toList(),
           );
         }
@@ -842,6 +963,8 @@ class _AssetTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return Container(
       decoration: BoxDecoration(
         color: const Color(0xFF0B0B0B),
@@ -879,11 +1002,15 @@ class _AssetTile extends StatelessWidget {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.image_not_supported, color: Colors.white.withValues(alpha: 0.45)),
+                          Icon(Icons.image_not_supported,
+                              color: Colors.white.withValues(alpha: 0.45)),
                           const SizedBox(height: 6),
                           Text(
-                            'Asset manquant',
-                            style: TextStyle(color: Colors.white.withValues(alpha: 0.65), fontWeight: FontWeight.w800),
+                            loc.aboutArtnetMissingAssetLabel,
+                            style: TextStyle(
+                              color: Colors.white.withValues(alpha: 0.65),
+                              fontWeight: FontWeight.w800,
+                            ),
                           ),
                         ],
                       ),
@@ -894,11 +1021,22 @@ class _AssetTile extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          Text(spec.hint, style: TextStyle(color: Colors.white.withValues(alpha: 0.78), height: 1.25, fontSize: 12.5)),
+          Text(
+            spec.hint,
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.78),
+              height: 1.25,
+              fontSize: 12.5,
+            ),
+          ),
           const SizedBox(height: 8),
           Text(
             spec.assetPath,
-            style: TextStyle(fontFamily: 'monospace', fontSize: 11.8, color: Colors.white.withValues(alpha: 0.55)),
+            style: TextStyle(
+              fontFamily: 'monospace',
+              fontSize: 11.8,
+              color: Colors.white.withValues(alpha: 0.55),
+            ),
           ),
         ],
       ),
@@ -912,8 +1050,11 @@ class _AssetTile extends StatelessWidget {
 
 class _Grid {
   static void paint(Canvas canvas, Size size) {
-    canvas.drawRect(Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
-    final faint = Paint()..color = Colors.white.withValues(alpha: 0.16)..strokeWidth = 1;
+    canvas.drawRect(
+        Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
+    final faint = Paint()
+      ..color = Colors.white.withValues(alpha: 0.16)
+      ..strokeWidth = 1;
     final step = size.shortestSide / 10;
     for (double x = 0; x <= size.width; x += step) {
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), faint);
@@ -925,16 +1066,22 @@ class _Grid {
 }
 
 class _Box {
-  static void draw(Canvas canvas, Size size, Offset center, String label, {required bool accent}) {
+  static void draw(Canvas canvas, Size size, Offset center, String label,
+      {required bool accent}) {
     final w = size.width * 0.22;
     final h = size.height * 0.22;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.05));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.05));
 
     final fill = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.18) : Colors.white.withValues(alpha: 0.08);
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.18)
+          : Colors.white.withValues(alpha: 0.08);
     final border = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.60) : Colors.white.withValues(alpha: 0.30)
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.60)
+          : Colors.white.withValues(alpha: 0.30)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 
@@ -954,7 +1101,8 @@ class _Box {
     final w = size.width * 0.08;
     final h = size.height * 0.12;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.04));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.04));
 
     canvas.drawRRect(rr, Paint()..color = Colors.white.withValues(alpha: 0.07));
     canvas.drawRRect(
@@ -976,11 +1124,20 @@ class _Box {
 }
 
 class _Text {
-  static TextPainter tp(String s, {required double fontSize, required Color color, required FontWeight weight}) {
+  static TextPainter tp(String s,
+      {required double fontSize,
+      required Color color,
+      required FontWeight weight}) {
     final t = TextPainter(
       text: TextSpan(
         text: s,
-        style: TextStyle(fontSize: fontSize, color: color, fontWeight: weight, fontFamily: 'monospace', height: 1.15),
+        style: TextStyle(
+          fontSize: fontSize,
+          color: color,
+          fontWeight: weight,
+          fontFamily: 'monospace',
+          height: 1.15,
+        ),
       ),
       textDirection: TextDirection.ltr,
     );
@@ -989,7 +1146,11 @@ class _Text {
   }
 
   static void center(Canvas canvas, Rect rect, TextPainter tp) {
-    tp.paint(canvas, Offset(rect.left + (rect.width - tp.width) / 2, rect.top + (rect.height - tp.height) / 2));
+    tp.paint(
+      canvas,
+      Offset(rect.left + (rect.width - tp.width) / 2,
+          rect.top + (rect.height - tp.height) / 2),
+    );
   }
 
   static void paintLabel(Canvas canvas, Offset pos, TextPainter tp) {
@@ -999,7 +1160,13 @@ class _Text {
       const Radius.circular(12),
     );
     canvas.drawRRect(r, Paint()..color = Colors.black.withValues(alpha: 0.45));
-    canvas.drawRRect(r, Paint()..color = Colors.white.withValues(alpha: 0.14)..style = PaintingStyle.stroke..strokeWidth = 1.5);
+    canvas.drawRRect(
+      r,
+      Paint()
+        ..color = Colors.white.withValues(alpha: 0.14)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.5,
+    );
     tp.paint(canvas, Offset(pos.dx + pad, pos.dy + pad));
   }
 }

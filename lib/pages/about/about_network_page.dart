@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, ExpandSectionCard, MiniPill, copyToClipboard
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 class AboutNetworkPage extends StatefulWidget {
   const AboutNetworkPage({super.key});
@@ -20,7 +21,6 @@ class _AboutNetworkPageState extends State<AboutNetworkPage> {
   final _k5Wifi = GlobalKey();
   final _k6Switch = GlobalKey();
   final _k7Diagrams = GlobalKey();
-  final _k7bAssets = GlobalKey();
   final _k8Checklist = GlobalKey();
 
   void _goTo(GlobalKey key) {
@@ -42,11 +42,12 @@ class _AboutNetworkPageState extends State<AboutNetworkPage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Réseau lumière — VLAN, IGMP, Wi-Fi'),
+        title: Text(loc.aboutNetworkPageTitle),
       ),
       body: SafeArea(
         bottom: true,
@@ -58,93 +59,55 @@ class _AboutNetworkPageState extends State<AboutNetworkPage> {
               _TocCard(
                 onCopy: () {
                   final txt = [
-                    'Réseau lumière: viser simple, dédié, et stable.',
-                    'VLAN = séparer le trafic (lumière vs reste).',
-                    'IGMP = indispensable si sACN multicast à grande échelle.',
-                    'Wi-Fi = ok dépannage, rarement ok en prod critique.',
+                    loc.aboutNetworkCopy1,
+                    loc.aboutNetworkCopy2,
+                    loc.aboutNetworkCopy3,
+                    loc.aboutNetworkCopy4,
                   ].join('\n');
                   copyToClipboard(context, txt);
                 },
                 items: [
-                  _TocItem('1) Objectif: réseau stable', onTap: () => _goTo(_k1Basics)),
-                  _TocItem('2) Plan IP (simple)', onTap: () => _goTo(_k2PlanIp)),
-                  _TocItem('3) VLAN (séparation)', onTap: () => _goTo(_k3Vlan)),
-                  _TocItem('4) IGMP (sACN multicast)', onTap: () => _goTo(_k4Igmp)),
-                  _TocItem('5) Wi-Fi vs filaire', onTap: () => _goTo(_k5Wifi)),
-                  _TocItem('6) Switch: ce qu’il faut', onTap: () => _goTo(_k6Switch)),
-                  _TocItem('7) Schémas', onTap: () => _goTo(_k7Diagrams)),
-                  _TocItem('7bis) Images (assets)', onTap: () => _goTo(_k7bAssets)),
-                  _TocItem('8) Checklist', onTap: () => _goTo(_k8Checklist)),
+                  _TocItem(loc.aboutNetworkToc1, onTap: () => _goTo(_k1Basics)),
+                  _TocItem(loc.aboutNetworkToc2, onTap: () => _goTo(_k2PlanIp)),
+                  _TocItem(loc.aboutNetworkToc3, onTap: () => _goTo(_k3Vlan)),
+                  _TocItem(loc.aboutNetworkToc4, onTap: () => _goTo(_k4Igmp)),
+                  _TocItem(loc.aboutNetworkToc5, onTap: () => _goTo(_k5Wifi)),
+                  _TocItem(loc.aboutNetworkToc6, onTap: () => _goTo(_k6Switch)),
+                  _TocItem(loc.aboutNetworkToc7,
+                      onTap: () => _goTo(_k7Diagrams)),
+                  _TocItem(loc.aboutNetworkToc8,
+                      onTap: () => _goTo(_k8Checklist)),
                 ],
               ),
               const SizedBox(height: 12),
-
               _Anchor(key: _k1Basics),
               const _Section1Basics(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k2PlanIp),
               const _Section2PlanIp(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k3Vlan),
               const _Section3Vlan(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k4Igmp),
               const _Section4Igmp(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k5Wifi),
               const _Section5Wifi(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k6Switch),
               const _Section6Switch(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k7Diagrams),
               const _Section7Diagrams(),
               const SizedBox(height: 12),
-
-              _Anchor(key: _k7bAssets),
-              _Section7bAssets(
-                onCopy: () {
-                  final txt = '''
-Assets recommandés (optionnels)
-- assets/images/connectors/rj45.png
-- assets/images/network/switch.png
-- assets/images/network/ap.png
-
-pubspec.yaml (exemple)
-flutter:
-  assets:
-    - assets/images/connectors/
-    - assets/images/network/
-'''.trim();
-                  copyToClipboard(context, txt);
-                },
-              ),
-              const SizedBox(height: 12),
-
               _Anchor(key: _k8Checklist),
               _Section8Checklist(
                 onCopy: () {
-                  final txt = '''
-Réseau lumière — Checklist
-☐ Réseau dédié ou VLAN lumière
-☐ Plan IP clair (DHCP ou statique) + masque ok
-☐ Switch correct; boucles évitées
-☐ sACN multicast: IGMP snooping ON
-☐ IGMP querier présent dans le VLAN (si infra le nécessite)
-☐ Unicast en dépannage (surtout Art-Net)
-☐ Wi-Fi: éviter prod critique (jitter/pertes)
-☐ Tests: ping stable + charge progressive (univers)
-'''.trim();
+                  final txt = loc.aboutNetworkChecklistCopy.trim();
                   copyToClipboard(context, txt);
                 },
               ),
-
               const SizedBox(height: 18),
               const _FooterNote(),
             ],
@@ -164,33 +127,34 @@ class _Section1Basics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '1) Objectif: réseau stable',
+      title: loc.aboutNetworkToc1,
       icon: Icons.lan,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           Wrap(
             spacing: 8,
             runSpacing: 8,
             children: [
-              MiniPill('Dédié/VLAN'),
-              MiniPill('Filaire'),
-              MiniPill('IGMP si multicast'),
+              MiniPill(loc.aboutNetworkBasicsPill1),
+              MiniPill(loc.aboutNetworkBasicsPill2),
+              MiniPill(loc.aboutNetworkBasicsPill3),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Paragraph(
-            "Un réseau lumière doit être prévisible: faible perte, faible jitter, architecture simple. "
-            "Quand ça bug, c’est rarement “le protocole” et souvent l’infra (switch, Wi-Fi, boucles, flood).",
+            loc.aboutNetworkBasicsParagraph,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Règle de base',
+            title: loc.aboutNetworkBasicsCalloutTitle,
             bullets: [
-              'Si tu peux: filaire + switch correct + réseau dédié (ou VLAN).',
-              'Si tu dois partager: VLAN + règles claires.',
-              'sACN multicast: IGMP devient vite obligatoire.',
+              loc.aboutNetworkBasicsBullet1,
+              loc.aboutNetworkBasicsBullet2,
+              loc.aboutNetworkBasicsBullet3,
             ],
           ),
         ],
@@ -204,33 +168,33 @@ class _Section2PlanIp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '2) Plan IP (simple)',
+      title: loc.aboutNetworkToc2,
       icon: Icons.alt_route,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           _Paragraph(
-            "Choisis une stratégie simple et cohérente. "
-            "Deux approches: DHCP (simple) ou statique (prévisible). "
-            "Le pire: un mélange non documenté.",
+            loc.aboutNetworkPlanIpParagraph,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Exemple de plan (simple)',
+            title: loc.aboutNetworkPlanIpCalloutTitle,
             bullets: [
-              'VLAN lumière: 10.10.0.0/24',
-              'Console/PC: 10.10.0.10',
-              'Nodes: 10.10.0.100–150',
-              'Switch mgmt: 10.10.0.2',
+              loc.aboutNetworkPlanIpBullet1,
+              loc.aboutNetworkPlanIpBullet2,
+              loc.aboutNetworkPlanIpBullet3,
+              loc.aboutNetworkPlanIpBullet4,
             ],
           ),
-          SizedBox(height: 10),
-          _Subtitle('Erreurs classiques'),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutNetworkPlanIpSubtitle),
           _BulletList(items: [
-            'Masque différent (ex: /24 vs /16) → machines invisibles.',
-            'Deux appareils même IP → comportement aléatoire.',
-            'DHCP + statique sur même range sans contrôle → conflits.',
+            loc.aboutNetworkPlanIpSubBullet1,
+            loc.aboutNetworkPlanIpSubBullet2,
+            loc.aboutNetworkPlanIpSubBullet3,
           ]),
         ],
       ),
@@ -243,30 +207,31 @@ class _Section3Vlan extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '3) VLAN (séparation)',
+      title: loc.aboutNetworkToc3,
       icon: Icons.layers,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           _Paragraph(
-            "Un VLAN te permet d’isoler la lumière du reste (internet, production vidéo, invités…). "
-            "Ça évite le bruit réseau et réduit le risque qu’un autre service casse ton show.",
+            loc.aboutNetworkVlanParagraph,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Ce que tu gagnes',
+            title: loc.aboutNetworkVlanCalloutTitle,
             bullets: [
-              'Moins de trafic parasite.',
-              'Moins de risques (DHCP externe, broadcast non désiré).',
-              'Debug plus simple (tout ce qui est dans le VLAN = lumière).',
+              loc.aboutNetworkVlanBullet1,
+              loc.aboutNetworkVlanBullet2,
+              loc.aboutNetworkVlanBullet3,
             ],
           ),
-          SizedBox(height: 10),
-          _Subtitle('Attention'),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutNetworkVlanSubtitle),
           _BulletList(items: [
-            'Un VLAN = il faut que tous les ports soient bien configurés (access/trunk).',
-            'Si tu ne maîtrises pas: réseau dédié “physique” est souvent plus simple.',
+            loc.aboutNetworkVlanSubBullet1,
+            loc.aboutNetworkVlanSubBullet2,
           ]),
         ],
       ),
@@ -279,38 +244,39 @@ class _Section4Igmp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '4) IGMP (sACN multicast)',
+      title: loc.aboutNetworkToc4,
       icon: Icons.hub,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           Wrap(
             spacing: 8,
             runSpacing: 8,
             children: [
-              MiniPill('IGMP snooping'),
-              MiniPill('IGMP querier'),
-              MiniPill('Multicast flood'),
+              MiniPill(loc.aboutNetworkIgmpPill1),
+              MiniPill(loc.aboutNetworkIgmpPill2),
+              MiniPill(loc.aboutNetworkIgmpPill3),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Paragraph(
-            "IGMP snooping permet au switch de savoir quels ports veulent quel multicast. "
-            "Sans ça, le multicast peut être inondé sur tous les ports → saturation.",
+            loc.aboutNetworkIgmpParagraph,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'IGMP querier (idée simple)',
+            title: loc.aboutNetworkIgmpCalloutTitle,
             bullets: [
-              'Dans certains réseaux/VLAN, il faut un querier pour maintenir les abonnements IGMP.',
-              'Sans querier: selon les switchs, les abonnements expirent et tu vois des “glitches”.',
-              'Si tu es en petit réseau dédié: parfois tout marche, mais en gros réseau: c’est critique.',
+              loc.aboutNetworkIgmpBullet1,
+              loc.aboutNetworkIgmpBullet2,
+              loc.aboutNetworkIgmpBullet3,
             ],
           ),
-          SizedBox(height: 12),
-          _Subtitle('Schéma : IGMP (idée)'),
-          SizedBox(height: 10),
+          const SizedBox(height: 12),
+          _Subtitle(loc.aboutNetworkIgmpSubtitle),
+          const SizedBox(height: 10),
           _DiagramBox(aspect: 16 / 6.8, painter: _IgmpPainter()),
         ],
       ),
@@ -323,31 +289,33 @@ class _Section5Wifi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '5) Wi-Fi vs filaire',
+      title: loc.aboutNetworkToc5,
       icon: Icons.wifi,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
-          _Subtitle('Filaire'),
+        children: [
+          _Subtitle(loc.aboutNetworkWifiSubtitle1),
           _BulletList(items: [
-            '✅ Latence stable, pertes faibles (si infra propre).',
-            '✅ Recommandé en prod.',
+            loc.aboutNetworkWifiSubBullet1,
+            loc.aboutNetworkWifiSubBullet2,
           ]),
-          SizedBox(height: 10),
-          _Subtitle('Wi-Fi'),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutNetworkWifiSubtitle2),
           _BulletList(items: [
-            '✅ Pratique (setup rapide, tablette).',
-            '❌ Latence variable (jitter), pertes, interférences.',
-            '❌ Multicast parfois mal géré selon AP/config.',
-            'OK dépannage / petites configs non critiques, rarement OK en show chargé.',
+            loc.aboutNetworkWifiSubBullet3,
+            loc.aboutNetworkWifiSubBullet4,
+            loc.aboutNetworkWifiSubBullet5,
+            loc.aboutNetworkWifiSubBullet6,
           ]),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Règle simple',
+            title: loc.aboutNetworkWifiCalloutTitle,
             bullets: [
-              'Show critique = filaire.',
-              'Wi-Fi = confort opérateur (UI), pas transport principal DMX/IP si gros volume.',
+              loc.aboutNetworkWifiBullet1,
+              loc.aboutNetworkWifiBullet2,
             ],
           ),
         ],
@@ -361,26 +329,28 @@ class _Section6Switch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '6) Switch: ce qu’il faut',
+      title: loc.aboutNetworkToc6,
       icon: Icons.settings_ethernet,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           _Callout(
-            title: 'Minimum recommandé',
+            title: loc.aboutNetworkSwitchCalloutTitle,
             bullets: [
-              'Switch Ethernet correct (pas hub).',
-              'Câbles OK (RJ45, connecteurs).',
-              'Éviter boucles (ou STP maîtrisé).',
-              'Si sACN multicast: IGMP snooping.',
+              loc.aboutNetworkSwitchBullet1,
+              loc.aboutNetworkSwitchBullet2,
+              loc.aboutNetworkSwitchBullet3,
+              loc.aboutNetworkSwitchBullet4,
             ],
           ),
-          SizedBox(height: 10),
-          _Subtitle('Managed vs unmanaged'),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutNetworkSwitchSubtitle),
           _BulletList(items: [
-            'Unmanaged: ok petit réseau dédié (simple).',
-            'Managed: utile pour VLAN/IGMP/diagnostics (gros réseau).',
+            loc.aboutNetworkSwitchSubBullet1,
+            loc.aboutNetworkSwitchSubBullet2,
           ]),
         ],
       ),
@@ -393,52 +363,21 @@ class _Section7Diagrams extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '7) Schémas',
+      title: loc.aboutNetworkToc7,
       icon: Icons.schema,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
-          _Subtitle('VLAN: séparer lumière / reste'),
-          SizedBox(height: 10),
-          _DiagramBox(aspect: 16 / 6.8, painter: _VlanPainter()),
-          SizedBox(height: 14),
-          _Subtitle('Wi-Fi vs filaire (idée)'),
-          SizedBox(height: 10),
-          _DiagramBox(aspect: 16 / 6.8, painter: _WifiVsWiredPainter()),
-        ],
-      ),
-    );
-  }
-}
-
-class _Section7bAssets extends StatelessWidget {
-  const _Section7bAssets({required this.onCopy});
-
-  final VoidCallback onCopy;
-
-  @override
-  Widget build(BuildContext context) {
-    return ExpandSectionCard(
-      title: '7bis) Images (assets)',
-      icon: Icons.image_outlined,
-      trailing: IconButton(
-        tooltip: 'Copier liste assets',
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _Paragraph("Optionnel: illustrer RJ45, switch, point d’accès Wi-Fi."),
-          SizedBox(height: 10),
-          _AssetRow(
-            items: [
-              _AssetSpec(label: 'RJ45', assetPath: 'assets/images/connectors/rj45.png', hint: 'Ethernet cuivre'),
-              _AssetSpec(label: 'Switch', assetPath: 'assets/images/network/switch.png', hint: 'Géré si VLAN/IGMP'),
-              _AssetSpec(label: 'AP Wi-Fi', assetPath: 'assets/images/network/ap.png', hint: 'Confort UI, pas prod critique'),
-            ],
-          ),
+          _Subtitle(loc.aboutNetworkDiagramsSubtitle1),
+          const SizedBox(height: 10),
+          const _DiagramBox(aspect: 16 / 6.8, painter: _VlanPainter()),
+          const SizedBox(height: 14),
+          _Subtitle(loc.aboutNetworkDiagramsSubtitle2),
+          const SizedBox(height: 10),
+          const _DiagramBox(aspect: 16 / 6.8, painter: _WifiVsWiredPainter()),
         ],
       ),
     );
@@ -452,22 +391,24 @@ class _Section8Checklist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '8) Checklist',
+      title: loc.aboutNetworkToc8,
       icon: Icons.checklist,
       trailing: IconButton(
-        tooltip: 'Copier',
+        tooltip: loc.aboutNetworkChecklistCopyTooltip,
         icon: const Icon(Icons.copy, color: Colors.white70),
         onPressed: onCopy,
       ),
-      child: const _Callout(
-        title: 'Avant d’ouvrir Wireshark 😄',
+      child: _Callout(
+        title: loc.aboutNetworkChecklistTitle,
         bullets: [
-          'Plan IP clair, masque cohérent.',
-          'Réseau dédié / VLAN lumière.',
-          'Switch OK, pas de boucles.',
-          'IGMP pour sACN multicast.',
-          'Wi-Fi évité en prod critique.',
+          loc.aboutNetworkChecklistBullet1,
+          loc.aboutNetworkChecklistBullet2,
+          loc.aboutNetworkChecklistBullet3,
+          loc.aboutNetworkChecklistBullet4,
+          loc.aboutNetworkChecklistBullet5,
         ],
       ),
     );
@@ -499,112 +440,6 @@ class _DiagramBox extends StatelessWidget {
           borderRadius: BorderRadius.circular(14),
           child: CustomPaint(painter: painter),
         ),
-      ),
-    );
-  }
-}
-
-class _AssetSpec {
-  const _AssetSpec({required this.label, required this.assetPath, required this.hint});
-  final String label;
-  final String assetPath;
-  final String hint;
-}
-
-class _AssetRow extends StatelessWidget {
-  const _AssetRow({required this.items});
-  final List<_AssetSpec> items;
-
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (ctx, c) {
-        final isNarrow = c.maxWidth < 520;
-        if (isNarrow) {
-          return Column(
-            children: items
-                .map((it) => Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: _AssetTile(spec: it),
-                    ))
-                .toList(),
-          );
-        }
-        return Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            for (int i = 0; i < items.length; i++) ...[
-              Expanded(child: _AssetTile(spec: items[i])),
-              if (i != items.length - 1) const SizedBox(width: 10),
-            ],
-          ],
-        );
-      },
-    );
-  }
-}
-
-class _AssetTile extends StatelessWidget {
-  const _AssetTile({required this.spec});
-  final _AssetSpec spec;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xFF0B0B0B),
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: Colors.white12),
-      ),
-      padding: const EdgeInsets.all(12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            spec.label,
-            style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w900, fontSize: 13.5),
-          ),
-          const SizedBox(height: 8),
-          AspectRatio(
-            aspectRatio: 16 / 9,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.06),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.white12),
-                ),
-                child: Image.asset(
-                  spec.assetPath,
-                  fit: BoxFit.contain,
-                  errorBuilder: (context, error, stack) {
-                    return Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(Icons.image_not_supported, color: Colors.white.withValues(alpha: 0.45)),
-                          const SizedBox(height: 6),
-                          Text(
-                            'Asset manquant',
-                            style: TextStyle(color: Colors.white.withValues(alpha: 0.65), fontWeight: FontWeight.w800),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(spec.hint, style: TextStyle(color: Colors.white.withValues(alpha: 0.78), height: 1.25, fontSize: 12.5)),
-          const SizedBox(height: 8),
-          Text(
-            spec.assetPath,
-            style: TextStyle(fontFamily: 'monospace', fontSize: 11.8, color: Colors.white.withValues(alpha: 0.55)),
-          ),
-        ],
       ),
     );
   }
@@ -643,8 +478,11 @@ class _VlanPainter extends CustomPainter {
   }
 
   void _grid(Canvas canvas, Size size) {
-    canvas.drawRect(Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
-    final faint = Paint()..color = Colors.white.withValues(alpha: 0.16)..strokeWidth = 1;
+    canvas.drawRect(
+        Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
+    final faint = Paint()
+      ..color = Colors.white.withValues(alpha: 0.16)
+      ..strokeWidth = 1;
     final step = size.shortestSide / 10;
     for (double x = 0; x <= size.width; x += step) {
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), faint);
@@ -654,16 +492,22 @@ class _VlanPainter extends CustomPainter {
     }
   }
 
-  void _box(Canvas canvas, Size size, Offset center, String label, {required bool accent}) {
+  void _box(Canvas canvas, Size size, Offset center, String label,
+      {required bool accent}) {
     final w = size.width * 0.28;
     final h = size.height * 0.22;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.05));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.05));
 
     final fill = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.18) : Colors.white.withValues(alpha: 0.08);
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.18)
+          : Colors.white.withValues(alpha: 0.08);
     final border = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.60) : Colors.white.withValues(alpha: 0.30)
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.60)
+          : Colors.white.withValues(alpha: 0.30)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 
@@ -719,8 +563,11 @@ class _IgmpPainter extends CustomPainter {
   }
 
   void _grid(Canvas canvas, Size size) {
-    canvas.drawRect(Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
-    final faint = Paint()..color = Colors.white.withValues(alpha: 0.16)..strokeWidth = 1;
+    canvas.drawRect(
+        Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
+    final faint = Paint()
+      ..color = Colors.white.withValues(alpha: 0.16)
+      ..strokeWidth = 1;
     final step = size.shortestSide / 10;
     for (double x = 0; x <= size.width; x += step) {
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), faint);
@@ -730,16 +577,22 @@ class _IgmpPainter extends CustomPainter {
     }
   }
 
-  void _box(Canvas canvas, Size size, Offset center, String label, {required bool accent}) {
+  void _box(Canvas canvas, Size size, Offset center, String label,
+      {required bool accent}) {
     final w = size.width * 0.26;
     final h = size.height * 0.22;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.05));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.05));
 
     final fill = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.18) : Colors.white.withValues(alpha: 0.08);
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.18)
+          : Colors.white.withValues(alpha: 0.08);
     final border = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.60) : Colors.white.withValues(alpha: 0.30)
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.60)
+          : Colors.white.withValues(alpha: 0.30)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 
@@ -800,8 +653,11 @@ class _WifiVsWiredPainter extends CustomPainter {
   }
 
   void _grid(Canvas canvas, Size size) {
-    canvas.drawRect(Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
-    final faint = Paint()..color = Colors.white.withValues(alpha: 0.16)..strokeWidth = 1;
+    canvas.drawRect(
+        Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
+    final faint = Paint()
+      ..color = Colors.white.withValues(alpha: 0.16)
+      ..strokeWidth = 1;
     final step = size.shortestSide / 10;
     for (double x = 0; x <= size.width; x += step) {
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), faint);
@@ -811,7 +667,8 @@ class _WifiVsWiredPainter extends CustomPainter {
     }
   }
 
-  void _dashedLine(Canvas canvas, Offset a, Offset b, Paint paint, {double dash = 8, double gap = 6}) {
+  void _dashedLine(Canvas canvas, Offset a, Offset b, Paint paint,
+      {double dash = 8, double gap = 6}) {
     final dx = b.dx - a.dx;
     final dy = b.dy - a.dy;
     final dist = math.sqrt(dx * dx + dy * dy);
@@ -827,16 +684,22 @@ class _WifiVsWiredPainter extends CustomPainter {
     }
   }
 
-  void _box(Canvas canvas, Size size, Offset center, String label, {required bool accent}) {
+  void _box(Canvas canvas, Size size, Offset center, String label,
+      {required bool accent}) {
     final w = size.width * 0.22;
     final h = size.height * 0.22;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.05));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.05));
 
     final fill = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.18) : Colors.white.withValues(alpha: 0.08);
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.18)
+          : Colors.white.withValues(alpha: 0.08);
     final border = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.60) : Colors.white.withValues(alpha: 0.30)
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.60)
+          : Colors.white.withValues(alpha: 0.30)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 
@@ -870,7 +733,11 @@ class _Subtitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w900, fontSize: 14.5),
+      style: TextStyle(
+        color: Colors.white.withValues(alpha: 0.92),
+        fontWeight: FontWeight.w900,
+        fontSize: 14.5,
+      ),
     );
   }
 }
@@ -883,7 +750,11 @@ class _Paragraph extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35, fontSize: 13.5),
+      style: TextStyle(
+        color: Colors.white.withValues(alpha: 0.80),
+        height: 1.35,
+        fontSize: 13.5,
+      ),
     );
   }
 }
@@ -902,11 +773,19 @@ class _BulletList extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('•  ', style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35)),
+                  Text(
+                    '•  ',
+                    style: TextStyle(
+                        color: Colors.white.withValues(alpha: 0.80),
+                        height: 1.35),
+                  ),
                   Expanded(
                     child: Text(
                       s,
-                      style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35, fontSize: 13.5),
+                      style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.80),
+                          height: 1.35,
+                          fontSize: 13.5),
                     ),
                   ),
                 ],
@@ -937,7 +816,11 @@ class _Callout extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w900, fontSize: 13.5),
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.92),
+              fontWeight: FontWeight.w900,
+              fontSize: 13.5,
+            ),
           ),
           const SizedBox(height: 8),
           _BulletList(items: bullets),
@@ -952,21 +835,31 @@ class _FooterNote extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      "Info indicative (terrain). Selon le matériel réseau, IGMP/VLAN peuvent être indispensables.\n"
-      "Objectif : rester simple et robuste.",
+    final loc = AppLocalizations.of(context);
+
+    return Text(
+      loc.aboutNetworkFooterNote,
       textAlign: TextAlign.center,
-      style: TextStyle(color: Colors.white38, fontSize: 12, height: 1.35),
+      style: const TextStyle(color: Colors.white38, fontSize: 12, height: 1.35),
     );
   }
 }
 
 class _Text {
-  static TextPainter tp(String s, {required double fontSize, required Color color, required FontWeight weight}) {
+  static TextPainter tp(String s,
+      {required double fontSize,
+      required Color color,
+      required FontWeight weight}) {
     final t = TextPainter(
       text: TextSpan(
         text: s,
-        style: TextStyle(fontSize: fontSize, color: color, fontWeight: weight, fontFamily: 'monospace', height: 1.15),
+        style: TextStyle(
+          fontSize: fontSize,
+          color: color,
+          fontWeight: weight,
+          fontFamily: 'monospace',
+          height: 1.15,
+        ),
       ),
       textDirection: TextDirection.ltr,
       textAlign: TextAlign.left,
@@ -990,7 +883,10 @@ class _Text {
     canvas.drawRRect(r, Paint()..color = Colors.black.withValues(alpha: 0.45));
     canvas.drawRRect(
       r,
-      Paint()..color = Colors.white.withValues(alpha: 0.14)..style = PaintingStyle.stroke..strokeWidth = 1.5,
+      Paint()
+        ..color = Colors.white.withValues(alpha: 0.14)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.5,
     );
     tp.paint(canvas, Offset(pos.dx + pad, pos.dy + pad));
   }
@@ -1008,11 +904,13 @@ class _TocCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: 'Sommaire',
+      title: loc.commonTocTitle,
       icon: Icons.list_alt,
       trailing: IconButton(
-        tooltip: 'Copier repères',
+        tooltip: loc.aboutNetworkCopyTooltip,
         icon: const Icon(Icons.copy, color: Colors.white70),
         onPressed: onCopy,
       ),
@@ -1028,16 +926,21 @@ class _TocCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     onTap: it.onTap,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 12),
                       child: Row(
                         children: [
                           Expanded(
                             child: Text(
                               it.label,
-                              style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w800),
+                              style: TextStyle(
+                                color: Colors.white.withValues(alpha: 0.92),
+                                fontWeight: FontWeight.w800,
+                              ),
                             ),
                           ),
-                          Icon(Icons.chevron_right, color: Colors.white.withValues(alpha: 0.55)),
+                          Icon(Icons.chevron_right,
+                              color: Colors.white.withValues(alpha: 0.55)),
                         ],
                       ),
                     ),

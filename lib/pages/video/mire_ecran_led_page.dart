@@ -234,7 +234,7 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
         '_$typeName.png';
 
     if (!mounted) return;
-    await exportPngBytes(png, filename);
+    await exportPngBytes(context, png, filename);
   }
 
   @override

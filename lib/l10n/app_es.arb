@@ -61,20 +61,20 @@
   "laserTargetDistanceLabel": "Distancia objetivo (m)",
   "laserTargetDistanceHint": "p. ej.: 10",
   "laserAdviceFullPower": "Potencia total permitida (100 %)",
-  "laserAdviceMaxRecommended": "Laser Advice Max Recommended : {p0}",
+  "laserAdviceMaxRecommended": "Potencia máxima recomendada: {percent}",
   "@laserAdviceMaxRecommended": {
     "placeholders": {
-      "p0": {}
+      "percent": {}
     }
   },
   "laserSavedProjectorsTitle": "Proyectores guardados",
   "laserSearchHint": "p. ej.: “RGB 5W”",
-  "laserPresetSubtitle": "Laser Preset Subtitle : {p0} · {p1} · {p2}",
+  "laserPresetSubtitle": "P: {p} mW • Div: {div} mrad • Ø: {diam} mm",
   "@laserPresetSubtitle": {
     "placeholders": {
-      "p0": {},
-      "p1": {},
-      "p2": {}
+      "p": {},
+      "div": {},
+      "diam": {}
     }
   },
   "laserSaveProjectorTitle": "Guardar un proyector",
@@ -149,28 +149,28 @@
   "videoMpErrInvalidRatio": "❌ Ratio inválido (debe ser > 0).",
   "videoMpLumiOptionalHint": "Luminosidad (opcional): introduce Lúmenes/proyector + Ganancia para estimar.",
   "videoMpLumiErrLumensGainGt0": "Luminosidad: ❌ Lúmenes/proyector y ganancia deben ser > 0.",
-  "videoMpCaseOpenMin": "Video Mp Case Open Min : {p0} · {p1}",
+  "videoMpCaseOpenMin": "Caso ratio más abierto (min) = {n} proyectores | cobertura ≈ {coverage} m",
   "@videoMpCaseOpenMin": {
     "placeholders": {
-      "p0": {},
-      "p1": {}
+      "n": {},
+      "coverage": {}
     }
   },
-  "videoMpCaseTightMax": "Video Mp Case Tight Max : {p0} · {p1}",
+  "videoMpCaseTightMax": "Caso ratio más cerrado (max) = {n} proyectores | cobertura ≈ {coverage} m",
   "@videoMpCaseTightMax": {
     "placeholders": {
-      "p0": {},
-      "p1": {}
+      "n": {},
+      "coverage": {}
     }
   },
-  "videoMpLumiEstimated": "Video Mp Lumi Estimated : {p0} · {p1} · {p2} · {p3} · {p4}",
+  "videoMpLumiEstimated": "Luminosidad estimada (N={n})\nSuperficie: {area} m²\nLux eq: {lux}\nNits: {nits} | ft-L: {fl}",
   "@videoMpLumiEstimated": {
     "placeholders": {
-      "p0": {},
-      "p1": {},
-      "p2": {},
-      "p3": {},
-      "p4": {}
+      "n": {},
+      "area": {},
+      "lux": {},
+      "nits": {},
+      "fl": {}
     }
   },
   "videoMpNoteIndicative": "Nota: estimación orientativa.",
@@ -189,23 +189,23 @@
   "videoLmErrMissingWidthOnly": "❌ Dato faltante: Ancho.",
   "videoLmErrWidthGt0": "❌ El ancho debe ser > 0.",
   "videoLmErrRatioGt0": "❌ El ratio debe ser > 0.",
-  "videoLmResultRatio": "Video Lm Result Ratio : {p0}",
+  "videoLmResultRatio": "✅ Ratio de proyección = {ratio}",
   "@videoLmResultRatio": {
     "placeholders": {
-      "p0": {}
+      "ratio": {}
     }
   },
-  "videoLmResultWidth": "Video Lm Result Width : {p0}",
+  "videoLmResultWidth": "✅ Ancho de imagen = {width} m",
   "@videoLmResultWidth": {
     "placeholders": {
-      "p0": {}
+      "width": {}
     }
   },
-  "videoLmResultHeight": "Video Lm Result Height : {p0} · {p1}",
+  "videoLmResultHeight": "✅ Alto = {height} m (formato {format})",
   "@videoLmResultHeight": {
     "placeholders": {
-      "p0": {},
-      "p1": {}
+      "height": {},
+      "format": {}
     }
   },
   "videoLedCalcTitle": "Cálculo — Píxeles / tiles",
@@ -223,17 +223,17 @@
   "videoLedTileHcmHint": "p. ej.: 33.28",
   "videoLedErrMissingInputs": "❌ Datos faltantes: Tiles X/Y + Tile px + Tile cm.",
   "videoLedErrAllGt0": "❌ Todos los valores deben ser > 0.",
-  "videoLedPitchUniform": "Video LED Pitch Uniform : {p0}",
+  "videoLedPitchUniform": "{value} mm",
   "@videoLedPitchUniform": {
     "placeholders": {
-      "p0": {}
+      "value": {}
     }
   },
-  "videoLedPitchXY": "Video LED Pitch XY : {p0} · {p1}",
+  "videoLedPitchXY": "X {x} mm • Y {y} mm",
   "@videoLedPitchXY": {
     "placeholders": {
-      "p0": {},
-      "p1": {}
+      "x": {},
+      "y": {}
     }
   },
   "videoLedResult": "✅ Resolución muro: {wallWpx} × {wallHpx} px\n✅ Tamaño muro: {wallWm} × {wallHm} m\nTile: {tileWpx}×{tileHpx} px • {tileWcm}×{tileHcm} cm\nPitch calculado: {pitch}",
@@ -315,39 +315,39 @@
   "videoCalc3ErrMissingWidth": "❌ Dato faltante: Ancho.",
   "videoErrWidthGt0": "❌ El ancho debe ser > 0.",
   "videoErrRatioGt0": "❌ El ratio debe ser > 0.",
-  "videoCalc1Ok": "Video Calc1 Ok : {p0}",
+  "videoCalc1Ok": "✅ Ratio de proyección = {ratio}",
   "@videoCalc1Ok": {
     "placeholders": {
-      "p0": {}
+      "ratio": {}
     }
   },
-  "videoCalc2Ok": "Video Calc2 Ok : {p0}",
+  "videoCalc2Ok": "✅ Ancho de imagen = {width} m",
   "@videoCalc2Ok": {
     "placeholders": {
-      "p0": {}
+      "width": {}
     }
   },
-  "videoCalc3Ok": "Video Calc3 Ok : {p0} · {p1}",
+  "videoCalc3Ok": "✅ Alto = {height} m (formato {format})",
   "@videoCalc3Ok": {
     "placeholders": {
-      "p0": {},
-      "p1": {}
+      "height": {},
+      "format": {}
     }
   },
   "videoCalc4ErrMissing": "❌ Datos faltantes: Lúmenes + Ganancia + Ancho.",
   "videoCalc4ErrGt0": "❌ Lúmenes/Ganancia/Ancho deben ser > 0.",
-  "videoCalc4Result": "Video Calc4 Result : {p0} · {p1} · {p2} · {p3} · {p4} · {p5} · {p6} · {p7} · {p8}",
+  "videoCalc4Result": "Superficie: {area} m² (formato {format})\nLux (lm/m²): {lux}\nLux eq (ganancia): {luxEq}\nLuminancia: {nits} nits | {fl} ft-L\nUmbral mínimo ({presetLabel}): {minFl} ft-L → {status}\nNota: conversión nits/ft-L basada en una hipótesis lambertiana (aprox).",
   "@videoCalc4Result": {
     "placeholders": {
-      "p0": {},
-      "p1": {},
-      "p2": {},
-      "p3": {},
-      "p4": {},
-      "p5": {},
-      "p6": {},
-      "p7": {},
-      "p8": {}
+      "area": {},
+      "format": {},
+      "lux": {},
+      "luxEq": {},
+      "nits": {},
+      "fl": {},
+      "presetLabel": {},
+      "minFl": {},
+      "status": {}
     }
   },
   "videoCalc5ErrMissing": "❌ Datos faltantes: Ancho total + Overlap% + Número de proyectores.",
@@ -355,16 +355,16 @@
   "videoCalc5ErrNMin2": "❌ El número de proyectores debe ser ≥ 2.",
   "videoErrOverlapRange": "❌ Overlap% debe estar entre 0 y 99.9.",
   "videoErrImpossibleDenom": "❌ Parámetros imposibles (denom ≤ 0).",
-  "videoCalc5Result": "Video Calc5 Result : {p0} · {p1} · {p2} · {p3} · {p4} · {p5} · {p6}",
+  "videoCalc5Result": "Ancho total: {wTot} m\nN: {n} | Overlap: {overlapPct}% (sobre el ancho del proyector)\n\n- Ancho por proyector: {wPer} m\n- Overlap entre 2 proyectores: {overlapM} m\n- Alto total (formato {format}): {hTot} m",
   "@videoCalc5Result": {
     "placeholders": {
-      "p0": {},
-      "p1": {},
-      "p2": {},
-      "p3": {},
-      "p4": {},
-      "p5": {},
-      "p6": {}
+      "wTot": {},
+      "n": {},
+      "overlapPct": {},
+      "wPer": {},
+      "overlapM": {},
+      "format": {},
+      "hTot": {}
     }
   },
   "videoCalc6ErrMissingBasics": "❌ Datos faltantes: Ancho total + Distancia + Overlap%.",
@@ -372,83 +372,83 @@
   "videoCalc6ErrMissingRatio": "❌ Datos faltantes: Ratio min y/o Ratio max.",
   "videoCalc6LumiOptional": "Luminosidad (opcional): introduce Lúmenes/proyector + Ganancia para la estimación.",
   "videoCalc6LumiErrGt0": "Luminosidad: ❌ Lúmenes/proyector y ganancia deben ser > 0.",
-  "videoCalc6LumiForN": "Video Calc6 Lumi For N : {p0} · {p1} · {p2} · {p3} · {p4}",
+  "videoCalc6LumiForN": "Luminosidad estimada (N={n})\nSuperficie: {area} m²\nLux eq: {lux} (lm/m²)\nNits: {nits} | ft-L: {fl}",
   "@videoCalc6LumiForN": {
     "placeholders": {
-      "p0": {},
-      "p1": {},
-      "p2": {},
-      "p3": {},
-      "p4": {}
+      "n": {},
+      "area": {},
+      "lux": {},
+      "nits": {},
+      "fl": {}
     }
   },
   "videoCalc6NoteIndicative": "Nota: estimación orientativa (el blend/overlap real puede reducir ligeramente).",
-  "videoCalc6Result": "Video Calc6 Result : {p0} · {p1} · {p2} · {p3} · {p4} · {p5} · {p6} · {p7} · {p8} · {p9} · {p10} · {p11} · {p12} · {p13} · {p14}",
+  "videoCalc6Result": "Ancho total={wTot} m | Distancia={distance} m | Overlap={overlapPct}%\nFormato {format} → Alto total={hTot} m | Superficie={area} m²\nRatio min/max: {ratioMin} → {ratioMax}\n\nCaso ratio más abierto (min) = {nMin} proyectores | cobertura ≈ {covMin} m\n{lumiMin}\n\nCaso ratio más cerrado (max) = {nMax} proyectores | cobertura ≈ {covMax} m\n{lumiMax}\n\n{note}",
   "@videoCalc6Result": {
     "placeholders": {
-      "p0": {},
-      "p1": {},
-      "p2": {},
-      "p3": {},
-      "p4": {},
-      "p5": {},
-      "p6": {},
-      "p7": {},
-      "p8": {},
-      "p9": {},
-      "p10": {},
-      "p11": {},
-      "p12": {},
-      "p13": {},
-      "p14": {}
+      "wTot": {},
+      "distance": {},
+      "overlapPct": {},
+      "format": {},
+      "hTot": {},
+      "area": {},
+      "ratioMin": {},
+      "ratioMax": {},
+      "nMin": {},
+      "covMin": {},
+      "lumiMin": {},
+      "nMax": {},
+      "covMax": {},
+      "lumiMax": {},
+      "note": {}
     }
   },
-  "videoCommonPillFormat": "Video Common Pill Format : {p0}",
+  "videoCommonPillFormat": "Formato: {format}",
   "@videoCommonPillFormat": {
     "placeholders": {
-      "p0": {}
+      "format": {}
     }
   },
-  "videoCommonPillDistance": "Video Common Pill Distance : {p0}",
+  "videoCommonPillDistance": "Distancia: {value}",
   "@videoCommonPillDistance": {
     "placeholders": {
-      "p0": {}
+      "value": {}
     }
   },
-  "videoCommonPillWidth": "Video Common Pill Width : {p0}",
+  "videoCommonPillWidth": "Ancho: {value}",
   "@videoCommonPillWidth": {
     "placeholders": {
-      "p0": {}
+      "value": {}
     }
   },
-  "videoCommonPillRatio": "Video Common Pill Ratio : {p0}",
+  "videoCommonPillRatio": "Ratio: {value}",
   "@videoCommonPillRatio": {
     "placeholders": {
-      "p0": {}
+      "value": {}
     }
   },
-  "videoCommonPillHeight": "Video Common Pill Height : {p0}",
+  "videoCommonPillHeight": "Alto: {value}",
   "@videoCommonPillHeight": {
     "placeholders": {
-      "p0": {}
+      "value": {}
     }
   },
-  "videoCommonPillArea": "Video Common Pill Area : {p0}",
+  "videoCommonPillArea": "Superficie: {value}",
   "@videoCommonPillArea": {
     "placeholders": {
-      "p0": {}
+      "value": {}
     }
   },
-  "videoCommonPillTotalWidth": "Video Common Pill Total Width : {p0}",
+  "videoCommonPillTotalWidth": "Ancho total: {value}",
   "@videoCommonPillTotalWidth": {
     "placeholders": {
-      "p0": {}
+      "value": {}
     }
   },
-  "videoCommonPillOverlap": "Video Common Pill Overlap : {p0}",
+  "videoCommonPillOverlap": "Overlap: {value}",
   "@videoCommonPillOverlap": {
     "placeholders": {
-      "p0": {}
+      "value": {}
     }
   },
   "videoPdfTitle": "Mon App Technique – Exportación de vídeo",
@@ -475,26 +475,26 @@
   "videoPdfCalc4": "Cálculo 4",
   "videoPdfCalc5": "Cálculo 5",
   "videoPdfCalc6": "Cálculo 6",
-  "videoCalcLabel": "Video Calc Label : {p0}",
+  "videoCalcLabel": "Cálculo {n}",
   "@videoCalcLabel": {
     "placeholders": {
-      "p0": {}
+      "n": {}
     }
   },
   "videoBrightnessSectionTitle": "Cálculo 4 — Lux / nits / ft-L + umbral",
   "videoCalc4ErrMissingSimple": "❌ Datos faltantes: Ancho + Lúmenes + Ganancia.",
-  "videoBrightnessResult": "Video Brightness Result : {p0} · {p1} · {p2} · {p3} · {p4} · {p5} · {p6} · {p7} · {p8}",
+  "videoBrightnessResult": "Formato: {format}\nSuperficie: {area} m²\nLux (lm/m²): {lux}\nLux eq (ganancia): {luxEq}\nLuminancia: {nits} nits | {fl} ft-L\nUmbral mínimo ({presetLabel}): {minFl} ft-L → {status}\nNota: estimación orientativa (Lambert).",
   "@videoBrightnessResult": {
     "placeholders": {
-      "p0": {},
-      "p1": {},
-      "p2": {},
-      "p3": {},
-      "p4": {},
-      "p5": {},
-      "p6": {},
-      "p7": {},
-      "p8": {}
+      "format": {},
+      "area": {},
+      "lux": {},
+      "luxEq": {},
+      "nits": {},
+      "fl": {},
+      "presetLabel": {},
+      "minFl": {},
+      "status": {}
     }
   },
   "videoMireTitle": "Patrón de prueba",
@@ -518,18 +518,18 @@
   "mireLedSubtitleGridLabels": "Rejilla + referencias + círculos",
   "mireLedSubtitleColorBars": "Barras + rampas + círculos",
   "mireLedSubtitleUniformity": "Uniformidad + círculos",
-  "mireMappingSubtitlePattern": "Mire Mapping Subtitle Pattern : {p0} · {p1} · {p2}",
+  "mireMappingSubtitlePattern": "N={n} • Overlap {percent}% • {orient}",
   "mireOrientationHorizontal": "Horizontal",
   "mireOrientationVertical": "Vertical",
-  "mireProjectorLabelPattern": "Mire Projector Label Pattern : {p0}",
+  "mireProjectorLabelPattern": "PROY {index}",
   "mireBlendLabel": "BLEND",
   "mireTileMissingPx": "Introduce Tile (px) para la numeración.",
   "mireWallNotMultipleOfTiles": "MURO NO MÚLTIPLO DE TILES",
-  "mireTilesSubtitleBase": "Mire Tiles Subtitle Base : {p0} · {p1} · {p2} · {p3}",
-  "mireTilesSubtitleTilePhys": "Mire Tiles Subtitle Tile Phys : {p0} · {p1}",
-  "mireTilesSubtitlePitchEq": "Mire Tiles Subtitle Pitch Eq : {p0}",
-  "mireTilesSubtitlePitchXY": "Mire Tiles Subtitle Pitch XY : {p0} · {p1}",
-  "mireTilesSubtitleWallPhys": "Mire Tiles Subtitle Wall Phys : {p0} · {p1}",
+  "mireTilesSubtitleBase": "Tile {tw}x{th} px • Rejilla {nx} x {ny}",
+  "mireTilesSubtitleTilePhys": "Tile {wcm}×{hcm} cm",
+  "mireTilesSubtitlePitchEq": "Pitch ~ {pitch} mm",
+  "mireTilesSubtitlePitchXY": "Pitch X {px} • Y {py} mm",
+  "mireTilesSubtitleWallPhys": "Muro ~ {wm}×{hm} m",
   "mireSimpleSectionTitle": "Patrón de pantalla simple",
   "mireMappingSectionTitle": "Patrón de mapping multiproyector",
   "mireVideoSimpleSectionTitle": "Patrón de pantalla simple",
@@ -560,17 +560,17 @@
   "mireMappingTypeZonesOverlap": "Zonas + overlap",
   "mireMappingTypeBlendRamps": "Rampas de blend",
   "mireDash": "—",
-  "mirePitchEqual": "Mire Pitch Equal : {p0}",
+  "mirePitchEqual": "{value} mm",
   "@mirePitchEqual": {
     "placeholders": {
-      "p0": {}
+      "value": {}
     }
   },
-  "mirePitchXY": "Mire Pitch XY : {p0} · {p1}",
+  "mirePitchXY": "X {x} mm • Y {y} mm",
   "@mirePitchXY": {
     "placeholders": {
-      "p0": {},
-      "p1": {}
+      "x": {},
+      "y": {}
     }
   },
   "mireLedParamsTitle": "Parámetros del muro LED",
@@ -580,17 +580,17 @@
   "mireLedTileHpxLabel": "Tile alto (px)",
   "mireLedTileWcmLabel": "Tile ancho (cm)",
   "mireLedTileHcmLabel": "Tile alto (cm)",
-  "mireLedWallResolution": "Mire LED Wall Resolution : {p0} · {p1}",
+  "mireLedWallResolution": "Resolución muro: {w} × {h} px",
   "@mireLedWallResolution": {
     "placeholders": {
-      "p0": {},
-      "p1": {}
+      "w": {},
+      "h": {}
     }
   },
-  "mireLedPitchComputed": "Mire LED Pitch Computed : {p0}",
+  "mireLedPitchComputed": "Pitch calculado: {pitch}",
   "@mireLedPitchComputed": {
     "placeholders": {
-      "p0": {}
+      "pitch": {}
     }
   },
   "mireLedErrTilesXY": "❌ Introduce Tiles X/Y (>0).",
@@ -608,1024 +608,43 @@
   "mireVideoTypeColorBars": "Barras + rampas + círculos",
   "mireVideoTypeUniformity": "Uniformidad + círculos",
   "mireVideoTypeCheckerboard": "Damero + círculos",
-  "common_copie_dans_le_presse_papiers": "Copiado al portapapeles.",
-  "mireEcranVideo_mires_ecran_video": "Patrones de pantalla de vídeo",
-  "mireEcranVideo_exporter_png": "Exportar PNG",
-  "mireEcranVideo_exporter_png_2": "Exportar PNG",
-  "mireEcranVideo_combo_grille_cercles_2_barres_centrees": "Combo (grille + cercles + 2 barres centrées)",
-  "mireEcranVideo_grille_safe_cercles": "Rejilla + safe + círculos",
-  "mireEcranVideo_barres_rampes_cercles": "Barras + rampas + círculos",
-  "mireEcranVideo_uniformite_cercles": "Uniformidad + círculos",
-  "mireEcranVideo_damier_cercles": "Ajedrezado + círculos",
-  "mireEcranVideo_horizontal": "Horizontal",
-  "mireEcranVideo_vertical": "Vertical",
-  "mireEcranVideo_combo_zones_overlap_blend": "Combo (zonas + solape + mezcla)",
-  "mireEcranVideo_zones_overlap": "Zonas + solape",
-  "mireEcranVideo_blend_ramps": "Rampas de mezcla",
-  "mireEcranVideo_mire_ecran_simple": "Patrón de pantalla simple",
-  "mireEcranVideo_mire_mapping_multi_projecteur": "Patrón de mapeo multiproyector",
-  "mireEcranVideo_largeur_px": "Ancho (px)",
-  "mireEcranVideo_hauteur_px": "Alto (px)",
-  "mireEcranVideo_largeur_px_2": "Ancho (px)",
-  "mireEcranVideo_hauteur_px_2": "Alto (px)",
-  "mireEcranVideo_nombre_de_projecteurs_n": "Número de proyectores (N)",
-  "mireEcranVideo_overlap": "Solape (%)",
-  "mireEcranVideo_ex_1920": "p. ej. 1920",
-  "mireEcranVideo_ex_1080": "p. ej. 1080",
-  "mireEcranVideo_ex_3840": "p. ej. 3840",
-  "mireEcranVideo_ex_2160": "p. ej. 2160",
-  "mireEcranVideo_ex_2": "p. ej. 2",
-  "mireEcranVideo_ex_10_0": "p. ej. 10.0",
-  "aboutRegistry_dmx_fonctionnement_simple_complet": "DMX — fonctionnement (simple & complet)",
-  "aboutRegistry_univers_adresses_trames_cablage_rs_485_t": "Univers, adresses, trames, câblage RS-485, terminaison, erreurs terrain.\\n",
-  "aboutRegistry_art_net_dmx_sur_ip_nodes_unicast_broadca": "Art-Net — DMX sur IP (nodes, unicast/broadcast)",
-  "aboutRegistry_univers_dmx_sur_ethernet_udp_nodes_broad": "Univers DMX sur Ethernet/UDP, nodes, broadcast vs unicast.\\n",
-  "aboutRegistry_sacn_e1_31_multicast_igmp_priorites": "sACN / E1.31 — multicast, IGMP, priorités",
-  "aboutRegistry_standard_dmx_sur_ip_oriente_reseau_pro_n": "Standard DMX sur IP orienté réseau pro.\\n",
-  "aboutRegistry_reseau_bases_ip_masque_dhcp_essentiel": "Réseau — bases IP / masque / DHCP (essentiel)",
-  "aboutRegistry_comprendre_ip_masque_passerelle_dhcp_vs_": "Comprendre IP, masque, passerelle, DHCP vs statique.\\n",
-  "aboutRegistry_reseau_rj45_fibre_debits_longueurs": "Réseau — RJ45 / Fibre / débits & longueurs",
-  "aboutRegistry_cat5e_cat8_fibre_om3_om4_os2_lc_sc_mpo_d": "Cat5e→Cat8, fibre OM3/OM4/OS2, LC/SC/MPO, distances typiques, bonnes pratiques show.",
-  "aboutRegistry_reseau_lumiere_vlan_igmp_wi_fi_vs_filair": "Réseau lumière — VLAN, IGMP, Wi-Fi vs filaire",
-  "aboutRegistry_architecture_simple_et_robuste_pour_art_": "Architecture simple et robuste pour Art-Net/sACN.\\n",
-  "aboutRegistry_video_sdi_ndi_ip_srt_rtmp": "Vidéo — SDI / NDI / IP (SRT/RTMP)",
-  "aboutRegistry_choisir_selon_latence_fiabilite_cablage_": "Choisir selon latence, fiabilité, câblage, réseau LAN vs WAN.\\n",
-  "aboutRegistry_electrique_schuko_p17_puissances": "Électrique — Schuko / P17 / puissances",
-  "aboutRegistry_connecteurs_mono_tri_tableaux_kw_rapides": "Connecteurs, mono/tri, tableaux kW rapides (16A→400A), pièges terrain.",
-  "aboutRegistry_informatique_usb_hdmi_dp_sata_nvme": "Informatique — USB / HDMI / DP / SATA / NVMe…",
-  "aboutRegistry_debits_utiles_versions_limites_reelles_p": "Débits utiles, versions, limites réelles, pièges marketing.",
-  "fixtureCatalog_catalogue": "Catálogo",
-  "fixtureCatalog_ouvrir_le_manuel": "Abrir manual",
-  "fixtureCatalog_ouvrir_la_charte_dmx": "Abrir tabla DMX",
-  "fixtureCatalog_catalogue_mis_a_jour": "Catalogue mis à jour.",
-  "fixtureCatalog_echec_synchronisation_e": "Sincronización fallida: {error}",
-  "fixtureCatalog_label_value": "{label}: {value}",
-  "fixtureCatalog_constructeur_manufacturers_length": "FixtureCatalog constructeur manufacturers length : {p0}",
-  "fixtureCatalog_type_de_projecteur_types_length": "FixtureCatalog type de projecteur types length : {p0}",
-  "fixtureCatalog_modele_products_length": "FixtureCatalog modele products length : {p0}",
-  "fixtureCatalog_mode_dmx_modenames_length": "FixtureCatalog mode DMX modenames length : {p0}",
-  "fixtureCatalog_mettre_a_jour": "Actualizar",
-  "fixtureCatalog_reinitialiser": "Restablecer",
-  "aboutInformatique_informatique_reperes_terrain": "Informatique — repères terrain",
-  "aboutInformatique_sommaire": "Índice",
-  "aboutInformatique_1_usb_usb_c_thunderbolt": "1) USB / USB-C / Thunderbolt",
-  "aboutInformatique_point_critique": "Point critique",
-  "aboutInformatique_reperes_vitesses_ordre_de_grandeur": "Repères vitesses (ordre de grandeur)",
-  "aboutInformatique_2_stockage_sata_nvme_ssd": "2) Stockage (SATA / NVMe / SSD)",
-  "aboutInformatique_sata_vs_nvme": "SATA vs NVMe",
-  "aboutInformatique_terrain_video": "Terrain vidéo",
-  "aboutInformatique_3_liaisons_video_dp_hdmi": "3) Liaisons vidéo (DP / HDMI)",
-  "aboutInformatique_repere_important": "Repère important",
-  "aboutInformatique_dp_vs_hdmi_tres_simplifie": "DP vs HDMI (très simplifié)",
-  "aboutInformatique_4_pcie_gpu_reperes": "4) PCIe / GPU (repères)",
-  "aboutInformatique_terrain": "Terrain",
-  "aboutInformatique_5_checklist_plateau": "5) Checklist (plateau)",
-  "aboutInformatique_rapide": "Rapide",
-  "aboutInformatique_copier_resume": "Copier résumé",
-  "aboutInformatique_copier": "Copier",
-  "aboutElectricite_electrique_reperes_terrain": "Électrique — repères terrain",
-  "aboutElectricite_sommaire": "Índice",
-  "aboutElectricite_1_bases_w_a_v_kw": "1) Bases (W, A, V, kW)",
-  "aboutElectricite_3_formules_utiles": "3 formules utiles",
-  "aboutElectricite_reperes_terrain": "Repères terrain",
-  "aboutElectricite_2_connecteurs_schuko_p17_powercon": "2) Connecteurs (Schuko / P17 / PowerCON)",
-  "aboutElectricite_schuko_prises_domestiques": "Schuko (prises domestiques)",
-  "aboutElectricite_p17_cee_bleu_rouge": "P17 / CEE (bleu/rouge)",
-  "aboutElectricite_powercon_audio_eclairage": "PowerCON (audio/éclairage)",
-  "aboutElectricite_3_mono_tri_ce_que_ca_change": "3) Mono / Tri (ce que ça change)",
-  "aboutElectricite_pieges_frequents": "Pièges fréquents",
-  "aboutElectricite_methode_simple": "Méthode simple",
-  "aboutElectricite_4_table_rapide_16a_400a": "4) Table rapide (16A → 400A)",
-  "aboutElectricite_important": "Important",
-  "aboutElectricite_5_securite_pieges_terrain": "5) Sécurité & pièges terrain",
-  "aboutElectricite_a_ne_pas_faire": "À ne pas faire",
-  "aboutElectricite_signaux_d_alerte": "Signaux d’alerte",
-  "aboutElectricite_6_checklist": "6) Checklist",
-  "aboutElectricite_rapide": "Rapide",
-  "aboutElectricite_copier_resume": "Copier résumé",
-  "aboutElectricite_copier": "Copier",
-  "aboutNetwork_reseau_lumiere_vlan_igmp_wi_fi": "Réseau lumière — VLAN, IGMP, Wi-Fi",
-  "aboutNetwork_1_objectif_reseau_stable": "1) Objectif: réseau stable",
-  "aboutNetwork_regle_de_base": "Règle de base",
-  "aboutNetwork_2_plan_ip_simple": "2) Plan IP (simple)",
-  "aboutNetwork_exemple_de_plan_simple": "Exemple de plan (simple)",
-  "aboutNetwork_3_vlan_separation": "3) VLAN (séparation)",
-  "aboutNetwork_ce_que_tu_gagnes": "Ce que tu gagnes",
-  "aboutNetwork_4_igmp_sacn_multicast": "4) IGMP (sACN multicast)",
-  "aboutNetwork_igmp_querier_idee_simple": "IGMP querier (idée simple)",
-  "aboutNetwork_5_wi_fi_vs_filaire": "5) Wi-Fi vs filaire",
-  "aboutNetwork_regle_simple": "Règle simple",
-  "aboutNetwork_6_switch_ce_qu_il_faut": "6) Switch: ce qu’il faut",
-  "aboutNetwork_minimum_recommande": "Minimum recommandé",
-  "aboutNetwork_7_schemas": "7) Schémas",
-  "aboutNetwork_7bis_images_assets": "7bis) Images (assets)",
-  "aboutNetwork_8_checklist": "8) Checklist",
-  "aboutNetwork_avant_d_ouvrir_wireshark": "Avant d’ouvrir Wireshark 😄",
-  "aboutNetwork_sommaire": "Índice",
-  "aboutNetwork_copier_liste_assets": "Copier liste assets",
-  "aboutNetwork_copier": "Copier",
-  "aboutNetwork_copier_reperes": "Copier repères",
-  "aboutVideo_video_reperes_terrain": "Vidéo — repères terrain",
-  "aboutVideo_sommaire": "Índice",
-  "aboutVideo_1_bases_video_mots_cles": "1) Bases vidéo (mots-clés)",
-  "aboutVideo_vocabulaire_utile": "Vocabulaire utile",
-  "aboutVideo_2_resolution_fps": "2) Résolution & FPS",
-  "aboutVideo_resolution": "Résolution",
-  "aboutVideo_fps": "FPS",
-  "aboutVideo_3_couleur_4_4_4_4_2_2_10_bit": "3) Couleur (4:4:4 / 4:2:2 / 10-bit)",
-  "aboutVideo_sampling": "Sampling",
-  "aboutVideo_bit_depth": "Bit depth",
-  "aboutVideo_4_sync_genlock_timecode": "4) Sync (Genlock / Timecode)",
-  "aboutVideo_genlock": "Genlock",
-  "aboutVideo_timecode": "Timecode",
-  "aboutVideo_5_cables_distances": "5) Câbles & distances",
-  "aboutVideo_regles_simples": "Règles simples",
-  "aboutVideo_6_sdi_3g_6g_12g": "6) SDI (3G / 6G / 12G)",
-  "aboutVideo_reperes": "Repères",
-  "aboutVideo_7_hdmi_terrain": "7) HDMI — terrain",
-  "aboutVideo_a_surveiller": "À surveiller",
-  "aboutVideo_8_ndi": "8) NDI",
-  "aboutVideo_ip_video": "IP vidéo",
-  "aboutVideo_9_mapping_led_multi_projo": "9) Mapping / LED / multi-projo",
-  "aboutVideo_terrain": "Terrain",
-  "aboutVideo_10_checklist_terrain": "10) Checklist terrain",
-  "aboutVideo_avant_de_paniquer": "Avant de paniquer",
-  "aboutVideo_copier_resume": "Copier résumé",
-  "aboutArtnet_art_net_univers_dmx_sur_ip_simple_comple": "Art-Net — univers DMX sur IP (simple & complet)",
-  "aboutArtnet_1_art_net_c_est_quoi_et_pourquoi": "1) Art-Net — c’est quoi et pourquoi",
-  "aboutArtnet_pourquoi_c_est_utile": "Pourquoi c’est utile",
-  "aboutArtnet_2_adressage_univers_mapping_propre": "2) Adressage & univers — mapping propre",
-  "aboutArtnet_methode_simple_qui_evite_80_des_erreurs": "Méthode simple (qui évite 80% des erreurs)",
-  "aboutArtnet_3_limites_perf_ce_qui_casse_en_premier": "3) Limites & perf — ce qui casse en premier",
-  "aboutArtnet_les_limites_reelles_dans_l_ordre": "Les limites “réelles” (dans l’ordre)",
-  "aboutArtnet_4_nodes_splitters_rdm": "4) Nodes, splitters & RDM",
-  "aboutArtnet_rdm_sur_art_net_support_variable": "RDM sur Art-Net (support variable)",
-  "aboutArtnet_5_depannage_symptomes_causes": "5) Dépannage — symptômes → causes",
-  "aboutArtnet_symptomes_causes_probables": "Symptômes → causes probables",
-  "aboutArtnet_6_schemas_reseau_unicast_vs_broadcast": "6) Schémas (réseau / unicast vs broadcast)",
-  "aboutArtnet_6bis_images_assets_rj45_switch_cables": "6bis) Images (assets) — RJ45/switch/câbles",
-  "aboutArtnet_7_checklist_rapide": "7) Checklist rapide",
-  "aboutArtnet_avant_de_paniquer": "Avant de paniquer",
-  "aboutArtnet_sommaire": "Índice",
-  "aboutArtnet_copier_liste_assets": "Copier liste assets",
-  "aboutArtnet_copier_la_checklist": "Copier la checklist",
-  "aboutArtnet_copier_reperes": "Copier repères",
-  "aboutReseau_reseau_reperes_terrain": "Réseau — repères terrain",
-  "aboutReseau_sommaire": "Índice",
-  "aboutReseau_1_bases_reseau_lan_ip_debit": "1) Bases réseau (LAN / IP / débit)",
-  "aboutReseau_les_3_idees_simples": "Les 3 idées simples",
-  "aboutReseau_topologie_show_propre": "Topologie show (propre)",
-  "aboutReseau_2_rj45_categories_cat5e_6_6a": "2) RJ45 & catégories (Cat5e/6/6A/…)",
-  "aboutReseau_reperes_rapides": "Repères rapides",
-  "aboutReseau_terrain": "Terrain",
-  "aboutReseau_3_poe_alimentation_reseau": "3) PoE (alimentation réseau)",
-  "aboutReseau_reperes": "Repères",
-  "aboutReseau_4_fibre_sm_mm_connecteurs_lc_sc": "4) Fibre (SM/MM) + connecteurs (LC/SC)",
-  "aboutReseau_pourquoi_la_fibre_en_show": "Pourquoi la fibre en show",
-  "aboutReseau_multimode_vs_monomode_repere_simple": "Multimode vs Monomode (repère simple)",
-  "aboutReseau_connecteurs": "Connecteurs",
-  "aboutReseau_5_sfp_sfp_qsfp_modules": "5) SFP / SFP+ / QSFP (modules)",
-  "aboutReseau_reperes_2": "Repères",
-  "aboutReseau_6_switches_vlan_igmp_qos": "6) Switches (VLAN / IGMP / QoS)",
-  "aboutReseau_fonctions_utiles_en_spectacle": "Fonctions utiles en spectacle",
-  "aboutReseau_erreurs_frequentes": "Erreurs fréquentes",
-  "aboutReseau_7_art_net_sacn_sur_reseau_conseils": "7) Art-Net / sACN sur réseau (conseils)",
-  "aboutReseau_art_net_terrain": "Art-Net (terrain)",
-  "aboutReseau_sacn_terrain": "sACN (terrain)",
-  "aboutReseau_8_checklist": "8) Checklist",
-  "aboutReseau_rapide": "Rapide",
-  "aboutReseau_copier_resume": "Copier résumé",
-  "aboutReseau_copier": "Copier",
-  "aboutSacn_sacn_e1_31_multicast_priorites": "sACN / E1.31 — multicast & priorités",
-  "aboutSacn_1_a_quoi_sert_sacn": "1) À quoi sert sACN ?",
-  "aboutSacn_quand_c_est_top": "Quand c’est top",
-  "aboutSacn_2_univers_numerotation": "2) Univers (numérotation)",
-  "aboutSacn_erreur_classique": "Erreur classique",
-  "aboutSacn_3_multicast_unicast_igmp": "3) Multicast / Unicast + IGMP",
-  "aboutSacn_igmp_snooping_pourquoi_c_est_important": "IGMP snooping (pourquoi c’est important)",
-  "aboutSacn_4_priorites_multi_sources": "4) Priorités (multi-sources)",
-  "aboutSacn_pieges": "Pièges",
-  "aboutSacn_5_limites_perfs": "5) Limites / perfs",
-  "aboutSacn_ce_qui_casse_en_premier": "Ce qui casse en premier",
-  "aboutSacn_6_rdm_sacn_proxy_selon_materiel": "6) RDM & sACN (proxy / selon matériel)",
-  "aboutSacn_a_verifier_dans_la_doc_du_node": "À vérifier dans la doc du node",
-  "aboutSacn_7_schemas": "7) Schémas",
-  "aboutSacn_7bis_images_assets": "7bis) Images (assets)",
-  "aboutSacn_8_checklist": "8) Checklist",
-  "aboutSacn_avant_d_accuser_le_protocole": "Avant d’accuser “le protocole”",
-  "aboutSacn_sommaire": "Índice",
-  "aboutSacn_copier_liste_assets": "Copier liste assets",
-  "aboutSacn_copier": "Copier",
-  "aboutSacn_copier_reperes": "Copier repères",
-  "aboutDmx_dmx_fonctionnement_simple_complet": "DMX — fonctionnement (simple & complet)",
-  "aboutDmx_garde_ton_contenu_existant": "... (garde ton contenu existant)",
-  "aboutDmx_garde_ton_contenu_existant_2": "... (garde ton contenu existant)",
-  "aboutDmx_garde_ton_contenu_existant_3": "... (garde ton contenu existant)",
-  "aboutDmx_garde_ton_contenu_existant_4": "... (garde ton contenu existant)",
-  "aboutDmx_garde_ton_contenu_existant_5": "... (garde ton contenu existant)",
-  "aboutDmx_garde_ton_contenu_existant_6": "... (garde ton contenu existant)",
-  "aboutDmx_garde_ton_contenu_existant_7": "... (garde ton contenu existant)",
-  "aboutDmx_garde_ton_contenu_existant_8": "... (garde ton contenu existant)",
-  "aboutDmx_sommaire": "Índice",
-  "aboutDmx_1_dmx_univers_adresses_la_base": "1) DMX, univers, adresses — la base",
-  "aboutDmx_a_retenir": "À retenir",
-  "aboutDmx_2_trame_dmx_break_start_code_canaux": "2) Trame DMX — break, start code, canaux",
-  "aboutDmx_3_cablage_rs_485_topologie_cable": "3) Câblage RS-485 — topologie & câble",
-  "aboutDmx_4_terminaison_splitters_eviter_les_refle": "4) Terminaison & splitters — éviter les réflexions",
-  "aboutDmx_4bis_rdm_limites_compatibilites": "4bis) RDM — limites & compatibilités",
-  "aboutDmx_5_depannage_terrain_symptomes_causes": "5) Dépannage terrain — symptômes → causes",
-  "aboutDmx_6_art_net_reperes_terrain": "6) Art-Net — repères terrain",
-  "aboutDmx_7_sacn_e1_31_multicast_igmp_priorites": "7) sACN / E1.31 — multicast, IGMP, priorités",
-  "aboutDmx_8_dmx_vs_art_net_vs_sacn_choisir": "8) DMX vs Art-Net vs sACN — choisir",
-  "aboutDmx_9_schemas_terrain_dmx_ip_pinout": "9) Schémas terrain (DMX / IP / pinout)",
-  "aboutDmx_10_checklist_rapide": "10) Checklist rapide",
-  "aboutDmx_avant_de_paniquer": "Avant de paniquer",
-  "aboutDmx_copier_resume": "Copier résumé",
-  "aboutDmx_copier_la_checklist": "Copier la checklist",
-  "aboutIpBasics_reseau_bases_ip_masque_dhcp_essentiel": "Réseau — bases IP / masque / DHCP (essentiel)",
-  "aboutIpBasics_sommaire": "Índice",
-  "aboutIpBasics_1_c_est_quoi_une_ip_et_a_quoi_ca_sert": "1) C’est quoi une IP et à quoi ça sert ?",
-  "aboutIpBasics_image_mentale": "Image mentale",
-  "aboutIpBasics_2_pourquoi_192_x_10_x_172_x_adresses_pri": "2) Pourquoi 192.x / 10.x / 172.x ? (adresses privées)",
-  "aboutIpBasics_les_3_grandes_plages_privees_lan": "Les 3 grandes plages privées (LAN)",
-  "aboutIpBasics_3_masque_sous_reseaux_comprendre_pour_de": "3) Masque & sous-réseaux : comprendre pour de vrai",
-  "aboutIpBasics_masques_les_plus_courants": "Masques les plus courants",
-  "aboutIpBasics_masque_adresse_de_broadcast_tres_utile_a": "Masque → adresse de broadcast (très utile à comprendre)",
-  "aboutIpBasics_piege_classique": "Piège classique",
-  "aboutIpBasics_4_dhcp_passerelle_dns_qui_fait_quoi": "4) DHCP, passerelle, DNS : qui fait quoi ?",
-  "aboutIpBasics_passerelle_gateway": "Passerelle (gateway)",
-  "aboutIpBasics_dns": "DNS",
-  "aboutIpBasics_5_comment_deux_appareils_se_parlent_lan_": "5) Comment deux appareils se parlent (LAN vs hors LAN)",
-  "aboutIpBasics_exemple_facile": "Exemple (facile)",
-  "aboutIpBasics_broadcast_vs_unicast_bonus_utile": "Broadcast vs unicast (bonus utile)",
-  "aboutIpBasics_6_plans_ip_show_simples_exemples_prets_a": "6) Plans IP “show” simples (exemples prêts à copier)",
-  "aboutIpBasics_pourquoi_ca_marche_bien": "Pourquoi ça marche bien",
-  "aboutIpBasics_quand_l_utiliser": "Quand l’utiliser",
-  "aboutIpBasics_attention": "Attention",
-  "aboutIpBasics_7_depannage_symptomes_causes_methode_ter": "7) Dépannage : symptômes → causes (méthode terrain)",
-  "aboutIpBasics_symptomes_causes_probables": "Symptômes → causes probables",
-  "aboutIpBasics_piege_tres_frequent": "Piège très fréquent",
-  "aboutIpBasics_8_mini_exercices_verifier_vite_un_masque": "8) Mini-exercices (vérifier vite un masque / un réseau)",
-  "aboutIpBasics_astuce_visuelle": "Astuce visuelle",
-  "aboutIpBasics_9_checklist_rapide": "9) Checklist rapide",
-  "aboutIpBasics_avant_de_chercher_midi_a_14h": "Avant de chercher midi à 14h",
-  "aboutIpBasics_copier_memo": "Copier mémo",
-  "aboutIpBasics_copier_la_checklist": "Copier la checklist",
-  "@fixtureCatalog_label_value": {
-    "placeholders": {
-      "label": {},
-      "value": {}
-    },
-    "description": "Auto-generated placeholders for L10n."
-  },
-  "@fixtureCatalog_echec_synchronisation_e": {
-    "placeholders": {
-      "error": {}
-    },
-    "description": "Auto-generated placeholders for L10n."
-  },
-  "@fixtureCatalog_constructeur_manufacturers_length": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "@fixtureCatalog_type_de_projecteur_types_length": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "@fixtureCatalog_modele_products_length": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "common_non_renseigne": "No especificado",
-  "common_label_value": "Common label value : {p0} · {p1}",
-  "@common_label_value": {
-    "placeholders": {
-      "p0": {},
-      "p1": {}
-    }
-  },
-  "@fixtureCatalog_mode_dmx_modenames_length": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "fixtureCatalog_mode_label": "FixtureCatalog mode label : {p0} · {p1}",
-  "@fixtureCatalog_mode_label": {
-    "placeholders": {
-      "p0": {},
-      "p1": {}
-    }
-  },
-  "fixtureCatalog_canaux_dmx": "Canales DMX",
-  "fixtureCatalog_poids": "Peso",
-  "fixtureCatalog_puissance": "Potencia",
-  "fixtureCatalog_flux_lumineux": "Flujo luminoso",
-  "bpmTitle": "BPM",
-  "bpmTapTitle": "Tap tempo",
-  "bpmTapButton": "Tocar",
-  "bpmResetTap": "Restablecer",
-  "bpmDetectedLabel": "BPM detectado",
-  "bpmTapHint": "Toca al menos 4 veces para estabilizar.",
-  "bpmManualTitle": "Entrada manual",
-  "bpmManualLabel": "BPM",
-  "bpmManualHint": "p. ej. 128",
-  "bpmManualHelp": "Introduce un valor y la app calcula las conversiones.",
-  "bpmConversionsTitle": "Conversiones",
-  "bpmActiveLabel": "Activo",
-  "bpmMsPerBeat": "ms / pulso",
-  "bpmHz": "Hz",
-  "bpmSecPerBar44": "s / compás (4/4)",
-  "bpmDisclaimer": "Orientativo — depende del swing, subdivisiones y timecode.",
-  "fixtureCatalog_dmx_section": "DMX",
-  "aboutLightReferenceTitle": "About Light Reference Title",
-  "aboutSunTimesSubtitle": "About Sun Times Subtitle",
-  "aboutSunTimesTitle": "About Sun Times Title",
-  "commonAdd": "Common Add",
-  "commonApply": "Common Apply",
-  "commonCopySummaryTooltip": "Common Copy Summary Tooltip",
-  "commonDash": "Common Dash",
-  "commonDelete": "Common Delete",
-  "commonOk": "Common Ok",
-  "commonTocTitle": "Common Toc Title",
-  "dipSwitchAddressHint": "Dip Switch Address Hint",
-  "dipSwitchAddressLabel": "Dip Switch Address Label",
-  "dipSwitchChannelUnit": "Dip Switch Channel Unit",
-  "dipSwitchInputsTitle": "Dip Switch Inputs Title",
-  "dipSwitchIntervalHint": "Dip Switch Interval Hint",
-  "dipSwitchIntervalLabel": "Dip Switch Interval Label",
-  "dipSwitchModeAddressDirect": "Dip Switch Mode Address Direct",
-  "dipSwitchModeAddressMinusOne": "Dip Switch Mode Address Minus One",
-  "dipSwitchNextAddressButton": "Dip Switch Next Address Button",
-  "dipSwitchOffLabel": "Dip Switch Off Label",
-  "dipSwitchOnLabel": "Dip Switch On Label",
-  "dipSwitchResetTooltip": "Dip Switch Reset Tooltip",
-  "dipSwitchResultAddressLine": "Dip Switch Result Address Line : {p0}",
-  "@dipSwitchResultAddressLine": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "dipSwitchResultAddressNotProvided": "Dip Switch Result Address Not Provided",
-  "dipSwitchResultBinaryValueLine": "Dip Switch Result Binary Value Line : {p0}",
-  "@dipSwitchResultBinaryValueLine": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "dipSwitchResultHeader": "Dip Switch Result Header",
-  "dipSwitchResultIntervalLine": "Dip Switch Result Interval Line : {p0} · {p1}",
-  "@dipSwitchResultIntervalLine": {
-    "placeholders": {
-      "p0": {},
-      "p1": {}
-    }
-  },
-  "dipSwitchResultModeLine": "Dip Switch Result Mode Line : {p0}",
-  "@dipSwitchResultModeLine": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "dipSwitchScrollHint": "Dip Switch Scroll Hint",
-  "dipSwitchSectionTitle": "Dip Switch Section Title",
-  "dipSwitchSwitchLabel": "Dip Switch Switch Label : {p0}",
-  "@dipSwitchSwitchLabel": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "dipSwitchUseAddressMinusOneLabel": "Dip Switch Use Address Minus One Label",
-  "gdtfChannelDefaultName": "GDTF Channel Default Name",
-  "gdtfChannelsCountLabel": "GDTF Channels Count Label",
-  "gdtfChannelsSectionTitle": "GDTF Channels Section Title",
-  "gdtfDeviceSectionTitle": "GDTF Device Section Title",
-  "gdtfEasyTitle": "GDTF Easy Title",
-  "gdtfExportButton": "GDTF Export Button",
-  "gdtfExportDone": "GDTF Export Done",
-  "gdtfExportError": "GDTF Export Error",
-  "gdtfExportHint": "GDTF Export Hint",
-  "gdtfExportNeedChannels": "GDTF Export Need Channels",
-  "gdtfFieldDefault": "GDTF Field Default",
-  "gdtfFieldName": "GDTF Field Name",
-  "gdtfFieldResolution": "GDTF Field Resolution",
-  "gdtfFieldRole": "GDTF Field Role",
-  "gdtfFootprintLabel": "GDTF Footprint Label",
-  "gdtfManufacturerLabel": "GDTF Manufacturer Label",
-  "gdtfModeNameLabel": "GDTF Mode Name Label",
-  "gdtfModelLabel": "GDTF Model Label",
-  "gdtfPresetBarreLed": "GDTF Preset Barre LED",
-  "gdtfPresetBlue": "GDTF Preset Blue",
-  "gdtfPresetColor1": "GDTF Preset Color1",
-  "gdtfPresetControl": "GDTF Preset Control",
-  "gdtfPresetDimmer": "GDTF Preset Dimmer",
-  "gdtfPresetEffect": "GDTF Preset Effect",
-  "gdtfPresetFixtureSimple": "GDTF Preset Fixture Simple",
-  "gdtfPresetFocus": "GDTF Preset Focus",
-  "gdtfPresetGobo1": "GDTF Preset Gobo1",
-  "gdtfPresetGreen": "GDTF Preset Green",
-  "gdtfPresetLabel": "GDTF Preset Label",
-  "gdtfPresetPan": "GDTF Preset Pan",
-  "gdtfPresetPrism": "GDTF Preset Prism",
-  "gdtfPresetRed": "GDTF Preset Red",
-  "gdtfPresetShutter": "GDTF Preset Shutter",
-  "gdtfPresetTilt": "GDTF Preset Tilt",
-  "gdtfPresetZoom": "GDTF Preset Zoom",
-  "gdtfRes16": "GDTF Res16",
-  "gdtfRes8": "GDTF Res8",
-  "gdtfRoleBlue": "GDTF Role Blue",
-  "gdtfRoleColor": "GDTF Role Color",
-  "gdtfRoleControl": "GDTF Role Control",
-  "gdtfRoleCustom": "GDTF Role Custom",
-  "gdtfRoleDimmer": "GDTF Role Dimmer",
-  "gdtfRoleEffect": "GDTF Role Effect",
-  "gdtfRoleEmpty": "GDTF Role Empty",
-  "gdtfRoleFocus": "GDTF Role Focus",
-  "gdtfRoleGobo": "GDTF Role Gobo",
-  "gdtfRoleGreen": "GDTF Role Green",
-  "gdtfRolePan": "GDTF Role Pan",
-  "gdtfRolePrism": "GDTF Role Prism",
-  "gdtfRoleRed": "GDTF Role Red",
-  "gdtfRoleShutter": "GDTF Role Shutter",
-  "gdtfRoleTilt": "GDTF Role Tilt",
-  "gdtfRoleZoom": "GDTF Role Zoom",
-  "gdtfShareSubject": "GDTF Share Subject",
-  "gdtfShareText": "GDTF Share Text",
-  "gdtfTemplatesHintShort": "GDTF Templates Hint Short",
-  "gdtfTemplatesTitle": "GDTF Templates Title",
-  "homeBpmSubtitle": "Home Bpm Subtitle",
-  "homeBpmTitle": "Home Bpm Title",
-  "homeDrawerContact": "Home Drawer Contact",
-  "homeDrawerSuggestItem": "Home Drawer Suggest Item",
-  "laserBeamAreaAtDistance": "Laser Beam Area At Distance",
-  "laserBeamDiameterAtDistance": "Laser Beam Diameter At Distance",
-  "laserBeamDistanceHint": "Laser Beam Distance Hint",
-  "laserBeamDistanceLabel": "Laser Beam Distance Label",
-  "laserBeamFormulaHint": "Laser Beam Formula Hint",
-  "laserBeamInputsTitle": "Laser Beam Inputs Title",
-  "laserBeamRadiusAtDistance": "Laser Beam Radius At Distance",
-  "laserBeamResultsTitle": "Laser Beam Results Title",
-  "laserBeamSizeSubtitle": "Laser Beam Size Subtitle",
-  "laserBeamSizeTitle": "Laser Beam Size Title",
-  "laserConsentAcceptContinue": "Laser Consent Accept Continue",
-  "laserConsentCheckboxLabel": "Laser Consent Checkbox Label",
-  "laserConsentContinue": "Laser Consent Continue",
-  "laserLegalDisclaimerText": "Laser Legal Disclaimer Text",
-  "laserLegalDisclaimerTextLong": "Laser Legal Disclaimer Text Long",
-  "laserPercentValue": "Laser Percent Value",
-  "laserToolsTitle": "Laser Tools Title",
-  "laserValueMeter": "Laser Value Meter",
-  "laserZoneLabelCzed": "Laser Zone Label Czed",
-  "laserZoneLabelNohd": "Laser Zone Label Nohd",
-  "laserZoneLabelSzed": "Laser Zone Label Szed",
-  
-  "patchAddressLabel": "Patch Address Label : {p0}",
-  "@patchAddressLabel": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "patchChannelsUsed": "Patch Channels Used : {p0}",
-  "@patchChannelsUsed": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "patchConflictError": "Patch Conflict Error",
-  "patchConflictShort": "Patch Conflict Short",
-  "patchConflicts": "Patch Conflicts : {p0}",
-  "@patchConflicts": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "patchCreateGdtfSubtitle": "Patch Create GDTF Subtitle",
-  "patchCreateGdtfTitle": "Patch Create GDTF Title",
-  "patchEditChannelsLabel": "Patch Edit Channels Label",
-  "patchEditHint": "Patch Edit Hint",
-  "patchEditModeLabel": "Patch Edit Mode Label",
-  "patchEditTitle": "Patch Edit Title",
-  "patchEmptyUniverse": "Patch Empty Universe",
-  "patchFixturesCount": "Patch Fixtures Count : {p0}",
-  "@patchFixturesCount": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "patchHomeDisclaimer": "Patch Home Disclaimer",
-  "patchHomeImportMvrDescription": "Patch Home Import MVR Description",
-  "patchHomeImportMvrTitle": "Patch Home Import MVR Title",
-  "patchHomeTitle": "Patch Home Title",
-  "patchHomeViewPatchDescription": "Patch Home View Patch Description",
-  "patchHomeViewPatchTitle": "Patch Home View Patch Title",
-  "patchHubOpenGridButton": "Patch Hub Open Grid Button",
-  "patchHubOpenMvrButton": "Patch Hub Open MVR Button",
-  "patchHubStateEmpty": "Patch Hub State Empty",
-  "patchHubStateLoaded": "Patch Hub State Loaded : {p0}",
-  "@patchHubStateLoaded": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "patchHubStateTitle": "Patch Hub State Title",
-  "patchHubTitle": "Patch Hub Title",
-  "patchHubWorksiteBody": "Patch Hub Worksite Body",
-  "patchHubWorksiteTitle": "Patch Hub Worksite Title",
-  "patchInvalidChannelCount": "Patch Invalid Channel Count",
-  "patchIssueInvalidChannelCount": "Patch Issue Invalid Channel Count",
-  "patchIssueInvalidStartAddress": "Patch Issue Invalid Start Address",
-  "patchIssueInvalidUniverse": "Patch Issue Invalid Universe",
-  "patchIssueRangeExceedsUniverse": "Patch Issue Range Exceeds Universe",
-  "patchListTitle": "Patch List Title",
-  "patchManualDisabledBody": "Patch Manual Disabled Body",
-  "patchManualDisabledTitle": "Patch Manual Disabled Title",
-  "patchManualTitle": "Patch Manual Title",
-  "patchModeLabel": "Patch Mode Label : {p0}",
-  "@patchModeLabel": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "patchMvrButtonAnalyzing": "Patch MVR Button Analyzing",
-  "patchMvrButtonLoadAsReference": "Patch MVR Button Load As Reference",
-  "patchMvrButtonPickFile": "Patch MVR Button Pick File",
-  "patchMvrClearTooltip": "Patch MVR Clear Tooltip",
-  "patchMvrColAddress": "Patch MVR Col Address",
-  "patchMvrColChannels": "Patch MVR Col Channels",
-  "patchMvrColId": "Patch MVR Col Id",
-  "patchMvrColName": "Patch MVR Col Name",
-  "patchMvrColUniverse": "Patch MVR Col Universe",
-  "patchMvrColumnsHint": "Patch MVR Columns Hint",
-  "patchMvrFileCardHelp": "Patch MVR File Card Help",
-  "patchMvrFileCardTitle": "Patch MVR File Card Title",
-  "patchMvrFilterAllUniverses": "Patch MVR Filter All Universes",
-  "patchMvrFilterUniverseLabel": "Patch MVR Filter Universe Label",
-  "patchMvrModeNotProvided": "Patch MVR Mode Not Provided",
-  "patchMvrOrderAsc": "Patch MVR Order Asc",
-  "patchMvrOrderDesc": "Patch MVR Order Desc",
-  "patchMvrOrderLabel": "Patch MVR Order Label",
-  "patchMvrSortAddress": "Patch MVR Sort Address",
-  "patchMvrSortByLabel": "Patch MVR Sort By Label",
-  "patchMvrSortChannels": "Patch MVR Sort Channels",
-  "patchMvrSortId": "Patch MVR Sort Id",
-  "patchMvrSortName": "Patch MVR Sort Name",
-  "patchMvrSortUniverse": "Patch MVR Sort Universe",
-  "patchMvrSortUniverseThenAddress": "Patch MVR Sort Universe Then Address",
-  "patchMvrStatusCleared": "Patch MVR Status Cleared",
-  "patchMvrStatusEmptyBytes": "Patch MVR Status Empty Bytes",
-  "patchMvrStatusExtractingZip": "Patch MVR Status Extracting Zip",
-  "patchMvrStatusFilePickFailed": "Patch MVR Status File Pick Failed : {p0}",
-  "@patchMvrStatusFilePickFailed": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "patchMvrStatusFixturesFound": "Patch MVR Status Fixtures Found : {p0} · {p1}",
-  "@patchMvrStatusFixturesFound": {
-    "placeholders": {
-      "p0": {},
-      "p1": {}
-    }
-  },
-  "patchMvrStatusLoadingGdtf": "Patch MVR Status Loading GDTF",
-  "patchMvrStatusNoContentToLoad": "Patch MVR Status No Content To Load",
-  "patchMvrStatusNoFileSelected": "Patch MVR Status No File Selected",
-  "patchMvrStatusNoUsableFixtures": "Patch MVR Status No Usable Fixtures",
-  "patchMvrStatusParseError": "Patch MVR Status Parse Error : {p0}",
-  "@patchMvrStatusParseError": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "patchMvrStatusParsingContent": "Patch MVR Status Parsing Content",
-  "patchMvrStatusReferenceLoaded": "Patch MVR Status Reference Loaded : {p0} · {p1} · {p2}",
-  "@patchMvrStatusReferenceLoaded": {
-    "placeholders": {
-      "p0": {},
-      "p1": {},
-      "p2": {}
-    }
-  },
-  "patchMvrStatusRestored": "Patch MVR Status Restored : {p0}",
-  "@patchMvrStatusRestored": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "patchMvrStatusSceneXmlNotFound": "Patch MVR Status Scene Xml Not Found",
-  "patchMvrStatusSelectingFile": "Patch MVR Status Selecting File",
-  "patchMvrStatusUnsupportedFile": "Patch MVR Status Unsupported File : {p0}",
-  "@patchMvrStatusUnsupportedFile": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "patchMvrSummaryTitle": "Patch MVR Summary Title",
-  "patchMvrTitle": "Patch MVR Title",
-  "patchMvrUniverseItem": "Patch MVR Universe Item : {p0}",
-  "@patchMvrUniverseItem": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "patchPageTitle": "Patch Page Title",
-  "patchSummaryTitle": "Patch Summary Title",
-  "patchUniverseAppBarTitle": "Patch Universe App Bar Title",
-  "patchUniverseConflictCount": "Patch Universe Conflict Count : {p0}",
-  "@patchUniverseConflictCount": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "patchUniverseGridLimitedByWidth": "Patch Universe Grid Limited By Width",
-  "patchUniverseGridTitle": "Patch Universe Grid Title",
-  "patchUniverseItem": "Patch Universe Item : {p0}",
-  "@patchUniverseItem": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "patchUniverseLabel": "Patch Universe Label",
-  "patchUniverseLegendConflict": "Patch Universe Legend Conflict",
-  "patchUniverseLegendFree": "Patch Universe Legend Free",
-  "patchUniverseLegendOccupied": "Patch Universe Legend Occupied",
-  "patchUniverseOccupantLine": "Patch Universe Occupant Line : {p0} · {p1} · {p2} · {p3} · {p4}",
-  "@patchUniverseOccupantLine": {
-    "placeholders": {
-      "p0": {},
-      "p1": {},
-      "p2": {},
-      "p3": {},
-      "p4": {}
-    }
-  },
-  "patchUniverseOccupiedCount": "Patch Universe Occupied Count : {p0}",
-  "@patchUniverseOccupiedCount": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "patchUniversePopupHeader": "Patch Universe Popup Header : {p0} · {p1} · {p2}",
-  "@patchUniversePopupHeader": {
-    "placeholders": {
-      "p0": {},
-      "p1": {},
-      "p2": {}
-    }
-  },
-  "patchUniversePopupManyOccupants": "Patch Universe Popup Many Occupants",
-  "patchUniversePopupMore": "Patch Universe Popup More : {p0}",
-  "@patchUniversePopupMore": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "patchUniversePopupTitleConflict": "Patch Universe Popup Title Conflict",
-  "patchUniversePopupTitleFree": "Patch Universe Popup Title Free",
-  "patchUniversePopupTitleOccupied": "Patch Universe Popup Title Occupied",
-  "patchUniverseReferenceNone": "Patch Universe Reference None",
-  "patchUniverseReferenceReadOnly": "Patch Universe Reference Read Only",
-  "patchUniverseReferenceTitle": "Patch Universe Reference Title",
-  "patchUniverseResetConfirm": "Patch Universe Reset Confirm",
-  "patchUniverseResetContent": "Patch Universe Reset Content",
-  "patchUniverseResetTitle": "Patch Universe Reset Title",
-  "patchUniverseResetTooltip": "Patch Universe Reset Tooltip",
-  "patchUniverseSelected": "Patch Universe Selected",
-  "patchUniverseStateConflict": "Patch Universe State Conflict",
-  "patchUniverseStateFree": "Patch Universe State Free",
-  "patchUniverseStateOccupied": "Patch Universe State Occupied",
-  "patchUniverseTapHint": "Patch Universe Tap Hint",
-  "patchUniverseUniverseDropdownLabel": "Patch Universe Universe Dropdown Label",
-  "patchUniverseUniverseItem": "Patch Universe Universe Item : {p0}",
-  "@patchUniverseUniverseItem": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "patchUniverseUniverseTitle": "Patch Universe Universe Title",
-  "patchUniverseZoomIn": "Patch Universe Zoom In",
-  "patchUniverseZoomOut": "Patch Universe Zoom Out",
-  "patchUniverseZoomTitle": "Patch Universe Zoom Title",
-  "photometryAreaHint4": "Photometry Area Hint4",
-  "photometryAreaLabel": "Photometry Area Label",
-  "photometryBeamAngleHint2": "Photometry Beam Angle Hint2",
-  "photometryBeamAngleHint3": "Photometry Beam Angle Hint3",
-  "photometryBeamAngleLabel": "Photometry Beam Angle Label",
-  "photometryCandelaHint1": "Photometry Candela Hint1",
-  "photometryCandelaHint2": "Photometry Candela Hint2",
-  "photometryCandelaLabel": "Photometry Candela Label",
-  "photometryDisclaimerShort": "Photometry Disclaimer Short",
-  "photometryDistanceHint1": "Photometry Distance Hint1",
-  "photometryDistanceHint3": "Photometry Distance Hint3",
-  "photometryDistanceLabel": "Photometry Distance Label",
-  "photometryLumensHint2": "Photometry Lumens Hint2",
-  "photometryLumensHint3": "Photometry Lumens Hint3",
-  "photometryLumensLabel": "Photometry Lumens Label",
-  "photometryLuxHint": "Photometry Lux Hint",
-  "photometryLuxLabel": "Photometry Lux Label",
-  "photometrySection1Title": "Photometry Section1 Title",
-  "photometrySection2Title": "Photometry Section2 Title",
-  "photometrySection3Title": "Photometry Section3 Title",
-  "photometrySection4Title": "Photometry Section4 Title",
-  "photometrySummary1": "Photometry Summary1 : {p0} · {p1} · {p2}",
-  "@photometrySummary1": {
-    "placeholders": {
-      "p0": {},
-      "p1": {},
-      "p2": {}
-    }
-  },
-  "photometrySummary2": "Photometry Summary2 : {p0} · {p1} · {p2}",
-  "@photometrySummary2": {
-    "placeholders": {
-      "p0": {},
-      "p1": {},
-      "p2": {}
-    }
-  },
-  "photometrySummary3": "Photometry Summary3 : {p0} · {p1} · {p2} · {p3}",
-  "@photometrySummary3": {
-    "placeholders": {
-      "p0": {},
-      "p1": {},
-      "p2": {},
-      "p3": {}
-    }
-  },
-  "photometrySummary4": "Photometry Summary4 : {p0} · {p1} · {p2}",
-  "@photometrySummary4": {
-    "placeholders": {
-      "p0": {},
-      "p1": {},
-      "p2": {}
-    }
-  },
-  "projectionAngleHint": "Projection Angle Hint",
-  "projectionAngleLabel": "Projection Angle Label",
-  "projectionAutoHelp": "Projection Auto Help",
-  "projectionConeAngle": "Projection Cone Angle : {p0}",
-  "@projectionConeAngle": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "projectionConeDiameter": "Projection Cone Diameter : {p0}",
-  "@projectionConeDiameter": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "projectionConeDistance": "Projection Cone Distance : {p0}",
-  "@projectionConeDistance": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "projectionDetailAngle": "Projection Detail Angle : {p0}",
-  "@projectionDetailAngle": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "projectionDetailDiameter": "Projection Detail Diameter : {p0}",
-  "@projectionDetailDiameter": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "projectionDetailDistance": "Projection Detail Distance : {p0}",
-  "@projectionDetailDistance": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "projectionDiameterHint": "Projection Diameter Hint",
-  "projectionDiameterLabel": "Projection Diameter Label",
-  "projectionDistanceHint": "Projection Distance Hint",
-  "projectionDistanceLabel": "Projection Distance Label",
-  "projectionHeaderAutoActive": "Projection Header Auto Active",
-  "projectionHeaderNeedTwoValues": "Projection Header Need Two Values",
-  "projectionInputsTitle": "Projection Inputs Title",
-  "projectionResultsTitle": "Projection Results Title",
-  "refBeamFieldContent": "Ref Beam Field Content",
-  "refBeamFieldTitle": "Ref Beam Field Title",
-  "refBeamLegendBeam": "Ref Beam Legend Beam",
-  "refBeamLegendField": "Ref Beam Legend Field",
-  "refCri80": "Ref Cri80",
-  "refCri90": "Ref Cri90",
-  "refCriContent": "Ref Cri Content",
-  "refCriLow": "Ref Cri Low",
-  "refCriTitle": "Ref Cri Title",
-  "refKelvinContent": "Ref Kelvin Content",
-  "refKelvinTitle": "Ref Kelvin Title",
-  "refLightDisclaimerShort": "Ref Light Disclaimer Short",
-  "refLuxColLux": "Ref Lux Col Lux",
-  "refLuxColUse": "Ref Lux Col Use",
-  "refLuxIntro": "Ref Lux Intro",
-  "refLuxNote": "Ref Lux Note",
-  "refLuxTitle": "Ref Lux Title",
-  "refLuxUseBackstage": "Ref Lux Use Backstage",
-  "refLuxUseCorridor": "Ref Lux Use Corridor",
-  "refLuxUseExpo": "Ref Lux Use Expo",
-  "refLuxUseMeeting": "Ref Lux Use Meeting",
-  "refLuxUseStageGeneral": "Ref Lux Use Stage General",
-  "refLuxUseStageTv": "Ref Lux Use Stage Tv",
-  "riggingAngleHLeftInputLabel": "Rigging Angle HLeft Input Label",
-  "riggingAngleHLeftLabel": "Rigging Angle HLeft Label",
-  "riggingAngleHRightLabel": "Rigging Angle HRight Label",
-  "riggingAngleVLeftLabel": "Rigging Angle VLeft Label",
-  "riggingAngleVRightLabel": "Rigging Angle VRight Label",
-  "riggingCalc1Title": "Rigging Calc1 Title",
-  "riggingCalc2Subtitle": "Rigging Calc2 Subtitle",
-  "riggingCalc2Title": "Rigging Calc2 Title",
-  "riggingCalc3Subtitle": "Rigging Calc3 Subtitle",
-  "riggingCalc3Title": "Rigging Calc3 Title",
-  "riggingCalcCommonSubtitle": "Rigging Calc Common Subtitle",
-  "riggingDisclaimerNoLoad": "Rigging Disclaimer No Load",
-  "riggingDropLabel": "Rigging Drop Label",
-  "riggingImpossibleGeometry": "Rigging Impossible Geometry",
-  "riggingIncludedAngleLabel": "Rigging Included Angle Label",
-  "riggingInputsTitle": "Rigging Inputs Title",
-  "riggingInvalidOffset": "Rigging Invalid Offset",
-  "riggingLegLeftInputLabel": "Rigging Leg Left Input Label",
-  "riggingLegLeftLabel": "Rigging Leg Left Label",
-  "riggingLegRightLabel": "Rigging Leg Right Label",
-  "riggingNeedPositiveValues": "Rigging Need Positive Values",
-  "riggingOffCenterToggle": "Rigging Off Center Toggle",
-  "riggingOffsetLabel": "Rigging Offset Label",
-  "riggingResultsTitle": "Rigging Results Title",
-  "riggingSchemaTitle": "Rigging Schema Title",
-  "riggingSpanLabel": "Rigging Span Label",
-  "riggingTitle": "Rigging Title",
-  "riggingUnitKg": "Rigging Unit kg",
-  "riggingUnitMeters": "Rigging Unit Meters",
-  "riggingWeightLabel": "Rigging Weight Label",
-  "sunTimesIntro": "Sun Times Intro",
-  "sunTimesLabelCity": "Sun Times Label City",
-  "sunTimesLabelDate": "Sun Times Label Date",
-  "sunTimesLuxAstro": "Sun Times Lux Astro",
-  "sunTimesLuxCivil": "Sun Times Lux Civil",
-  "sunTimesLuxDay": "Sun Times Lux Day",
-  "sunTimesLuxFullDay": "Sun Times Lux Full Day",
-  "sunTimesLuxLow": "Sun Times Lux Low",
-  "sunTimesLuxNautical": "Sun Times Lux Nautical",
-  "sunTimesLuxNight": "Sun Times Lux Night",
-  "sunTimesLuxNote": "Sun Times Lux Note",
-  "sunTimesLuxVeryLow": "Sun Times Lux Very Low",
-  "sunTimesNoData": "Sun Times No Data",
-  "sunTimesNoteApprox": "Sun Times Note Approx",
-  "sunTimesResultAstronomicalDawn": "Sun Times Result Astronomical Dawn",
-  "sunTimesResultAstronomicalDusk": "Sun Times Result Astronomical Dusk",
-  "sunTimesResultCivilDawn": "Sun Times Result Civil Dawn",
-  "sunTimesResultCivilDusk": "Sun Times Result Civil Dusk",
-  "sunTimesResultNauticalDawn": "Sun Times Result Nautical Dawn",
-  "sunTimesResultNauticalDusk": "Sun Times Result Nautical Dusk",
-  "sunTimesResultSunrise": "Sun Times Result Sunrise",
-  "sunTimesResultSunset": "Sun Times Result Sunset",
-  "sunTimesSectionLux": "Sun Times Section Lux",
-  "sunTimesSectionResults": "Sun Times Section Results",
-  "sunTimesSectionSettings": "Sun Times Section Settings",
-  "sunTimesSectionTimeline": "Sun Times Section Timeline",
-  "sunTimesSectionTwilight": "Sun Times Section Twilight",
-  "sunTimesTimelineAstronomical": "Sun Times Timeline Astronomical",
-  "sunTimesTimelineCivil": "Sun Times Timeline Civil",
-  "sunTimesTimelineDay": "Sun Times Timeline Day",
-  "sunTimesTimelineNautical": "Sun Times Timeline Nautical",
-  "sunTimesTimelineNight": "Sun Times Timeline Night",
-  "sunTimesTimelineStep30": "Sun Times Timeline Step30",
-  "sunTimesTitle": "Sun Times Title",
-  "sunTimesTwilightAstronomicalBody": "Sun Times Twilight Astronomical Body",
-  "sunTimesTwilightAstronomicalTitle": "Sun Times Twilight Astronomical Title",
-  "sunTimesTwilightCivilBody": "Sun Times Twilight Civil Body",
-  "sunTimesTwilightCivilTitle": "Sun Times Twilight Civil Title",
-  "sunTimesTwilightIntro": "Sun Times Twilight Intro",
-  "sunTimesTwilightNauticalBody": "Sun Times Twilight Nautical Body",
-  "sunTimesTwilightNauticalTitle": "Sun Times Twilight Nautical Title",
-  "videoCamApertureHint": "Video Cam Aperture Hint",
-  "videoCamApertureLabel": "Video Cam Aperture Label",
-  "videoCamApertureResult": "Video Cam Aperture Result : {p0}",
-  "@videoCamApertureResult": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "videoCamEvEmpty": "Video Cam EV Empty",
-  "videoCamEvValue": "Video Cam EV Value : {p0}",
-  "@videoCamEvValue": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "videoCamInfoTitle": "Video Cam Info Title",
-  "videoCamInputsTitle": "Video Cam Inputs Title",
-  "videoCamIntro": "Video Cam Intro",
-  "videoCamIsoHint": "Video Cam Iso Hint",
-  "videoCamIsoLabel": "Video Cam Iso Label",
-  "videoCamLuxHint": "Video Cam Lux Hint",
-  "videoCamLuxLabel": "Video Cam Lux Label",
-  "videoCamNote": "Video Cam Note",
-  "videoCamPageTitle": "Video Cam Page Title",
-  "videoCamShutterHint": "Video Cam Shutter Hint",
-  "videoCamShutterLabel": "Video Cam Shutter Label",
-  "videoCamShutterResult": "Video Cam Shutter Result : {p0}",
-  "@videoCamShutterResult": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "videoCameraExposureSubtitle": "Video Camera Exposure Subtitle",
-  "videoCameraExposureTitle": "Video Camera Exposure Title",
-  "videoLedResultPitch": "Video LED Result Pitch",
-  "videoLedResultTile": "Video LED Result Tile",
-  "videoLedResultWallResolution": "Video LED Result Wall Resolution",
-  "videoLedResultWallSize": "Video LED Result Wall Size",
-  "@mireMappingSubtitlePattern": {
-    "placeholders": {
-      "p0": {},
-      "p1": {},
-      "p2": {}
-    }
-  },
-  "@mireProjectorLabelPattern": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "@mireTilesSubtitleBase": {
-    "placeholders": {
-      "p0": {},
-      "p1": {},
-      "p2": {},
-      "p3": {}
-    }
-  },
-  "@mireTilesSubtitleTilePhys": {
-    "placeholders": {
-      "p0": {},
-      "p1": {}
-    }
-  },
-  "@mireTilesSubtitlePitchEq": {
-    "placeholders": {
-      "p0": {}
-    }
-  },
-  "@mireTilesSubtitlePitchXY": {
-    "placeholders": {
-      "p0": {},
-      "p1": {}
-    }
-  },
-  "@mireTilesSubtitleWallPhys": {
-    "placeholders": {
-      "p0": {},
-      "p1": {}
-    }
-  },
-  "aboutUniverseToArtnetColDmx": "DMX (universo)",
-  "@aboutUniverseToArtnetColDmx": {
-    "description": ""
-  },
-  "aboutUniverseToArtnetColSubnet": "Subred",
-  "@aboutUniverseToArtnetColSubnet": {
-    "description": ""
-  },
-  "aboutUniverseToArtnetColUniverse": "Universo",
-  "@aboutUniverseToArtnetColUniverse": {
-    "description": ""
-  },
-  "aboutUniverseToArtnetColUniHex": "Uni (hex)",
-  "@aboutUniverseToArtnetColUniHex": {
-    "description": ""
-  },
-  "aboutUniverseToArtnetTitle": "Universo DMX → Art-Net",
-  "@aboutUniverseToArtnetTitle": {
-    "description": ""
-  },
-  "aboutUniverseToArtnetTableTitle": "Tabla de conversión",
-  "@aboutUniverseToArtnetTableTitle": {
-    "description": ""
-  },
-  "aboutUniverseToArtnetTableIntro": "Correspondencia práctica entre el universo DMX (sACN) y los campos Art-Net (Subnet/Universe).",
-  "@aboutUniverseToArtnetTableIntro": {
-    "description": ""
-  },
-  "aboutUniverseTablesDisclaimer": "Nota: algunas consolas, nodos o software pueden numerar desde 0 o 1 según el contexto. Verifica siempre la documentación.",
-  "@aboutUniverseTablesDisclaimer": {
-    "description": ""
-  },
-  "homeContactEmailSubject": "Mon App Tech – Contacto",
-  "@homeContactEmailSubject": {
-    "description": ""
-  },
-  "homeErrorOpenEmail": "No se puede abrir la app de correo.",
-  "@homeErrorOpenEmail": {
-    "description": ""
-  },
-  "homeErrorOpenForm": "No se puede abrir el formulario.",
-  "@homeErrorOpenForm": {
-    "description": ""
-  }
+"homeDrawerContact": "Contactar con el desarrollador",
+"homeDrawerSuggestItem": "Proponer un artículo para el catálogo",
+"homeErrorOpenEmail": "No se pudo abrir la aplicación de correo.",
+"homeErrorOpenForm": "No se pudo abrir el formulario.",
+"homeContactEmailSubject": "Pregunta sobre Mon App Tech",
+  "sunTimesTitle": "Amanecer / atardecer",
+  "sunTimesParamsTitle": "Ajustes",
+  "sunTimesCityLabel": "Ciudad",
+  "sunTimesDateLabel": "Fecha",
+  "sunTimesPickDate": "Elegir fecha",
+  "sunTimesResultsTitle": "Resultados",
+  "sunTimesSunrise": "Amanecer",
+  "sunTimesSunset": "Atardecer",
+  "sunTimesDayLength": "Duración del día",
+  "sunTimesPolarNote": "Si el sol no sale/se pone (cerca de los polos), el valor puede no estar disponible.",
+  "sunTimesLuxThresholdTitle": "Umbrales de luminosidad (indicativos)",
+  "sunTimesLuxBulletNightDark": "~0.001–0.01 lux: Noche oscura (sin luna).",
+  "sunTimesLuxBulletNightMoon": "~0.01–0.1 lux: Noche con luna / cielo despejado.",
+  "sunTimesLuxBulletFullMoon": "~0.3 lux: Luna llena (orden de magnitud).",
+  "sunTimesLuxBulletCivilTwilight": "~3.4 lux: Crepúsculo civil (sol a -6°).",
+  "sunTimesLuxBulletUrbanLow": "~10–50 lux: Iluminación urbana baja / mañana temprana.",
+  "sunTimesLuxBulletOfficeLow": "~100 lux: Oficina tenue / pasillo bien iluminado.",
+  "sunTimesLuxBulletOfficeStd": "~500 lux: Oficina “estándar”.",
+  "sunTimesLuxBulletOutdoorDay": "~1 000–10 000 lux: Día nublado a soleado.",
+  "sunTimesLuxBulletDirectSun": "~100 000 lux: Sol directo (mediodía, cielo despejado).",
+  "sunTimesLuxDisclaimer": "⚠️ Indicativo. El tiempo, los obstáculos, la latitud/altitud y la exposición cambian mucho la iluminancia real.",
+  "sunTimesTwilightTitle": "Crepúsculos: ¿a qué corresponden?",
+  "sunTimesTwilightIntro": "Los crepúsculos se definen por el ángulo del sol bajo el horizonte. Esto estandariza la transición entre día y noche.",
+  "sunTimesTwilightCivil": "Crepúsculo civil: el sol entre 0° y -6°.",
+  "sunTimesTwilightNautical": "Crepúsculo náutico: el sol entre -6° y -12°.",
+  "sunTimesTwilightAstronomical": "Crepúsculo astronómico: el sol entre -12° y -18°.",
+  "sunTimesTwilightAnglesNote": "Por debajo de -18°, suele considerarse “noche” (sin iluminación difusa debida al sol).",
+  "elecToc1": "1) Conceptos básicos (W, A, V, kW)",
+  "elecToc2": "2) Conectores (Schuko / CEE / PowerCON)",
+  "elecToc3": "3) Monofásico / Trifásico (qué cambia)",
+  "elecToc4": "4) Tabla rápida (16A → 400A)",
+  "elecToc5": "Conversión kVA → kW / A",
+  "elecToc6": "6) Seguridad y errores comunes",
+  "elecToc7": "6) Lista de verificación"
 }

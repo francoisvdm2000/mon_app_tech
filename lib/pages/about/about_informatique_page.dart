@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, copyToClipboard
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 class AboutInformatiquePage extends StatefulWidget {
   const AboutInformatiquePage({super.key});
@@ -37,10 +38,11 @@ class _AboutInformatiquePageState extends State<AboutInformatiquePage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Informatique — repères terrain')),
+      appBar: AppBar(title: Text(loc.infoPageTitle)),
       body: SafeArea(
         bottom: true,
         child: SingleChildScrollView(
@@ -50,58 +52,46 @@ class _AboutInformatiquePageState extends State<AboutInformatiquePage> {
             children: [
               _TocCard(
                 onCopy: () {
-                  final txt = '''
-INFO — repères terrain
-• USB-C = forme, pas vitesse : vérifier la norme.
-• NVMe (M.2) bien plus rapide que SATA.
-• DisplayPort/HDMI = standards, attention versions/câbles.
-• Sur serveurs vidéo : stockage + GPU + débit sont la base.
-'''
-                      .trim();
+                  final txt = loc.infoSummaryCopy.trim();
                   copyToClipboard(context, txt);
                 },
                 items: [
-                  _TocItem('1) USB / USB-C / Thunderbolt', onTap: () => _goTo(_kUsb)),
-                  _TocItem('2) Stockage (SATA / NVMe / SSD)', onTap: () => _goTo(_kStorage)),
-                  _TocItem('3) Liaisons vidéo (DP / HDMI)', onTap: () => _goTo(_kVideo)),
-                  _TocItem('4) PCIe / GPU (repères)', onTap: () => _goTo(_kPcie)),
-                  _TocItem('5) Checklist (plateau)', onTap: () => _goTo(_kChecklist)),
+                  _TocItem(loc.infoUsbTitle, onTap: () => _goTo(_kUsb)),
+                  _TocItem(
+                    loc.infoStorageTitle,
+                    onTap: () => _goTo(_kStorage),
+                  ),
+                  _TocItem(
+                    loc.infoVideoLinksTitle,
+                    onTap: () => _goTo(_kVideo),
+                  ),
+                  _TocItem(loc.infoPcieGpuTitle, onTap: () => _goTo(_kPcie)),
+                  _TocItem(
+                    loc.infoChecklistTitle,
+                    onTap: () => _goTo(_kChecklist),
+                  ),
                 ],
               ),
               const SizedBox(height: 12),
-
               _Anchor(key: _kUsb),
               const _Section1Usb(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kStorage),
               const _Section2Storage(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kVideo),
               const _Section3VideoLinks(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kPcie),
               const _Section4PcieGpu(),
               const SizedBox(height: 12),
-
               _Anchor(key: _kChecklist),
               _Section5Checklist(
                 onCopy: () {
-                  final txt = '''
-INFO — Checklist
-☐ Câbles USB-C certifiés (data/vidéo si besoin)
-☐ Stockage adapté (NVMe si gros flux)
-☐ Drivers GPU stables (version connue)
-☐ Test résolution/FPS réels
-☐ Éviter adaptateurs cheap
-'''
-                      .trim();
+                  final txt = loc.infoChecklistCopy.trim();
                   copyToClipboard(context, txt);
                 },
               ),
-
               const SizedBox(height: 18),
               const _FooterNote(),
             ],
@@ -127,11 +117,13 @@ class _TocCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: 'Sommaire',
+      title: loc.commonTocTitle,
       icon: Icons.computer,
       trailing: IconButton(
-        tooltip: 'Copier résumé',
+        tooltip: loc.commonCopySummaryTooltip,
         icon: const Icon(Icons.copy, color: Colors.white70),
         onPressed: onCopy,
       ),
@@ -147,7 +139,10 @@ class _TocCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     onTap: it.onTap,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 12,
+                      ),
                       child: Row(
                         children: [
                           Expanded(
@@ -159,7 +154,10 @@ class _TocCard extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Icon(Icons.chevron_right, color: Colors.white.withValues(alpha: 0.55)),
+                          Icon(
+                            Icons.chevron_right,
+                            color: Colors.white.withValues(alpha: 0.55),
+                          ),
                         ],
                       ),
                     ),
@@ -188,30 +186,32 @@ class _Section1Usb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '1) USB / USB-C / Thunderbolt',
+      title: loc.infoUsbTitle,
       icon: Icons.usb,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _Callout(
-            title: 'Point critique',
+            title: loc.infoUsbCriticalTitle,
             bullets: [
-              'USB-C = connecteur (forme). Ça ne dit pas la vitesse.',
-              'Un câble USB-C peut être “charge only” et ne pas passer la data/vidéo.',
+              loc.infoUsbCriticalBullet1,
+              loc.infoUsbCriticalBullet2,
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Repères vitesses (ordre de grandeur)',
+            title: loc.infoUsbSpeedTitle,
             bullets: [
-              'USB 2.0 : lent (claviers, dongles, petits périph).',
-              'USB 3.x : beaucoup plus rapide (disques, interfaces).',
-              'USB4 / Thunderbolt : très haut débit (dock, eGPU, vidéo selon matériel).',
+              loc.infoUsbSpeedBullet1,
+              loc.infoUsbSpeedBullet2,
+              loc.infoUsbSpeedBullet3,
             ],
           ),
-          SizedBox(height: 10),
-          _Paragraph("En show : si un périphérique “déconne”, suspecte le câble (qualité/standard) avant le device."),
+          const SizedBox(height: 10),
+          _Paragraph(loc.infoUsbParagraph),
         ],
       ),
     );
@@ -227,26 +227,28 @@ class _Section2Storage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '2) Stockage (SATA / NVMe / SSD)',
+      title: loc.infoStorageTitle,
       icon: Icons.storage,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _Callout(
-            title: 'SATA vs NVMe',
+            title: loc.infoStorageSataNvmeTitle,
             bullets: [
-              'SSD SATA : bon et stable, mais limité (interface ancienne).',
-              'SSD NVMe (M.2) : bien plus rapide (idéal pour serveurs média, gros fichiers).',
+              loc.infoStorageSataNvmeBullet1,
+              loc.infoStorageSataNvmeBullet2,
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Terrain vidéo',
+            title: loc.infoStorageFieldTitle,
             bullets: [
-              'Lecture de gros fichiers 4K/ProRes → NVMe recommandé.',
-              'Attention à la température : un NVMe peut throttler (ralentir) si ça chauffe.',
-              'Toujours tester en conditions réelles avant le show.',
+              loc.infoStorageFieldBullet1,
+              loc.infoStorageFieldBullet2,
+              loc.infoStorageFieldBullet3,
             ],
           ),
         ],
@@ -264,25 +266,27 @@ class _Section3VideoLinks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '3) Liaisons vidéo (DP / HDMI)',
+      title: loc.infoVideoLinksTitle,
       icon: Icons.display_settings,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _Callout(
-            title: 'Repère important',
+            title: loc.infoVideoLinksImportantTitle,
             bullets: [
-              'Les versions comptent : câble + port + device doivent être compatibles.',
-              'Longue distance = convertisseurs actifs / fibre souvent nécessaires.',
+              loc.infoVideoLinksImportantBullet1,
+              loc.infoVideoLinksImportantBullet2,
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'DP vs HDMI (très simplifié)',
+            title: loc.infoVideoLinksCompareTitle,
             bullets: [
-              'HDMI : omniprésent (TV, processors), mais EDID/HDCP peuvent gêner.',
-              'DisplayPort : très courant PC, souvent très “capable” en débit.',
+              loc.infoVideoLinksCompareBullet1,
+              loc.infoVideoLinksCompareBullet2,
             ],
           ),
         ],
@@ -300,23 +304,22 @@ class _Section4PcieGpu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '4) PCIe / GPU (repères)',
+      title: loc.infoPcieGpuTitle,
       icon: Icons.developer_board,
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _Paragraph(
-            "Pour les serveurs vidéo / mapping : GPU + bus + drivers = stabilité. "
-            "Les problèmes typiques : drivers, câbles, conversion, et limitations de sorties.",
-          ),
-          SizedBox(height: 10),
+          _Paragraph(loc.infoPcieGpuParagraph),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Terrain',
+            title: loc.infoPcieGpuFieldTitle,
             bullets: [
-              'Bloquer une version de driver stable avant un gros show.',
-              'Éviter les adaptateurs “cheap”.',
-              'Tester à la résolution/FPS réels du show.',
+              loc.infoPcieGpuFieldBullet1,
+              loc.infoPcieGpuFieldBullet2,
+              loc.infoPcieGpuFieldBullet3,
             ],
           ),
         ],
@@ -335,22 +338,24 @@ class _Section5Checklist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '5) Checklist (plateau)',
+      title: loc.infoChecklistTitle,
       icon: Icons.checklist,
       trailing: IconButton(
-        tooltip: 'Copier',
+        tooltip: loc.commonCopySummaryTooltip,
         icon: const Icon(Icons.copy, color: Colors.white70),
         onPressed: onCopy,
       ),
-      child: const _Callout(
-        title: 'Rapide',
+      child: _Callout(
+        title: loc.infoChecklistQuickTitle,
         bullets: [
-          'Câble/standard correct.',
-          'Stockage adapté au flux.',
-          'Drivers stables.',
-          'Test réel avant show.',
-          'Éviter adaptateurs cheap.',
+          loc.infoChecklistBullet1,
+          loc.infoChecklistBullet2,
+          loc.infoChecklistBullet3,
+          loc.infoChecklistBullet4,
+          loc.infoChecklistBullet5,
         ],
       ),
     );
@@ -428,11 +433,21 @@ class _Bullet extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('•  ', style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35)),
+          Text(
+            '•  ',
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.80),
+              height: 1.35,
+            ),
+          ),
           Expanded(
             child: Text(
               text,
-              style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35, fontSize: 13.5),
+              style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.80),
+                height: 1.35,
+                fontSize: 13.5,
+              ),
             ),
           ),
         ],
@@ -446,11 +461,12 @@ class _FooterNote extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      "Info indicative (terrain). Les capacités exactes varient selon matériel/versions.\n"
-      "Objectif : repères simples + méthode fiable.",
+    final loc = AppLocalizations.of(context);
+
+    return Text(
+      loc.infoFooterNote,
       textAlign: TextAlign.center,
-      style: TextStyle(color: Colors.white38, fontSize: 12, height: 1.35),
+      style: const TextStyle(color: Colors.white38, fontSize: 12, height: 1.35),
     );
   }
 }

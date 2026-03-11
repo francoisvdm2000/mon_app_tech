@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, ExpandSectionCard, MiniPill, copyToClipboard
+import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 class AboutSacnPage extends StatefulWidget {
   const AboutSacnPage({super.key});
@@ -19,7 +20,6 @@ class _AboutSacnPageState extends State<AboutSacnPage> {
   final _k5Perf = GlobalKey();
   final _k6Rdm = GlobalKey();
   final _k7Diagrams = GlobalKey();
-  final _k7bAssets = GlobalKey();
   final _k8Checklist = GlobalKey();
 
   @override
@@ -41,11 +41,12 @@ class _AboutSacnPageState extends State<AboutSacnPage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('sACN / E1.31 — multicast & priorités'),
+        title: Text(loc.aboutSacnPageTitle),
       ),
       body: SafeArea(
         bottom: true,
@@ -57,91 +58,54 @@ class _AboutSacnPageState extends State<AboutSacnPage> {
               _TocCard(
                 onCopy: () {
                   final txt = [
-                    'sACN (E1.31) = DMX sur IP (UDP), standard spectacle.',
-                    'Universe sACN = 1..63999 (plage standard).',
-                    'Multicast: IGMP snooping recommandé, sinon flood.',
-                    'Priorité: utile avec sources multiples (console + backup).',
+                    loc.aboutSacnCopy1,
+                    loc.aboutSacnCopy2,
+                    loc.aboutSacnCopy3,
+                    loc.aboutSacnCopy4,
                   ].join('\n');
                   copyToClipboard(context, txt);
                 },
                 items: [
-                  _TocItem('1) À quoi sert sACN ?', onTap: () => _goTo(_k1Basics)),
-                  _TocItem('2) Univers (numérotation)', onTap: () => _goTo(_k2Universe)),
-                  _TocItem('3) Multicast / Unicast + IGMP', onTap: () => _goTo(_k3Multicast)),
-                  _TocItem('4) Priorités (multi-sources)', onTap: () => _goTo(_k4Priorities)),
-                  _TocItem('5) Limites / perfs', onTap: () => _goTo(_k5Perf)),
-                  _TocItem('6) RDM & sACN (proxy / selon matériel)', onTap: () => _goTo(_k6Rdm)),
-                  _TocItem('7) Schémas', onTap: () => _goTo(_k7Diagrams)),
-                  _TocItem('7bis) Images (assets)', onTap: () => _goTo(_k7bAssets)),
-                  _TocItem('8) Checklist', onTap: () => _goTo(_k8Checklist)),
+                  _TocItem(loc.aboutSacnToc1, onTap: () => _goTo(_k1Basics)),
+                  _TocItem(loc.aboutSacnToc2, onTap: () => _goTo(_k2Universe)),
+                  _TocItem(loc.aboutSacnToc3, onTap: () => _goTo(_k3Multicast)),
+                  _TocItem(loc.aboutSacnToc4,
+                      onTap: () => _goTo(_k4Priorities)),
+                  _TocItem(loc.aboutSacnToc5, onTap: () => _goTo(_k5Perf)),
+                  _TocItem(loc.aboutSacnToc6, onTap: () => _goTo(_k6Rdm)),
+                  _TocItem(loc.aboutSacnToc7, onTap: () => _goTo(_k7Diagrams)),
+                  _TocItem(loc.aboutSacnToc8, onTap: () => _goTo(_k8Checklist)),
                 ],
               ),
               const SizedBox(height: 12),
-
               _Anchor(key: _k1Basics),
               const _Section1Basics(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k2Universe),
               const _Section2Universe(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k3Multicast),
               const _Section3Multicast(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k4Priorities),
               const _Section4Priorities(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k5Perf),
               const _Section5Perf(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k6Rdm),
               const _Section6Rdm(),
               const SizedBox(height: 12),
-
               _Anchor(key: _k7Diagrams),
               const _Section7Diagrams(),
               const SizedBox(height: 12),
-
-              _Anchor(key: _k7bAssets),
-              _Section7bAssets(
-                onCopy: () {
-                  final txt = '''
-Assets recommandés (optionnels)
-- assets/images/network/switch.png
-- assets/images/network/igmp.png
-- assets/images/network/node.png
-
-pubspec.yaml (exemple)
-flutter:
-  assets:
-    - assets/images/network/
-'''.trim();
-                  copyToClipboard(context, txt);
-                },
-              ),
               const SizedBox(height: 12),
-
               _Anchor(key: _k8Checklist),
               _Section8Checklist(
                 onCopy: () {
-                  final txt = '''
-sACN (E1.31) — Checklist terrain
-☐ Switch correct (idéalement manageable)
-☐ IGMP snooping activé si multicast
-☐ (Si possible) IGMP querier présent dans le VLAN (sinon comportements bizarres possibles)
-☐ Unicast si réseau non maîtrisé / dépannage
-☐ Priorités: vérifier sources multiples (console/backup)
-☐ Mapping univers ↔ ports node vérifié
-☐ Wi-Fi évité en prod
-'''.trim();
-                  copyToClipboard(context, txt);
+                  copyToClipboard(context, loc.aboutSacnChecklistCopy.trim());
                 },
               ),
-
               const SizedBox(height: 18),
               const _FooterNote(),
             ],
@@ -161,34 +125,32 @@ class _Section1Basics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '1) À quoi sert sACN ?',
+      title: loc.aboutSacnToc1,
       icon: Icons.wifi_tethering,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           Wrap(
             spacing: 8,
             runSpacing: 8,
             children: [
-              MiniPill('UDP'),
-              MiniPill('Multicast'),
-              MiniPill('Priorité'),
+              MiniPill(loc.aboutSacnSection1Pill1),
+              MiniPill(loc.aboutSacnSection1Pill2),
+              MiniPill(loc.aboutSacnSection1Pill3),
             ],
           ),
-          SizedBox(height: 10),
-          _Paragraph(
-            "sACN (E1.31) est un standard largement utilisé pour transporter des univers DMX sur IP. "
-            "Il est souvent privilégié quand on veut une architecture réseau propre: multicast bien géré, "
-            "priorités standardisées, et un comportement plus “réseau pro”.",
-          ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
+          _Paragraph(loc.aboutSacnSection1Paragraph),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Quand c’est top',
+            title: loc.aboutSacnSection1Title,
             bullets: [
-              'Beaucoup d’univers sur un réseau bien géré.',
-              'Installations / gros réseaux avec plusieurs sources (priorités).',
-              'Quand tu veux éviter le “broadcast partout”.',
+              loc.aboutSacnSection1Bullet1,
+              loc.aboutSacnSection1Bullet2,
+              loc.aboutSacnSection1Bullet3,
             ],
           ),
         ],
@@ -202,33 +164,31 @@ class _Section2Universe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '2) Univers (numérotation)',
+      title: loc.aboutSacnToc2,
       icon: Icons.confirmation_number,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           Wrap(
             spacing: 8,
             runSpacing: 8,
             children: [
-              MiniPill('Universe 1..63999'),
-              MiniPill('512 slots/universe'),
+              MiniPill(loc.aboutSacnSection2Pill1),
+              MiniPill(loc.aboutSacnSection2Pill2),
             ],
           ),
-          SizedBox(height: 10),
-          _Paragraph(
-            "Un univers sACN correspond à un univers DMX: jusqu’à 512 slots. "
-            "La numérotation sACN standard est 1..63999. "
-            "En pratique, l’important est le mapping console ↔ node ↔ port DMX.",
-          ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
+          _Paragraph(loc.aboutSacnSection2Paragraph),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Erreur classique',
+            title: loc.aboutSacnSection2Title,
             bullets: [
-              'Tu changes le numéro d’univers côté console, mais pas côté node (ou inverse).',
-              'Tu patches “Universe 0” alors que le matériel attend une base 1.',
-              'Tu mélanges des conventions de numérotation entre outils.',
+              loc.aboutSacnSection2Bullet1,
+              loc.aboutSacnSection2Bullet2,
+              loc.aboutSacnSection2Bullet3,
             ],
           ),
         ],
@@ -242,35 +202,34 @@ class _Section3Multicast extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '3) Multicast / Unicast + IGMP',
+      title: loc.aboutSacnToc3,
       icon: Icons.hub,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
-          _Paragraph(
-            "sACN utilise souvent le multicast: chaque univers “vit” sur un groupe multicast, "
-            "et les nodes s’abonnent aux univers dont ils ont besoin.",
-          ),
-          SizedBox(height: 10),
+        children: [
+          _Paragraph(loc.aboutSacnSection3Paragraph),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'IGMP snooping (pourquoi c’est important)',
+            title: loc.aboutSacnSection3Title,
             bullets: [
-              'Sans IGMP: le switch “flood” le multicast partout → surcharge possible.',
-              'Avec IGMP: le switch envoie seulement aux ports abonnés → réseau stable.',
-              'Sur gros volumes: IGMP est souvent LA différence entre “ça marche” et “c’est l’enfer”.',
+              loc.aboutSacnSection3Bullet1,
+              loc.aboutSacnSection3Bullet2,
+              loc.aboutSacnSection3Bullet3,
             ],
           ),
-          SizedBox(height: 12),
-          _Subtitle('Schéma : multicast & IGMP'),
-          SizedBox(height: 10),
-          _DiagramBox(aspect: 16 / 6.8, painter: _SacnMulticastPainter()),
-          SizedBox(height: 10),
-          _Subtitle('Unicast (option)'),
+          const SizedBox(height: 12),
+          _Subtitle(loc.aboutSacnSection3Subtitle),
+          const SizedBox(height: 10),
+          const _DiagramBox(aspect: 16 / 6.8, painter: _SacnMulticastPainter()),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutSacnSection3Subtitle2),
           _BulletList(items: [
-            'Possible selon consoles/nodes.',
-            'Utile en dépannage ou si réseau multicast non maîtrisé.',
-            'Moins élégant mais parfois plus simple.',
+            loc.aboutSacnSection3SubBullet1,
+            loc.aboutSacnSection3SubBullet2,
+            loc.aboutSacnSection3SubBullet3,
           ]),
         ],
       ),
@@ -283,33 +242,31 @@ class _Section4Priorities extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '4) Priorités (multi-sources)',
+      title: loc.aboutSacnToc4,
       icon: Icons.priority_high,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           Wrap(
             spacing: 8,
             runSpacing: 8,
             children: [
-              MiniPill('Source A prio 100'),
-              MiniPill('Source B prio 90'),
+              MiniPill(loc.aboutSacnSection4Pill1),
+              MiniPill(loc.aboutSacnSection4Pill2),
             ],
           ),
-          SizedBox(height: 10),
-          _Paragraph(
-            "sACN gère une notion de priorité: si plusieurs sources envoient le même univers, "
-            "le récepteur garde la source la plus prioritaire. "
-            "Très utile avec une console principale + une console backup + un media server.",
-          ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
+          _Paragraph(loc.aboutSacnSection4Paragraph),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Pièges',
+            title: loc.aboutSacnSection4Title,
             bullets: [
-              'Deux sources non voulues sur le même univers → “ça se bat”.',
-              'Priorité mal réglée → backup qui prend le dessus.',
-              'Debug: couper une source et vérifier qui gagne.',
+              loc.aboutSacnSection4Bullet1,
+              loc.aboutSacnSection4Bullet2,
+              loc.aboutSacnSection4Bullet3,
             ],
           ),
         ],
@@ -323,38 +280,40 @@ class _Section5Perf extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '5) Limites / perfs',
+      title: loc.aboutSacnToc5,
       icon: Icons.speed,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           Wrap(
             spacing: 8,
             runSpacing: 8,
             children: [
-              MiniPill('IGMP'),
-              MiniPill('Switch'),
-              MiniPill('Wi-Fi non'),
-              MiniPill('CPU node'),
+              MiniPill(loc.aboutSacnSection5Pill1),
+              MiniPill(loc.aboutSacnSection5Pill2),
+              MiniPill(loc.aboutSacnSection5Pill3),
+              MiniPill(loc.aboutSacnSection5Pill4),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'Ce qui casse en premier',
+            title: loc.aboutSacnSection5Title,
             bullets: [
-              'Multicast sans IGMP → flood.',
-              'Switch non adapté (buffers/CPU) → pertes.',
-              'Wi-Fi → jitter/pertes.',
-              'Nodes limités (ports, firmware).',
+              loc.aboutSacnSection5Bullet1,
+              loc.aboutSacnSection5Bullet2,
+              loc.aboutSacnSection5Bullet3,
+              loc.aboutSacnSection5Bullet4,
             ],
           ),
-          SizedBox(height: 10),
-          _Subtitle('Règles simples'),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutSacnSection5Subtitle),
           _BulletList(items: [
-            'Switch géré + IGMP snooping si beaucoup d’univers.',
-            'VLAN dédié lumière si possible.',
-            'Unicast pour isoler en dépannage.',
+            loc.aboutSacnSection5SubBullet1,
+            loc.aboutSacnSection5SubBullet2,
+            loc.aboutSacnSection5SubBullet3,
           ]),
         ],
       ),
@@ -367,32 +326,31 @@ class _Section6Rdm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return ExpandSectionCard(
-      title: '6) RDM & sACN (proxy / selon matériel)',
+      title: loc.aboutSacnToc6,
       icon: Icons.settings_input_component,
       initiallyExpanded: false,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
-          _Paragraph(
-            "Comme avec Art-Net, le RDM “sur IP” dépend souvent d’un mécanisme de proxy dans les nodes. "
-            "Le standard sACN n’implique pas automatiquement que ton node fait du RDM correctement.",
-          ),
-          SizedBox(height: 10),
+        children: [
+          _Paragraph(loc.aboutSacnSection6Paragraph),
+          const SizedBox(height: 10),
           _Callout(
-            title: 'À vérifier dans la doc du node',
+            title: loc.aboutSacnSection6Title,
             bullets: [
-              'Support RDM proxy / RDM over IP.',
-              'Limitations (discovery only, commandes partielles).',
-              'Compatibilité avec splitters/opto côté DMX.',
+              loc.aboutSacnSection6Bullet1,
+              loc.aboutSacnSection6Bullet2,
+              loc.aboutSacnSection6Bullet3,
             ],
           ),
-          SizedBox(height: 10),
-          _Subtitle('Méthode terrain'),
+          const SizedBox(height: 10),
+          _Subtitle(loc.aboutSacnSection6Subtitle),
           _BulletList(items: [
-            'Stabiliser DMX sans RDM.',
-            'Tester RDM sur une ligne simple et propre.',
-            'Si soucis: désactiver RDM, puis isoler node/splitter.',
+            loc.aboutSacnSection6SubBullet1,
+            loc.aboutSacnSection6SubBullet2,
+            loc.aboutSacnSection6SubBullet3,
           ]),
         ],
       ),
@@ -405,51 +363,21 @@ class _Section7Diagrams extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '7) Schémas',
+      title: loc.aboutSacnToc7,
       icon: Icons.schema,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
-          _Subtitle('Multicast + IGMP (idée)'),
-          SizedBox(height: 10),
-          _DiagramBox(aspect: 16 / 6.8, painter: _SacnMulticastPainter()),
-          SizedBox(height: 14),
-          _Subtitle('Priorités (2 sources)'),
-          SizedBox(height: 10),
-          _DiagramBox(aspect: 16 / 6.8, painter: _SacnPriorityPainter()),
-        ],
-      ),
-    );
-  }
-}
-
-class _Section7bAssets extends StatelessWidget {
-  const _Section7bAssets({required this.onCopy});
-  final VoidCallback onCopy;
-
-  @override
-  Widget build(BuildContext context) {
-    return ExpandSectionCard(
-      title: '7bis) Images (assets)',
-      icon: Icons.image_outlined,
-      trailing: IconButton(
-        tooltip: 'Copier liste assets',
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _Paragraph("Optionnel: illustrer switch/IGMP/nodes avec des assets locaux."),
-          SizedBox(height: 10),
-          _AssetRow(
-            items: [
-              _AssetSpec(label: 'Switch', assetPath: 'assets/images/network/switch.png', hint: 'Managed = utile si IGMP/VLAN'),
-              _AssetSpec(label: 'IGMP', assetPath: 'assets/images/network/igmp.png', hint: 'Snooping/Querier'),
-              _AssetSpec(label: 'Node', assetPath: 'assets/images/network/node.png', hint: 'IP → DMX'),
-            ],
-          ),
+          _Subtitle(loc.aboutSacnSection7Subtitle1),
+          const SizedBox(height: 10),
+          const _DiagramBox(aspect: 16 / 6.8, painter: _SacnMulticastPainter()),
+          const SizedBox(height: 14),
+          _Subtitle(loc.aboutSacnSection7Subtitle2),
+          const SizedBox(height: 10),
+          const _DiagramBox(aspect: 16 / 6.8, painter: _SacnPriorityPainter()),
         ],
       ),
     );
@@ -462,22 +390,24 @@ class _Section8Checklist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: '8) Checklist',
+      title: loc.aboutSacnToc8,
       icon: Icons.checklist,
       trailing: IconButton(
-        tooltip: 'Copier',
+        tooltip: loc.aboutSacnChecklistCopyTooltip,
         icon: const Icon(Icons.copy, color: Colors.white70),
         onPressed: onCopy,
       ),
-      child: const _Callout(
-        title: 'Avant d’accuser “le protocole”',
+      child: _Callout(
+        title: loc.aboutSacnChecklistTitle,
         bullets: [
-          'IGMP snooping activé si multicast.',
-          'VLAN dédié si possible.',
-          'Unicast en dépannage.',
-          'Priorités cohérentes si multi-sources.',
-          'Wi-Fi évité en prod.',
+          loc.aboutSacnChecklistBullet1,
+          loc.aboutSacnChecklistBullet2,
+          loc.aboutSacnChecklistBullet3,
+          loc.aboutSacnChecklistBullet4,
+          loc.aboutSacnChecklistBullet5,
         ],
       ),
     );
@@ -507,112 +437,6 @@ class _DiagramBox extends StatelessWidget {
           borderRadius: BorderRadius.circular(14),
           child: CustomPaint(painter: painter),
         ),
-      ),
-    );
-  }
-}
-
-class _AssetSpec {
-  const _AssetSpec({required this.label, required this.assetPath, required this.hint});
-  final String label;
-  final String assetPath;
-  final String hint;
-}
-
-class _AssetRow extends StatelessWidget {
-  const _AssetRow({required this.items});
-  final List<_AssetSpec> items;
-
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (ctx, c) {
-        final isNarrow = c.maxWidth < 520;
-        if (isNarrow) {
-          return Column(
-            children: items
-                .map((it) => Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: _AssetTile(spec: it),
-                    ))
-                .toList(),
-          );
-        }
-        return Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            for (int i = 0; i < items.length; i++) ...[
-              Expanded(child: _AssetTile(spec: items[i])),
-              if (i != items.length - 1) const SizedBox(width: 10),
-            ],
-          ],
-        );
-      },
-    );
-  }
-}
-
-class _AssetTile extends StatelessWidget {
-  const _AssetTile({required this.spec});
-  final _AssetSpec spec;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xFF0B0B0B),
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: Colors.white12),
-      ),
-      padding: const EdgeInsets.all(12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            spec.label,
-            style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w900, fontSize: 13.5),
-          ),
-          const SizedBox(height: 8),
-          AspectRatio(
-            aspectRatio: 16 / 9,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.06),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.white12),
-                ),
-                child: Image.asset(
-                  spec.assetPath,
-                  fit: BoxFit.contain,
-                  errorBuilder: (context, error, stack) {
-                    return Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(Icons.image_not_supported, color: Colors.white.withValues(alpha: 0.45)),
-                          const SizedBox(height: 6),
-                          Text(
-                            'Asset manquant',
-                            style: TextStyle(color: Colors.white.withValues(alpha: 0.65), fontWeight: FontWeight.w800),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(spec.hint, style: TextStyle(color: Colors.white.withValues(alpha: 0.78), height: 1.25, fontSize: 12.5)),
-          const SizedBox(height: 8),
-          Text(
-            spec.assetPath,
-            style: TextStyle(fontFamily: 'monospace', fontSize: 11.8, color: Colors.white.withValues(alpha: 0.55)),
-          ),
-        ],
       ),
     );
   }
@@ -666,8 +490,11 @@ class _SacnMulticastPainter extends CustomPainter {
   }
 
   void _grid(Canvas canvas, Size size) {
-    canvas.drawRect(Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
-    final faint = Paint()..color = Colors.white.withValues(alpha: 0.16)..strokeWidth = 1;
+    canvas.drawRect(
+        Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
+    final faint = Paint()
+      ..color = Colors.white.withValues(alpha: 0.16)
+      ..strokeWidth = 1;
     final step = size.shortestSide / 10;
     for (double x = 0; x <= size.width; x += step) {
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), faint);
@@ -677,16 +504,22 @@ class _SacnMulticastPainter extends CustomPainter {
     }
   }
 
-  void _box(Canvas canvas, Size size, Offset center, String label, {required bool accent}) {
+  void _box(Canvas canvas, Size size, Offset center, String label,
+      {required bool accent}) {
     final w = size.width * 0.22;
     final h = size.height * 0.22;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.05));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.05));
 
     final fill = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.18) : Colors.white.withValues(alpha: 0.08);
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.18)
+          : Colors.white.withValues(alpha: 0.08);
     final border = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.60) : Colors.white.withValues(alpha: 0.30)
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.60)
+          : Colors.white.withValues(alpha: 0.30)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 
@@ -706,12 +539,16 @@ class _SacnMulticastPainter extends CustomPainter {
     final w = size.width * 0.08;
     final h = size.height * 0.12;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.04));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.04));
 
     canvas.drawRRect(rr, Paint()..color = Colors.white.withValues(alpha: 0.07));
     canvas.drawRRect(
       rr,
-      Paint()..color = Colors.white.withValues(alpha: 0.20)..style = PaintingStyle.stroke..strokeWidth = 2,
+      Paint()
+        ..color = Colors.white.withValues(alpha: 0.20)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 2,
     );
 
     final tp = _Text.tp(
@@ -763,8 +600,11 @@ class _SacnPriorityPainter extends CustomPainter {
   }
 
   void _grid(Canvas canvas, Size size) {
-    canvas.drawRect(Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
-    final faint = Paint()..color = Colors.white.withValues(alpha: 0.16)..strokeWidth = 1;
+    canvas.drawRect(
+        Offset.zero & size, Paint()..color = const Color(0xFF0B0B0B));
+    final faint = Paint()
+      ..color = Colors.white.withValues(alpha: 0.16)
+      ..strokeWidth = 1;
     final step = size.shortestSide / 10;
     for (double x = 0; x <= size.width; x += step) {
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), faint);
@@ -774,16 +614,22 @@ class _SacnPriorityPainter extends CustomPainter {
     }
   }
 
-  void _box(Canvas canvas, Size size, Offset center, String label, {required bool accent}) {
+  void _box(Canvas canvas, Size size, Offset center, String label,
+      {required bool accent}) {
     final w = size.width * 0.24;
     final h = size.height * 0.22;
     final rect = Rect.fromCenter(center: center, width: w, height: h);
-    final rr = RRect.fromRectAndRadius(rect, Radius.circular(size.shortestSide * 0.05));
+    final rr = RRect.fromRectAndRadius(
+        rect, Radius.circular(size.shortestSide * 0.05));
 
     final fill = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.18) : Colors.white.withValues(alpha: 0.08);
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.18)
+          : Colors.white.withValues(alpha: 0.08);
     final border = Paint()
-      ..color = accent ? const Color(0xFF1E88E5).withValues(alpha: 0.60) : Colors.white.withValues(alpha: 0.30)
+      ..color = accent
+          ? const Color(0xFF1E88E5).withValues(alpha: 0.60)
+          : Colors.white.withValues(alpha: 0.30)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 
@@ -821,7 +667,10 @@ class _Subtitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w900, fontSize: 14.5),
+      style: TextStyle(
+          color: Colors.white.withValues(alpha: 0.92),
+          fontWeight: FontWeight.w900,
+          fontSize: 14.5),
     );
   }
 }
@@ -834,7 +683,10 @@ class _Paragraph extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35, fontSize: 13.5),
+      style: TextStyle(
+          color: Colors.white.withValues(alpha: 0.80),
+          height: 1.35,
+          fontSize: 13.5),
     );
   }
 }
@@ -853,11 +705,17 @@ class _BulletList extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('•  ', style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35)),
+                  Text('•  ',
+                      style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.80),
+                          height: 1.35)),
                   Expanded(
                     child: Text(
                       s,
-                      style: TextStyle(color: Colors.white.withValues(alpha: 0.80), height: 1.35, fontSize: 13.5),
+                      style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.80),
+                          height: 1.35,
+                          fontSize: 13.5),
                     ),
                   ),
                 ],
@@ -888,7 +746,10 @@ class _Callout extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w900, fontSize: 13.5),
+            style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.92),
+                fontWeight: FontWeight.w900,
+                fontSize: 13.5),
           ),
           const SizedBox(height: 8),
           _BulletList(items: bullets),
@@ -903,21 +764,29 @@ class _FooterNote extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      "Info indicative (terrain). Les comportements dépendent des switchs (IGMP), nodes et firmwares.\n"
-      "Objectif : comprendre et stabiliser un réseau sACN.",
+    final loc = AppLocalizations.of(context);
+    return Text(
+      loc.aboutSacnFooterNote,
       textAlign: TextAlign.center,
-      style: TextStyle(color: Colors.white38, fontSize: 12, height: 1.35),
+      style: const TextStyle(color: Colors.white38, fontSize: 12, height: 1.35),
     );
   }
 }
 
 class _Text {
-  static TextPainter tp(String s, {required double fontSize, required Color color, required FontWeight weight}) {
+  static TextPainter tp(String s,
+      {required double fontSize,
+      required Color color,
+      required FontWeight weight}) {
     final t = TextPainter(
       text: TextSpan(
         text: s,
-        style: TextStyle(fontSize: fontSize, color: color, fontWeight: weight, fontFamily: 'monospace', height: 1.15),
+        style: TextStyle(
+            fontSize: fontSize,
+            color: color,
+            fontWeight: weight,
+            fontFamily: 'monospace',
+            height: 1.15),
       ),
       textDirection: TextDirection.ltr,
       textAlign: TextAlign.left,
@@ -941,7 +810,10 @@ class _Text {
     canvas.drawRRect(r, Paint()..color = Colors.black.withValues(alpha: 0.45));
     canvas.drawRRect(
       r,
-      Paint()..color = Colors.white.withValues(alpha: 0.14)..style = PaintingStyle.stroke..strokeWidth = 1.5,
+      Paint()
+        ..color = Colors.white.withValues(alpha: 0.14)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.5,
     );
     tp.paint(canvas, Offset(pos.dx + pad, pos.dy + pad));
   }
@@ -959,11 +831,13 @@ class _TocCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
     return SectionCard(
-      title: 'Sommaire',
+      title: loc.commonTocTitle,
       icon: Icons.list_alt,
       trailing: IconButton(
-        tooltip: 'Copier repères',
+        tooltip: loc.aboutSacnCopyTooltip,
         icon: const Icon(Icons.copy, color: Colors.white70),
         onPressed: onCopy,
       ),
@@ -979,16 +853,20 @@ class _TocCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     onTap: it.onTap,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 12),
                       child: Row(
                         children: [
                           Expanded(
                             child: Text(
                               it.label,
-                              style: TextStyle(color: Colors.white.withValues(alpha: 0.92), fontWeight: FontWeight.w800),
+                              style: TextStyle(
+                                  color: Colors.white.withValues(alpha: 0.92),
+                                  fontWeight: FontWeight.w800),
                             ),
                           ),
-                          Icon(Icons.chevron_right, color: Colors.white.withValues(alpha: 0.55)),
+                          Icon(Icons.chevron_right,
+                              color: Colors.white.withValues(alpha: 0.55)),
                         ],
                       ),
                     ),
