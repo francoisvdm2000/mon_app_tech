@@ -1321,11 +1321,10 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get videoBrightnessSectionTitle =>
-      'Calcul 4 — Lux / nits / ft-L + seuil';
+  String get videoBrightnessSectionTitle => 'Lux / nits / ft-L + seuil';
 
   @override
-  String get videoBrightnessSubtitle => 'Lux / nits / ft-L + seuil (calcul 4).';
+  String get videoBrightnessSubtitle => 'Lux / nits / ft-L + seuil';
 
   @override
   String get videoBrightnessTitle => 'Luminosité';
@@ -1340,7 +1339,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get videoCalc1Title => 'Calcul 1 — Ratio (Distance / Largeur)';
+  String get videoCalc1Title => 'Ratio (Distance / Largeur)';
 
   @override
   String get videoCalc2ErrMissing => '❌ Données manquantes: Distance + Ratio.';
@@ -1351,7 +1350,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get videoCalc2Title => 'Calcul 2 — Largeur (Distance / Ratio)';
+  String get videoCalc2Title => 'Largeur (Distance / Ratio)';
 
   @override
   String get videoCalc3ErrMissingWidth => '❌ Donnée manquante: Largeur.';
@@ -1362,7 +1361,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get videoCalc3Title => 'Calcul 3 — Hauteur (Largeur + Format)';
+  String get videoCalc3Title => 'Hauteur (Largeur + Format)';
 
   @override
   String get videoCalc4ErrGt0 => '❌ Lumens/Gain/Largeur doivent être > 0.';
@@ -1390,8 +1389,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get videoCalc4Title =>
-      'Calcul 4 — Luminosité (lux / nits / ft-L + seuil)';
+  String get videoCalc4Title => 'Luminosité (lux / nits / ft-L + seuil)';
 
   @override
   String get videoCalc5ErrMissing =>
@@ -1413,7 +1411,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get videoCalc5Title => 'Calcul 5 — Overlap (Largeur totale + N)';
+  String get videoCalc5Title => 'Overlap (Largeur totale + N)';
 
   @override
   String get videoCalc6ErrMissingBasics =>
@@ -1486,7 +1484,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get videoCalc6Title => 'Calcul 6 — Nb projecteurs auto + luminosité';
+  String get videoCalc6Title => 'Nb projecteurs auto + luminosité';
 
   @override
   String videoCalcLabel(Object n) {
@@ -1680,13 +1678,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get videoLensMeasureTitle => 'Lentille & mesure';
 
   @override
-  String get videoLmCalc1Title => 'Calcul 1 — Ratio (Distance / Largeur)';
+  String get videoLmCalc1Title => 'Ratio (Distance / Largeur)';
 
   @override
-  String get videoLmCalc2Title => 'Calcul 2 — Largeur (Distance / Ratio)';
+  String get videoLmCalc2Title => 'Largeur (Distance / Ratio)';
 
   @override
-  String get videoLmCalc3Title => 'Calcul 3 — Hauteur (Largeur + Format)';
+  String get videoLmCalc3Title => 'Hauteur (Largeur + Format)';
 
   @override
   String get videoLmDistanceHint => 'ex: 12.0';
@@ -1772,11 +1770,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get videoMireTitle => 'Mire';
 
   @override
-  String get videoMpCalc5Title => 'Calcul 5 — Largeur par projecteur';
+  String get videoMpCalc5Title => 'Largeur par projecteur';
 
   @override
-  String get videoMpCalc6Title =>
-      'Calcul 6 — Nombre de projecteurs (ratio min/max)';
+  String get videoMpCalc6Title => 'Nombre de projecteurs (ratio min/max)';
 
   @override
   String videoMpCaseOpenMin(Object coverage, Object n) {

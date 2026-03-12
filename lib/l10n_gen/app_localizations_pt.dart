@@ -6427,20 +6427,20 @@ class AppLocalizationsPt extends AppLocalizations {
       'Ajoute au moins un canal pour exporter.';
 
   @override
-  String get homeDrawerContact => 'Contactar o desenvolvedor';
+  String get homeDrawerContact => 'Contacter le développeur';
 
   @override
-  String get homeDrawerSuggestItem => 'Sugerir um item para o catálogo';
+  String get homeDrawerSuggestItem => 'Proposer un article au catalogue';
 
   @override
   String get homeErrorOpenEmail =>
-      'Não foi possível abrir o aplicativo de e-mail.';
+      'Impossible d\'ouvrir l\'application e-mail.';
 
   @override
-  String get homeErrorOpenForm => 'Não foi possível abrir o formulário.';
+  String get homeErrorOpenForm => 'Impossible d\'ouvrir le formulaire.';
 
   @override
-  String get homeContactEmailSubject => 'Pergunta sobre Mon App Tech';
+  String get homeContactEmailSubject => 'Question concernant Mon App Tech';
 
   @override
   String get bpmManualHelp =>

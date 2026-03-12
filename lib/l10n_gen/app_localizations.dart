@@ -2389,13 +2389,13 @@ abstract class AppLocalizations {
   /// No description provided for @videoBrightnessSectionTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Calcul 4 — Lux / nits / ft-L + seuil'**
+  /// **'Lux / nits / ft-L + seuil'**
   String get videoBrightnessSectionTitle;
 
   /// No description provided for @videoBrightnessSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Lux / nits / ft-L + seuil (calcul 4).'**
+  /// **'Lux / nits / ft-L + seuil'**
   String get videoBrightnessSubtitle;
 
   /// No description provided for @videoBrightnessTitle.
@@ -2419,7 +2419,7 @@ abstract class AppLocalizations {
   /// No description provided for @videoCalc1Title.
   ///
   /// In fr, this message translates to:
-  /// **'Calcul 1 — Ratio (Distance / Largeur)'**
+  /// **'Ratio (Distance / Largeur)'**
   String get videoCalc1Title;
 
   /// No description provided for @videoCalc2ErrMissing.
@@ -2437,7 +2437,7 @@ abstract class AppLocalizations {
   /// No description provided for @videoCalc2Title.
   ///
   /// In fr, this message translates to:
-  /// **'Calcul 2 — Largeur (Distance / Ratio)'**
+  /// **'Largeur (Distance / Ratio)'**
   String get videoCalc2Title;
 
   /// No description provided for @videoCalc3ErrMissingWidth.
@@ -2455,7 +2455,7 @@ abstract class AppLocalizations {
   /// No description provided for @videoCalc3Title.
   ///
   /// In fr, this message translates to:
-  /// **'Calcul 3 — Hauteur (Largeur + Format)'**
+  /// **'Hauteur (Largeur + Format)'**
   String get videoCalc3Title;
 
   /// No description provided for @videoCalc4ErrGt0.
@@ -2494,7 +2494,7 @@ abstract class AppLocalizations {
   /// No description provided for @videoCalc4Title.
   ///
   /// In fr, this message translates to:
-  /// **'Calcul 4 — Luminosité (lux / nits / ft-L + seuil)'**
+  /// **'Luminosité (lux / nits / ft-L + seuil)'**
   String get videoCalc4Title;
 
   /// No description provided for @videoCalc5ErrMissing.
@@ -2531,7 +2531,7 @@ abstract class AppLocalizations {
   /// No description provided for @videoCalc5Title.
   ///
   /// In fr, this message translates to:
-  /// **'Calcul 5 — Overlap (Largeur totale + N)'**
+  /// **'Overlap (Largeur totale + N)'**
   String get videoCalc5Title;
 
   /// No description provided for @videoCalc6ErrMissingBasics.
@@ -2643,7 +2643,7 @@ abstract class AppLocalizations {
   /// No description provided for @videoCalc6Title.
   ///
   /// In fr, this message translates to:
-  /// **'Calcul 6 — Nb projecteurs auto + luminosité'**
+  /// **'Nb projecteurs auto + luminosité'**
   String get videoCalc6Title;
 
   /// No description provided for @videoCalcLabel.
@@ -2964,19 +2964,19 @@ abstract class AppLocalizations {
   /// No description provided for @videoLmCalc1Title.
   ///
   /// In fr, this message translates to:
-  /// **'Calcul 1 — Ratio (Distance / Largeur)'**
+  /// **'Ratio (Distance / Largeur)'**
   String get videoLmCalc1Title;
 
   /// No description provided for @videoLmCalc2Title.
   ///
   /// In fr, this message translates to:
-  /// **'Calcul 2 — Largeur (Distance / Ratio)'**
+  /// **'Largeur (Distance / Ratio)'**
   String get videoLmCalc2Title;
 
   /// No description provided for @videoLmCalc3Title.
   ///
   /// In fr, this message translates to:
-  /// **'Calcul 3 — Hauteur (Largeur + Format)'**
+  /// **'Hauteur (Largeur + Format)'**
   String get videoLmCalc3Title;
 
   /// No description provided for @videoLmDistanceHint.
@@ -3126,13 +3126,13 @@ abstract class AppLocalizations {
   /// No description provided for @videoMpCalc5Title.
   ///
   /// In fr, this message translates to:
-  /// **'Calcul 5 — Largeur par projecteur'**
+  /// **'Largeur par projecteur'**
   String get videoMpCalc5Title;
 
   /// No description provided for @videoMpCalc6Title.
   ///
   /// In fr, this message translates to:
-  /// **'Calcul 6 — Nombre de projecteurs (ratio min/max)'**
+  /// **'Nombre de projecteurs (ratio min/max)'**
   String get videoMpCalc6Title;
 
   /// No description provided for @videoMpCaseOpenMin.

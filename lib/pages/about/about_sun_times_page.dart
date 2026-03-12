@@ -3,8 +3,6 @@
 // NOTE:
 // - This page expects your Flutter gen-l10n output class: AppLocalizations
 //   from: package:mon_app_tech/l10n_gen/app_localizations.dart
-// - Add the ARB keys listed in my message to BOTH app_fr.arb and app_en.arb,
-//   then run: flutter gen-l10n
 //
 import 'dart:math' as math;
 
@@ -101,41 +99,10 @@ class _AboutSunTimesPageState extends State<AboutSunTimesPage> {
             child: Column(
               children: [
                 _kv(
-                  loc.sunTimesResultSunrise,
+                  loc.sunTimesResultAstronomicalDawn,
                   _fmtTime(
                     loc,
-                    res.sunrise,
-                    _city.utcOffsetHours,
-                    _city.dstRule,
-                    _date,
-                  ),
-                ),
-                _kv(
-                  loc.sunTimesResultSunset,
-                  _fmtTime(
-                    loc,
-                    res.sunset,
-                    _city.utcOffsetHours,
-                    _city.dstRule,
-                    _date,
-                  ),
-                ),
-                const Divider(height: 18),
-                _kv(
-                  loc.sunTimesResultCivilDawn,
-                  _fmtTime(
-                    loc,
-                    res.civilDawn,
-                    _city.utcOffsetHours,
-                    _city.dstRule,
-                    _date,
-                  ),
-                ),
-                _kv(
-                  loc.sunTimesResultCivilDusk,
-                  _fmtTime(
-                    loc,
-                    res.civilDusk,
+                    res.astroDawn,
                     _city.utcOffsetHours,
                     _city.dstRule,
                     _date,
@@ -152,20 +119,53 @@ class _AboutSunTimesPageState extends State<AboutSunTimesPage> {
                   ),
                 ),
                 _kv(
-                  loc.sunTimesResultNauticalDusk,
+                  loc.sunTimesResultCivilDawn,
                   _fmtTime(
                     loc,
-                    res.nauticalDusk,
+                    res.civilDawn,
+                    _city.utcOffsetHours,
+                    _city.dstRule,
+                    _date,
+                  ),
+                ),
+                const Divider(height: 18),
+                _kv(
+                  loc.sunTimesResultSunrise,
+                  _fmtTime(
+                    loc,
+                    res.sunrise,
+                    _city.utcOffsetHours,
+                    _city.dstRule,
+                    _date,
+                  ),
+                ),
+                const Divider(height: 18),
+                _kv(
+                  loc.sunTimesResultSunset,
+                  _fmtTime(
+                    loc,
+                    res.sunset,
+                    _city.utcOffsetHours,
+                    _city.dstRule,
+                    _date,
+                  ),
+                ),
+                const Divider(height: 18),
+                _kv(
+                  loc.sunTimesResultCivilDusk,
+                  _fmtTime(
+                    loc,
+                    res.civilDusk,
                     _city.utcOffsetHours,
                     _city.dstRule,
                     _date,
                   ),
                 ),
                 _kv(
-                  loc.sunTimesResultAstronomicalDawn,
+                  loc.sunTimesResultNauticalDusk,
                   _fmtTime(
                     loc,
-                    res.astroDawn,
+                    res.nauticalDusk,
                     _city.utcOffsetHours,
                     _city.dstRule,
                     _date,
@@ -424,7 +424,8 @@ class _Timeline30 extends StatelessWidget {
                 child: Text(
                   hhmm,
                   style: const TextStyle(
-                      fontFeatures: [FontFeature.tabularFigures()]),
+                    fontFeatures: [FontFeature.tabularFigures()],
+                  ),
                 ),
               ),
               const SizedBox(width: 10),
@@ -658,34 +659,63 @@ class _SunResults {
 }
 
 _SunResults _computeAll(_City city, DateTime localDate) {
-  final utcOffset =
-      city.utcOffsetHours + _dstExtraOffsetHours(city.dstRule, localDate);
-
   return _SunResults(
     sunrise: _sunEventUtc(
-        city.lat, city.lon, localDate, utcOffset, _Zenith.official,
-        isSunrise: true),
+      city.lat,
+      city.lon,
+      localDate,
+      _Zenith.official,
+      isSunrise: true,
+    ),
     sunset: _sunEventUtc(
-        city.lat, city.lon, localDate, utcOffset, _Zenith.official,
-        isSunrise: false),
+      city.lat,
+      city.lon,
+      localDate,
+      _Zenith.official,
+      isSunrise: false,
+    ),
     civilDawn: _sunEventUtc(
-        city.lat, city.lon, localDate, utcOffset, _Zenith.civil,
-        isSunrise: true),
+      city.lat,
+      city.lon,
+      localDate,
+      _Zenith.civil,
+      isSunrise: true,
+    ),
     civilDusk: _sunEventUtc(
-        city.lat, city.lon, localDate, utcOffset, _Zenith.civil,
-        isSunrise: false),
+      city.lat,
+      city.lon,
+      localDate,
+      _Zenith.civil,
+      isSunrise: false,
+    ),
     nauticalDawn: _sunEventUtc(
-        city.lat, city.lon, localDate, utcOffset, _Zenith.nautical,
-        isSunrise: true),
+      city.lat,
+      city.lon,
+      localDate,
+      _Zenith.nautical,
+      isSunrise: true,
+    ),
     nauticalDusk: _sunEventUtc(
-        city.lat, city.lon, localDate, utcOffset, _Zenith.nautical,
-        isSunrise: false),
+      city.lat,
+      city.lon,
+      localDate,
+      _Zenith.nautical,
+      isSunrise: false,
+    ),
     astroDawn: _sunEventUtc(
-        city.lat, city.lon, localDate, utcOffset, _Zenith.astronomical,
-        isSunrise: true),
+      city.lat,
+      city.lon,
+      localDate,
+      _Zenith.astronomical,
+      isSunrise: true,
+    ),
     astroDusk: _sunEventUtc(
-        city.lat, city.lon, localDate, utcOffset, _Zenith.astronomical,
-        isSunrise: false),
+      city.lat,
+      city.lon,
+      localDate,
+      _Zenith.astronomical,
+      isSunrise: false,
+    ),
   );
 }
 
@@ -743,7 +773,6 @@ DateTime? _sunEventUtc(
   double latDeg,
   double lonDeg,
   DateTime localDate,
-  double utcOffsetHours,
   _Zenith zenith, {
   required bool isSunrise,
 }) {
@@ -788,10 +817,8 @@ DateTime? _sunEventUtc(
   double ut = tLocal - lngHour;
   ut = _wrap24(ut);
 
-  final localMidnight =
-      DateTime(localDate.year, localDate.month, localDate.day, 0, 0);
   final utcMidnight =
-      localMidnight.subtract(Duration(minutes: (utcOffsetHours * 60).round()));
+      DateTime.utc(localDate.year, localDate.month, localDate.day);
   final minutes = (ut * 60).round();
   return utcMidnight.add(Duration(minutes: minutes));
 }

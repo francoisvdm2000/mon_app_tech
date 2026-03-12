@@ -105,7 +105,8 @@ class MonApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.black,
         cardColor: const Color(0xFF111111),
         dividerColor: Colors.white24,
-        colorScheme: dark.colorScheme.copyWith(primary: kAccent, secondary: kAccent),
+        colorScheme:
+            dark.colorScheme.copyWith(primary: kAccent, secondary: kAccent),
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.black,
           foregroundColor: Colors.white,
@@ -131,7 +132,8 @@ class MonApp extends StatelessWidget {
             backgroundColor: kAccent,
             foregroundColor: Colors.white,
             padding: const EdgeInsets.symmetric(vertical: 14),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
           ),
         ),
         textButtonTheme: TextButtonThemeData(
@@ -183,7 +185,10 @@ class SectionCard extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     softWrap: true,
-                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                    style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
                 ),
                 if (trailing != null) trailing!,
@@ -235,7 +240,10 @@ class ExpandSectionCard extends StatelessWidget {
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   softWrap: true,
-                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                  style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
               ),
               if (trailing != null) trailing!,
@@ -262,7 +270,8 @@ class ResultBox extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF0B0B0B),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: isError ? Colors.redAccent.withAlpha(128) : Colors.white12),
+        border: Border.all(
+            color: isError ? Colors.redAccent.withAlpha(128) : Colors.white12),
       ),
       child: Text(
         text,
@@ -290,7 +299,8 @@ class MiniPill extends StatelessWidget {
         borderRadius: BorderRadius.circular(999),
         border: Border.all(color: Colors.white12),
       ),
-      child: Text(label, style: const TextStyle(color: Colors.white70, fontSize: 12)),
+      child: Text(label,
+          style: const TextStyle(color: Colors.white70, fontSize: 12)),
     );
   }
 }
@@ -300,7 +310,8 @@ Future<void> copyToClipboard(BuildContext context, String text) async {
   if (t.isEmpty) return;
   await Clipboard.setData(ClipboardData(text: t));
   if (!context.mounted) return;
-  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Copié dans le presse-papiers.")));
+  ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text("Copié dans le presse-papiers.")));
 }
 
 /// =======================
@@ -324,7 +335,8 @@ class _PageAccueilState extends State<PageAccueil> {
     final prefs = await SharedPreferences.getInstance();
     final accepted = prefs.getBool(_kPrefDisclaimerAccepted) ?? false;
     if (!accepted) {
-      WidgetsBinding.instance.addPostFrameCallback((_) => _showDisclaimerDialog());
+      WidgetsBinding.instance
+          .addPostFrameCallback((_) => _showDisclaimerDialog());
     }
   }
 
@@ -340,8 +352,10 @@ class _PageAccueilState extends State<PageAccueil> {
     await prefs.remove(_kPrefLaserAccepted);
     if (!mounted) return;
 
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Consentements réinitialisés.")));
-    WidgetsBinding.instance.addPostFrameCallback((_) => _showDisclaimerDialog());
+    ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Consentements réinitialisés.")));
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => _showDisclaimerDialog());
   }
 
   void _showDisclaimerDialog() {
@@ -362,13 +376,15 @@ class _PageAccueilState extends State<PageAccueil> {
                   children: [
                     Expanded(
                       child: SingleChildScrollView(
-                        child: Text(kDisclaimerText, style: const TextStyle(fontSize: 13)),
+                        child: Text(kDisclaimerText,
+                            style: const TextStyle(fontSize: 13)),
                       ),
                     ),
                     const SizedBox(height: 8),
                     CheckboxListTile(
                       value: checked,
-                      onChanged: (v) => setStateDialog(() => checked = v ?? false),
+                      onChanged: (v) =>
+                          setStateDialog(() => checked = v ?? false),
                       title: const Text(
                         "Je certifie avoir lu et accepté ces conditions.",
                         style: TextStyle(fontSize: 13),
@@ -398,7 +414,8 @@ class _PageAccueilState extends State<PageAccueil> {
 
     if (acceptedLaser) {
       if (!mounted) return;
-      Navigator.push(context, MaterialPageRoute(builder: (_) => const PageLaser()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (_) => const PageLaser()));
       return;
     }
 
@@ -421,13 +438,15 @@ class _PageAccueilState extends State<PageAccueil> {
                   children: [
                     Expanded(
                       child: SingleChildScrollView(
-                        child: Text(kLaserConsentText, style: const TextStyle(fontSize: 13)),
+                        child: Text(kLaserConsentText,
+                            style: const TextStyle(fontSize: 13)),
                       ),
                     ),
                     const SizedBox(height: 8),
                     CheckboxListTile(
                       value: checked,
-                      onChanged: (v) => setStateDialog(() => checked = v ?? false),
+                      onChanged: (v) =>
+                          setStateDialog(() => checked = v ?? false),
                       title: const Text(
                         "Je comprends les risques et j'assume ma responsabilité.",
                         style: TextStyle(fontSize: 13),
@@ -441,7 +460,9 @@ class _PageAccueilState extends State<PageAccueil> {
             },
           ),
           actions: [
-            TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text("Annuler")),
+            TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Text("Annuler")),
             ElevatedButton(
               onPressed: checked
                   ? () async {
@@ -449,7 +470,8 @@ class _PageAccueilState extends State<PageAccueil> {
                       await prefs.setBool(_kPrefLaserAccepted, true);
                       if (!context.mounted) return;
                       Navigator.of(context).pop();
-                      Navigator.push(context, MaterialPageRoute(builder: (_) => const PageLaser()));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => const PageLaser()));
                     }
                   : null,
               child: const Text("J'accepte et continuer"),
@@ -468,13 +490,18 @@ class _PageAccueilState extends State<PageAccueil> {
         backgroundColor: const Color(0xFF111111),
         child: ListView(
           children: [
-            const DrawerHeader(child: Text("Menu", style: TextStyle(fontSize: 20, color: Colors.white))),
+            const DrawerHeader(
+                child: Text("Menu",
+                    style: TextStyle(fontSize: 20, color: Colors.white))),
             ListTile(
               title: const Text("Mentions légales"),
               leading: const Icon(Icons.gavel),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.push(context, MaterialPageRoute(builder: (_) => const PageMentionsLegales()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => const PageMentionsLegales()));
               },
             ),
             ListTile(
@@ -490,19 +517,23 @@ class _PageAccueilState extends State<PageAccueil> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+        child:
+            Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
           ElevatedButton(
-            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PageAbout())),
+            onPressed: () => Navigator.push(
+                context, MaterialPageRoute(builder: (_) => const PageAbout())),
             child: const Text('Partie 1 : About me'),
           ),
           const SizedBox(height: 12),
           ElevatedButton(
-            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PageVideo())),
+            onPressed: () => Navigator.push(
+                context, MaterialPageRoute(builder: (_) => const PageVideo())),
             child: const Text('Partie 2 : Vidéo'),
           ),
           const SizedBox(height: 12),
           ElevatedButton(
-            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PageLumiere())),
+            onPressed: () => Navigator.push(context,
+                MaterialPageRoute(builder: (_) => const PageLumiere())),
             child: const Text('Partie 3 : Lumière'),
           ),
           const SizedBox(height: 12),
@@ -582,7 +613,8 @@ class _PageVideoState extends State<PageVideo> {
   final _lumensCtrl = TextEditingController();
   final _gainCtrl = TextEditingController(text: '1.0');
   final _overlapPercentCtrl = TextEditingController(text: '10');
-  final _largeurTotaleCtrl = TextEditingController(); // largeur totale de projection
+  final _largeurTotaleCtrl =
+      TextEditingController(); // largeur totale de projection
 
   // Presets écran/support
   String _screenPreset = 'Front - écran blanc mat (gain 1.0)';
@@ -730,7 +762,8 @@ class _PageVideoState extends State<PageVideo> {
       area = w * h;
     }
 
-    String fmt(double? v, {int dec = 2, String unit = ''}) => v == null ? '-' : '${v.toStringAsFixed(dec)}$unit';
+    String fmt(double? v, {int dec = 2, String unit = ''}) =>
+        v == null ? '-' : '${v.toStringAsFixed(dec)}$unit';
 
     return [
       MiniPill('Format: $_format'),
@@ -744,7 +777,8 @@ class _PageVideoState extends State<PageVideo> {
     ];
   }
 
-  InputDecoration _dec(String label, String hint) => InputDecoration(labelText: label, hintText: hint);
+  InputDecoration _dec(String label, String hint) =>
+      InputDecoration(labelText: label, hintText: hint);
 
   Widget _numField({
     required TextEditingController controller,
@@ -755,7 +789,8 @@ class _PageVideoState extends State<PageVideo> {
   }) {
     return TextField(
       controller: controller,
-      keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: false),
+      keyboardType:
+          const TextInputType.numberWithOptions(decimal: true, signed: false),
       inputFormatters: [_numFormatter],
       textInputAction: action,
       onSubmitted: (_) => onDone?.call(),
@@ -782,7 +817,9 @@ class _PageVideoState extends State<PageVideo> {
     final ratio = d / w;
     setState(() {
       r1 = '✅ Ratio de projection = ${ratio.toStringAsFixed(3)}';
-      if (_ratioCtrl.text.trim().isEmpty) _ratioCtrl.text = ratio.toStringAsFixed(3);
+      if (_ratioCtrl.text.trim().isEmpty) {
+        _ratioCtrl.text = ratio.toStringAsFixed(3);
+      }
     });
   }
 
@@ -816,7 +853,8 @@ class _PageVideoState extends State<PageVideo> {
 
     final ratioWH = _ratioWHFromFormat(_format);
     final h = w / ratioWH;
-    setState(() => r3 = '✅ Hauteur = ${h.toStringAsFixed(3)} m (format $_format)');
+    setState(
+        () => r3 = '✅ Hauteur = ${h.toStringAsFixed(3)} m (format $_format)');
   }
 
   void calc4() {
@@ -848,8 +886,7 @@ class _PageVideoState extends State<PageVideo> {
     final ok = fl >= _minFl;
 
     setState(() {
-      r4 =
-          'Surface: ${area.toStringAsFixed(3)} m² (format $_format)\n'
+      r4 = 'Surface: ${area.toStringAsFixed(3)} m² (format $_format)\n'
           'Lux (lm/m²): ${lux.toStringAsFixed(0)}\n'
           'Lux eq (gain): ${luxEq.toStringAsFixed(0)}\n'
           'Luminance: ${nits.toStringAsFixed(1)} nits | ${fl.toStringAsFixed(1)} ft-L\n'
@@ -864,7 +901,8 @@ class _PageVideoState extends State<PageVideo> {
     final n = _i(_calc5NCtrl);
 
     if (wTot == null || pPercent == null || n == null) {
-      setState(() => r5 = '❌ Données manquantes: Largeur totale + Overlap% + Nombre de projecteurs.');
+      setState(() => r5 =
+          '❌ Données manquantes: Largeur totale + Overlap% + Nombre de projecteurs.');
       return;
     }
     if (wTot <= 0) {
@@ -896,8 +934,7 @@ class _PageVideoState extends State<PageVideo> {
     final hTot = wTot / ratioWH;
 
     setState(() {
-      r5 =
-          'Largeur totale: ${wTot.toStringAsFixed(3)} m\n'
+      r5 = 'Largeur totale: ${wTot.toStringAsFixed(3)} m\n'
           'N: $n | Overlap: ${pPercent.toStringAsFixed(1)}% (sur largeur projo)\n\n'
           '- Largeur par projecteur: ${wParProj.toStringAsFixed(3)} m\n'
           '- Overlap entre 2 projos: ${overlapM.toStringAsFixed(3)} m\n'
@@ -920,7 +957,8 @@ class _PageVideoState extends State<PageVideo> {
     final gain = _d(_calc6GainCtrl);
 
     if (wTot == null || distance == null || pPercent == null) {
-      setState(() => r6 = '❌ Données manquantes: Largeur totale + Distance + Overlap%.');
+      setState(() =>
+          r6 = '❌ Données manquantes: Largeur totale + Distance + Overlap%.');
       return;
     }
     if (wTot <= 0 || distance <= 0) {
@@ -960,7 +998,8 @@ class _PageVideoState extends State<PageVideo> {
       return nDouble.ceil().clamp(1, 999999);
     }
 
-    double coverage(double wPerProj, int n) => wPerProj * (1 + (n - 1) * (1 - p));
+    double coverage(double wPerProj, int n) =>
+        wPerProj * (1 + (n - 1) * (1 - p));
 
     final wAtMin = widthPerProj(ratioMinOk);
     final nAtMin = computeN(wAtMin);
@@ -1087,17 +1126,25 @@ class _PageVideoState extends State<PageVideo> {
     doc.addPage(
       pw.MultiPage(
         build: (context) => [
-          pw.Text("Mon App Technique – Export Vidéo", style: pw.TextStyle(fontSize: 18, fontWeight: pw.FontWeight.bold)),
+          pw.Text("Mon App Technique – Export Vidéo",
+              style:
+                  pw.TextStyle(fontSize: 18, fontWeight: pw.FontWeight.bold)),
           pw.SizedBox(height: 8),
-          pw.Text(kDisclaimerTitle, style: pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold)),
+          pw.Text(kDisclaimerTitle,
+              style:
+                  pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold)),
           pw.SizedBox(height: 4),
           pw.Text(kDisclaimerText, style: const pw.TextStyle(fontSize: 9)),
           pw.Divider(),
-          pw.Text("Paramètres", style: pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold)),
+          pw.Text("Paramètres",
+              style:
+                  pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold)),
           pw.SizedBox(height: 4),
           pw.Text(inputs, style: const pw.TextStyle(fontSize: 10)),
           pw.SizedBox(height: 10),
-          pw.Text("Résultats", style: pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold)),
+          pw.Text("Résultats",
+              style:
+                  pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold)),
           pw.SizedBox(height: 4),
           pw.Text(results, style: const pw.TextStyle(fontSize: 10)),
         ],
@@ -1168,62 +1215,61 @@ class _PageVideoState extends State<PageVideo> {
 
       // Barre sticky
       bottomNavigationBar: SafeArea(
-  top: false,
-  child: Container(
-    padding: const EdgeInsets.fromLTRB(16, 10, 16, 12),
-    decoration: BoxDecoration(
-      color: Colors.black,
-      border: Border(top: BorderSide(color: Colors.white.withAlpha(128))),
-    ),
-    child: LayoutBuilder(
-      builder: (context, c) {
-        final narrow = c.maxWidth < 520;
-
-        final calcBtn = ElevatedButton.icon(
-          onPressed: calculerTout,
-          icon: const Icon(Icons.calculate),
-          label: const Text(
-            "Calculer tout",
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
+        top: false,
+        child: Container(
+          padding: const EdgeInsets.fromLTRB(16, 10, 16, 12),
+          decoration: BoxDecoration(
+            color: Colors.black,
+            border: Border(top: BorderSide(color: Colors.white.withAlpha(128))),
           ),
-        );
+          child: LayoutBuilder(
+            builder: (context, c) {
+              final narrow = c.maxWidth < 520;
 
-        final resetBtn = ElevatedButton.icon(
-          onPressed: resetAll,
-          icon: const Icon(Icons.refresh),
-          label: const Text(
-            "Reset",
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
+              final calcBtn = ElevatedButton.icon(
+                onPressed: calculerTout,
+                icon: const Icon(Icons.calculate),
+                label: const Text(
+                  "Calculer tout",
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              );
+
+              final resetBtn = ElevatedButton.icon(
+                onPressed: resetAll,
+                icon: const Icon(Icons.refresh),
+                label: const Text(
+                  "Reset",
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              );
+
+              if (narrow) {
+                // Mobile / écran étroit → empilé
+                return Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SizedBox(width: double.infinity, child: calcBtn),
+                    const SizedBox(height: 10),
+                    SizedBox(width: double.infinity, child: resetBtn),
+                  ],
+                );
+              }
+
+              // Tablette / écran large → côte à côte
+              return Row(
+                children: [
+                  Expanded(child: calcBtn),
+                  const SizedBox(width: 10),
+                  Expanded(child: resetBtn),
+                ],
+              );
+            },
           ),
-        );
-
-        if (narrow) {
-          // Mobile / écran étroit → empilé
-          return Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(width: double.infinity, child: calcBtn),
-              const SizedBox(height: 10),
-              SizedBox(width: double.infinity, child: resetBtn),
-            ],
-          );
-        }
-
-        // Tablette / écran large → côte à côte
-        return Row(
-          children: [
-            Expanded(child: calcBtn),
-            const SizedBox(width: 10),
-            Expanded(child: resetBtn),
-          ],
-        );
-      },
-    ),
-  ),
-),
-
+        ),
+      ),
 
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -1232,7 +1278,8 @@ class _PageVideoState extends State<PageVideo> {
             final isWide = c.maxWidth >= 900;
             final cardWidth = isWide ? (c.maxWidth - 12) / 2 : c.maxWidth;
 
-            Widget sized(Widget child) => SizedBox(width: cardWidth, child: child);
+            Widget sized(Widget child) =>
+                SizedBox(width: cardWidth, child: child);
 
             final cards = <Widget>[
               sized(SectionCard(
@@ -1241,7 +1288,10 @@ class _PageVideoState extends State<PageVideo> {
                 trailing: IconButton(
                   tooltip: "Copier le résumé",
                   onPressed: () {
-                    final t = _summaryPills().whereType<MiniPill>().map((p) => (p.label)).join(" | ");
+                    final t = _summaryPills()
+                        .whereType<MiniPill>()
+                        .map((p) => (p.label))
+                        .join(" | ");
                     copyToClipboard(context, t);
                   },
                   icon: const Icon(Icons.copy, color: Colors.white70),
@@ -1252,7 +1302,6 @@ class _PageVideoState extends State<PageVideo> {
                   children: _summaryPills(),
                 ),
               )),
-
               sized(ExpandSectionCard(
                 title: "Paramètres communs",
                 icon: Icons.tune,
@@ -1261,7 +1310,8 @@ class _PageVideoState extends State<PageVideo> {
                   children: [
                     DropdownButtonFormField<String>(
                       initialValue: _format,
-                      decoration: const InputDecoration(labelText: 'Format (ratio)'),
+                      decoration:
+                          const InputDecoration(labelText: 'Format (ratio)'),
                       items: const [
                         DropdownMenuItem(value: '16:9', child: Text('16:9')),
                         DropdownMenuItem(value: '16:10', child: Text('16:10')),
@@ -1271,7 +1321,6 @@ class _PageVideoState extends State<PageVideo> {
                       onChanged: (v) => setState(() => _format = v ?? '16:9'),
                     ),
                     const SizedBox(height: 12),
-
                     _numField(
                       controller: _distanceCtrl,
                       label: 'Distance de projection (m)',
@@ -1279,7 +1328,6 @@ class _PageVideoState extends State<PageVideo> {
                       action: TextInputAction.next,
                     ),
                     const SizedBox(height: 12),
-
                     _numField(
                       controller: _largeurCtrl,
                       label: "Largeur d'image (m)",
@@ -1287,7 +1335,6 @@ class _PageVideoState extends State<PageVideo> {
                       action: TextInputAction.next,
                     ),
                     const SizedBox(height: 12),
-
                     _numField(
                       controller: _ratioCtrl,
                       label: 'Ratio de projection',
@@ -1295,7 +1342,6 @@ class _PageVideoState extends State<PageVideo> {
                       action: TextInputAction.next,
                     ),
                     const SizedBox(height: 12),
-
                     _numField(
                       controller: _lumensCtrl,
                       label: 'Lumens (ANSI)',
@@ -1303,7 +1349,6 @@ class _PageVideoState extends State<PageVideo> {
                       action: TextInputAction.next,
                     ),
                     const SizedBox(height: 12),
-
                     _numField(
                       controller: _gainCtrl,
                       label: 'Gain',
@@ -1311,21 +1356,41 @@ class _PageVideoState extends State<PageVideo> {
                       action: TextInputAction.next,
                     ),
                     const SizedBox(height: 12),
-
                     DropdownButtonFormField<String>(
                       initialValue: _screenPreset,
-                      decoration: const InputDecoration(labelText: 'Écran / Support (preset)'),
+                      decoration: const InputDecoration(
+                          labelText: 'Écran / Support (preset)'),
                       items: const [
-                        DropdownMenuItem(value: 'Front - écran blanc mat (gain 1.0)', child: Text('Front - écran blanc mat')),
-                        DropdownMenuItem(value: 'Front - écran gris (gain 0.8)', child: Text('Front - écran gris')),
-                        DropdownMenuItem(value: 'Front - écran high gain (gain 1.3)', child: Text('Front - écran high gain')),
-                        DropdownMenuItem(value: 'Rétro - toile diffusion (gain 0.7)', child: Text('Rétro - toile diffusion')),
-                        DropdownMenuItem(value: 'Rétro - toile claire (gain 0.9)', child: Text('Rétro - toile claire')),
-                        DropdownMenuItem(value: 'Mapping - peinture mate (gain 0.75)', child: Text('Mapping - peinture mate')),
-                        DropdownMenuItem(value: 'Mapping - peinture satinée (gain 0.9)', child: Text('Mapping - peinture satinée')),
-                        DropdownMenuItem(value: 'Mapping - pierre claire (gain 0.6)', child: Text('Mapping - pierre claire')),
-                        DropdownMenuItem(value: 'Mapping - pierre sombre (gain 0.35)', child: Text('Mapping - pierre sombre')),
-                        DropdownMenuItem(value: 'Mapping - vitre (gain 0.15)', child: Text('Mapping - vitre')),
+                        DropdownMenuItem(
+                            value: 'Front - écran blanc mat (gain 1.0)',
+                            child: Text('Front - écran blanc mat')),
+                        DropdownMenuItem(
+                            value: 'Front - écran gris (gain 0.8)',
+                            child: Text('Front - écran gris')),
+                        DropdownMenuItem(
+                            value: 'Front - écran high gain (gain 1.3)',
+                            child: Text('Front - écran high gain')),
+                        DropdownMenuItem(
+                            value: 'Rétro - toile diffusion (gain 0.7)',
+                            child: Text('Rétro - toile diffusion')),
+                        DropdownMenuItem(
+                            value: 'Rétro - toile claire (gain 0.9)',
+                            child: Text('Rétro - toile claire')),
+                        DropdownMenuItem(
+                            value: 'Mapping - peinture mate (gain 0.75)',
+                            child: Text('Mapping - peinture mate')),
+                        DropdownMenuItem(
+                            value: 'Mapping - peinture satinée (gain 0.9)',
+                            child: Text('Mapping - peinture satinée')),
+                        DropdownMenuItem(
+                            value: 'Mapping - pierre claire (gain 0.6)',
+                            child: Text('Mapping - pierre claire')),
+                        DropdownMenuItem(
+                            value: 'Mapping - pierre sombre (gain 0.35)',
+                            child: Text('Mapping - pierre sombre')),
+                        DropdownMenuItem(
+                            value: 'Mapping - vitre (gain 0.15)',
+                            child: Text('Mapping - vitre')),
                       ],
                       onChanged: (v) {
                         if (v == null) return;
@@ -1333,7 +1398,6 @@ class _PageVideoState extends State<PageVideo> {
                       },
                     ),
                     const SizedBox(height: 12),
-
                     _numField(
                       controller: _overlapPercentCtrl,
                       label: 'Overlap (%)',
@@ -1341,7 +1405,6 @@ class _PageVideoState extends State<PageVideo> {
                       action: TextInputAction.next,
                     ),
                     const SizedBox(height: 12),
-
                     _numField(
                       controller: _largeurTotaleCtrl,
                       label: 'Largeur totale de projection (m)',
@@ -1352,9 +1415,8 @@ class _PageVideoState extends State<PageVideo> {
                   ],
                 ),
               )),
-
               sized(ExpandSectionCard(
-                title: "Calcul 1 — Ratio (Distance / Largeur)",
+                title: "Ratio (Distance / Largeur)",
                 icon: Icons.straighten,
                 child: Column(
                   children: [
@@ -1364,9 +1426,8 @@ class _PageVideoState extends State<PageVideo> {
                   ],
                 ),
               )),
-
               sized(ExpandSectionCard(
-                title: "Calcul 2 — Largeur (Distance / Ratio)",
+                title: "Largeur (Distance / Ratio)",
                 icon: Icons.swap_horiz,
                 child: Column(
                   children: [
@@ -1376,9 +1437,8 @@ class _PageVideoState extends State<PageVideo> {
                   ],
                 ),
               )),
-
               sized(ExpandSectionCard(
-                title: "Calcul 3 — Hauteur (Largeur + Format)",
+                title: "Hauteur (Largeur + Format)",
                 icon: Icons.height,
                 child: Column(
                   children: [
@@ -1388,9 +1448,8 @@ class _PageVideoState extends State<PageVideo> {
                   ],
                 ),
               )),
-
               sized(ExpandSectionCard(
-                title: "Calcul 4 — Luminosité (lux / nits / ft-L + seuil)",
+                title: "Luminosité (lux / nits / ft-L + seuil)",
                 icon: Icons.brightness_6,
                 child: Column(
                   children: [
@@ -1400,9 +1459,8 @@ class _PageVideoState extends State<PageVideo> {
                   ],
                 ),
               )),
-
               sized(ExpandSectionCard(
-                title: "Calcul 5 — Overlap (Largeur totale + N)",
+                title: "Overlap (Largeur totale + N)",
                 icon: Icons.grid_on,
                 child: Column(
                   children: [
@@ -1420,9 +1478,8 @@ class _PageVideoState extends State<PageVideo> {
                   ],
                 ),
               )),
-
               sized(ExpandSectionCard(
-                title: "Calcul 6 — Nb projecteurs auto + luminosité",
+                title: "Nb projecteurs auto + luminosité",
                 icon: Icons.auto_fix_high,
                 child: Column(
                   children: [
@@ -1444,7 +1501,8 @@ class _PageVideoState extends State<PageVideo> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Optionnel : luminosité",
-                        style: TextStyle(color: Colors.white70, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            color: Colors.white70, fontWeight: FontWeight.bold),
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -1500,7 +1558,8 @@ class PageLumiere extends StatelessWidget {
         child: SectionCard(
           title: "Lumière",
           icon: Icons.lightbulb,
-          child: Text("Ici viendront les outils lumière (base de données, DMX, etc.)."),
+          child: Text(
+              "Ici viendront les outils lumière (base de données, DMX, etc.)."),
         ),
       ),
     );

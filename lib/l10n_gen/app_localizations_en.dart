@@ -96,51 +96,51 @@ class AppLocalizationsEn extends AppLocalizations {
   String get catalogInfoLuminousFlux => 'Flux lumineux';
 
   @override
-  String get catalogInfoPower => 'Puissance';
+  String get catalogInfoPower => 'Power';
 
   @override
-  String get catalogInfoWeight => 'Poids';
+  String get catalogInfoWeight => 'Weight';
 
   @override
   String catalogLastUpdate(Object date) {
-    return 'Dernière mise à jour : $date';
+    return 'Last update: $date';
   }
 
   @override
   String catalogManufacturerTitle(Object count) {
-    return 'Constructeur ($count)';
+    return 'Manufacturer ($count)';
   }
 
   @override
   String catalogModelTitle(Object count) {
-    return 'Modèle ($count)';
+    return 'Model ($count)';
   }
 
   @override
-  String get catalogNotProvided => 'Non renseigné';
+  String get catalogNotProvided => 'Not provided';
 
   @override
-  String get catalogOpenDmxChart => 'Ouvrir la table DMX';
+  String get catalogOpenDmxChart => 'Open DMX chart';
 
   @override
-  String get catalogOpenManual => 'Ouvrir le manuel';
+  String get catalogOpenManual => 'Open manual';
 
   @override
-  String get catalogResetTooltip => 'Réinitialiser';
+  String get catalogResetTooltip => 'Reset';
 
   @override
   String catalogSyncError(Object message) {
-    return 'Erreur : $message';
+    return 'Error: $message';
   }
 
   @override
   String catalogSyncFailed(Object reason) {
-    return 'Échec de synchronisation : $reason';
+    return 'Synchronization failed: $reason';
   }
 
   @override
   String get catalogSyncFailedUnknown =>
-      'Échec de synchronisation (raison inconnue).';
+      'Synchronization failed (unknown reason).';
 
   @override
   String catalogTypeTitle(Object count) {
@@ -148,19 +148,19 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get catalogUpdateTooltip => 'Mettre à jour';
+  String get catalogUpdateTooltip => 'Update';
 
   @override
-  String get catalogUpdated => 'Catalogue mis à jour.';
+  String get catalogUpdated => 'Catalogue updated.';
 
   @override
-  String get commonCalculate => 'Calculer';
+  String get commonCalculate => 'Calculate';
 
   @override
   String get commonCancel => 'Annuler';
 
   @override
-  String get commonCopyResultTooltip => 'Copier le résultat';
+  String get commonCopyResultTooltip => 'Copy result';
 
   @override
   String get commonDash => '—';
@@ -175,13 +175,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commonOkWithCheck => 'OK ✅';
 
   @override
-  String get commonRename => 'Renommer';
+  String get commonRename => 'Rename';
 
   @override
   String get commonReset => 'Reset';
 
   @override
-  String get commonSave => 'Enregistrer';
+  String get commonSave => 'Save';
 
   @override
   String get commonSearch => 'Rechercher';
@@ -193,13 +193,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commonUnitMeter => 'm';
 
   @override
-  String get consentsReset => 'Consentements réinitialisés.';
+  String get consentsReset => 'Consents reset.';
 
   @override
-  String get dipSwitchAddressHint => 'Ex : 1 à 512';
+  String get dipSwitchAddressHint => 'e.g. 1 to 512';
 
   @override
-  String get dipSwitchAddressLabel => 'Adresse DMX';
+  String get dipSwitchAddressLabel => 'DMX address';
 
   @override
   String get dipSwitchChannelUnit => 'canal';
@@ -209,7 +209,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Attention : fin d’univers DMX atteinte.';
 
   @override
-  String get dipSwitchInputsTitle => 'Entrées';
+  String get dipSwitchInputsTitle => 'Inputs';
 
   @override
   String get dipSwitchIntervalHint => 'Ex : 4 (canaux)';
@@ -218,13 +218,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dipSwitchIntervalLabel => 'Intervalle';
 
   @override
-  String get dipSwitchModeAddressDirect => 'Adresse directe';
+  String get dipSwitchModeAddressDirect => 'Direct address';
 
   @override
-  String get dipSwitchModeAddressMinusOne => 'Adresse - 1';
+  String get dipSwitchModeAddressMinusOne => 'Address - 1';
 
   @override
-  String get dipSwitchNextAddressButton => 'Adresse suivante';
+  String get dipSwitchNextAddressButton => 'Next address';
 
   @override
   String get dipSwitchOffLabel => 'OFF';
@@ -233,15 +233,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dipSwitchOnLabel => 'ON';
 
   @override
-  String get dipSwitchResetTooltip => 'Réinitialiser';
+  String get dipSwitchResetTooltip => 'Reset';
 
   @override
   String dipSwitchResultAddressLine(Object address) {
-    return 'Adresse : $address';
+    return 'Address: $address';
   }
 
   @override
-  String get dipSwitchResultAddressNotProvided => 'Adresse non renseignée';
+  String get dipSwitchResultAddressNotProvided => 'Address not provided';
 
   @override
   String dipSwitchResultBinaryValueLine(Object binary) {
@@ -249,7 +249,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get dipSwitchResultHeader => 'Résultat';
+  String get dipSwitchResultHeader => 'Result';
 
   @override
   String dipSwitchResultIntervalLine(Object end, Object start) {
@@ -262,13 +262,13 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get dipSwitchScrollHint => 'Fais défiler pour voir tous les switchs.';
+  String get dipSwitchScrollHint => 'Scroll to see all switches.';
 
   @override
   String get dipSwitchSectionTitle => 'Switchs';
 
   @override
-  String get dipSwitchSummaryTitle => 'Résumé';
+  String get dipSwitchSummaryTitle => 'Summary';
 
   @override
   String dipSwitchSwitchLabel(Object index) {
@@ -276,80 +276,79 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get dipSwitchUseAddressMinusOneLabel => 'Utiliser le mode Adresse - 1';
+  String get dipSwitchUseAddressMinusOneLabel => 'Use Address - 1 mode';
 
   @override
   String get disclaimerAccept => 'J\'accepte';
 
   @override
   String get disclaimerCertify =>
-      'Je certifie avoir lu et accepté ces conditions.';
+      'I certify that I have read and accepted these conditions.';
 
   @override
   String get disclaimerText =>
-      'UTILISATION À TITRE INDICATIF UNIQUEMENT\n\nLes calculs fournis par cette application (vidéo, lumière, laser) sont donnés à titre informatif et indicatif.\nIls ne remplacent en aucun cas :\n- des calculs certifiés,\n- des études techniques,\n- les normes officielles en vigueur,\n- ni la validation par un professionnel qualifié.\n\nRESPONSABILITÉ\nL’éditeur de cette application ne peut être tenu responsable d’erreurs de calcul, d’omissions, de dommages matériels,\nd’accidents corporels, ou de tout incident survenant lors de l’installation, de l’exploitation ou de l’utilisation des équipements.\n\nVIDÉO & PROJECTION\nLes résultats (tailles, ratios, luminosité, overlaps, etc.) reposent sur des modèles théoriques et peuvent varier selon :\noptique, zoom, uniformité, environnement lumineux, support, réglages, etc.\nToujours vérifier avec les documentations constructeur officielles.\n\nLUMIÈRE\nLes calculs sont indicatifs et ne tienent pas compte de toutes les conditions réelles (tolérances, pertes optiques,\ndégradation des sources, normes locales, conditions ambiantes…).\n\nLASER – SÉCURITÉ\nLes calculs NOHD, SZED et CZED sont basés sur des hypothèses standards et des seuils théoriques.\nIls ne prennent pas en compte notamment :\n- instruments optiques (jumelles, caméras, télescopes…),\n- conditions atmosphériques (brouillard, pluie, poussière…),\n- réflexions imprévues, usages détournés, réglages spécifiques.\nL’utilisation d’un système laser implique une responsabilité directe de l’opérateur et une analyse de risques adaptée.\n\nACCEPTATION DES RISQUES\nEn utilisant cette application, l’utilisateur reconnaît :\n- avoir pris connaissance des règles de sécurité applicables,\n- être seul responsable de ses installations,\n- assumer l’entière responsabilité des risques liés à l’utilisation des équipements (vidéo, lumière, laser),\n- vérifier systématiquement les données avec les manuels constructeurs officiels.';
+      'FOR INFORMATIONAL PURPOSES ONLY\n\nThe calculations provided by this application (video, lighting, laser) are for informational and indicative purposes only.\nThey do not replace, under any circumstances:\n- certified calculations,\n- technical studies,\n- official applicable standards,\n- or validation by a qualified professional.\n\nLIABILITY\nThe publisher of this application cannot be held liable for calculation errors, omissions, material damage,\npersonal injury, or any incident occurring during the installation, operation, or use of equipment.\n\nVIDEO & PROJECTION\nResults (sizes, ratios, brightness, overlaps, etc.) are based on theoretical models and may vary depending on:\noptics, zoom, uniformity, ambient light, surface, settings, etc.\nAlways verify with official manufacturer documentation.\n\nLIGHTING\nCalculations are indicative and do not take into account all real-world conditions (tolerances, optical losses,\nsource degradation, local standards, ambient conditions, etc.).\n\nLASER – SAFETY\nNOHD, SZED and CZED calculations are based on standard assumptions and theoretical thresholds.\nThey do not take into account, in particular:\n- optical instruments (binoculars, cameras, telescopes, etc.),\n- atmospheric conditions (fog, rain, dust, etc.),\n- unexpected reflections, misuse, or specific settings.\nThe use of a laser system implies direct responsibility on the part of the operator and an appropriate risk analysis.\n\nACCEPTANCE OF RISKS\nBy using this application, the user acknowledges that they:\n- are aware of the applicable safety rules,\n- are solely responsible for their installations,\n- assume full responsibility for the risks related to the use of equipment (video, lighting, laser),\n- systematically verify the data with official manufacturer manuals.';
 
   @override
   String get disclaimerTitle => '⚠️ AVERTISSEMENT LÉGAL & NON-RESPONSABILITÉ';
 
   @override
   String get homeLaserSubtitle =>
-      'Calculs et sécurité laser (consentement requis à chaque entrée).';
+      'Laser calculations and safety (consent required each time you enter).';
 
   @override
   String get homeLaserTitle => 'Laser';
 
   @override
   String get homeLightSubtitle =>
-      'Taille de projection, dip-switch DMX, photométrie, catalogue, patch DMX.';
+      'Projection size, DMX dip switch, photometry, catalogue, DMX patch.';
 
   @override
-  String get homeLightTitle => 'Lumière';
+  String get homeLightTitle => 'Lighting';
 
   @override
   String get homeReferencesSubtitle =>
-      'DMX / réseau / vidéo : fiches & repères terrain.';
+      'DMX / network / video: field guides & quick references.';
 
   @override
-  String get homeReferencesTitle => 'Références';
+  String get homeReferencesTitle => 'References';
 
   @override
   String get homeTitle => 'Accueil';
 
   @override
   String get homeVideoSubtitle =>
-      'Lentille & mesure, luminosité, multiprojecteur, LED et mires.';
+      'Lens & measurement, brightness, multi-projector, LED and test patterns.';
 
   @override
-  String get homeVideoTitle => 'Vidéo';
+  String get homeVideoTitle => 'Video';
 
   @override
   String get language => 'Langue';
 
   @override
-  String get languageSystem => 'Système (automatique)';
+  String get languageSystem => 'System (automatic)';
 
   @override
-  String get languageSystemCurrent => 'Langue du téléphone';
+  String get languageSystemCurrent => 'Phone language';
 
   @override
-  String get laserAdviceFullPower => 'Pleine puissance autorisée (100 %)';
+  String get laserAdviceFullPower => 'Full power allowed (100%)';
 
   @override
   String laserAdviceMaxRecommended(Object percent) {
-    return 'Puissance maximale conseillée : $percent';
+    return 'Recommended maximum power: $percent';
   }
 
   @override
-  String get laserConsentCheckboxLabel =>
-      'J’accepte et je comprends les risques.';
+  String get laserConsentCheckboxLabel => 'I accept and understand the risks.';
 
   @override
   String get laserConsentContinue => 'Continuer';
 
   @override
   String get laserConsentText =>
-      'ACCÈS À LA PARTIE LASER\n\nLa partie LASER de cette application concerne des calculs de sécurité (ex : NOHD, SZED, CZED).\nCes calculs sont indicatifs et ne remplacent pas :\n- une analyse de risques,\n- les normes en vigueur,\n- les procédures d’exploitation,\n- ni la validation par une personne qualifiée.\n\nIMPORTANT\n- Risque de lésions oculaires / cutanées en cas de mauvaise utilisation.\n- Le calcul peut être faux si les paramètres entrés sont incomplets, erronés ou si le contexte réel diffère (optique,\n  conditions atmosphériques, réflexions, alignement, etc.).\n- L’opérateur est seul responsable de l’installation, de l’exploitation et de la conformité.\n\nEn validant, vous confirmez :\n- comprendre les risques,\n- respecter les règles de sécurité applicables,\n- assumer l’entière responsabilité en cas de négligence ou mauvaise utilisation.';
+      'ACCESS TO THE LASER SECTION\n\nThe LASER section of this application deals with safety calculations (e.g. NOHD, SZED, CZED).\nThese calculations are indicative and do not replace:\n- a risk analysis,\n- applicable standards,\n- operating procedures,\n- or validation by a qualified person.\n\nIMPORTANT\n- Risk of eye / skin injury in case of improper use.\n- The calculation may be wrong if the entered parameters are incomplete, incorrect, or if the real context differs (optics,\n  atmospheric conditions, reflections, alignment, etc.).\n- The operator is solely responsible for installation, operation and compliance.\n\nBy confirming, you acknowledge that you:\n- understand the risks,\n- will follow the applicable safety rules,\n- assume full responsibility in case of negligence or misuse.';
 
   @override
   String get laserConsentTitle => '🔴 CONSENTEMENT LASER (OBLIGATOIRE)';
@@ -358,11 +357,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get laserDiameterHint => 'ex: 3.0';
 
   @override
-  String get laserDiameterLabel => 'Diamètre de sortie (mm)';
+  String get laserDiameterLabel => 'Output diameter (mm)';
 
   @override
   String get laserDisclaimerShort =>
-      'Calcul indicatif. Ne remplace pas une analyse de sécurité laser.';
+      'Indicative calculation. Does not replace a laser safety analysis.';
 
   @override
   String get laserDivergenceHint => 'ex: 1.2';
@@ -371,33 +370,33 @@ class AppLocalizationsEn extends AppLocalizations {
   String get laserDivergenceLabel => 'Divergence (mrad)';
 
   @override
-  String get laserInputsTitle => 'Entrées';
+  String get laserInputsTitle => 'Inputs';
 
   @override
   String get laserInvalidInputs =>
-      'Veuillez entrer une puissance, une divergence et un diamètre valides.';
+      'Please enter valid power, divergence and diameter values.';
 
   @override
-  String get laserNameUpdated => 'Nom mis à jour.';
+  String get laserNameUpdated => 'Name updated.';
 
   @override
   String get laserNormativeParamsBody =>
-      'MPE pour la distance nominale de danger oculaire (NOHD) : 25,4 W/m²\n(Norme IEC 60825-1, édition 3.0)\n\nMPE pour la distance d’exposition de la zone sensible (SZED) : 1 W/m²\n(Norme ANSI Z136.6)\n\nMPE pour la distance d’exposition de la zone critique (CZED) : 0,05 W/m²\n(Norme ANSI Z136.6)';
+      'MPE for nominal ocular hazard distance (NOHD): 25.4 W/m²\n(IEC 60825-1, edition 3.0)\n\nMPE for sensitive zone exposure distance (SZED): 1 W/m²\n(ANSI Z136.6)\n\nMPE for critical zone exposure distance (CZED): 0.05 W/m²\n(ANSI Z136.6)';
 
   @override
-  String get laserNormativeParamsTitle => 'Paramètres de sécurité retenus';
+  String get laserNormativeParamsTitle => 'Selected safety parameters';
 
   @override
   String get laserPowerHint => 'ex: 5000';
 
   @override
-  String get laserPowerLabel => 'Puissance (mW)';
+  String get laserPowerLabel => 'Power (mW)';
 
   @override
-  String get laserPresetAdded => 'Enregistrement ajouté.';
+  String get laserPresetAdded => 'Record added.';
 
   @override
-  String get laserPresetDeleted => 'Enregistrement supprimé.';
+  String get laserPresetDeleted => 'Record deleted.';
 
   @override
   String laserPresetSubtitle(Object diam, Object div, Object p) {
@@ -408,19 +407,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get laserProjectorNameLabel => 'Nom du projecteur';
 
   @override
-  String get laserRenameProjectorTitle => 'Renommer le projecteur';
+  String get laserRenameProjectorTitle => 'Rename projector';
 
   @override
-  String get laserSafetyResultsTitle => 'Résultats de sécurité';
+  String get laserSafetyResultsTitle => 'Safety results';
 
   @override
-  String get laserSaveCurrentProjector => 'Enregistrer ce projecteur';
+  String get laserSaveCurrentProjector => 'Save this projector';
 
   @override
-  String get laserSaveProjectorTitle => 'Enregistrer un projecteur';
+  String get laserSaveProjectorTitle => 'Save a projector';
 
   @override
-  String get laserSavedProjectorsTitle => 'Projecteurs enregistrés';
+  String get laserSavedProjectorsTitle => 'Saved projectors';
 
   @override
   String get laserSearchHint => 'ex: “RGB 5W”';
@@ -429,7 +428,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get laserTargetDistanceHint => 'ex: 10';
 
   @override
-  String get laserTargetDistanceLabel => 'Distance cible (m)';
+  String get laserTargetDistanceLabel => 'Target distance (m)';
 
   @override
   String get laserZoneCzedDesc => 'Zone critique';
@@ -441,45 +440,45 @@ class AppLocalizationsEn extends AppLocalizations {
   String get laserZoneSzedDesc => 'Zone sensible';
 
   @override
-  String get legalNotices => 'Mentions légales';
+  String get legalNotices => 'Legal notices';
 
   @override
   String get lightCatalogDescription =>
-      'Sélection par constructeur, type et produit, avec informations et manuel.';
+      'Select by manufacturer, type and product, with information and manual.';
 
   @override
   String get lightCatalogTitle => 'Catalogue';
 
   @override
   String get lightDisclaimerShort =>
-      'Outils indicatifs. Vérifie toujours la documentation constructeur.';
+      'Indicative tools. Always check the manufacturer documentation.';
 
   @override
   String get lightDmxSwitchDescription =>
-      'Conversion indicative entre adresse DMX et interrupteurs, avec navigation par intervalle.';
+      'Indicative conversion between DMX address and switches, with interval navigation.';
 
   @override
   String get lightDmxSwitchTitle => 'Dip-switch DMX';
 
   @override
-  String get lightPatchDescription => 'Importer et visualiser un fichier MVR.';
+  String get lightPatchDescription => 'Import and view an MVR file.';
 
   @override
   String get lightPatchTitle => 'Patch DMX';
 
   @override
   String get lightPhotometryDescription =>
-      'Conversions indicatives entre lux, candela et lumen, avec distance et angle.';
+      'Indicative conversions between lux, candela and lumen, with distance and angle.';
 
   @override
-  String get lightPhotometryTitle => 'Photométrie';
+  String get lightPhotometryTitle => 'Photometry';
 
   @override
   String get lightProjectionDescription =>
-      'Calcul indicatif de la taille de tache selon l’angle, la distance et le diamètre.';
+      'Indicative spot size calculation based on angle, distance and diameter.';
 
   @override
-  String get lightProjectionTitle => 'Taille de projection';
+  String get lightProjectionTitle => 'Projection size';
 
   @override
   String get menuTitle => 'Menu';
@@ -491,14 +490,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mireDash => '—';
 
   @override
-  String get mireErrInvalidOverlap => '❌ Overlap invalide (0 à 99.9).';
+  String get mireErrInvalidOverlap => '❌ Invalid overlap (0 to 99.9).';
 
   @override
   String get mireErrInvalidProjectors =>
-      '❌ Nombre de projecteurs invalide (N > 0).';
+      '❌ Invalid number of projectors (N > 0).';
 
   @override
-  String get mireErrInvalidWHpx => '❌ Largeur/hauteur invalides (px).';
+  String get mireErrInvalidWHpx => '❌ Invalid width/height (px).';
 
   @override
   String get mireExportPng => 'Exporter PNG';
@@ -510,36 +509,36 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mireHeightPxHintMapping => 'ex: 2160';
 
   @override
-  String get mireHeightPxLabel => 'Hauteur (px)';
+  String get mireHeightPxLabel => 'Height (px)';
 
   @override
-  String get mireLedErrTileCm => '❌ Renseigne Tile cm (largeur/hauteur >0).';
+  String get mireLedErrTileCm => '❌ Enter tile cm (width/height > 0).';
 
   @override
-  String get mireLedErrTilePx => '❌ Renseigne Tile px (largeur/hauteur >0).';
+  String get mireLedErrTilePx => '❌ Enter tile px (width/height > 0).';
 
   @override
-  String get mireLedErrTilesXY => '❌ Renseigne Tiles X/Y (>0).';
+  String get mireLedErrTilesXY => '❌ Enter Tiles X/Y (>0).';
 
   @override
-  String get mireLedParamsTitle => 'Paramètres mur LED';
+  String get mireLedParamsTitle => 'LED wall parameters';
 
   @override
   String mireLedPitchComputed(Object pitch) {
-    return 'Pitch calculé: $pitch';
+    return 'Calculated pitch: $pitch';
   }
 
   @override
   String get mireLedSubtitleColorBars => 'Barres + rampes + cercles';
 
   @override
-  String get mireLedSubtitleGridLabels => 'Grille + repères + cercles';
+  String get mireLedSubtitleGridLabels => 'Grid + markers + circles';
 
   @override
   String get mireLedSubtitlePixelPerfect => 'Pixel perfect + cercles';
 
   @override
-  String get mireLedSubtitleUniformity => 'Uniformité + cercles';
+  String get mireLedSubtitleUniformity => 'Uniformity + circles';
 
   @override
   String get mireLedTileHcmLabel => 'Tile hauteur (cm)';
@@ -569,32 +568,32 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mireLedTypeColorBars => 'Barres + rampes + cercles';
 
   @override
-  String get mireLedTypeGridLabels => 'Grille + repères + cercles';
+  String get mireLedTypeGridLabels => 'Grid + markers + circles';
 
   @override
   String get mireLedTypePixelPerfect => 'Pixel perfect + cercles';
 
   @override
-  String get mireLedTypeTilesId => 'Tiles ID (numéro + couleurs)';
+  String get mireLedTypeTilesId => 'Tiles ID (numbers + colors)';
 
   @override
-  String get mireLedTypeUniformity => 'Uniformité + cercles';
+  String get mireLedTypeUniformity => 'Uniformity + circles';
 
   @override
   String mireLedWallResolution(Object h, Object w) {
-    return 'Résolution mur: $w × $h px';
+    return 'Wall resolution: $w × $h px';
   }
 
   @override
   String get mireLedWarnPitchOutOfRange =>
-      '⚠️ Pitch calculé hors plage (0.5–20 mm). Vérifie Tile cm / px.';
+      '⚠️ Calculated pitch out of range (0.5–20 mm). Check tile cm / px.';
 
   @override
   String get mireLedWarnPitchXNotY =>
-      '⚠️ Pitch X ≠ Pitch Y (tile non homogène). Vérifie dimensions cm et px.';
+      '⚠️ Pitch X ≠ Pitch Y (non-uniform tile). Check cm and px dimensions.';
 
   @override
-  String get mireMappingSectionTitle => 'Mire mapping multi-projecteur';
+  String get mireMappingSectionTitle => 'Multi-projector mapping pattern';
 
   @override
   String mireMappingSubtitlePattern(Object n, Object orient, Object percent) {
@@ -647,10 +646,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mireProjectorsNHint => 'ex: 2';
 
   @override
-  String get mireProjectorsNLabel => 'Nombre de projecteurs (N)';
+  String get mireProjectorsNLabel => 'Number of projectors (N)';
 
   @override
-  String get mireSimpleSectionTitle => 'Mire écran simple';
+  String get mireSimpleSectionTitle => 'Single-screen pattern';
 
   @override
   String get mireSimpleSubtitleCheckerboard => 'Damier + cercles';
@@ -660,13 +659,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get mireSimpleSubtitleComboAll =>
-      'Grille + safe + 2 barres centrées + cercles';
+      'Grid + safe + 2 centered bars + circles';
 
   @override
   String get mireSimpleSubtitleGridSafe => 'Grille + safe + cercles';
 
   @override
-  String get mireSimpleSubtitleUniformity => 'Uniformité + cercles';
+  String get mireSimpleSubtitleUniformity => 'Uniformity + circles';
 
   @override
   String get mireSimpleTypeCheckerboard => 'Damier + cercles';
@@ -676,16 +675,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get mireSimpleTypeComboAll =>
-      'Combo (grille + cercles + 2 barres centrées)';
+      'Combo (grid + circles + 2 centered bars)';
 
   @override
   String get mireSimpleTypeGridSafe => 'Grille + safe + cercles';
 
   @override
-  String get mireSimpleTypeUniformity => 'Uniformité + cercles';
+  String get mireSimpleTypeUniformity => 'Uniformity + circles';
 
   @override
-  String get mireTileMissingPx => 'Renseigne Tile (px) pour numérotation.';
+  String get mireTileMissingPx => 'Enter tile (px) for numbering.';
 
   @override
   String mireTilesSubtitleBase(Object nx, Object ny, Object th, Object tw) {
@@ -713,19 +712,19 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get mireTypeLabel => 'Type de mire';
+  String get mireTypeLabel => 'Pattern type';
 
   @override
   String get mireVideoComboTitle => 'VIDÉO / MIRE COMBO';
 
   @override
-  String get mireVideoMappingSectionTitle => 'Mire mapping multi-projecteur';
+  String get mireVideoMappingSectionTitle => 'Multi-projector mapping pattern';
 
   @override
   String get mireVideoMappingTitle => 'VIDÉO / MIRE MAPPING';
 
   @override
-  String get mireVideoSimpleSectionTitle => 'Mire écran simple';
+  String get mireVideoSimpleSectionTitle => 'Single-screen pattern';
 
   @override
   String get mireVideoSimpleTitle => 'VIDÉO / MIRE SIMPLE';
@@ -737,14 +736,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mireVideoTypeColorBars => 'Barres + rampes + cercles';
 
   @override
-  String get mireVideoTypeCombo =>
-      'Combo (grille + cercles + 2 barres centrées)';
+  String get mireVideoTypeCombo => 'Combo (grid + circles + 2 centered bars)';
 
   @override
   String get mireVideoTypeGridSafe => 'Grille + safe + cercles';
 
   @override
-  String get mireVideoTypeUniformity => 'Uniformité + cercles';
+  String get mireVideoTypeUniformity => 'Uniformity + circles';
 
   @override
   String get mireWallNotMultipleOfTiles => 'MUR NON MULTIPLE DE TILES';
@@ -756,34 +754,34 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mireWidthPxHintMapping => 'ex: 3840';
 
   @override
-  String get mireWidthPxLabel => 'Largeur (px)';
+  String get mireWidthPxLabel => 'Width (px)';
 
   @override
   String patchAddressLabel(Object address) {
-    return 'Adresse : $address';
+    return 'Address: $address';
   }
 
   @override
   String patchChannelsUsed(Object count) {
-    return 'Canaux utilisés : $count / 512';
+    return 'Channels used: $count / 512';
   }
 
   @override
-  String get patchConflictError => 'Conflit d’adresses (chevauchement).';
+  String get patchConflictError => 'Address conflict (overlap).';
 
   @override
-  String get patchConflictShort => 'Conflit';
+  String get patchConflictShort => 'Conflict';
 
   @override
   String patchConflicts(Object count) {
-    return 'Conflits : $count';
+    return 'Conflicts: $count';
   }
 
   @override
   String get patchEditChannelsLabel => 'Canaux';
 
   @override
-  String get patchEditHint => 'Vérifie le mode et le nombre de canaux.';
+  String get patchEditHint => 'Check the mode and number of channels.';
 
   @override
   String get patchEditModeLabel => 'Mode';
@@ -792,7 +790,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get patchEditTitle => 'Édition';
 
   @override
-  String get patchEmptyUniverse => 'Aucune machine dans cet univers.';
+  String get patchEmptyUniverse => 'No fixture in this universe.';
 
   @override
   String patchFixturesCount(Object count) {
@@ -801,36 +799,36 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get patchHomeDisclaimer =>
-      'Les résultats sont indicatifs. Vérifie toujours avec la console.';
+      'Results are indicative. Always verify with the console.';
 
   @override
   String get patchHomeImportMvrDescription =>
-      'Analyser un fichier MVR et charger le patch en référence.';
+      'Analyze an MVR file and load the patch as reference.';
 
   @override
-  String get patchHomeImportMvrTitle => 'Importer un MVR';
+  String get patchHomeImportMvrTitle => 'Import an MVR';
 
   @override
   String get patchHomeTitle => 'Patch DMX';
 
   @override
-  String get patchHomeViewPatchDescription => 'Liste et conflits par univers.';
+  String get patchHomeViewPatchDescription => 'List and conflicts by universe.';
 
   @override
-  String get patchHomeViewPatchTitle => 'Voir le patch';
+  String get patchHomeViewPatchTitle => 'View patch';
 
   @override
-  String get patchHubOpenGridButton => 'Ouvrir grille';
+  String get patchHubOpenGridButton => 'Open grid';
 
   @override
-  String get patchHubOpenMvrButton => 'Ouvrir MVR';
+  String get patchHubOpenMvrButton => 'Open MVR';
 
   @override
-  String get patchHubStateEmpty => 'Aucune référence chargée.';
+  String get patchHubStateEmpty => 'No reference loaded.';
 
   @override
   String patchHubStateLoaded(Object count) {
-    return 'Chargé : $count univers';
+    return 'Loaded: $count universes';
   }
 
   @override
@@ -841,45 +839,45 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get patchHubWorksiteBody =>
-      'Importer un MVR ou consulter la grille d’occupation.';
+      'Import an MVR or view the occupancy grid.';
 
   @override
   String get patchHubWorksiteTitle => 'Chantier';
 
   @override
-  String get patchInvalidChannelCount => 'Nombre de canaux invalide.';
+  String get patchInvalidChannelCount => 'Invalid number of channels.';
 
   @override
   String get patchIssueInvalidChannelCount =>
-      'Le nombre de canaux doit être supérieur ou égal à 1.';
+      'The number of channels must be greater than or equal to 1.';
 
   @override
   String get patchIssueInvalidStartAddress =>
-      'L’adresse DMX doit être comprise entre 1 et 512.';
+      'The DMX address must be between 1 and 512.';
 
   @override
   String get patchIssueInvalidUniverse =>
-      'L’univers doit être supérieur ou égal à 1.';
+      'The universe must be greater than or equal to 1.';
 
   @override
   String get patchIssueRangeExceedsUniverse =>
-      'La plage de canaux dépasse 512 dans cet univers.';
+      'The channel range exceeds 512 in this universe.';
 
   @override
-  String get patchIssueUnknown => 'Erreur inconnue.';
+  String get patchIssueUnknown => 'Unknown error.';
 
   @override
   String get patchListTitle => 'Liste';
 
   @override
   String get patchManualDisabledBody =>
-      'Le patch est en lecture seule lorsqu’une référence MVR est chargée.';
+      'The patch is read-only when an MVR reference is loaded.';
 
   @override
-  String get patchManualDisabledTitle => 'Désactivé';
+  String get patchManualDisabledTitle => 'Disabled';
 
   @override
-  String get patchManualTitle => 'Patch manuel';
+  String get patchManualTitle => 'Manual patch';
 
   @override
   String patchModeLabel(Object mode) {
@@ -890,16 +888,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get patchMvrButtonAnalyzing => 'Analyse…';
 
   @override
-  String get patchMvrButtonLoadAsReference => 'Charger comme référence';
+  String get patchMvrButtonLoadAsReference => 'Load as reference';
 
   @override
-  String get patchMvrButtonPickFile => 'Choisir un fichier';
+  String get patchMvrButtonPickFile => 'Choose a file';
 
   @override
   String get patchMvrClearTooltip => 'Effacer';
 
   @override
-  String get patchMvrColAddress => 'Adresse';
+  String get patchMvrColAddress => 'Address';
 
   @override
   String get patchMvrColChannels => 'Canaux';
@@ -911,42 +909,42 @@ class AppLocalizationsEn extends AppLocalizations {
   String get patchMvrColName => 'Nom';
 
   @override
-  String get patchMvrColUniverse => 'Univers';
+  String get patchMvrColUniverse => 'Universe';
 
   @override
   String get patchMvrColumnsHint =>
-      'Colonnes : ID, Nom, Univers, Adresse, Canaux';
+      'Columns: ID, Name, Universe, Address, Channels';
 
   @override
   String get patchMvrFileCardHelp =>
-      'Sélectionne un fichier .mvr (ZIP) pour analyser le patch.';
+      'Select an .mvr (ZIP) file to analyze the patch.';
 
   @override
   String get patchMvrFileCardTitle => 'Fichier';
 
   @override
-  String get patchMvrFilterAllUniverses => 'Tous les univers';
+  String get patchMvrFilterAllUniverses => 'All universes';
 
   @override
-  String get patchMvrFilterUniverseLabel => 'Filtrer par univers';
+  String get patchMvrFilterUniverseLabel => 'Filter by universe';
 
   @override
-  String get patchMvrModeNotProvided => 'Mode non renseigné';
+  String get patchMvrModeNotProvided => 'Mode not provided';
 
   @override
-  String get patchMvrOrderAsc => 'Croissant';
+  String get patchMvrOrderAsc => 'Ascending';
 
   @override
-  String get patchMvrOrderDesc => 'Décroissant';
+  String get patchMvrOrderDesc => 'Descending';
 
   @override
   String get patchMvrOrderLabel => 'Ordre';
 
   @override
-  String get patchMvrSortAddress => 'Adresse';
+  String get patchMvrSortAddress => 'Address';
 
   @override
-  String get patchMvrSortByLabel => 'Trier par';
+  String get patchMvrSortByLabel => 'Sort by';
 
   @override
   String get patchMvrSortChannels => 'Canaux';
@@ -958,13 +956,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get patchMvrSortName => 'Nom';
 
   @override
-  String get patchMvrSortUniverse => 'Univers';
+  String get patchMvrSortUniverse => 'Universe';
 
   @override
-  String get patchMvrSortUniverseThenAddress => 'Univers puis adresse';
+  String get patchMvrSortUniverseThenAddress => 'Universe then address';
 
   @override
-  String get patchMvrStatusCleared => 'Référence effacée.';
+  String get patchMvrStatusCleared => 'Reference cleared.';
 
   @override
   String get patchMvrStatusEmptyBytes => 'Fichier vide.';
@@ -974,30 +972,29 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String patchMvrStatusFilePickFailed(Object reason) {
-    return 'Sélection de fichier impossible : $reason';
+    return 'Unable to select file: $reason';
   }
 
   @override
   String patchMvrStatusFixturesFound(int count, int resolved) {
-    return 'Machines trouvées : $count (multi-canaux : $resolved).';
+    return 'Fixtures found: $count (multi-channel: $resolved).';
   }
 
   @override
-  String get patchMvrStatusLoadingGdtf => 'Chargement des GDTF…';
+  String get patchMvrStatusLoadingGdtf => 'Loading GDTFs…';
 
   @override
-  String get patchMvrStatusNoContentToLoad => 'Aucun contenu à charger.';
+  String get patchMvrStatusNoContentToLoad => 'No content to load.';
 
   @override
-  String get patchMvrStatusNoFileSelected => 'Aucun fichier sélectionné.';
+  String get patchMvrStatusNoFileSelected => 'No file selected.';
 
   @override
-  String get patchMvrStatusNoUsableFixtures =>
-      'Aucune machine exploitable trouvée.';
+  String get patchMvrStatusNoUsableFixtures => 'No usable fixtures found.';
 
   @override
   String patchMvrStatusParseError(Object message) {
-    return 'Erreur de parsing : $message';
+    return 'Parsing error: $message';
   }
 
   @override
@@ -1005,7 +1002,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String patchMvrStatusReferenceLoaded(int count, int skipped, int footprints) {
-    return 'Référence chargée : $count machine(s) (ignorées : $skipped, empreintes GDTF : $footprints).';
+    return 'Reference loaded: $count fixture(s) (skipped: $skipped, GDTF footprints: $footprints).';
   }
 
   @override
@@ -1015,64 +1012,63 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get patchMvrStatusSceneXmlNotFound =>
-      'scene.xml introuvable dans le MVR.';
+      'scene.xml not found in the MVR.';
 
   @override
-  String get patchMvrStatusSelectingFile => 'Sélection du fichier…';
+  String get patchMvrStatusSelectingFile => 'Selecting file…';
 
   @override
   String patchMvrStatusUnsupportedFile(Object ext) {
-    return 'Fichier non supporté : $ext';
+    return 'Unsupported file: $ext';
   }
 
   @override
-  String get patchMvrSummaryTitle => 'Résumé';
+  String get patchMvrSummaryTitle => 'Summary';
 
   @override
   String get patchMvrTitle => 'Import MVR';
 
   @override
   String patchMvrUniverseItem(Object universe) {
-    return 'Univers $universe';
+    return 'Universe $universe';
   }
 
   @override
   String get patchPageTitle => 'Patch';
 
   @override
-  String get patchSummaryTitle => 'Résumé';
+  String get patchSummaryTitle => 'Summary';
 
   @override
   String get patchUniverseAppBarTitle => 'Patch';
 
   @override
   String patchUniverseConflictCount(Object count) {
-    return 'Conflits : $count canal(aux)';
+    return 'Conflicts: $count channel(s)';
   }
 
   @override
-  String get patchUniverseGridLimitedByWidth =>
-      'Limité par la largeur de l’écran.';
+  String get patchUniverseGridLimitedByWidth => 'Limited by screen width.';
 
   @override
-  String get patchUniverseGridTitle => 'Occupation (1 à 512)';
+  String get patchUniverseGridTitle => 'Occupancy (1 to 512)';
 
   @override
   String patchUniverseItem(Object universe) {
-    return 'Univers $universe';
+    return 'Universe $universe';
   }
 
   @override
-  String get patchUniverseLabel => 'Univers';
+  String get patchUniverseLabel => 'Universe';
 
   @override
-  String get patchUniverseLegendConflict => 'Conflit';
+  String get patchUniverseLegendConflict => 'Conflict';
 
   @override
-  String get patchUniverseLegendFree => 'Libre';
+  String get patchUniverseLegendFree => 'Free';
 
   @override
-  String get patchUniverseLegendOccupied => 'Occupé';
+  String get patchUniverseLegendOccupied => 'Occupied';
 
   @override
   String patchUniverseOccupantLine(
@@ -1082,13 +1078,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String patchUniverseOccupiedCount(Object count) {
-    return 'Occupés : $count / 512';
+    return 'Occupied: $count / 512';
   }
 
   @override
   String patchUniversePopupHeader(
       Object address, Object state, Object universe) {
-    return 'Univers $universe — Adresse $address\nÉtat : $state';
+    return 'Universe $universe — Address $address\nState: $state';
   }
 
   @override
@@ -1097,117 +1093,117 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String patchUniversePopupMore(Object count) {
-    return '… et $count autre(s).';
+    return '… and $count other(s).';
   }
 
   @override
-  String get patchUniversePopupTitleConflict => 'Conflit';
+  String get patchUniversePopupTitleConflict => 'Conflict';
 
   @override
   String get patchUniversePopupTitleFree => 'Canal libre';
 
   @override
-  String get patchUniversePopupTitleOccupied => 'Canal occupé';
+  String get patchUniversePopupTitleOccupied => 'Occupied channel';
 
   @override
-  String get patchUniverseReferenceNone => 'Aucune référence chargée';
+  String get patchUniverseReferenceNone => 'No reference loaded';
 
   @override
   String get patchUniverseReferenceReadOnly => 'Lecture seule (depuis MVR)';
 
   @override
-  String get patchUniverseReferenceTitle => 'Référence';
+  String get patchUniverseReferenceTitle => 'Reference';
 
   @override
-  String get patchUniverseResetConfirm => 'Réinitialiser';
+  String get patchUniverseResetConfirm => 'Reset';
 
   @override
   String get patchUniverseResetContent =>
-      'Cela efface le patch chargé depuis le MVR dans l’application.\nAucune donnée du fichier n’est modifiée.';
+      'This clears the patch loaded from the MVR in the application.\nNo file data is modified.';
 
   @override
-  String get patchUniverseResetTitle => 'Réinitialiser la référence ?';
+  String get patchUniverseResetTitle => 'Reset reference?';
 
   @override
-  String get patchUniverseResetTooltip => 'Réinitialiser la référence';
+  String get patchUniverseResetTooltip => 'Reset reference';
 
   @override
-  String get patchUniverseSelected => 'Univers sélectionné';
+  String get patchUniverseSelected => 'Selected universe';
 
   @override
-  String get patchUniverseStateConflict => 'Conflit';
+  String get patchUniverseStateConflict => 'Conflict';
 
   @override
-  String get patchUniverseStateFree => 'Libre';
+  String get patchUniverseStateFree => 'Free';
 
   @override
-  String get patchUniverseStateOccupied => 'Occupé';
+  String get patchUniverseStateOccupied => 'Occupied';
 
   @override
-  String get patchUniverseTapHint => 'Touche une case pour afficher le détail.';
+  String get patchUniverseTapHint => 'Tap a cell to display details.';
 
   @override
-  String get patchUniverseUniverseDropdownLabel => 'Univers DMX';
+  String get patchUniverseUniverseDropdownLabel => 'DMX universe';
 
   @override
   String patchUniverseUniverseItem(Object universe) {
-    return 'Univers $universe';
+    return 'Universe $universe';
   }
 
   @override
-  String get patchUniverseUniverseTitle => 'Univers';
+  String get patchUniverseUniverseTitle => 'Universe';
 
   @override
-  String get patchUniverseZoomIn => 'Agrandir';
+  String get patchUniverseZoomIn => 'Zoom in';
 
   @override
-  String get patchUniverseZoomOut => 'Réduire';
+  String get patchUniverseZoomOut => 'Zoom out';
 
   @override
   String get patchUniverseZoomTitle => 'Zoom';
 
   @override
-  String get photometryBeamAngleHint2 => 'En degrés';
+  String get photometryBeamAngleHint2 => 'In degrees';
 
   @override
-  String get photometryBeamAngleHint3 => 'En degrés';
+  String get photometryBeamAngleHint3 => 'In degrees';
 
   @override
-  String get photometryBeamAngleLabel => 'Angle de faisceau';
+  String get photometryBeamAngleLabel => 'Beam angle';
 
   @override
-  String get photometryCandelaHint1 => 'Entrez une valeur en cd';
+  String get photometryCandelaHint1 => 'Enter a value in cd';
 
   @override
-  String get photometryCandelaHint2 => 'Entrez une valeur en cd';
+  String get photometryCandelaHint2 => 'Enter a value in cd';
 
   @override
   String get photometryCandelaLabel => 'Candela';
 
   @override
   String get photometryDisclaimerShort =>
-      'Indication uniquement. Vérifie avec la documentation constructeur.';
+      'Indicative only. Check with the manufacturer documentation.';
 
   @override
-  String get photometryDistanceHint1 => 'En mètres';
+  String get photometryDistanceHint1 => 'In meters';
 
   @override
-  String get photometryDistanceHint3 => 'En mètres';
+  String get photometryDistanceHint3 => 'In meters';
 
   @override
   String get photometryDistanceLabel => 'Distance';
 
   @override
-  String get photometryLumensHint2 => 'Entrez une valeur en lm';
+  String get photometryLumensHint2 => 'Enter a value in lm';
 
   @override
-  String get photometryLumensHint3 => 'Entrez une valeur en lm';
+  String get photometryLumensHint3 => 'Enter a value in lm';
 
   @override
   String get photometryLumensLabel => 'Lumens';
 
   @override
-  String get photometryLuxHint => 'Entrez une valeur en lux';
+  String get photometryLuxHint => 'Enter a value in lux';
 
   @override
   String get photometryLuxLabel => 'Lux';
@@ -1234,17 +1230,17 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String photometrySummary3(
       String lumens, String distance, String angle, String lux) {
-    return 'Lumens : $lumens lm — Distance : $distance m — Angle : $angle° — Lux : $lux lx.';
+    return 'Lumens: $lumens lm — Distance: $distance m — Angle: $angle° — Lux: $lux lx.';
   }
 
   @override
-  String get projectionAngleHint => 'En degrés';
+  String get projectionAngleHint => 'In degrees';
 
   @override
   String get projectionAngleLabel => 'Angle';
 
   @override
-  String get projectionAutoHelp => 'Auto : calcule la valeur manquante.';
+  String get projectionAutoHelp => 'Auto: calculates the missing value.';
 
   @override
   String projectionConeAngle(Object angle) {
@@ -1253,12 +1249,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String projectionConeDiameter(Object diameter) {
-    return 'Diamètre : $diameter m';
+    return 'Diameter: $diameter m';
   }
 
   @override
   String projectionConeDistance(Object distance) {
-    return 'Distance : $distance m';
+    return 'Distance: $distance m';
   }
 
   @override
@@ -1268,22 +1264,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String projectionDetailDiameter(Object diameter) {
-    return 'Diamètre : $diameter m';
+    return 'Diameter: $diameter m';
   }
 
   @override
   String projectionDetailDistance(Object distance) {
-    return 'Distance : $distance m';
+    return 'Distance: $distance m';
   }
 
   @override
-  String get projectionDiameterHint => 'En mètres';
+  String get projectionDiameterHint => 'In meters';
 
   @override
-  String get projectionDiameterLabel => 'Diamètre';
+  String get projectionDiameterLabel => 'Diameter';
 
   @override
-  String get projectionDistanceHint => 'En mètres';
+  String get projectionDistanceHint => 'In meters';
 
   @override
   String get projectionDistanceLabel => 'Distance';
@@ -1292,20 +1288,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get projectionHeaderAutoActive => 'Auto actif';
 
   @override
-  String get projectionHeaderNeedTwoValues =>
-      'Renseigne au moins deux valeurs.';
+  String get projectionHeaderNeedTwoValues => 'Enter at least two values.';
 
   @override
-  String get projectionInputsTitle => 'Entrées';
+  String get projectionInputsTitle => 'Inputs';
 
   @override
-  String get projectionResultsTitle => 'Résultats';
+  String get projectionResultsTitle => 'Results';
 
   @override
-  String get resetConsents => 'Réinitialiser consentements';
+  String get resetConsents => 'Reset consents';
 
   @override
-  String get settings => 'Paramètres';
+  String get settings => 'Settings';
 
   @override
   String videoBrightnessResult(
@@ -1322,59 +1317,56 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get videoBrightnessSectionTitle =>
-      'Calcul 4 — Lux / nits / ft-L + seuil';
+  String get videoBrightnessSectionTitle => 'Lux / nits / ft-L + threshold';
 
   @override
-  String get videoBrightnessSubtitle => 'Lux / nits / ft-L + seuil (calcul 4).';
+  String get videoBrightnessSubtitle => 'Lux / nits / ft-L + seuil';
 
   @override
-  String get videoBrightnessTitle => 'Luminosité';
+  String get videoBrightnessTitle => 'Brightness';
 
   @override
-  String get videoCalc1ErrMissing =>
-      '❌ Données manquantes: Distance + Largeur.';
+  String get videoCalc1ErrMissing => '❌ Missing data: Distance + Width.';
 
   @override
   String videoCalc1Ok(Object ratio) {
-    return '✅ Ratio de projection = $ratio';
+    return '✅ Throw ratio = $ratio';
   }
 
   @override
-  String get videoCalc1Title => 'Calcul 1 — Ratio (Distance / Largeur)';
+  String get videoCalc1Title => 'Ratio (Distance / Width)';
 
   @override
-  String get videoCalc2ErrMissing => '❌ Données manquantes: Distance + Ratio.';
+  String get videoCalc2ErrMissing => '❌ Missing data: Distance + Ratio.';
 
   @override
   String videoCalc2Ok(Object width) {
-    return '✅ Largeur image = $width m';
+    return '✅ Image width = $width m';
   }
 
   @override
-  String get videoCalc2Title => 'Calcul 2 — Largeur (Distance / Ratio)';
+  String get videoCalc2Title => 'Width (Distance / Ratio)';
 
   @override
-  String get videoCalc3ErrMissingWidth => '❌ Donnée manquante: Largeur.';
+  String get videoCalc3ErrMissingWidth => '❌ Missing data: Width.';
 
   @override
   String videoCalc3Ok(Object format, Object height) {
-    return '✅ Hauteur = $height m (format $format)';
+    return '✅ Height = $height m (format $format)';
   }
 
   @override
-  String get videoCalc3Title => 'Calcul 3 — Hauteur (Largeur + Format)';
+  String get videoCalc3Title => 'Height (Width + Format)';
 
   @override
-  String get videoCalc4ErrGt0 => '❌ Lumens/Gain/Largeur doivent être > 0.';
+  String get videoCalc4ErrGt0 => '❌ Lumens/Gain/Width must be > 0.';
 
   @override
-  String get videoCalc4ErrMissing =>
-      '❌ Données manquantes: Lumens + Gain + Largeur.';
+  String get videoCalc4ErrMissing => '❌ Missing data: Lumens + Gain + Width.';
 
   @override
   String get videoCalc4ErrMissingSimple =>
-      '❌ Données manquantes : Largeur + Lumens + Gain.';
+      '❌ Missing data: Width + Lumens + Gain.';
 
   @override
   String videoCalc4Result(
@@ -1387,42 +1379,41 @@ class AppLocalizationsEn extends AppLocalizations {
       Object nits,
       Object presetLabel,
       Object status) {
-    return 'Surface: $area m² (format $format)\nLux (lm/m²): $lux\nLux eq (gain): $luxEq\nLuminance: $nits nits | $fl ft-L\nSeuil mini ($presetLabel): $minFl ft-L → $status\nNote: conversion nits/ft-L basée sur une hypothèse Lambertienne (approx).';
+    return 'Area: $area m² (format $format)\nLux (lm/m²): $lux\nEquivalent lux (gain): $luxEq\nLuminance: $nits nits | $fl ft-L\nMinimum threshold ($presetLabel): $minFl ft-L → $status\nNote: nits/ft-L conversion based on a Lambertian assumption (approx.).';
   }
 
   @override
-  String get videoCalc4Title =>
-      'Calcul 4 — Luminosité (lux / nits / ft-L + seuil)';
+  String get videoCalc4Title => 'Brightness (lux / nits / ft-L + threshold)';
 
   @override
   String get videoCalc5ErrMissing =>
-      '❌ Données manquantes: Largeur totale + Overlap% + Nombre de projecteurs.';
+      '❌ Missing data: Total width + Overlap% + Number of projectors.';
 
   @override
-  String get videoCalc5ErrNMin2 => '❌ Le nombre de projecteurs doit être ≥ 2.';
+  String get videoCalc5ErrNMin2 => '❌ The number of projectors must be ≥ 2.';
 
   @override
   String get videoCalc5NHint => 'ex: 2';
 
   @override
-  String get videoCalc5NLabel => 'Nombre de projecteurs (N)';
+  String get videoCalc5NLabel => 'Number of projectors (N)';
 
   @override
   String videoCalc5Result(Object format, Object hTot, Object n, Object overlapM,
       Object overlapPct, Object wPer, Object wTot) {
-    return 'Largeur totale: $wTot m\nN: $n | Overlap: $overlapPct% (sur largeur projo)\n\n- Largeur par projecteur: $wPer m\n- Overlap entre 2 projos: $overlapM m\n- Hauteur totale (format $format): $hTot m';
+    return 'Total width: $wTot m\nN: $n | Overlap: $overlapPct% (based on projector width)\n\n- Width per projector: $wPer m\n- Overlap between 2 projectors: $overlapM m\n- Total height (format $format): $hTot m';
   }
 
   @override
-  String get videoCalc5Title => 'Calcul 5 — Overlap (Largeur totale + N)';
+  String get videoCalc5Title => 'Overlap (Total width + N)';
 
   @override
   String get videoCalc6ErrMissingBasics =>
-      '❌ Données manquantes: Largeur totale + Distance + Overlap%.';
+      '❌ Missing data: Total width + Distance + Overlap%.';
 
   @override
   String get videoCalc6ErrMissingRatio =>
-      '❌ Données manquantes: Ratio min et/ou Ratio max.';
+      '❌ Missing data: Min ratio and/or Max ratio.';
 
   @override
   String get videoCalc6GainHint => 'ex: 1.0';
@@ -1434,25 +1425,25 @@ class AppLocalizationsEn extends AppLocalizations {
   String get videoCalc6LumensPerProjectorHint => 'ex: 20000';
 
   @override
-  String get videoCalc6LumensPerProjectorLabel => 'Lumens par projecteur';
+  String get videoCalc6LumensPerProjectorLabel => 'Lumens per projector';
 
   @override
   String get videoCalc6LumiErrGt0 =>
-      'Luminosité: ❌ Lumens/projo et gain doivent être > 0.';
+      'Brightness: ❌ Lumens/projector and gain must be > 0.';
 
   @override
   String videoCalc6LumiForN(
       Object area, Object fl, Object lux, Object n, Object nits) {
-    return 'Luminosité estimée (N=$n)\nSurface: $area m²\nLux eq: $lux (lm/m²)\nNits: $nits | ft-L: $fl';
+    return 'Estimated brightness (N=$n)\nArea: $area m²\nEquivalent lux: $lux (lm/m²)\nNits: $nits | ft-L: $fl';
   }
 
   @override
   String get videoCalc6LumiOptional =>
-      'Luminosité (optionnelle): renseigne Lumens/projo + Gain pour l\'estimation.';
+      'Optional brightness: enter Lumens/projector + Gain for the estimate.';
 
   @override
   String get videoCalc6NoteIndicative =>
-      'Note: estimation indicative (blend/overlap réels peuvent réduire un peu).';
+      'Note: indicative estimate (real blend/overlap may reduce it slightly).';
 
   @override
   String get videoCalc6RatioMaxHint => 'ex: 1.80';
@@ -1483,25 +1474,25 @@ class AppLocalizationsEn extends AppLocalizations {
       Object ratioMax,
       Object ratioMin,
       Object wTot) {
-    return 'Largeur totale=$wTot m | Distance=$distance m | Overlap=$overlapPct%\nFormat $format → Hauteur totale=$hTot m | Surface=$area m²\nRatio min/max: $ratioMin → $ratioMax\n\nCas ratio plus ouvert (min) = $nMin projos | couverture ≈ $covMin m\n$lumiMin\n\nCas ratio plus serré (max) = $nMax projos | couverture ≈ $covMax m\n$lumiMax\n\n$note';
+    return 'Total width=$wTot m | Distance=$distance m | Overlap=$overlapPct%\nFormat $format → Total height=$hTot m | Area=$area m²\nMin/max ratio: $ratioMin → $ratioMax\n\nOpen ratio case (min) = $nMin projectors | coverage ≈ $covMin m\n$lumiMin\n\nTight ratio case (max) = $nMax projectors | coverage ≈ $covMax m\n$lumiMax\n\n$note';
   }
 
   @override
-  String get videoCalc6Title => 'Calcul 6 — Nb projecteurs auto + luminosité';
+  String get videoCalc6Title => 'Auto projector count + brightness';
 
   @override
   String videoCalcLabel(Object n) {
-    return 'Calcul $n';
+    return 'Calculation $n';
   }
 
   @override
-  String get videoCalculateAll => 'Calculer tout';
+  String get videoCalculateAll => 'Calculate all';
 
   @override
-  String get videoCalculationsTitle => 'Calculs vidéo';
+  String get videoCalculationsTitle => 'Video calculations';
 
   @override
-  String get videoCommonParamsTitle => 'Paramètres communs';
+  String get videoCommonParamsTitle => 'Common parameters';
 
   @override
   String videoCommonPillArea(Object value) {
@@ -1520,7 +1511,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String videoCommonPillHeight(Object value) {
-    return 'Hauteur: $value';
+    return 'Height: $value';
   }
 
   @override
@@ -1535,48 +1526,48 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String videoCommonPillTotalWidth(Object value) {
-    return 'Largeur totale: $value';
+    return 'Total width: $value';
   }
 
   @override
   String videoCommonPillWidth(Object value) {
-    return 'Largeur: $value';
+    return 'Width: $value';
   }
 
   @override
-  String get videoCopyAllTooltip => 'Copier tous les résultats';
+  String get videoCopyAllTooltip => 'Copy all results';
 
   @override
-  String get videoCopySummaryTooltip => 'Copier le résumé';
+  String get videoCopySummaryTooltip => 'Copy summary';
 
   @override
   String get videoDisclaimerShort =>
-      'Calculs indicatifs. Vérifie toujours la documentation constructeur.';
+      'Indicative calculations. Always check the manufacturer documentation.';
 
   @override
   String get videoDistanceHint => 'ex: 12.0';
 
   @override
-  String get videoDistanceLabel => 'Distance de projection (m)';
+  String get videoDistanceLabel => 'Projection distance (m)';
 
   @override
-  String get videoErrImpossibleDenom => '❌ Paramètres impossibles (denom ≤ 0).';
+  String get videoErrImpossibleDenom => '❌ Impossible parameters (denom ≤ 0).';
 
   @override
-  String get videoErrOverlapRange => '❌ Overlap% doit être entre 0 et 99.9.';
+  String get videoErrOverlapRange => '❌ Overlap% must be between 0 and 99.9.';
 
   @override
-  String get videoErrRatioGt0 => '❌ Le ratio doit être > 0.';
+  String get videoErrRatioGt0 => '❌ Ratio must be > 0.';
 
   @override
   String get videoErrTotalWidthAndDistanceGt0 =>
-      '❌ Largeur totale et distance doivent être > 0.';
+      '❌ Total width and distance must be > 0.';
 
   @override
-  String get videoErrTotalWidthGt0 => '❌ Largeur totale doit être > 0.';
+  String get videoErrTotalWidthGt0 => '❌ Total width must be > 0.';
 
   @override
-  String get videoErrWidthGt0 => '❌ La largeur doit être > 0.';
+  String get videoErrWidthGt0 => '❌ Width must be > 0.';
 
   @override
   String get videoExportPdfTooltip => 'Exporter PDF';
@@ -1594,17 +1585,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String get videoImageWidthHint => 'ex: 6.0';
 
   @override
-  String get videoImageWidthLabel => 'Largeur d\'image (m)';
+  String get videoImageWidthLabel => 'Image width (m)';
 
   @override
-  String get videoLedCalcTitle => 'Calcul — Pixels / tiles';
+  String get videoLedCalcTitle => 'Calculation — Pixels / tiles';
 
   @override
-  String get videoLedErrAllGt0 => '❌ Toutes les valeurs doivent être > 0.';
+  String get videoLedErrAllGt0 => '❌ All values must be > 0.';
 
   @override
   String get videoLedErrMissingInputs =>
-      '❌ Données manquantes : Tiles X/Y + Tile px + Tile cm.';
+      '❌ Missing data: Tiles X/Y + Tile px + Tile cm.';
 
   @override
   String videoLedPitchUniform(Object value) {
@@ -1627,12 +1618,12 @@ class AppLocalizationsEn extends AppLocalizations {
       Object wallHpx,
       Object wallWm,
       Object wallWpx) {
-    return '✅ Résolution mur: $wallWpx × $wallHpx px\n✅ Taille mur: $wallWm × $wallHm m\nTile: $tileWpx×$tileHpx px • $tileWcm×$tileHcm cm\nPitch calculé: $pitch';
+    return '✅ Wall resolution: $wallWpx × $wallHpx px\n✅ Wall size: $wallWm × $wallHm m\nTile: $tileWpx×$tileHpx px • $tileWcm×$tileHcm cm\nCalculated pitch: $pitch';
   }
 
   @override
   String get videoLedSubtitle =>
-      'Pixels du mur LED selon taille, pitch, dimension des tiles.';
+      'LED wall pixels based on size, pitch and tile dimensions.';
 
   @override
   String get videoLedTileHcmHint => 'ex: 33.28';
@@ -1674,43 +1665,42 @@ class AppLocalizationsEn extends AppLocalizations {
   String get videoLedTitle => 'LED';
 
   @override
-  String get videoLensMeasureSubtitle =>
-      'Ratio / largeur / hauteur (calculs 1 à 3).';
+  String get videoLensMeasureSubtitle => 'Ratio / width / height';
 
   @override
-  String get videoLensMeasureTitle => 'Lentille & mesure';
+  String get videoLensMeasureTitle => 'Lens & measurement';
 
   @override
-  String get videoLmCalc1Title => 'Calcul 1 — Ratio (Distance / Largeur)';
+  String get videoLmCalc1Title => 'Ratio (Distance / Width)';
 
   @override
-  String get videoLmCalc2Title => 'Calcul 2 — Largeur (Distance / Ratio)';
+  String get videoLmCalc2Title => 'Width (Distance / Ratio)';
 
   @override
-  String get videoLmCalc3Title => 'Calcul 3 — Hauteur (Largeur + Format)';
+  String get videoLmCalc3Title => 'Height (Width + Format)';
 
   @override
   String get videoLmDistanceHint => 'ex: 12.0';
 
   @override
-  String get videoLmDistanceLabel => 'Distance de projection (m)';
+  String get videoLmDistanceLabel => 'Projection distance (m)';
 
   @override
   String get videoLmErrMissingDistanceRatio =>
-      '❌ Données manquantes : Distance + Ratio.';
+      '❌ Missing data: Distance + Ratio.';
 
   @override
   String get videoLmErrMissingDistanceWidth =>
-      '❌ Données manquantes : Distance + Largeur.';
+      '❌ Missing data: Distance + Width.';
 
   @override
-  String get videoLmErrMissingWidthOnly => '❌ Donnée manquante : Largeur.';
+  String get videoLmErrMissingWidthOnly => '❌ Missing data: Width.';
 
   @override
-  String get videoLmErrRatioGt0 => '❌ Ratio doit être > 0.';
+  String get videoLmErrRatioGt0 => '❌ Ratio must be > 0.';
 
   @override
-  String get videoLmErrWidthGt0 => '❌ Largeur doit être > 0.';
+  String get videoLmErrWidthGt0 => '❌ Width must be > 0.';
 
   @override
   String get videoLmFormatLabel => 'Format (ratio)';
@@ -1719,28 +1709,28 @@ class AppLocalizationsEn extends AppLocalizations {
   String get videoLmImageWidthHint => 'ex: 6.0';
 
   @override
-  String get videoLmImageWidthLabel => 'Largeur d\'image (m)';
+  String get videoLmImageWidthLabel => 'Image width (m)';
 
   @override
   String videoLmResultHeight(Object format, Object height) {
-    return '✅ Hauteur = $height m (format $format)';
+    return '✅ Height = $height m (format $format)';
   }
 
   @override
   String videoLmResultRatio(Object ratio) {
-    return '✅ Ratio de projection = $ratio';
+    return '✅ Throw ratio = $ratio';
   }
 
   @override
   String videoLmResultWidth(Object width) {
-    return '✅ Largeur image = $width m';
+    return '✅ Image width = $width m';
   }
 
   @override
   String get videoLmThrowRatioHint => 'ex: 1.60';
 
   @override
-  String get videoLmThrowRatioLabel => 'Ratio de projection';
+  String get videoLmThrowRatioLabel => 'Throw ratio';
 
   @override
   String get videoLumensHint => 'ex: 20000';
@@ -1750,82 +1740,81 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get videoMireHeaderSubtitle =>
-      'Mires indicatives (calage, focus, géométrie, blend, pixel perfect).';
+      'Indicative test patterns (alignment, focus, geometry, blend, pixel perfect).';
 
   @override
-  String get videoMireHeaderTitle => 'Générateur de mires';
+  String get videoMireHeaderTitle => 'Test pattern generator';
 
   @override
   String get videoMireScreenLedSubtitle =>
-      'Mire selon WxH px (pixel perfect, uniformité, grille).';
+      'Pattern based on WxH px (pixel perfect, uniformity, grid).';
 
   @override
-  String get videoMireScreenLedTitle => 'Mire écran LED';
+  String get videoMireScreenLedTitle => 'LED screen pattern';
 
   @override
   String get videoMireScreenVideoSubtitle =>
-      'Simple (WxH px) + Mapping multi-projos (N + overlap).';
+      'Single (WxH px) + Multi-projector mapping (N + overlap).';
 
   @override
-  String get videoMireScreenVideoTitle => 'Mire écran vidéo';
+  String get videoMireScreenVideoTitle => 'Video screen pattern';
 
   @override
-  String get videoMireTitle => 'Mire';
+  String get videoMireTitle => 'Pattern';
 
   @override
-  String get videoMpCalc5Title => 'Calcul 5 — Largeur par projecteur';
+  String get videoMpCalc5Title => 'Width per projector';
 
   @override
-  String get videoMpCalc6Title =>
-      'Calcul 6 — Nombre de projecteurs (ratio min/max)';
+  String get videoMpCalc6Title => 'Number of projectors (min/max ratio)';
 
   @override
   String videoMpCaseOpenMin(Object coverage, Object n) {
-    return 'Cas ratio plus ouvert (min) = $n projos | couverture ≈ $coverage m';
+    return 'Open ratio case (min) = $n projectors | coverage ≈ $coverage m';
   }
 
   @override
   String videoMpCaseTightMax(Object coverage, Object n) {
-    return 'Cas ratio plus serré (max) = $n projos | couverture ≈ $coverage m';
+    return 'Tight ratio case (max) = $n projectors | coverage ≈ $coverage m';
   }
 
   @override
   String get videoMpDistanceHint => 'ex: 12.0';
 
   @override
-  String get videoMpDistanceLabel => 'Distance de projection (m)';
+  String get videoMpDistanceLabel => 'Projection distance (m)';
 
   @override
   String get videoMpErrImpossibleDenom =>
-      '❌ Paramètres impossibles (denom ≤ 0).';
+      '❌ Impossible parameters (denom ≤ 0).';
 
   @override
-  String get videoMpErrInvalidRatio => '❌ Ratio invalide (doit être > 0).';
+  String get videoMpErrInvalidRatio => '❌ Invalid ratio (must be > 0).';
 
   @override
   String get videoMpErrMissing5 =>
-      '❌ Données manquantes : Largeur totale + Overlap% + N.';
+      '❌ Missing data: Total width + Overlap% + N.';
 
   @override
   String get videoMpErrMissing6Main =>
-      '❌ Données manquantes : Largeur totale + Distance + Overlap%.';
+      '❌ Missing data: Total width + Distance + Overlap%.';
 
   @override
   String get videoMpErrMissingRatios =>
-      '❌ Données manquantes : Ratio min et/ou Ratio max.';
+      '❌ Missing data: Min ratio and/or Max ratio.';
 
   @override
-  String get videoMpErrNGte2 => '❌ N doit être ≥ 2.';
+  String get videoMpErrNGte2 => '❌ N must be ≥ 2.';
 
   @override
-  String get videoMpErrOverlapRange => '❌ Overlap% doit être entre 0 et 99.9.';
+  String get videoMpErrOverlapRange => '❌ Overlap% must be between 0 and 99.9.';
 
   @override
   String get videoMpErrWidthDistanceGt0 =>
-      '❌ Largeur totale et distance doivent être > 0.';
+      '❌ Total width and distance must be > 0.';
 
   @override
-  String get videoMpErrWidthGt0 => '❌ Largeur totale doit être > 0.';
+  String get videoMpErrWidthGt0 => '❌ Total width must be > 0.';
 
   @override
   String get videoMpFormatLabel => 'Format (ratio)';
@@ -1840,27 +1829,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String get videoMpLumensPerProjectorHint => 'ex: 20000';
 
   @override
-  String get videoMpLumensPerProjectorLabel => 'Lumens par projecteur';
+  String get videoMpLumensPerProjectorLabel => 'Lumens per projector';
 
   @override
   String get videoMpLumiErrLumensGainGt0 =>
-      'Luminosité: ❌ Lumens/projo et gain doivent être > 0.';
+      'Brightness: ❌ Lumens/projector and gain must be > 0.';
 
   @override
   String videoMpLumiEstimated(
       Object area, Object fl, Object lux, Object n, Object nits) {
-    return 'Luminosité estimée (N=$n)\nSurface: $area m²\nLux eq: $lux\nNits: $nits | ft-L: $fl';
+    return 'Estimated brightness (N=$n)\nArea: $area m²\nEquivalent lux: $lux\nNits: $nits | ft-L: $fl';
   }
 
   @override
   String get videoMpLumiOptionalHint =>
-      'Luminosité (optionnelle) : renseigne Lumens/projo + Gain pour estimer.';
+      'Optional brightness: enter Lumens/projector + Gain to estimate it.';
 
   @override
   String get videoMpNoteIndicative => 'Note: estimation indicative.';
 
   @override
-  String get videoMpOptionalLuminanceTitle => 'Optionnel : luminosité';
+  String get videoMpOptionalLuminanceTitle => 'Optional: brightness';
 
   @override
   String get videoMpOverlapHint => 'ex: 10';
@@ -1872,7 +1861,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get videoMpProjectorCountHint => 'ex: 2';
 
   @override
-  String get videoMpProjectorCountLabel => 'Nombre de projecteurs (N)';
+  String get videoMpProjectorCountLabel => 'Number of projectors (N)';
 
   @override
   String get videoMpRatioMaxHint => 'ex: 1.80';
@@ -1890,17 +1879,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String get videoMpTotalWidthHint => 'ex: 18.0';
 
   @override
-  String get videoMpTotalWidthLabel => 'Largeur totale de projection (m)';
+  String get videoMpTotalWidthLabel => 'Total projection width (m)';
 
   @override
   String get videoMultiprojectorSubtitle =>
-      'Overlap + largeur/projo + nombre de projos (calculs 5 & 6).';
+      'Overlap + width/projector + number of projectors (calculations 5 & 6).';
 
   @override
-  String get videoMultiprojectorTitle => 'Multiprojecteur';
+  String get videoMultiprojectorTitle => 'Multi-projector';
 
   @override
-  String get videoOptionalBrightnessTitle => 'Optionnel : luminosité';
+  String get videoOptionalBrightnessTitle => 'Optional: brightness';
 
   @override
   String get videoOverlapHint => 'ex: 10';
@@ -1909,25 +1898,25 @@ class AppLocalizationsEn extends AppLocalizations {
   String get videoOverlapLabel => 'Overlap (%)';
 
   @override
-  String get videoPdfCalc1 => 'Calcul 1';
+  String get videoPdfCalc1 => 'Calculation 1';
 
   @override
-  String get videoPdfCalc2 => 'Calcul 2';
+  String get videoPdfCalc2 => 'Calculation 2';
 
   @override
-  String get videoPdfCalc3 => 'Calcul 3';
+  String get videoPdfCalc3 => 'Calculation 3';
 
   @override
-  String get videoPdfCalc4 => 'Calcul 4';
+  String get videoPdfCalc4 => 'Calculation 4';
 
   @override
-  String get videoPdfCalc5 => 'Calcul 5';
+  String get videoPdfCalc5 => 'Calculation 5';
 
   @override
   String get videoPdfCalc5N => 'N (calc5)';
 
   @override
-  String get videoPdfCalc6 => 'Calcul 6';
+  String get videoPdfCalc6 => 'Calculation 6';
 
   @override
   String get videoPdfCalc6Gain => 'Gain (calc6)';
@@ -1954,7 +1943,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get videoPdfGain => 'Gain';
 
   @override
-  String get videoPdfImageWidth => 'Largeur image (m)';
+  String get videoPdfImageWidth => 'Image width (m)';
 
   @override
   String get videoPdfLumens => 'Lumens';
@@ -1963,47 +1952,46 @@ class AppLocalizationsEn extends AppLocalizations {
   String get videoPdfOverlap => 'Overlap (%)';
 
   @override
-  String get videoPdfParams => 'Paramètres';
+  String get videoPdfParams => 'Parameters';
 
   @override
   String get videoPdfRatio => 'Ratio';
 
   @override
-  String get videoPdfResults => 'Résultats';
+  String get videoPdfResults => 'Results';
 
   @override
-  String get videoPdfScreenPreset => 'Preset écran';
+  String get videoPdfScreenPreset => 'Screen preset';
 
   @override
-  String get videoPdfTitle => 'Mon App Technique – Export Vidéo';
+  String get videoPdfTitle => 'Mon App Tech – Video export';
 
   @override
-  String get videoPdfTotalWidth => 'Largeur totale (m)';
+  String get videoPdfTotalWidth => 'Total width (m)';
 
   @override
-  String get videoPresetFrontGrey => 'Front - écran gris (gain 0.8)';
+  String get videoPresetFrontGrey => 'Front - grey screen (gain 0.8)';
 
   @override
-  String get videoPresetFrontGreyShort => 'Front - écran gris';
+  String get videoPresetFrontGreyShort => 'Front - grey screen';
 
   @override
-  String get videoPresetFrontHighGain => 'Front - écran high gain (gain 1.3)';
+  String get videoPresetFrontHighGain => 'Front - high-gain screen (gain 1.3)';
 
   @override
-  String get videoPresetFrontHighGainShort => 'Front - écran high gain';
+  String get videoPresetFrontHighGainShort => 'Front - high-gain screen';
 
   @override
-  String get videoPresetFrontWhite => 'Front - écran blanc mat (gain 1.0)';
+  String get videoPresetFrontWhite => 'Front - matte white screen (gain 1.0)';
 
   @override
-  String get videoPresetFrontWhiteShort => 'Front - écran blanc mat';
+  String get videoPresetFrontWhiteShort => 'Front - matte white screen';
 
   @override
-  String get videoPresetMappingDarkStone =>
-      'Mapping - pierre sombre (gain 0.35)';
+  String get videoPresetMappingDarkStone => 'Mapping - dark stone (gain 0.35)';
 
   @override
-  String get videoPresetMappingDarkStoneShort => 'Mapping - pierre sombre';
+  String get videoPresetMappingDarkStoneShort => 'Mapping - dark stone';
 
   @override
   String get videoPresetMappingGlass => 'Mapping - vitre (gain 0.15)';
@@ -2012,66 +2000,65 @@ class AppLocalizationsEn extends AppLocalizations {
   String get videoPresetMappingGlassShort => 'Mapping - vitre';
 
   @override
-  String get videoPresetMappingLightStone =>
-      'Mapping - pierre claire (gain 0.6)';
+  String get videoPresetMappingLightStone => 'Mapping - light stone (gain 0.6)';
 
   @override
-  String get videoPresetMappingLightStoneShort => 'Mapping - pierre claire';
+  String get videoPresetMappingLightStoneShort => 'Mapping - light stone';
 
   @override
-  String get videoPresetMappingMatte => 'Mapping - peinture mate (gain 0.75)';
+  String get videoPresetMappingMatte => 'Mapping - matte paint (gain 0.75)';
 
   @override
-  String get videoPresetMappingMatteShort => 'Mapping - peinture mate';
+  String get videoPresetMappingMatteShort => 'Mapping - matte paint';
 
   @override
-  String get videoPresetMappingSatin => 'Mapping - peinture satinée (gain 0.9)';
+  String get videoPresetMappingSatin => 'Mapping - satin paint (gain 0.9)';
 
   @override
-  String get videoPresetMappingSatinShort => 'Mapping - peinture satinée';
+  String get videoPresetMappingSatinShort => 'Mapping - satin paint';
 
   @override
-  String get videoPresetRearClear => 'Rétro - toile claire (gain 0.9)';
+  String get videoPresetRearClear => 'Rear - clear screen (gain 0.9)';
 
   @override
-  String get videoPresetRearClearShort => 'Rétro - toile claire';
+  String get videoPresetRearClearShort => 'Rear - clear screen';
 
   @override
-  String get videoPresetRearDiffusion => 'Rétro - toile diffusion (gain 0.7)';
+  String get videoPresetRearDiffusion => 'Rear - diffusion screen (gain 0.7)';
 
   @override
-  String get videoPresetRearDiffusionShort => 'Rétro - toile diffusion';
+  String get videoPresetRearDiffusionShort => 'Rear - diffusion screen';
 
   @override
   String get videoScreenPresetLabel => 'Écran / Support (preset)';
 
   @override
-  String get videoSummaryPillsTitle => 'Résumé (pastilles)';
+  String get videoSummaryPillsTitle => 'Summary (pills)';
 
   @override
   String get videoTestPatternSubtitle =>
-      'Création de mire vidéo pour écran et mur LED (à faire après).';
+      'Video test pattern creation for screen and LED wall (to do later).';
 
   @override
-  String get videoTestPatternTitle => 'Mire';
+  String get videoTestPatternTitle => 'Pattern';
 
   @override
   String get videoThrowRatioHint => 'ex: 1.60';
 
   @override
-  String get videoThrowRatioLabel => 'Ratio de projection';
+  String get videoThrowRatioLabel => 'Throw ratio';
 
   @override
-  String get videoTitle => 'Vidéo';
+  String get videoTitle => 'Video';
 
   @override
-  String get videoToolsTitle => 'Outils vidéo';
+  String get videoToolsTitle => 'Video tools';
 
   @override
   String get videoTotalWidthHint => 'ex: 18.0';
 
   @override
-  String get videoTotalWidthLabel => 'Largeur totale de projection (m)';
+  String get videoTotalWidthLabel => 'Total projection width (m)';
 
   @override
   String get aboutArtnetTitle => 'Art-Nand';
@@ -2092,7 +2079,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutArtnetToc05 => '5) Trorbleshooting — symptoms → causes';
 
   @override
-  String get aboutArtnetToc06 => '6) Schémas (nandwork / unicast vs broadcast)';
+  String get aboutArtnetToc06 => '6) Diagrams (network / unicast vs broadcast)';
 
   @override
   String get aboutArtnetToc07 => '6bis) Images (assands) — RJ45/switch/cables';
@@ -2101,35 +2088,35 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutArtnetToc08 => '7) Checklist rapide';
 
   @override
-  String get aboutDmxToc01 => '1) DMX, universe, addresses — la base';
+  String get aboutDmxToc01 => '1) DMX, universe, addresses — the basics';
 
   @override
   String get aboutDmxToc02 => '2) Trame DMX — break, start code, canaux';
 
   @override
-  String get aboutDmxToc03 => '3) Câblage RS-485 — topologie & cable';
+  String get aboutDmxToc03 => '3) RS-485 wiring — topology & cable';
 
   @override
   String get aboutDmxToc04 =>
-      '4) Terminaison & splitters — éviter les réflexions';
+      '4) Termination & splitters — avoiding reflections';
 
   @override
-  String get aboutDmxToc05 => '4bis) RDM — limites & compatibilités';
+  String get aboutDmxToc05 => '4b) RDM — limits & compatibility';
 
   @override
   String get aboutDmxToc06 => '5) Trorbleshooting terrain — symptoms → causes';
 
   @override
-  String get aboutDmxToc07 => '6) Art-Nand — repères terrain';
+  String get aboutDmxToc07 => '6) Art-Net — field notes';
 
   @override
-  String get aboutDmxToc08 => '7) sACN / E1.31 — multicast, IGMP, priorités';
+  String get aboutDmxToc08 => '7) sACN / E1.31 — multicast, IGMP, priorities';
 
   @override
   String get aboutDmxToc09 => '8) DMX vs Art-Nand vs sACN — choisir';
 
   @override
-  String get aboutDmxToc10 => '10) Quick checklist';
+  String get aboutDmxToc10 => '9) Field diagrams (DMX / IP / pinout)';
 
   @override
   String get aboutDmxToc11 => '10) Checklist rapide';
@@ -2145,13 +2132,14 @@ class AppLocalizationsEn extends AppLocalizations {
       '2) Connecteurs (Schuko / P17 / PowerCON)';
 
   @override
-  String get aboutElectriciteToc03 => '3) Mono / Tri (ce que ça change)';
+  String get aboutElectriciteToc03 =>
+      '3) Single-phase / Three-phase (what changes)';
 
   @override
   String get aboutElectriciteToc04 => '4) Table rapide (16A → 400A)';
 
   @override
-  String get aboutElectriciteToc05 => '5) Sécurité & pièges terrain';
+  String get aboutElectriciteToc05 => '5) Safety & field pitfalls';
 
   @override
   String get aboutElectriciteToc06 => '6) Checklist';
@@ -2166,24 +2154,25 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutInformatiqueToc02 => '2) Stockage (SATA / NVMe / SSD)';
 
   @override
-  String get aboutInformatiqueToc03 => '3) Liaisons vidéo (DP / HDMI)';
+  String get aboutInformatiqueToc03 => '3) Video links (DP / HDMI)';
 
   @override
-  String get aboutInformatiqueToc04 => '4) PCIe / GPU (repères)';
+  String get aboutInformatiqueToc04 => '4) PCIe / GPU (reference)';
 
   @override
   String get aboutInformatiqueToc05 => '5) Checklist (plateau)';
 
   @override
-  String get aboutIpBasicsToc01 => '1) C’est quoi une IP and à quoi ça sert ?';
+  String get aboutIpBasicsToc01 =>
+      '1) What is an IP address and what is it for?';
 
   @override
   String get aboutIpBasicsToc02 =>
-      '2) Why 192.x / 10.x / 172.x ? (addresses privées)';
+      '2) Why 192.x / 10.x / 172.x? (private addresses)';
 
   @override
   String get aboutIpBasicsToc03 =>
-      '3) Subnand mask & sors-nandworkx: comprendre porr de vrai';
+      '3) Subnet mask & networks: really understanding them';
 
   @override
   String get aboutIpBasicsToc04 => '4) DHCP, passerelle, DNS: qui fait quoi ?';
@@ -2194,15 +2183,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutIpBasicsToc06 =>
-      '6) Plans IP “show” simples (exemples prêts à copier)';
+      '6) Simple “show” IP plans (ready-to-copy examples)';
 
   @override
   String get aboutIpBasicsToc07 =>
-      '7) Trorbleshooting: symptoms → causes (méthode terrain)';
+      '7) Troubleshooting: symptoms → causes (field method)';
 
   @override
   String get aboutIpBasicsToc08 =>
-      '8) Mini-exercices (vérifier vite un masque / un nandwork)';
+      '8) Mini-exercises (quickly verify a mask / a network)';
 
   @override
   String get aboutIpBasicsToc09 => '9) Checklist rapide';
@@ -2217,7 +2206,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutNetworkToc02 => '2) Plan IP (simple)';
 
   @override
-  String get aboutNetworkToc03 => '3) VLAN (séparation)';
+  String get aboutNetworkToc03 => '3) VLAN (segmentation)';
 
   @override
   String get aboutNetworkToc04 => '4) IGMP (sACN multicast)';
@@ -2229,7 +2218,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutNetworkToc06 => '6) Switch: ce qu’il faut';
 
   @override
-  String get aboutNetworkToc07 => '7) Schémas';
+  String get aboutNetworkToc07 => '7) Diagrams';
 
   @override
   String get aboutNetworkToc08 => '7bis) Images (assands)';
@@ -2241,10 +2230,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutReseauTitle => 'Nandwork';
 
   @override
-  String get aboutReseauToc01 => '1) Bases nandwork (LAN / IP / débit)';
+  String get aboutReseauToc01 => '1) Network basics (LAN / IP / bandwidth)';
 
   @override
-  String get aboutReseauToc02 => '2) RJ45 & catégories (Cat5e/6/6A/…)';
+  String get aboutReseauToc02 => '2) RJ45 & categories (Cat5e/6/6A/…)';
 
   @override
   String get aboutReseauToc03 => '3) PoE (alimentation nandwork)';
@@ -2259,7 +2248,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutReseauToc06 => '6) Switches (VLAN / IGMP / QoS)';
 
   @override
-  String get aboutReseauToc07 => '7) Art-Nand / sACN sur nandwork (conseils)';
+  String get aboutReseauToc07 => '7) Art-Net / sACN on the network (tips)';
 
   @override
   String get aboutReseauToc08 => '8) Checklist';
@@ -2268,22 +2257,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutSacnToc01 => '1) À quoi sert sACN ?';
 
   @override
-  String get aboutSacnToc02 => '2) Universe (numérotation)';
+  String get aboutSacnToc02 => '2) Universes (numbering)';
 
   @override
   String get aboutSacnToc03 => '3) Multicast / Unicast + IGMP';
 
   @override
-  String get aboutSacnToc04 => '4) Priorités (multi-sorrces)';
+  String get aboutSacnToc04 => '4) Priorities (multi-source)';
 
   @override
   String get aboutSacnToc05 => '5) Limites / perfs';
 
   @override
-  String get aboutSacnToc06 => '6) RDM & sACN (proxy / selon matériel)';
+  String get aboutSacnToc06 => '6) RDM & sACN (proxy / hardware dependent)';
 
   @override
-  String get aboutSacnToc07 => '7) Schémas';
+  String get aboutSacnToc07 => '7) Diagrams';
 
   @override
   String get aboutSacnToc08 => '7bis) Images (assands)';
@@ -2292,7 +2281,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutSacnToc09 => '8) Checklist';
 
   @override
-  String get aboutVideoToc01 => '1) Bases vidéo (mots-clés)';
+  String get aboutVideoToc01 => '1) Video basics (keywords)';
 
   @override
   String get aboutVideoToc02 => '2) Resolution & FPS';
@@ -2304,7 +2293,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutVideoToc04 => '4) Sync (Genlock / Timecode)';
 
   @override
-  String get aboutVideoToc05 => '5) Câbles & distances';
+  String get aboutVideoToc05 => '5) Cables & distances';
 
   @override
   String get aboutVideoToc06 => '6) SDI (3G / 6G / 12G)';
@@ -2319,17 +2308,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutVideoToc09 => '9) Mapping / LED / multi-projo';
 
   @override
-  String get aboutVideoToc10 => '10) Field checklist';
+  String get aboutVideoToc10 => '10) Checklist terrain';
 
   @override
   String get aboutTileDmxTitle => 'DMX — fonctionnement (simple & compland)';
 
   @override
   String get aboutTileArtnetTitle =>
-      'Art-Nand — DMX sur IP (nodes, unicast/broadcast)';
+      'Art-Net — DMX over IP (nodes, unicast/broadcast)';
 
   @override
-  String get aboutTileSacnTitle => 'sACN / E1.31 — multicast, IGMP, priorités';
+  String get aboutTileSacnTitle => 'sACN / E1.31 — multicast, IGMP, priorities';
 
   @override
   String get aboutTileIpBasicsTitle =>
@@ -2337,11 +2326,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutTileReseauTitle =>
-      'Nandwork — RJ45 / Fibre / débits & longueurs';
+      'Network — RJ45 / Fiber / speeds & distances';
 
   @override
   String get aboutTileNetworkTitle =>
-      'Nandwork lumière — VLAN, IGMP, Wi-Fi vs filaire';
+      'Lighting network — VLAN, IGMP, Wi‑Fi vs wired';
 
   @override
   String get aboutTileVideoTitle => 'Video — SDI / NDI / IP (SRT/RTMP)';
@@ -2352,7 +2341,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutTileElectriciteSubtitle =>
-      'Connecteurs, mono/tri, tableaux kW rapides (16A→400A), pièges terrain.';
+      'Connectors, single/three-phase, quick kW tables (16A→400A), field pitfalls.';
 
   @override
   String get aboutTileInformatiqueTitle =>
@@ -2360,7 +2349,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutTileInformatiqueSubtitle =>
-      'Débits utiles, versions, limites réelles, pièges markanding.';
+      'Useful throughput, versions, real limits, marketing pitfalls.';
 
   @override
   String get aboutTitle => 'Abort';
@@ -2369,17 +2358,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeRiggingTitle => 'Rigging';
 
   @override
-  String get homeRiggingSubtitle => 'Bridles : angles & longueurs d’élingues.';
+  String get homeRiggingSubtitle => 'Bridles: sling angles & lengths.';
 
   @override
   String get riggingTitle => 'Rigging';
 
   @override
-  String get riggingAngleLengthTitle => 'Angle de bridle & longueur d’élingues';
+  String get riggingAngleLengthTitle => 'Bridle angle & sling lengths';
 
   @override
   String get riggingSymmetryNote =>
-      'Hypothèse : bridle symétrique (2 brins identiques). Aucun calcul de charge.';
+      'Assumption: symmetrical bridle (2 identical legs). No load calculation.';
 
   @override
   String get riggingInputsTitle => 'Inputs';
@@ -2406,52 +2395,53 @@ class AppLocalizationsEn extends AppLocalizations {
   String get riggingNeedPositiveValues => 'Positive values required.';
 
   @override
-  String get riggingLegLengthLabel => 'Longueur d’un brin';
+  String get riggingLegLengthLabel => 'Length of one leg';
 
   @override
   String get riggingAngleToHorizontalLabel =>
-      'Angle par rapport à l’horizontale';
+      'Angle relative to the horizontal';
 
   @override
-  String get riggingAngleToVerticalLabel => 'Angle par rapport à la verticale';
+  String get riggingAngleToVerticalLabel => 'Angle relative to the vertical';
 
   @override
   String get riggingDisclaimerShort =>
-      'Résultats indicatifs. À valider selon ton contexte et les pratiques rigging.';
+      'Indicative results. Validate according to your context and rigging practices.';
 
   @override
-  String get riggingCalcLegDropTitle => 'Longueur + flèche → portée';
+  String get riggingCalcLegDropTitle => 'Length + drop → span';
 
   @override
   String get riggingCalcLegDropHelp =>
-      'Élingue symétrique (2 brins) : calcule la portée à partir de la longueur d’élingue et de la flèche.';
+      'Symmetrical sling (2 legs): calculates the span from sling length and drop.';
 
   @override
-  String get riggingLegLengthInputLabel => 'Longueur d’un brin';
+  String get riggingLegLengthInputLabel => 'Length of one leg';
 
   @override
   String get riggingLegLengthInputHint => 'Ex: 2.50';
 
   @override
   String get riggingInvalidTriangle =>
-      'Impossible : la longueur doit être supérieure à la flèche.';
+      'Impossible: the length must be greater than the drop.';
 
   @override
-  String get riggingCalcLegAngleTitle => 'Longueur + angle → portée + flèche';
+  String get riggingCalcLegAngleTitle => 'Length + angle → span + drop';
 
   @override
   String get riggingCalcLegAngleHelp =>
-      'Élingue symétrique (2 brins) : calcule portée et flèche à partir de la longueur et de l’angle par rapport à l’horizontale.';
+      'Symmetrical sling (2 legs): calculates span and drop from the length and the angle relative to the horizontal.';
 
   @override
   String get riggingAngleHorizontalInputLabel =>
-      'Angle par rapport à l’horizontale';
+      'Angle relative to the horizontal';
 
   @override
   String get riggingAngleHorizontalInputHint => 'Ex: 30';
 
   @override
-  String get riggingInvalidAngle => 'Angle invalide : entre 0° et 90° (exclu).';
+  String get riggingInvalidAngle =>
+      'Invalid angle: between 0° and 90° (exclusive).';
 
   @override
   String get riggingUnitDegrees => '°';
@@ -2461,7 +2451,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get riggingCalc1Subtitle =>
-      'Bridle symétrique (2 brins identiques). Poids affiché (info). Aucun calcul de charge.';
+      'Symmetrical bridle (2 identical legs). Weight shown (info). No load calculation.';
 
   @override
   String get riggingCalc2Title => 'Calculation 2';
@@ -2483,37 +2473,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get riggingInvalidGeometry =>
-      'Géométrie impossible (longueur trop courte pour l’entraxe).';
+      'Impossible geometry (length too short for the span).';
 
   @override
   String get riggingSchemaTitle => 'Diagram';
 
   @override
   String get riggingSchemaCaption1 =>
-      'Entrées : portée + flèche. Sorties : longueur d’élingue + angles.';
+      'Inputs: span + drop. Outputs: sling length + angles.';
 
   @override
   String get riggingSchemaCaption2 =>
-      'Entrées : portée + longueur d’élingue. Sorties : flèche + angles.';
+      'Inputs: span + sling length. Outputs: drop + angles.';
 
   @override
   String get riggingSchemaCaption3 =>
-      'Entrées : portée + angle (horizontal). Sorties : flèche + longueur.';
+      'Inputs: span + angle (horizontal). Outputs: drop + length.';
 
   @override
-  String get riggingAngleHInputLabel => 'Angle (par rapport à l’horizontale)';
+  String get riggingAngleHInputLabel => 'Angle (relative to the horizontal)';
 
   @override
   String get riggingAngleHInputHint => 'Ex: 45';
 
   @override
-  String get riggingDropResultLabel => 'Flèche (drop)';
+  String get riggingDropResultLabel => 'Drop';
 
   @override
   String get riggingSchemaLabelSpan => 'Entraxe';
 
   @override
-  String get riggingSchemaLabelDrop => 'Flèche';
+  String get riggingSchemaLabelDrop => 'Drop';
 
   @override
   String get riggingSchemaLabelLeg => 'Brin';
@@ -2572,7 +2562,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get riggingLegLeftInputLabel => 'Left leg';
 
   @override
-  String get riggingNeedValidValues => 'Entrer des valeurs positives valides.';
+  String get riggingNeedValidValues => 'Enter valid positive values.';
 
   @override
   String get photometrySection4Title => 'Area & lumens';
@@ -2800,107 +2790,106 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutArtnetPageTitle =>
-      'Art-Net — DMX universes over IP (simple & complete)';
+      'Art-Net — univers DMX sur IP (simple & complet)';
 
   @override
-  String get aboutArtnetTocTitle => 'Table of contents';
+  String get aboutArtnetTocTitle => 'Sommaire';
 
   @override
-  String get aboutArtnetTocCopyTooltip => 'Copy notes';
+  String get aboutArtnetTocCopyTooltip => 'Copier repères';
 
   @override
-  String get aboutArtnetCopyLine1 => 'Art-Net = DMX over Ethernet via UDP.';
+  String get aboutArtnetCopyLine1 => 'Art-Net = DMX sur Ethernet via UDP.';
 
   @override
   String get aboutArtnetCopyLine2 =>
-      'Scale: many universes via distributed nodes (DMX-out).';
+      'Échelle: beaucoup d’univers via nodes (DMX-out) distribués.';
 
   @override
   String get aboutArtnetCopyLine3 =>
-      'Transport: broadcast (simple but floods) or unicast (cleaner).';
+      'Diffusion: broadcast (simple mais flood) ou unicast (plus propre).';
 
   @override
   String get aboutArtnetCopyLine4 =>
-      'Real limits: Wi-Fi, basic switch, node firmware, universe/mapping settings.';
+      'Limites réelles: Wi-Fi, switch basique, firmware nodes, réglages univers/mapping.';
 
   @override
   String get aboutArtnetCopyLine5 =>
-      'RDM: possible via “RDM proxy” depending on nodes (support varies).';
+      'RDM: possible via “RDM proxy” selon nodes (support variable).';
 
   @override
-  String get aboutArtnetSection1Title => '1) Art-Net — what it is and why';
+  String get aboutArtnetSection1Title => '1) Art-Net — c’est quoi et pourquoi';
 
   @override
   String get aboutArtnetSection2Title =>
-      '2) Addressing & universes — clean mapping';
+      '2) Adressage & univers — mapping propre';
 
   @override
   String get aboutArtnetSection3Title =>
-      '3) Limits & performance — what breaks first';
+      '3) Limites & perf — ce qui casse en premier';
 
   @override
   String get aboutArtnetSection4Title => '4) Nodes, splitters & RDM';
 
   @override
-  String get aboutArtnetSection5Title =>
-      '5) Troubleshooting — symptoms → causes';
+  String get aboutArtnetSection5Title => '5) Dépannage — symptômes → causes';
 
   @override
   String get aboutArtnetSection6Title =>
-      '6) Diagrams (network / unicast vs broadcast)';
+      '6) Schémas (réseau / unicast vs broadcast)';
 
   @override
   String get aboutArtnetSection6bTitle =>
-      '6b) Images (assets) — RJ45/switch/cables';
+      '6bis) Images (assets) — RJ45/switch/câbles';
 
   @override
-  String get aboutArtnetSection7Title => '7) Quick checklist';
+  String get aboutArtnetSection7Title => '7) Checklist rapide';
 
   @override
   String get aboutArtnetConversionTablesTitle =>
-      'Conversion / tables (Universe 1..256)';
+      'Conversion / tables (Univers 1..256)';
 
   @override
   String get aboutArtnetPillUdp => 'UDP';
 
   @override
-  String get aboutArtnetPillUniversIp => 'DMX universes over IP';
+  String get aboutArtnetPillUniversIp => 'Univers DMX sur IP';
 
   @override
-  String get aboutArtnetPillNodesDmxOut => 'DMX-out nodes';
+  String get aboutArtnetPillNodesDmxOut => 'Nodes DMX-out';
 
   @override
   String get aboutArtnetSection1Paragraph =>
-      'Art-Net carries DMX universes over an Ethernet (IP) network. Instead of running one DMX line per universe, you send packets over the network and a node converts them to DMX near the fixtures.';
+      'Art-Net transporte des univers DMX sur un réseau Ethernet (IP). Au lieu de tirer une ligne DMX par univers, tu envoies des “paquets” sur le réseau, et un node convertit en DMX près des machines.';
 
   @override
-  String get aboutArtnetSection1CalloutTitle => 'Why it is useful';
+  String get aboutArtnetSection1CalloutTitle => 'Pourquoi c’est utile';
 
   @override
   String get aboutArtnetSection1Bullet1 =>
-      'Scalable: many universes on a single network cable.';
+      'Scalable : beaucoup d’univers sur un seul câble réseau.';
 
   @override
   String get aboutArtnetSection1Bullet2 =>
-      'Distribution: nodes close to fixtures/dimmers → fewer long DMX runs.';
+      'Distribution : nodes proches des projecteurs/dimmers → moins de longues lignes DMX.';
 
   @override
   String get aboutArtnetSection1Bullet3 =>
-      'Flexible patching: changing a universe or moving a node is quick.';
+      'Patch flexible : changer un univers ou déplacer un node est rapide.';
 
   @override
-  String get aboutArtnetSection1Subtitle => 'Two things to remember';
+  String get aboutArtnetSection1Subtitle => 'Deux mots à retenir';
 
   @override
   String get aboutArtnetSection1SubBullet1 =>
-      'Art-Net does not replace DMX: it transports it over IP.';
+      'Art-Net ne remplace pas le DMX : il le transporte sur IP.';
 
   @override
   String get aboutArtnetSection1SubBullet2 =>
-      'Stability often depends more on the network (switch, Wi-Fi, broadcast) than on the protocol itself.';
+      'La stabilité dépend souvent plus du réseau (switch, Wi-Fi, broadcast) que du protocole.';
 
   @override
-  String get aboutArtnetSection2PillUniverse => 'Universe';
+  String get aboutArtnetSection2PillUniverse => 'Univers';
 
   @override
   String get aboutArtnetSection2PillNodePort => 'Node / Port';
@@ -2909,208 +2898,214 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutArtnetSection2PillMapping => 'Mapping';
 
   @override
-  String get aboutDmxPageTitle => 'DMX — operation (simple & complete)';
+  String get aboutDmxPageTitle => 'DMX — fonctionnement (simple & complet)';
 
   @override
   String get aboutDmxSummaryLine1 =>
-      'DMX = RS-485, 512 channels (slots) per universe, values 0–255 (8-bit).';
+      'DMX = RS-485, 512 canaux (slots) par univers, valeurs 0–255 (8-bit).';
 
   @override
   String get aboutDmxSummaryLine2 =>
-      'Timing: 250 kbaud, full universe ≈ ~44 Hz (order of magnitude).';
+      'Timing : 250 kbaud, univers plein ≈ ~44 Hz (ordre de grandeur).';
 
   @override
   String get aboutDmxSummaryLine3 =>
-      'Topology: daisy-chain (no passive Y). 120Ω termination on the last device.';
+      'Topologie : daisy-chain (pas de Y passif). Terminaison 120Ω sur le dernier.';
 
   @override
   String get aboutDmxSummaryLine4 =>
-      'RDM = bidirectional DMX (config/monitoring) → splitter/node compatibility must be checked.';
+      'RDM = DMX bidirectionnel (config/monitoring) → compatibilités splitters/nodes à vérifier.';
 
   @override
   String get aboutDmxSummaryLine5 =>
-      'Art-Net / sACN = DMX universes transported over Ethernet/IP via nodes.';
+      'Art-Net / sACN = univers DMX transportés sur Ethernet/IP via nodes.';
 
   @override
   String get aboutDmxSummaryLine6 =>
-      'sACN = multicast + priorities (IGMP snooping recommended).';
+      'sACN = multicast + priorités (IGMP snooping recommandé).';
 
   @override
-  String get aboutDmxToc1 => '1) DMX, universes, addresses — the basics';
+  String get aboutDmxToc1 => '1) DMX, univers, adresses — la base';
 
   @override
-  String get aboutDmxToc2 => '2) DMX frame — break, start code, channels';
+  String get aboutDmxToc2 => '2) Trame DMX — break, start code, canaux';
 
   @override
-  String get aboutDmxToc3 => '3) RS-485 cabling — topology & cable';
+  String get aboutDmxToc3 => '3) Câblage RS-485 — topologie & câble';
 
   @override
-  String get aboutDmxToc4 => '4) Termination & splitters — avoid reflections';
+  String get aboutDmxToc4 =>
+      '4) Terminaison & splitters — éviter les réflexions';
 
   @override
-  String get aboutDmxToc4bis => '4b) RDM — limits & compatibility';
+  String get aboutDmxToc4bis => '4bis) RDM — limites & compatibilités';
 
   @override
-  String get aboutDmxToc5 => '5) Field troubleshooting — symptoms → causes';
+  String get aboutDmxToc5 => '5) Dépannage terrain — symptômes → causes';
 
   @override
-  String get aboutDmxToc6 => '6) Art-Net — field notes';
+  String get aboutDmxToc6 => '6) Art-Net — repères terrain';
 
   @override
-  String get aboutDmxToc7 => '7) sACN / E1.31 — multicast, IGMP, priorities';
+  String get aboutDmxToc7 => '7) sACN / E1.31 — multicast, IGMP, priorités';
 
   @override
-  String get aboutDmxToc8 => '8) DMX vs Art-Net vs sACN — choosing';
+  String get aboutDmxToc8 => '8) DMX vs Art-Net vs sACN — choisir';
 
   @override
-  String get aboutDmxToc9 => '9) Field diagrams (DMX / IP / pinout)';
+  String get aboutDmxToc9 => '9) Schémas terrain (DMX / IP / pinout)';
 
   @override
-  String get aboutDmxChecklistCopyTitle => 'DMX — field checklist';
+  String get aboutDmxChecklistCopyTitle => 'DMX — Checklist terrain';
 
   @override
-  String get aboutDmxChecklistCopyTitle2 => 'Art-Net / sACN — field checklist';
+  String get aboutDmxChecklistCopyTitle2 =>
+      'Art-Net / sACN — Checklist terrain';
 
   @override
-  String get aboutDmxChecklistCopyB1 => 'Correct device mode (channel count)';
+  String get aboutDmxChecklistCopyB1 =>
+      'Mode appareil correct (nombre de canaux)';
 
   @override
-  String get aboutDmxChecklistCopyB2 => 'Correct DMX address (no overlap)';
+  String get aboutDmxChecklistCopyB2 =>
+      'Adresse DMX correcte (pas de chevauchement)';
 
   @override
-  String get aboutDmxChecklistCopyB3 => 'Daisy-chain (no passive Y)';
+  String get aboutDmxChecklistCopyB3 => 'Daisy-chain (pas de Y passif)';
 
   @override
-  String get aboutDmxChecklistCopyB4 => '120Ω termination on the last device';
+  String get aboutDmxChecklistCopyB4 =>
+      'Terminaison 120Ω sur le dernier appareil';
 
   @override
   String get aboutDmxChecklistCopyB5 =>
-      'DMX/RS-485 cable (120Ω twisted pair) if possible';
+      'Câble DMX/RS-485 (paire torsadée 120Ω) si possible';
 
   @override
-  String get aboutDmxChecklistCopyB6 => 'Opto splitter if several branches';
+  String get aboutDmxChecklistCopyB6 => 'Splitter opto si plusieurs branches';
 
   @override
   String get aboutDmxChecklistCopyB7 =>
-      'Keep DMX away from noisy sources (PSUs, dimmers) if possible';
+      'Éloigner DMX des sources parasites (alims, dimmers) si possible';
 
   @override
   String get aboutDmxChecklistCopyB8 =>
-      'If using RDM: check splitter/node compatibility + perfect cabling';
+      'Si RDM : vérifier compatibilité splitter/node + câblage impeccable';
 
   @override
-  String get aboutDmxChecklistCopyB9 =>
-      'Dedicated network if possible (or VLAN)';
+  String get aboutDmxChecklistCopyB9 => 'Réseau dédié si possible (ou VLAN)';
 
   @override
   String get aboutDmxChecklistCopyB10 =>
-      'Proper switch; IGMP snooping recommended (sACN multicast)';
+      'Switch correct ; IGMP snooping recommandé (sACN multicast)';
 
   @override
   String get aboutDmxChecklistCopyB11 =>
-      'Unicast (often) or controlled multicast (avoid flooding)';
+      'Unicast (souvent) ou multicast maîtrisé (éviter flood)';
 
   @override
-  String get aboutDmxChecklistCopyB12 =>
-      'Universe ↔ port/node mapping verified';
+  String get aboutDmxChecklistCopyB12 => 'Mapping univers ↔ ports/node vérifié';
 
   @override
   String get aboutDmxChecklistCopyB13 =>
-      'Clear IP plan (addresses, mask, DHCP vs static)';
+      'Plan IP clair (adresses, masque, DHCP vs statique)';
 
   @override
-  String get aboutDmxS1Title => '1) DMX, universes, addresses — the basics';
+  String get aboutDmxS1Title => '1) DMX, univers, adresses — la base';
 
   @override
-  String get aboutDmxS1Pill1 => '1 universe = 512 slots';
+  String get aboutDmxS1Pill1 => '1 univers = 512 slots';
 
   @override
   String get aboutDmxS1Pill2 => '0–255 (8-bit)';
 
   @override
-  String get aboutDmxS1Pill3 => '16-bit = 2 channels';
+  String get aboutDmxS1Pill3 => '16-bit = 2 canaux';
 
   @override
   String get aboutDmxS1Intro =>
-      'DMX512 is a control protocol widely used in live events (lighting, effects, dimmers). It is a serial stream (RS-485) that continuously sends a frame containing up to 512 values. Each value = one channel (0→255).';
+      'DMX512 est un protocole de contrôle très utilisé en spectacle (lumière, effets, dimmers). C’est un flux série (RS-485) qui envoie en boucle une “trame” contenant jusqu’à 512 valeurs. Chaque valeur = un canal (0→255).';
 
   @override
-  String get aboutDmxS1RememberTitle => 'Remember';
+  String get aboutDmxS1RememberTitle => 'À retenir';
 
   @override
   String get aboutDmxS1RememberB1 =>
-      '1 DMX universe = 512 channels (slots) numbered 1→512.';
+      '1 univers DMX = 512 canaux (slots) numérotés 1→512.';
 
   @override
   String get aboutDmxS1RememberB2 =>
-      'A fixture listens to a start address (e.g. 101) and uses N channels (depending on its mode).';
+      'Un appareil écoute une adresse de départ (ex : 101) et consomme N canaux (selon son mode).';
 
   @override
   String get aboutDmxS1RememberB3 =>
-      'The controller keeps sending continuously: if you stop transmitting, devices freeze (or go to fallback).';
+      'Le contrôleur renvoie tout en continu : si tu arrêtes d’émettre, les appareils “gèlent” (ou passent en fallback).';
 
   @override
-  String get aboutDmxS4bisTitle => '4b) RDM — limits & compatibility';
+  String get aboutDmxS4bisTitle => '4bis) RDM — limites & compatibilités';
 
   @override
-  String get aboutDmxS4bisPlaceholder => '... (keep your existing content)';
+  String get aboutDmxS4bisPlaceholder => '... (garde ton contenu existant)';
 
   @override
-  String get aboutDmxS9Title => '9) Field diagrams (DMX / IP / pinout)';
+  String get aboutDmxS9Title => '9) Schémas terrain (DMX / IP / pinout)';
 
   @override
-  String get aboutDmxS9Diagram1 => 'DMX timing (break / MAB / slots)';
+  String get aboutDmxS9Diagram1 => 'Timing DMX (break / MAB / slots)';
 
   @override
-  String get aboutDmxS9Diagram2 => 'DMX topology: daisy-chain';
+  String get aboutDmxS9Diagram2 => 'Topologie DMX : daisy-chain';
 
   @override
-  String get aboutDmxS9Diagram3 => '120Ω termination';
+  String get aboutDmxS9Diagram3 => 'Terminaison 120Ω';
 
   @override
-  String get aboutDmxS9Diagram4 => 'sACN multicast: IGMP reminder (network)';
+  String get aboutDmxS9Diagram4 => 'sACN multicast : rappel IGMP (réseau)';
 
   @override
   String get aboutDmxS9Diagram5 => 'IP → nodes → DMX (Art-Net / sACN)';
 
   @override
-  String get aboutDmxS9Diagram6 => 'XLR5 pinout (DMX)';
+  String get aboutDmxS9Diagram6 => 'Pinout XLR5 (DMX)';
 
   @override
-  String get aboutDmxS10Title => '10) Quick checklist';
+  String get aboutDmxS10Title => '10) Checklist rapide';
 
   @override
-  String get aboutDmxS10CopyTooltip => 'Copy checklist';
+  String get aboutDmxS10CopyTooltip => 'Copier la checklist';
 
   @override
-  String get aboutDmxS10CalloutTitle => 'Before panicking';
+  String get aboutDmxS10CalloutTitle => 'Avant de paniquer';
 
   @override
-  String get aboutDmxS10B1 => 'Device mode + DMX address (always check).';
+  String get aboutDmxS10B1 =>
+      'Mode appareil + adresse DMX (toujours vérifier).';
 
   @override
-  String get aboutDmxS10B2 => 'Short chain with a known-good cable to isolate.';
+  String get aboutDmxS10B2 =>
+      'Chaîne courte avec un câble “connu OK” pour isoler.';
 
   @override
-  String get aboutDmxS10B3 => 'Daisy-chain (no passive Y).';
+  String get aboutDmxS10B3 => 'Daisy-chain (pas de Y passif).';
 
   @override
-  String get aboutDmxS10B4 => '120Ω termination on the last device only.';
+  String get aboutDmxS10B4 =>
+      'Terminaison 120Ω sur le dernier appareil uniquement.';
 
   @override
-  String get aboutDmxS10B5 => 'Opto splitter if several branches.';
+  String get aboutDmxS10B5 => 'Splitter opto si plusieurs branches.';
 
   @override
   String get aboutDmxS10B6 =>
-      'If using RDM: splitter/node compatibility + impeccable cabling.';
+      'Si RDM : compat splitter/node + câblage impeccable.';
 
   @override
   String get aboutDmxS10B7 =>
-      'On IP (Art-Net/sACN): proper switch, IGMP for sACN multicast, unicast if unsure.';
+      'En IP (Art-Net/sACN) : switch correct, IGMP pour sACN multicast, unicast si doute.';
 
   @override
   String get aboutDmxFooterNote =>
-      'Indicative field information. Exact behavior may vary depending on consoles, nodes, switches and firmware.\nThe goal here is to understand and troubleshoot quickly with a reliable method.';
+      'Info indicative (terrain). Les comportements exacts peuvent varier selon consoles, nodes, switchs et firmwares.\nObjectif ici : comprendre et dépanner vite, avec une méthode fiable.';
 
   @override
   String get aboutDmxPainterBreak => 'BREAK';
@@ -3122,11 +3117,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutDmxPainterStartCode => 'Start\ncode';
 
   @override
-  String get aboutDmxPainterSlots => 'Slots 1…N\n(up to 512)';
+  String get aboutDmxPainterSlots => 'Slots 1…N\n(jusqu’à 512)';
 
   @override
   String get aboutDmxPainterRefresh =>
-      'Loop (refresh) — full universe ≈ ~44 Hz (order of magnitude)';
+      'Boucle (refresh) — univers plein ≈ ~44 Hz (ordre de grandeur)';
 
   @override
   String get aboutDmxPainterSourceA => 'SOURCE A\n(prio 100)';
@@ -3145,7 +3140,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutDmxPainterIgmpNote =>
-      'Without IGMP: flood\nWith IGMP: subscribers only';
+      'Sans IGMP : flood\nAvec IGMP : seulement ports abonnés';
 
   @override
   String get aboutDmxPainterConsole => 'CONSOLE';
@@ -3160,13 +3155,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutDmxPainterFix3 => 'FIX 3';
 
   @override
-  String get aboutElectricitePageTitle => 'Electrical — field reference';
+  String get aboutElectricitePageTitle => 'Électrique — repères terrain';
 
   @override
-  String get elecSection1Title => '1) Basics (W, A, V, kW)';
+  String get elecSection1Title => '1) Bases (W, A, V, kW)';
 
   @override
-  String get elecSection1FormulasTitle => '3 useful formulas';
+  String get elecSection1FormulasTitle => '3 formules utiles';
 
   @override
   String get elecSection1Formula1 => 'P (W) = U (V) × I (A)';
@@ -3178,98 +3173,100 @@ class AppLocalizationsEn extends AppLocalizations {
   String get elecSection1Formula3 => 'P (kW) = P (W) / 1000';
 
   @override
-  String get elecSection1FieldMarksTitle => 'Field reference';
+  String get elecSection1FieldMarksTitle => 'Repères terrain';
 
   @override
   String get elecSection1FieldMark1 =>
-      'Single-phase 230V: 16A ≈ 3.7 kW | 32A ≈ 7.4 kW | 63A ≈ 14.5 kW';
+      'Mono 230V : 16A ≈ 3,7 kW | 32A ≈ 7,4 kW | 63A ≈ 14,5 kW';
 
   @override
   String get elecSection1FieldMark2 =>
-      'Three-phase 400V: 16A ≈ 11 kW | 32A ≈ 22 kW | 63A ≈ 44 kW';
+      'Tri 400V : 16A ≈ 11 kW | 32A ≈ 22 kW | 63A ≈ 44 kW';
 
   @override
-  String get elecSection2Title => '2) Connectors (Schuko / P17 / PowerCON)';
+  String get elecSection2Title => '2) Connecteurs (Schuko / P17 / PowerCON)';
 
   @override
-  String get elecSection2SchukoTitle => 'Schuko (domestic sockets)';
+  String get elecSection2SchukoTitle => 'Schuko (prises domestiques)';
 
   @override
   String get elecSection2SchukoBullet1 =>
-      'Typically 16A max (≈ 3.7 kW at 230V).';
+      'Typiquement 16A max (≈ 3,7 kW à 230V).';
 
   @override
   String get elecSection2SchukoBullet2 =>
-      'Watch out for power strips and extension leads: overheating is possible.';
+      'Attention aux multiprises et rallonges : échauffement possible.';
 
   @override
-  String get elecSection2P17Title => 'P17 / CEE (blue/red)';
+  String get elecSection2P17Title => 'P17 / CEE (bleu/rouge)';
 
   @override
   String get elecSection2P17Bullet1 =>
-      'Blue: 230V single-phase (camping, small distro).';
+      'Bleu : 230V mono (camping, petit distro).';
 
   @override
   String get elecSection2P17Bullet2 =>
-      'Red: 400V three-phase (distro, high power).';
+      'Rouge : 400V tri (distro, grandes puissances).';
 
   @override
-  String get elecSection2PowerconTitle => 'PowerCON (audio/lighting)';
+  String get elecSection2PowerconTitle => 'PowerCON (audio/éclairage)';
 
   @override
   String get elecSection2PowerconBullet1 =>
-      'PowerCON TRUE1 = more field-friendly (locking, IP).';
+      'PowerCON TRUE1 = plus “terrain” (verrouillage, IP).';
 
   @override
   String get elecSection2PowerconBullet2 =>
-      'Check cable cross-section and protections.';
+      'Vérifie la section de câble et les protections.';
 
   @override
-  String get elecSection3Title => '3) Single / Three-phase (what changes)';
+  String get elecSection3Title => '3) Mono / Tri (ce que ça change)';
 
   @override
   String get elecSection3Paragraph =>
-      'Single-phase = one phase + neutral (230V). Three-phase = 3 phases (400V between phases).';
+      'Mono = une phase + neutre (230V). Tri = 3 phases (400V entre phases).';
 
   @override
-  String get elecSection3PitfallsTitle => 'Common pitfalls';
+  String get elecSection3PitfallsTitle => 'Pièges fréquents';
 
   @override
-  String get elecSection3Pitfall1 => 'Phase imbalance (one phase overloads).';
+  String get elecSection3Pitfall1 =>
+      'Déséquilibre des phases (une phase surcharge).';
 
   @override
   String get elecSection3Pitfall2 =>
-      'Neutral heating up with strong harmonics (LED, dimmers).';
+      'Neutre qui chauffe si grosses harmoniques (LED, dimmers).';
 
   @override
-  String get elecSection3Pitfall3 => 'Missing/doubtful earth on some sites.';
+  String get elecSection3Pitfall3 =>
+      'Terre absente/douteuse sur certains sites.';
 
   @override
-  String get elecSection3MethodTitle => 'Simple method';
+  String get elecSection3MethodTitle => 'Méthode simple';
 
   @override
-  String get elecSection3MethodBullet1 => 'Spread heavy loads across L1/L2/L3.';
+  String get elecSection3MethodBullet1 =>
+      'Répartis les grosses charges sur L1/L2/L3.';
 
   @override
   String get elecSection3MethodBullet2 =>
-      'Monitor the neutral if using many LED loads.';
+      'Surveille le neutre si beaucoup de LED.';
 
   @override
-  String get elecSection3MethodBullet3 =>
-      'Measure with a clamp meter if possible.';
+  String get elecSection3MethodBullet3 => 'Mesure au clamp si possible.';
 
   @override
-  String get elecSection4Title => '4) Quick table (16A → 400A)';
+  String get elecSection4Title => '4) Table rapide (16A → 400A)';
 
   @override
-  String get elecSection4MonoTitle => 'Single-phase 230V (≈ U×I)';
+  String get elecSection4MonoTitle => 'Mono 230V (≈ U×I)';
 
   @override
   String get elecSection4MonoCode =>
-      '16A ≈ 3.7 kW\n32A ≈ 7.4 kW\n63A ≈ 14.5 kW\n125A ≈ 28.8 kW\n200A ≈ 46 kW\n';
+      '16A ≈ 3,7 kW\n32A ≈ 7,4 kW\n63A ≈ 14,5 kW\n125A ≈ 28,8 kW\n200A ≈ 46 kW\n';
 
   @override
-  String get elecSection4TriTitle => 'Three-phase 400V (≈ √3×U×I)';
+  String get elecSection4TriTitle => 'Tri 400V (≈ √3×U×I)';
 
   @override
   String get elecSection4TriCode =>
@@ -3280,841 +3277,849 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get elecSection4ImportantBullet1 =>
-      'These are approximate values (power factor, harmonics, losses).';
+      'Ce sont des ordres de grandeur (cosφ, harmoniques, pertes).';
 
   @override
   String get elecSection4ImportantBullet2 =>
-      'Always validate protections + cable sizes + temperature.';
+      'Toujours valider protections + sections + température.';
 
   @override
-  String get elecSection5Title => '6) Safety & field pitfalls';
+  String get elecSection5Title => '6) Sécurité & pièges terrain';
 
   @override
-  String get elecSection5DontDoTitle => 'Do not do this';
+  String get elecSection5DontDoTitle => 'À ne pas faire';
 
   @override
   String get elecSection5DontDoBullet1 =>
-      'Daisy-chain power strips / extensions randomly.';
+      'Chainer multiprises / rallonges en vrac.';
 
   @override
-  String get elecSection5DontDoBullet2 =>
-      'Mix phases without knowing exactly what you are doing.';
+  String get elecSection5DontDoBullet2 => 'Mélanger des phases sans savoir.';
 
   @override
-  String get elecSection5DontDoBullet3 => '“Bridge” a doubtful earth.';
+  String get elecSection5DontDoBullet3 => '“Bridger” une terre douteuse.';
 
   @override
-  String get elecSection5WarningTitle => 'Warning signs';
+  String get elecSection5WarningTitle => 'Signaux d’alerte';
 
   @override
   String get elecSection5WarningBullet1 =>
-      'Hot smell, warm sockets, repeated trips.';
+      'Odeur de chaud, prises tièdes, déclenchements répétés.';
 
   @override
-  String get elecSection5WarningBullet2 => 'Voltage drop (brown-out).';
+  String get elecSection5WarningBullet2 => 'Tension qui chute (brown-out).';
 
   @override
-  String get elecSection5WarningBullet3 => '“Tired” or unsuitable breaker.';
+  String get elecSection5WarningBullet3 => 'Disjoncteur “fatigué” ou inadapté.';
 
   @override
   String get elecSection6Title => '6) Checklist';
 
   @override
-  String get elecSection6QuickTitle => 'Quick';
+  String get elecSection6QuickTitle => 'Rapide';
 
   @override
   String get elecSection6Bullet1 =>
-      'Available supply type (single/three-phase) + rating (A).';
+      'Type d’alim dispo (mono/tri) + calibre (A).';
 
   @override
-  String get elecSection6Bullet2 => 'Phase distribution (main loads).';
+  String get elecSection6Bullet2 => 'Répartition phases (charges principales).';
 
   @override
   String get elecSection6Bullet3 =>
-      'Protections (RCD/breaker) and panel condition.';
+      'Protections (diff/disj) et état du tableau.';
 
   @override
   String get elecSection6Bullet4 =>
-      'Cables: cross-section / length / overheating.';
+      'Câbles : section / longueur / échauffement.';
 
   @override
-  String get elecSection6Bullet5 => 'Earth: OK? (tester if possible).';
+  String get elecSection6Bullet5 => 'Terre : OK ? (testeur si possible).';
 
   @override
   String get elecFooterNote =>
-      'Note: this content is a field memo. On a real site, always follow standards, venue requirements, and installed protections.';
+      'Note : ce contenu est un aide-mémoire terrain. Sur un site réel, respecte toujours les normes, les prescriptions du lieu et les protections en place.';
 
   @override
-  String get infoPageTitle => 'Computing — field reference';
+  String get infoPageTitle => 'Informatique — repères terrain';
 
   @override
   String get infoUsbTitle => '1) USB / USB-C / Thunderbolt';
 
   @override
-  String get infoStorageTitle => '2) Storage (SATA / NVMe / SSD)';
+  String get infoStorageTitle => '2) Stockage (SATA / NVMe / SSD)';
 
   @override
-  String get infoVideoLinksTitle => '3) Video links (DP / HDMI)';
+  String get infoVideoLinksTitle => '3) Liaisons vidéo (DP / HDMI)';
 
   @override
-  String get infoPcieGpuTitle => '4) PCIe / GPU (reference)';
+  String get infoPcieGpuTitle => '4) PCIe / GPU (repères)';
 
   @override
-  String get infoChecklistTitle => '5) Checklist (stage)';
+  String get infoChecklistTitle => '5) Checklist (plateau)';
 
   @override
   String get infoSummaryCopy =>
-      'INFO — field reference\n• USB-C = shape, not speed: check the standard.\n• NVMe (M.2) is much faster than SATA.\n• DisplayPort/HDMI = standards, watch versions/cables.\n• On video servers: storage + GPU + bandwidth are the base.';
+      'INFO — repères terrain\n• USB-C = forme, pas vitesse : vérifier la norme.\n• NVMe (M.2) bien plus rapide que SATA.\n• DisplayPort/HDMI = standards, attention versions/câbles.\n• Sur serveurs vidéo : stockage + GPU + débit sont la base.';
 
   @override
   String get infoChecklistCopy =>
-      'INFO — Checklist\n☐ Certified USB-C cables (data/video if needed)\n☐ Suitable storage (NVMe for heavy media)\n☐ Stable GPU drivers (known version)\n☐ Real resolution/FPS test\n☐ Avoid cheap adapters';
+      'INFO — Checklist\n☐ Câbles USB-C certifiés (data/vidéo si besoin)\n☐ Stockage adapté (NVMe si gros flux)\n☐ Drivers GPU stables (version connue)\n☐ Test résolution/FPS réels\n☐ Éviter adaptateurs cheap';
 
   @override
-  String get infoUsbCriticalTitle => 'Critical point';
+  String get infoUsbCriticalTitle => 'Point critique';
 
   @override
   String get infoUsbCriticalBullet1 =>
-      'USB-C = connector (shape). It does not indicate speed.';
+      'USB-C = connecteur (forme). Ça ne dit pas la vitesse.';
 
   @override
   String get infoUsbCriticalBullet2 =>
-      'A USB-C cable can be “charge only” and not carry data/video.';
+      'Un câble USB-C peut être “charge only” et ne pas passer la data/vidéo.';
 
   @override
-  String get infoUsbSpeedTitle =>
-      'Speed reference points (rough order of magnitude)';
+  String get infoUsbSpeedTitle => 'Repères vitesses (ordre de grandeur)';
 
   @override
   String get infoUsbSpeedBullet1 =>
-      'USB 2.0: slow (keyboards, dongles, small peripherals).';
+      'USB 2.0 : lent (claviers, dongles, petits périph).';
 
   @override
   String get infoUsbSpeedBullet2 =>
-      'USB 3.x: much faster (drives, interfaces).';
+      'USB 3.x : beaucoup plus rapide (disques, interfaces).';
 
   @override
   String get infoUsbSpeedBullet3 =>
-      'USB4 / Thunderbolt: very high bandwidth (dock, eGPU, video depending on hardware).';
+      'USB4 / Thunderbolt : très haut débit (dock, eGPU, vidéo selon matériel).';
 
   @override
   String get infoUsbParagraph =>
-      'In show conditions: if a peripheral misbehaves, suspect the cable (quality/standard) before the device.';
+      'En show : si un périphérique “déconne”, suspecte le câble (qualité/standard) avant le device.';
 
   @override
   String get infoStorageSataNvmeTitle => 'SATA vs NVMe';
 
   @override
   String get infoStorageSataNvmeBullet1 =>
-      'SATA SSD: good and stable, but limited (older interface).';
+      'SSD SATA : bon et stable, mais limité (interface ancienne).';
 
   @override
   String get infoStorageSataNvmeBullet2 =>
-      'NVMe SSD (M.2): much faster (ideal for media servers, large files).';
+      'SSD NVMe (M.2) : bien plus rapide (idéal pour serveurs média, gros fichiers).';
 
   @override
-  String get infoStorageFieldTitle => 'Video field use';
+  String get infoStorageFieldTitle => 'Terrain vidéo';
 
   @override
   String get infoStorageFieldBullet1 =>
-      'Playback of large 4K/ProRes files → NVMe recommended.';
+      'Lecture de gros fichiers 4K/ProRes → NVMe recommandé.';
 
   @override
   String get infoStorageFieldBullet2 =>
-      'Watch temperature: an NVMe can throttle (slow down) if it gets hot.';
+      'Attention à la température : un NVMe peut throttler (ralentir) si ça chauffe.';
 
   @override
   String get infoStorageFieldBullet3 =>
-      'Always test under real conditions before the show.';
+      'Toujours tester en conditions réelles avant le show.';
 
   @override
-  String get infoVideoLinksImportantTitle => 'Important point';
+  String get infoVideoLinksImportantTitle => 'Repère important';
 
   @override
   String get infoVideoLinksImportantBullet1 =>
-      'Versions matter: cable + port + device must all be compatible.';
+      'Les versions comptent : câble + port + device doivent être compatibles.';
 
   @override
   String get infoVideoLinksImportantBullet2 =>
-      'Long distance = active converters / fiber often required.';
+      'Longue distance = convertisseurs actifs / fibre souvent nécessaires.';
 
   @override
-  String get infoVideoLinksCompareTitle => 'DP vs HDMI (very simplified)';
+  String get infoVideoLinksCompareTitle => 'DP vs HDMI (très simplifié)';
 
   @override
   String get infoVideoLinksCompareBullet1 =>
-      'HDMI: everywhere (TVs, processors), but EDID/HDCP can get in the way.';
+      'HDMI : omniprésent (TV, processors), mais EDID/HDCP peuvent gêner.';
 
   @override
   String get infoVideoLinksCompareBullet2 =>
-      'DisplayPort: very common on PCs, often very capable in bandwidth.';
+      'DisplayPort : très courant PC, souvent très “capable” en débit.';
 
   @override
   String get infoPcieGpuParagraph =>
-      'For video servers / mapping: GPU + bus + drivers = stability. Typical issues: drivers, cables, conversion, and output limitations.';
+      'Pour les serveurs vidéo / mapping : GPU + bus + drivers = stabilité. Les problèmes typiques : drivers, câbles, conversion, et limitations de sorties.';
 
   @override
-  String get infoPcieGpuFieldTitle => 'Field';
+  String get infoPcieGpuFieldTitle => 'Terrain';
 
   @override
   String get infoPcieGpuFieldBullet1 =>
-      'Lock a stable driver version before a major show.';
+      'Bloquer une version de driver stable avant un gros show.';
 
   @override
-  String get infoPcieGpuFieldBullet2 => 'Avoid cheap adapters.';
+  String get infoPcieGpuFieldBullet2 => 'Éviter les adaptateurs “cheap”.';
 
   @override
-  String get infoPcieGpuFieldBullet3 => 'Test at the real show resolution/FPS.';
+  String get infoPcieGpuFieldBullet3 =>
+      'Tester à la résolution/FPS réels du show.';
 
   @override
-  String get infoChecklistQuickTitle => 'Quick';
+  String get infoChecklistQuickTitle => 'Rapide';
 
   @override
-  String get infoChecklistBullet1 => 'Correct cable/standard.';
+  String get infoChecklistBullet1 => 'Câble/standard correct.';
 
   @override
-  String get infoChecklistBullet2 => 'Storage suited to the media flow.';
+  String get infoChecklistBullet2 => 'Stockage adapté au flux.';
 
   @override
-  String get infoChecklistBullet3 => 'Stable drivers.';
+  String get infoChecklistBullet3 => 'Drivers stables.';
 
   @override
-  String get infoChecklistBullet4 => 'Real-world test before show.';
+  String get infoChecklistBullet4 => 'Test réel avant show.';
 
   @override
-  String get infoChecklistBullet5 => 'Avoid cheap adapters.';
+  String get infoChecklistBullet5 => 'Éviter adaptateurs cheap.';
 
   @override
   String get infoFooterNote =>
-      'Indicative field information. Exact capabilities vary depending on hardware/versions.\nGoal: simple reference points + reliable method.';
+      'Info indicative (terrain). Les capacités exactes varient selon matériel/versions.\nObjectif : repères simples + méthode fiable.';
 
   @override
   String get ipBasicsPageTitle =>
-      'Network — IP basics / mask / DHCP (essential)';
+      'Réseau — bases IP / masque / DHCP (essentiel)';
 
   @override
-  String get ipBasicsCopyMemoTooltip => 'Copy memo';
+  String get ipBasicsCopyMemoTooltip => 'Copier mémo';
 
   @override
-  String get ipBasicsCopyChecklistTooltip => 'Copy checklist';
+  String get ipBasicsCopyChecklistTooltip => 'Copier la checklist';
 
   @override
   String get ipBasicsMemo1 =>
-      'IP = logical address used to reach a device on a network.';
+      'IP = adresse logique pour joindre un appareil sur un réseau.';
 
   @override
   String get ipBasicsMemo2 =>
-      'Private (LAN): 10.x.x.x, 172.16–31.x.x, 192.168.x.x (not routed on the Internet).';
+      'Privé (LAN) : 10.x.x.x, 172.16–31.x.x, 192.168.x.x (non routés sur Internet).';
 
   @override
   String get ipBasicsMemo3 =>
-      'Mask / subnet = tells which part is “network” vs “host”.';
+      'Masque / sous-réseau = dit quelle partie est “réseau” vs “machine”.';
 
   @override
   String get ipBasicsMemo4 =>
-      'Same subnet = direct communication. Otherwise → gateway (router).';
+      'Même sous-réseau = communication directe. Sinon → passerelle (routeur).';
 
   @override
   String get ipBasicsMemo5 =>
-      'DHCP assigns IP automatically; static = useful for nodes/console.';
+      'DHCP attribue IP automatiquement; statique = utile pour nodes/console.';
 
   @override
-  String get ipBasicsToc1 => '1) What is an IP address and what is it for?';
+  String get ipBasicsToc1 => '1) C’est quoi une IP et à quoi ça sert ?';
 
   @override
-  String get ipBasicsToc2 => '2) Why 192.x / 10.x / 172.x? (private addresses)';
+  String get ipBasicsToc2 =>
+      '2) Pourquoi 192.x / 10.x / 172.x ? (adresses privées)';
 
   @override
-  String get ipBasicsToc3 => '3) Mask & subnets: really understanding them';
+  String get ipBasicsToc3 =>
+      '3) Masque & sous-réseaux : comprendre pour de vrai';
 
   @override
-  String get ipBasicsToc4 => '4) DHCP, gateway, DNS: who does what?';
+  String get ipBasicsToc4 => '4) DHCP, passerelle, DNS : qui fait quoi ?';
 
   @override
-  String get ipBasicsToc5 => '5) How two devices talk (LAN vs outside LAN)';
+  String get ipBasicsToc5 =>
+      '5) Comment deux appareils se parlent (LAN vs hors LAN)';
 
   @override
   String get ipBasicsToc6 =>
-      '6) Simple “show” IP plans (ready-to-copy examples)';
+      '6) Plans IP “show” simples (exemples prêts à copier)';
 
   @override
   String get ipBasicsToc7 =>
-      '7) Troubleshooting: symptoms → causes (field method)';
+      '7) Dépannage : symptômes → causes (méthode terrain)';
 
   @override
   String get ipBasicsToc8 =>
-      '8) Mini exercises (quickly verify a mask / a network)';
+      '8) Mini-exercices (vérifier vite un masque / un réseau)';
 
   @override
-  String get ipBasicsToc9 => '9) Quick checklist';
+  String get ipBasicsToc9 => '9) Checklist rapide';
 
   @override
   String get ipBasicsSection1Paragraph =>
-      'An IP address (IPv4) is a logical identifier on a network. It tells the network: “send this packet to this device”.\n\nWhen you connect a console, an Art-Net/sACN node, a PC, a managed switch… everything that talks on the network must have a coherent IP so devices can find each other.';
+      'Une adresse IP (IPv4) est un identifiant logique sur un réseau. Elle permet de dire : “envoie ce paquet à cet appareil”.\n\nQuand tu branches une console, un node Art-Net/sACN, un PC, un switch géré… tout ce qui parle en réseau doit avoir une IP cohérente pour que les appareils se trouvent.';
 
   @override
-  String get ipBasicsSection1CalloutTitle => 'Mental picture';
+  String get ipBasicsSection1CalloutTitle => 'Image mentale';
 
   @override
   String get ipBasicsSection1Bullet1 =>
-      'MAC = hardware identifier (network card).';
+      'MAC = identifiant matériel (carte réseau).';
 
   @override
   String get ipBasicsSection1Bullet2 =>
-      'IP = “postal address” on a network (changeable).';
+      'IP = adresse “postale” sur un réseau (changeable).';
 
   @override
   String get ipBasicsSection1Bullet3 =>
-      'Mask = “district / ZIP code” (defines the subnet).';
+      'Masque = “quartier / code postal” (délimite le sous-réseau).';
 
   @override
   String get ipBasicsSection1Bullet4 =>
-      'Gateway = “way out of the district” (router).';
+      'Passerelle = “sortie du quartier” (routeur).';
 
   @override
-  String get ipBasicsSection1Subtitle => 'IPv4 in 10 seconds';
+  String get ipBasicsSection1Subtitle => 'IPv4 en 10 secondes';
 
   @override
   String get ipBasicsSection1SubBullet1 =>
-      'Format: A.B.C.D (4 numbers from 0 to 255).';
+      'Format : A.B.C.D (4 nombres de 0 à 255).';
 
   @override
-  String get ipBasicsSection1SubBullet2 => 'Ex: 192.168.0.50';
+  String get ipBasicsSection1SubBullet2 => 'Ex : 192.168.0.50';
 
   @override
   String get ipBasicsSection1SubBullet3 =>
-      'It is not magic: these are 32 bits (4 octets).';
+      'Ce n’est pas magique : ce sont 32 bits (4 octets).';
 
   @override
   String get ipBasicsSection1SubBullet4 =>
-      'What matters for you: IP + mask must be coherent between devices.';
+      'Ce qui compte pour toi : IP + masque doivent être cohérents entre appareils.';
 
   @override
   String get ipBasicsSection2Paragraph =>
-      'Some IPv4 address ranges are reserved for private networks (LAN). They are not routed on the Internet. That is why we use them in show environments: you can build your local network without “using up” public IP addresses.';
+      'Certaines plages d’adresses IPv4 sont réservées aux réseaux privés (LAN). Elles ne sont pas routées sur Internet. C’est pour ça qu’on les utilise en show : tu peux faire ton réseau local sans “consommer” des IP publiques.';
 
   @override
-  String get ipBasicsSection2CalloutTitle => 'The 3 main private ranges (LAN)';
+  String get ipBasicsSection2CalloutTitle =>
+      'Les 3 grandes plages privées (LAN)';
 
   @override
   String get ipBasicsSection2Bullet1 =>
-      '10.0.0.0 → 10.255.255.255 (often written “10.x.x.x”)';
+      '10.0.0.0 → 10.255.255.255 (souvent écrit “10.x.x.x”)';
 
   @override
   String get ipBasicsSection2Bullet2 =>
-      '172.16.0.0 → 172.31.255.255 (often “172.16–31.x.x”)';
+      '172.16.0.0 → 172.31.255.255 (souvent “172.16–31.x.x”)';
 
   @override
   String get ipBasicsSection2Bullet3 =>
-      '192.168.0.0 → 192.168.255.255 (often “192.168.x.x”)';
+      '192.168.0.0 → 192.168.255.255 (souvent “192.168.x.x”)';
 
   @override
-  String get ipBasicsSection2Subtitle1 => 'Why do we often see 192.168.x.x?';
+  String get ipBasicsSection2Subtitle1 =>
+      'Pourquoi on voit souvent 192.168.x.x ?';
 
   @override
   String get ipBasicsSection2SubBullet1 =>
-      'Consumer routers/boxes often use 192.168.0.x or 192.168.1.x.';
+      'Les box/routeurs grand public utilisent souvent 192.168.0.x ou 192.168.1.x.';
 
   @override
   String get ipBasicsSection2SubBullet2 =>
-      'It has become a de facto standard for small LANs.';
+      'C’est devenu un “standard de fait” en petits LAN.';
 
   @override
   String get ipBasicsSection2SubBullet3 =>
-      'But in show setups, 10.x.x.x is practical if you want many addresses or several VLANs.';
+      'Mais en show, 10.x.x.x est pratique si tu veux beaucoup d’adresses ou plusieurs VLAN.';
 
   @override
-  String get ipBasicsSection2Subtitle2 => 'And the famous 2.x.x.x (Art-Net)?';
+  String get ipBasicsSection2Subtitle2 => 'Et le fameux 2.x.x.x (Art-Net) ?';
 
   @override
   String get ipBasicsSection2SubBullet4 =>
-      'A lot of Art-Net hardware ships with a 2.x.x.x IP by default (closed network).';
+      'Beaucoup de matériel Art-Net sort d’usine avec une IP en 2.x.x.x (réseau fermé).';
 
   @override
   String get ipBasicsSection2SubBullet5 =>
-      'This is convenient in plug&play mode (without DHCP), but surprising if your PC is on 192.168.x.x.';
+      'C’est “pratique” en plug&play (sans DHCP), mais ça surprend si ton PC est en 192.168.x.x.';
 
   @override
   String get ipBasicsSection2SubBullet6 =>
-      'Important: “2.x” itself is not magic for broadcast/unicast.';
+      'Important : le “2.x” n’a rien de magique pour le broadcast/unicast.';
 
   @override
   String get ipBasicsSection2SubBullet7 =>
-      'What changes the broadcast scope is the mask (often /8 = 255.0.0.0 in legacy mode).';
+      'Ce qui change le périmètre du broadcast, c’est le masque (souvent /8 = 255.0.0.0 en legacy).';
 
   @override
   String get ipBasicsSection2SubBullet8 =>
-      'Example: network 2.0.0.0/8 → broadcast = 2.255.255.255 (very wide).';
+      'Exemple : réseau 2.0.0.0/8 → broadcast = 2.255.255.255 (très large).';
 
   @override
   String get ipBasicsSection2SubBullet9 =>
-      'Simple fix: put PC/console in the same range + same mask, or reconfigure the node to a 192/10 plan.';
+      'Solution simple : mettre PC/console dans la même plage + même masque, ou reconfigurer le node sur un plan 192/10.';
 
   @override
   String get ipBasicsSection3Paragraph =>
-      'The mask (subnet mask) tells which addresses are “in the same network”. Without a mask, an IP address does not mean much.\n\nField rule: if two devices are in the same subnet, they talk directly. Otherwise, they need a gateway (router).';
+      'Le masque (subnet mask) dit quelles adresses sont “dans le même réseau”. Sans masque, une IP ne veut pas dire grand-chose.\n\nRègle terrain : si deux appareils sont dans le même sous-réseau, ils se parlent directement. Sinon, ils ont besoin d’une passerelle (routeur).';
 
   @override
-  String get ipBasicsSection3Callout1Title => 'Most common masks';
+  String get ipBasicsSection3Callout1Title => 'Masques les plus courants';
 
   @override
   String get ipBasicsSection3Bullet1 =>
-      '255.0.0.0 ( /8 )   → typical “large” 10.x.x.x network';
+      '255.0.0.0 ( /8 )   → réseau 10.x.x.x typique “large”';
 
   @override
   String get ipBasicsSection3Bullet2 =>
-      '255.255.0.0 ( /16 ) → “large” 10.10.x.x or 192.168.x.x network';
+      '255.255.0.0 ( /16 ) → réseau 10.10.x.x ou 192.168.x.x “large”';
 
   @override
   String get ipBasicsSection3Bullet3 =>
-      '255.255.255.0 ( /24 ) → classic 192.168.0.x network (254 devices)';
+      '255.255.255.0 ( /24 ) → réseau 192.168.0.x “classique” (254 appareils)';
 
   @override
   String get ipBasicsSection3Callout2Title =>
-      'Mask → broadcast address (very useful to understand)';
+      'Masque → adresse de broadcast (très utile à comprendre)';
 
   @override
   String get ipBasicsSection3Bullet4 =>
-      'Broadcast depends on the subnet, therefore on the mask (not on “2 vs 192”).';
+      'Le broadcast dépend du sous-réseau, donc du masque (pas de “2 vs 192”).';
 
   @override
   String get ipBasicsSection3Bullet5 =>
-      '192.168.10.0/24 → broadcast = 192.168.10.255 (small network).';
+      '192.168.10.0/24 → broadcast = 192.168.10.255 (petit réseau).';
 
   @override
   String get ipBasicsSection3Bullet6 =>
-      '2.0.0.0/8 (255.0.0.0) → broadcast = 2.255.255.255 (huge network).';
+      '2.0.0.0/8 (255.0.0.0) → broadcast = 2.255.255.255 (réseau énorme).';
 
   @override
   String get ipBasicsSection3Bullet7 =>
-      'The “bigger” the network, the noisier a broadcast can be (if you use it often).';
+      'Plus le réseau est “grand”, plus un broadcast peut faire du bruit (si tu l’utilises souvent).';
 
   @override
-  String get ipBasicsSection3Subtitle1 => 'Concrete example (most useful): /24';
+  String get ipBasicsSection3Subtitle1 =>
+      'Exemple concret (le plus utile) : /24';
 
   @override
-  String get ipBasicsSection3SubBullet1 => 'IP: 192.168.0.50';
+  String get ipBasicsSection3SubBullet1 => 'IP : 192.168.0.50';
 
   @override
-  String get ipBasicsSection3SubBullet2 => 'Mask: 255.255.255.0 ( /24 )';
+  String get ipBasicsSection3SubBullet2 => 'Masque : 255.255.255.0 ( /24 )';
 
   @override
-  String get ipBasicsSection3SubBullet3 => 'Network: 192.168.0.0';
+  String get ipBasicsSection3SubBullet3 => 'Réseau : 192.168.0.0';
 
   @override
   String get ipBasicsSection3SubBullet4 =>
-      'Devices “in the same network”: 192.168.0.1 → 192.168.0.254';
+      'Appareils “dans le même réseau” : 192.168.0.1 → 192.168.0.254';
 
   @override
   String get ipBasicsSection3SubBullet5 =>
-      'If you move to 192.168.1.50 → it is NO LONGER the same network.';
+      'Si tu passes en 192.168.1.50 → ce n’est PLUS le même réseau.';
 
   @override
-  String get ipBasicsSection3Subtitle2 => 'Why create subnets?';
+  String get ipBasicsSection3Subtitle2 => 'Pourquoi faire des sous-réseaux ?';
 
   @override
   String get ipBasicsSection3SubBullet6 =>
-      'Organization: separate “lighting”, “video”, “intercom”, “internet”…';
+      'Organisation : séparer “lumière”, “vidéo”, “intercom”, “internet”…';
 
   @override
   String get ipBasicsSection3SubBullet7 =>
-      'Performance: limit noise (broadcast/multicast) to one group.';
+      'Performance : limiter le bruit (broadcast/multicast) à un groupe.';
 
   @override
   String get ipBasicsSection3SubBullet8 =>
-      'Security: prevent a guest PC from seeing/disturbing the show network.';
+      'Sécurité : éviter qu’un PC “invité” voie/perturbe le réseau show.';
 
   @override
   String get ipBasicsSection3SubBullet9 =>
-      'Diagnostics: easier to know “where” a device is.';
+      'Diagnostic : plus simple de savoir “où” est un appareil.';
 
   @override
-  String get ipBasicsSection3Callout3Title => 'Classic trap';
+  String get ipBasicsSection3Callout3Title => 'Piège classique';
 
   @override
   String get ipBasicsSection3Bullet8 =>
-      'Same IP “beginning” ≠ same network if the mask is not identical.';
+      'Même “début” d’IP ≠ même réseau si le masque n’est pas identique.';
 
   @override
   String get ipBasicsSection3Bullet9 =>
-      'Ex: 10.0.0.5/8 and 10.0.0.200/24 → not the same logical scope.';
+      'Ex : 10.0.0.5/8 et 10.0.0.200/24 → pas le même périmètre logique.';
 
   @override
-  String get ipBasicsSection4Subtitle1 => 'DHCP (automatic assignment)';
+  String get ipBasicsSection4Subtitle1 => 'DHCP (attribution automatique)';
 
   @override
   String get ipBasicsSection4SubBullet1 =>
-      'A DHCP server “gives” IP + mask + gateway + DNS.';
+      'Un serveur DHCP “donne” : IP + masque + passerelle + DNS.';
 
   @override
-  String get ipBasicsSection4SubBullet2 => 'Convenient: plug in and it works.';
+  String get ipBasicsSection4SubBullet2 => 'Pratique : tu branches, ça marche.';
 
   @override
   String get ipBasicsSection4SubBullet3 =>
-      'Show risk: if DHCP fails / changes / conflicts → strange symptoms.';
+      'Risque show : si le DHCP tombe / change / conflit → symptômes bizarres.';
 
   @override
-  String get ipBasicsSection4Subtitle2 => 'Static (fixed IP)';
+  String get ipBasicsSection4Subtitle2 => 'Statique (IP fixe)';
 
   @override
   String get ipBasicsSection4SubBullet4 =>
-      'You define IP + mask (and optionally gateway/DNS).';
+      'Tu définis IP + masque (et éventuellement passerelle/DNS).';
 
   @override
   String get ipBasicsSection4SubBullet5 =>
-      'Very useful for: console, nodes, managed switch, show Wi-Fi AP.';
+      'Très utile pour : console, nodes, switch géré, AP Wi-Fi show.';
 
   @override
   String get ipBasicsSection4SubBullet6 =>
-      'Risk: duplicate IP if the plan is unclear (conflict).';
+      'Risque : doublon d’IP si plan pas clair (conflit).';
 
   @override
-  String get ipBasicsSection4Callout1Title => 'Gateway';
+  String get ipBasicsSection4Callout1Title => 'Passerelle (gateway)';
 
   @override
   String get ipBasicsSection4Bullet1 =>
-      'This is the router address: it is used to go “outside the local network”.';
+      'C’est l’adresse du routeur : elle sert pour aller “hors du réseau local”.';
 
   @override
   String get ipBasicsSection4Bullet2 =>
-      'If you build an isolated show network (without Internet) → gateway is often unnecessary.';
+      'Si tu fais un réseau show isolé (sans Internet) → passerelle souvent inutile.';
 
   @override
   String get ipBasicsSection4Bullet3 =>
-      'But if you need to reach another VLAN / the Internet → it is essential.';
+      'Mais si tu veux sortir vers un autre VLAN / Internet → indispensable.';
 
   @override
   String get ipBasicsSection4Callout2Title => 'DNS';
 
   @override
   String get ipBasicsSection4Bullet4 =>
-      'DNS = “directory”: translates a name (ex: example.com) into an IP.';
+      'DNS = “annuaire” : transforme un nom (ex: example.com) en IP.';
 
   @override
   String get ipBasicsSection4Bullet5 =>
-      'In show environments (Art-Net/sACN), it is often useless: you work with direct IPs.';
+      'En show (Art-Net/sACN), souvent inutile : tu travailles en IP direct.';
 
   @override
   String get ipBasicsSection4Bullet6 =>
-      'If you use services (updates, licenses, time server, streaming) → DNS becomes useful again.';
+      'Si tu utilises des services (MAJ, licences, time server, streaming) → DNS redevient utile.';
 
   @override
-  String get ipBasicsSection4Subtitle3 => 'Simple rule (beginner-friendly)';
+  String get ipBasicsSection4Subtitle3 => 'Règle simple (débutant-friendly)';
 
   @override
   String get ipBasicsSection4SubBullet7 =>
-      'Small closed show: static everywhere, no gateway, no DNS.';
+      'Petit show fermé : statique partout, pas de passerelle, pas de DNS.';
 
   @override
   String get ipBasicsSection4SubBullet8 =>
-      'Show with Internet / several networks: controlled DHCP + reservations, or static plan + router.';
+      'Show avec Internet / plusieurs réseaux : DHCP contrôlé + réservations DHCP, ou plan statique + routeur.';
 
   @override
   String get ipBasicsSection5Paragraph =>
-      'When A wants to talk to B, it checks the mask:\n• If B is in the same subnet → A sends directly on the local network.\n• If B is outside the subnet → A sends to the gateway (router), which handles the rest.';
+      'Quand A veut parler à B, il regarde le masque :\n• Si B est dans le même sous-réseau → A envoie directement sur le réseau local.\n• Si B est hors sous-réseau → A envoie à la passerelle (routeur), qui s’occupe du reste.';
 
   @override
-  String get ipBasicsSection5Callout1Title => 'Example (easy)';
+  String get ipBasicsSection5Callout1Title => 'Exemple (facile)';
 
   @override
   String get ipBasicsSection5Bullet1 => 'A = 192.168.0.10 /24';
 
   @override
   String get ipBasicsSection5Bullet2 =>
-      'B = 192.168.0.50 /24 → same network → direct OK.';
+      'B = 192.168.0.50 /24 → même réseau → OK direct.';
 
   @override
   String get ipBasicsSection5Bullet3 =>
-      'B = 192.168.1.50 /24 → different network → router/gateway needed.';
+      'B = 192.168.1.50 /24 → réseau différent → besoin routeur/passerelle.';
 
   @override
-  String get ipBasicsSection5Subtitle => 'Why won’t it ping?';
+  String get ipBasicsSection5Subtitle => 'Pourquoi ça “ping” pas ?';
 
   @override
   String get ipBasicsSection5SubBullet1 =>
-      'Different mask → A thinks B is “elsewhere” (or vice versa).';
+      'Masque différent → A pense que B est “ailleurs” (ou inversement).';
 
   @override
   String get ipBasicsSection5SubBullet2 =>
-      'No gateway → impossible to leave the subnet.';
+      'Pas de passerelle → impossible de sortir du sous-réseau.';
 
   @override
   String get ipBasicsSection5SubBullet3 =>
-      'PC firewall → ping blocked (very common on Windows).';
+      'Pare-feu PC → ping bloqué (Windows très fréquent).';
 
   @override
   String get ipBasicsSection5SubBullet4 =>
-      'Cable / switch / VLAN: physically not in the same segment.';
+      'Câble / switch / VLAN : physiquement pas dans le même segment.';
 
   @override
   String get ipBasicsSection5Callout2Title =>
-      'Broadcast vs unicast (useful bonus)';
+      'Broadcast vs unicast (bonus utile)';
 
   @override
-  String get ipBasicsSection5Bullet4 => 'Unicast: to one specific IP (clean).';
+  String get ipBasicsSection5Bullet4 =>
+      'Unicast : vers une IP précise (propre).';
 
   @override
   String get ipBasicsSection5Bullet5 =>
-      'Broadcast: “to everyone” on the subnet (noisy).';
+      'Broadcast : “à tous” sur le sous-réseau (bruyant).';
 
   @override
   String get ipBasicsSection5Bullet6 =>
-      'In show environments: broadcast can work on a small setup, but quickly becomes noisy on larger networks.';
+      'En show : broadcast peut marcher en petit, mais devient vite source de bruit en gros réseau.';
 
   @override
   String get ipBasicsSection6Subtitle1 =>
-      'Plan A — ultra simple (one /24 network)';
+      'Plan A — ultra simple (un seul réseau /24)';
 
   @override
   String get ipBasicsSection6Code1 =>
-      'Network: 192.168.10.0/24   (mask 255.255.255.0)\n\nConsole: 192.168.10.10\nPC (control): 192.168.10.20\nNode 1: 192.168.10.101\nNode 2: 192.168.10.102\nManaged switch: 192.168.10.2\nGateway: (empty) or 192.168.10.1 if router present';
+      'Réseau : 192.168.10.0/24   (masque 255.255.255.0)\n\nConsole : 192.168.10.10\nPC (contrôle) : 192.168.10.20\nNode 1 : 192.168.10.101\nNode 2 : 192.168.10.102\nSwitch géré : 192.168.10.2\nPasserelle : (vide) ou 192.168.10.1 si routeur présent';
 
   @override
-  String get ipBasicsSection6Callout1Title => 'Why it works well';
+  String get ipBasicsSection6Callout1Title => 'Pourquoi ça marche bien';
 
   @override
   String get ipBasicsSection6Bullet1 =>
-      'Everyone is in the same subnet → no surprises.';
+      'Tout le monde dans le même sous-réseau → aucune surprise.';
 
   @override
   String get ipBasicsSection6Bullet2 =>
-      'Easy to explain, easy to troubleshoot.';
+      'Facile à expliquer, facile à dépanner.';
 
   @override
-  String get ipBasicsSection6Bullet3 =>
-      'Ideal for beginners / small to medium show.';
+  String get ipBasicsSection6Bullet3 => 'Idéal débutant / petit à moyen show.';
 
   @override
   String get ipBasicsSection6Subtitle2 =>
-      'Plan B — “10.x” when you want to grow';
+      'Plan B — “10.x” quand tu veux grandir';
 
   @override
   String get ipBasicsSection6Code2 =>
-      'Network: 10.10.0.0/16   (mask 255.255.0.0)\n\nConsole: 10.10.0.10\nPC: 10.10.0.20\nNodes: 10.10.1.10 → 10.10.1.200\nSwitch: 10.10.0.2';
+      'Réseau : 10.10.0.0/16   (masque 255.255.0.0)\n\nConsole : 10.10.0.10\nPC : 10.10.0.20\nNodes : 10.10.1.10 → 10.10.1.200\nSwitch : 10.10.0.2';
 
   @override
-  String get ipBasicsSection6Callout2Title => 'When to use it';
+  String get ipBasicsSection6Callout2Title => 'Quand l’utiliser';
 
   @override
   String get ipBasicsSection6Bullet4 =>
-      'When you have many devices (or several areas).';
+      'Quand tu as beaucoup d’équipements (ou plusieurs zones).';
 
   @override
   String get ipBasicsSection6Bullet5 =>
-      'When you plan VLANs later (lighting/video/IT).';
+      'Quand tu prévois VLAN plus tard (lumière/vidéo/IT).';
 
   @override
   String get ipBasicsSection6Subtitle3 =>
-      'Plan C — Art-Net “2.x.x.x” legacy compatibility';
+      'Plan C — compat Art-Net “2.x.x.x” (legacy)';
 
   @override
   String get ipBasicsSection6Code3 =>
-      'Network: 2.0.0.0/8   (mask 255.0.0.0)\n\nPC/console: 2.0.0.10\nNode 1: 2.0.0.100\nNode 2: 2.0.0.101\n\n⚠️ Isolated network, no Internet, no routing.';
+      'Réseau : 2.0.0.0/8   (masque 255.0.0.0)\n\nPC/console : 2.0.0.10\nNode 1 : 2.0.0.100\nNode 2 : 2.0.0.101\n\n⚠️ Réseau isolé, pas d’Internet, pas de routage.';
 
   @override
-  String get ipBasicsSection6Callout3Title => 'Warning';
+  String get ipBasicsSection6Callout3Title => 'Attention';
 
   @override
   String get ipBasicsSection6Bullet6 =>
-      'This plan is convenient for old/default hardware.';
+      'Ce plan est pratique pour du matériel ancien / par défaut.';
 
   @override
   String get ipBasicsSection6Bullet7 =>
-      'But avoid mixing it with a “normal” LAN (192.168.x.x) without a router.';
+      'Mais évite de mélanger avec un LAN “normal” (192.168.x.x) sans routeur.';
 
   @override
-  String get ipBasicsSection7Callout1Title => 'Symptoms → likely causes';
+  String get ipBasicsSection7Callout1Title => 'Symptômes → causes probables';
 
   @override
   String get ipBasicsSection7Bullet1 =>
-      '“I see the node but it won’t respond” → different mask / VLAN / firewall.';
+      '“Je vois le node mais ça répond pas” → masque différent / VLAN / pare-feu.';
 
   @override
   String get ipBasicsSection7Bullet2 =>
-      '“A device works then disappears” → unstable DHCP / IP conflict.';
+      '“Un appareil marche puis disparaît” → DHCP instable / conflit d’IP.';
 
   @override
   String get ipBasicsSection7Bullet3 =>
-      '“Nothing works except on the switch” → IP not in the same network / wrong cable / wrong VLAN port.';
+      '“Rien ne marche sauf sur le switch” → IP pas dans le même réseau / mauvais câble / port VLAN.';
 
   @override
   String get ipBasicsSection7Bullet4 =>
-      '“Everything is slow / packet loss” → broadcast/multicast too wide / low-end switch / network loop.';
+      '“Tout rame / pertes” → broadcast/multicast trop large / switch bas de gamme / boucle réseau.';
 
   @override
   String get ipBasicsSection7Bullet5 =>
-      '“It works wired but not on Wi-Fi” → jitter / roaming / saturated band / power saving.';
+      '“Ça marche en filaire mais pas en Wi-Fi” → jitter / roaming / bande saturée / power saving.';
 
   @override
-  String get ipBasicsSection7Subtitle => 'Pro method in 5 minutes';
+  String get ipBasicsSection7Subtitle => 'Méthode pro en 5 minutes';
 
   @override
   String get ipBasicsSection7SubBullet1 =>
-      '1) Check console/PC IP + mask and node IP + mask.';
+      '1) Regarder IP + masque de la console/PC et du node.';
 
   @override
   String get ipBasicsSection7SubBullet2 =>
-      '2) Verify: same subnet? (ex: 192.168.10.x /24)';
+      '2) Vérifier : même sous-réseau ? (ex: 192.168.10.x /24)';
 
   @override
   String get ipBasicsSection7SubBullet3 =>
-      '3) Ping (if possible) + test access to the node web interface.';
+      '3) Ping (si possible) + test d’accès interface web du node.';
 
   @override
   String get ipBasicsSection7SubBullet4 =>
-      '4) If DHCP: list who has which IP (DHCP table) and check for duplicates.';
+      '4) Si DHCP : lister qui a quelle IP (table DHCP) et vérifier doublons.';
 
   @override
   String get ipBasicsSection7SubBullet5 =>
-      '5) If sACN multicast: check IGMP snooping/querier (otherwise flood).';
+      '5) Si sACN multicast : vérifier IGMP snooping/querier (sinon flood).';
 
   @override
-  String get ipBasicsSection7Callout2Title => 'Very common trap';
+  String get ipBasicsSection7Callout2Title => 'Piège très fréquent';
 
   @override
   String get ipBasicsSection7Bullet6 =>
-      'Legacy mask on a PC (255.255.0.0 instead of 255.255.255.0).';
+      'Masque “hérité” sur un PC (255.255.0.0 au lieu de 255.255.255.0).';
 
   @override
   String get ipBasicsSection7Bullet7 =>
-      'Result: you think you are “in the same network”, but not in the same way as the other device.';
+      'Résultat : tu crois être “dans le même réseau”, mais pas comme l’autre appareil.';
 
   @override
   String get ipBasicsSection8Subtitle1 =>
-      'Exercise 1: same network or not? (/24)';
+      'Exercice 1 : même réseau ou pas ? (/24)';
 
   @override
   String get ipBasicsSection8SubBullet1 => 'A = 192.168.10.50 /24';
 
   @override
   String get ipBasicsSection8SubBullet2 =>
-      'B = 192.168.10.200 /24 → ✅ same network';
+      'B = 192.168.10.200 /24 → ✅ même réseau';
 
   @override
   String get ipBasicsSection8SubBullet3 =>
-      'B = 192.168.11.200 /24 → ❌ not the same network';
+      'B = 192.168.11.200 /24 → ❌ pas le même réseau';
 
   @override
-  String get ipBasicsSection8Subtitle2 => 'Exercise 2: /16 (255.255.0.0)';
+  String get ipBasicsSection8Subtitle2 => 'Exercice 2 : /16 (255.255.0.0)';
 
   @override
   String get ipBasicsSection8SubBullet4 => 'A = 10.10.5.10 /16';
 
   @override
   String get ipBasicsSection8SubBullet5 =>
-      'B = 10.10.200.20 /16 → ✅ same network (10.10.x.x)';
+      'B = 10.10.200.20 /16 → ✅ même réseau (10.10.x.x)';
 
   @override
   String get ipBasicsSection8SubBullet6 =>
-      'B = 10.11.200.20 /16 → ❌ not the same network';
+      'B = 10.11.200.20 /16 → ❌ pas le même réseau';
 
   @override
-  String get ipBasicsSection8CalloutTitle => 'Visual trick';
+  String get ipBasicsSection8CalloutTitle => 'Astuce visuelle';
 
   @override
   String get ipBasicsSection8Bullet1 =>
-      '/24 → same first 3 numbers (A.B.C) = same network.';
+      '/24 → les 3 premiers nombres identiques (A.B.C) = même réseau.';
 
   @override
   String get ipBasicsSection8Bullet2 =>
-      '/16 → same first 2 numbers (A.B) = same network.';
+      '/16 → les 2 premiers nombres identiques (A.B) = même réseau.';
 
   @override
   String get ipBasicsSection8Bullet3 =>
-      '/8 → same first number (A) = same network.';
+      '/8 → le 1er nombre identique (A) = même réseau.';
 
   @override
-  String get ipBasicsSection8Subtitle3 => 'Exercise 3: avoid “weird” IPs';
+  String get ipBasicsSection8Subtitle3 =>
+      'Exercice 3 : éviter les IP “bizarres”';
 
   @override
   String get ipBasicsSection8SubBullet7 =>
-      '0.x.x.x : reserved (not a normal host IP).';
+      '0.x.x.x : réservé (pas une IP normale d’hôte).';
 
   @override
   String get ipBasicsSection8SubBullet8 =>
-      '127.x.x.x : loopback (your PC itself).';
+      '127.x.x.x : loopback (ton PC lui-même).';
 
   @override
   String get ipBasicsSection8SubBullet9 =>
-      '169.254.x.x : auto-IP when DHCP is absent (APIPA) → sign of a DHCP problem.';
+      '169.254.x.x : auto-IP quand DHCP absent (APIPA) → signe de problème DHCP.';
 
   @override
-  String get ipBasicsSection9CalloutTitle => 'Before overcomplicating it';
+  String get ipBasicsSection9CalloutTitle => 'Avant de chercher midi à 14h';
 
   @override
-  String get ipBasicsSection9Bullet1 => 'Same subnet = coherent IP + mask.';
+  String get ipBasicsSection9Bullet1 =>
+      'Même sous-réseau = IP + masque cohérents.';
 
   @override
-  String get ipBasicsSection9Bullet2 => 'No duplicate IP (conflict).';
+  String get ipBasicsSection9Bullet2 => 'Aucun doublon d’IP (conflit).';
 
   @override
   String get ipBasicsSection9Bullet3 =>
-      'DHCP: OK if controlled; otherwise clear static plan.';
+      'DHCP : OK si maîtrisé; sinon plan statique clair.';
 
   @override
   String get ipBasicsSection9Bullet4 =>
-      'PC firewall: can block ping / discovery.';
+      'Pare-feu PC : peut bloquer ping / discovery.';
 
   @override
   String get ipBasicsSection9Bullet5 =>
-      'Switch/VLAN: correct port, correct VLAN, no loop.';
+      'Switch/VLAN : bon port, bon VLAN, pas de boucle.';
 
   @override
   String get ipBasicsSection9Bullet6 =>
-      'sACN multicast: IGMP snooping/querier recommended.';
+      'sACN multicast : IGMP snooping/querier recommandés.';
 
   @override
   String get ipBasicsChecklistCopy =>
-      'Network — Quick checklist (IP)\n☐ All devices are in the same subnet (coherent IP + mask)\n☐ No duplicate IP (conflict)\n☐ DHCP: either everyone on DHCP, or a clear static plan (avoid fuzzy mixes)\n☐ For Art-Net/sACN: dedicated network or VLAN if possible\n☐ Managed switch if multicast/IGMP (sACN)\n☐ Wi-Fi: avoid for critical show data (jitter), prefer wired\n☐ Simple test: ping + verify mask/gateway';
+      'Réseau — Checklist rapide (IP)\n☐ Tous les appareils sont dans le même sous-réseau (IP + masque cohérents)\n☐ Pas de doublon d’IP (conflit)\n☐ DHCP : soit tout le monde en DHCP, soit plan statique clair (éviter mélange flou)\n☐ Pour Art-Net/sACN : réseau dédié ou VLAN si possible\n☐ Switch géré si multicast/IGMP (sACN)\n☐ Wi-Fi : éviter pour data show critique (jitter), préférer filaire\n☐ Test simple : ping + vérifier masque/passerelle';
 
   @override
   String get ipBasicsFooterNote =>
-      'Goal: understand enough to cable / configure / troubleshoot quickly in show environments.\nNetwork details can go deeper, but these basics cover 90% of field failures.';
+      'Objectif : comprendre assez pour câbler / config / dépanner vite en show.\nLes détails réseau peuvent être plus profonds, mais ces bases couvrent 90% des pannes terrain.';
 
   @override
   String get aboutDmxPainterTerm120 => 'TERM\n120Ω';
 
   @override
-  String get aboutDmxPainterDaisyChainNote => '✅ Daisy-chain\n❌ No passive Y';
+  String get aboutDmxPainterDaisyChainNote =>
+      '✅ Daisy-chain\n❌ Pas de Y passif';
 
   @override
-  String get aboutDmxPainterXlr5Title => 'XLR5 (DMX) — quick reference';
+  String get aboutDmxPainterXlr5Title => 'XLR5 (DMX) — repère rapide';
 
   @override
-  String get aboutDmxPainterPin1 => 'Pin 1: Shield / ground';
+  String get aboutDmxPainterPin1 => 'Pin 1 : Shield / masse';
 
   @override
-  String get aboutDmxPainterPin2 => 'Pin 2: Data−';
+  String get aboutDmxPainterPin2 => 'Pin 2 : Data−';
 
   @override
-  String get aboutDmxPainterPin3 => 'Pin 3: Data+';
+  String get aboutDmxPainterPin3 => 'Pin 3 : Data+';
 
   @override
-  String get aboutDmxPainterPin45 => 'Pin 4/5: “data 2” (rare / optional)';
+  String get aboutDmxPainterPin45 => 'Pin 4/5 : “data 2” (rare / optionnel)';
 
   @override
   String get aboutDmxPainterXlr3Practice =>
-      'In practice: XLR3 is often used (1/2/3)';
+      'En pratique : XLR3 souvent utilisé (1/2/3)';
 
   @override
-  String get aboutDmxPainterLastFixture => 'LAST\nFIXTURE';
+  String get aboutDmxPainterLastFixture => 'DERNIER\nAPPAREIL';
 
   @override
   String get aboutDmxPainterTerminationLine =>
-      'Termination = 120Ω at end of line';
+      'Terminaison = 120Ω en fin de ligne';
 
   @override
-  String get aboutDmxPainter120Between => '120Ω\nbetween\nData− and Data+';
+  String get aboutDmxPainter120Between => '120Ω\nentre\nData− et Data+';
 
   @override
   String get aboutDmxPainterOneTermination =>
-      '✅ One termination only\n❌ Not in the middle\n❌ Not on every branch';
+      '✅ Une seule terminaison\n❌ Pas au milieu\n❌ Pas sur chaque branche';
 
   @override
   String get aboutDmxPainterConsoleIp => 'CONSOLE\nArt-Net / sACN';
 
   @override
-  String get aboutDmxPainterSwitchSacn => 'SWITCH\n(IGMP for sACN)';
+  String get aboutDmxPainterSwitchSacn => 'SWITCH\n(IGMP pour sACN)';
 
   @override
   String get aboutDmxPainterNode1 => 'NODE 1\nDMX OUT';
@@ -4127,276 +4132,276 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutDmxPainterManyUniverses =>
-      '✅ Many universes\n✅ Nodes close to fixtures';
+      '✅ Beaucoup d’univers\n✅ Nodes proches des machines';
 
   @override
   String get aboutArtnetSection2Paragraph =>
-      'Your goal: make sure each universe sent by the source reaches the right node (and the right DMX port) without ambiguity. Most Art-Net failures = wrong universe, wrong subnet/net, or broadcast saturation.';
+      'Ton objectif : que chaque univers émis par la source arrive au bon node (et au bon port DMX) sans ambiguïté. La plupart des pannes Art-Net = mauvais univers, mauvais subnet/net, ou broadcast qui sature.';
 
   @override
   String get aboutArtnetSection2CalloutTitle =>
-      'Simple method (avoids 80% of errors)';
+      'Méthode simple (qui évite 80% des erreurs)';
 
   @override
   String get aboutArtnetSection2Bullet1 =>
-      '1) Write it down: “Universe 1 → Node A port 1”, “Universe 2 → Node A port 2”, etc.';
+      '1) Écris sur papier: “Univers 1 → Node A port 1”, “Univers 2 → Node A port 2”, etc.';
 
   @override
   String get aboutArtnetSection2Bullet2 =>
-      '2) Use stable IPs (reserved DHCP or static).';
+      '2) Mets des IP stables (DHCP réservé ou statiques).';
 
   @override
   String get aboutArtnetSection2Bullet3 =>
-      '3) Prefer unicast if you have more than one node or a shared network.';
+      '3) Préfère l’unicast si tu as plus d’un node ou un réseau partagé.';
 
   @override
   String get aboutArtnetSection2Subtitle1 => 'Broadcast vs Unicast';
 
   @override
   String get aboutArtnetSection2SubBullet1 =>
-      'Broadcast: you send to everyone → easy but can flood a switch.';
+      'Broadcast : tu envoies à tout le monde → facile mais peut “flood” un switch.';
 
   @override
   String get aboutArtnetSection2SubBullet2 =>
-      'Unicast: you send to the node IP → cleaner and more predictable.';
+      'Unicast : tu envoies vers l’IP du node → plus propre et prévisible.';
 
   @override
-  String get aboutArtnetSection2SubBullet3 =>
-      'In show conditions: if in doubt → unicast.';
+  String get aboutArtnetSection2SubBullet3 => 'En show: si doute → unicast.';
 
   @override
-  String get aboutArtnetSection2Subtitle2 => 'Universes: field practice';
+  String get aboutArtnetSection2Subtitle2 => 'Univers : pratique terrain';
 
   @override
   String get aboutArtnetSection2SubBullet4 =>
-      'Keep numbering simple (e.g. 1…N).';
+      'Garde une numérotation simple (ex: 1…N).';
 
   @override
   String get aboutArtnetSection2SubBullet5 =>
-      'Avoid “one universe everywhere”: document your mappings.';
+      'Évite “un univers partout” : documente tes mappings.';
 
   @override
   String get aboutArtnetSection2SubBullet6 =>
-      'On some setups, “Net/Subnet/Universe” exist: think “mapping”, not “magic”.';
+      'Sur certains setups, “Net/Subnet/Universe” existent : pense “mapping”, pas “magie”.';
 
   @override
-  String get aboutArtnetSection3CalloutTitle => 'The real limits (in order)';
+  String get aboutArtnetSection3CalloutTitle =>
+      'Les limites “réelles” (dans l’ordre)';
 
   @override
   String get aboutArtnetSection3Bullet1 =>
-      'Wi-Fi: variable latency + losses → flicker or dropouts.';
+      'Wi-Fi : latence variable + pertes → flicker ou décrochages.';
 
   @override
   String get aboutArtnetSection3Bullet2 =>
-      'Broadcast: overloads a LAN (everyone receives everything).';
+      'Broadcast : surcharge un LAN (tout le monde reçoit tout).';
 
   @override
   String get aboutArtnetSection3Bullet3 =>
-      'Low-end switch: limited buffers, poor multicast/broadcast handling.';
+      'Switch “bas de gamme” : buffers limités, gestion multicast/broadcast médiocre.';
 
   @override
   String get aboutArtnetSection3Bullet4 =>
-      'Nodes: firmware/CPU limits (number of universes, rate, options).';
+      'Nodes : limite firmware/CPU (nb d’univers, fréquence, options).';
 
   @override
   String get aboutArtnetSection3Bullet5 =>
-      'PC/source: driver, CPU load, antivirus, network card, etc.';
+      'PC/source : driver, charge CPU, antivirus, carte réseau, etc.';
 
   @override
-  String get aboutArtnetSection3Subtitle1 => 'Refresh rate';
+  String get aboutArtnetSection3Subtitle1 => 'Vitesse de refresh';
 
   @override
   String get aboutArtnetSection3SubBullet1 =>
-      'Classic DMX is often around ~20–44 fps depending on frame size.';
+      'Le DMX “classique” est souvent ~20–44 fps selon trame.';
 
   @override
   String get aboutArtnetSection3SubBullet2 =>
-      'Over IP, you can send more, but nodes do not always keep up (and it is not always useful).';
+      'Sur IP, tu peux envoyer plus, mais les nodes ne suivent pas toujours (et ce n’est pas toujours utile).';
 
   @override
   String get aboutArtnetSection3SubBullet3 =>
-      'Stability > frequency: stable at 30–40 fps is better than “fast” but unstable.';
+      'Stabilité > fréquence : mieux vaut stable à 30–40 fps que “vite” mais instable.';
 
   @override
-  String get aboutArtnetSection3Subtitle2 => 'Simple rules';
+  String get aboutArtnetSection3Subtitle2 => 'Règles simples';
 
   @override
-  String get aboutArtnetSection3SubBullet4 => 'Dedicated network (or VLAN).';
+  String get aboutArtnetSection3SubBullet4 => 'Réseau dédié (ou VLAN).';
 
   @override
-  String get aboutArtnetSection3SubBullet5 =>
-      'Unicast if you have multiple nodes.';
+  String get aboutArtnetSection3SubBullet5 => 'Unicast si plusieurs nodes.';
 
   @override
-  String get aboutArtnetSection3SubBullet6 => 'Wired for critical shows.';
+  String get aboutArtnetSection3SubBullet6 =>
+      'Filaire pour les shows critiques.';
 
   @override
   String get aboutArtnetSection4Paragraph =>
-      'A node = IP → DMX. It can have 1, 2, 4, 8 DMX ports. Stability depends on the node AND the DMX cabling on the output side (termination, topology, splitters).';
+      'Un node = IP → DMX. Il peut avoir 1, 2, 4, 8 ports DMX. La stabilité dépend du node ET du câblage DMX côté sortie (terminaison, topologie, splitters).';
 
   @override
   String get aboutArtnetSection4Subtitle1 => 'Nodes vs Splitters';
 
   @override
   String get aboutArtnetSection4SubBullet1 =>
-      'Node: converts IP→DMX (and sometimes DMX→IP).';
+      'Node : convertit IP→DMX (et parfois DMX→IP).';
 
   @override
   String get aboutArtnetSection4SubBullet2 =>
-      'DMX splitter: distributes one DMX line into branches (opto recommended).';
+      'Splitter DMX : distribue une ligne DMX en branches (opto conseillé).';
 
   @override
   String get aboutArtnetSection4SubBullet3 =>
-      'Good design: IP as close as possible, then short and clean DMX.';
+      'Bon design : IP jusqu’au plus près, puis DMX court et propre.';
 
   @override
   String get aboutArtnetSection4CalloutTitle =>
-      'RDM over Art-Net (variable support)';
+      'RDM sur Art-Net (support variable)';
 
   @override
   String get aboutArtnetSection4Bullet1 =>
-      'Some nodes support an “RDM proxy”: the console sees/configures RDM devices over IP.';
+      'Certains nodes supportent un “RDM proxy” : la console voit/configure les appareils RDM via IP.';
 
   @override
   String get aboutArtnetSection4Bullet2 =>
-      'Others do not support RDM at all, or only partially.';
+      'D’autres ne supportent RDM du tout, ou partiellement.';
 
   @override
   String get aboutArtnetSection4Bullet3 =>
-      'A classic opto splitter can block RDM return (depending on model).';
+      'Un splitter opto “classique” peut bloquer le retour RDM (selon modèle).';
 
   @override
   String get aboutArtnetSection4Bullet4 =>
-      'Tip: if you want RDM, explicitly choose hardware marked as RDM-compatible.';
+      'Conseil: si tu veux RDM, choisis explicitement du matériel marqué RDM compatible.';
 
   @override
-  String get aboutArtnetSection4Subtitle2 => 'Good field reflex';
+  String get aboutArtnetSection4Subtitle2 => 'Bon réflexe terrain';
 
   @override
   String get aboutArtnetSection4SubBullet4 =>
-      'If DMX is unstable: solve DMX first (termination, cable, passive Y) then IP.';
+      'Si DMX instable : règle DMX d’abord (terminaison, câble, Y passif) puis seulement IP.';
 
   @override
   String get aboutArtnetSection4SubBullet5 =>
-      'If RDM is unstable: disable RDM to verify pure DMX is stable.';
+      'Si RDM instable : désactive RDM pour vérifier que le DMX pur est stable.';
 
   @override
-  String get aboutArtnetSection5CalloutTitle => 'Symptoms → likely causes';
+  String get aboutArtnetSection5CalloutTitle => 'Symptômes → causes probables';
 
   @override
   String get aboutArtnetSection5Bullet1 =>
-      'Flicker across the whole stage → Wi-Fi, broadcast flood, saturated switch.';
+      'Flicker sur tout le plateau → Wi-Fi, broadcast flood, switch saturé.';
 
   @override
   String get aboutArtnetSection5Bullet2 =>
-      'One node works, the other does not → universe/mapping, IP, badly configured unicast.';
+      'Un node OK, l’autre non → univers/mapping, IP, unicast mal configuré.';
 
   @override
   String get aboutArtnetSection5Bullet3 =>
-      'Random dropouts → faulty RJ45 cable, unstable switch, PC dropping packets.';
+      'Décrochages aléatoires → câble RJ45 défectueux, switch instable, PC qui droppe des paquets.';
 
   @override
   String get aboutArtnetSection5Bullet4 =>
-      'Only one DMX port on a node fails → DMX cable, termination, device breaking the line.';
+      'Un seul port DMX d’un node KO → câble DMX, terminaison, appareil qui casse la ligne.';
 
   @override
   String get aboutArtnetSection5Bullet5 =>
-      'Impossible RDM discovery → node/splitter not RDM compatible, borderline DMX cabling.';
+      'RDM discovery impossible → node/splitter non compatible RDM, câblage DMX “borderline”.';
 
   @override
-  String get aboutArtnetSection5Subtitle => 'Quick method';
+  String get aboutArtnetSection5Subtitle => 'Méthode rapide';
 
   @override
   String get aboutArtnetSection5SubBullet1 =>
-      '1) Switch to unicast to a single node (simple test).';
+      '1) Passe en unicast vers un seul node (test simple).';
 
   @override
   String get aboutArtnetSection5SubBullet2 =>
-      '2) Check universes/mapping (paper + node config).';
+      '2) Vérifie univers/mapping (papier + node config).';
 
   @override
   String get aboutArtnetSection5SubBullet3 =>
-      '3) Test direct wired path (PC → switch → node) with a known-good cable.';
+      '3) Test en filaire direct (PC → switch → node) avec câble connu OK.';
 
   @override
   String get aboutArtnetSection5SubBullet4 =>
-      '4) Isolate DMX: node → 1 fixture + termination.';
+      '4) Isole le DMX : node → 1 appareil + terminaison.';
 
   @override
   String get aboutArtnetSection6Subtitle1 =>
-      'Clean architecture (IP → nodes → short DMX)';
+      'Architecture propre (IP → nodes → DMX court)';
 
   @override
-  String get aboutArtnetSection6Subtitle2 => 'Broadcast vs Unicast (concept)';
+  String get aboutArtnetSection6Subtitle2 => 'Broadcast vs Unicast (idée)';
 
   @override
-  String get aboutArtnetAssetsCopyTitle => 'Recommended assets (optional)';
+  String get aboutArtnetAssetsCopyTitle => 'Assets recommandés (optionnels)';
 
   @override
-  String get aboutArtnetExampleLabel => 'example';
+  String get aboutArtnetExampleLabel => 'exemple';
 
   @override
-  String get aboutArtnetAssetsCopyTooltip => 'Copy asset list';
+  String get aboutArtnetAssetsCopyTooltip => 'Copier liste assets';
 
   @override
   String get aboutArtnetAssetsParagraph =>
-      'Section intended to illustrate the network (RJ45, switch, cables). If the assets do not exist, the app shows a clean fallback.';
+      'Section prévue pour illustrer le réseau (RJ45, switch, câbles). Si les assets n’existent pas, l’app affiche un fallback propre.';
 
   @override
-  String get aboutArtnetAssetsExamplesTitle => 'Examples';
+  String get aboutArtnetAssetsExamplesTitle => 'Exemples';
 
   @override
   String get aboutArtnetAssetsRj45Label => 'RJ45';
 
   @override
-  String get aboutArtnetAssetsRj45Hint => 'Ethernet connector';
+  String get aboutArtnetAssetsRj45Hint => 'Connecteur Ethernet';
 
   @override
   String get aboutArtnetAssetsSwitchLabel => 'Switch';
 
   @override
   String get aboutArtnetAssetsSwitchHint =>
-      'Switch (managed is ideal for IGMP/VLAN)';
+      'Switch (idéalement géré si IGMP/VLAN)';
 
   @override
-  String get aboutArtnetAssetsCableLabel => 'Ethernet cable';
+  String get aboutArtnetAssetsCableLabel => 'Câble Ethernet';
 
   @override
-  String get aboutArtnetAssetsCableHint => 'Cat5e/Cat6 = reliable base';
+  String get aboutArtnetAssetsCableHint => 'Cat5e/Cat6 = base fiable';
 
   @override
-  String get aboutArtnetChecklistCopyTitle => 'Art-Net — field checklist';
+  String get aboutArtnetChecklistCopyTitle => 'Art-Net — Checklist terrain';
 
   @override
-  String get aboutArtnetChecklistCopyTooltip => 'Copy checklist';
+  String get aboutArtnetChecklistCopyTooltip => 'Copier la checklist';
 
   @override
-  String get aboutArtnetChecklistTitle => 'Before panicking';
+  String get aboutArtnetChecklistTitle => 'Avant de paniquer';
 
   @override
-  String get aboutArtnetChecklistBullet1 => 'Unicast if multiple nodes.';
+  String get aboutArtnetChecklistBullet1 => 'Unicast si plusieurs nodes.';
 
   @override
   String get aboutArtnetChecklistBullet2 =>
-      'Dedicated network (or VLAN) if possible.';
+      'Réseau dédié (ou VLAN) si possible.';
 
   @override
-  String get aboutArtnetChecklistBullet3 => 'Wired for critical shows.';
+  String get aboutArtnetChecklistBullet3 => 'Filaire pour show critique.';
 
   @override
-  String get aboutArtnetChecklistBullet4 => 'Documented universe/mapping.';
+  String get aboutArtnetChecklistBullet4 => 'Univers/mapping documentés.';
 
   @override
   String get aboutArtnetChecklistBullet5 =>
-      'Simple IP test → 1 node → 1 fixture + termination.';
+      'Test IP simple → 1 node → 1 appareil + terminaison.';
 
   @override
   String get aboutArtnetChecklistBullet6 =>
-      'If using RDM: confirmed “RDM proxy” node + stable DMX cabling';
+      'Si RDM: node “RDM proxy” confirmé + câblage DMX stable';
 
   @override
   String get aboutArtnetFooterNote =>
-      'Indicative field information. Depending on nodes/switches/firmwares, behavior may vary.\nThe goal here is to understand and diagnose quickly.';
+      'Info indicative (terrain). Selon nodes/switch/firmwares, le comportement peut varier.\nObjectif ici : comprendre et diagnostiquer vite.';
 
   @override
   String get aboutArtnetDiagramSourceLabel => 'SOURCE\n(PC/console)';
@@ -4414,7 +4419,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutArtnetDiagramFixLabel => 'FIX';
 
   @override
-  String get aboutArtnetDiagramInfoLabel => 'Long IP / short DMX';
+  String get aboutArtnetDiagramInfoLabel => 'IP long / DMX court';
 
   @override
   String get aboutArtnetDiagramSourceShortLabel => 'SOURCE';
@@ -4429,85 +4434,84 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutArtnetDiagramNodeCLabel => 'NODE C';
 
   @override
-  String get aboutArtnetDiagramUnicastLabel =>
-      'Unicast: packets sent to one node';
+  String get aboutArtnetDiagramUnicastLabel => 'Unicast: paquets vers un node';
 
   @override
   String get aboutArtnetDiagramBroadcastLabel =>
-      'Broadcast: everyone receives everything';
+      'Broadcast: tout le monde reçoit';
 
   @override
-  String get aboutArtnetMissingAssetLabel => 'Missing asset';
+  String get aboutArtnetMissingAssetLabel => 'Asset manquant';
 
   @override
-  String get aboutRegistryDmxTitle => 'DMX — operation (simple & complete)';
+  String get aboutRegistryDmxTitle => 'DMX — fonctionnement (simple & complet)';
 
   @override
   String get aboutRegistryDmxSubtitle =>
-      'Universes, addresses, frames, RS-485 cabling, termination, field errors.\nIncludes diagrams + checklist.';
+      'Univers, adresses, trames, câblage RS-485, terminaison, erreurs terrain.\nInclut schémas + checklist.';
 
   @override
   String get aboutRegistryArtnetTitle =>
-      'Art-Net — DMX over IP (nodes, unicast/broadcast)';
+      'Art-Net — DMX sur IP (nodes, unicast/broadcast)';
 
   @override
   String get aboutRegistryArtnetSubtitle =>
-      'DMX universes over Ethernet/UDP, nodes, broadcast vs unicast.\nReal limits, network stability, RDM depending on hardware, diagrams + checklist.';
+      'Univers DMX sur Ethernet/UDP, nodes, broadcast vs unicast.\nLimites réelles, stabilité réseau, RDM selon matériel, schémas + checklist.';
 
   @override
   String get aboutRegistrySacnTitle =>
-      'sACN / E1.31 — multicast, IGMP, priorities';
+      'sACN / E1.31 — multicast, IGMP, priorités';
 
   @override
   String get aboutRegistrySacnSubtitle =>
-      'Professional network-oriented DMX over IP standard.\nMulticast/unicast, IGMP snooping/querier, multi-source priorities, diagrams + checklist.';
+      'Standard DMX sur IP orienté réseau pro.\nMulticast/unicast, IGMP snooping/querier, priorités multi-sources, schémas + checklist.';
 
   @override
   String get aboutRegistryIpBasicsTitle =>
-      'Network — IP basics / mask / DHCP (essential)';
+      'Réseau — bases IP / masque / DHCP (essentiel)';
 
   @override
   String get aboutRegistryIpBasicsSubtitle =>
-      'Understand IP, mask, gateway, DHCP vs static.\nConcrete examples (2.x.x.x, 10.x, 192.168.x), quick tests, show pitfalls.';
+      'Comprendre IP, masque, passerelle, DHCP vs statique.\nExemples concrets (2.x.x.x, 10.x, 192.168.x), tests rapides, pièges show.';
 
   @override
   String get aboutRegistryReseauTitle =>
-      'Network — RJ45 / Fiber / speeds & distances';
+      'Réseau — RJ45 / Fibre / débits & longueurs';
 
   @override
   String get aboutRegistryReseauSubtitle =>
-      'Cat5e→Cat8, OM3/OM4/OS2 fiber, LC/SC/MPO, typical distances, show best practices.';
+      'Cat5e→Cat8, fibre OM3/OM4/OS2, LC/SC/MPO, distances typiques, bonnes pratiques show.';
 
   @override
   String get aboutRegistryNetworkTitle =>
-      'Lighting network — VLAN, IGMP, Wi-Fi vs wired';
+      'Réseau lumière — VLAN, IGMP, Wi-Fi vs filaire';
 
   @override
   String get aboutRegistryNetworkSubtitle =>
-      'Simple and robust architecture for Art-Net/sACN.\nVLAN, IGMP snooping/querier, Wi-Fi (jitter), switches, diagrams + checklist.';
+      'Architecture simple et robuste pour Art-Net/sACN.\nVLAN, IGMP snooping/querier, Wi-Fi (jitter), switchs, schémas + checklist.';
 
   @override
-  String get aboutRegistryVideoTitle => 'Video — SDI / NDI / IP (SRT/RTMP)';
+  String get aboutRegistryVideoTitle => 'Vidéo — SDI / NDI / IP (SRT/RTMP)';
 
   @override
   String get aboutRegistryVideoSubtitle =>
-      'Choose according to latency, reliability, cabling, LAN vs WAN network.\nTables + diagram.';
+      'Choisir selon latence, fiabilité, câblage, réseau LAN vs WAN.\nTableaux + schéma.';
 
   @override
   String get aboutRegistryElectriciteTitle =>
-      'Electrical — Schuko / P17 / power';
+      'Électrique — Schuko / P17 / puissances';
 
   @override
   String get aboutRegistryElectriciteSubtitle =>
-      'Connectors, single/three-phase, quick kW tables (16A→400A), field pitfalls.';
+      'Connecteurs, mono/tri, tableaux kW rapides (16A→400A), pièges terrain.';
 
   @override
   String get aboutRegistryInformatiqueTitle =>
-      'Computing — USB / HDMI / DP / SATA / NVMe…';
+      'Informatique — USB / HDMI / DP / SATA / NVMe…';
 
   @override
   String get aboutRegistryInformatiqueSubtitle =>
-      'Useful throughput, versions, real limits, marketing pitfalls.';
+      'Débits utiles, versions, limites réelles, pièges marketing.';
 
   @override
   String get aboutUniverseToHexColHex => 'Hex';
@@ -4516,102 +4520,102 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutUniverseToHexNote => 'Index = Universe − 1 (0-based).';
 
   @override
-  String get aboutNetworkPageTitle => 'Lighting network — VLAN, IGMP, Wi-Fi';
+  String get aboutNetworkPageTitle => 'Réseau lumière — VLAN, IGMP, Wi-Fi';
 
   @override
-  String get aboutNetworkCopyTooltip => 'Copy notes';
+  String get aboutNetworkCopyTooltip => 'Copier repères';
 
   @override
-  String get aboutNetworkChecklistCopyTooltip => 'Copy';
+  String get aboutNetworkChecklistCopyTooltip => 'Copier';
 
   @override
-  String get aboutNetworkChecklistTitle => 'Before opening Wireshark 😄';
+  String get aboutNetworkChecklistTitle => 'Avant d’ouvrir Wireshark 😄';
 
   @override
   String get aboutNetworkFooterNote =>
-      'Indicative field info. Depending on the network hardware, IGMP/VLAN may be essential.\nGoal: stay simple and robust.';
+      'Info indicative (terrain). Selon le matériel réseau, IGMP/VLAN peuvent être indispensables.\nObjectif : rester simple et robuste.';
 
   @override
   String get aboutNetworkCopy1 =>
-      'Lighting network: aim for simple, dedicated, and stable.';
+      'Réseau lumière: viser simple, dédié, et stable.';
 
   @override
   String get aboutNetworkCopy2 =>
-      'VLAN = separate traffic (lighting vs everything else).';
+      'VLAN = séparer le trafic (lumière vs reste).';
 
   @override
   String get aboutNetworkCopy3 =>
-      'IGMP = essential for large-scale sACN multicast.';
+      'IGMP = indispensable si sACN multicast à grande échelle.';
 
   @override
   String get aboutNetworkCopy4 =>
-      'Wi-Fi = OK for troubleshooting, rarely OK for critical production.';
+      'Wi-Fi = ok dépannage, rarement ok en prod critique.';
 
   @override
   String get aboutNetworkChecklistCopy =>
-      'Lighting network — Checklist\n☐ Dedicated network or lighting VLAN\n☐ Clear IP plan (DHCP or static) + correct mask\n☐ Proper switch; loops avoided\n☐ sACN multicast: IGMP snooping ON\n☐ IGMP querier present in the VLAN (if the infrastructure requires it)\n☐ Unicast for troubleshooting (especially Art-Net)\n☐ Wi-Fi: avoid for critical production (jitter/loss)\n☐ Tests: stable ping + progressive load (universes)';
+      'Réseau lumière — Checklist\n☐ Réseau dédié ou VLAN lumière\n☐ Plan IP clair (DHCP ou statique) + masque ok\n☐ Switch correct; boucles évitées\n☐ sACN multicast: IGMP snooping ON\n☐ IGMP querier présent dans le VLAN (si infra le nécessite)\n☐ Unicast en dépannage (surtout Art-Net)\n☐ Wi-Fi: éviter prod critique (jitter/pertes)\n☐ Tests: ping stable + charge progressive (univers)';
 
   @override
-  String get aboutNetworkToc1 => '1) Goal: stable network';
+  String get aboutNetworkToc1 => '1) Objectif: réseau stable';
 
   @override
-  String get aboutNetworkToc2 => '2) IP plan (simple)';
+  String get aboutNetworkToc2 => '2) Plan IP (simple)';
 
   @override
-  String get aboutNetworkToc3 => '3) VLAN (segmentation)';
+  String get aboutNetworkToc3 => '3) VLAN (séparation)';
 
   @override
   String get aboutNetworkToc4 => '4) IGMP (sACN multicast)';
 
   @override
-  String get aboutNetworkToc5 => '5) Wi-Fi vs wired';
+  String get aboutNetworkToc5 => '5) Wi-Fi vs filaire';
 
   @override
-  String get aboutNetworkToc6 => '6) Switch: what you need';
+  String get aboutNetworkToc6 => '6) Switch: ce qu’il faut';
 
   @override
-  String get aboutNetworkToc7 => '7) Diagrams';
+  String get aboutNetworkToc7 => '7) Schémas';
 
   @override
   String get aboutNetworkToc8 => '8) Checklist';
 
   @override
-  String get aboutNetworkBasicsPill1 => 'Dedicated/VLAN';
+  String get aboutNetworkBasicsPill1 => 'Dédié/VLAN';
 
   @override
-  String get aboutNetworkBasicsPill2 => 'Wired';
+  String get aboutNetworkBasicsPill2 => 'Filaire';
 
   @override
-  String get aboutNetworkBasicsPill3 => 'IGMP if multicast';
+  String get aboutNetworkBasicsPill3 => 'IGMP si multicast';
 
   @override
   String get aboutNetworkBasicsParagraph =>
-      'A lighting network must be predictable: low loss, low jitter, simple architecture. When it breaks, it is rarely “the protocol” and often the infrastructure (switch, Wi-Fi, loops, flood).';
+      'Un réseau lumière doit être prévisible: faible perte, faible jitter, architecture simple. Quand ça bug, c’est rarement “le protocole” et souvent l’infra (switch, Wi-Fi, boucles, flood).';
 
   @override
-  String get aboutNetworkBasicsCalloutTitle => 'Basic rule';
+  String get aboutNetworkBasicsCalloutTitle => 'Règle de base';
 
   @override
   String get aboutNetworkBasicsBullet1 =>
-      'If possible: wired + proper switch + dedicated network (or VLAN).';
+      'Si tu peux: filaire + switch correct + réseau dédié (ou VLAN).';
 
   @override
   String get aboutNetworkBasicsBullet2 =>
-      'If you must share: VLAN + clear rules.';
+      'Si tu dois partager: VLAN + règles claires.';
 
   @override
   String get aboutNetworkBasicsBullet3 =>
-      'sACN multicast: IGMP quickly becomes mandatory.';
+      'sACN multicast: IGMP devient vite obligatoire.';
 
   @override
   String get aboutNetworkPlanIpParagraph =>
-      'Choose a simple and coherent strategy. Two approaches: DHCP (simple) or static (predictable). The worst option: an undocumented mix.';
+      'Choisis une stratégie simple et cohérente. Deux approches: DHCP (simple) ou statique (prévisible). Le pire: un mélange non documenté.';
 
   @override
-  String get aboutNetworkPlanIpCalloutTitle => 'Example plan (simple)';
+  String get aboutNetworkPlanIpCalloutTitle => 'Exemple de plan (simple)';
 
   @override
-  String get aboutNetworkPlanIpBullet1 => 'Lighting VLAN: 10.10.0.0/24';
+  String get aboutNetworkPlanIpBullet1 => 'VLAN lumière: 10.10.0.0/24';
 
   @override
   String get aboutNetworkPlanIpBullet2 => 'Console/PC: 10.10.0.10';
@@ -4623,48 +4627,48 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutNetworkPlanIpBullet4 => 'Switch mgmt: 10.10.0.2';
 
   @override
-  String get aboutNetworkPlanIpSubtitle => 'Common mistakes';
+  String get aboutNetworkPlanIpSubtitle => 'Erreurs classiques';
 
   @override
   String get aboutNetworkPlanIpSubBullet1 =>
-      'Different mask (ex: /24 vs /16) → devices become invisible.';
+      'Masque différent (ex: /24 vs /16) → machines invisibles.';
 
   @override
   String get aboutNetworkPlanIpSubBullet2 =>
-      'Two devices with the same IP → random behavior.';
+      'Deux appareils même IP → comportement aléatoire.';
 
   @override
   String get aboutNetworkPlanIpSubBullet3 =>
-      'DHCP + static on the same range without control → conflicts.';
+      'DHCP + statique sur même range sans contrôle → conflits.';
 
   @override
   String get aboutNetworkVlanParagraph =>
-      'A VLAN lets you isolate lighting from everything else (internet, video production, guests…). This reduces network noise and the risk that another service breaks your show.';
+      'Un VLAN te permet d’isoler la lumière du reste (internet, production vidéo, invités…). Ça évite le bruit réseau et réduit le risque qu’un autre service casse ton show.';
 
   @override
-  String get aboutNetworkVlanCalloutTitle => 'What you gain';
+  String get aboutNetworkVlanCalloutTitle => 'Ce que tu gagnes';
 
   @override
-  String get aboutNetworkVlanBullet1 => 'Less parasite traffic.';
+  String get aboutNetworkVlanBullet1 => 'Moins de trafic parasite.';
 
   @override
   String get aboutNetworkVlanBullet2 =>
-      'Less risk (external DHCP, unwanted broadcast).';
+      'Moins de risques (DHCP externe, broadcast non désiré).';
 
   @override
   String get aboutNetworkVlanBullet3 =>
-      'Simpler debugging (everything in the VLAN = lighting).';
+      'Debug plus simple (tout ce qui est dans le VLAN = lumière).';
 
   @override
-  String get aboutNetworkVlanSubtitle => 'Warning';
+  String get aboutNetworkVlanSubtitle => 'Attention';
 
   @override
   String get aboutNetworkVlanSubBullet1 =>
-      'A VLAN means all ports must be configured correctly (access/trunk).';
+      'Un VLAN = il faut que tous les ports soient bien configurés (access/trunk).';
 
   @override
   String get aboutNetworkVlanSubBullet2 =>
-      'If you do not master it: a dedicated physical network is often simpler.';
+      'Si tu ne maîtrises pas: réseau dédié “physique” est souvent plus simple.';
 
   @override
   String get aboutNetworkIgmpPill1 => 'IGMP snooping';
@@ -4677,114 +4681,111 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutNetworkIgmpParagraph =>
-      'IGMP snooping lets the switch know which ports want which multicast. Without it, multicast can be flooded to every port → saturation.';
+      'IGMP snooping permet au switch de savoir quels ports veulent quel multicast. Sans ça, le multicast peut être inondé sur tous les ports → saturation.';
 
   @override
-  String get aboutNetworkIgmpCalloutTitle => 'IGMP querier (simple idea)';
+  String get aboutNetworkIgmpCalloutTitle => 'IGMP querier (idée simple)';
 
   @override
   String get aboutNetworkIgmpBullet1 =>
-      'In some networks/VLANs, a querier is needed to maintain IGMP subscriptions.';
+      'Dans certains réseaux/VLAN, il faut un querier pour maintenir les abonnements IGMP.';
 
   @override
   String get aboutNetworkIgmpBullet2 =>
-      'Without a querier: depending on the switches, subscriptions expire and you get “glitches”.';
+      'Sans querier: selon les switchs, les abonnements expirent et tu vois des “glitches”.';
 
   @override
   String get aboutNetworkIgmpBullet3 =>
-      'On a small dedicated network: everything may work, but on a large network: it becomes critical.';
+      'Si tu es en petit réseau dédié: parfois tout marche, mais en gros réseau: c’est critique.';
 
   @override
-  String get aboutNetworkIgmpSubtitle => 'Diagram: IGMP (concept)';
+  String get aboutNetworkIgmpSubtitle => 'Schéma : IGMP (idée)';
 
   @override
-  String get aboutNetworkWifiSubtitle1 => 'Wired';
+  String get aboutNetworkWifiSubtitle1 => 'Filaire';
 
   @override
   String get aboutNetworkWifiSubtitle2 => 'Wi-Fi';
 
   @override
   String get aboutNetworkWifiSubBullet1 =>
-      '✅ Stable latency, low loss (if infrastructure is clean).';
+      '✅ Latence stable, pertes faibles (si infra propre).';
 
   @override
-  String get aboutNetworkWifiSubBullet2 => '✅ Recommended in production.';
+  String get aboutNetworkWifiSubBullet2 => '✅ Recommandé en prod.';
 
   @override
   String get aboutNetworkWifiSubBullet3 =>
-      '✅ Convenient (quick setup, tablet).';
+      '✅ Pratique (setup rapide, tablette).';
 
   @override
   String get aboutNetworkWifiSubBullet4 =>
-      '❌ Variable latency (jitter), losses, interference.';
+      '❌ Latence variable (jitter), pertes, interférences.';
 
   @override
   String get aboutNetworkWifiSubBullet5 =>
-      '❌ Multicast sometimes poorly handled depending on AP/config.';
+      '❌ Multicast parfois mal géré selon AP/config.';
 
   @override
   String get aboutNetworkWifiSubBullet6 =>
-      'OK for troubleshooting / small non-critical setups, rarely OK on a busy show.';
+      'OK dépannage / petites configs non critiques, rarement OK en show chargé.';
 
   @override
-  String get aboutNetworkWifiCalloutTitle => 'Simple rule';
+  String get aboutNetworkWifiCalloutTitle => 'Règle simple';
 
   @override
-  String get aboutNetworkWifiBullet1 => 'Critical show = wired.';
+  String get aboutNetworkWifiBullet1 => 'Show critique = filaire.';
 
   @override
   String get aboutNetworkWifiBullet2 =>
-      'Wi-Fi = operator comfort (UI), not main DMX/IP transport for heavy traffic.';
+      'Wi-Fi = confort opérateur (UI), pas transport principal DMX/IP si gros volume.';
 
   @override
-  String get aboutNetworkSwitchCalloutTitle => 'Recommended minimum';
+  String get aboutNetworkSwitchCalloutTitle => 'Minimum recommandé';
 
   @override
-  String get aboutNetworkSwitchBullet1 => 'Proper Ethernet switch (not a hub).';
+  String get aboutNetworkSwitchBullet1 => 'Switch Ethernet correct (pas hub).';
 
   @override
-  String get aboutNetworkSwitchBullet2 => 'Good cables (RJ45, connectors).';
+  String get aboutNetworkSwitchBullet2 => 'Câbles OK (RJ45, connecteurs).';
 
   @override
-  String get aboutNetworkSwitchBullet3 => 'Avoid loops (or controlled STP).';
+  String get aboutNetworkSwitchBullet3 => 'Éviter boucles (ou STP maîtrisé).';
 
   @override
-  String get aboutNetworkSwitchBullet4 => 'For sACN multicast: IGMP snooping.';
+  String get aboutNetworkSwitchBullet4 => 'Si sACN multicast: IGMP snooping.';
 
   @override
   String get aboutNetworkSwitchSubtitle => 'Managed vs unmanaged';
 
   @override
   String get aboutNetworkSwitchSubBullet1 =>
-      'Unmanaged: OK for a small dedicated network (simple).';
+      'Unmanaged: ok petit réseau dédié (simple).';
 
   @override
   String get aboutNetworkSwitchSubBullet2 =>
-      'Managed: useful for VLAN/IGMP/diagnostics (larger network).';
+      'Managed: utile pour VLAN/IGMP/diagnostics (gros réseau).';
 
   @override
-  String get aboutNetworkDiagramsSubtitle1 =>
-      'VLAN: separate lighting / everything else';
+  String get aboutNetworkDiagramsSubtitle1 => 'VLAN: séparer lumière / reste';
 
   @override
-  String get aboutNetworkDiagramsSubtitle2 => 'Wi-Fi vs wired (concept)';
+  String get aboutNetworkDiagramsSubtitle2 => 'Wi-Fi vs filaire (idée)';
 
   @override
-  String get aboutNetworkChecklistBullet1 => 'Clear IP plan, coherent mask.';
+  String get aboutNetworkChecklistBullet1 => 'Plan IP clair, masque cohérent.';
 
   @override
-  String get aboutNetworkChecklistBullet2 =>
-      'Dedicated network / lighting VLAN.';
+  String get aboutNetworkChecklistBullet2 => 'Réseau dédié / VLAN lumière.';
 
   @override
-  String get aboutNetworkChecklistBullet3 => 'Switch OK, no loops.';
+  String get aboutNetworkChecklistBullet3 => 'Switch OK, pas de boucles.';
 
   @override
-  String get aboutNetworkChecklistBullet4 => 'IGMP for sACN multicast.';
+  String get aboutNetworkChecklistBullet4 => 'IGMP pour sACN multicast.';
 
   @override
-  String get aboutNetworkChecklistBullet5 =>
-      'Avoid Wi-Fi in critical production.';
+  String get aboutNetworkChecklistBullet5 => 'Wi-Fi évité en prod critique.';
 
   @override
   String get videoCameraExposureTitle => 'Camera exposure';
@@ -5191,34 +5192,34 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeBpmTitle => 'BPM';
 
   @override
-  String get aboutReseauPageTitle => 'Network — field reference';
+  String get aboutReseauPageTitle => 'Réseau — repères terrain';
 
   @override
   String get aboutReseauSummaryCopy =>
-      'NETWORK — field reference\n• RJ45: Cat5e/6/6A → 1G/10G depending on distance.\n• Fiber: long distance + EMI immunity.\n• Switch: IGMP matters for sACN multicast.\n• VLAN: separating lighting/video/IT = stability.';
+      'RÉSEAU — repères terrain\n• RJ45 : Cat5e/6/6A → 1G/10G selon distance.\n• Fibre : longue distance + immunité EMI.\n• Switch : IGMP important pour sACN multicast.\n• VLAN : séparer lumière/vidéo/IT = stabilité.';
 
   @override
   String get aboutReseauChecklistCopy =>
-      'NETWORK — Checklist\n☐ Clear IP plan (range / masks)\n☐ Proper switch (IGMP if sACN multicast)\n☐ VLAN if several “worlds” (lighting/video/IT)\n☐ Tested + labeled cables\n☐ Fiber: compatible modules + clean connectors\n☐ Avoid loops (STP) + avoid public Wi-Fi on show LAN';
+      'RÉSEAU — Checklist\n☐ Plan IP clair (plage / masques)\n☐ Switch correct (IGMP si sACN multicast)\n☐ VLAN si plusieurs “mondes” (lumière/vidéo/IT)\n☐ Câbles testés + étiquetés\n☐ Fibre : modules compatibles + connecteurs propres\n☐ Éviter boucles (STP) + éviter Wi-Fi public sur show LAN';
 
   @override
-  String get aboutReseauChecklistCopyTooltip => 'Copy';
+  String get aboutReseauChecklistCopyTooltip => 'Copier';
 
   @override
   String get aboutReseauFooterNote =>
-      'Indicative field info. Exact capabilities vary depending on hardware / cables / modules.\nGoal: simple reference points + reliable method.';
+      'Info indicative (terrain). Les capacités exactes varient selon matériel / câbles / modules.\nObjectif : repères simples + méthode fiable.';
 
   @override
-  String get aboutReseauToc1 => '1) Network basics (LAN / IP / bandwidth)';
+  String get aboutReseauToc1 => '1) Bases réseau (LAN / IP / débit)';
 
   @override
-  String get aboutReseauToc2 => '2) RJ45 & categories (Cat5e/6/6A/…)';
+  String get aboutReseauToc2 => '2) RJ45 & catégories (Cat5e/6/6A/…)';
 
   @override
-  String get aboutReseauToc3 => '3) PoE (network power)';
+  String get aboutReseauToc3 => '3) PoE (alimentation réseau)';
 
   @override
-  String get aboutReseauToc4 => '4) Fiber (SM/MM) + connectors (LC/SC)';
+  String get aboutReseauToc4 => '4) Fibre (SM/MM) + connecteurs (LC/SC)';
 
   @override
   String get aboutReseauToc5 => '5) SFP / SFP+ / QSFP (modules)';
@@ -5227,280 +5228,280 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutReseauToc6 => '6) Switches (VLAN / IGMP / QoS)';
 
   @override
-  String get aboutReseauToc7 => '7) Art-Net / sACN on network (tips)';
+  String get aboutReseauToc7 => '7) Art-Net / sACN sur réseau (conseils)';
 
   @override
   String get aboutReseauToc8 => '8) Checklist';
 
   @override
-  String get aboutReseauSection1Title => 'The 3 simple ideas';
+  String get aboutReseauSection1Title => 'Les 3 idées simples';
 
   @override
-  String get aboutReseauSection1Bullet1 => 'IP = address (ex: 10.0.0.50).';
+  String get aboutReseauSection1Bullet1 => 'IP = adresse (ex: 10.0.0.50).';
 
   @override
   String get aboutReseauSection1Bullet2 =>
-      'LAN = local network through a switch (not “internet”).';
+      'LAN = réseau local via switch (pas “internet”).';
 
   @override
   String get aboutReseauSection1Bullet3 =>
-      'Bandwidth = capacity (1G, 10G…), but stability also depends on the switch.';
+      'Débit = capacité (1G, 10G…), mais la stabilité dépend aussi du switch.';
 
   @override
-  String get aboutReseauSection1Title2 => 'Clean show topology';
+  String get aboutReseauSection1Title2 => 'Topologie show (propre)';
 
   @override
   String get aboutReseauSection1Bullet4 =>
-      'Console/PC → central switch → nodes/servers.';
+      'Console/PC → switch central → nodes/serveurs.';
 
   @override
-  String get aboutReseauSection1Bullet5 => 'Avoid random network daisy-chains.';
+  String get aboutReseauSection1Bullet5 =>
+      'Évite les “daisy-chain réseau” au hasard.';
 
   @override
   String get aboutReseauSection1Bullet6 =>
-      'If possible: a dedicated show network (not public Wi-Fi).';
+      'Si possible : un réseau dédié show (pas le Wi-Fi public).';
 
   @override
-  String get aboutReseauSection2Title => 'Quick reference points';
+  String get aboutReseauSection2Title => 'Repères rapides';
 
   @override
   String get aboutReseauSection2Bullet1 =>
-      'Cat5e: classic 1 Gbit/s (up to 100m).';
+      'Cat5e : 1 Gbit/s “classique” (jusqu’à 100m).';
 
   @override
   String get aboutReseauSection2Bullet2 =>
-      'Cat6: 1G/10G (10G rather on shorter distances).';
+      'Cat6 : 1G/10G (10G plutôt sur distances plus courtes).';
 
   @override
   String get aboutReseauSection2Bullet3 =>
-      'Cat6A: 10G up to 100m (practical reference).';
+      'Cat6A : 10G jusqu’à 100m (repère pratique).';
 
   @override
   String get aboutReseauSection2Bullet4 =>
-      'Beyond that: Cat7/8 exist, but Cat6A is often the field sweet spot.';
+      'Au-delà : Cat7/8 existent, mais Cat6A est souvent le sweet spot terrain.';
 
   @override
-  String get aboutReseauSection2Title2 => 'Field';
+  String get aboutReseauSection2Title2 => 'Terrain';
 
   @override
   String get aboutReseauSection2Bullet5 =>
-      'Always test/label cables (especially rentals).';
+      'Toujours tester/étiqueter les câbles (surtout quand c’est loué).';
 
   @override
   String get aboutReseauSection2Bullet6 =>
-      'Avoid damaged connectors: a “tired” RJ45 = ghost faults.';
+      'Évite les connecteurs abîmés : un RJ45 “fatigué” = pannes fantômes.';
 
   @override
   String get aboutReseauSection2Bullet7 =>
-      'Plan for 10G if you do heavy IP video.';
+      'Prévoir du 10G si tu fais vidéo IP lourde.';
 
   @override
   String get aboutReseauSection3Paragraph =>
-      'PoE allows devices to be powered over RJ45 (IP cameras, Wi-Fi APs, small nodes…). The critical point is the switch’s total PoE budget.';
+      'PoE permet d’alimenter des équipements via RJ45 (cam IP, AP Wi-Fi, petits nodes…). Le point critique : le budget PoE total du switch.';
 
   @override
-  String get aboutReseauSection3Title => 'Reference points';
+  String get aboutReseauSection3Title => 'Repères';
 
   @override
   String get aboutReseauSection3Bullet1 =>
-      'PoE (802.3af) ≈ 15W, PoE+ (802.3at) ≈ 30W, PoE++/bt higher.';
+      'PoE (802.3af) ≈ 15W, PoE+ (802.3at) ≈ 30W, PoE++/bt plus haut.';
 
   @override
   String get aboutReseauSection3Bullet2 =>
-      'The switch has a total “budget” (ex: 120W).';
+      'Le switch a un “budget” total (ex: 120W).';
 
   @override
   String get aboutReseauSection3Bullet3 =>
-      'If you exceed the budget: some ports may stop powering / reboot.';
+      'Si tu dépasses le budget : certains ports ne s’allument plus / reboot.';
 
   @override
-  String get aboutReseauSection4Title => 'Why fiber in show environments';
+  String get aboutReseauSection4Title => 'Pourquoi la fibre en show';
 
   @override
-  String get aboutReseauSection4Bullet1 => 'Very long distances.';
+  String get aboutReseauSection4Bullet1 => 'Très longues distances.';
 
   @override
   String get aboutReseauSection4Bullet2 =>
-      'Immunity to interference (EMI), excellent in electrically noisy environments.';
+      'Immunité aux parasites (EMI), top en environnements chargés.';
 
   @override
   String get aboutReseauSection4Bullet3 =>
-      'Convenient for linking FOH ↔ stage ↔ control room.';
+      'Pratique pour relier FOH ↔ plateau ↔ régie.';
 
   @override
   String get aboutReseauSection4Title2 =>
-      'Multimode vs Singlemode (simple reference)';
+      'Multimode vs Monomode (repère simple)';
 
   @override
   String get aboutReseauSection4Bullet4 =>
-      'Multimode (MM): “medium” distances (often building / stage).';
+      'Multimode (MM) : distances “moyennes” (souvent bâtiment / plateau).';
 
   @override
   String get aboutReseauSection4Bullet5 =>
-      'Singlemode (SM): very long distances.';
+      'Monomode (SM) : très longues distances.';
 
   @override
   String get aboutReseauSection4Bullet6 =>
-      'Modules (SFP) must match the fiber type.';
+      'Les modules (SFP) doivent matcher le type de fibre.';
 
   @override
-  String get aboutReseauSection4Title3 => 'Connectors';
+  String get aboutReseauSection4Title3 => 'Connecteurs';
 
   @override
-  String get aboutReseauSection4Bullet7 => 'LC: small, very common on SFP.';
+  String get aboutReseauSection4Bullet7 => 'LC : petit, très courant sur SFP.';
 
   @override
   String get aboutReseauSection4Bullet8 =>
-      'SC: larger, common in infrastructure.';
+      'SC : plus gros, courant en infrastructure.';
 
   @override
   String get aboutReseauSection4Bullet9 =>
-      'Always protect/clean them (dust = losses).';
+      'Toujours protéger/clean (poussière = pertes).';
 
   @override
-  String get aboutReseauSection5Title => 'Reference points';
+  String get aboutReseauSection5Title => 'Repères';
 
   @override
-  String get aboutReseauSection5Bullet1 => 'SFP: often 1G.';
+  String get aboutReseauSection5Bullet1 => 'SFP : souvent 1G.';
 
   @override
-  String get aboutReseauSection5Bullet2 => 'SFP+: often 10G.';
+  String get aboutReseauSection5Bullet2 => 'SFP+ : souvent 10G.';
 
   @override
-  String get aboutReseauSection5Bullet3 =>
-      'QSFP/QSFP+: 40G (depending on usage).';
+  String get aboutReseauSection5Bullet3 => 'QSFP/QSFP+ : 40G (selon usage).';
 
   @override
   String get aboutReseauSection5Bullet4 =>
-      'A module = speed + fiber type + distance (everything must match).';
+      'Un module = vitesse + type fibre + longueur (tout doit être cohérent).';
 
   @override
   String get aboutReseauSection5Paragraph =>
-      'In practice: use modules compatible with the switch (and ideally from the same vendor/model) to avoid surprises.';
+      'En pratique : prends des modules compatibles avec le switch (et idéalement du même fournisseur/modèle) pour éviter les surprises.';
 
   @override
-  String get aboutReseauSection6Title => 'Useful functions in live events';
+  String get aboutReseauSection6Title => 'Fonctions utiles en spectacle';
 
   @override
   String get aboutReseauSection6Bullet1 =>
-      'VLAN: separate lighting / video / IT.';
+      'VLAN : séparer lumière / vidéo / IT.';
 
   @override
   String get aboutReseauSection6Bullet2 =>
-      'IGMP snooping: essential if you use large-scale sACN multicast.';
+      'IGMP snooping : indispensable si tu utilises sACN multicast à grande échelle.';
 
   @override
   String get aboutReseauSection6Bullet3 =>
-      'QoS: useful if you mix many flows (depending on context).';
+      'QoS : utile si tu mixes beaucoup de flux (selon contexte).';
 
   @override
-  String get aboutReseauSection6Title2 => 'Common mistakes';
+  String get aboutReseauSection6Title2 => 'Erreurs fréquentes';
 
   @override
   String get aboutReseauSection6Bullet4 =>
-      'Cheap switch flooding multicast → network collapses.';
+      'Switch “cheap” qui flood le multicast → réseau qui s’écroule.';
 
   @override
   String get aboutReseauSection6Bullet5 =>
-      'Network loop without STP → broadcast storm.';
+      'Boucle réseau sans STP → tempête de broadcast.';
 
   @override
   String get aboutReseauSection6Bullet6 =>
-      'Public Wi-Fi on the same LAN as the show → instability.';
+      'Wi-Fi public sur le même LAN que le show → instabilité.';
 
   @override
-  String get aboutReseauSection7Title => 'Art-Net (field)';
+  String get aboutReseauSection7Title => 'Art-Net (terrain)';
 
   @override
-  String get aboutReseauSection7Bullet1 => 'Often easy to set up.';
+  String get aboutReseauSection7Bullet1 => 'Souvent simple à mettre en place.';
 
   @override
   String get aboutReseauSection7Bullet2 =>
-      'Broadcast can work on a small dedicated LAN, but unicast is cleaner.';
+      'Broadcast possible sur petit LAN dédié, mais unicast est plus propre.';
 
   @override
   String get aboutReseauSection7Bullet3 =>
-      'Universe/port mapping = the number 1 thing to verify.';
+      'Mapping univers/ports = point numéro 1 à vérifier.';
 
   @override
-  String get aboutReseauSection7Title2 => 'sACN (field)';
+  String get aboutReseauSection7Title2 => 'sACN (terrain)';
 
   @override
   String get aboutReseauSection7Bullet4 =>
-      'Multicast: efficient, but requires a proper switch (IGMP).';
+      'Multicast : efficace, mais exige un switch correct (IGMP).';
 
   @override
   String get aboutReseauSection7Bullet5 =>
-      'Priorities: useful if several sources are present.';
+      'Priorités : utile si plusieurs sources.';
 
   @override
   String get aboutReseauSection7Bullet6 =>
-      'On large shows: sACN + IGMP is often the clean choice.';
+      'Sur gros shows : sACN + IGMP est souvent le choix “propre”.';
 
   @override
-  String get aboutReseauChecklistTitle => 'Quick';
+  String get aboutReseauChecklistTitle => 'Rapide';
 
   @override
-  String get aboutReseauChecklistBullet1 => 'Proper switch + clean cables.';
+  String get aboutReseauChecklistBullet1 => 'Switch correct + câbles propres.';
 
   @override
-  String get aboutReseauChecklistBullet2 => 'IGMP if sACN multicast.';
+  String get aboutReseauChecklistBullet2 => 'IGMP si sACN multicast.';
 
   @override
-  String get aboutReseauChecklistBullet3 => 'Separate usages (VLAN).';
+  String get aboutReseauChecklistBullet3 => 'Séparer les usages (VLAN).';
 
   @override
-  String get aboutSacnPageTitle => 'sACN / E1.31 — multicast & priorities';
+  String get aboutSacnPageTitle => 'sACN / E1.31 — multicast & priorités';
 
   @override
-  String get aboutSacnCopyTooltip => 'Copy notes';
+  String get aboutSacnCopyTooltip => 'Copier repères';
 
   @override
-  String get aboutSacnChecklistCopyTooltip => 'Copy';
+  String get aboutSacnChecklistCopyTooltip => 'Copier';
 
   @override
   String get aboutSacnFooterNote =>
-      'Indicative field info. Behavior depends on switches (IGMP), nodes and firmware.\nGoal: understand and stabilize an sACN network.';
+      'Info indicative (terrain). Les comportements dépendent des switchs (IGMP), nodes et firmwares.\nObjectif : comprendre et stabiliser un réseau sACN.';
 
   @override
   String get aboutSacnCopy1 =>
-      'sACN (E1.31) = DMX over IP (UDP), live event standard.';
+      'sACN (E1.31) = DMX sur IP (UDP), standard spectacle.';
 
   @override
-  String get aboutSacnCopy2 => 'sACN universe = 1..63999 (standard range).';
+  String get aboutSacnCopy2 => 'Universe sACN = 1..63999 (plage standard).';
 
   @override
   String get aboutSacnCopy3 =>
-      'Multicast: IGMP snooping recommended, otherwise flooding.';
+      'Multicast: IGMP snooping recommandé, sinon flood.';
 
   @override
   String get aboutSacnCopy4 =>
-      'Priority: useful with multiple sources (console + backup).';
+      'Priorité: utile avec sources multiples (console + backup).';
 
   @override
   String get aboutSacnChecklistCopy =>
-      'sACN (E1.31) — Field checklist\n☐ Proper switch (ideally manageable)\n☐ IGMP snooping enabled if multicast\n☐ (If possible) IGMP querier present in the VLAN (otherwise strange behavior may occur)\n☐ Unicast if the network is not controlled / troubleshooting\n☐ Priorities: verify multiple sources (console/backup)\n☐ Universe ↔ node port mapping verified\n☐ Avoid Wi-Fi in production';
+      'sACN (E1.31) — Checklist terrain\n☐ Switch correct (idéalement manageable)\n☐ IGMP snooping activé si multicast\n☐ (Si possible) IGMP querier présent dans le VLAN (sinon comportements bizarres possibles)\n☐ Unicast si réseau non maîtrisé / dépannage\n☐ Priorités: vérifier sources multiples (console/backup)\n☐ Mapping univers ↔ ports node vérifié\n☐ Wi-Fi évité en prod';
 
   @override
-  String get aboutSacnToc1 => '1) What is sACN used for?';
+  String get aboutSacnToc1 => '1) À quoi sert sACN ?';
 
   @override
-  String get aboutSacnToc2 => '2) Universes (numbering)';
+  String get aboutSacnToc2 => '2) Univers (numérotation)';
 
   @override
   String get aboutSacnToc3 => '3) Multicast / Unicast + IGMP';
 
   @override
-  String get aboutSacnToc4 => '4) Priorities (multi-source)';
+  String get aboutSacnToc4 => '4) Priorités (multi-sources)';
 
   @override
-  String get aboutSacnToc5 => '5) Limits / performance';
+  String get aboutSacnToc5 => '5) Limites / perfs';
 
   @override
-  String get aboutSacnToc6 => '6) RDM & sACN (proxy / hardware dependent)';
+  String get aboutSacnToc6 => '6) RDM & sACN (proxy / selon matériel)';
 
   @override
-  String get aboutSacnToc7 => '7) Diagrams';
+  String get aboutSacnToc7 => '7) Schémas';
 
   @override
   String get aboutSacnToc8 => '8) Checklist';
@@ -5512,26 +5513,26 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutSacnSection1Pill2 => 'Multicast';
 
   @override
-  String get aboutSacnSection1Pill3 => 'Priority';
+  String get aboutSacnSection1Pill3 => 'Priorité';
 
   @override
   String get aboutSacnSection1Paragraph =>
-      'sACN (E1.31) is a widely used standard for transporting DMX universes over IP. It is often preferred when you want a clean network architecture: properly managed multicast, standardized priorities, and a more “pro network” behavior.';
+      'sACN (E1.31) est un standard largement utilisé pour transporter des univers DMX sur IP. Il est souvent privilégié quand on veut une architecture réseau propre: multicast bien géré, priorités standardisées, et un comportement plus “réseau pro”.';
 
   @override
-  String get aboutSacnSection1Title => 'When it shines';
+  String get aboutSacnSection1Title => 'Quand c’est top';
 
   @override
   String get aboutSacnSection1Bullet1 =>
-      'Many universes on a well-managed network.';
+      'Beaucoup d’univers sur un réseau bien géré.';
 
   @override
   String get aboutSacnSection1Bullet2 =>
-      'Installations / large networks with multiple sources (priorities).';
+      'Installations / gros réseaux avec plusieurs sources (priorités).';
 
   @override
   String get aboutSacnSection1Bullet3 =>
-      'When you want to avoid “broadcast everywhere”.';
+      'Quand tu veux éviter le “broadcast partout”.';
 
   @override
   String get aboutSacnSection2Pill1 => 'Universe 1..63999';
@@ -5541,59 +5542,59 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutSacnSection2Paragraph =>
-      'An sACN universe corresponds to a DMX universe: up to 512 slots. Standard sACN numbering is 1..63999. In practice, what matters is console ↔ node ↔ DMX port mapping.';
+      'Un univers sACN correspond à un univers DMX: jusqu’à 512 slots. La numérotation sACN standard est 1..63999. En pratique, l’important est le mapping console ↔ node ↔ port DMX.';
 
   @override
-  String get aboutSacnSection2Title => 'Common mistake';
+  String get aboutSacnSection2Title => 'Erreur classique';
 
   @override
   String get aboutSacnSection2Bullet1 =>
-      'You change the universe number on the console side, but not on the node side (or vice versa).';
+      'Tu changes le numéro d’univers côté console, mais pas côté node (ou inverse).';
 
   @override
   String get aboutSacnSection2Bullet2 =>
-      'You patch “Universe 0” while the hardware expects base 1.';
+      'Tu patches “Universe 0” alors que le matériel attend une base 1.';
 
   @override
   String get aboutSacnSection2Bullet3 =>
-      'You mix numbering conventions between tools.';
+      'Tu mélanges des conventions de numérotation entre outils.';
 
   @override
   String get aboutSacnSection3Paragraph =>
-      'sACN often uses multicast: each universe “lives” on a multicast group, and nodes subscribe to the universes they need.';
+      'sACN utilise souvent le multicast: chaque univers “vit” sur un groupe multicast, et les nodes s’abonnent aux univers dont ils ont besoin.';
 
   @override
-  String get aboutSacnSection3Title => 'IGMP snooping (why it matters)';
+  String get aboutSacnSection3Title =>
+      'IGMP snooping (pourquoi c’est important)';
 
   @override
   String get aboutSacnSection3Bullet1 =>
-      'Without IGMP: the switch floods multicast everywhere → possible overload.';
+      'Sans IGMP: le switch “flood” le multicast partout → surcharge possible.';
 
   @override
   String get aboutSacnSection3Bullet2 =>
-      'With IGMP: the switch sends only to subscribed ports → stable network.';
+      'Avec IGMP: le switch envoie seulement aux ports abonnés → réseau stable.';
 
   @override
   String get aboutSacnSection3Bullet3 =>
-      'At large scale: IGMP is often THE difference between “it works” and “it’s hell”.';
+      'Sur gros volumes: IGMP est souvent LA différence entre “ça marche” et “c’est l’enfer”.';
 
   @override
-  String get aboutSacnSection3Subtitle => 'Diagram: multicast & IGMP';
+  String get aboutSacnSection3Subtitle => 'Schéma : multicast & IGMP';
 
   @override
   String get aboutSacnSection3Subtitle2 => 'Unicast (option)';
 
   @override
-  String get aboutSacnSection3SubBullet1 =>
-      'Possible depending on consoles/nodes.';
+  String get aboutSacnSection3SubBullet1 => 'Possible selon consoles/nodes.';
 
   @override
   String get aboutSacnSection3SubBullet2 =>
-      'Useful for troubleshooting or if multicast networking is not under control.';
+      'Utile en dépannage ou si réseau multicast non maîtrisé.';
 
   @override
   String get aboutSacnSection3SubBullet3 =>
-      'Less elegant but sometimes simpler.';
+      'Moins élégant mais parfois plus simple.';
 
   @override
   String get aboutSacnSection4Pill1 => 'Source A prio 100';
@@ -5603,22 +5604,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutSacnSection4Paragraph =>
-      'sACN supports priority: if multiple sources send the same universe, the receiver keeps the highest-priority source. Very useful with a main console + backup console + media server.';
+      'sACN gère une notion de priorité: si plusieurs sources envoient le même univers, le récepteur garde la source la plus prioritaire. Très utile avec une console principale + une console backup + un media server.';
 
   @override
-  String get aboutSacnSection4Title => 'Pitfalls';
+  String get aboutSacnSection4Title => 'Pièges';
 
   @override
   String get aboutSacnSection4Bullet1 =>
-      'Two unwanted sources on the same universe → “they fight”.';
+      'Deux sources non voulues sur le même univers → “ça se bat”.';
 
   @override
   String get aboutSacnSection4Bullet2 =>
-      'Priority set incorrectly → backup takes over.';
+      'Priorité mal réglée → backup qui prend le dessus.';
 
   @override
   String get aboutSacnSection4Bullet3 =>
-      'Debug: mute one source and check who wins.';
+      'Debug: couper une source et vérifier qui gagne.';
 
   @override
   String get aboutSacnSection5Pill1 => 'IGMP';
@@ -5627,97 +5628,96 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutSacnSection5Pill2 => 'Switch';
 
   @override
-  String get aboutSacnSection5Pill3 => 'No Wi-Fi';
+  String get aboutSacnSection5Pill3 => 'Wi-Fi non';
 
   @override
-  String get aboutSacnSection5Pill4 => 'Node CPU';
+  String get aboutSacnSection5Pill4 => 'CPU node';
 
   @override
-  String get aboutSacnSection5Title => 'What breaks first';
+  String get aboutSacnSection5Title => 'Ce qui casse en premier';
 
   @override
-  String get aboutSacnSection5Bullet1 => 'Multicast without IGMP → flooding.';
+  String get aboutSacnSection5Bullet1 => 'Multicast sans IGMP → flood.';
 
   @override
   String get aboutSacnSection5Bullet2 =>
-      'Unsuitable switch (buffers/CPU) → loss.';
+      'Switch non adapté (buffers/CPU) → pertes.';
 
   @override
-  String get aboutSacnSection5Bullet3 => 'Wi-Fi → jitter/loss.';
+  String get aboutSacnSection5Bullet3 => 'Wi-Fi → jitter/pertes.';
 
   @override
-  String get aboutSacnSection5Bullet4 => 'Limited nodes (ports, firmware).';
+  String get aboutSacnSection5Bullet4 => 'Nodes limités (ports, firmware).';
 
   @override
-  String get aboutSacnSection5Subtitle => 'Simple rules';
+  String get aboutSacnSection5Subtitle => 'Règles simples';
 
   @override
   String get aboutSacnSection5SubBullet1 =>
-      'Managed switch + IGMP snooping if many universes.';
+      'Switch géré + IGMP snooping si beaucoup d’univers.';
 
   @override
-  String get aboutSacnSection5SubBullet2 =>
-      'Dedicated lighting VLAN if possible.';
+  String get aboutSacnSection5SubBullet2 => 'VLAN dédié lumière si possible.';
 
   @override
-  String get aboutSacnSection5SubBullet3 =>
-      'Use unicast for troubleshooting isolation.';
+  String get aboutSacnSection5SubBullet3 => 'Unicast pour isoler en dépannage.';
 
   @override
   String get aboutSacnSection6Paragraph =>
-      'As with Art-Net, RDM “over IP” often depends on a proxy mechanism in the nodes. The sACN standard does not automatically mean your node handles RDM correctly.';
+      'Comme avec Art-Net, le RDM “sur IP” dépend souvent d’un mécanisme de proxy dans les nodes. Le standard sACN n’implique pas automatiquement que ton node fait du RDM correctement.';
 
   @override
-  String get aboutSacnSection6Title => 'Check in the node documentation';
+  String get aboutSacnSection6Title => 'À vérifier dans la doc du node';
 
   @override
-  String get aboutSacnSection6Bullet1 => 'RDM proxy / RDM over IP support.';
+  String get aboutSacnSection6Bullet1 => 'Support RDM proxy / RDM over IP.';
 
   @override
   String get aboutSacnSection6Bullet2 =>
-      'Limitations (discovery only, partial commands).';
+      'Limitations (discovery only, commandes partielles).';
 
   @override
   String get aboutSacnSection6Bullet3 =>
-      'Compatibility with splitters/opto on the DMX side.';
+      'Compatibilité avec splitters/opto côté DMX.';
 
   @override
-  String get aboutSacnSection6Subtitle => 'Field method';
+  String get aboutSacnSection6Subtitle => 'Méthode terrain';
 
   @override
-  String get aboutSacnSection6SubBullet1 => 'Stabilize DMX without RDM.';
+  String get aboutSacnSection6SubBullet1 => 'Stabiliser DMX sans RDM.';
 
   @override
-  String get aboutSacnSection6SubBullet2 => 'Test RDM on a simple, clean line.';
+  String get aboutSacnSection6SubBullet2 =>
+      'Tester RDM sur une ligne simple et propre.';
 
   @override
   String get aboutSacnSection6SubBullet3 =>
-      'If issues: disable RDM, then isolate node/splitter.';
+      'Si soucis: désactiver RDM, puis isoler node/splitter.';
 
   @override
-  String get aboutSacnSection7Subtitle1 => 'Multicast + IGMP (concept)';
+  String get aboutSacnSection7Subtitle1 => 'Multicast + IGMP (idée)';
 
   @override
-  String get aboutSacnSection7Subtitle2 => 'Priorities (2 sources)';
+  String get aboutSacnSection7Subtitle2 => 'Priorités (2 sources)';
 
   @override
-  String get aboutSacnChecklistTitle => 'Before blaming “the protocol”';
+  String get aboutSacnChecklistTitle => 'Avant d’accuser “le protocole”';
 
   @override
-  String get aboutSacnChecklistBullet1 => 'IGMP snooping enabled if multicast.';
+  String get aboutSacnChecklistBullet1 => 'IGMP snooping activé si multicast.';
 
   @override
-  String get aboutSacnChecklistBullet2 => 'Dedicated VLAN if possible.';
+  String get aboutSacnChecklistBullet2 => 'VLAN dédié si possible.';
 
   @override
-  String get aboutSacnChecklistBullet3 => 'Use unicast for troubleshooting.';
+  String get aboutSacnChecklistBullet3 => 'Unicast en dépannage.';
 
   @override
   String get aboutSacnChecklistBullet4 =>
-      'Consistent priorities in multi-source setups.';
+      'Priorités cohérentes si multi-sources.';
 
   @override
-  String get aboutSacnChecklistBullet5 => 'Avoid Wi-Fi in production.';
+  String get aboutSacnChecklistBullet5 => 'Wi-Fi évité en prod.';
 
   @override
   String get sunTimesTitle => 'Sunrise / sunset';
@@ -5851,74 +5851,75 @@ class AppLocalizationsEn extends AppLocalizations {
       'These are rough orders of magnitude. Weather changes everything.';
 
   @override
-  String get aboutVideoPageTitle => 'Video — field reference';
+  String get aboutVideoPageTitle => 'Vidéo — repères terrain';
 
   @override
   String get aboutVideoSummaryCopy =>
-      'VIDEO — field reference\n• Resolution = size (px). FPS = smoothness / latency.\n• 4:2:2 / 4:4:4 + 10-bit = color quality.\n• SDI = robust + long distance.\n• HDMI = fragile + short.\n• NDI = IP (network), depends on the LAN.\n• Genlock / Timecode = sync.';
+      'VIDÉO — repères terrain\n• Résolution = taille (px). FPS = fluidité / latence.\n• 4:2:2 / 4:4:4 + 10-bit = qualité couleur.\n• SDI = robuste + longue distance.\n• HDMI = fragile + court.\n• NDI = IP (réseau), dépend du LAN.\n• Genlock / Timecode = synchro.';
 
   @override
   String get aboutVideoChecklistCopy =>
-      'VIDEO — Checklist\n☐ Same resolution & FPS everywhere\n☐ HDMI: EDID / HDCP under control\n☐ SDI: 75Ω cable + correct standard\n☐ NDI/IP: clean LAN (switch, bandwidth)\n☐ Genlock / Timecode if sync is required\n☐ Test source → screen direct';
+      'VIDÉO — Checklist\n☐ Même résolution & FPS partout\n☐ HDMI : EDID / HDCP maîtrisés\n☐ SDI : câble 75Ω + bon standard\n☐ NDI/IP : LAN propre (switch, débit)\n☐ Genlock / Timecode si synchro requise\n☐ Tester source → écran direct';
 
   @override
-  String get aboutVideoChecklistCopyTooltip => 'Copy';
+  String get aboutVideoChecklistCopyTooltip => 'Copier';
 
   @override
   String get aboutVideoFooterNote =>
-      'Indicative field info. Behavior varies depending on hardware.\nGoal: understand quickly and troubleshoot cleanly.';
+      'Info indicative (terrain). Les comportements varient selon matériels.\nObjectif : comprendre vite et dépanner proprement.';
 
   @override
-  String get aboutVideoToc1 => '1) Video basics (keywords)';
+  String get aboutVideoToc1 => '1) Bases vidéo (mots-clés)';
 
   @override
-  String get aboutVideoToc2 => '2) Resolution & FPS';
+  String get aboutVideoToc2 => '2) Résolution & FPS';
 
   @override
-  String get aboutVideoToc3 => '3) Color (4:4:4 / 4:2:2 / 10-bit)';
+  String get aboutVideoToc3 => '3) Couleur (4:4:4 / 4:2:2 / 10-bit)';
 
   @override
   String get aboutVideoToc4 => '4) Sync (Genlock / Timecode)';
 
   @override
-  String get aboutVideoToc5 => '5) Cables & distances';
+  String get aboutVideoToc5 => '5) Câbles & distances';
 
   @override
   String get aboutVideoToc6 => '6) SDI (3G / 6G / 12G)';
 
   @override
-  String get aboutVideoToc7 => '7) HDMI — field';
+  String get aboutVideoToc7 => '7) HDMI — terrain';
 
   @override
-  String get aboutVideoToc8 => '8) NDI — when / why / limits';
+  String get aboutVideoToc8 => '8) NDI — quand / pourquoi / limites';
 
   @override
-  String get aboutVideoToc9 => '9) Mapping / LED / multi-projector';
+  String get aboutVideoToc9 => '9) Mapping / LED / multi-projo';
 
   @override
   String get aboutVideoSection1Paragraph =>
-      'Video is an image (pixels) sent at a rate (FPS), with a color structure (sampling / bit depth), carried over a link (SDI / HDMI / IP) and sometimes synchronized.';
+      'La vidéo, c’est une image (pixels) envoyée à un rythme (FPS), avec une structure couleur (sampling / bit depth), transportée par un lien (SDI / HDMI / IP) et parfois synchronisée.';
 
   @override
-  String get aboutVideoSection1Title => 'Useful vocabulary';
+  String get aboutVideoSection1Title => 'Vocabulaire utile';
 
   @override
-  String get aboutVideoSection1Bullet1 => 'Resolution: width×height (px).';
+  String get aboutVideoSection1Bullet1 => 'Résolution : largeur×hauteur (px).';
 
   @override
-  String get aboutVideoSection1Bullet2 => 'FPS: smoothness / latency.';
+  String get aboutVideoSection1Bullet2 => 'FPS : fluidité / latence.';
 
   @override
-  String get aboutVideoSection1Bullet3 => 'Progressive (p) vs interlaced (i).';
+  String get aboutVideoSection1Bullet3 => 'Progressif (p) vs entrelacé (i).';
 
   @override
-  String get aboutVideoSection1Bullet4 => 'Codec: compression (H.264, H.265…).';
+  String get aboutVideoSection1Bullet4 =>
+      'Codec : compression (H.264, H.265…).';
 
   @override
-  String get aboutVideoSection1Bullet5 => 'Latency: critical in live work.';
+  String get aboutVideoSection1Bullet5 => 'Latency : critique en live.';
 
   @override
-  String get aboutVideoSection2Title => 'Resolution';
+  String get aboutVideoSection2Title => 'Résolution';
 
   @override
   String get aboutVideoSection2Bullet1 => '1080p = 1920×1080.';
@@ -5927,91 +5928,92 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutVideoSection2Bullet2 => '4K UHD = 3840×2160.';
 
   @override
-  String get aboutVideoSection2Bullet3 => 'DCI 4K = 4096×2160 (cinema).';
+  String get aboutVideoSection2Bullet3 => 'DCI 4K = 4096×2160 (cinéma).';
 
   @override
-  String get aboutVideoSection2Bullet4 => 'More pixels = more bandwidth.';
+  String get aboutVideoSection2Bullet4 => 'Plus de pixels = plus de débit.';
 
   @override
   String get aboutVideoSection2Title2 => 'FPS';
 
   @override
-  String get aboutVideoSection2Bullet5 => '25/50: Europe standard.';
+  String get aboutVideoSection2Bullet5 => '25/50 : standard Europe.';
 
   @override
-  String get aboutVideoSection2Bullet6 => '30/60: US / devices standard.';
+  String get aboutVideoSection2Bullet6 => '30/60 : standard US / devices.';
 
   @override
   String get aboutVideoSection2Bullet7 =>
-      'Avoid mixing 50 and 60 without conversion.';
+      'Éviter de mixer 50 et 60 sans conversion.';
 
   @override
   String get aboutVideoSection3Title => 'Sampling';
 
   @override
-  String get aboutVideoSection3Bullet1 => '4:4:4: graphics / keying.';
+  String get aboutVideoSection3Bullet1 => '4:4:4 : graphismes / keying.';
 
   @override
-  String get aboutVideoSection3Bullet2 => '4:2:2: common pro use.';
+  String get aboutVideoSection3Bullet2 => '4:2:2 : pro courant.';
 
   @override
-  String get aboutVideoSection3Bullet3 => '4:2:0: files / streaming.';
+  String get aboutVideoSection3Bullet3 => '4:2:0 : fichiers / stream.';
 
   @override
   String get aboutVideoSection3Title2 => 'Bit depth';
 
   @override
-  String get aboutVideoSection3Bullet4 => '8-bit: standard.';
+  String get aboutVideoSection3Bullet4 => '8-bit : standard.';
 
   @override
   String get aboutVideoSection3Bullet5 =>
-      '10-bit: better gradients (HDR / LED).';
+      '10-bit : meilleurs dégradés (HDR / LED).';
 
   @override
   String get aboutVideoSection4Title => 'Genlock';
 
   @override
-  String get aboutVideoSection4Bullet1 => 'Synchronizes image refresh.';
+  String get aboutVideoSection4Bullet1 =>
+      'Synchronise le rafraîchissement image.';
 
   @override
   String get aboutVideoSection4Bullet2 =>
-      'Useful in multi-camera / LED / broadcast.';
+      'Utile en multi-cam / LED / broadcast.';
 
   @override
   String get aboutVideoSection4Title2 => 'Timecode';
 
   @override
-  String get aboutVideoSection4Bullet3 => 'Time synchronization.';
+  String get aboutVideoSection4Bullet3 => 'Synchronisation temporelle.';
 
   @override
-  String get aboutVideoSection4Bullet4 => 'Does not replace genlock.';
+  String get aboutVideoSection4Bullet4 => 'Ne remplace pas le genlock.';
 
   @override
-  String get aboutVideoSection5Title => 'Simple rules';
+  String get aboutVideoSection5Title => 'Règles simples';
 
   @override
-  String get aboutVideoSection5Bullet1 => 'HDMI: fragile, short.';
+  String get aboutVideoSection5Bullet1 => 'HDMI : fragile, court.';
 
   @override
-  String get aboutVideoSection5Bullet2 => 'SDI: robust, long.';
+  String get aboutVideoSection5Bullet2 => 'SDI : robuste, long.';
 
   @override
-  String get aboutVideoSection5Bullet3 => 'Fiber: very long + EMI free.';
+  String get aboutVideoSection5Bullet3 => 'Fibre : très long + EMI free.';
 
   @override
-  String get aboutVideoSection6Title => 'Reference points';
+  String get aboutVideoSection6Title => 'Repères';
 
   @override
-  String get aboutVideoSection6Bullet1 => '3G: 1080p60';
+  String get aboutVideoSection6Bullet1 => '3G : 1080p60';
 
   @override
-  String get aboutVideoSection6Bullet2 => '6G: 2160p30';
+  String get aboutVideoSection6Bullet2 => '6G : 2160p30';
 
   @override
-  String get aboutVideoSection6Bullet3 => '12G: 2160p60';
+  String get aboutVideoSection6Bullet3 => '12G : 2160p60';
 
   @override
-  String get aboutVideoSection7Title => 'Watch out for';
+  String get aboutVideoSection7Title => 'À surveiller';
 
   @override
   String get aboutVideoSection7Bullet1 => 'EDID';
@@ -6020,43 +6022,43 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutVideoSection7Bullet2 => 'HDCP';
 
   @override
-  String get aboutVideoSection7Bullet3 => 'Cable lengths';
+  String get aboutVideoSection7Bullet3 => 'Longueurs';
 
   @override
-  String get aboutVideoSection8Title => 'Video over IP';
+  String get aboutVideoSection8Title => 'IP vidéo';
 
   @override
   String get aboutVideoSection8Bullet1 => 'Flexible.';
 
   @override
-  String get aboutVideoSection8Bullet2 => 'Network load.';
+  String get aboutVideoSection8Bullet2 => 'Charge réseau.';
 
   @override
-  String get aboutVideoSection8Bullet3 => 'Requires a clean LAN.';
+  String get aboutVideoSection8Bullet3 => 'LAN propre requis.';
 
   @override
-  String get aboutVideoSection9Title => 'Field';
+  String get aboutVideoSection9Title => 'Terrain';
 
   @override
-  String get aboutVideoSection9Bullet1 => 'Same resolution / FPS.';
+  String get aboutVideoSection9Bullet1 => 'Même résolution / FPS.';
 
   @override
-  String get aboutVideoSection9Bullet2 => 'Correct mapping.';
+  String get aboutVideoSection9Bullet2 => 'Mapping correct.';
 
   @override
-  String get aboutVideoSection9Bullet3 => 'Test with patterns.';
+  String get aboutVideoSection9Bullet3 => 'Tester avec mires.';
 
   @override
-  String get aboutVideoChecklistTitle => 'Before panicking';
+  String get aboutVideoChecklistTitle => 'Avant de paniquer';
 
   @override
-  String get aboutVideoChecklistBullet1 => 'Check resolution / FPS.';
+  String get aboutVideoChecklistBullet1 => 'Vérifier résolution / FPS.';
 
   @override
-  String get aboutVideoChecklistBullet2 => 'Test source → screen.';
+  String get aboutVideoChecklistBullet2 => 'Tester source → écran.';
 
   @override
-  String get aboutVideoChecklistBullet3 => 'Simplify the chain.';
+  String get aboutVideoChecklistBullet3 => 'Simplifier la chaîne.';
 
   @override
   String get homeBpmSubtitle => 'Tap tempo, BPM ↔ ms, Hz conversions.';
@@ -6407,19 +6409,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get gdtfExportNeedChannels => 'Add at least one channel to export.';
 
   @override
-  String get homeDrawerContact => 'Contact the developer';
+  String get homeDrawerContact => 'Contacter le développeur';
 
   @override
-  String get homeDrawerSuggestItem => 'Suggest an item for the catalogue';
+  String get homeDrawerSuggestItem => 'Proposer un article au catalogue';
 
   @override
-  String get homeErrorOpenEmail => 'Unable to open the email application.';
+  String get homeErrorOpenEmail =>
+      'Impossible d\'ouvrir l\'application e-mail.';
 
   @override
-  String get homeErrorOpenForm => 'Unable to open the form.';
+  String get homeErrorOpenForm => 'Impossible d\'ouvrir le formulaire.';
 
   @override
-  String get homeContactEmailSubject => 'Question about Mon App Tech';
+  String get homeContactEmailSubject => 'Question concernant Mon App Tech';
 
   @override
   String get bpmManualHelp =>
