@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, copyToClipboard
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
+import 'about_favorites.dart';
 
 class AboutElectricitePage extends StatefulWidget {
   const AboutElectricitePage({super.key});
@@ -54,48 +55,77 @@ class _AboutElectricitePageState extends State<AboutElectricitePage> {
           child: Column(
             children: [
               _TocCard(
+                pageId: 'electricity',
                 onCopy: () {
                   copyToClipboard(context, loc.elecTocCopyText);
                 },
                 items: [
-                  _TocItem(loc.elecSection1Title, onTap: () => _goTo(_kBasics)),
-                  _TocItem(loc.elecSection2Title,
+                  _TocItem('basics', loc.elecSection1Title, onTap: () => _goTo(_kBasics)),
+                  _TocItem('connectors', loc.elecSection2Title,
                       onTap: () => _goTo(_kConnectors)),
-                  _TocItem(loc.elecSection3Title,
+                  _TocItem('mono_tri', loc.elecSection3Title,
                       onTap: () => _goTo(_kMonoTri)),
-                  _TocItem(loc.elecSection4Title,
+                  _TocItem('power_table', loc.elecSection4Title,
                       onTap: () => _goTo(_kPowerTable)),
-                  _TocItem(loc.elecKvaTitle,
+                  _TocItem('kva_conversion', loc.elecKvaTitle,
                       onTap: () => _goTo(_kKvaConversion)),
-                  _TocItem(loc.elecSection5Title, onTap: () => _goTo(_kSafety)),
-                  _TocItem(loc.elecSection6Title,
+                  _TocItem('safety', loc.elecSection5Title, onTap: () => _goTo(_kSafety)),
+                  _TocItem('checklist', loc.elecSection6Title,
                       onTap: () => _goTo(_kChecklist)),
                 ],
               ),
               const SizedBox(height: 12),
               _Anchor(key: _kBasics),
-              const _Section1Basics(),
+              AboutSectionPin(
+                pageId: 'electricity',
+                sectionId: 'basics',
+                child: const _Section1Basics(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _kConnectors),
-              const _Section2Connectors(),
+              AboutSectionPin(
+                pageId: 'electricity',
+                sectionId: 'connectors',
+                child: const _Section2Connectors(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _kMonoTri),
-              const _Section3MonoTri(),
+              AboutSectionPin(
+                pageId: 'electricity',
+                sectionId: 'mono_tri',
+                child: const _Section3MonoTri(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _kPowerTable),
-              const _Section4PowerTable(),
+              AboutSectionPin(
+                pageId: 'electricity',
+                sectionId: 'power_table',
+                child: const _Section4PowerTable(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _kKvaConversion),
-              const _SectionKvaConversion(),
+              AboutSectionPin(
+                pageId: 'electricity',
+                sectionId: 'kva_conversion',
+                child: const _SectionKvaConversion(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _kSafety),
-              const _Section5Safety(),
+              AboutSectionPin(
+                pageId: 'electricity',
+                sectionId: 'safety',
+                child: const _Section5Safety(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _kChecklist),
-              _Section6Checklist(
+              AboutSectionPin(
+                pageId: 'electricity',
+                sectionId: 'checklist',
+                child: _Section6Checklist(
                 onCopy: () {
                   copyToClipboard(context, loc.elecTocCopyText);
                 },
+              ),
               ),
               const SizedBox(height: 18),
               const _FooterNote(),
@@ -113,11 +143,13 @@ class _AboutElectricitePageState extends State<AboutElectricitePage> {
 
 class _TocCard extends StatelessWidget {
   const _TocCard({
+    required this.pageId,
     required this.items,
     required this.onCopy,
   });
 
-  final List<_TocItem> items;
+  final String pageId;
+final List<_TocItem> items;
   final VoidCallback onCopy;
 
   @override
@@ -125,11 +157,6 @@ class _TocCard extends StatelessWidget {
     return SectionCard(
       title: AppLocalizations.of(context).commonTocTitle,
       icon: Icons.electrical_services,
-      trailing: IconButton(
-        tooltip: AppLocalizations.of(context).commonCopySummaryTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: Column(
         children: items
             .map(
@@ -155,6 +182,11 @@ class _TocCard extends StatelessWidget {
                               ),
                             ),
                           ),
+                          AboutPinButton(
+                            pageId: pageId,
+                            sectionId: it.sectionId,
+                            dense: true,
+                          ),
                           Icon(Icons.chevron_right,
                               color: Colors.white.withValues(alpha: 0.55)),
                         ],
@@ -171,7 +203,8 @@ class _TocCard extends StatelessWidget {
 }
 
 class _TocItem {
-  _TocItem(this.label, {required this.onTap});
+  _TocItem(this.sectionId, this.label, {required this.onTap});
+  final String sectionId;
   final String label;
   final VoidCallback onTap;
 }
@@ -481,11 +514,6 @@ class _Section6Checklist extends StatelessWidget {
     return SectionCard(
       title: loc.elecSection6Title,
       icon: Icons.checklist,
-      trailing: IconButton(
-        tooltip: loc.commonCopySummaryTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

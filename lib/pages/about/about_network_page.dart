@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, ExpandSectionCard, MiniPill, copyToClipboard
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
+import 'about_favorites.dart';
 
 class AboutNetworkPage extends StatefulWidget {
   const AboutNetworkPage({super.key});
@@ -57,6 +58,7 @@ class _AboutNetworkPageState extends State<AboutNetworkPage> {
           child: Column(
             children: [
               _TocCard(
+                pageId: 'light_network',
                 onCopy: () {
                   final txt = [
                     loc.aboutNetworkCopy1,
@@ -67,15 +69,15 @@ class _AboutNetworkPageState extends State<AboutNetworkPage> {
                   copyToClipboard(context, txt);
                 },
                 items: [
-                  _TocItem(loc.aboutNetworkToc1, onTap: () => _goTo(_k1Basics)),
-                  _TocItem(loc.aboutNetworkToc2, onTap: () => _goTo(_k2PlanIp)),
-                  _TocItem(loc.aboutNetworkToc3, onTap: () => _goTo(_k3Vlan)),
-                  _TocItem(loc.aboutNetworkToc4, onTap: () => _goTo(_k4Igmp)),
-                  _TocItem(loc.aboutNetworkToc5, onTap: () => _goTo(_k5Wifi)),
-                  _TocItem(loc.aboutNetworkToc6, onTap: () => _goTo(_k6Switch)),
-                  _TocItem(loc.aboutNetworkToc7,
+                  _TocItem('basics', loc.aboutNetworkToc1, onTap: () => _goTo(_k1Basics)),
+                  _TocItem('plan_ip', loc.aboutNetworkToc2, onTap: () => _goTo(_k2PlanIp)),
+                  _TocItem('vlan', loc.aboutNetworkToc3, onTap: () => _goTo(_k3Vlan)),
+                  _TocItem('igmp', loc.aboutNetworkToc4, onTap: () => _goTo(_k4Igmp)),
+                  _TocItem('wifi', loc.aboutNetworkToc5, onTap: () => _goTo(_k5Wifi)),
+                  _TocItem('switch', loc.aboutNetworkToc6, onTap: () => _goTo(_k6Switch)),
+                  _TocItem('diagrams', loc.aboutNetworkToc7,
                       onTap: () => _goTo(_k7Diagrams)),
-                  _TocItem(loc.aboutNetworkToc8,
+                  _TocItem('checklist', loc.aboutNetworkToc8,
                       onTap: () => _goTo(_k8Checklist)),
                 ],
               ),
@@ -129,7 +131,10 @@ class _Section1Basics extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'light_network',
+      sectionId: 'basics',
+      child: SectionCard(
       title: loc.aboutNetworkToc1,
       icon: Icons.lan,
       child: Column(
@@ -159,6 +164,7 @@ class _Section1Basics extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }
@@ -170,7 +176,10 @@ class _Section2PlanIp extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'light_network',
+      sectionId: 'plan_ip',
+      child: SectionCard(
       title: loc.aboutNetworkToc2,
       icon: Icons.alt_route,
       child: Column(
@@ -198,6 +207,7 @@ class _Section2PlanIp extends StatelessWidget {
           ]),
         ],
       ),
+    ),
     );
   }
 }
@@ -209,7 +219,10 @@ class _Section3Vlan extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'light_network',
+      sectionId: 'vlan',
+      child: SectionCard(
       title: loc.aboutNetworkToc3,
       icon: Icons.layers,
       child: Column(
@@ -235,6 +248,7 @@ class _Section3Vlan extends StatelessWidget {
           ]),
         ],
       ),
+    ),
     );
   }
 }
@@ -246,7 +260,10 @@ class _Section4Igmp extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'light_network',
+      sectionId: 'igmp',
+      child: SectionCard(
       title: loc.aboutNetworkToc4,
       icon: Icons.hub,
       child: Column(
@@ -280,6 +297,7 @@ class _Section4Igmp extends StatelessWidget {
           _DiagramBox(aspect: 16 / 6.8, painter: _IgmpPainter()),
         ],
       ),
+    ),
     );
   }
 }
@@ -291,7 +309,10 @@ class _Section5Wifi extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'light_network',
+      sectionId: 'wifi',
+      child: SectionCard(
       title: loc.aboutNetworkToc5,
       icon: Icons.wifi,
       child: Column(
@@ -320,6 +341,7 @@ class _Section5Wifi extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }
@@ -331,7 +353,10 @@ class _Section6Switch extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'light_network',
+      sectionId: 'switch',
+      child: SectionCard(
       title: loc.aboutNetworkToc6,
       icon: Icons.settings_ethernet,
       child: Column(
@@ -354,6 +379,7 @@ class _Section6Switch extends StatelessWidget {
           ]),
         ],
       ),
+    ),
     );
   }
 }
@@ -365,7 +391,10 @@ class _Section7Diagrams extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'light_network',
+      sectionId: 'diagrams',
+      child: SectionCard(
       title: loc.aboutNetworkToc7,
       icon: Icons.schema,
       child: Column(
@@ -380,6 +409,7 @@ class _Section7Diagrams extends StatelessWidget {
           const _DiagramBox(aspect: 16 / 6.8, painter: _WifiVsWiredPainter()),
         ],
       ),
+    ),
     );
   }
 }
@@ -393,14 +423,12 @@ class _Section8Checklist extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'light_network',
+      sectionId: 'checklist',
+      child: SectionCard(
       title: loc.aboutNetworkToc8,
       icon: Icons.checklist,
-      trailing: IconButton(
-        tooltip: loc.aboutNetworkChecklistCopyTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: _Callout(
         title: loc.aboutNetworkChecklistTitle,
         bullets: [
@@ -411,6 +439,7 @@ class _Section8Checklist extends StatelessWidget {
           loc.aboutNetworkChecklistBullet5,
         ],
       ),
+    ),
     );
   }
 }
@@ -897,8 +926,10 @@ class _Text {
 /// =======================
 
 class _TocCard extends StatelessWidget {
-  const _TocCard({required this.items, required this.onCopy});
+  const _TocCard({
+    required this.pageId,required this.items, required this.onCopy});
 
+  final String pageId;
   final List<_TocItem> items;
   final VoidCallback onCopy;
 
@@ -909,11 +940,6 @@ class _TocCard extends StatelessWidget {
     return SectionCard(
       title: loc.commonTocTitle,
       icon: Icons.list_alt,
-      trailing: IconButton(
-        tooltip: loc.aboutNetworkCopyTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: Column(
         children: items
             .map(
@@ -939,6 +965,11 @@ class _TocCard extends StatelessWidget {
                               ),
                             ),
                           ),
+                          AboutPinButton(
+                            pageId: pageId,
+                            sectionId: it.sectionId,
+                            dense: true,
+                          ),
                           Icon(Icons.chevron_right,
                               color: Colors.white.withValues(alpha: 0.55)),
                         ],
@@ -955,7 +986,8 @@ class _TocCard extends StatelessWidget {
 }
 
 class _TocItem {
-  _TocItem(this.label, {required this.onTap});
+  _TocItem(this.sectionId, this.label, {required this.onTap});
+  final String sectionId;
   final String label;
   final VoidCallback onTap;
 }

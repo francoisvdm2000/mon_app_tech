@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../app/constants.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
@@ -11,7 +13,7 @@ import 'video/video_page.dart';
 import 'tools/bpm_page.dart';
 import 'laser/laser_consent_dialog.dart';
 import 'settings_page.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'about/pinned_references_page.dart';
 
 class PageAccueil extends StatefulWidget {
   const PageAccueil({super.key});
@@ -21,51 +23,74 @@ class PageAccueil extends StatefulWidget {
 }
 
 class _PageAccueilState extends State<PageAccueil> {
-  // --- Contact & contribution catalogue --
   static const String _kContactEmail = 'info@openwhite.eu';
   static const String _kCatalogFormUrl = 'https://forms.gle/ymhsrLXyZioCoqUa6';
 
+  String _appVersion = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _checkDisclaimerOnStart();
+    _loadAppVersion();
+  }
+
+  Future<void> _loadAppVersion() async {
+    final info = await PackageInfo.fromPlatform();
+    if (!mounted) return;
+
+    final loc = AppLocalizations.of(context);
+
+    final version = info.version.trim();
+    final build = info.buildNumber.trim();
+
+    setState(() {
+      if (build.isNotEmpty) {
+        _appVersion = loc.appVersionLabel(version, build);
+      } else {
+        _appVersion = loc.appVersionLabelNoBuild(version);
+      }
+    });
+  }
+
   Future<void> _contactEmail(BuildContext context) async {
+    final loc = AppLocalizations.of(context);
+
     final uri = Uri(
       scheme: 'mailto',
       path: _kContactEmail,
       queryParameters: {
-        'subject': AppLocalizations.of(context).homeContactEmailSubject,
+        'subject': loc.homeContactEmailSubject,
       },
     );
 
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!ok && context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-            content: Text(AppLocalizations.of(context).homeErrorOpenEmail)),
+        SnackBar(content: Text(loc.homeErrorOpenEmail)),
       );
     }
   }
 
   Future<void> _openGoogleForm(BuildContext context) async {
+    final loc = AppLocalizations.of(context);
+
     final uri = Uri.parse(_kCatalogFormUrl);
     final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!ok && context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(AppLocalizations.of(context).homeErrorOpenForm)),
+        SnackBar(content: Text(loc.homeErrorOpenForm)),
       );
     }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _checkDisclaimerOnStart();
   }
 
   Future<void> _checkDisclaimerOnStart() async {
     final prefs = await SharedPreferences.getInstance();
     final accepted = prefs.getBool(kPrefDisclaimerAccepted) ?? false;
     if (!accepted) {
-      WidgetsBinding.instance.addPostFrameCallback(
-        (_) => _showDisclaimerDialog(),
-      );
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _showDisclaimerDialog();
+      });
     }
   }
 
@@ -87,9 +112,9 @@ class _PageAccueilState extends State<PageAccueil> {
       SnackBar(content: Text(loc.consentsReset)),
     );
 
-    WidgetsBinding.instance.addPostFrameCallback(
-      (_) => _showDisclaimerDialog(),
-    );
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _showDisclaimerDialog();
+    });
   }
 
   void _showDisclaimerDialog() {
@@ -122,8 +147,11 @@ class _PageAccueilState extends State<PageAccueil> {
                     const SizedBox(height: 8),
                     CheckboxListTile(
                       value: checked,
-                      onChanged: (v) =>
-                          setStateDialog(() => checked = v ?? false),
+                      onChanged: (v) {
+                        setStateDialog(() {
+                          checked = v ?? false;
+                        });
+                      },
                       title: Text(
                         loc.disclaimerCertify,
                         style: const TextStyle(fontSize: 13),
@@ -155,20 +183,24 @@ class _PageAccueilState extends State<PageAccueil> {
       barrierDismissible: false,
       builder: (_) {
         return LaserConsentDialog(
-          onAccepted: () async {
-            // consentement affiché à chaque entrée -> rien à stocker
-          },
+          onAccepted: () async {},
         );
       },
     );
 
     if (accepted == true && mounted) {
-      Navigator.push(context, MaterialPageRoute(builder: (_) => LaserPage()));
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => LaserPage()),
+      );
     }
   }
 
   void _push(Widget page) {
-    Navigator.push(context, MaterialPageRoute(builder: (_) => page));
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => page),
+    );
   }
 
   Widget _homeTile({
@@ -238,9 +270,27 @@ class _PageAccueilState extends State<PageAccueil> {
         child: ListView(
           children: [
             DrawerHeader(
-              child: Text(
-                loc.menuTitle,
-                style: const TextStyle(fontSize: 20, color: Colors.white),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    loc.menuTitle,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                  ),
+                  if (_appVersion.isNotEmpty) ...[
+                    const SizedBox(height: 10),
+                    Text(
+                      _appVersion,
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Colors.white.withValues(alpha: 0.60),
+                      ),
+                    ),
+                  ],
+                ],
               ),
             ),
             ListTile(
@@ -326,6 +376,13 @@ class _PageAccueilState extends State<PageAccueil> {
                 title: loc.homeReferencesTitle,
                 subtitle: loc.homeReferencesSubtitle,
                 onTap: () => _push(const PageAbout()),
+              ),
+              const SizedBox(height: 12),
+              _homeTile(
+                icon: Icons.push_pin_outlined,
+                title: loc.homePinnedTitle,
+                subtitle: loc.homePinnedSubtitle,
+                onTap: () => _push(const PinnedReferencesPage()),
               ),
             ],
           ),

@@ -11753,6 +11753,18 @@ abstract class AppLocalizations {
   /// **'Subnet'**
   String get aboutUniverseToArtnetColSubnet;
 
+  /// No description provided for @appVersionLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Version {version} ({build})'**
+  String appVersionLabel(Object version, Object build);
+
+  /// No description provided for @appVersionLabelNoBuild.
+  ///
+  /// In fr, this message translates to:
+  /// **'Version {version}'**
+  String appVersionLabelNoBuild(Object version);
+
   /// En-tête de colonne : univers Art-Net (0–15).
   ///
   /// In fr, this message translates to:
@@ -11782,6 +11794,66 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Pitch'**
   String get videoLedResultPitch;
+
+  /// No description provided for @aboutSearchHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rechercher dans les références'**
+  String get aboutSearchHint;
+
+  /// No description provided for @aboutSearchNoResults.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun résultat trouvé.'**
+  String get aboutSearchNoResults;
+
+  /// No description provided for @homePinnedTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Épingles'**
+  String get homePinnedTitle;
+
+  /// No description provided for @homePinnedSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Retrouver rapidement vos références épinglées.'**
+  String get homePinnedSubtitle;
+
+  /// No description provided for @pinnedReferencesTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Références épinglées'**
+  String get pinnedReferencesTitle;
+
+  /// No description provided for @pinnedReferencesEmpty.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune référence épinglée pour le moment.'**
+  String get pinnedReferencesEmpty;
+
+  /// No description provided for @aboutPinAddTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Épingler cette référence'**
+  String get aboutPinAddTooltip;
+
+  /// No description provided for @aboutPinRemoveTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Retirer cette épingle'**
+  String get aboutPinRemoveTooltip;
+
+  /// No description provided for @aboutPinAddedMessage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Référence épinglée.'**
+  String get aboutPinAddedMessage;
+
+  /// No description provided for @aboutPinRemovedMessage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Épingle retirée.'**
+  String get aboutPinRemovedMessage;
 }
 
 class _AppLocalizationsDelegate

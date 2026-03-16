@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 import '../../app/ui/widgets.dart'; // SectionCard, MiniPill, copyToClipboard
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
+import 'about_favorites.dart';
+
 class AboutDmxPage extends StatefulWidget {
-  const AboutDmxPage({super.key});
+  const AboutDmxPage({super.key, this.initialSectionId});
+
+  final String? initialSectionId;
 
   @override
   State<AboutDmxPage> createState() => _AboutDmxPageState();
@@ -25,6 +29,50 @@ class _AboutDmxPageState extends State<AboutDmxPage> {
   final _k8Compare = GlobalKey();
   final _k9Diagrams = GlobalKey();
   final _k10Checklist = GlobalKey();
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final key = _sectionKeyForId(widget.initialSectionId);
+      if (key != null) {
+        Future<void>.delayed(const Duration(milliseconds: 80), () {
+          if (mounted) {
+            _goTo(key);
+          }
+        });
+      }
+    });
+  }
+
+  GlobalKey? _sectionKeyForId(String? sectionId) {
+    switch (sectionId) {
+      case 'basics':
+        return _k1Basics;
+      case 'frame':
+        return _k2Frame;
+      case 'cabling':
+        return _k3Cabling;
+      case 'termination':
+        return _k4Termination;
+      case 'rdm':
+        return _k4bRdm;
+      case 'troubleshooting':
+        return _k5Troubleshooting;
+      case 'artnet':
+        return _k6ArtNet;
+      case 'sacn':
+        return _k7Sacn;
+      case 'compare':
+        return _k8Compare;
+      case 'diagrams':
+        return _k9Diagrams;
+      case 'checklist':
+        return _k10Checklist;
+      default:
+        return null;
+    }
+  }
 
   void _goTo(GlobalKey key) {
     final ctx = key.currentContext;
@@ -60,6 +108,7 @@ class _AboutDmxPageState extends State<AboutDmxPage> {
           child: Column(
             children: [
               _TocCard(
+                pageId: 'dmx',
                 onCopy: () {
                   final txt = [
                     loc.aboutDmxSummaryLine1,
@@ -72,19 +121,27 @@ class _AboutDmxPageState extends State<AboutDmxPage> {
                   copyToClipboard(context, txt);
                 },
                 items: [
-                  _TocItem(loc.aboutDmxToc1, onTap: () => _goTo(_k1Basics)),
-                  _TocItem(loc.aboutDmxToc2, onTap: () => _goTo(_k2Frame)),
-                  _TocItem(loc.aboutDmxToc3, onTap: () => _goTo(_k3Cabling)),
-                  _TocItem(loc.aboutDmxToc4,
+                  _TocItem('basics', loc.aboutDmxToc1,
+                      onTap: () => _goTo(_k1Basics)),
+                  _TocItem('frame', loc.aboutDmxToc2,
+                      onTap: () => _goTo(_k2Frame)),
+                  _TocItem('cabling', loc.aboutDmxToc3,
+                      onTap: () => _goTo(_k3Cabling)),
+                  _TocItem('termination', loc.aboutDmxToc4,
                       onTap: () => _goTo(_k4Termination)),
-                  _TocItem(loc.aboutDmxToc4bis, onTap: () => _goTo(_k4bRdm)),
-                  _TocItem(loc.aboutDmxToc5,
+                  _TocItem('rdm', loc.aboutDmxToc4bis,
+                      onTap: () => _goTo(_k4bRdm)),
+                  _TocItem('troubleshooting', loc.aboutDmxToc5,
                       onTap: () => _goTo(_k5Troubleshooting)),
-                  _TocItem(loc.aboutDmxToc6, onTap: () => _goTo(_k6ArtNet)),
-                  _TocItem(loc.aboutDmxToc7, onTap: () => _goTo(_k7Sacn)),
-                  _TocItem(loc.aboutDmxToc8, onTap: () => _goTo(_k8Compare)),
-                  _TocItem(loc.aboutDmxToc9, onTap: () => _goTo(_k9Diagrams)),
-                  _TocItem(loc.aboutDmxToc10,
+                  _TocItem('artnet', loc.aboutDmxToc6,
+                      onTap: () => _goTo(_k6ArtNet)),
+                  _TocItem('sacn', loc.aboutDmxToc7,
+                      onTap: () => _goTo(_k7Sacn)),
+                  _TocItem('compare', loc.aboutDmxToc8,
+                      onTap: () => _goTo(_k8Compare)),
+                  _TocItem('diagrams', loc.aboutDmxToc9,
+                      onTap: () => _goTo(_k9Diagrams)),
+                  _TocItem('checklist', loc.aboutDmxToc10,
                       onTap: () => _goTo(_k10Checklist)),
                 ],
               ),
@@ -160,10 +217,12 @@ ${loc.aboutDmxChecklistCopyTitle2}
 
 class _TocCard extends StatelessWidget {
   const _TocCard({
+    required this.pageId,
     required this.items,
     required this.onCopy,
   });
 
+  final String pageId;
   final List<_TocItem> items;
   final VoidCallback onCopy;
 
@@ -173,11 +232,6 @@ class _TocCard extends StatelessWidget {
     return SectionCard(
       title: loc.commonTocTitle,
       icon: Icons.list_alt,
-      trailing: IconButton(
-        tooltip: loc.commonCopySummaryTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: Column(
         children: items
             .map(
@@ -203,6 +257,11 @@ class _TocCard extends StatelessWidget {
                               ),
                             ),
                           ),
+                          AboutPinButton(
+                            pageId: pageId,
+                            sectionId: it.sectionId,
+                            dense: true,
+                          ),
                           Icon(Icons.chevron_right,
                               color: Colors.white.withValues(alpha: 0.55)),
                         ],
@@ -219,7 +278,8 @@ class _TocCard extends StatelessWidget {
 }
 
 class _TocItem {
-  _TocItem(this.label, {required this.onTap});
+  _TocItem(this.sectionId, this.label, {required this.onTap});
+  final String sectionId;
   final String label;
   final VoidCallback onTap;
 }
@@ -235,33 +295,37 @@ class _Section1Basics extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
-    return SectionCard(
-      title: loc.aboutDmxS1Title,
-      icon: Icons.view_stream,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: [
-              MiniPill(loc.aboutDmxS1Pill1),
-              MiniPill(loc.aboutDmxS1Pill2),
-              MiniPill(loc.aboutDmxS1Pill3),
-            ],
-          ),
-          SizedBox(height: 10),
-          _Paragraph(loc.aboutDmxS1Intro),
-          SizedBox(height: 10),
-          _Callout(
-            title: loc.aboutDmxS1RememberTitle,
-            bullets: [
-              loc.aboutDmxS1RememberB1,
-              loc.aboutDmxS1RememberB2,
-              loc.aboutDmxS1RememberB3,
-            ],
-          ),
-        ],
+    return AboutSectionPin(
+      pageId: 'dmx',
+      sectionId: 'basics',
+      child: SectionCard(
+        title: loc.aboutDmxS1Title,
+        icon: Icons.view_stream,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                MiniPill(loc.aboutDmxS1Pill1),
+                MiniPill(loc.aboutDmxS1Pill2),
+                MiniPill(loc.aboutDmxS1Pill3),
+              ],
+            ),
+            SizedBox(height: 10),
+            _Paragraph(loc.aboutDmxS1Intro),
+            SizedBox(height: 10),
+            _Callout(
+              title: loc.aboutDmxS1RememberTitle,
+              bullets: [
+                loc.aboutDmxS1RememberB1,
+                loc.aboutDmxS1RememberB2,
+                loc.aboutDmxS1RememberB3,
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -278,45 +342,49 @@ class _Section2Frame extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
-      title: loc.aboutDmxS2Title,
-      icon: Icons.timeline,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: [
-              MiniPill(loc.aboutDmxS2PillBreak),
-              MiniPill(loc.aboutDmxS2PillStartCode),
-              MiniPill(loc.aboutDmxS2PillSlots512),
-              MiniPill(loc.aboutDmxS2PillRefresh),
-            ],
-          ),
-          const SizedBox(height: 10),
-          _Paragraph(loc.aboutDmxS2Intro),
-          const SizedBox(height: 10),
-          _DiagramBox(painter: _DmxTimingPainter(loc: loc), aspect: 16 / 6),
-          const SizedBox(height: 10),
-          _Callout(
-            title: loc.aboutDmxS2HowToReadTitle,
-            bullets: [
-              loc.aboutDmxS2HowToReadB1,
-              loc.aboutDmxS2HowToReadB2,
-              loc.aboutDmxS2HowToReadB3,
-              loc.aboutDmxS2HowToReadB4,
-            ],
-          ),
-          const SizedBox(height: 10),
-          _Subtitle(loc.aboutDmxS2PracticalTitle),
-          const SizedBox(height: 6),
-          _BulletList(items: [
-            loc.aboutDmxS2PracticalB1,
-            loc.aboutDmxS2PracticalB2,
-            loc.aboutDmxS2PracticalB3,
-          ]),
-        ],
+    return AboutSectionPin(
+      pageId: 'dmx',
+      sectionId: 'frame',
+      child: SectionCard(
+        title: loc.aboutDmxS2Title,
+        icon: Icons.timeline,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                MiniPill(loc.aboutDmxS2PillBreak),
+                MiniPill(loc.aboutDmxS2PillStartCode),
+                MiniPill(loc.aboutDmxS2PillSlots512),
+                MiniPill(loc.aboutDmxS2PillRefresh),
+              ],
+            ),
+            const SizedBox(height: 10),
+            _Paragraph(loc.aboutDmxS2Intro),
+            const SizedBox(height: 10),
+            _DiagramBox(painter: _DmxTimingPainter(loc: loc), aspect: 16 / 6),
+            const SizedBox(height: 10),
+            _Callout(
+              title: loc.aboutDmxS2HowToReadTitle,
+              bullets: [
+                loc.aboutDmxS2HowToReadB1,
+                loc.aboutDmxS2HowToReadB2,
+                loc.aboutDmxS2HowToReadB3,
+                loc.aboutDmxS2HowToReadB4,
+              ],
+            ),
+            const SizedBox(height: 10),
+            _Subtitle(loc.aboutDmxS2PracticalTitle),
+            const SizedBox(height: 6),
+            _BulletList(items: [
+              loc.aboutDmxS2PracticalB1,
+              loc.aboutDmxS2PracticalB2,
+              loc.aboutDmxS2PracticalB3,
+            ]),
+          ],
+        ),
       ),
     );
   }
@@ -329,48 +397,52 @@ class _Section3Cabling extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
-      title: loc.aboutDmxS3Title,
-      icon: Icons.cable,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: [
-              MiniPill(loc.aboutDmxS3PillRs485),
-              MiniPill(loc.aboutDmxS3PillDaisyChain),
-              MiniPill(loc.aboutDmxS3PillNoY),
-              MiniPill(loc.aboutDmxS3Pill120ohm),
-            ],
-          ),
-          const SizedBox(height: 10),
-          _Paragraph(loc.aboutDmxS3Intro),
-          const SizedBox(height: 10),
-          _Subtitle(loc.aboutDmxS3TopologyTitle),
-          const SizedBox(height: 6),
-          _DiagramBox(painter: _DmxChainPainter(loc: loc), aspect: 16 / 7),
-          const SizedBox(height: 10),
-          _BulletList(items: [
-            loc.aboutDmxS3TopologyB1,
-            loc.aboutDmxS3TopologyB2,
-            loc.aboutDmxS3TopologyB3,
-          ]),
-          const SizedBox(height: 10),
-          _Subtitle(loc.aboutDmxS3PinoutTitle),
-          const SizedBox(height: 6),
-          _DiagramBox(painter: _Xlr5PinoutPainter(loc: loc), aspect: 16 / 7),
-          const SizedBox(height: 10),
-          _Callout(
-            title: loc.aboutDmxS3CablesTitle,
-            bullets: [
-              loc.aboutDmxS3CablesB1,
-              loc.aboutDmxS3CablesB2,
-              loc.aboutDmxS3CablesB3,
-            ],
-          ),
-        ],
+    return AboutSectionPin(
+      pageId: 'dmx',
+      sectionId: 'cabling',
+      child: SectionCard(
+        title: loc.aboutDmxS3Title,
+        icon: Icons.cable,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                MiniPill(loc.aboutDmxS3PillRs485),
+                MiniPill(loc.aboutDmxS3PillDaisyChain),
+                MiniPill(loc.aboutDmxS3PillNoY),
+                MiniPill(loc.aboutDmxS3Pill120ohm),
+              ],
+            ),
+            const SizedBox(height: 10),
+            _Paragraph(loc.aboutDmxS3Intro),
+            const SizedBox(height: 10),
+            _Subtitle(loc.aboutDmxS3TopologyTitle),
+            const SizedBox(height: 6),
+            _DiagramBox(painter: _DmxChainPainter(loc: loc), aspect: 16 / 7),
+            const SizedBox(height: 10),
+            _BulletList(items: [
+              loc.aboutDmxS3TopologyB1,
+              loc.aboutDmxS3TopologyB2,
+              loc.aboutDmxS3TopologyB3,
+            ]),
+            const SizedBox(height: 10),
+            _Subtitle(loc.aboutDmxS3PinoutTitle),
+            const SizedBox(height: 6),
+            _DiagramBox(painter: _Xlr5PinoutPainter(loc: loc), aspect: 16 / 7),
+            const SizedBox(height: 10),
+            _Callout(
+              title: loc.aboutDmxS3CablesTitle,
+              bullets: [
+                loc.aboutDmxS3CablesB1,
+                loc.aboutDmxS3CablesB2,
+                loc.aboutDmxS3CablesB3,
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -383,33 +455,37 @@ class _Section4TerminationSplitters extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
-      title: loc.aboutDmxS4Title,
-      icon: Icons.call_split,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _Paragraph(loc.aboutDmxS4Intro),
-          const SizedBox(height: 10),
-          _DiagramBox(painter: _TerminatorPainter(loc: loc), aspect: 16 / 6),
-          const SizedBox(height: 10),
-          _Callout(
-            title: loc.aboutDmxS4TerminatorTitle,
-            bullets: [
-              loc.aboutDmxS4TerminatorB1,
-              loc.aboutDmxS4TerminatorB2,
-              loc.aboutDmxS4TerminatorB3,
-            ],
-          ),
-          const SizedBox(height: 10),
-          _Subtitle(loc.aboutDmxS4SplittersTitle),
-          const SizedBox(height: 6),
-          _BulletList(items: [
-            loc.aboutDmxS4SplittersB1,
-            loc.aboutDmxS4SplittersB2,
-            loc.aboutDmxS4SplittersB3,
-          ]),
-        ],
+    return AboutSectionPin(
+      pageId: 'dmx',
+      sectionId: 'termination',
+      child: SectionCard(
+        title: loc.aboutDmxS4Title,
+        icon: Icons.call_split,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            _Paragraph(loc.aboutDmxS4Intro),
+            const SizedBox(height: 10),
+            _DiagramBox(painter: _TerminatorPainter(loc: loc), aspect: 16 / 6),
+            const SizedBox(height: 10),
+            _Callout(
+              title: loc.aboutDmxS4TerminatorTitle,
+              bullets: [
+                loc.aboutDmxS4TerminatorB1,
+                loc.aboutDmxS4TerminatorB2,
+                loc.aboutDmxS4TerminatorB3,
+              ],
+            ),
+            const SizedBox(height: 10),
+            _Subtitle(loc.aboutDmxS4SplittersTitle),
+            const SizedBox(height: 6),
+            _BulletList(items: [
+              loc.aboutDmxS4SplittersB1,
+              loc.aboutDmxS4SplittersB2,
+              loc.aboutDmxS4SplittersB3,
+            ]),
+          ],
+        ),
       ),
     );
   }
@@ -421,10 +497,14 @@ class _Section4bRdm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
-    return SectionCard(
-      title: loc.aboutDmxS4bisTitle,
-      icon: Icons.settings_input_component,
-      child: Text(loc.aboutDmxS4bisPlaceholder),
+    return AboutSectionPin(
+      pageId: 'dmx',
+      sectionId: 'rdm',
+      child: SectionCard(
+        title: loc.aboutDmxS4bisTitle,
+        icon: Icons.settings_input_component,
+        child: Text(loc.aboutDmxS4bisPlaceholder),
+      ),
     );
   }
 }
@@ -436,37 +516,41 @@ class _Section5Troubleshooting extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
-      title: loc.aboutDmxS5Title,
-      icon: Icons.build_circle,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _Paragraph(loc.aboutDmxS5Intro),
-          const SizedBox(height: 10),
-          _Callout(
-            title: loc.aboutDmxS5QuickChecksTitle,
-            bullets: [
-              loc.aboutDmxS5QuickB1,
-              loc.aboutDmxS5QuickB2,
-              loc.aboutDmxS5QuickB3,
-              loc.aboutDmxS5QuickB4,
-              loc.aboutDmxS5QuickB5,
-            ],
-          ),
-          const SizedBox(height: 10),
-          _Subtitle(loc.aboutDmxS5IfFlickerTitle),
-          const SizedBox(height: 6),
-          _BulletList(items: [
-            loc.aboutDmxS5IfFlickerB1,
-            loc.aboutDmxS5IfFlickerB2,
-            loc.aboutDmxS5IfFlickerB3,
-          ]),
-          const SizedBox(height: 10),
-          _Subtitle(loc.aboutDmxS5GoldenRuleTitle),
-          const SizedBox(height: 6),
-          _Paragraph(loc.aboutDmxS5GoldenRuleBody),
-        ],
+    return AboutSectionPin(
+      pageId: 'dmx',
+      sectionId: 'troubleshooting',
+      child: SectionCard(
+        title: loc.aboutDmxS5Title,
+        icon: Icons.build_circle,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            _Paragraph(loc.aboutDmxS5Intro),
+            const SizedBox(height: 10),
+            _Callout(
+              title: loc.aboutDmxS5QuickChecksTitle,
+              bullets: [
+                loc.aboutDmxS5QuickB1,
+                loc.aboutDmxS5QuickB2,
+                loc.aboutDmxS5QuickB3,
+                loc.aboutDmxS5QuickB4,
+                loc.aboutDmxS5QuickB5,
+              ],
+            ),
+            const SizedBox(height: 10),
+            _Subtitle(loc.aboutDmxS5IfFlickerTitle),
+            const SizedBox(height: 6),
+            _BulletList(items: [
+              loc.aboutDmxS5IfFlickerB1,
+              loc.aboutDmxS5IfFlickerB2,
+              loc.aboutDmxS5IfFlickerB3,
+            ]),
+            const SizedBox(height: 10),
+            _Subtitle(loc.aboutDmxS5GoldenRuleTitle),
+            const SizedBox(height: 6),
+            _Paragraph(loc.aboutDmxS5GoldenRuleBody),
+          ],
+        ),
       ),
     );
   }
@@ -479,45 +563,49 @@ class _Section6ArtNet extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
-      title: loc.aboutDmxS6Title,
-      icon: Icons.router,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: [
-              MiniPill(loc.aboutDmxS6PillUdp),
-              MiniPill(loc.aboutDmxS6PillNodes),
-              MiniPill(loc.aboutDmxS6PillBroadcast),
-              MiniPill(loc.aboutDmxS6PillUnicast),
-            ],
-          ),
-          const SizedBox(height: 10),
-          _Paragraph(loc.aboutDmxS6Intro),
-          const SizedBox(height: 10),
-          _DiagramBox(painter: _IpDmxPainter(loc: loc), aspect: 16 / 7),
-          const SizedBox(height: 10),
-          _Callout(
-            title: loc.aboutDmxS6BasicsTitle,
-            bullets: [
-              loc.aboutDmxS6BasicsB1,
-              loc.aboutDmxS6BasicsB2,
-              loc.aboutDmxS6BasicsB3,
-              loc.aboutDmxS6BasicsB4,
-            ],
-          ),
-          const SizedBox(height: 10),
-          _Subtitle(loc.aboutDmxS6WhenTitle),
-          const SizedBox(height: 6),
-          _BulletList(items: [
-            loc.aboutDmxS6WhenB1,
-            loc.aboutDmxS6WhenB2,
-            loc.aboutDmxS6WhenB3,
-          ]),
-        ],
+    return AboutSectionPin(
+      pageId: 'dmx',
+      sectionId: 'artnet',
+      child: SectionCard(
+        title: loc.aboutDmxS6Title,
+        icon: Icons.router,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                MiniPill(loc.aboutDmxS6PillUdp),
+                MiniPill(loc.aboutDmxS6PillNodes),
+                MiniPill(loc.aboutDmxS6PillBroadcast),
+                MiniPill(loc.aboutDmxS6PillUnicast),
+              ],
+            ),
+            const SizedBox(height: 10),
+            _Paragraph(loc.aboutDmxS6Intro),
+            const SizedBox(height: 10),
+            _DiagramBox(painter: _IpDmxPainter(loc: loc), aspect: 16 / 7),
+            const SizedBox(height: 10),
+            _Callout(
+              title: loc.aboutDmxS6BasicsTitle,
+              bullets: [
+                loc.aboutDmxS6BasicsB1,
+                loc.aboutDmxS6BasicsB2,
+                loc.aboutDmxS6BasicsB3,
+                loc.aboutDmxS6BasicsB4,
+              ],
+            ),
+            const SizedBox(height: 10),
+            _Subtitle(loc.aboutDmxS6WhenTitle),
+            const SizedBox(height: 6),
+            _BulletList(items: [
+              loc.aboutDmxS6WhenB1,
+              loc.aboutDmxS6WhenB2,
+              loc.aboutDmxS6WhenB3,
+            ]),
+          ],
+        ),
       ),
     );
   }
@@ -530,37 +618,42 @@ class _Section7Sacn extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
-      title: loc.aboutDmxS7Title,
-      icon: Icons.wifi_tethering,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: [
-              MiniPill(loc.aboutDmxS7PillE131),
-              MiniPill(loc.aboutDmxS7PillMulticast),
-              MiniPill(loc.aboutDmxS7PillPriority),
-              MiniPill(loc.aboutDmxS7PillIgmp),
-            ],
-          ),
-          const SizedBox(height: 10),
-          _Paragraph(loc.aboutDmxS7Intro),
-          const SizedBox(height: 10),
-          _DiagramBox(painter: _SacnMulticastPainter(loc: loc), aspect: 16 / 7),
-          const SizedBox(height: 10),
-          _Callout(
-            title: loc.aboutDmxS7KeyIdeasTitle,
-            bullets: [
-              loc.aboutDmxS7KeyIdeasB1,
-              loc.aboutDmxS7KeyIdeasB2,
-              loc.aboutDmxS7KeyIdeasB3,
-              loc.aboutDmxS7KeyIdeasB4,
-            ],
-          ),
-        ],
+    return AboutSectionPin(
+      pageId: 'dmx',
+      sectionId: 'sacn',
+      child: SectionCard(
+        title: loc.aboutDmxS7Title,
+        icon: Icons.wifi_tethering,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                MiniPill(loc.aboutDmxS7PillE131),
+                MiniPill(loc.aboutDmxS7PillMulticast),
+                MiniPill(loc.aboutDmxS7PillPriority),
+                MiniPill(loc.aboutDmxS7PillIgmp),
+              ],
+            ),
+            const SizedBox(height: 10),
+            _Paragraph(loc.aboutDmxS7Intro),
+            const SizedBox(height: 10),
+            _DiagramBox(
+                painter: _SacnMulticastPainter(loc: loc), aspect: 16 / 7),
+            const SizedBox(height: 10),
+            _Callout(
+              title: loc.aboutDmxS7KeyIdeasTitle,
+              bullets: [
+                loc.aboutDmxS7KeyIdeasB1,
+                loc.aboutDmxS7KeyIdeasB2,
+                loc.aboutDmxS7KeyIdeasB3,
+                loc.aboutDmxS7KeyIdeasB4,
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -573,32 +666,36 @@ class _Section8Compare extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
-      title: loc.aboutDmxS8Title,
-      icon: Icons.compare_arrows,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _Paragraph(loc.aboutDmxS8Intro),
-          const SizedBox(height: 10),
-          _Callout(
-            title: loc.aboutDmxS8QuickTableTitle,
-            bullets: [
-              loc.aboutDmxS8QuickB1,
-              loc.aboutDmxS8QuickB2,
-              loc.aboutDmxS8QuickB3,
-              loc.aboutDmxS8QuickB4,
-            ],
-          ),
-          const SizedBox(height: 10),
-          _Subtitle(loc.aboutDmxS8ChooseTitle),
-          const SizedBox(height: 6),
-          _BulletList(items: [
-            loc.aboutDmxS8ChooseB1,
-            loc.aboutDmxS8ChooseB2,
-            loc.aboutDmxS8ChooseB3,
-          ]),
-        ],
+    return AboutSectionPin(
+      pageId: 'dmx',
+      sectionId: 'compare',
+      child: SectionCard(
+        title: loc.aboutDmxS8Title,
+        icon: Icons.compare_arrows,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            _Paragraph(loc.aboutDmxS8Intro),
+            const SizedBox(height: 10),
+            _Callout(
+              title: loc.aboutDmxS8QuickTableTitle,
+              bullets: [
+                loc.aboutDmxS8QuickB1,
+                loc.aboutDmxS8QuickB2,
+                loc.aboutDmxS8QuickB3,
+                loc.aboutDmxS8QuickB4,
+              ],
+            ),
+            const SizedBox(height: 10),
+            _Subtitle(loc.aboutDmxS8ChooseTitle),
+            const SizedBox(height: 6),
+            _BulletList(items: [
+              loc.aboutDmxS8ChooseB1,
+              loc.aboutDmxS8ChooseB2,
+              loc.aboutDmxS8ChooseB3,
+            ]),
+          ],
+        ),
       ),
     );
   }
@@ -610,37 +707,43 @@ class _Section9Diagrams extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
-    return SectionCard(
-      title: loc.aboutDmxS9Title,
-      icon: Icons.schema,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _Subtitle(loc.aboutDmxS9Diagram1),
-          SizedBox(height: 10),
-          _DiagramBox(painter: _DmxTimingPainter(loc: loc), aspect: 16 / 6.8),
-          SizedBox(height: 14),
-          _Subtitle(loc.aboutDmxS9Diagram2),
-          SizedBox(height: 10),
-          _DiagramBox(painter: _DmxChainPainter(loc: loc), aspect: 16 / 6.8),
-          SizedBox(height: 14),
-          _Subtitle(loc.aboutDmxS9Diagram3),
-          SizedBox(height: 10),
-          _DiagramBox(painter: _TerminatorPainter(loc: loc), aspect: 16 / 6.8),
-          SizedBox(height: 14),
-          _Subtitle(loc.aboutDmxS9Diagram4),
-          SizedBox(height: 10),
-          _DiagramBox(
-              painter: _SacnMulticastPainter(loc: loc), aspect: 16 / 6.8),
-          SizedBox(height: 14),
-          _Subtitle(loc.aboutDmxS9Diagram5),
-          SizedBox(height: 10),
-          _DiagramBox(painter: _IpDmxPainter(loc: loc), aspect: 16 / 6.8),
-          SizedBox(height: 14),
-          _Subtitle(loc.aboutDmxS9Diagram6),
-          SizedBox(height: 10),
-          _DiagramBox(painter: _Xlr5PinoutPainter(loc: loc), aspect: 16 / 7.8),
-        ],
+    return AboutSectionPin(
+      pageId: 'dmx',
+      sectionId: 'diagrams',
+      child: SectionCard(
+        title: loc.aboutDmxS9Title,
+        icon: Icons.schema,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            _Subtitle(loc.aboutDmxS9Diagram1),
+            SizedBox(height: 10),
+            _DiagramBox(painter: _DmxTimingPainter(loc: loc), aspect: 16 / 6.8),
+            SizedBox(height: 14),
+            _Subtitle(loc.aboutDmxS9Diagram2),
+            SizedBox(height: 10),
+            _DiagramBox(painter: _DmxChainPainter(loc: loc), aspect: 16 / 6.8),
+            SizedBox(height: 14),
+            _Subtitle(loc.aboutDmxS9Diagram3),
+            SizedBox(height: 10),
+            _DiagramBox(
+                painter: _TerminatorPainter(loc: loc), aspect: 16 / 6.8),
+            SizedBox(height: 14),
+            _Subtitle(loc.aboutDmxS9Diagram4),
+            SizedBox(height: 10),
+            _DiagramBox(
+                painter: _SacnMulticastPainter(loc: loc), aspect: 16 / 6.8),
+            SizedBox(height: 14),
+            _Subtitle(loc.aboutDmxS9Diagram5),
+            SizedBox(height: 10),
+            _DiagramBox(painter: _IpDmxPainter(loc: loc), aspect: 16 / 6.8),
+            SizedBox(height: 14),
+            _Subtitle(loc.aboutDmxS9Diagram6),
+            SizedBox(height: 10),
+            _DiagramBox(
+                painter: _Xlr5PinoutPainter(loc: loc), aspect: 16 / 7.8),
+          ],
+        ),
       ),
     );
   }
@@ -654,25 +757,24 @@ class _Section10Checklist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
-    return SectionCard(
-      title: loc.aboutDmxS10Title,
-      icon: Icons.checklist,
-      trailing: IconButton(
-        tooltip: loc.aboutDmxS10CopyTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
-      child: _Callout(
-        title: loc.aboutDmxS10CalloutTitle,
-        bullets: [
-          loc.aboutDmxS10B1,
-          loc.aboutDmxS10B2,
-          loc.aboutDmxS10B3,
-          loc.aboutDmxS10B4,
-          loc.aboutDmxS10B5,
-          loc.aboutDmxS10B6,
-          loc.aboutDmxS10B7,
-        ],
+    return AboutSectionPin(
+      pageId: 'dmx',
+      sectionId: 'checklist',
+      child: SectionCard(
+        title: loc.aboutDmxS10Title,
+        icon: Icons.checklist,
+        child: _Callout(
+          title: loc.aboutDmxS10CalloutTitle,
+          bullets: [
+            loc.aboutDmxS10B1,
+            loc.aboutDmxS10B2,
+            loc.aboutDmxS10B3,
+            loc.aboutDmxS10B4,
+            loc.aboutDmxS10B5,
+            loc.aboutDmxS10B6,
+            loc.aboutDmxS10B7,
+          ],
+        ),
       ),
     );
   }

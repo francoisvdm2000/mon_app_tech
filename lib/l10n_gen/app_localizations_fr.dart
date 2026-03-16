@@ -6653,6 +6653,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get aboutUniverseToArtnetColSubnet => 'Subnet';
 
   @override
+  String appVersionLabel(Object version, Object build) {
+    return 'Version $version ($build)';
+  }
+
+  @override
+  String appVersionLabelNoBuild(Object version) {
+    return 'Version $version';
+  }
+
+  @override
   String get aboutUniverseToArtnetColUniverse => 'Univers';
 
   @override
@@ -6666,4 +6676,36 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get videoLedResultPitch => 'Pitch';
+
+  @override
+  String get aboutSearchHint => 'Rechercher dans les références';
+
+  @override
+  String get aboutSearchNoResults => 'Aucun résultat trouvé.';
+
+  @override
+  String get homePinnedTitle => 'Épingles';
+
+  @override
+  String get homePinnedSubtitle =>
+      'Retrouver rapidement vos références épinglées.';
+
+  @override
+  String get pinnedReferencesTitle => 'Références épinglées';
+
+  @override
+  String get pinnedReferencesEmpty =>
+      'Aucune référence épinglée pour le moment.';
+
+  @override
+  String get aboutPinAddTooltip => 'Épingler cette référence';
+
+  @override
+  String get aboutPinRemoveTooltip => 'Retirer cette épingle';
+
+  @override
+  String get aboutPinAddedMessage => 'Référence épinglée.';
+
+  @override
+  String get aboutPinRemovedMessage => 'Épingle retirée.';
 }

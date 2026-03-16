@@ -57,18 +57,6 @@ class _AboutLightReferencePageState extends State<AboutLightReferencePage> {
               SectionCard(
                 title: loc.commonTocTitle,
                 icon: Icons.list_alt,
-                trailing: IconButton(
-                  tooltip: loc.commonCopySummaryTooltip,
-                  icon: const Icon(Icons.copy, color: Colors.white70),
-                  onPressed: () {
-                    final txt = '${loc.aboutLightReferenceTitle}\n'
-                        '• ${loc.refCriTitle}\n'
-                        '• ${loc.refKelvinTitle}\n'
-                        '• ${loc.refBeamFieldTitle}\n'
-                        '• ${loc.refLuxTitle}';
-                    copyToClipboard(context, txt);
-                  },
-                ),
                 child: Column(
                   children: [
                     _TocItemTile(

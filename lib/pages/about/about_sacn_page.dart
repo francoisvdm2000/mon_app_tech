@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, ExpandSectionCard, MiniPill, copyToClipboard
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
+import 'about_favorites.dart';
 
 class AboutSacnPage extends StatefulWidget {
   const AboutSacnPage({super.key});
@@ -56,6 +57,7 @@ class _AboutSacnPageState extends State<AboutSacnPage> {
           child: Column(
             children: [
               _TocCard(
+                pageId: 'sacn',
                 onCopy: () {
                   final txt = [
                     loc.aboutSacnCopy1,
@@ -66,15 +68,15 @@ class _AboutSacnPageState extends State<AboutSacnPage> {
                   copyToClipboard(context, txt);
                 },
                 items: [
-                  _TocItem(loc.aboutSacnToc1, onTap: () => _goTo(_k1Basics)),
-                  _TocItem(loc.aboutSacnToc2, onTap: () => _goTo(_k2Universe)),
-                  _TocItem(loc.aboutSacnToc3, onTap: () => _goTo(_k3Multicast)),
-                  _TocItem(loc.aboutSacnToc4,
+                  _TocItem('basics', loc.aboutSacnToc1, onTap: () => _goTo(_k1Basics)),
+                  _TocItem('universe', loc.aboutSacnToc2, onTap: () => _goTo(_k2Universe)),
+                  _TocItem('multicast', loc.aboutSacnToc3, onTap: () => _goTo(_k3Multicast)),
+                  _TocItem('priorities', loc.aboutSacnToc4,
                       onTap: () => _goTo(_k4Priorities)),
-                  _TocItem(loc.aboutSacnToc5, onTap: () => _goTo(_k5Perf)),
-                  _TocItem(loc.aboutSacnToc6, onTap: () => _goTo(_k6Rdm)),
-                  _TocItem(loc.aboutSacnToc7, onTap: () => _goTo(_k7Diagrams)),
-                  _TocItem(loc.aboutSacnToc8, onTap: () => _goTo(_k8Checklist)),
+                  _TocItem('perf', loc.aboutSacnToc5, onTap: () => _goTo(_k5Perf)),
+                  _TocItem('sync', loc.aboutSacnToc6, onTap: () => _goTo(_k6Rdm)),
+                  _TocItem('troubleshooting', loc.aboutSacnToc7, onTap: () => _goTo(_k7Diagrams)),
+                  _TocItem('checklist', loc.aboutSacnToc8, onTap: () => _goTo(_k8Checklist)),
                 ],
               ),
               const SizedBox(height: 12),
@@ -127,7 +129,10 @@ class _Section1Basics extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'sacn',
+      sectionId: 'basics',
+      child: SectionCard(
       title: loc.aboutSacnToc1,
       icon: Icons.wifi_tethering,
       child: Column(
@@ -155,6 +160,7 @@ class _Section1Basics extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }
@@ -166,7 +172,10 @@ class _Section2Universe extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'sacn',
+      sectionId: 'universe',
+      child: SectionCard(
       title: loc.aboutSacnToc2,
       icon: Icons.confirmation_number,
       child: Column(
@@ -193,6 +202,7 @@ class _Section2Universe extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }
@@ -204,7 +214,10 @@ class _Section3Multicast extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'sacn',
+      sectionId: 'multicast',
+      child: SectionCard(
       title: loc.aboutSacnToc3,
       icon: Icons.hub,
       child: Column(
@@ -233,6 +246,7 @@ class _Section3Multicast extends StatelessWidget {
           ]),
         ],
       ),
+    ),
     );
   }
 }
@@ -244,7 +258,10 @@ class _Section4Priorities extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'sacn',
+      sectionId: 'priorities',
+      child: SectionCard(
       title: loc.aboutSacnToc4,
       icon: Icons.priority_high,
       child: Column(
@@ -271,6 +288,7 @@ class _Section4Priorities extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }
@@ -282,7 +300,10 @@ class _Section5Perf extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'sacn',
+      sectionId: 'perf',
+      child: SectionCard(
       title: loc.aboutSacnToc5,
       icon: Icons.speed,
       child: Column(
@@ -317,6 +338,7 @@ class _Section5Perf extends StatelessWidget {
           ]),
         ],
       ),
+    ),
     );
   }
 }
@@ -365,7 +387,10 @@ class _Section7Diagrams extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'sacn',
+      sectionId: 'sync',
+      child: SectionCard(
       title: loc.aboutSacnToc7,
       icon: Icons.schema,
       child: Column(
@@ -380,6 +405,7 @@ class _Section7Diagrams extends StatelessWidget {
           const _DiagramBox(aspect: 16 / 6.8, painter: _SacnPriorityPainter()),
         ],
       ),
+    ),
     );
   }
 }
@@ -392,14 +418,12 @@ class _Section8Checklist extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'sacn',
+      sectionId: 'troubleshooting',
+      child: SectionCard(
       title: loc.aboutSacnToc8,
       icon: Icons.checklist,
-      trailing: IconButton(
-        tooltip: loc.aboutSacnChecklistCopyTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: _Callout(
         title: loc.aboutSacnChecklistTitle,
         bullets: [
@@ -410,6 +434,7 @@ class _Section8Checklist extends StatelessWidget {
           loc.aboutSacnChecklistBullet5,
         ],
       ),
+    ),
     );
   }
 }
@@ -824,8 +849,10 @@ class _Text {
 /// =======================
 
 class _TocCard extends StatelessWidget {
-  const _TocCard({required this.items, required this.onCopy});
+  const _TocCard({
+    required this.pageId,required this.items, required this.onCopy});
 
+  final String pageId;
   final List<_TocItem> items;
   final VoidCallback onCopy;
 
@@ -833,14 +860,12 @@ class _TocCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'sacn',
+      sectionId: 'checklist',
+      child: SectionCard(
       title: loc.commonTocTitle,
       icon: Icons.list_alt,
-      trailing: IconButton(
-        tooltip: loc.aboutSacnCopyTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: Column(
         children: items
             .map(
@@ -876,12 +901,14 @@ class _TocCard extends StatelessWidget {
             )
             .toList(),
       ),
+    ),
     );
   }
 }
 
 class _TocItem {
-  _TocItem(this.label, {required this.onTap});
+  _TocItem(this.sectionId, this.label, {required this.onTap});
+  final String sectionId;
   final String label;
   final VoidCallback onTap;
 }

@@ -3,6 +3,7 @@ import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, ExpandSectionCard, MiniPill, copyToClipboard
 import 'about_universe_to_artnet_table_page.dart';
+import 'about_favorites.dart';
 
 class AboutArtNetPage extends StatefulWidget {
   const AboutArtNetPage({super.key});
@@ -57,6 +58,7 @@ class _AboutArtNetPageState extends State<AboutArtNetPage> {
           child: Column(
             children: [
               _TocCard(
+                pageId: 'artnet',
                 title: loc.aboutArtnetTocTitle,
                 copyTooltip: loc.aboutArtnetTocCopyTooltip,
                 onCopy: () {
@@ -70,23 +72,24 @@ class _AboutArtNetPageState extends State<AboutArtNetPage> {
                   copyToClipboard(context, txt);
                 },
                 items: [
-                  _TocItem(loc.aboutArtnetSection1Title,
+                  _TocItem('basics', loc.aboutArtnetSection1Title,
                       onTap: () => _goTo(_k1Basics)),
-                  _TocItem(loc.aboutArtnetSection2Title,
+                  _TocItem('addressing', loc.aboutArtnetSection2Title,
                       onTap: () => _goTo(_k2Addressing)),
-                  _TocItem(loc.aboutArtnetSection3Title,
+                  _TocItem('limits', loc.aboutArtnetSection3Title,
                       onTap: () => _goTo(_k3Limits)),
-                  _TocItem(loc.aboutArtnetSection4Title,
+                  _TocItem('nodes_rdm', loc.aboutArtnetSection4Title,
                       onTap: () => _goTo(_k4NodesRdm)),
-                  _TocItem(loc.aboutArtnetSection5Title,
+                  _TocItem('troubleshooting', loc.aboutArtnetSection5Title,
                       onTap: () => _goTo(_k5Troubleshooting)),
-                  _TocItem(loc.aboutArtnetSection6Title,
+                  _TocItem('diagrams', loc.aboutArtnetSection6Title,
                       onTap: () => _goTo(_k6Diagrams)),
-                  _TocItem(loc.aboutArtnetSection6bTitle,
+                  _TocItem('assets', loc.aboutArtnetSection6bTitle,
                       onTap: () => _goTo(_k6bAssets)),
-                  _TocItem(loc.aboutArtnetSection7Title,
+                  _TocItem('checklist', loc.aboutArtnetSection7Title,
                       onTap: () => _goTo(_k7Checklist)),
                   _TocItem(
+                    'conversion_tables',
                     loc.aboutArtnetConversionTablesTitle,
                     onTap: () {
                       Navigator.of(context).push(
@@ -100,25 +103,52 @@ class _AboutArtNetPageState extends State<AboutArtNetPage> {
               ),
               const SizedBox(height: 12),
               _Anchor(key: _k1Basics),
-              const _Section1Basics(),
+              AboutSectionPin(
+                pageId: 'artnet',
+                sectionId: 'basics',
+                child: const _Section1Basics(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _k2Addressing),
-              const _Section2Addressing(),
+              AboutSectionPin(
+                pageId: 'artnet',
+                sectionId: 'addressing',
+                child: const _Section2Addressing(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _k3Limits),
-              const _Section3Limits(),
+              AboutSectionPin(
+                pageId: 'artnet',
+                sectionId: 'limits',
+                child: const _Section3Limits(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _k4NodesRdm),
-              const _Section4NodesRdm(),
+              AboutSectionPin(
+                pageId: 'artnet',
+                sectionId: 'nodes_rdm',
+                child: const _Section4NodesRdm(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _k5Troubleshooting),
-              const _Section5Troubleshooting(),
+              AboutSectionPin(
+                pageId: 'artnet',
+                sectionId: 'troubleshooting',
+                child: const _Section5Troubleshooting(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _k6Diagrams),
-              const _Section6Diagrams(),
+              AboutSectionPin(
+                pageId: 'artnet',
+                sectionId: 'diagrams',
+                child: const _Section6Diagrams(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _k6bAssets),
-              _Section6bAssets(
+              AboutSectionPin(
+                pageId: 'artnet',
+                sectionId: 'assets',
+                child: _Section6bAssets(
                 onCopy: () {
                   final txt = '''
 ${loc.aboutArtnetAssetsCopyTitle}
@@ -138,9 +168,13 @@ flutter:
                   copyToClipboard(context, txt);
                 },
               ),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _k7Checklist),
-              _Section7Checklist(
+              AboutSectionPin(
+                pageId: 'artnet',
+                sectionId: 'checklist',
+                child: _Section7Checklist(
                 onCopy: () {
                   final txt = '''
 ${loc.aboutArtnetChecklistCopyTitle}
@@ -154,6 +188,7 @@ ${loc.aboutArtnetChecklistCopyTitle}
                       .trim();
                   copyToClipboard(context, txt);
                 },
+              ),
               ),
               const SizedBox(height: 18),
               const _FooterNote(),
@@ -463,11 +498,6 @@ class _Section6bAssets extends StatelessWidget {
     return ExpandSectionCard(
       title: loc.aboutArtnetSection6bTitle,
       icon: Icons.image_outlined,
-      trailing: IconButton(
-        tooltip: loc.aboutArtnetAssetsCopyTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -511,11 +541,6 @@ class _Section7Checklist extends StatelessWidget {
     return SectionCard(
       title: loc.aboutArtnetSection7Title,
       icon: Icons.checklist,
-      trailing: IconButton(
-        tooltip: loc.aboutArtnetChecklistCopyTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: _Callout(
         title: loc.aboutArtnetChecklistTitle,
         bullets: [
@@ -536,6 +561,7 @@ class _Section7Checklist extends StatelessWidget {
 
 class _TocCard extends StatelessWidget {
   const _TocCard({
+    required this.pageId,
     required this.title,
     required this.copyTooltip,
     required this.items,
@@ -544,7 +570,8 @@ class _TocCard extends StatelessWidget {
 
   final String title;
   final String copyTooltip;
-  final List<_TocItem> items;
+  final String pageId;
+final List<_TocItem> items;
   final VoidCallback onCopy;
 
   @override
@@ -552,11 +579,6 @@ class _TocCard extends StatelessWidget {
     return SectionCard(
       title: title,
       icon: Icons.list_alt,
-      trailing: IconButton(
-        tooltip: copyTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: Column(
         children: items
             .map(
@@ -582,6 +604,11 @@ class _TocCard extends StatelessWidget {
                               ),
                             ),
                           ),
+                          AboutPinButton(
+                            pageId: pageId,
+                            sectionId: it.sectionId,
+                            dense: true,
+                          ),
                           Icon(Icons.chevron_right,
                               color: Colors.white.withValues(alpha: 0.55)),
                         ],
@@ -598,7 +625,8 @@ class _TocCard extends StatelessWidget {
 }
 
 class _TocItem {
-  _TocItem(this.label, {required this.onTap});
+  _TocItem(this.sectionId, this.label, {required this.onTap});
+  final String sectionId;
   final String label;
   final VoidCallback onTap;
 }

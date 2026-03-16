@@ -1512,11 +1512,23 @@
     "sunTimesTimelineColLux",
     "sunTimesTimelineFootnote",
     "aboutUniverseToArtnetColSubnet",
+    "appVersionLabel",
+    "appVersionLabelNoBuild",
     "aboutUniverseToArtnetColUniverse",
     "videoLedResultWallResolution",
     "videoLedResultWallSize",
     "videoLedResultTile",
-    "videoLedResultPitch"
+    "videoLedResultPitch",
+    "aboutSearchHint",
+    "aboutSearchNoResults",
+    "homePinnedTitle",
+    "homePinnedSubtitle",
+    "pinnedReferencesTitle",
+    "pinnedReferencesEmpty",
+    "aboutPinAddTooltip",
+    "aboutPinRemoveTooltip",
+    "aboutPinAddedMessage",
+    "aboutPinRemovedMessage"
   ],
 
   "en": [
@@ -3820,11 +3832,23 @@
     "sunTimesTimelineColLux",
     "sunTimesTimelineFootnote",
     "aboutUniverseToArtnetColSubnet",
+    "appVersionLabel",
+    "appVersionLabelNoBuild",
     "aboutUniverseToArtnetColUniverse",
     "videoLedResultWallResolution",
     "videoLedResultWallSize",
     "videoLedResultTile",
-    "videoLedResultPitch"
+    "videoLedResultPitch",
+    "aboutSearchHint",
+    "aboutSearchNoResults",
+    "homePinnedTitle",
+    "homePinnedSubtitle",
+    "pinnedReferencesTitle",
+    "pinnedReferencesEmpty",
+    "aboutPinAddTooltip",
+    "aboutPinRemoveTooltip",
+    "aboutPinAddedMessage",
+    "aboutPinRemovedMessage"
   ],
 
   "nl": [
@@ -5340,11 +5364,23 @@
     "sunTimesTimelineColLux",
     "sunTimesTimelineFootnote",
     "aboutUniverseToArtnetColSubnet",
+    "appVersionLabel",
+    "appVersionLabelNoBuild",
     "aboutUniverseToArtnetColUniverse",
     "videoLedResultWallResolution",
     "videoLedResultWallSize",
     "videoLedResultTile",
-    "videoLedResultPitch"
+    "videoLedResultPitch",
+    "aboutSearchHint",
+    "aboutSearchNoResults",
+    "homePinnedTitle",
+    "homePinnedSubtitle",
+    "pinnedReferencesTitle",
+    "pinnedReferencesEmpty",
+    "aboutPinAddTooltip",
+    "aboutPinRemoveTooltip",
+    "aboutPinAddedMessage",
+    "aboutPinRemovedMessage"
   ],
 
   "pt": [
@@ -6860,10 +6896,22 @@
     "sunTimesTimelineColLux",
     "sunTimesTimelineFootnote",
     "aboutUniverseToArtnetColSubnet",
+    "appVersionLabel",
+    "appVersionLabelNoBuild",
     "aboutUniverseToArtnetColUniverse",
     "videoLedResultWallResolution",
     "videoLedResultWallSize",
     "videoLedResultTile",
-    "videoLedResultPitch"
+    "videoLedResultPitch",
+    "aboutSearchHint",
+    "aboutSearchNoResults",
+    "homePinnedTitle",
+    "homePinnedSubtitle",
+    "pinnedReferencesTitle",
+    "pinnedReferencesEmpty",
+    "aboutPinAddTooltip",
+    "aboutPinRemoveTooltip",
+    "aboutPinAddedMessage",
+    "aboutPinRemovedMessage"
   ]
 }

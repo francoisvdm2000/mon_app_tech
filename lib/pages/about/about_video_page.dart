@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, copyToClipboard
 import '../../l10n_gen/app_localizations.dart';
+import 'about_favorites.dart';
 
 class AboutVideoPage extends StatefulWidget {
   const AboutVideoPage({super.key});
@@ -56,21 +57,22 @@ class _AboutVideoPageState extends State<AboutVideoPage> {
           child: Column(
             children: [
               _TocCard(
+                pageId: 'video_about',
                 onCopy: () {
                   copyToClipboard(context, loc.aboutVideoSummaryCopy.trim());
                 },
                 items: [
-                  _TocItem(loc.aboutVideoToc1, onTap: () => _goTo(_kBasics)),
-                  _TocItem(loc.aboutVideoToc2, onTap: () => _goTo(_kResFps)),
-                  _TocItem(loc.aboutVideoToc3, onTap: () => _goTo(_kColor)),
-                  _TocItem(loc.aboutVideoToc4, onTap: () => _goTo(_kSync)),
-                  _TocItem(loc.aboutVideoToc5, onTap: () => _goTo(_kCables)),
-                  _TocItem(loc.aboutVideoToc6, onTap: () => _goTo(_kSdi)),
-                  _TocItem(loc.aboutVideoToc7, onTap: () => _goTo(_kHdmi)),
-                  _TocItem(loc.aboutVideoToc8, onTap: () => _goTo(_kNdi)),
-                  _TocItem(loc.aboutVideoToc9,
+                  _TocItem('basics', loc.aboutVideoToc1, onTap: () => _goTo(_kBasics)),
+                  _TocItem('res_fps', loc.aboutVideoToc2, onTap: () => _goTo(_kResFps)),
+                  _TocItem('color', loc.aboutVideoToc3, onTap: () => _goTo(_kColor)),
+                  _TocItem('sync', loc.aboutVideoToc4, onTap: () => _goTo(_kSync)),
+                  _TocItem('cables', loc.aboutVideoToc5, onTap: () => _goTo(_kCables)),
+                  _TocItem('sdi', loc.aboutVideoToc6, onTap: () => _goTo(_kSdi)),
+                  _TocItem('hdmi', loc.aboutVideoToc7, onTap: () => _goTo(_kHdmi)),
+                  _TocItem('ndi', loc.aboutVideoToc8, onTap: () => _goTo(_kNdi)),
+                  _TocItem('mapping_led', loc.aboutVideoToc9,
                       onTap: () => _goTo(_kMappingLed)),
-                  _TocItem(loc.aboutVideoToc10,
+                  _TocItem('checklist', loc.aboutVideoToc10,
                       onTap: () => _goTo(_kChecklist)),
                 ],
               ),
@@ -123,8 +125,10 @@ class _AboutVideoPageState extends State<AboutVideoPage> {
 /// =======================
 
 class _TocCard extends StatelessWidget {
-  const _TocCard({required this.items, required this.onCopy});
+  const _TocCard({
+    required this.pageId,required this.items, required this.onCopy});
 
+  final String pageId;
   final List<_TocItem> items;
   final VoidCallback onCopy;
 
@@ -135,11 +139,6 @@ class _TocCard extends StatelessWidget {
     return SectionCard(
       title: loc.commonTocTitle,
       icon: Icons.menu_book,
-      trailing: IconButton(
-        tooltip: loc.commonCopySummaryTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: Column(
         children: items
             .map(
@@ -165,6 +164,11 @@ class _TocCard extends StatelessWidget {
                               ),
                             ),
                           ),
+                          AboutPinButton(
+                            pageId: pageId,
+                            sectionId: it.sectionId,
+                            dense: true,
+                          ),
                           Icon(Icons.chevron_right,
                               color: Colors.white.withValues(alpha: 0.55)),
                         ],
@@ -181,7 +185,8 @@ class _TocCard extends StatelessWidget {
 }
 
 class _TocItem {
-  _TocItem(this.label, {required this.onTap});
+  _TocItem(this.sectionId, this.label, {required this.onTap});
+  final String sectionId;
   final String label;
   final VoidCallback onTap;
 }
@@ -197,7 +202,10 @@ class _Section1Basics extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'video_about',
+      sectionId: 'basics',
+      child: SectionCard(
       title: loc.aboutVideoToc1,
       icon: Icons.video_library,
       child: Column(
@@ -217,6 +225,7 @@ class _Section1Basics extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }
@@ -228,7 +237,10 @@ class _Section2ResFps extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'video_about',
+      sectionId: 'res_fps',
+      child: SectionCard(
       title: loc.aboutVideoToc2,
       icon: Icons.aspect_ratio,
       child: Column(
@@ -254,6 +266,7 @@ class _Section2ResFps extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }
@@ -265,7 +278,10 @@ class _Section3Color extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'video_about',
+      sectionId: 'color',
+      child: SectionCard(
       title: loc.aboutVideoToc3,
       icon: Icons.palette,
       child: Column(
@@ -289,6 +305,7 @@ class _Section3Color extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }
@@ -300,7 +317,10 @@ class _Section4Sync extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'video_about',
+      sectionId: 'sync',
+      child: SectionCard(
       title: loc.aboutVideoToc4,
       icon: Icons.sync,
       child: Column(
@@ -323,6 +343,7 @@ class _Section4Sync extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }
@@ -334,7 +355,10 @@ class _Section5Cables extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'video_about',
+      sectionId: 'cables',
+      child: SectionCard(
       title: loc.aboutVideoToc5,
       icon: Icons.cable,
       child: _Callout(
@@ -345,6 +369,7 @@ class _Section5Cables extends StatelessWidget {
           loc.aboutVideoSection5Bullet3,
         ],
       ),
+    ),
     );
   }
 }
@@ -356,7 +381,10 @@ class _Section6Sdi extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'video_about',
+      sectionId: 'sdi',
+      child: SectionCard(
       title: loc.aboutVideoToc6,
       icon: Icons.settings_input_hdmi,
       child: _Callout(
@@ -367,6 +395,7 @@ class _Section6Sdi extends StatelessWidget {
           loc.aboutVideoSection6Bullet3,
         ],
       ),
+    ),
     );
   }
 }
@@ -378,7 +407,10 @@ class _Section7Hdmi extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'video_about',
+      sectionId: 'hdmi',
+      child: SectionCard(
       title: loc.aboutVideoToc7,
       icon: Icons.tv,
       child: _Callout(
@@ -389,6 +421,7 @@ class _Section7Hdmi extends StatelessWidget {
           loc.aboutVideoSection7Bullet3,
         ],
       ),
+    ),
     );
   }
 }
@@ -400,7 +433,10 @@ class _Section8Ndi extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'video_about',
+      sectionId: 'ndi',
+      child: SectionCard(
       title: loc.aboutVideoToc8,
       icon: Icons.lan,
       child: _Callout(
@@ -411,6 +447,7 @@ class _Section8Ndi extends StatelessWidget {
           loc.aboutVideoSection8Bullet3,
         ],
       ),
+    ),
     );
   }
 }
@@ -422,7 +459,10 @@ class _Section9Mapping extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'video_about',
+      sectionId: 'mapping_led',
+      child: SectionCard(
       title: loc.aboutVideoToc9,
       icon: Icons.grid_view,
       child: _Callout(
@@ -433,6 +473,7 @@ class _Section9Mapping extends StatelessWidget {
           loc.aboutVideoSection9Bullet3,
         ],
       ),
+    ),
     );
   }
 }
@@ -445,14 +486,12 @@ class _Section10Checklist extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'video_about',
+      sectionId: 'checklist',
+      child: SectionCard(
       title: loc.aboutVideoToc10,
       icon: Icons.checklist,
-      trailing: IconButton(
-        tooltip: loc.aboutVideoChecklistCopyTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: _Callout(
         title: loc.aboutVideoChecklistTitle,
         bullets: [
@@ -461,6 +500,7 @@ class _Section10Checklist extends StatelessWidget {
           loc.aboutVideoChecklistBullet3,
         ],
       ),
+    ),
     );
   }
 }

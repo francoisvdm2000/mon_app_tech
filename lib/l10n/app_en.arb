@@ -1469,5 +1469,28 @@
   "laserBeamResultsTitle": "Results",
   "laserBeamDiameterAtDistance": "Diameter at distance",
   "laserBeamRadiusAtDistance": "Radius at distance",
-  "laserBeamAreaAtDistance": "Spot area"
+  "appVersionLabel": "Version {version} ({build})",
+  "@appVersionLabel": {
+    "placeholders": {
+      "version": {},
+      "build": {}
+    }
+  },
+  "appVersionLabelNoBuild": "Version {version}",
+  "@appVersionLabelNoBuild": {
+    "placeholders": {
+      "version": {}
+    }
+  },
+  "laserBeamAreaAtDistance": "Spot area",
+  "aboutSearchHint": "Search references",
+  "aboutSearchNoResults": "No results found.",
+  "homePinnedTitle": "Pins",
+  "homePinnedSubtitle": "Quick access to your pinned references.",
+  "pinnedReferencesTitle": "Pinned references",
+  "pinnedReferencesEmpty": "No pinned references yet.",
+  "aboutPinAddTooltip": "Pin this reference",
+  "aboutPinRemoveTooltip": "Remove this pin",
+  "aboutPinAddedMessage": "Reference pinned.",
+  "aboutPinRemovedMessage": "Pin removed."
 }

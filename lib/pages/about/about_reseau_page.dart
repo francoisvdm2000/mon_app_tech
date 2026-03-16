@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, copyToClipboard
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
+import 'about_favorites.dart';
 
 class AboutReseauPage extends StatefulWidget {
   const AboutReseauPage({super.key});
@@ -54,51 +55,84 @@ class _AboutReseauPageState extends State<AboutReseauPage> {
           child: Column(
             children: [
               _TocCard(
+                pageId: 'cabling_fiber',
                 onCopy: () {
                   final txt = loc.aboutReseauSummaryCopy.trim();
                   copyToClipboard(context, txt);
                 },
                 items: [
-                  _TocItem(loc.aboutReseauToc1, onTap: () => _goTo(_kBasics)),
-                  _TocItem(loc.aboutReseauToc2, onTap: () => _goTo(_kRj45)),
-                  _TocItem(loc.aboutReseauToc3, onTap: () => _goTo(_kPoE)),
-                  _TocItem(loc.aboutReseauToc4, onTap: () => _goTo(_kFiber)),
-                  _TocItem(loc.aboutReseauToc5, onTap: () => _goTo(_kSfp)),
-                  _TocItem(loc.aboutReseauToc6, onTap: () => _goTo(_kSwitch)),
-                  _TocItem(loc.aboutReseauToc7,
+                  _TocItem('basics', loc.aboutReseauToc1, onTap: () => _goTo(_kBasics)),
+                  _TocItem('rj45', loc.aboutReseauToc2, onTap: () => _goTo(_kRj45)),
+                  _TocItem('poe', loc.aboutReseauToc3, onTap: () => _goTo(_kPoE)),
+                  _TocItem('fiber', loc.aboutReseauToc4, onTap: () => _goTo(_kFiber)),
+                  _TocItem('sfp', loc.aboutReseauToc5, onTap: () => _goTo(_kSfp)),
+                  _TocItem('switch', loc.aboutReseauToc6, onTap: () => _goTo(_kSwitch)),
+                  _TocItem('artnet_sacn', loc.aboutReseauToc7,
                       onTap: () => _goTo(_kArtNetSacn)),
-                  _TocItem(loc.aboutReseauToc8,
+                  _TocItem('checklist', loc.aboutReseauToc8,
                       onTap: () => _goTo(_kChecklist)),
                 ],
               ),
               const SizedBox(height: 12),
               _Anchor(key: _kBasics),
-              const _Section1Basics(),
+              AboutSectionPin(
+                pageId: 'cabling_fiber',
+                sectionId: 'basics',
+                child: const _Section1Basics(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _kRj45),
-              const _Section2Rj45(),
+              AboutSectionPin(
+                pageId: 'cabling_fiber',
+                sectionId: 'rj45',
+                child: const _Section2Rj45(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _kPoE),
-              const _Section3Poe(),
+              AboutSectionPin(
+                pageId: 'cabling_fiber',
+                sectionId: 'poe',
+                child: const _Section3Poe(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _kFiber),
-              const _Section4Fiber(),
+              AboutSectionPin(
+                pageId: 'cabling_fiber',
+                sectionId: 'fiber',
+                child: const _Section4Fiber(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _kSfp),
-              const _Section5Sfp(),
+              AboutSectionPin(
+                pageId: 'cabling_fiber',
+                sectionId: 'sfp',
+                child: const _Section5Sfp(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _kSwitch),
-              const _Section6Switch(),
+              AboutSectionPin(
+                pageId: 'cabling_fiber',
+                sectionId: 'switch',
+                child: const _Section6Switch(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _kArtNetSacn),
-              const _Section7ArtNetSacn(),
+              AboutSectionPin(
+                pageId: 'cabling_fiber',
+                sectionId: 'artnet_sacn',
+                child: const _Section7ArtNetSacn(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _kChecklist),
-              _Section8Checklist(
+              AboutSectionPin(
+                pageId: 'cabling_fiber',
+                sectionId: 'checklist',
+                child: _Section8Checklist(
                 onCopy: () {
                   final txt = loc.aboutReseauChecklistCopy.trim();
                   copyToClipboard(context, txt);
                 },
+              ),
               ),
               const SizedBox(height: 18),
               const _FooterNote(),
@@ -116,11 +150,13 @@ class _AboutReseauPageState extends State<AboutReseauPage> {
 
 class _TocCard extends StatelessWidget {
   const _TocCard({
+    required this.pageId,
     required this.items,
     required this.onCopy,
   });
 
-  final List<_TocItem> items;
+  final String pageId;
+final List<_TocItem> items;
   final VoidCallback onCopy;
 
   @override
@@ -130,11 +166,6 @@ class _TocCard extends StatelessWidget {
     return SectionCard(
       title: loc.commonTocTitle,
       icon: Icons.router,
-      trailing: IconButton(
-        tooltip: loc.commonCopySummaryTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: Column(
         children: items
             .map(
@@ -160,6 +191,11 @@ class _TocCard extends StatelessWidget {
                               ),
                             ),
                           ),
+                          AboutPinButton(
+                            pageId: pageId,
+                            sectionId: it.sectionId,
+                            dense: true,
+                          ),
                           Icon(Icons.chevron_right,
                               color: Colors.white.withValues(alpha: 0.55)),
                         ],
@@ -176,7 +212,8 @@ class _TocCard extends StatelessWidget {
 }
 
 class _TocItem {
-  _TocItem(this.label, {required this.onTap});
+  _TocItem(this.sectionId, this.label, {required this.onTap});
+  final String sectionId;
   final String label;
   final VoidCallback onTap;
 }
@@ -446,11 +483,6 @@ class _Section8Checklist extends StatelessWidget {
     return SectionCard(
       title: loc.aboutReseauToc8,
       icon: Icons.checklist,
-      trailing: IconButton(
-        tooltip: loc.aboutReseauChecklistCopyTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: _Callout(
         title: loc.aboutReseauChecklistTitle,
         bullets: [

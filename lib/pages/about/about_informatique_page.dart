@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, copyToClipboard
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
+import 'about_favorites.dart';
 
 class AboutInformatiquePage extends StatefulWidget {
   const AboutInformatiquePage({super.key});
@@ -51,22 +52,23 @@ class _AboutInformatiquePageState extends State<AboutInformatiquePage> {
           child: Column(
             children: [
               _TocCard(
+                pageId: 'computing',
                 onCopy: () {
                   final txt = loc.infoSummaryCopy.trim();
                   copyToClipboard(context, txt);
                 },
                 items: [
-                  _TocItem(loc.infoUsbTitle, onTap: () => _goTo(_kUsb)),
-                  _TocItem(
+                  _TocItem('usb', loc.infoUsbTitle, onTap: () => _goTo(_kUsb)),
+                  _TocItem('storage', 
                     loc.infoStorageTitle,
                     onTap: () => _goTo(_kStorage),
                   ),
-                  _TocItem(
+                  _TocItem('video_links', 
                     loc.infoVideoLinksTitle,
                     onTap: () => _goTo(_kVideo),
                   ),
-                  _TocItem(loc.infoPcieGpuTitle, onTap: () => _goTo(_kPcie)),
-                  _TocItem(
+                  _TocItem('pcie_gpu', loc.infoPcieGpuTitle, onTap: () => _goTo(_kPcie)),
+                  _TocItem('checklist', 
                     loc.infoChecklistTitle,
                     onTap: () => _goTo(_kChecklist),
                   ),
@@ -108,10 +110,12 @@ class _AboutInformatiquePageState extends State<AboutInformatiquePage> {
 
 class _TocCard extends StatelessWidget {
   const _TocCard({
+    required this.pageId,
     required this.items,
     required this.onCopy,
   });
 
+  final String pageId;
   final List<_TocItem> items;
   final VoidCallback onCopy;
 
@@ -122,11 +126,6 @@ class _TocCard extends StatelessWidget {
     return SectionCard(
       title: loc.commonTocTitle,
       icon: Icons.computer,
-      trailing: IconButton(
-        tooltip: loc.commonCopySummaryTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: Column(
         children: items
             .map(
@@ -172,7 +171,8 @@ class _TocCard extends StatelessWidget {
 }
 
 class _TocItem {
-  _TocItem(this.label, {required this.onTap});
+  _TocItem(this.sectionId, this.label, {required this.onTap});
+  final String sectionId;
   final String label;
   final VoidCallback onTap;
 }
@@ -188,7 +188,10 @@ class _Section1Usb extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'computing',
+      sectionId: 'usb',
+      child: SectionCard(
       title: loc.infoUsbTitle,
       icon: Icons.usb,
       child: Column(
@@ -214,6 +217,7 @@ class _Section1Usb extends StatelessWidget {
           _Paragraph(loc.infoUsbParagraph),
         ],
       ),
+    ),
     );
   }
 }
@@ -229,7 +233,10 @@ class _Section2Storage extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'computing',
+      sectionId: 'storage',
+      child: SectionCard(
       title: loc.infoStorageTitle,
       icon: Icons.storage,
       child: Column(
@@ -253,6 +260,7 @@ class _Section2Storage extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }
@@ -268,7 +276,10 @@ class _Section3VideoLinks extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'computing',
+      sectionId: 'video_links',
+      child: SectionCard(
       title: loc.infoVideoLinksTitle,
       icon: Icons.display_settings,
       child: Column(
@@ -291,6 +302,7 @@ class _Section3VideoLinks extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }
@@ -306,7 +318,10 @@ class _Section4PcieGpu extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'computing',
+      sectionId: 'pcie_gpu',
+      child: SectionCard(
       title: loc.infoPcieGpuTitle,
       icon: Icons.developer_board,
       child: Column(
@@ -324,6 +339,7 @@ class _Section4PcieGpu extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }
@@ -340,14 +356,12 @@ class _Section5Checklist extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
 
-    return SectionCard(
+    return AboutSectionPin(
+      pageId: 'computing',
+      sectionId: 'checklist',
+      child: SectionCard(
       title: loc.infoChecklistTitle,
       icon: Icons.checklist,
-      trailing: IconButton(
-        tooltip: loc.commonCopySummaryTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: _Callout(
         title: loc.infoChecklistQuickTitle,
         bullets: [
@@ -358,6 +372,7 @@ class _Section5Checklist extends StatelessWidget {
           loc.infoChecklistBullet5,
         ],
       ),
+    ),
     );
   }
 }

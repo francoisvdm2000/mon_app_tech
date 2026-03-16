@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // SectionCard, MiniPill, copyToClipboard
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
+import 'about_favorites.dart';
 
 class AboutIpBasicsPage extends StatefulWidget {
   const AboutIpBasicsPage({super.key});
@@ -58,6 +59,7 @@ class _AboutIpBasicsPageState extends State<AboutIpBasicsPage> {
           child: Column(
             children: [
               _TocCard(
+                pageId: 'ip_basics',
                 onCopy: () {
                   final txt = [
                     loc.ipBasicsMemo1,
@@ -69,54 +71,90 @@ class _AboutIpBasicsPageState extends State<AboutIpBasicsPage> {
                   copyToClipboard(context, txt);
                 },
                 items: [
-                  _TocItem(loc.ipBasicsToc1, onTap: () => _goTo(_k1WhatIsIp)),
-                  _TocItem(loc.ipBasicsToc2,
+                  _TocItem('what_is_ip', loc.ipBasicsToc1, onTap: () => _goTo(_k1WhatIsIp)),
+                  _TocItem('private_ranges', loc.ipBasicsToc2,
                       onTap: () => _goTo(_k2PrivateRanges)),
-                  _TocItem(loc.ipBasicsToc3, onTap: () => _goTo(_k3MaskSubnet)),
-                  _TocItem(loc.ipBasicsToc4,
+                  _TocItem('mask_subnet', loc.ipBasicsToc3, onTap: () => _goTo(_k3MaskSubnet)),
+                  _TocItem('gateway_dns_dhcp', loc.ipBasicsToc4,
                       onTap: () => _goTo(_k4GatewayDnsDhcp)),
-                  _TocItem(loc.ipBasicsToc5,
+                  _TocItem('how_devices_talk', loc.ipBasicsToc5,
                       onTap: () => _goTo(_k5HowDevicesTalk)),
-                  _TocItem(loc.ipBasicsToc6,
+                  _TocItem('common_show_plans', loc.ipBasicsToc6,
                       onTap: () => _goTo(_k6CommonShowPlans)),
-                  _TocItem(loc.ipBasicsToc7,
+                  _TocItem('troubleshooting', loc.ipBasicsToc7,
                       onTap: () => _goTo(_k7Troubleshooting)),
-                  _TocItem(loc.ipBasicsToc8,
+                  _TocItem('mini_exercises', loc.ipBasicsToc8,
                       onTap: () => _goTo(_k8MiniExercises)),
-                  _TocItem(loc.ipBasicsToc9, onTap: () => _goTo(_k9Checklist)),
+                  _TocItem('checklist', loc.ipBasicsToc9, onTap: () => _goTo(_k9Checklist)),
                 ],
               ),
               const SizedBox(height: 12),
               _Anchor(key: _k1WhatIsIp),
-              const _Section1WhatIsIp(),
+              AboutSectionPin(
+                pageId: 'ip_basics',
+                sectionId: 'what_is_ip',
+                child: const _Section1WhatIsIp(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _k2PrivateRanges),
-              const _Section2PrivateRanges(),
+              AboutSectionPin(
+                pageId: 'ip_basics',
+                sectionId: 'private_ranges',
+                child: const _Section2PrivateRanges(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _k3MaskSubnet),
-              const _Section3MaskSubnet(),
+              AboutSectionPin(
+                pageId: 'ip_basics',
+                sectionId: 'mask_subnet',
+                child: const _Section3MaskSubnet(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _k4GatewayDnsDhcp),
-              const _Section4GatewayDnsDhcp(),
+              AboutSectionPin(
+                pageId: 'ip_basics',
+                sectionId: 'gateway_dns_dhcp',
+                child: const _Section4GatewayDnsDhcp(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _k5HowDevicesTalk),
-              const _Section5HowDevicesTalk(),
+              AboutSectionPin(
+                pageId: 'ip_basics',
+                sectionId: 'how_devices_talk',
+                child: const _Section5HowDevicesTalk(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _k6CommonShowPlans),
-              const _Section6CommonShowPlans(),
+              AboutSectionPin(
+                pageId: 'ip_basics',
+                sectionId: 'common_show_plans',
+                child: const _Section6CommonShowPlans(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _k7Troubleshooting),
-              const _Section7Troubleshooting(),
+              AboutSectionPin(
+                pageId: 'ip_basics',
+                sectionId: 'troubleshooting',
+                child: const _Section7Troubleshooting(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _k8MiniExercises),
-              const _Section8MiniExercises(),
+              AboutSectionPin(
+                pageId: 'ip_basics',
+                sectionId: 'mini_exercises',
+                child: const _Section8MiniExercises(),
+              ),
               const SizedBox(height: 12),
               _Anchor(key: _k9Checklist),
-              _Section9Checklist(
+              AboutSectionPin(
+                pageId: 'ip_basics',
+                sectionId: 'checklist',
+                child: _Section9Checklist(
                 onCopy: () {
                   final txt = loc.ipBasicsChecklistCopy.trim();
                   copyToClipboard(context, txt);
                 },
+              ),
               ),
               const SizedBox(height: 18),
               const _FooterNote(),
@@ -134,11 +172,13 @@ class _AboutIpBasicsPageState extends State<AboutIpBasicsPage> {
 
 class _TocCard extends StatelessWidget {
   const _TocCard({
+    required this.pageId,
     required this.items,
     required this.onCopy,
   });
 
-  final List<_TocItem> items;
+  final String pageId;
+final List<_TocItem> items;
   final VoidCallback onCopy;
 
   @override
@@ -148,11 +188,6 @@ class _TocCard extends StatelessWidget {
     return SectionCard(
       title: loc.commonTocTitle,
       icon: Icons.list_alt,
-      trailing: IconButton(
-        tooltip: loc.ipBasicsCopyMemoTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: Column(
         children: items
             .map(
@@ -178,6 +213,11 @@ class _TocCard extends StatelessWidget {
                               ),
                             ),
                           ),
+                          AboutPinButton(
+                            pageId: pageId,
+                            sectionId: it.sectionId,
+                            dense: true,
+                          ),
                           Icon(Icons.chevron_right,
                               color: Colors.white.withValues(alpha: 0.55)),
                         ],
@@ -194,7 +234,8 @@ class _TocCard extends StatelessWidget {
 }
 
 class _TocItem {
-  _TocItem(this.label, {required this.onTap});
+  _TocItem(this.sectionId, this.label, {required this.onTap});
+  final String sectionId;
   final String label;
   final VoidCallback onTap;
 }
@@ -610,11 +651,6 @@ class _Section9Checklist extends StatelessWidget {
     return SectionCard(
       title: loc.ipBasicsToc9,
       icon: Icons.checklist,
-      trailing: IconButton(
-        tooltip: loc.ipBasicsCopyChecklistTooltip,
-        icon: const Icon(Icons.copy, color: Colors.white70),
-        onPressed: onCopy,
-      ),
       child: _Callout(
         title: loc.ipBasicsSection9CalloutTitle,
         bullets: [

@@ -6636,6 +6636,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutUniverseToArtnetColSubnet => 'Subnet';
 
   @override
+  String appVersionLabel(Object version, Object build) {
+    return 'Version $version ($build)';
+  }
+
+  @override
+  String appVersionLabelNoBuild(Object version) {
+    return 'Version $version';
+  }
+
+  @override
   String get aboutUniverseToArtnetColUniverse => 'Universe';
 
   @override
@@ -6649,4 +6659,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get videoLedResultPitch => 'Pitch';
+
+  @override
+  String get aboutSearchHint => 'Search references';
+
+  @override
+  String get aboutSearchNoResults => 'No results found.';
+
+  @override
+  String get homePinnedTitle => 'Pins';
+
+  @override
+  String get homePinnedSubtitle => 'Quick access to your pinned references.';
+
+  @override
+  String get pinnedReferencesTitle => 'Pinned references';
+
+  @override
+  String get pinnedReferencesEmpty => 'No pinned references yet.';
+
+  @override
+  String get aboutPinAddTooltip => 'Pin this reference';
+
+  @override
+  String get aboutPinRemoveTooltip => 'Remove this pin';
+
+  @override
+  String get aboutPinAddedMessage => 'Reference pinned.';
+
+  @override
+  String get aboutPinRemovedMessage => 'Pin removed.';
 }
