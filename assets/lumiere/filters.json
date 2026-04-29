@@ -1,0 +1,473 @@
+[
+  {
+    "brand": "GAM",
+    "code": "101",
+    "name": "Lavender Blue",
+    "hex": "#9D8BC2",
+    "rgb": {
+      "r": 157,
+      "g": 139,
+      "b": 194
+    }
+  },
+  {
+    "brand": "GAM",
+    "code": "130",
+    "name": "Rose",
+    "hex": "#D27C8F",
+    "rgb": {
+      "r": 210,
+      "g": 124,
+      "b": 143
+    }
+  },
+  {
+    "brand": "GAM",
+    "code": "170",
+    "name": "Dark Flesh Pink",
+    "hex": "#C98A8D",
+    "rgb": {
+      "r": 201,
+      "g": 138,
+      "b": 141
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "101",
+    "name": "Yellow",
+    "hex": "#F2C94C",
+    "rgb": {
+      "r": 242,
+      "g": 201,
+      "b": 76
+    },
+    "etcLustrX8": {
+      "In": 0,
+      "B": 0,
+      "Cy": 0,
+      "G": 22,
+      "Li": 100,
+      "A": 100,
+      "R": 100,
+      "DR": 100
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "102",
+    "name": "Light Amber",
+    "hex": "#E7B56A",
+    "rgb": {
+      "r": 231,
+      "g": 181,
+      "b": 106
+    },
+    "etcLustrX8": {
+      "In": 0,
+      "B": 0,
+      "Cy": 0,
+      "G": 0,
+      "Li": 97,
+      "A": 100,
+      "R": 100,
+      "DR": 100
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "103",
+    "name": "Straw",
+    "hex": "#E3C36D",
+    "rgb": {
+      "r": 227,
+      "g": 195,
+      "b": 109
+    },
+    "xy": {
+      "x": 0.336,
+      "y": 0.359
+    },
+    "transmissionY": 81.6,
+    "etcLustrX8": {
+      "In": 0,
+      "B": 0,
+      "Cy": 0,
+      "G": 0,
+      "Li": 48,
+      "A": 100,
+      "R": 100,
+      "DR": 100
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "104",
+    "name": "Deep Amber",
+    "hex": "#D78F3F",
+    "rgb": {
+      "r": 215,
+      "g": 143,
+      "b": 63
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "106",
+    "name": "Primary Red",
+    "hex": "#C62828",
+    "rgb": {
+      "r": 198,
+      "g": 40,
+      "b": 40
+    },
+    "etcLustrX8": {
+      "In": 0,
+      "B": 0,
+      "Cy": 0,
+      "G": 0,
+      "Li": 0,
+      "A": 19,
+      "R": 100,
+      "DR": 100
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "117",
+    "name": "Steel Blue",
+    "hex": "#5B7EA6",
+    "rgb": {
+      "r": 91,
+      "g": 126,
+      "b": 166
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "119",
+    "name": "Dark Blue",
+    "hex": "#314C89",
+    "rgb": {
+      "r": 49,
+      "g": 76,
+      "b": 137
+    },
+    "etcLustrX8": {
+      "In": 100,
+      "B": 100,
+      "Cy": 67,
+      "G": 0,
+      "Li": 0,
+      "A": 0,
+      "R": 0,
+      "DR": 11
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "124",
+    "name": "Dark Green",
+    "hex": "#2F6E48",
+    "rgb": {
+      "r": 47,
+      "g": 110,
+      "b": 72
+    },
+    "etcLustrX8": {
+      "In": 0,
+      "B": 0,
+      "Cy": 44,
+      "G": 99,
+      "Li": 6,
+      "A": 0,
+      "R": 0,
+      "DR": 0
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "132",
+    "name": "Medium Blue",
+    "hex": "#3F6FA8",
+    "rgb": {
+      "r": 63,
+      "g": 111,
+      "b": 168
+    },
+    "etcLustrX8": {
+      "In": 100,
+      "B": 100,
+      "Cy": 100,
+      "G": 63,
+      "Li": 0,
+      "A": 0,
+      "R": 0,
+      "DR": 36
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "147",
+    "name": "Apricot",
+    "hex": "#E1A16B",
+    "rgb": {
+      "r": 225,
+      "g": 161,
+      "b": 107
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "156",
+    "name": "Chocolate",
+    "hex": "#7B4A2E",
+    "rgb": {
+      "r": 123,
+      "g": 74,
+      "b": 46
+    },
+    "etcLustrX8": {
+      "In": 22,
+      "B": 0,
+      "Cy": 0,
+      "G": 0,
+      "Li": 71,
+      "A": 100,
+      "R": 100,
+      "DR": 100
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "181",
+    "name": "Congo Blue",
+    "hex": "#1F2A7A",
+    "rgb": {
+      "r": 31,
+      "g": 42,
+      "b": 122
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "201",
+    "name": "Full CT Blue",
+    "hex": "#8EB6E5",
+    "rgb": {
+      "r": 142,
+      "g": 182,
+      "b": 229
+    },
+    "xy": {
+      "x": 0.228,
+      "y": 0.233
+    },
+    "transmissionY": 34.0,
+    "etcLustrX8": {
+      "In": 100,
+      "B": 100,
+      "Cy": 100,
+      "G": 100,
+      "Li": 76,
+      "A": 0,
+      "R": 92,
+      "DR": 100
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "202",
+    "name": "Half CT Blue",
+    "hex": "#A7C7EB",
+    "rgb": {
+      "r": 167,
+      "g": 199,
+      "b": 235
+    },
+    "etcLustrX8": {
+      "In": 95,
+      "B": 51,
+      "Cy": 100,
+      "G": 100,
+      "Li": 100,
+      "A": 100,
+      "R": 100,
+      "DR": 100
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "203",
+    "name": "Quarter CT Blue",
+    "hex": "#BCD4EC",
+    "rgb": {
+      "r": 188,
+      "g": 212,
+      "b": 236
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "204",
+    "name": "Full CT Orange",
+    "hex": "#F1B25A",
+    "rgb": {
+      "r": 241,
+      "g": 178,
+      "b": 90
+    },
+    "etcLustrX8": {
+      "In": 15,
+      "B": 0,
+      "Cy": 0,
+      "G": 0,
+      "Li": 69,
+      "A": 100,
+      "R": 100,
+      "DR": 100
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "205",
+    "name": "Half CT Orange",
+    "hex": "#F3C17B",
+    "rgb": {
+      "r": 243,
+      "g": 193,
+      "b": 123
+    },
+    "etcLustrX8": {
+      "In": 34,
+      "B": 0,
+      "Cy": 0,
+      "G": 0,
+      "Li": 99,
+      "A": 100,
+      "R": 100,
+      "DR": 100
+    }
+  },
+  {
+    "brand": "LEE",
+    "code": "206",
+    "name": "Quarter CT Orange",
+    "hex": "#F4D3A0",
+    "rgb": {
+      "r": 244,
+      "g": 211,
+      "b": 160
+    }
+  },
+  {
+    "brand": "ROSCO",
+    "code": "R02",
+    "name": "Bastard Amber",
+    "hex": "#F0BC72",
+    "rgb": {
+      "r": 240,
+      "g": 188,
+      "b": 114
+    }
+  },
+  {
+    "brand": "ROSCO",
+    "code": "R05",
+    "name": "Rose Tint",
+    "hex": "#E2A1A3",
+    "rgb": {
+      "r": 226,
+      "g": 161,
+      "b": 163
+    }
+  },
+  {
+    "brand": "ROSCO",
+    "code": "R08",
+    "name": "Pale Gold",
+    "hex": "#E0C26C",
+    "rgb": {
+      "r": 224,
+      "g": 194,
+      "b": 108
+    }
+  },
+  {
+    "brand": "ROSCO",
+    "code": "R26",
+    "name": "Light Red",
+    "hex": "#D36A6A",
+    "rgb": {
+      "r": 211,
+      "g": 106,
+      "b": 106
+    }
+  },
+  {
+    "brand": "ROSCO",
+    "code": "R27",
+    "name": "Medium Red",
+    "hex": "#C84B4B",
+    "rgb": {
+      "r": 200,
+      "g": 75,
+      "b": 75
+    }
+  },
+  {
+    "brand": "ROSCO",
+    "code": "R39",
+    "name": "Skelton Exotic Sangria",
+    "hex": "#8A405E",
+    "rgb": {
+      "r": 138,
+      "g": 64,
+      "b": 94
+    }
+  },
+  {
+    "brand": "ROSCO",
+    "code": "R68",
+    "name": "Parry Sky Blue",
+    "hex": "#79A8D8",
+    "rgb": {
+      "r": 121,
+      "g": 168,
+      "b": 216
+    }
+  },
+  {
+    "brand": "ROSCO",
+    "code": "R80",
+    "name": "Primary Blue",
+    "hex": "#3557A5",
+    "rgb": {
+      "r": 53,
+      "g": 87,
+      "b": 165
+    }
+  },
+  {
+    "brand": "ROSCO",
+    "code": "R89",
+    "name": "Moss Green",
+    "hex": "#5B7A46",
+    "rgb": {
+      "r": 91,
+      "g": 122,
+      "b": 70
+    }
+  },
+  {
+    "brand": "ROSCO",
+    "code": "R119",
+    "name": "Dark Blue",
+    "hex": "#2F437E",
+    "rgb": {
+      "r": 47,
+      "g": 67,
+      "b": 126
+    }
+  }
+]

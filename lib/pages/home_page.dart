@@ -10,10 +10,16 @@ import 'mentions_page.dart';
 import 'lumiere_page.dart';
 import 'laser_page.dart';
 import 'video/video_page.dart';
+import 'console/console_page.dart';
+import 'electricity/electricity_page.dart';
+import 'rigging/rigging_page.dart';
 import 'tools/bpm_page.dart';
 import 'laser/laser_consent_dialog.dart';
 import 'settings_page.dart';
 import 'about/pinned_references_page.dart';
+import 'subscription_page.dart';
+import 'package:in_app_purchase/in_app_purchase.dart';
+import '../services/subscription_service.dart';
 
 class PageAccueil extends StatefulWidget {
   const PageAccueil({super.key});
@@ -33,6 +39,7 @@ class _PageAccueilState extends State<PageAccueil> {
     super.initState();
     _checkDisclaimerOnStart();
     _loadAppVersion();
+    _restorePurchases();
   }
 
   Future<void> _loadAppVersion() async {
@@ -51,6 +58,26 @@ class _PageAccueilState extends State<PageAccueil> {
         _appVersion = loc.appVersionLabelNoBuild(version);
       }
     });
+  }
+
+  Future<void> _restorePurchases() async {
+    final iap = InAppPurchase.instance;
+
+    // 🔁 écoute les restaurations (bouton + auto)
+    iap.purchaseStream.listen((purchases) async {
+      for (final purchase in purchases) {
+        final category =
+            SubscriptionService.categoryFromProductId(purchase.productID);
+        if (category != null) {
+          await SubscriptionService.activate(category);
+        }
+      }
+    });
+
+    try {
+      // iOS
+      await iap.restorePurchases();
+    } catch (_) {}
   }
 
   Future<void> _contactEmail(BuildContext context) async {
@@ -294,6 +321,14 @@ class _PageAccueilState extends State<PageAccueil> {
               ),
             ),
             ListTile(
+              title: Text(loc.homeDrawerSubscriptions),
+              leading: const Icon(Icons.workspace_premium),
+              onTap: () {
+                Navigator.pop(context);
+                _push(const SubscriptionPage());
+              },
+            ),
+            ListTile(
               title: Text(loc.settings),
               leading: const Icon(Icons.settings),
               onTap: () {
@@ -349,35 +384,56 @@ class _PageAccueilState extends State<PageAccueil> {
                 subtitle: loc.homeVideoSubtitle,
                 onTap: () => _push(const PageVideo()),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 1),
               _homeTile(
                 icon: Icons.lightbulb_outline,
                 title: loc.homeLightTitle,
                 subtitle: loc.homeLightSubtitle,
                 onTap: () => _push(const PageLumiere()),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 1),
               _homeTile(
                 icon: Icons.center_focus_strong,
                 title: loc.homeLaserTitle,
                 subtitle: loc.homeLaserSubtitle,
                 onTap: _goToLaserWithConsent,
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 1),
+              _homeTile(
+                icon: Icons.developer_board,
+                title: loc.consoleTitle,
+                subtitle: loc.consoleSubtitle,
+                onTap: () => _push(const ConsolePage()),
+              ),
+              const SizedBox(height: 1),
+              _homeTile(
+                icon: Icons.bolt,
+                title: loc.homeElectricityTitle,
+                subtitle: loc.homeElectricitySubtitle,
+                onTap: () => _push(const ElectricityPage()),
+              ),
+              const SizedBox(height: 1),
+              _homeTile(
+                icon: Icons.hardware,
+                title: loc.homeRiggingTitle,
+                subtitle: loc.homeRiggingSubtitle,
+                onTap: () => _push(const RiggingPage()),
+              ),
+              const SizedBox(height: 1),
               _homeTile(
                 icon: Icons.speed,
                 title: loc.homeBpmTitle,
                 subtitle: loc.homeBpmSubtitle,
                 onTap: () => _push(const BpmPage()),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 1),
               _homeTile(
                 icon: Icons.menu_book,
                 title: loc.homeReferencesTitle,
                 subtitle: loc.homeReferencesSubtitle,
                 onTap: () => _push(const PageAbout()),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 1),
               _homeTile(
                 icon: Icons.push_pin_outlined,
                 title: loc.homePinnedTitle,

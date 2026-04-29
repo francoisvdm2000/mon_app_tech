@@ -174,6 +174,13 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
             title: Text(loc.patchUniverseAppBarTitle),
             actions: [
               IconButton(
+                tooltip: loc.patchMvrViewTable,
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(Icons.table_chart),
+              ),
+              IconButton(
                 tooltip: loc.patchUniverseResetTooltip,
                 onPressed: patchStore.entries.isEmpty ? null : _confirmReset,
                 icon: const Icon(Icons.restart_alt),

@@ -5132,7 +5132,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutArtnetConversionTablesTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Conversion / tables (Univers 1..256)'**
+  /// **'8) Conversion / tables (Univers 1..256)'**
   String get aboutArtnetConversionTablesTitle;
 
   /// No description provided for @aboutArtnetPillUdp.
@@ -11795,6 +11795,270 @@ abstract class AppLocalizations {
   /// **'Pitch'**
   String get videoLedResultPitch;
 
+  /// No description provided for @lightFilterLedTabConvert.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conversion'**
+  String get lightFilterLedTabConvert;
+
+  /// No description provided for @lightFilterLedTabProfiles.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mes fixtures'**
+  String get lightFilterLedTabProfiles;
+
+  /// No description provided for @lightFilterLedSourceLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Source lumineuse'**
+  String get lightFilterLedSourceLabel;
+
+  /// No description provided for @lightFilterLedEngineRgbww.
+  ///
+  /// In fr, this message translates to:
+  /// **'RGBWW (blanc chaud + froid)'**
+  String get lightFilterLedEngineRgbww;
+
+  /// No description provided for @lightFilterLedEngineRgbaw.
+  ///
+  /// In fr, this message translates to:
+  /// **'RGBAW'**
+  String get lightFilterLedEngineRgbaw;
+
+  /// No description provided for @lightFilterLedEngineRgbauv.
+  ///
+  /// In fr, this message translates to:
+  /// **'RGBAUV'**
+  String get lightFilterLedEngineRgbauv;
+
+  /// No description provided for @lightFilterLedEngineRgbwauv.
+  ///
+  /// In fr, this message translates to:
+  /// **'RGBWAUV'**
+  String get lightFilterLedEngineRgbwauv;
+
+  /// No description provided for @lightFilterLedEngineRgbrcl.
+  ///
+  /// In fr, this message translates to:
+  /// **'RGBRCL (Red, Cyan, Lime)'**
+  String get lightFilterLedEngineRgbrcl;
+
+  /// No description provided for @lightFilterLedEngineCmy.
+  ///
+  /// In fr, this message translates to:
+  /// **'CMY'**
+  String get lightFilterLedEngineCmy;
+
+  /// No description provided for @lightFilterLedSaveProfileTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sauvegarder le profil fixture'**
+  String get lightFilterLedSaveProfileTitle;
+
+  /// No description provided for @lightFilterLedProfileNameLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom de la fixture'**
+  String get lightFilterLedProfileNameLabel;
+
+  /// No description provided for @patchMvrViewTable.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tableur'**
+  String get patchMvrViewTable;
+
+  /// No description provided for @patchMvrViewVisual.
+  ///
+  /// In fr, this message translates to:
+  /// **'Visuel'**
+  String get patchMvrViewVisual;
+
+  /// No description provided for @consoleTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Console'**
+  String get consoleTitle;
+
+  /// No description provided for @consoleSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch DMX et outils GDTF'**
+  String get consoleSubtitle;
+
+  /// No description provided for @consolePatchTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Patch DMX'**
+  String get consolePatchTitle;
+
+  /// No description provided for @consolePatchSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Importer un MVR et analyser le patch'**
+  String get consolePatchSubtitle;
+
+  /// No description provided for @consoleGdtfTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'GDTF'**
+  String get consoleGdtfTitle;
+
+  /// No description provided for @consoleGdtfSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Créer ou analyser un fichier GDTF'**
+  String get consoleGdtfSubtitle;
+
+  /// No description provided for @lightFilterLedProfileSaved.
+  ///
+  /// In fr, this message translates to:
+  /// **'Profil « {name} » sauvegardé'**
+  String lightFilterLedProfileSaved(String name);
+
+  /// No description provided for @lightFilterLedNoProfiles.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun profil fixture enregistré'**
+  String get lightFilterLedNoProfiles;
+
+  /// No description provided for @lightFilterLedNoProfilesHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calibre les canaux dans l\'onglet Conversion,\npuis sauvegarde avec l\'icône 💾.'**
+  String get lightFilterLedNoProfilesHint;
+
+  /// No description provided for @lightFilterLedTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Correspondance filtres LED'**
+  String get lightFilterLedTitle;
+
+  /// No description provided for @lightFilterLedDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conversion des filtres LEE, Rosco… vers moteurs LED (RGB, RGBA, RGBW, etc.).'**
+  String get lightFilterLedDescription;
+
+  /// No description provided for @lightFilterLedBrandLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Marque'**
+  String get lightFilterLedBrandLabel;
+
+  /// No description provided for @lightFilterLedSearchLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Recherche'**
+  String get lightFilterLedSearchLabel;
+
+  /// No description provided for @lightFilterLedSearchHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Code ou nom du filtre'**
+  String get lightFilterLedSearchHint;
+
+  /// No description provided for @lightFilterLedFilterLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Filtre'**
+  String get lightFilterLedFilterLabel;
+
+  /// No description provided for @lightFilterLedEngineLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Moteur LED'**
+  String get lightFilterLedEngineLabel;
+
+  /// No description provided for @lightFilterLedShowPercentLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Afficher en pourcentage'**
+  String get lightFilterLedShowPercentLabel;
+
+  /// No description provided for @lightFilterLedShowPercentHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sinon, les valeurs sont affichées en DMX 0–255.'**
+  String get lightFilterLedShowPercentHint;
+
+  /// No description provided for @lightFilterLedHexLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Couleur de référence'**
+  String get lightFilterLedHexLabel;
+
+  /// No description provided for @lightFilterLedChromaticityLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Chromaticité'**
+  String get lightFilterLedChromaticityLabel;
+
+  /// No description provided for @lightFilterLedTransmissionLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Transmission'**
+  String get lightFilterLedTransmissionLabel;
+
+  /// No description provided for @lightFilterLedResultTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résultat'**
+  String get lightFilterLedResultTitle;
+
+  /// No description provided for @lightFilterLedOriginalPreviewLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aperçu filtre'**
+  String get lightFilterLedOriginalPreviewLabel;
+
+  /// No description provided for @lightFilterLedApproximatePreviewLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aperçu LED approximatif'**
+  String get lightFilterLedApproximatePreviewLabel;
+
+  /// No description provided for @lightFilterLedDisclaimer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résultat indicatif uniquement. Le rendu réel dépend du projecteur, de son spectre, de sa calibration, de son mode couleur et du contexte d’utilisation.'**
+  String get lightFilterLedDisclaimer;
+
+  /// No description provided for @lightFilterLedEngineRgb.
+  ///
+  /// In fr, this message translates to:
+  /// **'RGB'**
+  String get lightFilterLedEngineRgb;
+
+  /// No description provided for @lightFilterLedEngineRgba.
+  ///
+  /// In fr, this message translates to:
+  /// **'RGBA'**
+  String get lightFilterLedEngineRgba;
+
+  /// No description provided for @lightFilterLedEngineRgbw.
+  ///
+  /// In fr, this message translates to:
+  /// **'RGBW'**
+  String get lightFilterLedEngineRgbw;
+
+  /// No description provided for @lightFilterLedEngineRgbl.
+  ///
+  /// In fr, this message translates to:
+  /// **'RGBL'**
+  String get lightFilterLedEngineRgbl;
+
+  /// No description provided for @lightFilterLedEngineRgbwa.
+  ///
+  /// In fr, this message translates to:
+  /// **'RGBWA'**
+  String get lightFilterLedEngineRgbwa;
+
+  /// No description provided for @lightFilterLedEngineRgbal.
+  ///
+  /// In fr, this message translates to:
+  /// **'RGBAL'**
+  String get lightFilterLedEngineRgbal;
+
   /// No description provided for @aboutSearchHint.
   ///
   /// In fr, this message translates to:
@@ -11854,6 +12118,1224 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Épingle retirée.'**
   String get aboutPinRemovedMessage;
+
+  /// No description provided for @homeDrawerSubscriptions.
+  ///
+  /// In fr, this message translates to:
+  /// **'Abonnements'**
+  String get homeDrawerSubscriptions;
+
+  /// No description provided for @subscriptionPageTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Abonnements'**
+  String get subscriptionPageTitle;
+
+  /// No description provided for @subscriptionHeadlineAllTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Choisissez votre formule'**
+  String get subscriptionHeadlineAllTitle;
+
+  /// No description provided for @subscriptionHeadlineAllSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Retrouvez ici vos achats actuels et les abonnements encore disponibles.'**
+  String get subscriptionHeadlineAllSubtitle;
+
+  /// No description provided for @subscriptionHeadlineUnlock.
+  ///
+  /// In fr, this message translates to:
+  /// **'Débloquez {module}'**
+  String subscriptionHeadlineUnlock(Object module);
+
+  /// No description provided for @subscriptionHeadlineVideoSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vous pouvez acheter Vidéo uniquement, ou choisir Pro pour tout déverrouiller.'**
+  String get subscriptionHeadlineVideoSubtitle;
+
+  /// No description provided for @subscriptionHeadlineLightSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vous pouvez acheter Lumière uniquement, ou choisir Pro pour tout déverrouiller.'**
+  String get subscriptionHeadlineLightSubtitle;
+
+  /// No description provided for @subscriptionHeadlineLaserSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vous pouvez acheter Laser uniquement, ou choisir Pro pour tout déverrouiller.'**
+  String get subscriptionHeadlineLaserSubtitle;
+
+  /// No description provided for @subscriptionHeadlineConsoleSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vous pouvez acheter Console uniquement, ou choisir Pro pour tout déverrouiller.'**
+  String get subscriptionHeadlineConsoleSubtitle;
+
+  /// No description provided for @subscriptionHeadlineProSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Accès complet à toutes les sections avancées.'**
+  String get subscriptionHeadlineProSubtitle;
+
+  /// No description provided for @subscriptionStoreUnavailable.
+  ///
+  /// In fr, this message translates to:
+  /// **'Boutique indisponible pour le moment.'**
+  String get subscriptionStoreUnavailable;
+
+  /// No description provided for @subscriptionLoadError.
+  ///
+  /// In fr, this message translates to:
+  /// **'Impossible de charger les abonnements.'**
+  String get subscriptionLoadError;
+
+  /// No description provided for @subscriptionRestorePurchases.
+  ///
+  /// In fr, this message translates to:
+  /// **'Restaurer mes achats'**
+  String get subscriptionRestorePurchases;
+
+  /// No description provided for @subscriptionPrivacy.
+  ///
+  /// In fr, this message translates to:
+  /// **'Confidentialité'**
+  String get subscriptionPrivacy;
+
+  /// No description provided for @subscriptionTerms.
+  ///
+  /// In fr, this message translates to:
+  /// **'CGU'**
+  String get subscriptionTerms;
+
+  /// No description provided for @subscriptionBestValue.
+  ///
+  /// In fr, this message translates to:
+  /// **'MEILLEURE VALEUR'**
+  String get subscriptionBestValue;
+
+  /// No description provided for @subscriptionOwned.
+  ///
+  /// In fr, this message translates to:
+  /// **'Acheté'**
+  String get subscriptionOwned;
+
+  /// No description provided for @subscriptionIncludedInPro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Inclus dans Pro'**
+  String get subscriptionIncludedInPro;
+
+  /// No description provided for @subscriptionProductUnavailable.
+  ///
+  /// In fr, this message translates to:
+  /// **'Produit indisponible.'**
+  String get subscriptionProductUnavailable;
+
+  /// No description provided for @subscriptionSubscribeAll.
+  ///
+  /// In fr, this message translates to:
+  /// **'S\'abonner — Tout déverrouiller'**
+  String get subscriptionSubscribeAll;
+
+  /// No description provided for @subscriptionSubscribeModule.
+  ///
+  /// In fr, this message translates to:
+  /// **'S\'abonner — {module}'**
+  String subscriptionSubscribeModule(Object module);
+
+  /// No description provided for @subscriptionCategoryVideoTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vidéo'**
+  String get subscriptionCategoryVideoTitle;
+
+  /// No description provided for @subscriptionCategoryLightTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lumière'**
+  String get subscriptionCategoryLightTitle;
+
+  /// No description provided for @subscriptionCategoryLaserTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Laser'**
+  String get subscriptionCategoryLaserTitle;
+
+  /// No description provided for @subscriptionCategoryConsoleTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Console'**
+  String get subscriptionCategoryConsoleTitle;
+
+  /// No description provided for @subscriptionCategoryProTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'ShowTech Tools Pro'**
+  String get subscriptionCategoryProTitle;
+
+  /// No description provided for @subscriptionCategoryVideoDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Accès à la section Vidéo.'**
+  String get subscriptionCategoryVideoDescription;
+
+  /// No description provided for @subscriptionCategoryLightDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Accès à la section Lumière.'**
+  String get subscriptionCategoryLightDescription;
+
+  /// No description provided for @subscriptionCategoryLaserDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Accès à la section Laser.'**
+  String get subscriptionCategoryLaserDescription;
+
+  /// No description provided for @subscriptionCategoryConsoleDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Accès à la section Console.'**
+  String get subscriptionCategoryConsoleDescription;
+
+  /// No description provided for @subscriptionCategoryProDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Accès complet à toutes les sections.'**
+  String get subscriptionCategoryProDescription;
+
+  /// No description provided for @electricityFreeSection.
+  ///
+  /// In fr, this message translates to:
+  /// **'Gratuit'**
+  String get electricityFreeSection;
+
+  /// No description provided for @electricityProSection.
+  ///
+  /// In fr, this message translates to:
+  /// **'Abonnement Électricité'**
+  String get electricityProSection;
+
+  /// No description provided for @riggingFreeSection.
+  ///
+  /// In fr, this message translates to:
+  /// **'Gratuit'**
+  String get riggingFreeSection;
+
+  /// No description provided for @riggingProSection.
+  ///
+  /// In fr, this message translates to:
+  /// **'Abonnement Rigging'**
+  String get riggingProSection;
+
+  /// No description provided for @homeElectricityTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Électricité'**
+  String get homeElectricityTitle;
+
+  /// No description provided for @homeElectricitySubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance, courant, sections de câble et autonomie UPS.'**
+  String get homeElectricitySubtitle;
+
+  /// No description provided for @subscriptionCategoryElectricityTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Électricité'**
+  String get subscriptionCategoryElectricityTitle;
+
+  /// No description provided for @subscriptionCategoryElectricityDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Outils électriques pour la puissance, les phases, les câbles et l’UPS.'**
+  String get subscriptionCategoryElectricityDescription;
+
+  /// No description provided for @subscriptionCategoryRiggingTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rigging'**
+  String get subscriptionCategoryRiggingTitle;
+
+  /// No description provided for @subscriptionCategoryRiggingDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Outils de rigging pour bridle, angles et vérification WLL / CMU.'**
+  String get subscriptionCategoryRiggingDescription;
+
+  /// No description provided for @subscriptionHeadlineElectricitySubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Débloque tous les outils électriques professionnels.'**
+  String get subscriptionHeadlineElectricitySubtitle;
+
+  /// No description provided for @subscriptionHeadlineRiggingSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Débloque tous les outils de rigging professionnels.'**
+  String get subscriptionHeadlineRiggingSubtitle;
+
+  /// No description provided for @electricityTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Électricité'**
+  String get electricityTitle;
+
+  /// No description provided for @electricityToolPowerCurrentTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance / courant'**
+  String get electricityToolPowerCurrentTitle;
+
+  /// No description provided for @electricityToolPowerCurrentSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculer puissance, courant, tension ou énergie en mono ou triphasé.'**
+  String get electricityToolPowerCurrentSubtitle;
+
+  /// No description provided for @electricityToolPhasePowerTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance par phase'**
+  String get electricityToolPhasePowerTitle;
+
+  /// No description provided for @electricityToolPhasePowerSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Répartir une puissance totale et lire le courant par phase.'**
+  String get electricityToolPhasePowerSubtitle;
+
+  /// No description provided for @electricityToolCableSectionTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Section de câble'**
+  String get electricityToolCableSectionTitle;
+
+  /// No description provided for @electricityToolCableSectionSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculer une section selon courant ou puissance, longueur, chute de tension et référence câble.'**
+  String get electricityToolCableSectionSubtitle;
+
+  /// No description provided for @electricityToolUpsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Autonomie UPS'**
+  String get electricityToolUpsTitle;
+
+  /// No description provided for @electricityToolUpsSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Estimer l’autonomie d’une batterie ou d’un UPS selon la charge.'**
+  String get electricityToolUpsSubtitle;
+
+  /// No description provided for @electricityInputsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entrées'**
+  String get electricityInputsTitle;
+
+  /// No description provided for @electricityResultsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résultats'**
+  String get electricityResultsTitle;
+
+  /// No description provided for @electricityEnterValuesToCalculate.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entre des valeurs valides pour calculer.'**
+  String get electricityEnterValuesToCalculate;
+
+  /// No description provided for @electricityTotalPowerLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance totale'**
+  String get electricityTotalPowerLabel;
+
+  /// No description provided for @electricityTotalPowerHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 22000'**
+  String get electricityTotalPowerHint;
+
+  /// No description provided for @electricityPowerPerPhaseLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance par phase'**
+  String get electricityPowerPerPhaseLabel;
+
+  /// No description provided for @electricityCurrentPerPhaseLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Courant par phase'**
+  String get electricityCurrentPerPhaseLabel;
+
+  /// No description provided for @electricityCurrentLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Courant'**
+  String get electricityCurrentLabel;
+
+  /// No description provided for @electricityPhaseCountLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nombre de phases'**
+  String get electricityPhaseCountLabel;
+
+  /// No description provided for @electricityConsumptionCurrentLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Consommation / courant réel'**
+  String get electricityConsumptionCurrentLabel;
+
+  /// No description provided for @electricityConsumptionCurrentHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 32'**
+  String get electricityConsumptionCurrentHint;
+
+  /// No description provided for @electricityBreakerSizeLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Taille du disjoncteur'**
+  String get electricityBreakerSizeLabel;
+
+  /// No description provided for @electricityBreakerSizeHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 32'**
+  String get electricityBreakerSizeHint;
+
+  /// No description provided for @electricityCableLengthLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Longueur du câble'**
+  String get electricityCableLengthLabel;
+
+  /// No description provided for @electricityCableLengthHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 30'**
+  String get electricityCableLengthHint;
+
+  /// No description provided for @electricityAllowedVoltageDropLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Chute de tension max.'**
+  String get electricityAllowedVoltageDropLabel;
+
+  /// No description provided for @electricityAllowedVoltageDropHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 3'**
+  String get electricityAllowedVoltageDropHint;
+
+  /// No description provided for @electricityRecommendedCableSectionLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Section recommandée'**
+  String get electricityRecommendedCableSectionLabel;
+
+  /// No description provided for @electricityMaxCurrentForSectionLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Courant admissible'**
+  String get electricityMaxCurrentForSectionLabel;
+
+  /// No description provided for @electricityVoltageDropLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Chute de tension'**
+  String get electricityVoltageDropLabel;
+
+  /// No description provided for @electricityBreakerCheckLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vérification disjoncteur'**
+  String get electricityBreakerCheckLabel;
+
+  /// No description provided for @electricityStatusOk.
+  ///
+  /// In fr, this message translates to:
+  /// **'OK'**
+  String get electricityStatusOk;
+
+  /// No description provided for @electricityStatusWarning.
+  ///
+  /// In fr, this message translates to:
+  /// **'À vérifier'**
+  String get electricityStatusWarning;
+
+  /// No description provided for @electricityImportantNoteTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Note importante'**
+  String get electricityImportantNoteTitle;
+
+  /// No description provided for @electricityCableSectionDisclaimer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul indicatif basé sur un tableau de référence inspiré IEC 60364-5-52. Vérifie toujours le RGIE/AREI, le mode de pose réel, la température, le groupement de câbles et la protection avec un électricien qualifié.'**
+  String get electricityCableSectionDisclaimer;
+
+  /// No description provided for @electricityConsumptionInputTypeTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeur connue'**
+  String get electricityConsumptionInputTypeTitle;
+
+  /// No description provided for @electricityInputCurrent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Courant (A)'**
+  String get electricityInputCurrent;
+
+  /// No description provided for @electricityInputPower.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance (W)'**
+  String get electricityInputPower;
+
+  /// No description provided for @electricityVoltageLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tension (U)'**
+  String get electricityVoltageLabel;
+
+  /// No description provided for @electricityVoltageHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 230 ou 400'**
+  String get electricityVoltageHint;
+
+  /// No description provided for @electricityPowerFactorLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Facteur de puissance (cos φ)'**
+  String get electricityPowerFactorLabel;
+
+  /// No description provided for @electricityPowerFactorHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 1.0'**
+  String get electricityPowerFactorHint;
+
+  /// No description provided for @electricityCableReferenceTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Référence câble'**
+  String get electricityCableReferenceTitle;
+
+  /// No description provided for @electricityCopper.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cuivre'**
+  String get electricityCopper;
+
+  /// No description provided for @electricityAluminium.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aluminium'**
+  String get electricityAluminium;
+
+  /// No description provided for @electricityInsulationPvc.
+  ///
+  /// In fr, this message translates to:
+  /// **'PVC 70 °C'**
+  String get electricityInsulationPvc;
+
+  /// No description provided for @electricityInsulationXlpe.
+  ///
+  /// In fr, this message translates to:
+  /// **'XLPE 90 °C'**
+  String get electricityInsulationXlpe;
+
+  /// No description provided for @electricityInstallConduit.
+  ///
+  /// In fr, this message translates to:
+  /// **'Conduit'**
+  String get electricityInstallConduit;
+
+  /// No description provided for @electricityInstallFreeAir.
+  ///
+  /// In fr, this message translates to:
+  /// **'Air libre'**
+  String get electricityInstallFreeAir;
+
+  /// No description provided for @electricityCalculatedCurrentLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Courant calculé'**
+  String get electricityCalculatedCurrentLabel;
+
+  /// No description provided for @electricityRecommendedBreakerLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Disjoncteur recommandé'**
+  String get electricityRecommendedBreakerLabel;
+
+  /// No description provided for @electricityNoStandardBreaker.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun calibre standard adapté'**
+  String get electricityNoStandardBreaker;
+
+  /// No description provided for @electricityStatusLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Statut'**
+  String get electricityStatusLabel;
+
+  /// No description provided for @electricityCircuitTypeTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Type de circuit'**
+  String get electricityCircuitTypeTitle;
+
+  /// No description provided for @electricitySinglePhase.
+  ///
+  /// In fr, this message translates to:
+  /// **'Monophasé'**
+  String get electricitySinglePhase;
+
+  /// No description provided for @electricityThreePhase.
+  ///
+  /// In fr, this message translates to:
+  /// **'Triphasé'**
+  String get electricityThreePhase;
+
+  /// No description provided for @electricityResultActivePower.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance active'**
+  String get electricityResultActivePower;
+
+  /// No description provided for @electricityResultCurrent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Courant'**
+  String get electricityResultCurrent;
+
+  /// No description provided for @electricityResultVoltage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tension'**
+  String get electricityResultVoltage;
+
+  /// No description provided for @electricityResultEnergy.
+  ///
+  /// In fr, this message translates to:
+  /// **'Énergie'**
+  String get electricityResultEnergy;
+
+  /// No description provided for @electricityInsufficient.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeurs insuffisantes'**
+  String get electricityInsufficient;
+
+  /// No description provided for @electricityCalcPower.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance'**
+  String get electricityCalcPower;
+
+  /// No description provided for @electricityCalcCurrent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Courant'**
+  String get electricityCalcCurrent;
+
+  /// No description provided for @electricityCalcVoltage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tension'**
+  String get electricityCalcVoltage;
+
+  /// No description provided for @electricityCalcEnergy.
+  ///
+  /// In fr, this message translates to:
+  /// **'Énergie'**
+  String get electricityCalcEnergy;
+
+  /// No description provided for @electricityRef16AMono.
+  ///
+  /// In fr, this message translates to:
+  /// **'16 A mono'**
+  String get electricityRef16AMono;
+
+  /// No description provided for @electricityRef32AMono.
+  ///
+  /// In fr, this message translates to:
+  /// **'32 A mono'**
+  String get electricityRef32AMono;
+
+  /// No description provided for @electricityRef32ATri.
+  ///
+  /// In fr, this message translates to:
+  /// **'32 A tri'**
+  String get electricityRef32ATri;
+
+  /// No description provided for @electricityRef63ATri.
+  ///
+  /// In fr, this message translates to:
+  /// **'63 A tri'**
+  String get electricityRef63ATri;
+
+  /// No description provided for @electricityRef125ATri.
+  ///
+  /// In fr, this message translates to:
+  /// **'125 A tri'**
+  String get electricityRef125ATri;
+
+  /// No description provided for @electricityFormulaTri.
+  ///
+  /// In fr, this message translates to:
+  /// **'P = √3 × U × I × cos φ'**
+  String get electricityFormulaTri;
+
+  /// No description provided for @electricityFormulaMono.
+  ///
+  /// In fr, this message translates to:
+  /// **'P = U × I × cos φ'**
+  String get electricityFormulaMono;
+
+  /// No description provided for @electricityFormulaTriDesc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Formule triphasée pour une charge équilibrée.'**
+  String get electricityFormulaTriDesc;
+
+  /// No description provided for @electricityFormulaMonoDesc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Formule monophasée.'**
+  String get electricityFormulaMonoDesc;
+
+  /// No description provided for @electricityCircuitType.
+  ///
+  /// In fr, this message translates to:
+  /// **'Type de circuit'**
+  String get electricityCircuitType;
+
+  /// No description provided for @electricityMono.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mono'**
+  String get electricityMono;
+
+  /// No description provided for @electricityMonoDesc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Circuit monophasé 230 V.'**
+  String get electricityMonoDesc;
+
+  /// No description provided for @electricityThreePhaseDesc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Circuit triphasé 400 V.'**
+  String get electricityThreePhaseDesc;
+
+  /// No description provided for @electricityCalcFor.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculer'**
+  String get electricityCalcFor;
+
+  /// No description provided for @electricityFieldPower.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance'**
+  String get electricityFieldPower;
+
+  /// No description provided for @electricityFieldPowerHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 3680'**
+  String get electricityFieldPowerHint;
+
+  /// No description provided for @electricityFieldCurrent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Courant'**
+  String get electricityFieldCurrent;
+
+  /// No description provided for @electricityFieldCurrentHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 16'**
+  String get electricityFieldCurrentHint;
+
+  /// No description provided for @electricityFieldVoltage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tension'**
+  String get electricityFieldVoltage;
+
+  /// No description provided for @electricityFieldVoltageHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 230'**
+  String get electricityFieldVoltageHint;
+
+  /// No description provided for @electricityFieldDuration.
+  ///
+  /// In fr, this message translates to:
+  /// **'Durée'**
+  String get electricityFieldDuration;
+
+  /// No description provided for @electricityFieldDurationHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 2'**
+  String get electricityFieldDurationHint;
+
+  /// No description provided for @electricityFieldPf.
+  ///
+  /// In fr, this message translates to:
+  /// **'cos φ'**
+  String get electricityFieldPf;
+
+  /// No description provided for @electricityFieldPfHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 1.0'**
+  String get electricityFieldPfHint;
+
+  /// No description provided for @electricityCalculate.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculer'**
+  String get electricityCalculate;
+
+  /// No description provided for @electricityRefTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Références rapides'**
+  String get electricityRefTitle;
+
+  /// No description provided for @electricityUpsEnergyAvail.
+  ///
+  /// In fr, this message translates to:
+  /// **'{energy} Wh disponibles'**
+  String electricityUpsEnergyAvail(String energy);
+
+  /// No description provided for @electricityUpsBatterySection.
+  ///
+  /// In fr, this message translates to:
+  /// **'Batterie'**
+  String get electricityUpsBatterySection;
+
+  /// No description provided for @electricityUpsCalculate.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculer l’autonomie'**
+  String get electricityUpsCalculate;
+
+  /// No description provided for @electricityUpsCapacityHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 100'**
+  String get electricityUpsCapacityHint;
+
+  /// No description provided for @electricityUpsCapacityLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Capacité'**
+  String get electricityUpsCapacityLabel;
+
+  /// No description provided for @electricityUpsCountHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 1'**
+  String get electricityUpsCountHint;
+
+  /// No description provided for @electricityUpsCountLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nombre de batteries'**
+  String get electricityUpsCountLabel;
+
+  /// No description provided for @electricityUpsEfficiencyHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 85'**
+  String get electricityUpsEfficiencyHint;
+
+  /// No description provided for @electricityUpsEfficiencyLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rendement'**
+  String get electricityUpsEfficiencyLabel;
+
+  /// No description provided for @electricityUpsLoadDesc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance consommée par l’équipement.'**
+  String get electricityUpsLoadDesc;
+
+  /// No description provided for @electricityUpsLoadHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 500'**
+  String get electricityUpsLoadHint;
+
+  /// No description provided for @electricityUpsLoadLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charge'**
+  String get electricityUpsLoadLabel;
+
+  /// No description provided for @electricityUpsLoadSectionTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charge à alimenter'**
+  String get electricityUpsLoadSectionTitle;
+
+  /// No description provided for @electricityUpsRef1.
+  ///
+  /// In fr, this message translates to:
+  /// **'Wh disponibles'**
+  String get electricityUpsRef1;
+
+  /// No description provided for @electricityUpsRef1Detail.
+  ///
+  /// In fr, this message translates to:
+  /// **'Capacité × tension × nombre × rendement.'**
+  String get electricityUpsRef1Detail;
+
+  /// No description provided for @electricityUpsRef2.
+  ///
+  /// In fr, this message translates to:
+  /// **'Autonomie'**
+  String get electricityUpsRef2;
+
+  /// No description provided for @electricityUpsRef2Detail.
+  ///
+  /// In fr, this message translates to:
+  /// **'Énergie disponible divisée par la charge.'**
+  String get electricityUpsRef2Detail;
+
+  /// No description provided for @electricityUpsRef3Title.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résultat indicatif'**
+  String get electricityUpsRef3Title;
+
+  /// No description provided for @electricityUpsRef3Value.
+  ///
+  /// In fr, this message translates to:
+  /// **'La valeur réelle dépend du rendement, de l’état des batteries et de la charge.'**
+  String get electricityUpsRef3Value;
+
+  /// No description provided for @electricityUpsRefTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Références'**
+  String get electricityUpsRefTitle;
+
+  /// No description provided for @electricityUpsVoltageHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ex. 12'**
+  String get electricityUpsVoltageHint;
+
+  /// No description provided for @electricityUpsVoltageLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tension batterie'**
+  String get electricityUpsVoltageLabel;
+
+  /// No description provided for @riggingToolBridleTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bridle 2 points'**
+  String get riggingToolBridleTitle;
+
+  /// No description provided for @riggingToolBridleSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calcul complet d’un bridle : longueurs, angles, tensions et statut de sécurité.'**
+  String get riggingToolBridleSubtitle;
+
+  /// No description provided for @riggingToolAngleFactorTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Facteur d’angle'**
+  String get riggingToolAngleFactorTitle;
+
+  /// No description provided for @riggingToolAngleFactorSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Voir rapidement l’effet de l’angle sur la tension dans les brins.'**
+  String get riggingToolAngleFactorSubtitle;
+
+  /// No description provided for @riggingToolWllTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vérification WLL / CMU'**
+  String get riggingToolWllTitle;
+
+  /// No description provided for @riggingToolWllSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Comparer une charge appliquée avec la capacité du matériel.'**
+  String get riggingToolWllSubtitle;
+
+  /// No description provided for @riggingToolLengthTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Longueur bridle'**
+  String get riggingToolLengthTitle;
+
+  /// No description provided for @riggingToolLengthSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculer les longueurs et angles sans calcul de charge.'**
+  String get riggingToolLengthSubtitle;
+
+  /// No description provided for @riggingKnownDrop.
+  ///
+  /// In fr, this message translates to:
+  /// **'Flèche'**
+  String get riggingKnownDrop;
+
+  /// No description provided for @riggingKnownAngle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle'**
+  String get riggingKnownAngle;
+
+  /// No description provided for @riggingKnownLength.
+  ///
+  /// In fr, this message translates to:
+  /// **'Longueur'**
+  String get riggingKnownLength;
+
+  /// No description provided for @riggingAngleFromHorizontalLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle depuis l’horizontale'**
+  String get riggingAngleFromHorizontalLabel;
+
+  /// No description provided for @riggingLegLengthKnownLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Longueur d’un brin'**
+  String get riggingLegLengthKnownLabel;
+
+  /// No description provided for @riggingLoadWeightLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Poids de la charge'**
+  String get riggingLoadWeightLabel;
+
+  /// No description provided for @riggingLoadShortLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charge'**
+  String get riggingLoadShortLabel;
+
+  /// No description provided for @riggingPointALabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'A'**
+  String get riggingPointALabel;
+
+  /// No description provided for @riggingPointBLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'B'**
+  String get riggingPointBLabel;
+
+  /// No description provided for @riggingTensionLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tension'**
+  String get riggingTensionLabel;
+
+  /// No description provided for @riggingTensionLeftLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tension gauche'**
+  String get riggingTensionLeftLabel;
+
+  /// No description provided for @riggingTensionRightLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tension droite'**
+  String get riggingTensionRightLabel;
+
+  /// No description provided for @riggingTensionPerLegLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tension par brin'**
+  String get riggingTensionPerLegLabel;
+
+  /// No description provided for @riggingStatusOk.
+  ///
+  /// In fr, this message translates to:
+  /// **'OK'**
+  String get riggingStatusOk;
+
+  /// No description provided for @riggingStatusWatch.
+  ///
+  /// In fr, this message translates to:
+  /// **'À surveiller'**
+  String get riggingStatusWatch;
+
+  /// No description provided for @riggingStatusHigh.
+  ///
+  /// In fr, this message translates to:
+  /// **'Élevé'**
+  String get riggingStatusHigh;
+
+  /// No description provided for @riggingStatusDanger.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dangereux'**
+  String get riggingStatusDanger;
+
+  /// No description provided for @riggingStatusOkDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle confortable. La tension reste raisonnable.'**
+  String get riggingStatusOkDescription;
+
+  /// No description provided for @riggingStatusWatchDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle utilisable, mais la tension commence à augmenter.'**
+  String get riggingStatusWatchDescription;
+
+  /// No description provided for @riggingStatusHighDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle faible. La tension augmente fortement.'**
+  String get riggingStatusHighDescription;
+
+  /// No description provided for @riggingStatusDangerDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle très faible. Configuration à éviter.'**
+  String get riggingStatusDangerDescription;
+
+  /// No description provided for @riggingSafetyDisclaimer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résultat indicatif. Vérifie toujours la CMU/WLL réelle, les coefficients de sécurité et les règles applicables.'**
+  String get riggingSafetyDisclaimer;
+
+  /// No description provided for @riggingInvalidInputsMessage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entre des valeurs positives et cohérentes.'**
+  String get riggingInvalidInputsMessage;
+
+  /// No description provided for @riggingAngleFactorLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Facteur multiplicateur'**
+  String get riggingAngleFactorLabel;
+
+  /// No description provided for @riggingAngleFactorExplanation.
+  ///
+  /// In fr, this message translates to:
+  /// **'Plus l’angle est faible par rapport à l’horizontale, plus la tension dans chaque brin augmente.'**
+  String get riggingAngleFactorExplanation;
+
+  /// No description provided for @riggingWllLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'WLL / CMU du matériel'**
+  String get riggingWllLabel;
+
+  /// No description provided for @riggingAppliedLoadLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charge appliquée'**
+  String get riggingAppliedLoadLabel;
+
+  /// No description provided for @riggingSafetyFactorLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Facteur de sécurité'**
+  String get riggingSafetyFactorLabel;
+
+  /// No description provided for @riggingRequiredLoadLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charge à vérifier'**
+  String get riggingRequiredLoadLabel;
+
+  /// No description provided for @riggingWllUsageLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Utilisation WLL'**
+  String get riggingWllUsageLabel;
+
+  /// No description provided for @riggingMarginLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Marge restante'**
+  String get riggingMarginLabel;
+
+  /// No description provided for @riggingWllStatusOkDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'La capacité du matériel est suffisante pour cette charge.'**
+  String get riggingWllStatusOkDescription;
+
+  /// No description provided for @riggingWllStatusWatchDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'La capacité est encore suffisante, mais la marge est faible.'**
+  String get riggingWllStatusWatchDescription;
+
+  /// No description provided for @riggingWllStatusDangerDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'La charge dépasse la capacité indiquée.'**
+  String get riggingWllStatusDangerDescription;
+
+  /// No description provided for @riggingLengthDifferenceLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Différence de longueur'**
+  String get riggingLengthDifferenceLabel;
+
+  /// No description provided for @riggingCalculationModeLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Type de calcul'**
+  String get riggingCalculationModeLabel;
+
+  /// No description provided for @riggingGeometryOnlyLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sans charge'**
+  String get riggingGeometryOnlyLabel;
+
+  /// No description provided for @riggingWithLoadLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Avec charge'**
+  String get riggingWithLoadLabel;
+
+  /// No description provided for @riggingGeometryOnlyDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mode géométrie uniquement : longueurs, flèche et angles. Aucun calcul de tension ou de charge.'**
+  String get riggingGeometryOnlyDescription;
+
+  /// No description provided for @riggingKnownInputLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Je connais'**
+  String get riggingKnownInputLabel;
 }
 
 class _AppLocalizationsDelegate

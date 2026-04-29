@@ -94,10 +94,13 @@ class _AboutArtNetPageState extends State<AboutArtNetPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                            builder: (_) =>
-                                const AboutUniverseToArtNetTablePage()),
+                          builder: (_) =>
+                              const AboutUniverseToArtNetTablePage(),
+                        ),
                       );
                     },
+                    pinPageId: 'artnet_table',
+                    pinSectionId: 'table',
                   ),
                 ],
               ),
@@ -571,7 +574,7 @@ class _TocCard extends StatelessWidget {
   final String title;
   final String copyTooltip;
   final String pageId;
-final List<_TocItem> items;
+  final List<_TocItem> items;
   final VoidCallback onCopy;
 
   @override
@@ -605,8 +608,8 @@ final List<_TocItem> items;
                             ),
                           ),
                           AboutPinButton(
-                            pageId: pageId,
-                            sectionId: it.sectionId,
+                            pageId: it.pinPageId ?? pageId,
+                            sectionId: it.pinSectionId ?? it.sectionId,
                             dense: true,
                           ),
                           Icon(Icons.chevron_right,
@@ -625,10 +628,19 @@ final List<_TocItem> items;
 }
 
 class _TocItem {
-  _TocItem(this.sectionId, this.label, {required this.onTap});
+  _TocItem(
+    this.sectionId,
+    this.label, {
+    required this.onTap,
+    this.pinPageId,
+    this.pinSectionId,
+  });
+
   final String sectionId;
   final String label;
   final VoidCallback onTap;
+  final String? pinPageId;
+  final String? pinSectionId;
 }
 
 class _Anchor extends StatelessWidget {

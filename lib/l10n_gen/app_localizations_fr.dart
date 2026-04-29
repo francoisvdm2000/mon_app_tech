@@ -2858,7 +2858,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutArtnetConversionTablesTitle =>
-      'Conversion / tables (Univers 1..256)';
+      '8) Conversion / tables (Univers 1..256)';
 
   @override
   String get aboutArtnetPillUdp => 'UDP';
@@ -6678,6 +6678,144 @@ class AppLocalizationsFr extends AppLocalizations {
   String get videoLedResultPitch => 'Pitch';
 
   @override
+  String get lightFilterLedTabConvert => 'Conversion';
+
+  @override
+  String get lightFilterLedTabProfiles => 'Mes fixtures';
+
+  @override
+  String get lightFilterLedSourceLabel => 'Source lumineuse';
+
+  @override
+  String get lightFilterLedEngineRgbww => 'RGBWW (blanc chaud + froid)';
+
+  @override
+  String get lightFilterLedEngineRgbaw => 'RGBAW';
+
+  @override
+  String get lightFilterLedEngineRgbauv => 'RGBAUV';
+
+  @override
+  String get lightFilterLedEngineRgbwauv => 'RGBWAUV';
+
+  @override
+  String get lightFilterLedEngineRgbrcl => 'RGBRCL (Red, Cyan, Lime)';
+
+  @override
+  String get lightFilterLedEngineCmy => 'CMY';
+
+  @override
+  String get lightFilterLedSaveProfileTitle => 'Sauvegarder le profil fixture';
+
+  @override
+  String get lightFilterLedProfileNameLabel => 'Nom de la fixture';
+
+  @override
+  String get patchMvrViewTable => 'Tableur';
+
+  @override
+  String get patchMvrViewVisual => 'Visuel';
+
+  @override
+  String get consoleTitle => 'Console';
+
+  @override
+  String get consoleSubtitle => 'Patch DMX et outils GDTF';
+
+  @override
+  String get consolePatchTitle => 'Patch DMX';
+
+  @override
+  String get consolePatchSubtitle => 'Importer un MVR et analyser le patch';
+
+  @override
+  String get consoleGdtfTitle => 'GDTF';
+
+  @override
+  String get consoleGdtfSubtitle => 'Créer ou analyser un fichier GDTF';
+
+  @override
+  String lightFilterLedProfileSaved(String name) {
+    return 'Profil « $name » sauvegardé';
+  }
+
+  @override
+  String get lightFilterLedNoProfiles => 'Aucun profil fixture enregistré';
+
+  @override
+  String get lightFilterLedNoProfilesHint =>
+      'Calibre les canaux dans l\'onglet Conversion,\npuis sauvegarde avec l\'icône 💾.';
+
+  @override
+  String get lightFilterLedTitle => 'Correspondance filtres LED';
+
+  @override
+  String get lightFilterLedDescription =>
+      'Conversion des filtres LEE, Rosco… vers moteurs LED (RGB, RGBA, RGBW, etc.).';
+
+  @override
+  String get lightFilterLedBrandLabel => 'Marque';
+
+  @override
+  String get lightFilterLedSearchLabel => 'Recherche';
+
+  @override
+  String get lightFilterLedSearchHint => 'Code ou nom du filtre';
+
+  @override
+  String get lightFilterLedFilterLabel => 'Filtre';
+
+  @override
+  String get lightFilterLedEngineLabel => 'Moteur LED';
+
+  @override
+  String get lightFilterLedShowPercentLabel => 'Afficher en pourcentage';
+
+  @override
+  String get lightFilterLedShowPercentHint =>
+      'Sinon, les valeurs sont affichées en DMX 0–255.';
+
+  @override
+  String get lightFilterLedHexLabel => 'Couleur de référence';
+
+  @override
+  String get lightFilterLedChromaticityLabel => 'Chromaticité';
+
+  @override
+  String get lightFilterLedTransmissionLabel => 'Transmission';
+
+  @override
+  String get lightFilterLedResultTitle => 'Résultat';
+
+  @override
+  String get lightFilterLedOriginalPreviewLabel => 'Aperçu filtre';
+
+  @override
+  String get lightFilterLedApproximatePreviewLabel => 'Aperçu LED approximatif';
+
+  @override
+  String get lightFilterLedDisclaimer =>
+      'Résultat indicatif uniquement. Le rendu réel dépend du projecteur, de son spectre, de sa calibration, de son mode couleur et du contexte d’utilisation.';
+
+  @override
+  String get lightFilterLedEngineRgb => 'RGB';
+
+  @override
+  String get lightFilterLedEngineRgba => 'RGBA';
+
+  @override
+  String get lightFilterLedEngineRgbw => 'RGBW';
+
+  @override
+  String get lightFilterLedEngineRgbl => 'RGBL';
+
+  @override
+  String get lightFilterLedEngineRgbwa => 'RGBWA';
+
+  @override
+  String get lightFilterLedEngineRgbal => 'RGBAL';
+
+  @override
   String get aboutSearchHint => 'Rechercher dans les références';
 
   @override
@@ -6708,4 +6846,662 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutPinRemovedMessage => 'Épingle retirée.';
+
+  @override
+  String get homeDrawerSubscriptions => 'Abonnements';
+
+  @override
+  String get subscriptionPageTitle => 'Abonnements';
+
+  @override
+  String get subscriptionHeadlineAllTitle => 'Choisissez votre formule';
+
+  @override
+  String get subscriptionHeadlineAllSubtitle =>
+      'Retrouvez ici vos achats actuels et les abonnements encore disponibles.';
+
+  @override
+  String subscriptionHeadlineUnlock(Object module) {
+    return 'Débloquez $module';
+  }
+
+  @override
+  String get subscriptionHeadlineVideoSubtitle =>
+      'Vous pouvez acheter Vidéo uniquement, ou choisir Pro pour tout déverrouiller.';
+
+  @override
+  String get subscriptionHeadlineLightSubtitle =>
+      'Vous pouvez acheter Lumière uniquement, ou choisir Pro pour tout déverrouiller.';
+
+  @override
+  String get subscriptionHeadlineLaserSubtitle =>
+      'Vous pouvez acheter Laser uniquement, ou choisir Pro pour tout déverrouiller.';
+
+  @override
+  String get subscriptionHeadlineConsoleSubtitle =>
+      'Vous pouvez acheter Console uniquement, ou choisir Pro pour tout déverrouiller.';
+
+  @override
+  String get subscriptionHeadlineProSubtitle =>
+      'Accès complet à toutes les sections avancées.';
+
+  @override
+  String get subscriptionStoreUnavailable =>
+      'Boutique indisponible pour le moment.';
+
+  @override
+  String get subscriptionLoadError => 'Impossible de charger les abonnements.';
+
+  @override
+  String get subscriptionRestorePurchases => 'Restaurer mes achats';
+
+  @override
+  String get subscriptionPrivacy => 'Confidentialité';
+
+  @override
+  String get subscriptionTerms => 'CGU';
+
+  @override
+  String get subscriptionBestValue => 'MEILLEURE VALEUR';
+
+  @override
+  String get subscriptionOwned => 'Acheté';
+
+  @override
+  String get subscriptionIncludedInPro => 'Inclus dans Pro';
+
+  @override
+  String get subscriptionProductUnavailable => 'Produit indisponible.';
+
+  @override
+  String get subscriptionSubscribeAll => 'S\'abonner — Tout déverrouiller';
+
+  @override
+  String subscriptionSubscribeModule(Object module) {
+    return 'S\'abonner — $module';
+  }
+
+  @override
+  String get subscriptionCategoryVideoTitle => 'Vidéo';
+
+  @override
+  String get subscriptionCategoryLightTitle => 'Lumière';
+
+  @override
+  String get subscriptionCategoryLaserTitle => 'Laser';
+
+  @override
+  String get subscriptionCategoryConsoleTitle => 'Console';
+
+  @override
+  String get subscriptionCategoryProTitle => 'ShowTech Tools Pro';
+
+  @override
+  String get subscriptionCategoryVideoDescription =>
+      'Accès à la section Vidéo.';
+
+  @override
+  String get subscriptionCategoryLightDescription =>
+      'Accès à la section Lumière.';
+
+  @override
+  String get subscriptionCategoryLaserDescription =>
+      'Accès à la section Laser.';
+
+  @override
+  String get subscriptionCategoryConsoleDescription =>
+      'Accès à la section Console.';
+
+  @override
+  String get subscriptionCategoryProDescription =>
+      'Accès complet à toutes les sections.';
+
+  @override
+  String get electricityFreeSection => 'Gratuit';
+
+  @override
+  String get electricityProSection => 'Abonnement Électricité';
+
+  @override
+  String get riggingFreeSection => 'Gratuit';
+
+  @override
+  String get riggingProSection => 'Abonnement Rigging';
+
+  @override
+  String get homeElectricityTitle => 'Électricité';
+
+  @override
+  String get homeElectricitySubtitle =>
+      'Puissance, courant, sections de câble et autonomie UPS.';
+
+  @override
+  String get subscriptionCategoryElectricityTitle => 'Électricité';
+
+  @override
+  String get subscriptionCategoryElectricityDescription =>
+      'Outils électriques pour la puissance, les phases, les câbles et l’UPS.';
+
+  @override
+  String get subscriptionCategoryRiggingTitle => 'Rigging';
+
+  @override
+  String get subscriptionCategoryRiggingDescription =>
+      'Outils de rigging pour bridle, angles et vérification WLL / CMU.';
+
+  @override
+  String get subscriptionHeadlineElectricitySubtitle =>
+      'Débloque tous les outils électriques professionnels.';
+
+  @override
+  String get subscriptionHeadlineRiggingSubtitle =>
+      'Débloque tous les outils de rigging professionnels.';
+
+  @override
+  String get electricityTitle => 'Électricité';
+
+  @override
+  String get electricityToolPowerCurrentTitle => 'Puissance / courant';
+
+  @override
+  String get electricityToolPowerCurrentSubtitle =>
+      'Calculer puissance, courant, tension ou énergie en mono ou triphasé.';
+
+  @override
+  String get electricityToolPhasePowerTitle => 'Puissance par phase';
+
+  @override
+  String get electricityToolPhasePowerSubtitle =>
+      'Répartir une puissance totale et lire le courant par phase.';
+
+  @override
+  String get electricityToolCableSectionTitle => 'Section de câble';
+
+  @override
+  String get electricityToolCableSectionSubtitle =>
+      'Calculer une section selon courant ou puissance, longueur, chute de tension et référence câble.';
+
+  @override
+  String get electricityToolUpsTitle => 'Autonomie UPS';
+
+  @override
+  String get electricityToolUpsSubtitle =>
+      'Estimer l’autonomie d’une batterie ou d’un UPS selon la charge.';
+
+  @override
+  String get electricityInputsTitle => 'Entrées';
+
+  @override
+  String get electricityResultsTitle => 'Résultats';
+
+  @override
+  String get electricityEnterValuesToCalculate =>
+      'Entre des valeurs valides pour calculer.';
+
+  @override
+  String get electricityTotalPowerLabel => 'Puissance totale';
+
+  @override
+  String get electricityTotalPowerHint => 'Ex. 22000';
+
+  @override
+  String get electricityPowerPerPhaseLabel => 'Puissance par phase';
+
+  @override
+  String get electricityCurrentPerPhaseLabel => 'Courant par phase';
+
+  @override
+  String get electricityCurrentLabel => 'Courant';
+
+  @override
+  String get electricityPhaseCountLabel => 'Nombre de phases';
+
+  @override
+  String get electricityConsumptionCurrentLabel =>
+      'Consommation / courant réel';
+
+  @override
+  String get electricityConsumptionCurrentHint => 'Ex. 32';
+
+  @override
+  String get electricityBreakerSizeLabel => 'Taille du disjoncteur';
+
+  @override
+  String get electricityBreakerSizeHint => 'Ex. 32';
+
+  @override
+  String get electricityCableLengthLabel => 'Longueur du câble';
+
+  @override
+  String get electricityCableLengthHint => 'Ex. 30';
+
+  @override
+  String get electricityAllowedVoltageDropLabel => 'Chute de tension max.';
+
+  @override
+  String get electricityAllowedVoltageDropHint => 'Ex. 3';
+
+  @override
+  String get electricityRecommendedCableSectionLabel => 'Section recommandée';
+
+  @override
+  String get electricityMaxCurrentForSectionLabel => 'Courant admissible';
+
+  @override
+  String get electricityVoltageDropLabel => 'Chute de tension';
+
+  @override
+  String get electricityBreakerCheckLabel => 'Vérification disjoncteur';
+
+  @override
+  String get electricityStatusOk => 'OK';
+
+  @override
+  String get electricityStatusWarning => 'À vérifier';
+
+  @override
+  String get electricityImportantNoteTitle => 'Note importante';
+
+  @override
+  String get electricityCableSectionDisclaimer =>
+      'Calcul indicatif basé sur un tableau de référence inspiré IEC 60364-5-52. Vérifie toujours le RGIE/AREI, le mode de pose réel, la température, le groupement de câbles et la protection avec un électricien qualifié.';
+
+  @override
+  String get electricityConsumptionInputTypeTitle => 'Valeur connue';
+
+  @override
+  String get electricityInputCurrent => 'Courant (A)';
+
+  @override
+  String get electricityInputPower => 'Puissance (W)';
+
+  @override
+  String get electricityVoltageLabel => 'Tension (U)';
+
+  @override
+  String get electricityVoltageHint => 'Ex. 230 ou 400';
+
+  @override
+  String get electricityPowerFactorLabel => 'Facteur de puissance (cos φ)';
+
+  @override
+  String get electricityPowerFactorHint => 'Ex. 1.0';
+
+  @override
+  String get electricityCableReferenceTitle => 'Référence câble';
+
+  @override
+  String get electricityCopper => 'Cuivre';
+
+  @override
+  String get electricityAluminium => 'Aluminium';
+
+  @override
+  String get electricityInsulationPvc => 'PVC 70 °C';
+
+  @override
+  String get electricityInsulationXlpe => 'XLPE 90 °C';
+
+  @override
+  String get electricityInstallConduit => 'Conduit';
+
+  @override
+  String get electricityInstallFreeAir => 'Air libre';
+
+  @override
+  String get electricityCalculatedCurrentLabel => 'Courant calculé';
+
+  @override
+  String get electricityRecommendedBreakerLabel => 'Disjoncteur recommandé';
+
+  @override
+  String get electricityNoStandardBreaker => 'Aucun calibre standard adapté';
+
+  @override
+  String get electricityStatusLabel => 'Statut';
+
+  @override
+  String get electricityCircuitTypeTitle => 'Type de circuit';
+
+  @override
+  String get electricitySinglePhase => 'Monophasé';
+
+  @override
+  String get electricityThreePhase => 'Triphasé';
+
+  @override
+  String get electricityResultActivePower => 'Puissance active';
+
+  @override
+  String get electricityResultCurrent => 'Courant';
+
+  @override
+  String get electricityResultVoltage => 'Tension';
+
+  @override
+  String get electricityResultEnergy => 'Énergie';
+
+  @override
+  String get electricityInsufficient => 'Valeurs insuffisantes';
+
+  @override
+  String get electricityCalcPower => 'Puissance';
+
+  @override
+  String get electricityCalcCurrent => 'Courant';
+
+  @override
+  String get electricityCalcVoltage => 'Tension';
+
+  @override
+  String get electricityCalcEnergy => 'Énergie';
+
+  @override
+  String get electricityRef16AMono => '16 A mono';
+
+  @override
+  String get electricityRef32AMono => '32 A mono';
+
+  @override
+  String get electricityRef32ATri => '32 A tri';
+
+  @override
+  String get electricityRef63ATri => '63 A tri';
+
+  @override
+  String get electricityRef125ATri => '125 A tri';
+
+  @override
+  String get electricityFormulaTri => 'P = √3 × U × I × cos φ';
+
+  @override
+  String get electricityFormulaMono => 'P = U × I × cos φ';
+
+  @override
+  String get electricityFormulaTriDesc =>
+      'Formule triphasée pour une charge équilibrée.';
+
+  @override
+  String get electricityFormulaMonoDesc => 'Formule monophasée.';
+
+  @override
+  String get electricityCircuitType => 'Type de circuit';
+
+  @override
+  String get electricityMono => 'Mono';
+
+  @override
+  String get electricityMonoDesc => 'Circuit monophasé 230 V.';
+
+  @override
+  String get electricityThreePhaseDesc => 'Circuit triphasé 400 V.';
+
+  @override
+  String get electricityCalcFor => 'Calculer';
+
+  @override
+  String get electricityFieldPower => 'Puissance';
+
+  @override
+  String get electricityFieldPowerHint => 'Ex. 3680';
+
+  @override
+  String get electricityFieldCurrent => 'Courant';
+
+  @override
+  String get electricityFieldCurrentHint => 'Ex. 16';
+
+  @override
+  String get electricityFieldVoltage => 'Tension';
+
+  @override
+  String get electricityFieldVoltageHint => 'Ex. 230';
+
+  @override
+  String get electricityFieldDuration => 'Durée';
+
+  @override
+  String get electricityFieldDurationHint => 'Ex. 2';
+
+  @override
+  String get electricityFieldPf => 'cos φ';
+
+  @override
+  String get electricityFieldPfHint => 'Ex. 1.0';
+
+  @override
+  String get electricityCalculate => 'Calculer';
+
+  @override
+  String get electricityRefTitle => 'Références rapides';
+
+  @override
+  String electricityUpsEnergyAvail(String energy) {
+    return '$energy Wh disponibles';
+  }
+
+  @override
+  String get electricityUpsBatterySection => 'Batterie';
+
+  @override
+  String get electricityUpsCalculate => 'Calculer l’autonomie';
+
+  @override
+  String get electricityUpsCapacityHint => 'Ex. 100';
+
+  @override
+  String get electricityUpsCapacityLabel => 'Capacité';
+
+  @override
+  String get electricityUpsCountHint => 'Ex. 1';
+
+  @override
+  String get electricityUpsCountLabel => 'Nombre de batteries';
+
+  @override
+  String get electricityUpsEfficiencyHint => 'Ex. 85';
+
+  @override
+  String get electricityUpsEfficiencyLabel => 'Rendement';
+
+  @override
+  String get electricityUpsLoadDesc => 'Puissance consommée par l’équipement.';
+
+  @override
+  String get electricityUpsLoadHint => 'Ex. 500';
+
+  @override
+  String get electricityUpsLoadLabel => 'Charge';
+
+  @override
+  String get electricityUpsLoadSectionTitle => 'Charge à alimenter';
+
+  @override
+  String get electricityUpsRef1 => 'Wh disponibles';
+
+  @override
+  String get electricityUpsRef1Detail =>
+      'Capacité × tension × nombre × rendement.';
+
+  @override
+  String get electricityUpsRef2 => 'Autonomie';
+
+  @override
+  String get electricityUpsRef2Detail =>
+      'Énergie disponible divisée par la charge.';
+
+  @override
+  String get electricityUpsRef3Title => 'Résultat indicatif';
+
+  @override
+  String get electricityUpsRef3Value =>
+      'La valeur réelle dépend du rendement, de l’état des batteries et de la charge.';
+
+  @override
+  String get electricityUpsRefTitle => 'Références';
+
+  @override
+  String get electricityUpsVoltageHint => 'Ex. 12';
+
+  @override
+  String get electricityUpsVoltageLabel => 'Tension batterie';
+
+  @override
+  String get riggingToolBridleTitle => 'Bridle 2 points';
+
+  @override
+  String get riggingToolBridleSubtitle =>
+      'Calcul complet d’un bridle : longueurs, angles, tensions et statut de sécurité.';
+
+  @override
+  String get riggingToolAngleFactorTitle => 'Facteur d’angle';
+
+  @override
+  String get riggingToolAngleFactorSubtitle =>
+      'Voir rapidement l’effet de l’angle sur la tension dans les brins.';
+
+  @override
+  String get riggingToolWllTitle => 'Vérification WLL / CMU';
+
+  @override
+  String get riggingToolWllSubtitle =>
+      'Comparer une charge appliquée avec la capacité du matériel.';
+
+  @override
+  String get riggingToolLengthTitle => 'Longueur bridle';
+
+  @override
+  String get riggingToolLengthSubtitle =>
+      'Calculer les longueurs et angles sans calcul de charge.';
+
+  @override
+  String get riggingKnownDrop => 'Flèche';
+
+  @override
+  String get riggingKnownAngle => 'Angle';
+
+  @override
+  String get riggingKnownLength => 'Longueur';
+
+  @override
+  String get riggingAngleFromHorizontalLabel => 'Angle depuis l’horizontale';
+
+  @override
+  String get riggingLegLengthKnownLabel => 'Longueur d’un brin';
+
+  @override
+  String get riggingLoadWeightLabel => 'Poids de la charge';
+
+  @override
+  String get riggingLoadShortLabel => 'Charge';
+
+  @override
+  String get riggingPointALabel => 'A';
+
+  @override
+  String get riggingPointBLabel => 'B';
+
+  @override
+  String get riggingTensionLabel => 'Tension';
+
+  @override
+  String get riggingTensionLeftLabel => 'Tension gauche';
+
+  @override
+  String get riggingTensionRightLabel => 'Tension droite';
+
+  @override
+  String get riggingTensionPerLegLabel => 'Tension par brin';
+
+  @override
+  String get riggingStatusOk => 'OK';
+
+  @override
+  String get riggingStatusWatch => 'À surveiller';
+
+  @override
+  String get riggingStatusHigh => 'Élevé';
+
+  @override
+  String get riggingStatusDanger => 'Dangereux';
+
+  @override
+  String get riggingStatusOkDescription =>
+      'Angle confortable. La tension reste raisonnable.';
+
+  @override
+  String get riggingStatusWatchDescription =>
+      'Angle utilisable, mais la tension commence à augmenter.';
+
+  @override
+  String get riggingStatusHighDescription =>
+      'Angle faible. La tension augmente fortement.';
+
+  @override
+  String get riggingStatusDangerDescription =>
+      'Angle très faible. Configuration à éviter.';
+
+  @override
+  String get riggingSafetyDisclaimer =>
+      'Résultat indicatif. Vérifie toujours la CMU/WLL réelle, les coefficients de sécurité et les règles applicables.';
+
+  @override
+  String get riggingInvalidInputsMessage =>
+      'Entre des valeurs positives et cohérentes.';
+
+  @override
+  String get riggingAngleFactorLabel => 'Facteur multiplicateur';
+
+  @override
+  String get riggingAngleFactorExplanation =>
+      'Plus l’angle est faible par rapport à l’horizontale, plus la tension dans chaque brin augmente.';
+
+  @override
+  String get riggingWllLabel => 'WLL / CMU du matériel';
+
+  @override
+  String get riggingAppliedLoadLabel => 'Charge appliquée';
+
+  @override
+  String get riggingSafetyFactorLabel => 'Facteur de sécurité';
+
+  @override
+  String get riggingRequiredLoadLabel => 'Charge à vérifier';
+
+  @override
+  String get riggingWllUsageLabel => 'Utilisation WLL';
+
+  @override
+  String get riggingMarginLabel => 'Marge restante';
+
+  @override
+  String get riggingWllStatusOkDescription =>
+      'La capacité du matériel est suffisante pour cette charge.';
+
+  @override
+  String get riggingWllStatusWatchDescription =>
+      'La capacité est encore suffisante, mais la marge est faible.';
+
+  @override
+  String get riggingWllStatusDangerDescription =>
+      'La charge dépasse la capacité indiquée.';
+
+  @override
+  String get riggingLengthDifferenceLabel => 'Différence de longueur';
+
+  @override
+  String get riggingCalculationModeLabel => 'Type de calcul';
+
+  @override
+  String get riggingGeometryOnlyLabel => 'Sans charge';
+
+  @override
+  String get riggingWithLoadLabel => 'Avec charge';
+
+  @override
+  String get riggingGeometryOnlyDescription =>
+      'Mode géométrie uniquement : longueurs, flèche et angles. Aucun calcul de tension ou de charge.';
+
+  @override
+  String get riggingKnownInputLabel => 'Je connais';
 }

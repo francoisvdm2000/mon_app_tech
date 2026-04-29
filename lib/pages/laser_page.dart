@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../app/ui/widgets.dart'; // numFormatter, SectionCard, ExpandSectionCard
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
+import '../services/subscription_service.dart';
+import 'subscription_page.dart';
 import 'laser/laser_calculations.dart';
 import 'laser/laser_storage.dart';
 import 'laser/laser_beam_size_page.dart';
@@ -22,6 +24,9 @@ class _LaserPageState extends State<LaserPage> {
 
   final _searchController = TextEditingController();
   String _searchQuery = '';
+
+  bool _isCheckingPro = true;
+  bool _isPro = false;
 
   LaserResults _zones =
       const LaserResults(nohdMeter: 0, czedMeter: 0, szedMeter: 0);
@@ -45,10 +50,34 @@ class _LaserPageState extends State<LaserPage> {
 
     _searchController.addListener(() {
       setState(
-          () => _searchQuery = _searchController.text.trim().toLowerCase());
+        () => _searchQuery = _searchController.text.trim().toLowerCase(),
+      );
     });
 
-    _loadPresets();
+    _initPage();
+  }
+
+  Future<void> _initPage() async {
+    final hasAccess =
+        await SubscriptionService.hasAccess(SubscriptionCategory.laser);
+    if (!mounted) return;
+
+    if (!hasAccess) {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (_) =>
+              const SubscriptionPage(category: SubscriptionCategory.laser),
+        ),
+      );
+      return;
+    }
+
+    setState(() {
+      _isPro = true;
+      _isCheckingPro = false;
+    });
+
+    await _loadPresets();
   }
 
   @override
@@ -108,7 +137,9 @@ class _LaserPageState extends State<LaserPage> {
     final targetDistance = _parseDouble(_targetDistanceController.text) ?? 0.0;
     final target = targetDistance > 0
         ? LaserCalculations.assessAtTargetDistance(
-            inputs: inputs, targetDistanceMeter: targetDistance)
+            inputs: inputs,
+            targetDistanceMeter: targetDistance,
+          )
         : const TargetDistanceAssessment(
             powerMaxWattAtTarget: 0,
             usagePercent: 0,
@@ -122,7 +153,6 @@ class _LaserPageState extends State<LaserPage> {
     });
   }
 
-  // Formatters "tech" -> pas besoin i18n
   String _formatMeters(double value) {
     if (value <= 0) return '0 m';
     if (value < 10) return '${value.toStringAsFixed(1)} m';
@@ -329,9 +359,9 @@ class _LaserPageState extends State<LaserPage> {
   }
 
   Widget _zoneLine({
-    required String label, // sigle tech (NOHD/SZED/CZED)
-    required String desc, // localisé
-    required String value, // format local (simple)
+    required String label,
+    required String desc,
+    required String value,
     required Color color,
   }) {
     return Container(
@@ -387,6 +417,21 @@ class _LaserPageState extends State<LaserPage> {
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
+
+    if (_isCheckingPro) {
+      return Scaffold(
+        appBar: AppBar(title: Text(loc.homeLaserTitle)),
+        body: const Center(child: CircularProgressIndicator()),
+      );
+    }
+
+    if (!_isPro) {
+      return Scaffold(
+        appBar: AppBar(title: Text(loc.homeLaserTitle)),
+        body: const SizedBox.shrink(),
+      );
+    }
+
     final bottomPad = MediaQuery.of(context).viewPadding.bottom;
 
     final targetDistanceRaw = _targetDistanceController.text.trim();
@@ -537,7 +582,9 @@ class _LaserPageState extends State<LaserPage> {
                         child: Text(
                           adviceText,
                           style: TextStyle(
-                              color: adviceColor, fontWeight: FontWeight.bold),
+                            color: adviceColor,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ],
@@ -565,7 +612,8 @@ class _LaserPageState extends State<LaserPage> {
                         child: Text(
                           loc.commonNone,
                           style: TextStyle(
-                              color: Colors.white.withValues(alpha: 0.70)),
+                            color: Colors.white.withValues(alpha: 0.70),
+                          ),
                         ),
                       )
                     else
@@ -600,8 +648,8 @@ class _LaserPageState extends State<LaserPage> {
                               subtitle: Text(
                                 loc.laserPresetSubtitle(pStr, divStr, dStr),
                                 style: TextStyle(
-                                    color:
-                                        Colors.white.withValues(alpha: 0.65)),
+                                  color: Colors.white.withValues(alpha: 0.65),
+                                ),
                               ),
                               trailing: IconButton(
                                 tooltip: loc.commonRename,

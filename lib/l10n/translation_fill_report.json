@@ -1,0 +1,38 @@
+{
+  "fr": {
+    "existing": 1972,
+    "from_en": 0,
+    "from_fr": 0,
+    "metadata_from_fr": 0
+  },
+  "en": {
+    "existing": 1165,
+    "from_en": 0,
+    "from_fr": 807,
+    "metadata_from_fr": 0
+  },
+  "de": {
+    "existing": 421,
+    "from_en": 744,
+    "from_fr": 807,
+    "metadata_from_fr": 17
+  },
+  "es": {
+    "existing": 421,
+    "from_en": 744,
+    "from_fr": 807,
+    "metadata_from_fr": 17
+  },
+  "nl": {
+    "existing": 421,
+    "from_en": 744,
+    "from_fr": 807,
+    "metadata_from_fr": 17
+  },
+  "pt": {
+    "existing": 421,
+    "from_en": 744,
+    "from_fr": 807,
+    "metadata_from_fr": 17
+  }
+}

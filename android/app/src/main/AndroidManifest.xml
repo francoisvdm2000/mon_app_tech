@@ -3,7 +3,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:label="mon_app_tech"
+        android:label="ShowTech Tools"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

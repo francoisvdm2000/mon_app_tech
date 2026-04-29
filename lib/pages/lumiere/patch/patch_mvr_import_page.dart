@@ -17,6 +17,8 @@ const String _kMvrCacheKey = 'patch_mvr_cache_v6';
 
 enum _SortField { id, name, universe, address, channels, universeThenAddress }
 
+enum _PatchMvrViewMode { table, visual }
+
 class PatchMvrImportPage extends StatefulWidget {
   const PatchMvrImportPage({super.key});
 
@@ -33,6 +35,12 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
   bool _sortAscending = true;
 
   int? _universeFilter;
+  _PatchMvrViewMode _viewMode = _PatchMvrViewMode.table;
+
+  int _selectedUniverse = 1;
+  double _tileWanted = 26;
+
+  static const double _gap = 4;
 
   final GdtfReader _gdtfReader = GdtfReader();
 
@@ -41,8 +49,6 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
     super.initState();
     _restoreFromCache();
   }
-
-  // ===================== PERSISTENCE =====================
 
   Future<void> _restoreFromCache() async {
     final prefs = await SharedPreferences.getInstance();
@@ -62,6 +68,7 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
         _rows = rows;
         _status = rows.isEmpty ? '' : loc.patchMvrStatusRestored(rows.length);
       });
+      _syncUniverseWithRows();
     } catch (_) {
       // Cache corrompu : on ignore.
     }
@@ -83,11 +90,13 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
     setState(() {
       _rows = const [];
       _universeFilter = null;
+      _viewMode = _PatchMvrViewMode.table;
+      _selectedUniverse = 1;
       _status = loc.patchMvrStatusCleared;
     });
-  }
 
-  // ===================== IMPORT FICHIER =====================
+    patchStore.clearReference();
+  }
 
   Future<void> _pickAndParse() async {
     final loc = AppLocalizations.of(context);
@@ -97,6 +106,8 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
       _status = loc.patchMvrStatusSelectingFile;
       _rows = const [];
       _universeFilter = null;
+      _viewMode = _PatchMvrViewMode.table;
+      _selectedUniverse = 1;
     });
 
     FilePickerResult? result;
@@ -172,10 +183,13 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
       setState(() {
         _isLoading = false;
         _rows = rows;
+        _viewMode = _PatchMvrViewMode.table;
         _status = rows.isEmpty
             ? loc.patchMvrStatusNoUsableFixtures
             : loc.patchMvrStatusFixturesFound(rows.length, resolved);
       });
+
+      _syncUniverseWithRows();
     } catch (e) {
       if (!mounted) return;
       setState(() {
@@ -202,8 +216,6 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
 
     return map;
   }
-
-  // ===================== CHARGER COMME RÉFÉRENCE PATCH =====================
 
   void _loadAsReference() {
     final loc = AppLocalizations.of(context);
@@ -249,12 +261,144 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
 
     patchStore.loadReference(entries);
 
+    if (mounted) {
+      setState(() {
+        _status = loc.patchMvrStatusReferenceLoaded(
+          loaded,
+          skipped,
+          footprintsFromGdtf,
+        );
+      });
+    }
+
+    _syncUniverseWithPatchStore();
+  }
+
+  void _syncUniverseWithRows() {
+    final universes = _universesFromRows();
+    if (universes.isEmpty) {
+      _selectedUniverse = 1;
+      return;
+    }
+    if (!universes.contains(_selectedUniverse)) {
+      _selectedUniverse = universes.first;
+    }
+  }
+
+  void _syncUniverseWithPatchStore() {
+    final universes = patchStore.universesInUse;
+    if (universes.isEmpty) {
+      if (mounted) {
+        setState(() => _selectedUniverse = 1);
+      } else {
+        _selectedUniverse = 1;
+      }
+      return;
+    }
+
+    if (!universes.contains(_selectedUniverse)) {
+      if (mounted) {
+        setState(() => _selectedUniverse = universes.first);
+      } else {
+        _selectedUniverse = universes.first;
+      }
+    }
+  }
+
+  void _setViewMode(_PatchMvrViewMode mode) {
+    if (mode == _PatchMvrViewMode.visual) {
+      _loadAsReference();
+    }
+
     setState(() {
-      _status = loc.patchMvrStatusReferenceLoaded(loaded, skipped, footprintsFromGdtf);
+      _viewMode = mode;
     });
   }
 
-  // ===================== TRI / FILTRE =====================
+  void _zoomOut() =>
+      setState(() => _tileWanted = (_tileWanted - 2).clamp(12, 40));
+
+  void _zoomIn() =>
+      setState(() => _tileWanted = (_tileWanted + 2).clamp(12, 40));
+
+  Future<void> _showChannelPopup({
+    required int universe,
+    required int address,
+  }) async {
+    final loc = AppLocalizations.of(context);
+
+    final occupants = patchStore.entriesOccupyingChannel(universe, address);
+    final occupied = occupants.isNotEmpty;
+
+    final title = occupied
+        ? (occupants.length > 1
+            ? loc.patchUniversePopupTitleConflict
+            : loc.patchUniversePopupTitleOccupied)
+        : loc.patchUniversePopupTitleFree;
+
+    final String stateLabel = occupied
+        ? (occupants.length > 1
+            ? loc.patchUniverseStateConflict
+            : loc.patchUniverseStateOccupied)
+        : loc.patchUniverseStateFree;
+
+    final Widget content = occupied
+        ? Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                loc.patchUniversePopupHeader(
+                  universe,
+                  address,
+                  stateLabel,
+                ),
+              ),
+              const SizedBox(height: 12),
+              if (occupants.length > 1)
+                Text(
+                  loc.patchUniversePopupManyOccupants,
+                  style: const TextStyle(fontWeight: FontWeight.w700),
+                ),
+              if (occupants.length > 1) const SizedBox(height: 8),
+              ...occupants.take(8).map((e) => _OccupantLine(entry: e)),
+              if (occupants.length > 8)
+                Padding(
+                  padding: const EdgeInsets.only(top: 8),
+                  child: Text(
+                    loc.patchUniversePopupMore(occupants.length - 8),
+                    style: const TextStyle(color: Colors.white70),
+                  ),
+                ),
+            ],
+          )
+        : Text(
+            loc.patchUniversePopupHeader(
+              universe,
+              address,
+              stateLabel,
+            ),
+          );
+
+    await showDialog<void>(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: Text(title),
+        content: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxHeight: MediaQuery.of(context).size.height * 0.60,
+          ),
+          child: SingleChildScrollView(child: content),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(loc.commonOk),
+          ),
+        ],
+      ),
+    );
+  }
 
   List<_MvrRow> _sortedRows() {
     final list = List<_MvrRow>.from(_rows);
@@ -320,8 +464,6 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
     return list;
   }
 
-  // ===================== UI =====================
-
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
@@ -361,18 +503,36 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
                   ),
                 ),
                 const SizedBox(height: 12),
-                if (_rows.isNotEmpty)
-                  ElevatedButton(
-                    onPressed: _loadAsReference,
-                    child: Text(loc.patchMvrButtonLoadAsReference),
+                if (_rows.isNotEmpty) ...[
+                  SegmentedButton<_PatchMvrViewMode>(
+                    segments: [
+                      ButtonSegment<_PatchMvrViewMode>(
+                        value: _PatchMvrViewMode.table,
+                        label: Text(loc.patchMvrViewTable),
+                        icon: const Icon(Icons.table_chart),
+                      ),
+                      ButtonSegment<_PatchMvrViewMode>(
+                        value: _PatchMvrViewMode.visual,
+                        label: Text(loc.patchMvrViewVisual),
+                        icon: const Icon(Icons.grid_view),
+                      ),
+                    ],
+                    selected: {_viewMode},
+                    onSelectionChanged: (selection) {
+                      _setViewMode(selection.first);
+                    },
                   ),
-                const SizedBox(height: 12),
+                  const SizedBox(height: 12),
+                ],
                 ResultBox(_status),
               ],
             ),
           ),
           const SizedBox(height: 12),
-          if (_rows.isNotEmpty) _buildTableCard(),
+          if (_rows.isNotEmpty && _viewMode == _PatchMvrViewMode.table)
+            _buildTableCard(),
+          if (_rows.isNotEmpty && _viewMode == _PatchMvrViewMode.visual)
+            ..._buildVisualCards(),
         ],
       ),
     );
@@ -426,19 +586,25 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
                 decoration: InputDecoration(labelText: loc.patchMvrSortByLabel),
                 items: [
                   DropdownMenuItem(
-                      value: _SortField.id, child: Text(loc.patchMvrSortId)),
+                    value: _SortField.id,
+                    child: Text(loc.patchMvrSortId),
+                  ),
                   DropdownMenuItem(
-                      value: _SortField.name,
-                      child: Text(loc.patchMvrSortName)),
+                    value: _SortField.name,
+                    child: Text(loc.patchMvrSortName),
+                  ),
                   DropdownMenuItem(
-                      value: _SortField.universe,
-                      child: Text(loc.patchMvrSortUniverse)),
+                    value: _SortField.universe,
+                    child: Text(loc.patchMvrSortUniverse),
+                  ),
                   DropdownMenuItem(
-                      value: _SortField.address,
-                      child: Text(loc.patchMvrSortAddress)),
+                    value: _SortField.address,
+                    child: Text(loc.patchMvrSortAddress),
+                  ),
                   DropdownMenuItem(
-                      value: _SortField.channels,
-                      child: Text(loc.patchMvrSortChannels)),
+                    value: _SortField.channels,
+                    child: Text(loc.patchMvrSortChannels),
+                  ),
                   DropdownMenuItem(
                     value: _SortField.universeThenAddress,
                     child: Text(loc.patchMvrSortUniverseThenAddress),
@@ -456,9 +622,13 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
                 decoration: InputDecoration(labelText: loc.patchMvrOrderLabel),
                 items: [
                   DropdownMenuItem(
-                      value: true, child: Text(loc.patchMvrOrderAsc)),
+                    value: true,
+                    child: Text(loc.patchMvrOrderAsc),
+                  ),
                   DropdownMenuItem(
-                      value: false, child: Text(loc.patchMvrOrderDesc)),
+                    value: false,
+                    child: Text(loc.patchMvrOrderDesc),
+                  ),
                 ],
                 onChanged: (v) {
                   if (v == null) return;
@@ -537,7 +707,112 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
     );
   }
 
-  // ===================== EXTRACTION ZIP (XML) =====================
+  List<Widget> _buildVisualCards() {
+    final loc = AppLocalizations.of(context);
+
+    final universes = patchStore.universesInUse;
+    final occupied = patchStore.occupiedChannelsForUniverse(_selectedUniverse);
+    final conflictChannels =
+        patchStore.conflictChannelsForUniverse(_selectedUniverse);
+
+    return [
+      SectionCard(
+        title: loc.patchUniverseUniverseTitle,
+        icon: Icons.layers_outlined,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            DropdownButtonFormField<int>(
+              initialValue: _selectedUniverse,
+              isExpanded: true,
+              decoration: InputDecoration(
+                labelText: loc.patchUniverseUniverseDropdownLabel,
+              ),
+              items: (universes.isEmpty ? [1] : universes)
+                  .map(
+                    (u) => DropdownMenuItem(
+                      value: u,
+                      child: Text(loc.patchUniverseUniverseItem(u)),
+                    ),
+                  )
+                  .toList(),
+              onChanged: (v) {
+                if (v == null) return;
+                setState(() => _selectedUniverse = v);
+              },
+            ),
+            const SizedBox(height: 12),
+            Text(
+              loc.patchUniverseOccupiedCount(occupied.length),
+              style: const TextStyle(color: Colors.white70),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              loc.patchUniverseConflictCount(conflictChannels.length),
+              style: const TextStyle(color: Colors.white70),
+            ),
+            const SizedBox(height: 10),
+            const _Legend(),
+            const SizedBox(height: 8),
+            Text(
+              loc.patchUniverseTapHint,
+              style: const TextStyle(color: Colors.white54),
+            ),
+          ],
+        ),
+      ),
+      const SizedBox(height: 12),
+      SectionCard(
+        title: loc.patchUniverseZoomTitle,
+        icon: Icons.zoom_in,
+        child: Row(
+          children: [
+            Expanded(
+              child: ElevatedButton.icon(
+                onPressed: _zoomOut,
+                icon: const Icon(Icons.remove),
+                label: Text(loc.patchUniverseZoomOut),
+                style: ButtonStyle(
+                  foregroundColor: WidgetStateProperty.all(
+                    const Color(0xFFB0B0B0),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: ElevatedButton.icon(
+                onPressed: _zoomIn,
+                icon: const Icon(Icons.add),
+                label: Text(loc.patchUniverseZoomIn),
+                style: ButtonStyle(
+                  foregroundColor: WidgetStateProperty.all(
+                    const Color(0xFFB0B0B0),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      const SizedBox(height: 12),
+      SectionCard(
+        title: loc.patchUniverseGridTitle,
+        icon: Icons.grid_on,
+        child: _Full512Grid10Cols(
+          limitedText: loc.patchUniverseGridLimitedByWidth,
+          tileWanted: _tileWanted,
+          gap: _gap,
+          occupied: occupied,
+          conflictChannels: conflictChannels,
+          onTap: (addr) => _showChannelPopup(
+            universe: _selectedUniverse,
+            address: addr,
+          ),
+        ),
+      ),
+    ];
+  }
 
   String? _extractBestSceneXmlFromArchive(Archive archive) {
     ArchiveFile? best;
@@ -575,8 +850,6 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
     return utf8.decode(content, allowMalformed: true);
   }
 
-  // ===================== PARSING ROBUSTE =====================
-
   List<_MvrRow> _parseMvrFixturesRobust(
     String xmlString,
     Map<String, Uint8List> gdtfMap,
@@ -605,7 +878,6 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
       final universe = patch?.$1;
       final address = patch?.$2;
 
-      // Vectorworks : GDTFSpec + GDTFMode
       final gdtfSpec =
           _readStringAttrOrChild(fx, const ['GDTFSpec', 'GdtfSpec']);
       final gdtfMode =
@@ -632,7 +904,6 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
       );
     }
 
-    // Dedup + tri stable
     final seen = <String>{};
     final unique = <_MvrRow>[];
     for (final r in rows) {
@@ -713,7 +984,9 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
 
       final u = _tryParseInt(uStr);
       final a = _tryParseInt(aStr);
-      if (u != null && u >= 1 && a != null && a >= 1 && a <= 512) return (u, a);
+      if (u != null && u >= 1 && a != null && a >= 1 && a <= 512) {
+        return (u, a);
+      }
     }
     return null;
   }
@@ -752,7 +1025,6 @@ class _MvrRow {
   final String name;
   final int? universe;
   final int? address;
-
   final String? dmxModeName;
   final int? channelCount;
 
@@ -804,6 +1076,223 @@ class _MvrRow {
       address: json['address'] as int?,
       dmxModeName: json['dmxModeName'] as String?,
       channelCount: json['channelCount'] as int?,
+    );
+  }
+}
+
+class _Legend extends StatelessWidget {
+  const _Legend();
+
+  @override
+  Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
+    Widget item(Color color, String label) {
+      return Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            width: 14,
+            height: 14,
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(3),
+              border: Border.all(color: Colors.white12),
+            ),
+          ),
+          const SizedBox(width: 8),
+          Text(label, style: const TextStyle(color: Colors.white70)),
+        ],
+      );
+    }
+
+    return Wrap(
+      spacing: 16,
+      runSpacing: 8,
+      children: [
+        item(Colors.white10, loc.patchUniverseLegendFree),
+        item(
+          Colors.greenAccent.withValues(alpha: 0.85),
+          loc.patchUniverseLegendOccupied,
+        ),
+        item(
+          Colors.redAccent.withValues(alpha: 0.9),
+          loc.patchUniverseLegendConflict,
+        ),
+      ],
+    );
+  }
+}
+
+class _OccupantLine extends StatelessWidget {
+  final PatchEntry entry;
+
+  const _OccupantLine({required this.entry});
+
+  @override
+  Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Text(
+        loc.patchUniverseOccupantLine(
+          entry.fixtureName,
+          entry.dmxModeName,
+          entry.channelCount,
+          entry.startAddress,
+          entry.endAddress,
+        ),
+        style: const TextStyle(color: Colors.white70),
+      ),
+    );
+  }
+}
+
+class _Full512Grid10Cols extends StatelessWidget {
+  final String limitedText;
+  final double tileWanted;
+  final double gap;
+  final Set<int> occupied;
+  final Set<int> conflictChannels;
+  final void Function(int address) onTap;
+
+  const _Full512Grid10Cols({
+    required this.limitedText,
+    required this.tileWanted,
+    required this.gap,
+    required this.occupied,
+    required this.conflictChannels,
+    required this.onTap,
+  });
+
+  static const int columns = 10;
+
+  @override
+  Widget build(BuildContext context) {
+    final rowCount = (512 / columns).ceil();
+
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFF0B0B0B),
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: Colors.white12),
+      ),
+      padding: const EdgeInsets.all(10),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final availableWidth = constraints.maxWidth;
+
+          const labelWidth = 44.0;
+          const labelGap = 8.0;
+
+          final gridWidth = (availableWidth - labelWidth - labelGap)
+              .clamp(0.0, double.infinity);
+
+          final raw = (gridWidth - (gap * (columns - 1))) / columns;
+          final computed = raw.isFinite ? raw : 12.0;
+          final possible = computed.floorToDouble().clamp(12.0, 1000.0);
+
+          final tileSize = possible.clamp(12.0, tileWanted);
+          final isLimited = tileWanted > possible + 0.0001;
+
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              if (isLimited)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Text(
+                    limitedText,
+                    style: TextStyle(
+                      color: Colors.amberAccent.withValues(alpha: 0.9),
+                    ),
+                  ),
+                ),
+              ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: rowCount,
+                itemBuilder: (context, rowIndex) {
+                  final startAddress = rowIndex * columns + 1;
+                  final endAddress = (startAddress + columns - 1).clamp(1, 512);
+
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 6),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: labelWidth,
+                          child: Text(
+                            '$startAddress–$endAddress',
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              color: Colors.white54,
+                              fontSize: 11,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: labelGap),
+                        SizedBox(
+                          width: gridWidth,
+                          child: Row(
+                            children: List.generate(columns, (i) {
+                              final address = startAddress + i;
+
+                              if (address > 512) {
+                                return SizedBox(
+                                  width: i == columns - 1
+                                      ? tileSize
+                                      : tileSize + gap,
+                                  height: tileSize,
+                                );
+                              }
+
+                              final isConflict =
+                                  conflictChannels.contains(address);
+                              final isOcc = occupied.contains(address);
+
+                              final Color color;
+                              if (isConflict) {
+                                color = Colors.redAccent.withValues(alpha: 0.9);
+                              } else if (isOcc) {
+                                color =
+                                    Colors.greenAccent.withValues(alpha: 0.85);
+                              } else {
+                                color = Colors.white10;
+                              }
+
+                              return Padding(
+                                padding: EdgeInsets.only(
+                                  right: i == columns - 1 ? 0 : gap,
+                                ),
+                                child: GestureDetector(
+                                  onTap: () => onTap(address),
+                                  child: Container(
+                                    width: tileSize,
+                                    height: tileSize,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      color: color,
+                                      border: Border.all(color: Colors.white12),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ],
+          );
+        },
+      ),
     );
   }
 }
