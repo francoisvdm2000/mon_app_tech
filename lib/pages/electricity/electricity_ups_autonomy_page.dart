@@ -4,6 +4,8 @@ import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 import 'widgets/electricity_form_widgets.dart';
 import 'widgets/electricity_result_card.dart';
+import '../about/about_favorites.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class ElectricityUpsAutonomyPage extends StatefulWidget {
   const ElectricityUpsAutonomyPage({super.key});
@@ -82,7 +84,13 @@ class _ElectricityUpsAutonomyPageState
     final loc = AppLocalizations.of(context);
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.electricityToolUpsTitle)),
+      appBar: AppBar(
+        title: Text(loc.electricityToolUpsTitle),
+        actions: const [
+          AboutPinButton(pageId: 'tool:electricity_ups_autonomy', sectionId: 'main'),
+          SizedBox(width: 4),
+        ],
+      ),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
         children: [
@@ -118,6 +126,7 @@ class _ElectricityUpsAutonomyPageState
           ),
           const SizedBox(height: 16),
           SectionCard(
+            accentColor: kSectionElectricity,
             title: loc.electricityUpsBatterySection,
             icon: Icons.battery_charging_full,
             child: Column(
@@ -170,6 +179,7 @@ class _ElectricityUpsAutonomyPageState
           ),
           const SizedBox(height: 12),
           SectionCard(
+            accentColor: kSectionElectricity,
             title: loc.electricityUpsLoadSectionTitle,
             icon: Icons.devices,
             child: Column(
@@ -207,6 +217,7 @@ class _ElectricityUpsAutonomyPageState
             ),
           const SizedBox(height: 16),
           SectionCard(
+            accentColor: kSectionElectricity,
             title: loc.electricityUpsRefTitle,
             icon: Icons.info_outline,
             child: Column(

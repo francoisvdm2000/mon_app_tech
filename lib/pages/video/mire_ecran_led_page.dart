@@ -9,6 +9,8 @@ import 'package:mon_app_tech/l10n_gen/app_localizations.dart'; // ✅ TON AppLoc
 
 import 'mire_painters.dart';
 import 'mire_texts.dart'; // ✅ MireTexts unique (doit être la seule source)
+import '../about/about_favorites.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class _FormDropdown<T> extends StatelessWidget {
   const _FormDropdown({
@@ -269,7 +271,13 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
     final isError = _err.startsWith('❌');
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.videoMireScreenLedTitle)),
+      appBar: AppBar(
+        title: Text(loc.videoMireScreenLedTitle),
+        actions: const [
+          AboutPinButton(pageId: 'tool:video_mire_ecran_led', sectionId: 'main'),
+          SizedBox(width: 4),
+        ],
+      ),
       body: SafeArea(
         bottom: true,
         child: SingleChildScrollView(
@@ -277,6 +285,7 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
           child: Column(
             children: [
               ExpandSectionCard(
+                accentColor: kSectionVideo,
                 title: loc.mireLedParamsTitle,
                 icon: Icons.view_quilt,
                 initiallyExpanded: true,

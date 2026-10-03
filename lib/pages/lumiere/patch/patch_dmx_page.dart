@@ -4,6 +4,7 @@ import '../../../app/ui/widgets.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'patch_models.dart';
 import 'patch_store.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class PatchDmxPage extends StatefulWidget {
   const PatchDmxPage({super.key});
@@ -53,7 +54,7 @@ class _PatchDmxPageState extends State<PatchDmxPage> {
       context: context,
       builder: (ctx) {
         return AlertDialog(
-          backgroundColor: const Color(0xFF111111),
+          backgroundColor: const Color(0xFF161622),
           title: Text(
             loc.patchEditTitle,
             style: const TextStyle(color: Colors.white),
@@ -160,6 +161,7 @@ class _PatchDmxPageState extends State<PatchDmxPage> {
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
             children: [
               SectionCard(
+                accentColor: kSectionLight,
                 title: loc.patchSummaryTitle,
                 icon: Icons.info_outline,
                 child: Column(
@@ -213,6 +215,7 @@ class _PatchDmxPageState extends State<PatchDmxPage> {
               ),
               const SizedBox(height: 12),
               SectionCard(
+                accentColor: kSectionLight,
                 title: loc.patchListTitle,
                 icon: Icons.tune,
                 child: entries.isEmpty

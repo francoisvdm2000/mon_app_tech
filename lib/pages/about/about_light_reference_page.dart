@@ -220,7 +220,7 @@ class _TocItemTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: const Color(0xFF0B0B0B),
+      color: const Color(0xFF0E0E18),
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),

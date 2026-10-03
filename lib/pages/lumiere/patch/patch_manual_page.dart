@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../app/ui/widgets.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class PatchManualPage extends StatelessWidget {
   const PatchManualPage({super.key});
@@ -18,6 +19,7 @@ class PatchManualPage extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
         children: [
           SectionCard(
+            accentColor: kSectionLight,
             title: loc.patchManualDisabledTitle,
             icon: Icons.lock_outline,
             child: Text(

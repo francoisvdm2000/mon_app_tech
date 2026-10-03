@@ -12,6 +12,10 @@ import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'gdtf_reader.dart';
 import 'patch_models.dart';
 import 'patch_store.dart';
+import '../../about/about_favorites.dart';
+import 'fixture_info_panel.dart';
+import 'patch_mvr_3d_page.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 const String _kMvrCacheKey = 'patch_mvr_cache_v6';
 
@@ -44,6 +48,12 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
 
   final GdtfReader _gdtfReader = GdtfReader();
 
+  /// Octets des .gdtf embarqués dans le dernier MVR importé (session en
+  /// cours uniquement — pas persisté, comme le reste du cache mémoire).
+  /// Poussé vers patchStore lors de "Charger comme référence" pour que
+  /// la console virtuelle puisse retrouver les vrais noms de canaux.
+  Map<String, Uint8List> _lastGdtfMap = <String, Uint8List>{};
+
   @override
   void initState() {
     super.initState();
@@ -69,6 +79,13 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
         _status = rows.isEmpty ? '' : loc.patchMvrStatusRestored(rows.length);
       });
       _syncUniverseWithRows();
+
+      // Recharge aussi dans patchStore au redémarrage de l'app : les octets
+      // GDTF ne survivent pas (mémoire seule), donc les noms de canaux
+      // retombent sur "Ch N" pour cette session, mais le patch (adresses,
+      // univers) reste immédiatement utilisable partout (console virtuelle
+      // comprise) sans repasser par un import.
+      if (rows.isNotEmpty) _loadAsReference();
     } catch (_) {
       // Cache corrompu : on ignore.
     }
@@ -95,6 +112,7 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
       _status = loc.patchMvrStatusCleared;
     });
 
+    _lastGdtfMap = <String, Uint8List>{};
     patchStore.clearReference();
   }
 
@@ -172,6 +190,7 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
 
       setState(() => _status = loc.patchMvrStatusLoadingGdtf);
       final gdtfMap = _extractGdtfFiles(zip);
+      _lastGdtfMap = gdtfMap;
 
       setState(() => _status = loc.patchMvrStatusParsingContent);
       final rows = _parseMvrFixturesRobust(xmlString, gdtfMap);
@@ -190,6 +209,12 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
       });
 
       _syncUniverseWithRows();
+
+      // Charge immédiatement dans patchStore (référence app-wide) : avant,
+      // ça n'arrivait qu'en passant en "vue visuelle", un déclencheur caché
+      // que rien n'indiquait — la console virtuelle et les autres outils
+      // qui lisent patchStore ne voyaient donc jamais le patch importé.
+      if (rows.isNotEmpty) _loadAsReference();
     } catch (e) {
       if (!mounted) return;
       setState(() {
@@ -207,11 +232,12 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
       final lower = f.name.toLowerCase();
       if (!lower.endsWith('.gdtf')) continue;
 
-      final content = f.content;
-      if (content is! List<int>) continue;
+      // archive 4.x : ArchiveFile.content a été remplacé par readBytes().
+      final content = f.readBytes();
+      if (content == null) continue;
 
       final fileName = f.name.split('/').last.split('\\').last;
-      map[fileName.toLowerCase()] = Uint8List.fromList(content);
+      map[fileName.toLowerCase()] = content;
     }
 
     return map;
@@ -253,13 +279,15 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
         channelCount: channels,
         universe: u,
         startAddress: a,
+        gdtfSpec: r.gdtfSpec,
+        transform: r.transform,
       );
 
       entries.add(e);
       loaded++;
     }
 
-    patchStore.loadReference(entries);
+    patchStore.loadReference(entries, gdtfBytes: _lastGdtfMap);
 
     if (mounted) {
       setState(() {
@@ -303,6 +331,35 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
         _selectedUniverse = universes.first;
       }
     }
+  }
+
+  /// Rouvre le PatchEntry correspondant à une ligne du tableau (même id
+  /// que celui construit dans `_loadAsReference`) pour afficher le panneau
+  /// de détails partagé avec le visualiseur 3D.
+  void _showFixtureInfoForRow(_MvrRow r) {
+    final u = r.universe;
+    final a = r.address;
+    if (u == null || a == null) return;
+
+    final id = (r.rawId != null && r.rawId!.trim().isNotEmpty)
+        ? 'mvr:${r.rawId!.trim()}'
+        : 'mvrh:${Object.hash(r.name, u, a)}';
+
+    PatchEntry? entry;
+    for (final e in patchStore.entries) {
+      if (e.id == id) {
+        entry = e;
+        break;
+      }
+    }
+    if (entry == null) return;
+
+    final gdtfBytes = patchStore.gdtfBytesFor(entry);
+    final physicalInfo = gdtfBytes != null
+        ? _gdtfReader.physicalInfo(gdtfBytes: gdtfBytes)
+        : const GdtfPhysicalInfo();
+
+    FixtureInfoPanel.show(context, entry: entry, physicalInfo: physicalInfo);
   }
 
   void _setViewMode(_PatchMvrViewMode mode) {
@@ -472,6 +529,7 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
       appBar: AppBar(
         title: Text(loc.patchMvrTitle),
         actions: [
+          const AboutPinButton(pageId: 'tool:lumiere_patch_mvr_import', sectionId: 'main'),
           if (_rows.isNotEmpty)
             IconButton(
               tooltip: loc.patchMvrClearTooltip,
@@ -484,6 +542,7 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
         children: [
           SectionCard(
+            accentColor: kSectionLight,
             title: loc.patchMvrFileCardTitle,
             icon: Icons.upload_file,
             child: Column(
@@ -523,6 +582,19 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
                     },
                   ),
                   const SizedBox(height: 12),
+                  OutlinedButton.icon(
+                    onPressed: () {
+                      _loadAsReference();
+                      Navigator.of(context).push(
+                        MaterialPageRoute<void>(
+                          builder: (_) => const PatchMvr3dPage(),
+                        ),
+                      );
+                    },
+                    icon: const Icon(Icons.view_in_ar_outlined),
+                    label: Text(loc.patch3dOpenButton),
+                  ),
+                  const SizedBox(height: 12),
                 ],
                 ResultBox(_status),
               ],
@@ -545,6 +617,7 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
     final rows = _filteredRows(_sortedRows());
 
     return SectionCard(
+      accentColor: kSectionLight,
       title: loc.patchMvrSummaryTitle,
       icon: Icons.table_chart,
       child: Column(
@@ -658,7 +731,7 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
           const SizedBox(height: 12),
           Container(
             decoration: BoxDecoration(
-              color: const Color(0xFF0B0B0B),
+              color: const Color(0xFF0E0E18),
               borderRadius: BorderRadius.circular(14),
               border: Border.all(color: Colors.white12),
             ),
@@ -681,6 +754,7 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
                   final r = rows[index];
                   final displayId = r.displayId(index + 1);
                   return DataRow(
+                    onSelectChanged: (_) => _showFixtureInfoForRow(r),
                     cells: [
                       DataCell(Text(displayId)),
                       DataCell(
@@ -717,6 +791,7 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
 
     return [
       SectionCard(
+        accentColor: kSectionLight,
         title: loc.patchUniverseUniverseTitle,
         icon: Icons.layers_outlined,
         child: Column(
@@ -763,6 +838,7 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
       ),
       const SizedBox(height: 12),
       SectionCard(
+        accentColor: kSectionLight,
         title: loc.patchUniverseZoomTitle,
         icon: Icons.zoom_in,
         child: Row(
@@ -797,6 +873,7 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
       ),
       const SizedBox(height: 12),
       SectionCard(
+        accentColor: kSectionLight,
         title: loc.patchUniverseGridTitle,
         icon: Icons.grid_on,
         child: _Full512Grid10Cols(
@@ -844,8 +921,9 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
 
     if (best == null) return null;
 
-    final content = best.content;
-    if (content is! List<int>) return null;
+    // archive 4.x : ArchiveFile.content a été remplacé par readBytes().
+    final content = best.readBytes();
+    if (content == null) return null;
 
     return utf8.decode(content, allowMalformed: true);
   }
@@ -889,17 +967,35 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
         gdtfMap: gdtfMap,
       );
 
+      // Position/rotation 3D (utilisée par le visualiseur 3D uniquement) :
+      // <Matrix> est un enfant direct de <Fixture>, pas un descendant
+      // profond — on prend le premier trouvé pour éviter d'attraper la
+      // matrice d'une sous-géométrie si jamais le MVR en imbriquait.
+      final matrixText = fx.getElement('Matrix')?.innerText;
+      final transform = (matrixText != null && matrixText.trim().isNotEmpty)
+          ? FixtureTransform.tryParse(matrixText)
+          : null;
+
       rows.add(
         _MvrRow(
-          rawId: (fixtureId != null && fixtureId.trim().isNotEmpty)
-              ? fixtureId.trim()
-              : (uuid != null && uuid.trim().isNotEmpty ? uuid.trim() : null),
+          // uuid en priorité : c'est le seul identifiant réellement unique du
+          // spec MVR. <FixtureID> est un simple numéro de console — souvent
+          // laissé à "0" par les exports réels (Vectorworks/MA notamment),
+          // ce qui faisait tomber toutes les fixtures sur la même clé de
+          // déduplication ("id:0") et n'en gardait qu'une seule.
+          rawId: (uuid != null && uuid.trim().isNotEmpty)
+              ? uuid.trim()
+              : (fixtureId != null && fixtureId.trim().isNotEmpty
+                  ? fixtureId.trim()
+                  : null),
           name: name.isEmpty ? 'Sans nom' : name,
           universe: universe,
           address: address,
           dmxModeName:
               gdtfMode?.trim().isEmpty ?? true ? null : gdtfMode!.trim(),
           channelCount: channels,
+          gdtfSpec: gdtfSpec?.trim().isEmpty ?? true ? null : gdtfSpec!.trim(),
+          transform: transform,
         ),
       );
     }
@@ -940,7 +1036,21 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
     if (spec.isEmpty || mode.isEmpty) return null;
 
     final fileName = spec.split('/').last.split('\\').last;
-    final bytes = gdtfMap[fileName.toLowerCase()];
+    final base = fileName.toLowerCase();
+
+    // Certains exports MVR mettent le GDTFSpec avec l'extension ".gdtf",
+    // d'autres sans. On essaie les deux variantes avant d'abandonner.
+    final candidates = <String>{
+      base,
+      base.endsWith('.gdtf') ? base : '$base.gdtf',
+      base.endsWith('.gdtf') ? base.substring(0, base.length - 5) : base,
+    };
+
+    Uint8List? bytes;
+    for (final key in candidates) {
+      bytes = gdtfMap[key];
+      if (bytes != null) break;
+    }
     if (bytes == null) return null;
 
     return _gdtfReader.footprintForMode(
@@ -956,22 +1066,23 @@ class _PatchMvrImportPageState extends State<PatchMvrImportPage> {
         if (rawText.isEmpty) continue;
 
         final raw = int.tryParse(rawText);
-        if (raw == null) continue;
+        if (raw == null || raw < 1) continue;
 
         final breakStr = addr.getAttribute('break')?.trim();
         final breakIndex = int.tryParse(breakStr ?? '');
-        if (breakIndex != null) {
-          final u = breakIndex + 1;
-          if (u >= 1 && raw >= 1 && raw <= 512) return (u, raw);
-        }
 
-        if (raw >= 1 && raw <= 512) return (1, raw);
+        // "break" indexe le patch DMX du fixture (0 = premier). On le
+        // combine à l'adresse en une adresse absolue avant de la reprojeter
+        // en (univers, adresse) via la même règle partout — que "raw" soit
+        // déjà une adresse absolue (>512) ou une adresse locale (<=512).
+        // Avant ce correctif, le "break" était ignoré dès que raw > 512,
+        // ce qui produisait un univers incohérent avec le cas raw <= 512.
+        final absolute = (breakIndex != null && breakIndex > 0)
+            ? (breakIndex * DmxAddressMapping.channelsPerUniverse) + raw
+            : raw;
 
-        if (raw > 512) {
-          final u = ((raw - 1) ~/ 512) + 1;
-          final a = ((raw - 1) % 512) + 1;
-          if (u >= 1 && a >= 1 && a <= 512) return (u, a);
-        }
+        final mapped = DmxAddressMapping.fromAbsolute(absolute);
+        if (mapped != null) return (mapped.universe, mapped.address);
       }
     }
     return null;
@@ -1027,6 +1138,8 @@ class _MvrRow {
   final int? address;
   final String? dmxModeName;
   final int? channelCount;
+  final String? gdtfSpec;
+  final FixtureTransform? transform;
 
   _MvrRow({
     required this.rawId,
@@ -1035,6 +1148,8 @@ class _MvrRow {
     required this.address,
     required this.dmxModeName,
     required this.channelCount,
+    this.gdtfSpec,
+    this.transform,
   });
 
   Comparable? get sortIdKey {
@@ -1065,10 +1180,42 @@ class _MvrRow {
         'address': address,
         'dmxModeName': dmxModeName,
         'channelCount': channelCount,
+        'gdtfSpec': gdtfSpec,
+        if (transform != null)
+          'transform': {
+            'x': transform!.xAxis,
+            'y': transform!.yAxis,
+            'z': transform!.zAxis,
+            't': transform!.translationMm,
+          },
       };
 
   factory _MvrRow.fromJson(dynamic raw) {
     final json = raw as Map<String, dynamic>;
+
+    FixtureTransform? transform;
+    final t = json['transform'];
+    if (t is Map) {
+      List<double>? asDoubles(dynamic v) {
+        if (v is! List) return null;
+        final list = v.map((e) => (e as num).toDouble()).toList();
+        return list.length == 3 ? list : null;
+      }
+
+      final x = asDoubles(t['x']);
+      final y = asDoubles(t['y']);
+      final z = asDoubles(t['z']);
+      final tr = asDoubles(t['t']);
+      if (x != null && y != null && z != null && tr != null) {
+        transform = FixtureTransform(
+          xAxis: x,
+          yAxis: y,
+          zAxis: z,
+          translationMm: tr,
+        );
+      }
+    }
+
     return _MvrRow(
       rawId: json['rawId'] as String?,
       name: (json['name'] as String?) ?? 'Sans nom',
@@ -1076,6 +1223,8 @@ class _MvrRow {
       address: json['address'] as int?,
       dmxModeName: json['dmxModeName'] as String?,
       channelCount: json['channelCount'] as int?,
+      gdtfSpec: json['gdtfSpec'] as String?,
+      transform: transform,
     );
   }
 }
@@ -1174,7 +1323,7 @@ class _Full512Grid10Cols extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF0B0B0B),
+        color: const Color(0xFF0E0E18),
         borderRadius: BorderRadius.circular(14),
         border: Border.all(color: Colors.white12),
       ),

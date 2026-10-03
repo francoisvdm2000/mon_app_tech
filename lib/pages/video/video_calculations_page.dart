@@ -6,6 +6,7 @@ import 'package:printing/printing.dart';
 
 import '../../app/ui/widgets.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 /// =======================
 /// SOUS-PAGE : CALCULATEUR VIDÉO
@@ -755,6 +756,7 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
               final cards = <Widget>[
                 sized(
                   SectionCard(
+                    accentColor: kSectionVideo,
                     title: loc.videoSummaryPillsTitle,
                     icon: Icons.dashboard,
                     trailing: IconButton(
@@ -777,6 +779,7 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
                 ),
                 sized(
                   ExpandSectionCard(
+                    accentColor: kSectionVideo,
                     title: loc.videoCommonParamsTitle,
                     icon: Icons.tune,
                     initiallyExpanded: true,
@@ -898,6 +901,7 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
                 ),
                 sized(
                   ExpandSectionCard(
+                    accentColor: kSectionVideo,
                     title: loc.videoCalc1Title,
                     icon: Icons.straighten,
                     child: Column(
@@ -911,6 +915,7 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
                 ),
                 sized(
                   ExpandSectionCard(
+                    accentColor: kSectionVideo,
                     title: loc.videoCalc2Title,
                     icon: Icons.swap_horiz,
                     child: Column(
@@ -924,6 +929,7 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
                 ),
                 sized(
                   ExpandSectionCard(
+                    accentColor: kSectionVideo,
                     title: loc.videoCalc3Title,
                     icon: Icons.height,
                     child: Column(
@@ -937,6 +943,7 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
                 ),
                 sized(
                   ExpandSectionCard(
+                    accentColor: kSectionVideo,
                     title: loc.videoCalc4Title,
                     icon: Icons.brightness_6,
                     child: Column(
@@ -950,6 +957,7 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
                 ),
                 sized(
                   ExpandSectionCard(
+                    accentColor: kSectionVideo,
                     title: loc.videoCalc5Title,
                     icon: Icons.grid_on,
                     child: Column(
@@ -971,6 +979,7 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
                 ),
                 sized(
                   ExpandSectionCard(
+                    accentColor: kSectionVideo,
                     title: loc.videoCalc6Title,
                     icon: Icons.auto_fix_high,
                     child: Column(

@@ -20,9 +20,19 @@
 	<string>APPL</string>
 	<key>NSCameraUsageDescription</key>
 <string>ShowTech Tools uses the camera to scan technical documents or capture images for lighting and production tools.</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>ShowTech Tools uses the microphone to give an indicative sound level (dB) reading with the built-in sound level meter tool.</string>
 
 <key>NSPhotoLibraryUsageDescription</key>
 <string>ShowTech Tools needs access to the photo library to import images used for technical calculations and documentation.</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>ShowTech Tools needs local network access to scan for devices, receive Art-Net and sACN / E1.31 lighting control data.</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_artnet._udp</string>
+		<string>_sacn._udp</string>
+		<string>_ndi._tcp</string>
+	</array>
 	<key>CFBundleShortVersionString</key>
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleSignature</key>
@@ -55,6 +65,55 @@
 	<array>
 		<integer>1</integer>
 		<integer>2</integer>
+	</array>
+	<key>GIDClientID</key>
+	<string>184476147032-gf50jagf6555kpjcthoun22ecn029tfa.apps.googleusercontent.com</string>
+
+	<!-- ── Meta / Facebook SDK ─────────────────────────────────────────── -->
+	<!-- Remplacer YOUR_FACEBOOK_CLIENT_TOKEN par la valeur dans            -->
+	<!-- Meta Developer Console > Paramètres > Avancé > Token client         -->
+	<key>FacebookAppID</key>
+	<string>1613587436417586</string>
+	<key>FacebookClientToken</key>
+	<string>3361ade0ee78af60d0ec63b659282693</string>
+	<key>FacebookDisplayName</key>
+	<string>ShowTech Tools</string>
+	<!-- Auto-log activé : gère app_open et install automatiquement -->
+	<key>FacebookAutoLogAppEventsEnabled</key>
+	<true/>
+	<!-- Nécessaire pour l'attribution publicitaire Meta -->
+	<key>FacebookAdvertiserIDCollectionEnabled</key>
+	<true/>
+	<!-- ─────────────────────────────────────────────────────────────────── -->
+
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.184476147032-gf50jagf6555kpjcthoun22ecn029tfa</string>
+			</array>
+		</dict>
+		<!-- URL scheme Meta/Facebook obligatoire pour le SDK -->
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1613587436417586</string>
+			</array>
+		</dict>
+	</array>
+
+	<!-- Schémas nécessaires pour que le SDK Facebook puisse interroger les apps installées -->
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
 	</array>
 </dict>
 </plist>

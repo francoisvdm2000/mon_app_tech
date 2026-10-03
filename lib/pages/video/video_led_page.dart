@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import '../../app/ui/widgets.dart'; // numFormatter, intFormatter, ExpandSectionCard, ResultBox, copyToClipboard
+import '../about/about_favorites.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class VideoLedPage extends StatefulWidget {
   const VideoLedPage({super.key});
@@ -81,6 +83,7 @@ class _VideoLedPageState extends State<VideoLedPage> {
     final loc = AppLocalizations.of(context);
 
     return ExpandSectionCard(
+      accentColor: kSectionVideo,
       title: title,
       icon: icon,
       initiallyExpanded: true,
@@ -192,7 +195,13 @@ class _VideoLedPageState extends State<VideoLedPage> {
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.videoLedTitle)),
+      appBar: AppBar(
+        title: Text(loc.videoLedTitle),
+        actions: const [
+          AboutPinButton(pageId: 'tool:video_led', sectionId: 'main'),
+          SizedBox(width: 4),
+        ],
+      ),
       body: SafeArea(
         bottom: true,
         child: SingleChildScrollView(

@@ -30,12 +30,11 @@ class ElectricityResultCard extends StatelessWidget {
     final resolvedMainLabel = mainLabel ?? label ?? '';
     final resolvedTitle = title ?? resolvedMainLabel;
 
-    return Card(
-      elevation: 0,
-      color: color.withValues(alpha: 0.08),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(24),
-        side: BorderSide(color: color.withValues(alpha: 0.55), width: 1.3),
+    return Container(
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.07),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: color.withValues(alpha: 0.50), width: 1.2),
       ),
       child: Padding(
         padding: const EdgeInsets.all(18),

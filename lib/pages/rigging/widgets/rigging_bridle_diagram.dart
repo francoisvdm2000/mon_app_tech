@@ -37,6 +37,7 @@ class RiggingBridleDiagramLabels {
     required this.offset,
     required this.load,
     required this.tension,
+    required this.angles,
   });
 
   final String pointA;
@@ -48,6 +49,7 @@ class RiggingBridleDiagramLabels {
   final String offset;
   final String load;
   final String tension;
+  final String angles;
 }
 
 class RiggingBridleDiagram extends StatelessWidget {
@@ -100,7 +102,7 @@ class RiggingBridleDiagram extends StatelessWidget {
           children: [
             _LegendChip(color: leftColor, label: labels.leftLeg),
             _LegendChip(color: rightColor, label: labels.rightLeg),
-            const _LegendChip(color: angleColor, label: 'Angles'),
+            _LegendChip(color: angleColor, label: labels.angles),
             _LegendChip(color: dropColor, label: labels.drop),
             _LegendChip(color: spanColor, label: labels.span),
             _LegendChip(color: offsetColor, label: labels.offset),

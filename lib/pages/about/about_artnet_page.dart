@@ -588,7 +588,7 @@ class _TocCard extends StatelessWidget {
               (it) => Padding(
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Material(
-                  color: const Color(0xFF0B0B0B),
+                  color: const Color(0xFF0E0E18),
                   borderRadius: BorderRadius.circular(12),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(12),
@@ -744,7 +744,7 @@ class _Callout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF0B0B0B),
+        color: const Color(0xFF0E0E18),
         borderRadius: BorderRadius.circular(14),
         border: Border.all(color: Colors.white12),
       ),
@@ -784,7 +784,7 @@ class _DiagramBox extends StatelessWidget {
       aspectRatio: aspect,
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: const Color(0xFF0B0B0B),
+          color: const Color(0xFF0E0E18),
           borderRadius: BorderRadius.circular(14),
           border: Border.all(color: Colors.white12),
         ),
@@ -1007,7 +1007,7 @@ class _AssetTile extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF0B0B0B),
+        color: const Color(0xFF0E0E18),
         borderRadius: BorderRadius.circular(14),
         border: Border.all(color: Colors.white12),
       ),

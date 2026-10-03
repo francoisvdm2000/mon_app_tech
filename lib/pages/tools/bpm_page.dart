@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import '../../app/ui/widgets.dart'; // SectionCard (et autres widgets maison si besoin)
+import '../about/about_favorites.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class BpmPage extends StatefulWidget {
   const BpmPage({super.key});
@@ -92,6 +94,10 @@ class _BpmPageState extends State<BpmPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(loc.bpmTitle),
+        actions: const [
+          AboutPinButton(pageId: 'tool:bpm', sectionId: 'main'),
+          SizedBox(width: 4),
+        ],
       ),
       body: SafeArea(
         bottom: true,
@@ -100,6 +106,7 @@ class _BpmPageState extends State<BpmPage> {
           child: Column(
             children: [
               SectionCard(
+                accentColor: kSectionBpm,
                 title: loc.bpmTapTitle,
                 icon: Icons.touch_app_outlined,
                 child: Column(
@@ -164,6 +171,7 @@ class _BpmPageState extends State<BpmPage> {
               ),
               const SizedBox(height: 12),
               SectionCard(
+                accentColor: kSectionBpm,
                 title: loc.bpmManualTitle,
                 icon: Icons.edit_outlined,
                 child: Column(
@@ -192,6 +200,7 @@ class _BpmPageState extends State<BpmPage> {
               ),
               const SizedBox(height: 12),
               SectionCard(
+                accentColor: kSectionBpm,
                 title: loc.bpmConversionsTitle,
                 icon: Icons.calculate_outlined,
                 child: Column(
@@ -261,9 +270,9 @@ class _ConvRow extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFF0B0B0B),
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.10)),
+        color: const Color(0xFF0E0E18),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.09)),
       ),
       child: Row(
         children: [
@@ -317,9 +326,9 @@ class _BpmBigValue extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFF0B0B0B),
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.10)),
+        color: const Color(0xFF0E0E18),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.09)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,

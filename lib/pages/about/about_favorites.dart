@@ -214,7 +214,7 @@ class AboutSectionPin extends StatelessWidget {
           right: 10,
           child: DecoratedBox(
             decoration: BoxDecoration(
-              color: const Color(0xFF0B0B0B).withValues(alpha: 0.96),
+              color: const Color(0xFF0E0E18).withValues(alpha: 0.96),
               borderRadius: BorderRadius.circular(999),
               border: Border.all(
                 color: Colors.white.withValues(alpha: 0.10),

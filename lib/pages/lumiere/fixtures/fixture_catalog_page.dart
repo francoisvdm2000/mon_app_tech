@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'fixture_hybrid_repository.dart';
 import 'fixture_models.dart';
+import '../../about/about_favorites.dart';
 
 class FixtureCatalogPage extends StatefulWidget {
   const FixtureCatalogPage({super.key});
@@ -172,6 +173,7 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
       appBar: AppBar(
         title: Text(loc.lightCatalogTitle),
         actions: [
+          const AboutPinButton(pageId: 'tool:lumiere_fixture_catalog', sectionId: 'main'),
           if (_refreshing)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -261,7 +263,12 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
                   },
           ),
           const SizedBox(height: 24),
-          Card(
+          Container(
+            decoration: BoxDecoration(
+              color: const Color(0xFF161622),
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: Colors.white.withValues(alpha: 0.07)),
+            ),
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
@@ -341,6 +348,7 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
           ),
           const SizedBox(height: 6),
           DropdownButtonFormField<T>(
+            isExpanded: true,
             initialValue: value,
             items: items
                 .map(
@@ -362,8 +370,26 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
 
   Widget _info(String label, String value) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8),
-      child: Text('$label : $value'),
+      padding: const EdgeInsets.symmetric(vertical: 6),
+      child: Row(
+        children: [
+          Expanded(
+            child: Text(
+              label,
+              style: const TextStyle(color: Colors.white70, fontSize: 14),
+            ),
+          ),
+          const SizedBox(width: 12),
+          Text(
+            value,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 14,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

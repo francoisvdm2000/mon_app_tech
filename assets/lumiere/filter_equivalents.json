@@ -1,0 +1,1538 @@
+[
+  {
+    "lee": "L2",
+    "leeName": "Rose Pink",
+    "roscolux": "R44",
+    "ecolour": "E2"
+  },
+  {
+    "lee": "L3",
+    "leeName": "Lavender Tint",
+    "roscolux": null,
+    "ecolour": "E3"
+  },
+  {
+    "lee": "L4",
+    "leeName": "Med Bast Amber",
+    "roscolux": "R4",
+    "ecolour": "E4"
+  },
+  {
+    "lee": "L7",
+    "leeName": "Pale Yellow",
+    "roscolux": "R7",
+    "ecolour": "E7"
+  },
+  {
+    "lee": "L8",
+    "leeName": "Dark Salmon",
+    "roscolux": "R40",
+    "ecolour": "E8"
+  },
+  {
+    "lee": "L9",
+    "leeName": "Pale Amber Gold",
+    "roscolux": "R9",
+    "ecolour": "E9"
+  },
+  {
+    "lee": "L10",
+    "leeName": "Med Yellow",
+    "roscolux": "R10",
+    "ecolour": "E10"
+  },
+  {
+    "lee": "L13",
+    "leeName": "Straw Tint",
+    "roscolux": "R13",
+    "ecolour": "E13"
+  },
+  {
+    "lee": "L15",
+    "leeName": "Deep Straw",
+    "roscolux": "R15",
+    "ecolour": "E15"
+  },
+  {
+    "lee": "L17",
+    "leeName": "Surprise Peach",
+    "roscolux": "R17",
+    "ecolour": "E17"
+  },
+  {
+    "lee": "L19",
+    "leeName": "Fire",
+    "roscolux": "R19",
+    "ecolour": "E19"
+  },
+  {
+    "lee": "L20",
+    "leeName": "Med Amber",
+    "roscolux": "R20",
+    "ecolour": "E20"
+  },
+  {
+    "lee": "L21",
+    "leeName": "Gold Amber",
+    "roscolux": "R21",
+    "ecolour": "E21"
+  },
+  {
+    "lee": "L22",
+    "leeName": "Dark Amber",
+    "roscolux": "R22",
+    "ecolour": "E22"
+  },
+  {
+    "lee": "L24",
+    "leeName": "Scarlet",
+    "roscolux": "R24",
+    "ecolour": "E24"
+  },
+  {
+    "lee": "L25",
+    "leeName": "Sunset red",
+    "roscolux": "R25",
+    "ecolour": "E25"
+  },
+  {
+    "lee": "L26",
+    "leeName": "Bright red",
+    "roscolux": "R26",
+    "ecolour": "E26"
+  },
+  {
+    "lee": "L27",
+    "leeName": "Med red",
+    "roscolux": "R27",
+    "ecolour": "E27"
+  },
+  {
+    "lee": "L29",
+    "leeName": "Plasa Red",
+    "roscolux": null,
+    "ecolour": "E29"
+  },
+  {
+    "lee": "L35",
+    "leeName": "Light Pink",
+    "roscolux": "R35",
+    "ecolour": "E35"
+  },
+  {
+    "lee": "L36",
+    "leeName": "Med Pink",
+    "roscolux": "R36",
+    "ecolour": "E36"
+  },
+  {
+    "lee": "L39",
+    "leeName": "Pink Carnation",
+    "roscolux": "R37",
+    "ecolour": "E39"
+  },
+  {
+    "lee": "L46",
+    "leeName": "Dk Magenta",
+    "roscolux": "R46",
+    "ecolour": "E46"
+  },
+  {
+    "lee": "L48",
+    "leeName": "Rose Purple",
+    "roscolux": "R48",
+    "ecolour": "E48"
+  },
+  {
+    "lee": "L49",
+    "leeName": "Medium Purple",
+    "roscolux": "R49",
+    "ecolour": "E49"
+  },
+  {
+    "lee": "L52",
+    "leeName": "Lt Lavender",
+    "roscolux": "R52",
+    "ecolour": "ECooki5e2s"
+  },
+  {
+    "lee": "L53",
+    "leeName": "Paler Lavender",
+    "roscolux": "R53",
+    "ecolour": "E53"
+  },
+  {
+    "lee": "L58",
+    "leeName": "Lavender",
+    "roscolux": "R58",
+    "ecolour": "E58"
+  },
+  {
+    "lee": "L61",
+    "leeName": "Mist Blue",
+    "roscolux": "R61",
+    "ecolour": "E61"
+  },
+  {
+    "lee": "L63",
+    "leeName": "Pale Blue",
+    "roscolux": "R63",
+    "ecolour": "E63"
+  },
+  {
+    "lee": "L71",
+    "leeName": "Tokyo Blue",
+    "roscolux": "R382",
+    "ecolour": "E71"
+  },
+  {
+    "lee": "L75",
+    "leeName": "Evening Blue",
+    "roscolux": "R81",
+    "ecolour": "E75"
+  },
+  {
+    "lee": "L79",
+    "leeName": "Just Blue",
+    "roscolux": "R79",
+    "ecolour": "E79"
+  },
+  {
+    "lee": "L85",
+    "leeName": "Deeper Blue",
+    "roscolux": "R85",
+    "ecolour": "E85"
+  },
+  {
+    "lee": "L88",
+    "leeName": "Lime Green",
+    "roscolux": "R388",
+    "ecolour": "E88"
+  },
+  {
+    "lee": "L89",
+    "leeName": "Moss Green",
+    "roscolux": "R89",
+    "ecolour": "E89"
+  },
+  {
+    "lee": "L90",
+    "leeName": "Dk Yellow/Green",
+    "roscolux": "R90",
+    "ecolour": "E90"
+  },
+  {
+    "lee": "L100",
+    "leeName": "Spring Yellow",
+    "roscolux": "R10",
+    "ecolour": "E100"
+  },
+  {
+    "lee": "L101",
+    "leeName": "Yellow",
+    "roscolux": "R312",
+    "ecolour": "E101"
+  },
+  {
+    "lee": "L102",
+    "leeName": "Lt Amber",
+    "roscolux": "R11",
+    "ecolour": "E102"
+  },
+  {
+    "lee": "L103",
+    "leeName": "Straw",
+    "roscolux": "R8",
+    "ecolour": "E103"
+  },
+  {
+    "lee": "L104",
+    "leeName": "Deep Amber",
+    "roscolux": "R14",
+    "ecolour": "E104"
+  },
+  {
+    "lee": "L105",
+    "leeName": "Orange",
+    "roscolux": "R15",
+    "ecolour": "E105"
+  },
+  {
+    "lee": "L106",
+    "leeName": "Primary Red",
+    "roscolux": "R26",
+    "ecolour": "E106"
+  },
+  {
+    "lee": "L107",
+    "leeName": "Lt. Rose",
+    "roscolux": "R31",
+    "ecolour": "E107"
+  },
+  {
+    "lee": "L108",
+    "leeName": "English Rose",
+    "roscolux": "R317",
+    "ecolour": "E108"
+  },
+  {
+    "lee": "L109",
+    "leeName": "Lt. Salmon",
+    "roscolux": "R331",
+    "ecolour": "E109"
+  },
+  {
+    "lee": "L110",
+    "leeName": "Middle Rose",
+    "roscolux": "R38",
+    "ecolour": "E110"
+  },
+  {
+    "lee": "L111",
+    "leeName": "Dark Pink",
+    "roscolux": null,
+    "ecolour": "E111"
+  },
+  {
+    "lee": "L113",
+    "leeName": "Magenta",
+    "roscolux": "R42",
+    "ecolour": "E113"
+  },
+  {
+    "lee": "L115",
+    "leeName": "Peacock Blue",
+    "roscolux": "R370",
+    "ecolour": "E115"
+  },
+  {
+    "lee": "L116",
+    "leeName": "Med Blue-Green",
+    "roscolux": "R95",
+    "ecolour": "E116"
+  },
+  {
+    "lee": "L117",
+    "leeName": "Steel Blue",
+    "roscolux": "R363",
+    "ecolour": "E117"
+  },
+  {
+    "lee": "L118",
+    "leeName": "Light Blue",
+    "roscolux": null,
+    "ecolour": "E118"
+  },
+  {
+    "lee": "L119",
+    "leeName": "Dark Blue",
+    "roscolux": "R74",
+    "ecolour": "E119"
+  },
+  {
+    "lee": "L120",
+    "leeName": "Deep Blue",
+    "roscolux": "R384",
+    "ecolour": "E120"
+  },
+  {
+    "lee": "L121",
+    "leeName": "Lee Green",
+    "roscolux": "R86",
+    "ecolour": "E121"
+  },
+  {
+    "lee": "L122",
+    "leeName": "Fern Green",
+    "roscolux": "R89",
+    "ecolour": "E122"
+  },
+  {
+    "lee": "L124",
+    "leeName": "Dark Green",
+    "roscolux": null,
+    "ecolour": "E124"
+  },
+  {
+    "lee": "L126",
+    "leeName": "Mauve",
+    "roscolux": "R49",
+    "ecolour": "E126"
+  },
+  {
+    "lee": "L127",
+    "leeName": "Smokey Pink",
+    "roscolux": "R50",
+    "ecolour": "E127"
+  },
+  {
+    "lee": "L128",
+    "leeName": "Bright Pink",
+    "roscolux": "R339",
+    "ecolour": "E128"
+  },
+  {
+    "lee": "L129",
+    "leeName": "Heavy Frost",
+    "roscolux": "R103",
+    "ecolour": "E129"
+  },
+  {
+    "lee": "L130",
+    "leeName": "Clear",
+    "roscolux": "R0",
+    "ecolour": "E130"
+  },
+  {
+    "lee": "L131",
+    "leeName": "Marine Blue",
+    "roscolux": "R370",
+    "ecolour": "E131"
+  },
+  {
+    "lee": "L132",
+    "leeName": "Med Blue",
+    "roscolux": "R77",
+    "ecolour": "E132"
+  },
+  {
+    "lee": "L134",
+    "leeName": "Golden Amber",
+    "roscolux": "R321",
+    "ecolour": "E134"
+  },
+  {
+    "lee": "L135",
+    "leeName": "Dip Golden Amber",
+    "roscolux": null,
+    "ecolour": "E135"
+  },
+  {
+    "lee": "L136",
+    "leeName": "Pale Lavender",
+    "roscolux": "R52",
+    "ecolour": "E136"
+  },
+  {
+    "lee": "L137",
+    "leeName": "Spec Lavender",
+    "roscolux": "R55",
+    "ecolour": "E137"
+  },
+  {
+    "lee": "L138",
+    "leeName": "Pale Green",
+    "roscolux": "R388",
+    "ecolour": "E138"
+  },
+  {
+    "lee": "L139",
+    "leeName": "Primary Green",
+    "roscolux": "R90",
+    "ecolour": "E139"
+  },
+  {
+    "lee": "L140",
+    "leeName": "Summer Blue",
+    "roscolux": "R70",
+    "ecolour": "E140"
+  },
+  {
+    "lee": "L141",
+    "leeName": "Bright Blue",
+    "roscolux": "R69",
+    "ecolour": "E141"
+  },
+  {
+    "lee": "L142",
+    "leeName": "Pale Violet",
+    "roscolux": "R355",
+    "ecolour": "E142"
+  },
+  {
+    "lee": "L143",
+    "leeName": "Pale Navy Blue",
+    "roscolux": "R75",
+    "ecolour": "E143"
+  },
+  {
+    "lee": "L144",
+    "leeName": "No Color Blue",
+    "roscolux": "R72",
+    "ecolour": "E144"
+  },
+  {
+    "lee": "L147",
+    "leeName": "Apricot",
+    "roscolux": "R18",
+    "ecolour": "E147"
+  },
+  {
+    "lee": "L148",
+    "leeName": "Bright Rose",
+    "roscolux": "R332",
+    "ecolour": "E148"
+  },
+  {
+    "lee": "L151",
+    "leeName": "Gold Tint",
+    "roscolux": "R305",
+    "ecolour": "E151"
+  },
+  {
+    "lee": "L152",
+    "leeName": "Pale Gold",
+    "roscolux": "R304",
+    "ecolour": "E152"
+  },
+  {
+    "lee": "L153",
+    "leeName": "Pale Salmon",
+    "roscolux": "R331",
+    "ecolour": "E153"
+  },
+  {
+    "lee": "L154",
+    "leeName": "Pale Rose",
+    "roscolux": "R305",
+    "ecolour": "E154"
+  },
+  {
+    "lee": "L156",
+    "leeName": "Chocolate",
+    "roscolux": "R99",
+    "ecolour": "E156"
+  },
+  {
+    "lee": "L157",
+    "leeName": "Pink",
+    "roscolux": null,
+    "ecolour": "E157"
+  },
+  {
+    "lee": "L158",
+    "leeName": "Deep Orange",
+    "roscolux": "R23",
+    "ecolour": "E158"
+  },
+  {
+    "lee": "L159",
+    "leeName": "No Color Straw",
+    "roscolux": "R6",
+    "ecolour": "E159"
+  },
+  {
+    "lee": "L161",
+    "leeName": "Slate Blue",
+    "roscolux": "R367",
+    "ecolour": "E161"
+  },
+  {
+    "lee": "L162",
+    "leeName": "Bastard Amber",
+    "roscolux": "R2",
+    "ecolour": "E162"
+  },
+  {
+    "lee": "L164",
+    "leeName": "Flame Red",
+    "roscolux": "R25",
+    "ecolour": "E164"
+  },
+  {
+    "lee": "L165",
+    "leeName": "Daylight Blue",
+    "roscolux": "R67",
+    "ecolour": "E165"
+  },
+  {
+    "lee": "L166",
+    "leeName": "Pale Red",
+    "roscolux": "R324",
+    "ecolour": "E166"
+  },
+  {
+    "lee": "L169",
+    "leeName": "Lilac Tint",
+    "roscolux": "R351",
+    "ecolour": "E169"
+  },
+  {
+    "lee": "L170",
+    "leeName": "Deep Lavender",
+    "roscolux": "R4930",
+    "ecolour": "E170"
+  },
+  {
+    "lee": "L172",
+    "leeName": "Lagoon Blue",
+    "roscolux": "R71",
+    "ecolour": "E172"
+  },
+  {
+    "lee": "L174",
+    "leeName": "Dk Steel Blue",
+    "roscolux": "R64",
+    "ecolour": "E174"
+  },
+  {
+    "lee": "L176",
+    "leeName": "Loving Amber",
+    "roscolux": "R1",
+    "ecolour": "E176"
+  },
+  {
+    "lee": "L179",
+    "leeName": "Chrome Orange",
+    "roscolux": "R15",
+    "ecolour": "E179"
+  },
+  {
+    "lee": "L180",
+    "leeName": "Dark Lavendar",
+    "roscolux": "R357",
+    "ecolour": "E180"
+  },
+  {
+    "lee": "L181",
+    "leeName": "Congo Blue",
+    "roscolux": "R382",
+    "ecolour": "E181"
+  },
+  {
+    "lee": "L182",
+    "leeName": "Light Red",
+    "roscolux": "R2001",
+    "ecolour": "E182"
+  },
+  {
+    "lee": "L183",
+    "leeName": "Moonlight Blue",
+    "roscolux": null,
+    "ecolour": "E183"
+  },
+  {
+    "lee": "L184",
+    "leeName": "Cosmetic Peach",
+    "roscolux": null,
+    "ecolour": "E184"
+  },
+  {
+    "lee": "L185",
+    "leeName": "Cosm Burgundy",
+    "roscolux": null,
+    "ecolour": "E185"
+  },
+  {
+    "lee": "L186",
+    "leeName": "Cosm Silver Rose",
+    "roscolux": null,
+    "ecolour": "E186"
+  },
+  {
+    "lee": "L187",
+    "leeName": "Cosm Rouge",
+    "roscolux": null,
+    "ecolour": "E187"
+  },
+  {
+    "lee": "L188",
+    "leeName": "Cosm Highlight",
+    "roscolux": null,
+    "ecolour": "E188"
+  },
+  {
+    "lee": "L189",
+    "leeName": "Cosm Silver Moss",
+    "roscolux": null,
+    "ecolour": "E189"
+  },
+  {
+    "lee": "L190",
+    "leeName": "Cosm Emerald",
+    "roscolux": null,
+    "ecolour": "E190"
+  },
+  {
+    "lee": "L191",
+    "leeName": "Cosm Aqua Blue",
+    "roscolux": null,
+    "ecolour": "E191"
+  },
+  {
+    "lee": "L192",
+    "leeName": "Flesh Pink",
+    "roscolux": null,
+    "ecolour": "E192"
+  },
+  {
+    "lee": "L193",
+    "leeName": "Rosy Amber",
+    "roscolux": "R32",
+    "ecolour": "E193"
+  },
+  {
+    "lee": "L194",
+    "leeName": "Surprise Pink",
+    "roscolux": "R57",
+    "ecolour": "E194"
+  },
+  {
+    "lee": "L195",
+    "leeName": "Zenith Blue",
+    "roscolux": "R383",
+    "ecolour": "E195"
+  },
+  {
+    "lee": "L196",
+    "leeName": "True Blue",
+    "roscolux": "R65",
+    "ecolour": "E196"
+  },
+  {
+    "lee": "L197",
+    "leeName": "Alice Blue",
+    "roscolux": null,
+    "ecolour": "E197"
+  },
+  {
+    "lee": "L198",
+    "leeName": "Palace Blue",
+    "roscolux": null,
+    "ecolour": "E198"
+  },
+  {
+    "lee": "L199",
+    "leeName": "Regal Blue",
+    "roscolux": null,
+    "ecolour": "E377"
+  },
+  {
+    "lee": "L200",
+    "leeName": "Double C.T. Blue",
+    "roscolux": null,
+    "ecolour": "E200"
+  },
+  {
+    "lee": "L201",
+    "leeName": "Full C.T. Blue",
+    "roscolux": "R371",
+    "ecolour": "E201"
+  },
+  {
+    "lee": "L202",
+    "leeName": "1/2 C.T. Blue",
+    "roscolux": "R372",
+    "ecolour": "E202"
+  },
+  {
+    "lee": "L203",
+    "leeName": "1/4 C.T. Blue",
+    "roscolux": "R373",
+    "ecolour": "E203"
+  },
+  {
+    "lee": "L204",
+    "leeName": "Full C.T. Orange",
+    "roscolux": "R16",
+    "ecolour": "E204"
+  },
+  {
+    "lee": "L205",
+    "leeName": "1/2 C.T. Orange",
+    "roscolux": "R3442",
+    "ecolour": "E205"
+  },
+  {
+    "lee": "L206",
+    "leeName": "1/4 C.T. Orange",
+    "roscolux": "R3443",
+    "ecolour": "E206"
+  },
+  {
+    "lee": "L207",
+    "leeName": "CTO +.3 Neu Dens",
+    "roscolux": "R3405",
+    "ecolour": "E207"
+  },
+  {
+    "lee": "L208",
+    "leeName": "CTO +.6 Neu Dens",
+    "roscolux": "R3406",
+    "ecolour": "E208"
+  },
+  {
+    "lee": "L209",
+    "leeName": ".3 Neutral Density",
+    "roscolux": "R97",
+    "ecolour": "E209"
+  },
+  {
+    "lee": "L210",
+    "leeName": ".6 Neutral Density",
+    "roscolux": "R98",
+    "ecolour": "E210"
+  },
+  {
+    "lee": "L211",
+    "leeName": ".9 Neutral Density",
+    "roscolux": "R3404",
+    "ecolour": "E211"
+  },
+  {
+    "lee": "L212",
+    "leeName": "L.C.T. Yellow",
+    "roscolux": "R6",
+    "ecolour": "E212"
+  },
+  {
+    "lee": "L213",
+    "leeName": "Wht Flame Green",
+    "roscolux": null,
+    "ecolour": "E213"
+  },
+  {
+    "lee": "L214",
+    "leeName": "Full Tough Spun",
+    "roscolux": "R105",
+    "ecolour": "E214"
+  },
+  {
+    "lee": "L215",
+    "leeName": "1/2 Tough Spun",
+    "roscolux": "R106",
+    "ecolour": "E215"
+  },
+  {
+    "lee": "L216",
+    "leeName": "White Diffusion",
+    "roscolux": "R116",
+    "ecolour": "E216"
+  },
+  {
+    "lee": "L217",
+    "leeName": "Blue Diffusion",
+    "roscolux": null,
+    "ecolour": "E217"
+  },
+  {
+    "lee": "L218",
+    "leeName": "1/8 C.T. Blue",
+    "roscolux": null,
+    "ecolour": "E218"
+  },
+  {
+    "lee": "L219",
+    "leeName": "Fluorescent Green",
+    "roscolux": "R93",
+    "ecolour": "E219"
+  },
+  {
+    "lee": "L220",
+    "leeName": "White Frost",
+    "roscolux": null,
+    "ecolour": "E220"
+  },
+  {
+    "lee": "L221",
+    "leeName": "Blue Frost",
+    "roscolux": null,
+    "ecolour": "E221"
+  },
+  {
+    "lee": "L223",
+    "leeName": "1/8 C.T.O.",
+    "roscolux": "R3410",
+    "ecolour": "E223"
+  },
+  {
+    "lee": "L224",
+    "leeName": "Daylt Blue Frost",
+    "roscolux": null,
+    "ecolour": "E224"
+  },
+  {
+    "lee": "L225",
+    "leeName": "Lee N.D. Frost",
+    "roscolux": null,
+    "ecolour": "E225"
+  },
+  {
+    "lee": "L226",
+    "leeName": "Lee U.V.",
+    "roscolux": "R3114",
+    "ecolour": "E226"
+  },
+  {
+    "lee": "L228",
+    "leeName": "Brushed Silk",
+    "roscolux": "R160",
+    "ecolour": "E228"
+  },
+  {
+    "lee": "L229",
+    "leeName": "Qtr Tough Spun",
+    "roscolux": "R106",
+    "ecolour": "E229"
+  },
+  {
+    "lee": "L236",
+    "leeName": "HMI (to Tungsten)",
+    "roscolux": "R316",
+    "ecolour": "E236"
+  },
+  {
+    "lee": "L237",
+    "leeName": "C.I.D. (to Tungsten)",
+    "roscolux": null,
+    "ecolour": "E317"
+  },
+  {
+    "lee": "L241",
+    "leeName": "Lee Fluor",
+    "roscolux": "R5700K",
+    "ecolour": "E241"
+  },
+  {
+    "lee": "L242",
+    "leeName": "Lee Fluor",
+    "roscolux": "R4300K",
+    "ecolour": "E242"
+  },
+  {
+    "lee": "L243",
+    "leeName": "Lee Fluor",
+    "roscolux": "R3600K",
+    "ecolour": "E243"
+  },
+  {
+    "lee": "L244",
+    "leeName": "Lee Plus Green",
+    "roscolux": "R88",
+    "ecolour": "E244"
+  },
+  {
+    "lee": "L245",
+    "leeName": "1/2 Plus Green",
+    "roscolux": "R87",
+    "ecolour": "E245"
+  },
+  {
+    "lee": "L246",
+    "leeName": "1/4 Plus Green",
+    "roscolux": "R3316",
+    "ecolour": "E246"
+  },
+  {
+    "lee": "L247",
+    "leeName": "Lee Minus Green",
+    "roscolux": "R38",
+    "ecolour": "E247"
+  },
+  {
+    "lee": "L248",
+    "leeName": "1/2 Minus Green",
+    "roscolux": "R3313",
+    "ecolour": "E248"
+  },
+  {
+    "lee": "L249",
+    "leeName": "1/4 Minus Green",
+    "roscolux": "R3314",
+    "ecolour": "E249"
+  },
+  {
+    "lee": "L250",
+    "leeName": "1/2 White Diffusion",
+    "roscolux": "R117",
+    "ecolour": "E250"
+  },
+  {
+    "lee": "L251",
+    "leeName": "1/4 White Diffusion",
+    "roscolux": "R118",
+    "ecolour": "E251"
+  },
+  {
+    "lee": "L252",
+    "leeName": "1/8 White Diffusion",
+    "roscolux": null,
+    "ecolour": "E252"
+  },
+  {
+    "lee": "L253",
+    "leeName": "Hampshire Frost",
+    "roscolux": "R119",
+    "ecolour": "E253"
+  },
+  {
+    "lee": "L255",
+    "leeName": "Hollywood Frost",
+    "roscolux": null,
+    "ecolour": "E103"
+  },
+  {
+    "lee": "L256",
+    "leeName": "1/2 Hamp Frost",
+    "roscolux": null,
+    "ecolour": "E256"
+  },
+  {
+    "lee": "L257",
+    "leeName": "1/4 Hamp Frost",
+    "roscolux": null,
+    "ecolour": "E257"
+  },
+  {
+    "lee": "L258",
+    "leeName": "1/8 Hamp Frost",
+    "roscolux": null,
+    "ecolour": "E258"
+  },
+  {
+    "lee": "L270",
+    "leeName": "Lee Scrim",
+    "roscolux": null,
+    "ecolour": "E270"
+  },
+  {
+    "lee": "L271",
+    "leeName": "Mirror Silver",
+    "roscolux": null,
+    "ecolour": "E271"
+  },
+  {
+    "lee": "L272",
+    "leeName": "Soft Gold Refltr",
+    "roscolux": null,
+    "ecolour": "E272"
+  },
+  {
+    "lee": "L273",
+    "leeName": "Soft Silver Refltr",
+    "roscolux": null,
+    "ecolour": "E273"
+  },
+  {
+    "lee": "L274",
+    "leeName": "Mirror Gold",
+    "roscolux": null,
+    "ecolour": "E274"
+  },
+  {
+    "lee": "L275",
+    "leeName": "Black Scrim",
+    "roscolux": null,
+    "ecolour": "E275"
+  },
+  {
+    "lee": "L278",
+    "leeName": "Eighth Plus Green",
+    "roscolux": "R3317",
+    "ecolour": "E278"
+  },
+  {
+    "lee": "L279",
+    "leeName": "Eighth Minus Green",
+    "roscolux": "R3318",
+    "ecolour": "E279"
+  },
+  {
+    "lee": "L281",
+    "leeName": "3/4 C.T. Blue",
+    "roscolux": null,
+    "ecolour": "E281"
+  },
+  {
+    "lee": "L285",
+    "leeName": "3/4 C.T. Orange",
+    "roscolux": null,
+    "ecolour": "E285"
+  },
+  {
+    "lee": "L298",
+    "leeName": ".15 ND",
+    "roscolux": null,
+    "ecolour": "E298"
+  },
+  {
+    "lee": "L299",
+    "leeName": "1.2 ND",
+    "roscolux": null,
+    "ecolour": "E299"
+  },
+  {
+    "lee": "L322",
+    "leeName": "Soft Green",
+    "roscolux": "R92",
+    "ecolour": "E322"
+  },
+  {
+    "lee": "L323",
+    "leeName": "Jade",
+    "roscolux": "R393",
+    "ecolour": "E323"
+  },
+  {
+    "lee": "L325",
+    "leeName": "Mallard Green",
+    "roscolux": "R395",
+    "ecolour": "E325"
+  },
+  {
+    "lee": "L327",
+    "leeName": "Forest Green",
+    "roscolux": null,
+    "ecolour": "E327"
+  },
+  {
+    "lee": "L328",
+    "leeName": "Follies Pink",
+    "roscolux": "R344",
+    "ecolour": "E328"
+  },
+  {
+    "lee": "L332",
+    "leeName": "S Spec Rose Pink",
+    "roscolux": "R342",
+    "ecolour": "E332"
+  },
+  {
+    "lee": "L341",
+    "leeName": "Plum",
+    "roscolux": null,
+    "ecolour": "E341"
+  },
+  {
+    "lee": "L343",
+    "leeName": "Spec Med Lavende",
+    "roscolux": "R357",
+    "ecolour": "E343"
+  },
+  {
+    "lee": "L344",
+    "leeName": "Violet",
+    "roscolux": "R357",
+    "ecolour": "E344"
+  },
+  {
+    "lee": "L345",
+    "leeName": "Fuchsia Pink",
+    "roscolux": null,
+    "ecolour": "E345"
+  },
+  {
+    "lee": "L352",
+    "leeName": "Glacier Blue",
+    "roscolux": "R67",
+    "ecolour": "E352"
+  },
+  {
+    "lee": "L353",
+    "leeName": "Lighter Blue",
+    "roscolux": "R72",
+    "ecolour": "E353"
+  },
+  {
+    "lee": "L354",
+    "leeName": "Spec Steel Blue",
+    "roscolux": "R370",
+    "ecolour": "E354"
+  },
+  {
+    "lee": "L363",
+    "leeName": "Spec Med Blue",
+    "roscolux": "R74",
+    "ecolour": "E363"
+  },
+  {
+    "lee": "L366",
+    "leeName": "Cornflower",
+    "roscolux": "R361",
+    "ecolour": "E366"
+  },
+  {
+    "lee": "L400",
+    "leeName": "Leelux",
+    "roscolux": "R116",
+    "ecolour": "E400"
+  },
+  {
+    "lee": "L410",
+    "leeName": "Opal Frost",
+    "roscolux": "R112",
+    "ecolour": "E410"
+  },
+  {
+    "lee": "L416",
+    "leeName": "3/4 White Diff",
+    "roscolux": "R103",
+    "ecolour": "E416"
+  },
+  {
+    "lee": "L420",
+    "leeName": "Light Opal Frost",
+    "roscolux": "R162",
+    "ecolour": "E420"
+  },
+  {
+    "lee": "L441",
+    "leeName": "Full C.T. Straw",
+    "roscolux": "R3441",
+    "ecolour": "E441"
+  },
+  {
+    "lee": "L442",
+    "leeName": "1/2 C.T. Straw",
+    "roscolux": "R3442",
+    "ecolour": "E442"
+  },
+  {
+    "lee": "L443",
+    "leeName": "1/4 C.T. Straw",
+    "roscolux": "R3443",
+    "ecolour": "E443"
+  },
+  {
+    "lee": "L444",
+    "leeName": "1/8 C.T. Straw",
+    "roscolux": "R3444",
+    "ecolour": "E444"
+  },
+  {
+    "lee": "L450",
+    "leeName": "3/8 White Diff",
+    "roscolux": "R117",
+    "ecolour": "E450"
+  },
+  {
+    "lee": "L452",
+    "leeName": "1/16 White Diff",
+    "roscolux": "R118",
+    "ecolour": "E452"
+  },
+  {
+    "lee": "L701",
+    "leeName": "Provence",
+    "roscolux": "R358",
+    "ecolour": "E701"
+  },
+  {
+    "lee": "L702",
+    "leeName": "Special Pale Lavender",
+    "roscolux": "R54",
+    "ecolour": "E702"
+  },
+  {
+    "lee": "L704",
+    "leeName": "Lily",
+    "roscolux": "R52",
+    "ecolour": "E704"
+  },
+  {
+    "lee": "L705",
+    "leeName": "Lily Frost",
+    "roscolux": "R52",
+    "ecolour": "E705"
+  },
+  {
+    "lee": "L707",
+    "leeName": "Ultimate Violet",
+    "roscolux": "R382",
+    "ecolour": "E707"
+  },
+  {
+    "lee": "L708",
+    "leeName": "Cool Lavendar",
+    "roscolux": null,
+    "ecolour": "E708"
+  },
+  {
+    "lee": "L709",
+    "leeName": "Electric Lilac",
+    "roscolux": "R4230",
+    "ecolour": "E709"
+  },
+  {
+    "lee": "L711",
+    "leeName": "Cold Blue",
+    "roscolux": null,
+    "ecolour": "E711"
+  },
+  {
+    "lee": "L712",
+    "leeName": "Bedford Blue",
+    "roscolux": "R78",
+    "ecolour": "E712"
+  },
+  {
+    "lee": "L713",
+    "leeName": "J. Winter Blue",
+    "roscolux": "R385",
+    "ecolour": "E713"
+  },
+  {
+    "lee": "L714",
+    "leeName": "Elysian Blue",
+    "roscolux": "R79",
+    "ecolour": "E714"
+  },
+  {
+    "lee": "L715",
+    "leeName": "Cabana Blue",
+    "roscolux": "R83",
+    "ecolour": "E715"
+  },
+  {
+    "lee": "L716",
+    "leeName": "Mikkel Blue",
+    "roscolux": "R384",
+    "ecolour": "E716"
+  },
+  {
+    "lee": "L717",
+    "leeName": "Shanklin Frost",
+    "roscolux": null,
+    "ecolour": "E717"
+  },
+  {
+    "lee": "L718",
+    "leeName": "Half Shanklin Frost",
+    "roscolux": null,
+    "ecolour": "E718"
+  },
+  {
+    "lee": "L719",
+    "leeName": "Colour Wash Blue",
+    "roscolux": "R78",
+    "ecolour": "E719"
+  },
+  {
+    "lee": "L720",
+    "leeName": "Durham Daylight Frost",
+    "roscolux": null,
+    "ecolour": "E720"
+  },
+  {
+    "lee": "L721",
+    "leeName": "Berry Blue",
+    "roscolux": "R74",
+    "ecolour": "E721"
+  },
+  {
+    "lee": "L722",
+    "leeName": "Bray Blue",
+    "roscolux": "R2006",
+    "ecolour": "E722"
+  },
+  {
+    "lee": "L723",
+    "leeName": "Virgin Blue",
+    "roscolux": "R79",
+    "ecolour": "E723"
+  },
+  {
+    "lee": "L724",
+    "leeName": "Ocean Blue",
+    "roscolux": "R65",
+    "ecolour": "E724"
+  },
+  {
+    "lee": "L725",
+    "leeName": "Old Steel Blue",
+    "roscolux": "R70",
+    "ecolour": "E725"
+  },
+  {
+    "lee": "L728",
+    "leeName": "Steel Green",
+    "roscolux": null,
+    "ecolour": "E728"
+  },
+  {
+    "lee": "L729",
+    "leeName": "Scuba Blue",
+    "roscolux": "R95",
+    "ecolour": "E729"
+  },
+  {
+    "lee": "L730",
+    "leeName": "Liberty Green",
+    "roscolux": null,
+    "ecolour": "E730"
+  },
+  {
+    "lee": "L735",
+    "leeName": "Velvet Green",
+    "roscolux": "R91",
+    "ecolour": "E735"
+  },
+  {
+    "lee": "L736",
+    "leeName": "Twickenham Green",
+    "roscolux": "R2004",
+    "ecolour": "E736"
+  },
+  {
+    "lee": "L738",
+    "leeName": "Jas Green",
+    "roscolux": "R4460",
+    "ecolour": "E738"
+  },
+  {
+    "lee": "L744",
+    "leeName": "Dirty White",
+    "roscolux": "R3441",
+    "ecolour": "E744"
+  },
+  {
+    "lee": "L746",
+    "leeName": "Brown",
+    "roscolux": null,
+    "ecolour": "E746"
+  },
+  {
+    "lee": "L747",
+    "leeName": "Easy White",
+    "roscolux": null,
+    "ecolour": "E747"
+  },
+  {
+    "lee": "L748",
+    "leeName": "Seedy Pink",
+    "roscolux": null,
+    "ecolour": "E748"
+  },
+  {
+    "lee": "L749",
+    "leeName": "Hampshire Rose",
+    "roscolux": null,
+    "ecolour": "E749"
+  },
+  {
+    "lee": "L750",
+    "leeName": "Durham Frost",
+    "roscolux": null,
+    "ecolour": "E750"
+  },
+  {
+    "lee": "L763",
+    "leeName": "Wheat",
+    "roscolux": null,
+    "ecolour": "E763"
+  },
+  {
+    "lee": "L764",
+    "leeName": "Sun Colour Straw",
+    "roscolux": null,
+    "ecolour": "E764"
+  },
+  {
+    "lee": "L765",
+    "leeName": "Lee Yellow",
+    "roscolux": "R11",
+    "ecolour": "E765"
+  },
+  {
+    "lee": "L767",
+    "leeName": "Oklahoma Yellow",
+    "roscolux": "R313",
+    "ecolour": "E767"
+  },
+  {
+    "lee": "L770",
+    "leeName": "Burnt Yellow",
+    "roscolux": "R20",
+    "ecolour": "E770"
+  },
+  {
+    "lee": "L774",
+    "leeName": "Soft Amber Key 1",
+    "roscolux": "R304",
+    "ecolour": "E774"
+  },
+  {
+    "lee": "L775",
+    "leeName": "Soft Amber Key 2",
+    "roscolux": "R316",
+    "ecolour": "E775"
+  },
+  {
+    "lee": "L776",
+    "leeName": "Nectarine",
+    "roscolux": "R17",
+    "ecolour": "E776"
+  },
+  {
+    "lee": "L777",
+    "leeName": "Rust",
+    "roscolux": "R2002",
+    "ecolour": "E777"
+  },
+  {
+    "lee": "L778",
+    "leeName": "Millenium Gold",
+    "roscolux": "R22",
+    "ecolour": "E778"
+  },
+  {
+    "lee": "L779",
+    "leeName": "Bastard Pink",
+    "roscolux": "R318",
+    "ecolour": "E779"
+  },
+  {
+    "lee": "L781",
+    "leeName": "Terry Red",
+    "roscolux": "R19",
+    "ecolour": "E781"
+  },
+  {
+    "lee": "L789",
+    "leeName": "Blood Red",
+    "roscolux": null,
+    "ecolour": "E789"
+  },
+  {
+    "lee": "L790",
+    "leeName": "Moroccan Pink",
+    "roscolux": "R1",
+    "ecolour": "E790"
+  },
+  {
+    "lee": "L791",
+    "leeName": "Moroccan Frost",
+    "roscolux": null,
+    "ecolour": "E791"
+  },
+  {
+    "lee": "L793",
+    "leeName": "Vanity Fair",
+    "roscolux": "R339",
+    "ecolour": "E793"
+  },
+  {
+    "lee": "L794",
+    "leeName": "Pretty 'n Pink",
+    "roscolux": "R336",
+    "ecolour": "E794"
+  },
+  {
+    "lee": "L795",
+    "leeName": "Magical Magenta",
+    "roscolux": "R346",
+    "ecolour": "E795"
+  },
+  {
+    "lee": "L797",
+    "leeName": "Deep Purple",
+    "roscolux": "R347",
+    "ecolour": "E797"
+  },
+  {
+    "lee": "L798",
+    "leeName": "Chrysalis Pink",
+    "roscolux": "R358",
+    "ecolour": "E798"
+  }
+]

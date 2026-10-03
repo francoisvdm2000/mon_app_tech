@@ -2,16 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 import 'about_artnet_page.dart';
+import 'about_audio_page.dart';
+import 'about_cinema_page.dart';
+import 'about_console_page.dart';
+import 'about_conversions_page.dart';
 import 'about_dmx_page.dart';
 import 'about_electricite_page.dart';
 import 'about_informatique_page.dart';
 import 'about_ip_basics_page.dart';
+import 'about_laser_page.dart';
 import 'about_network_page.dart';
 import 'about_reseau_page.dart';
+import 'about_rf_page.dart';
+import 'about_rigging_page.dart';
 import 'about_sacn_page.dart';
 import 'about_sun_times_page.dart';
+import 'about_timecode_page.dart';
 import 'about_universe_to_artnet_table_page.dart';
 import 'about_video_page.dart';
+import 'about_vesa_screens_page.dart';
 
 class AboutRegistry {
   static List<AboutTile> tiles(BuildContext context) {
@@ -78,6 +87,96 @@ class AboutRegistry {
         subtitle: loc.aboutSunTimesSubtitle,
         icon: Icons.wb_sunny,
       ),
+      AboutTile(
+        pageId: 'vesa_screens',
+        title: loc.aboutVesaTitle,
+        subtitle: loc.aboutVesaSubtitle,
+        icon: Icons.aspect_ratio,
+      ),
+      AboutTile(
+        pageId: 'audio_about',
+        title: loc.aboutAudioTitle,
+        subtitle: loc.aboutAudioSubtitle,
+        icon: Icons.graphic_eq,
+      ),
+      AboutTile(
+        pageId: 'rf_about',
+        title: loc.aboutRfTitle,
+        subtitle: loc.aboutRfSubtitle,
+        icon: Icons.settings_input_antenna,
+      ),
+      AboutTile(
+        pageId: 'laser_about',
+        title: loc.aboutLaserTitle,
+        subtitle: loc.aboutLaserSubtitle,
+        icon: Icons.bolt,
+      ),
+      AboutTile(
+        pageId: 'rigging_about',
+        title: loc.aboutRiggingTitle,
+        subtitle: loc.aboutRiggingSubtitle,
+        icon: Icons.hardware_rounded,
+      ),
+      AboutTile(
+        pageId: 'console_about',
+        title: loc.aboutConsoleTitle,
+        subtitle: loc.aboutConsoleSubtitle,
+        icon: Icons.dashboard_customize_outlined,
+      ),
+      AboutTile(
+        pageId: 'cinema_about',
+        title: loc.aboutCinemaTitle,
+        subtitle: loc.aboutCinemaSubtitle,
+        icon: Icons.videocam_outlined,
+      ),
+      AboutTile(
+        pageId: 'timecode_about',
+        title: loc.aboutTimecodeTitle,
+        subtitle: loc.aboutTimecodeSubtitle,
+        icon: Icons.timer_outlined,
+      ),
+      AboutTile(
+        pageId: 'conversions_about',
+        title: loc.aboutConversionsTitle,
+        subtitle: loc.aboutConversionsSubtitle,
+        icon: Icons.swap_horiz,
+      ),
+    ];
+  }
+
+  /// Tiles grouped by theme for a more readable overview page.
+  static List<AboutCategoryGroup> groupedTiles(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+    final byId = {for (final t in tiles(context)) t.pageId: t};
+
+    List<AboutTile> pick(List<String> ids) =>
+        ids.map((id) => byId[id]).whereType<AboutTile>().toList();
+
+    return [
+      AboutCategoryGroup(
+        title: loc.aboutCategoryNetworkTitle,
+        tiles: pick(['dmx', 'artnet', 'sacn', 'ip_basics', 'light_network', 'cabling_fiber']),
+      ),
+      AboutCategoryGroup(
+        title: loc.aboutCategoryAudioRfTitle,
+        tiles: pick(['audio_about', 'rf_about']),
+      ),
+      AboutCategoryGroup(
+        title: loc.aboutCategoryVideoCinemaTitle,
+        tiles: pick(['video_about', 'cinema_about', 'timecode_about']),
+      ),
+      AboutCategoryGroup(
+        title: loc.aboutCategoryLightingTitle,
+        tiles: pick(['laser_about', 'console_about']),
+      ),
+      AboutCategoryGroup(
+        title: loc.aboutCategoryRiggingElecTitle,
+        tiles: pick(['rigging_about', 'electricity']),
+      ),
+      AboutCategoryGroup(
+        title: loc.aboutCategoryToolsTitle,
+        tiles: pick(['computing', 'sun_times', 'vesa_screens', 'conversions_about']),
+      ),
     ];
   }
 
@@ -105,6 +204,24 @@ class AboutRegistry {
         return const AboutInformatiquePage();
       case 'sun_times':
         return const AboutSunTimesPage();
+      case 'vesa_screens':
+        return const AboutVesaScreensPage();
+      case 'audio_about':
+        return const AboutAudioPage();
+      case 'rf_about':
+        return const AboutRfPage();
+      case 'laser_about':
+        return const AboutLaserPage();
+      case 'rigging_about':
+        return const AboutRiggingPage();
+      case 'console_about':
+        return const AboutConsolePage();
+      case 'cinema_about':
+        return const AboutCinemaPage();
+      case 'timecode_about':
+        return const AboutTimecodePage();
+      case 'conversions_about':
+        return const AboutConversionsPage();
       default:
         return const AboutDmxPage();
     }
@@ -189,6 +306,47 @@ class AboutRegistry {
       AboutSearchEntry(pageId: 'computing', sectionId: 'pcie_gpu', pageTitle: loc.aboutComputingTitle, sectionTitle: loc.infoPcieGpuTitle, subtitle: loc.aboutComputingSubtitle, icon: Icons.usb),
       AboutSearchEntry(pageId: 'computing', sectionId: 'checklist', pageTitle: loc.aboutComputingTitle, sectionTitle: loc.infoChecklistTitle, subtitle: loc.aboutComputingSubtitle, icon: Icons.usb),
       AboutSearchEntry(pageId: 'sun_times', sectionId: 'page', pageTitle: loc.aboutSunTimesTitle, sectionTitle: loc.aboutSunTimesTitle, subtitle: loc.aboutSunTimesSubtitle, icon: Icons.wb_sunny),
+      AboutSearchEntry(pageId: 'vesa_screens', sectionId: 'page', pageTitle: loc.aboutVesaTitle, sectionTitle: loc.aboutVesaTitle, subtitle: loc.aboutVesaSubtitle, icon: Icons.aspect_ratio),
+      AboutSearchEntry(pageId: 'audio_about', sectionId: 'basics', pageTitle: loc.aboutAudioTitle, sectionTitle: loc.audioRefSection1Title, subtitle: loc.aboutAudioSubtitle, icon: Icons.graphic_eq),
+      AboutSearchEntry(pageId: 'audio_about', sectionId: 'spl_distance', pageTitle: loc.aboutAudioTitle, sectionTitle: loc.audioRefSection2Title, subtitle: loc.aboutAudioSubtitle, icon: Icons.graphic_eq),
+      AboutSearchEntry(pageId: 'audio_about', sectionId: 'delay_alignment', pageTitle: loc.aboutAudioTitle, sectionTitle: loc.audioRefSection3Title, subtitle: loc.aboutAudioSubtitle, icon: Icons.graphic_eq),
+      AboutSearchEntry(pageId: 'audio_about', sectionId: 'subs_directivity', pageTitle: loc.aboutAudioTitle, sectionTitle: loc.audioRefSection4Title, subtitle: loc.aboutAudioSubtitle, icon: Icons.graphic_eq),
+      AboutSearchEntry(pageId: 'audio_about', sectionId: 'cabling', pageTitle: loc.aboutAudioTitle, sectionTitle: loc.audioRefSection5Title, subtitle: loc.aboutAudioSubtitle, icon: Icons.graphic_eq),
+      AboutSearchEntry(pageId: 'audio_about', sectionId: 'safety', pageTitle: loc.aboutAudioTitle, sectionTitle: loc.audioRefSection6Title, subtitle: loc.aboutAudioSubtitle, icon: Icons.graphic_eq),
+      AboutSearchEntry(pageId: 'audio_about', sectionId: 'checklist', pageTitle: loc.aboutAudioTitle, sectionTitle: loc.audioRefSection7Title, subtitle: loc.aboutAudioSubtitle, icon: Icons.graphic_eq),
+      AboutSearchEntry(pageId: 'rf_about', sectionId: 'basics', pageTitle: loc.aboutRfTitle, sectionTitle: loc.rfRefSection1Title, subtitle: loc.aboutRfSubtitle, icon: Icons.settings_input_antenna),
+      AboutSearchEntry(pageId: 'rf_about', sectionId: 'uhf_bands', pageTitle: loc.aboutRfTitle, sectionTitle: loc.rfRefSection2Title, subtitle: loc.aboutRfSubtitle, icon: Icons.settings_input_antenna),
+      AboutSearchEntry(pageId: 'rf_about', sectionId: 'wifi', pageTitle: loc.aboutRfTitle, sectionTitle: loc.rfRefSection3Title, subtitle: loc.aboutRfSubtitle, icon: Icons.settings_input_antenna),
+      AboutSearchEntry(pageId: 'rf_about', sectionId: 'coexistence', pageTitle: loc.aboutRfTitle, sectionTitle: loc.rfRefSection4Title, subtitle: loc.aboutRfSubtitle, icon: Icons.settings_input_antenna),
+      AboutSearchEntry(pageId: 'rf_about', sectionId: 'antennas', pageTitle: loc.aboutRfTitle, sectionTitle: loc.rfRefSection5Title, subtitle: loc.aboutRfSubtitle, icon: Icons.settings_input_antenna),
+      AboutSearchEntry(pageId: 'rf_about', sectionId: 'scan_prep', pageTitle: loc.aboutRfTitle, sectionTitle: loc.rfRefSection6Title, subtitle: loc.aboutRfSubtitle, icon: Icons.settings_input_antenna),
+      AboutSearchEntry(pageId: 'rf_about', sectionId: 'checklist', pageTitle: loc.aboutRfTitle, sectionTitle: loc.rfRefSection7Title, subtitle: loc.aboutRfSubtitle, icon: Icons.settings_input_antenna),
+      AboutSearchEntry(pageId: 'laser_about', sectionId: 'basics', pageTitle: loc.aboutLaserTitle, sectionTitle: loc.laserRefSection1Title, subtitle: loc.aboutLaserSubtitle, icon: Icons.bolt),
+      AboutSearchEntry(pageId: 'laser_about', sectionId: 'drawing', pageTitle: loc.aboutLaserTitle, sectionTitle: loc.laserRefSection2Title, subtitle: loc.aboutLaserSubtitle, icon: Icons.bolt),
+      AboutSearchEntry(pageId: 'laser_about', sectionId: 'classes', pageTitle: loc.aboutLaserTitle, sectionTitle: loc.laserRefSection3Title, subtitle: loc.aboutLaserSubtitle, icon: Icons.bolt),
+      AboutSearchEntry(pageId: 'laser_about', sectionId: 'safety', pageTitle: loc.aboutLaserTitle, sectionTitle: loc.laserRefSection4Title, subtitle: loc.aboutLaserSubtitle, icon: Icons.bolt),
+      AboutSearchEntry(pageId: 'laser_about', sectionId: 'zones', pageTitle: loc.aboutLaserTitle, sectionTitle: loc.laserRefSection5Title, subtitle: loc.aboutLaserSubtitle, icon: Icons.bolt),
+      AboutSearchEntry(pageId: 'laser_about', sectionId: 'checklist', pageTitle: loc.aboutLaserTitle, sectionTitle: loc.laserRefSection6Title, subtitle: loc.aboutLaserSubtitle, icon: Icons.bolt),
+      AboutSearchEntry(pageId: 'rigging_about', sectionId: 'basics', pageTitle: loc.aboutRiggingTitle, sectionTitle: loc.riggingRefSection1Title, subtitle: loc.aboutRiggingSubtitle, icon: Icons.hardware_rounded),
+      AboutSearchEntry(pageId: 'rigging_about', sectionId: 'bridle', pageTitle: loc.aboutRiggingTitle, sectionTitle: loc.riggingRefSection2Title, subtitle: loc.aboutRiggingSubtitle, icon: Icons.hardware_rounded),
+      AboutSearchEntry(pageId: 'rigging_about', sectionId: 'angle_factor', pageTitle: loc.aboutRiggingTitle, sectionTitle: loc.riggingRefSection3Title, subtitle: loc.aboutRiggingSubtitle, icon: Icons.hardware_rounded),
+      AboutSearchEntry(pageId: 'rigging_about', sectionId: 'checklist', pageTitle: loc.aboutRiggingTitle, sectionTitle: loc.riggingRefSection4Title, subtitle: loc.aboutRiggingSubtitle, icon: Icons.hardware_rounded),
+      AboutSearchEntry(pageId: 'console_about', sectionId: 'wireless', pageTitle: loc.aboutConsoleTitle, sectionTitle: loc.consoleRefSection1Title, subtitle: loc.aboutConsoleSubtitle, icon: Icons.dashboard_customize_outlined),
+      AboutSearchEntry(pageId: 'console_about', sectionId: 'gdtf', pageTitle: loc.aboutConsoleTitle, sectionTitle: loc.consoleRefSection2Title, subtitle: loc.aboutConsoleSubtitle, icon: Icons.dashboard_customize_outlined),
+      AboutSearchEntry(pageId: 'console_about', sectionId: 'patch', pageTitle: loc.aboutConsoleTitle, sectionTitle: loc.consoleRefSection3Title, subtitle: loc.aboutConsoleSubtitle, icon: Icons.dashboard_customize_outlined),
+      AboutSearchEntry(pageId: 'console_about', sectionId: 'checklist', pageTitle: loc.aboutConsoleTitle, sectionTitle: loc.consoleRefSection4Title, subtitle: loc.aboutConsoleSubtitle, icon: Icons.dashboard_customize_outlined),
+      AboutSearchEntry(pageId: 'cinema_about', sectionId: 'camera', pageTitle: loc.aboutCinemaTitle, sectionTitle: loc.cinemaRefSection1Title, subtitle: loc.aboutCinemaSubtitle, icon: Icons.videocam_outlined),
+      AboutSearchEntry(pageId: 'cinema_about', sectionId: 'depth', pageTitle: loc.aboutCinemaTitle, sectionTitle: loc.cinemaRefSection2Title, subtitle: loc.aboutCinemaSubtitle, icon: Icons.videocam_outlined),
+      AboutSearchEntry(pageId: 'cinema_about', sectionId: 'shutter', pageTitle: loc.aboutCinemaTitle, sectionTitle: loc.cinemaRefSection3Title, subtitle: loc.aboutCinemaSubtitle, icon: Icons.videocam_outlined),
+      AboutSearchEntry(pageId: 'cinema_about', sectionId: 'checklist', pageTitle: loc.aboutCinemaTitle, sectionTitle: loc.cinemaRefSection4Title, subtitle: loc.aboutCinemaSubtitle, icon: Icons.videocam_outlined),
+      AboutSearchEntry(pageId: 'timecode_about', sectionId: 'basics', pageTitle: loc.aboutTimecodeTitle, sectionTitle: loc.timecodeRefSection1Title, subtitle: loc.aboutTimecodeSubtitle, icon: Icons.timer_outlined),
+      AboutSearchEntry(pageId: 'timecode_about', sectionId: 'drop_frame', pageTitle: loc.aboutTimecodeTitle, sectionTitle: loc.timecodeRefSection2Title, subtitle: loc.aboutTimecodeSubtitle, icon: Icons.timer_outlined),
+      AboutSearchEntry(pageId: 'timecode_about', sectionId: 'rates', pageTitle: loc.aboutTimecodeTitle, sectionTitle: loc.timecodeRefSection3Title, subtitle: loc.aboutTimecodeSubtitle, icon: Icons.timer_outlined),
+      AboutSearchEntry(pageId: 'timecode_about', sectionId: 'checklist', pageTitle: loc.aboutTimecodeTitle, sectionTitle: loc.timecodeRefSection4Title, subtitle: loc.aboutTimecodeSubtitle, icon: Icons.timer_outlined),
+      AboutSearchEntry(pageId: 'conversions_about', sectionId: 'why', pageTitle: loc.aboutConversionsTitle, sectionTitle: loc.conversionsRefSection1Title, subtitle: loc.aboutConversionsSubtitle, icon: Icons.swap_horiz),
+      AboutSearchEntry(pageId: 'conversions_about', sectionId: 'bpm', pageTitle: loc.aboutConversionsTitle, sectionTitle: loc.conversionsRefSection2Title, subtitle: loc.aboutConversionsSubtitle, icon: Icons.swap_horiz),
+      AboutSearchEntry(pageId: 'conversions_about', sectionId: 'dmx', pageTitle: loc.aboutConversionsTitle, sectionTitle: loc.conversionsRefSection3Title, subtitle: loc.aboutConversionsSubtitle, icon: Icons.swap_horiz),
+      AboutSearchEntry(pageId: 'conversions_about', sectionId: 'checklist', pageTitle: loc.aboutConversionsTitle, sectionTitle: loc.conversionsRefSection4Title, subtitle: loc.aboutConversionsSubtitle, icon: Icons.swap_horiz),
     ];
   }
 }
@@ -205,6 +363,16 @@ class AboutTile {
   final String title;
   final String subtitle;
   final IconData icon;
+}
+
+class AboutCategoryGroup {
+  const AboutCategoryGroup({
+    required this.title,
+    required this.tiles,
+  });
+
+  final String title;
+  final List<AboutTile> tiles;
 }
 
 class AboutSearchEntry {

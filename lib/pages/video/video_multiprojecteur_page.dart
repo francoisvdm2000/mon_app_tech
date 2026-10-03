@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import '../../app/ui/widgets.dart'; // numFormatter, intFormatter, ExpandSectionCard, ResultBox, copyToClipboard
+import '../about/about_favorites.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class VideoMultiprojecteurPage extends StatefulWidget {
   const VideoMultiprojecteurPage({super.key});
@@ -140,6 +142,7 @@ class _VideoMultiprojecteurPageState extends State<VideoMultiprojecteurPage> {
     final loc = AppLocalizations.of(context);
 
     return ExpandSectionCard(
+      accentColor: kSectionVideo,
       title: title,
       icon: icon,
       initiallyExpanded: initiallyExpanded,
@@ -331,7 +334,13 @@ class _VideoMultiprojecteurPageState extends State<VideoMultiprojecteurPage> {
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.videoMultiprojectorTitle)),
+      appBar: AppBar(
+        title: Text(loc.videoMultiprojectorTitle),
+        actions: const [
+          AboutPinButton(pageId: 'tool:video_multiprojecteur', sectionId: 'main'),
+          SizedBox(width: 4),
+        ],
+      ),
       body: SafeArea(
         bottom: true,
         child: SingleChildScrollView(

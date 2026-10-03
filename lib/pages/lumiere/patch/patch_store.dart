@@ -21,20 +21,55 @@ class PatchStore extends ChangeNotifier {
 
   bool get isReadOnly => _isReadOnly;
 
+  /// Octets des .gdtf embarqués dans le dernier MVR importé, indexés par
+  /// nom de fichier en minuscules (ex: "robe_robin_megapointe.gdtf").
+  /// Mémoire uniquement (comme le reste de patchStore) : sert à retrouver
+  /// les vrais noms de canaux (Pan/Tilt/Dimmer/...) et les presets d'un
+  /// PatchEntry depuis la console virtuelle.
+  final Map<String, Uint8List> _gdtfBytesCache = <String, Uint8List>{};
+
   /// Charge une référence de patch (snapshot) — typiquement depuis un MVR.
   /// En lecture seule : aucune modification possible par l’utilisateur.
-  void loadReference(List<PatchEntry> entries) {
+  /// [gdtfBytes] (optionnel) : octets des .gdtf embarqués dans le MVR,
+  /// indexés par nom de fichier en minuscules.
+  void loadReference(
+    List<PatchEntry> entries, {
+    Map<String, Uint8List>? gdtfBytes,
+  }) {
     _entries
       ..clear()
       ..addAll(entries);
     _isReadOnly = true;
+    _gdtfBytesCache.clear();
+    if (gdtfBytes != null) _gdtfBytesCache.addAll(gdtfBytes);
     notifyListeners();
+  }
+
+  /// Octets GDTF associés à une entrée de patch, si on les a en cache
+  /// (spec connue + fichier .gdtf effectivement embarqué dans le MVR).
+  Uint8List? gdtfBytesFor(PatchEntry entry) {
+    final spec = entry.gdtfSpec?.trim();
+    if (spec == null || spec.isEmpty) return null;
+    final fileName = spec.split('/').last.split('\\').last.toLowerCase();
+    final candidates = <String>{
+      fileName,
+      fileName.endsWith('.gdtf') ? fileName : '$fileName.gdtf',
+      fileName.endsWith('.gdtf')
+          ? fileName.substring(0, fileName.length - 5)
+          : fileName,
+    };
+    for (final key in candidates) {
+      final bytes = _gdtfBytesCache[key];
+      if (bytes != null) return bytes;
+    }
+    return null;
   }
 
   /// Efface la référence chargée (revient à un patch vide).
   void clearReference() {
     _entries.clear();
     _isReadOnly = false;
+    _gdtfBytesCache.clear();
     notifyListeners();
   }
 

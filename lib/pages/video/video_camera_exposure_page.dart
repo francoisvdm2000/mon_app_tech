@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 import '../../app/ui/widgets.dart';
+import '../about/about_favorites.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class VideoCameraExposurePage extends StatefulWidget {
   const VideoCameraExposurePage({super.key});
@@ -156,7 +158,13 @@ class _VideoCameraExposurePageState extends State<VideoCameraExposurePage> {
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.videoCamPageTitle)),
+      appBar: AppBar(
+        title: Text(loc.videoCamPageTitle),
+        actions: const [
+          AboutPinButton(pageId: 'tool:video_camera_exposure', sectionId: 'main'),
+          SizedBox(width: 4),
+        ],
+      ),
       body: SafeArea(
         bottom: true,
         child: SingleChildScrollView(
@@ -164,6 +172,7 @@ class _VideoCameraExposurePageState extends State<VideoCameraExposurePage> {
           child: Column(
             children: [
               SectionCard(
+                accentColor: kSectionVideo,
                 title: loc.videoCamInfoTitle,
                 icon: Icons.info_outline,
                 child: Text(
@@ -173,6 +182,7 @@ class _VideoCameraExposurePageState extends State<VideoCameraExposurePage> {
               ),
               const SizedBox(height: 12),
               SectionCard(
+                accentColor: kSectionVideo,
                 title: loc.videoCamInputsTitle,
                 icon: Icons.tune,
                 child: Column(

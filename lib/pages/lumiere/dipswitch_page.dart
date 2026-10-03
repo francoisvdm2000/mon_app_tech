@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../../app/ui/widgets.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'dipswitch_calculations.dart';
+import '../about/about_favorites.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class DipSwitchPage extends StatefulWidget {
   const DipSwitchPage({super.key});
@@ -275,7 +277,7 @@ class _DipSwitchPageState extends State<DipSwitchPage> {
                             height: knobHeight,
                             decoration: BoxDecoration(
                               color: on
-                                  ? Colors.greenAccent
+                                  ? const Color(0xFFFFB703)
                                   : Colors.grey.shade700,
                               borderRadius: BorderRadius.circular(3 * scale),
                             ),
@@ -293,7 +295,7 @@ class _DipSwitchPageState extends State<DipSwitchPage> {
         return Container(
           padding: const EdgeInsets.all(14),
           decoration: BoxDecoration(
-            color: const Color(0xFF0B0B0B),
+            color: const Color(0xFF0E0E18),
             borderRadius: BorderRadius.circular(14),
             border: Border.all(color: Colors.white12),
           ),
@@ -332,6 +334,7 @@ class _DipSwitchPageState extends State<DipSwitchPage> {
       appBar: AppBar(
         title: Text(loc.lightDmxSwitchTitle),
         actions: [
+          const AboutPinButton(pageId: 'tool:lumiere_dipswitch', sectionId: 'main'),
           IconButton(
             tooltip: loc.dipSwitchResetTooltip,
             onPressed: _resetAll,
@@ -344,6 +347,7 @@ class _DipSwitchPageState extends State<DipSwitchPage> {
         child: Column(
           children: [
             ExpandSectionCard(
+              accentColor: kSectionLight,
               title: loc.dipSwitchInputsTitle,
               icon: Icons.edit,
               initiallyExpanded: true,
@@ -396,6 +400,7 @@ class _DipSwitchPageState extends State<DipSwitchPage> {
             ),
             const SizedBox(height: 14),
             ExpandSectionCard(
+              accentColor: kSectionLight,
               title: loc.dipSwitchSectionTitle,
               icon: Icons.tune,
               initiallyExpanded: true,

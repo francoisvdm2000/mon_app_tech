@@ -1,5 +1,83 @@
 import 'package:flutter/foundation.dart';
 
+/// Transform 3D d'une fixture telle que fournie par l'élément MVR
+/// `<Matrix>` : {Xaxis}{Yaxis}{Zaxis}{Translation}, où chaque groupe
+/// contient 3 flottants séparés par des virgules. La translation est
+/// exprimée en millimètres dans le fichier MVR (convention du standard).
+///
+/// Volontairement indépendant de tout package de rendu 3D (pas de
+/// dépendance vers three_js ici) : la conversion vers les types du
+/// moteur de rendu se fait au plus près de l'écran (page visualiseur 3D).
+@immutable
+class FixtureTransform {
+  /// Vecteur colonne X de la matrice de rotation/échelle (3 valeurs).
+  final List<double> xAxis;
+
+  /// Vecteur colonne Y de la matrice de rotation/échelle (3 valeurs).
+  final List<double> yAxis;
+
+  /// Vecteur colonne Z de la matrice de rotation/échelle (3 valeurs).
+  final List<double> zAxis;
+
+  /// Translation en millimètres (convention MVR).
+  final List<double> translationMm;
+
+  const FixtureTransform({
+    required this.xAxis,
+    required this.yAxis,
+    required this.zAxis,
+    required this.translationMm,
+  });
+
+  /// Position en mètres (unité utilisée côté rendu 3D).
+  double get positionXMeters => translationMm[0] / 1000.0;
+  double get positionYMeters => translationMm[1] / 1000.0;
+  double get positionZMeters => translationMm[2] / 1000.0;
+
+  /// Les 16 valeurs d'une matrice 4x4 colonne-majeure (compatible avec la
+  /// plupart des moteurs 3D type OpenGL), construite à partir des 3 axes
+  /// + translation. La 4e ligne reste (0,0,0,1) : pas de perspective.
+  List<double> toColumnMajorMatrix4() {
+    return <double>[
+      xAxis[0], xAxis[1], xAxis[2], 0,
+      yAxis[0], yAxis[1], yAxis[2], 0,
+      zAxis[0], zAxis[1], zAxis[2], 0,
+      positionXMeters, positionYMeters, positionZMeters, 1,
+    ];
+  }
+
+  /// Parse le contenu texte d'un élément MVR `<Matrix>` :
+  /// "{a,b,c}{d,e,f}{g,h,i}{tx,ty,tz}". Retourne null si le format ne
+  /// correspond pas (mieux vaut ignorer la position que la deviner).
+  static FixtureTransform? tryParse(String raw) {
+    final s = raw.trim();
+    if (s.isEmpty) return null;
+
+    final re = RegExp(
+      r'\{([^}]*)\}\{([^}]*)\}\{([^}]*)\}\{([^}]*)\}',
+    );
+    final m = re.firstMatch(s);
+    if (m == null) return null;
+
+    List<double>? group(int index) {
+      final raw = m.group(index);
+      if (raw == null) return null;
+      final parts = raw.split(',').map((p) => double.tryParse(p.trim()));
+      if (parts.any((v) => v == null)) return null;
+      final values = parts.whereType<double>().toList();
+      return values.length == 3 ? values : null;
+    }
+
+    final x = group(1);
+    final y = group(2);
+    final z = group(3);
+    final t = group(4);
+    if (x == null || y == null || z == null || t == null) return null;
+
+    return FixtureTransform(xAxis: x, yAxis: y, zAxis: z, translationMm: t);
+  }
+}
+
 @immutable
 class PatchEntry {
   final String id;
@@ -19,6 +97,16 @@ class PatchEntry {
   /// Adresse DMX de départ (1..512)
   final int startAddress;
 
+  /// Nom de fichier GDTF (ex: "Robe_Robin_MegaPointe.gdtf"), quand connu
+  /// (issu du MVR). Sert de clé pour retrouver les octets GDTF embarqués
+  /// dans le cache de `patchStore`, et pour grouper les fixtures d'un même
+  /// type (console virtuelle : contrôle de groupe).
+  final String? gdtfSpec;
+
+  /// Position/rotation 3D dans la scène MVR (issue de `<Matrix>`), quand
+  /// disponible. Absent pour les patchs saisis manuellement (hors MVR).
+  final FixtureTransform? transform;
+
   const PatchEntry({
     required this.id,
     required this.fixtureName,
@@ -26,6 +114,8 @@ class PatchEntry {
     required this.channelCount,
     required this.universe,
     required this.startAddress,
+    this.gdtfSpec,
+    this.transform,
   });
 
   int get endAddress => startAddress + channelCount - 1;
@@ -37,6 +127,13 @@ class PatchEntry {
       channelCount >= 1 &&
       endAddress <= 512;
 
+  /// Clé de groupement "même type de machine" pour la console virtuelle :
+  /// on préfère gdtfSpec+mode (fiable), sinon on retombe sur nom+mode+nombre
+  /// de canaux (moins précis mais toujours utile sans GDTF embarqué).
+  String get groupKey => gdtfSpec != null && gdtfSpec!.trim().isNotEmpty
+      ? '${gdtfSpec!.trim().toLowerCase()}::${dmxModeName.trim().toLowerCase()}'
+      : '${fixtureName.trim().toLowerCase()}::${dmxModeName.trim().toLowerCase()}::$channelCount';
+
   PatchEntry copyWith({
     String? id,
     String? fixtureName,
@@ -44,6 +141,8 @@ class PatchEntry {
     int? channelCount,
     int? universe,
     int? startAddress,
+    String? gdtfSpec,
+    FixtureTransform? transform,
   }) {
     return PatchEntry(
       id: id ?? this.id,
@@ -52,6 +151,8 @@ class PatchEntry {
       channelCount: channelCount ?? this.channelCount,
       universe: universe ?? this.universe,
       startAddress: startAddress ?? this.startAddress,
+      gdtfSpec: gdtfSpec ?? this.gdtfSpec,
+      transform: transform ?? this.transform,
     );
   }
 }

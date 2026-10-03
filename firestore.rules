@@ -1,0 +1,53 @@
+rules_version = '2';
+
+// Copie exacte des règles "communauté" (`users`, `plugins`) telles que
+// vérifiées en prod le 12/08/2026 sur la console Firebase, complétée avec
+// `entitlements`/`purchaseMappings` pour la vérification serveur des achats.
+//
+// Si tu modifies les règles communauté directement dans la console
+// Firebase à l'avenir, pense à répercuter le changement ici aussi, sinon
+// le prochain `firebase deploy --only firestore:rules` écrasera ta
+// modification avec cette version-ci.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ─── Entitlements (achats vérifiés côté serveur) ───────────────────────
+    match /entitlements/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    // Mapping interne (référence de transaction -> utilisateur), jamais
+    // exposé au client.
+    match /purchaseMappings/{mappingId} {
+      allow read, write: if false;
+    }
+
+    // Liste des comptes testeurs (email en minuscules -> { active }), gérée
+    // à la main via la console Firebase. Lue uniquement par la Cloud
+    // Function claimTesterAccess (Admin SDK, contourne ces règles) — jamais
+    // par le client.
+    match /testers/{email} {
+      allow read, write: if false;
+    }
+
+    // ─── Communauté (identique à la prod) ───────────────────────────────────
+    match /users/{userId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    match /plugins/{pluginId} {
+      allow read: if true;
+      allow create: if request.auth != null
+          && request.resource.data.authorId == request.auth.uid;
+      allow update: if request.auth != null
+          && (resource.data.authorId == request.auth.uid
+              || request.resource.data.diff(resource.data).affectedKeys()
+                  .hasOnly(['likes', 'likedBy']));
+      allow delete: if request.auth != null
+          && resource.data.authorId == request.auth.uid;
+    }
+  }
+}

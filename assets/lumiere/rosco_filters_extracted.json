@@ -1,0 +1,8703 @@
+[
+  {
+    "brand": "Permacolor",
+    "code": "P7200",
+    "name": "P7200",
+    "hex": "#010004",
+    "rgb": {
+      "r": 1,
+      "g": 0,
+      "b": 4
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E159",
+    "name": "E159",
+    "hex": "#FFFAE0",
+    "rgb": {
+      "r": 255,
+      "g": 250,
+      "b": 224
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P4420",
+    "name": "P4420",
+    "hex": "#DAFB58",
+    "rgb": {
+      "r": 218,
+      "g": 251,
+      "b": 88
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R804",
+    "name": "R804",
+    "hex": "#F8ECBD",
+    "rgb": {
+      "r": 248,
+      "g": 236,
+      "b": 189
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R07",
+    "name": "R07",
+    "hex": "#FDFAD1",
+    "rgb": {
+      "r": 253,
+      "g": 250,
+      "b": 209
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E212",
+    "name": "E212",
+    "hex": "#FBFFD9",
+    "rgb": {
+      "r": 251,
+      "g": 255,
+      "b": 217
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3107",
+    "name": "R3107",
+    "hex": "#FCFADB",
+    "rgb": {
+      "r": 252,
+      "g": 250,
+      "b": 219
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E007",
+    "name": "E007",
+    "hex": "#FFFFDE",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 222
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4515",
+    "name": "R4515",
+    "hex": "#FFFCD2",
+    "rgb": {
+      "r": 255,
+      "g": 252,
+      "b": 210
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4530",
+    "name": "R4530",
+    "hex": "#FFFAC3",
+    "rgb": {
+      "r": 255,
+      "g": 250,
+      "b": 195
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R310",
+    "name": "R310",
+    "hex": "#FFEF4F",
+    "rgb": {
+      "r": 255,
+      "g": 239,
+      "b": 79
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4560",
+    "name": "R4560",
+    "hex": "#FFF685",
+    "rgb": {
+      "r": 255,
+      "g": 246,
+      "b": 133
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G470",
+    "name": "G470",
+    "hex": "#FFF157",
+    "rgb": {
+      "r": 255,
+      "g": 241,
+      "b": 87
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E100",
+    "name": "E100",
+    "hex": "#F2FF30",
+    "rgb": {
+      "r": 242,
+      "g": 255,
+      "b": 48
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4590",
+    "name": "R4590",
+    "hex": "#FFF32B",
+    "rgb": {
+      "r": 255,
+      "g": 243,
+      "b": 43
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G480",
+    "name": "G480",
+    "hex": "#FFEB0A",
+    "rgb": {
+      "r": 255,
+      "g": 235,
+      "b": 10
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R10",
+    "name": "R10",
+    "hex": "#FFF200",
+    "rgb": {
+      "r": 255,
+      "g": 242,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E010",
+    "name": "E010",
+    "hex": "#FFF30D",
+    "rgb": {
+      "r": 255,
+      "g": 243,
+      "b": 13
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G450",
+    "name": "G450",
+    "hex": "#FFE72E",
+    "rgb": {
+      "r": 255,
+      "g": 231,
+      "b": 46
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R11",
+    "name": "R11",
+    "hex": "#FFD21A",
+    "rgb": {
+      "r": 255,
+      "g": 210,
+      "b": 26
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R12",
+    "name": "R12",
+    "hex": "#FFF64D",
+    "rgb": {
+      "r": 255,
+      "g": 246,
+      "b": 77
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G425",
+    "name": "G425",
+    "hex": "#FDDB19",
+    "rgb": {
+      "r": 253,
+      "g": 219,
+      "b": 25
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G420",
+    "name": "G420",
+    "hex": "#FDD62B",
+    "rgb": {
+      "r": 253,
+      "g": 214,
+      "b": 43
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G395",
+    "name": "G395",
+    "hex": "#FFD036",
+    "rgb": {
+      "r": 255,
+      "g": 208,
+      "b": 54
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R313",
+    "name": "R313",
+    "hex": "#FFE462",
+    "rgb": {
+      "r": 255,
+      "g": 228,
+      "b": 98
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E650",
+    "name": "E650",
+    "hex": "#D9CE73",
+    "rgb": {
+      "r": 217,
+      "g": 206,
+      "b": 115
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3150",
+    "name": "R3150",
+    "hex": "#D9D473",
+    "rgb": {
+      "r": 217,
+      "g": 212,
+      "b": 115
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E741",
+    "name": "E741",
+    "hex": "#C5A100",
+    "rgb": {
+      "r": 197,
+      "g": 161,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E643",
+    "name": "E643",
+    "hex": "#FDC200",
+    "rgb": {
+      "r": 253,
+      "g": 194,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E642",
+    "name": "E642",
+    "hex": "#DFAB00",
+    "rgb": {
+      "r": 223,
+      "g": 171,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E101",
+    "name": "E101",
+    "hex": "#FFEB0F",
+    "rgb": {
+      "r": 255,
+      "g": 235,
+      "b": 15
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E102",
+    "name": "E102",
+    "hex": "#FFE74A",
+    "rgb": {
+      "r": 255,
+      "g": 231,
+      "b": 74
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P5200",
+    "name": "P5200",
+    "hex": "#FFE74A",
+    "rgb": {
+      "r": 255,
+      "g": 231,
+      "b": 74
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1010",
+    "name": "P1010",
+    "hex": "#FFF200",
+    "rgb": {
+      "r": 255,
+      "g": 242,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R312",
+    "name": "R312",
+    "hex": "#FFEA00",
+    "rgb": {
+      "r": 255,
+      "g": 234,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E767",
+    "name": "E767",
+    "hex": "#FFDE24",
+    "rgb": {
+      "r": 255,
+      "g": 222,
+      "b": 36
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R807",
+    "name": "R807",
+    "hex": "#FFC000",
+    "rgb": {
+      "r": 255,
+      "g": 192,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E104",
+    "name": "E104",
+    "hex": "#FCD628",
+    "rgb": {
+      "r": 252,
+      "g": 214,
+      "b": 40
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P5401",
+    "name": "P5401",
+    "hex": "#FCD628",
+    "rgb": {
+      "r": 252,
+      "g": 214,
+      "b": 40
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R2003",
+    "name": "R2003",
+    "hex": "#FFCB04",
+    "rgb": {
+      "r": 255,
+      "g": 203,
+      "b": 4
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E015",
+    "name": "E015",
+    "hex": "#FDC819",
+    "rgb": {
+      "r": 253,
+      "g": 200,
+      "b": 25
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R15",
+    "name": "R15",
+    "hex": "#FECB00",
+    "rgb": {
+      "r": 254,
+      "g": 203,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R809",
+    "name": "R809",
+    "hex": "#FFB500",
+    "rgb": {
+      "r": 255,
+      "g": 181,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E768",
+    "name": "E768",
+    "hex": "#FCC200",
+    "rgb": {
+      "r": 252,
+      "g": 194,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R14",
+    "name": "R14",
+    "hex": "#FCD419",
+    "rgb": {
+      "r": 252,
+      "g": 212,
+      "b": 25
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R810",
+    "name": "R810",
+    "hex": "#FFBB4F",
+    "rgb": {
+      "r": 255,
+      "g": 187,
+      "b": 79
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E103",
+    "name": "E103",
+    "hex": "#FFE7C4",
+    "rgb": {
+      "r": 255,
+      "g": 231,
+      "b": 196
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E763",
+    "name": "E763",
+    "hex": "#FFEFBA",
+    "rgb": {
+      "r": 255,
+      "g": 239,
+      "b": 186
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E764",
+    "name": "E764",
+    "hex": "#FFEC94",
+    "rgb": {
+      "r": 255,
+      "g": 236,
+      "b": 148
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E765",
+    "name": "E765",
+    "hex": "#FFEC6E",
+    "rgb": {
+      "r": 255,
+      "g": 236,
+      "b": 110
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E013",
+    "name": "E013",
+    "hex": "#FFDBA1",
+    "rgb": {
+      "r": 255,
+      "g": 219,
+      "b": 161
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R13",
+    "name": "R13",
+    "hex": "#FFD88F",
+    "rgb": {
+      "r": 255,
+      "g": 216,
+      "b": 143
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G455",
+    "name": "G455",
+    "hex": "#FDCE12",
+    "rgb": {
+      "r": 253,
+      "g": 206,
+      "b": 18
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E5336",
+    "name": "E5336",
+    "hex": "#F2CF88",
+    "rgb": {
+      "r": 242,
+      "g": 207,
+      "b": 136
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E550",
+    "name": "E550",
+    "hex": "#F5AE3F",
+    "rgb": {
+      "r": 245,
+      "g": 174,
+      "b": 63
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R302",
+    "name": "R302",
+    "hex": "#FEE5CF",
+    "rgb": {
+      "r": 254,
+      "g": 229,
+      "b": 207
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G338",
+    "name": "G338",
+    "hex": "#FDDFCA",
+    "rgb": {
+      "r": 253,
+      "g": 223,
+      "b": 202
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G NCR9",
+    "name": "G NCR9",
+    "hex": "#FDDFCA",
+    "rgb": {
+      "r": 253,
+      "g": 223,
+      "b": 202
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3410",
+    "name": "R3410",
+    "hex": "#FFF1DA",
+    "rgb": {
+      "r": 255,
+      "g": 241,
+      "b": 218
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3410",
+    "name": "P3410",
+    "hex": "#FFF1DA",
+    "rgb": {
+      "r": 255,
+      "g": 241,
+      "b": 218
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E444",
+    "name": "E444",
+    "hex": "#FFF5DC",
+    "rgb": {
+      "r": 255,
+      "g": 245,
+      "b": 220
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G364",
+    "name": "G364",
+    "hex": "#FFDFB5",
+    "rgb": {
+      "r": 255,
+      "g": 223,
+      "b": 181
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9411",
+    "name": "R9411",
+    "hex": "#FFDFB5",
+    "rgb": {
+      "r": 255,
+      "g": 223,
+      "b": 181
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3444",
+    "name": "R3444",
+    "hex": "#FFF2E6",
+    "rgb": {
+      "r": 255,
+      "g": 242,
+      "b": 230
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E223",
+    "name": "E223",
+    "hex": "#FFEAD1",
+    "rgb": {
+      "r": 255,
+      "g": 234,
+      "b": 209
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G435",
+    "name": "G435",
+    "hex": "#F0E3CE",
+    "rgb": {
+      "r": 240,
+      "g": 227,
+      "b": 206
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G NCW3",
+    "name": "G NCW3",
+    "hex": "#F0E3CE",
+    "rgb": {
+      "r": 240,
+      "g": 227,
+      "b": 206
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G433",
+    "name": "G433",
+    "hex": "#EED9B9",
+    "rgb": {
+      "r": 238,
+      "g": 217,
+      "b": 185
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G NCW9",
+    "name": "G NCW9",
+    "hex": "#EED9B9",
+    "rgb": {
+      "r": 238,
+      "g": 217,
+      "b": 185
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G430",
+    "name": "G430",
+    "hex": "#EED5B0",
+    "rgb": {
+      "r": 238,
+      "g": 213,
+      "b": 176
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9421",
+    "name": "R9421",
+    "hex": "#EED5B0",
+    "rgb": {
+      "r": 238,
+      "g": 213,
+      "b": 176
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3443",
+    "name": "R3443",
+    "hex": "#FFE7D1",
+    "rgb": {
+      "r": 255,
+      "g": 231,
+      "b": 209
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G440",
+    "name": "G440",
+    "hex": "#FFE7D1",
+    "rgb": {
+      "r": 255,
+      "g": 231,
+      "b": 209
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R08",
+    "name": "R08",
+    "hex": "#FFE0B8",
+    "rgb": {
+      "r": 255,
+      "g": 224,
+      "b": 184
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E443",
+    "name": "E443",
+    "hex": "#FFE3BA",
+    "rgb": {
+      "r": 255,
+      "g": 227,
+      "b": 186
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3134",
+    "name": "R3134",
+    "hex": "#FFE0B8",
+    "rgb": {
+      "r": 255,
+      "g": 224,
+      "b": 184
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E206",
+    "name": "E206",
+    "hex": "#FFE6B8",
+    "rgb": {
+      "r": 255,
+      "g": 230,
+      "b": 184
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G363",
+    "name": "G363",
+    "hex": "#FFEFD9",
+    "rgb": {
+      "r": 255,
+      "g": 239,
+      "b": 217
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1555",
+    "name": "G1555",
+    "hex": "#FFEFD9",
+    "rgb": {
+      "r": 255,
+      "g": 239,
+      "b": 217
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G NCW6",
+    "name": "G NCW6",
+    "hex": "#FFEFD9",
+    "rgb": {
+      "r": 255,
+      "g": 239,
+      "b": 217
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3409",
+    "name": "R3409",
+    "hex": "#FFE2B5",
+    "rgb": {
+      "r": 255,
+      "g": 226,
+      "b": 181
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3409",
+    "name": "P3409",
+    "hex": "#FFE2B5",
+    "rgb": {
+      "r": 255,
+      "g": 226,
+      "b": 181
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9211",
+    "name": "R9211",
+    "hex": "#F5E2CE",
+    "rgb": {
+      "r": 245,
+      "g": 226,
+      "b": 206
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R02",
+    "name": "R02",
+    "hex": "#FFD1AC",
+    "rgb": {
+      "r": 255,
+      "g": 209,
+      "b": 172
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9406",
+    "name": "R9406",
+    "hex": "#FFD1AC",
+    "rgb": {
+      "r": 255,
+      "g": 209,
+      "b": 172
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E506",
+    "name": "E506",
+    "hex": "#F7C9A3",
+    "rgb": {
+      "r": 247,
+      "g": 201,
+      "b": 163
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E162",
+    "name": "E162",
+    "hex": "#FFCFA8",
+    "rgb": {
+      "r": 255,
+      "g": 207,
+      "b": 168
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E152",
+    "name": "E152",
+    "hex": "#FFCAA8",
+    "rgb": {
+      "r": 255,
+      "g": 202,
+      "b": 168
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G325",
+    "name": "G325",
+    "hex": "#FFCDAB",
+    "rgb": {
+      "r": 255,
+      "g": 205,
+      "b": 171
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R304",
+    "name": "R304",
+    "hex": "#FABCA9",
+    "rgb": {
+      "r": 250,
+      "g": 188,
+      "b": 169
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E773",
+    "name": "E773",
+    "hex": "#FFB28F",
+    "rgb": {
+      "r": 255,
+      "g": 178,
+      "b": 143
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R03",
+    "name": "R03",
+    "hex": "#FBBA9A",
+    "rgb": {
+      "r": 251,
+      "g": 186,
+      "b": 154
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E151",
+    "name": "E151",
+    "hex": "#FFC0B5",
+    "rgb": {
+      "r": 255,
+      "g": 192,
+      "b": 181
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G305",
+    "name": "G305",
+    "hex": "#FFC4A8",
+    "rgb": {
+      "r": 255,
+      "g": 196,
+      "b": 168
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1002",
+    "name": "P1002",
+    "hex": "#FFC0B5",
+    "rgb": {
+      "r": 255,
+      "g": 192,
+      "b": 181
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R04",
+    "name": "R04",
+    "hex": "#F9B09A",
+    "rgb": {
+      "r": 249,
+      "g": 176,
+      "b": 154
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E004",
+    "name": "E004",
+    "hex": "#FAB8AC",
+    "rgb": {
+      "r": 250,
+      "g": 184,
+      "b": 172
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R01",
+    "name": "R01",
+    "hex": "#FBB39A",
+    "rgb": {
+      "r": 251,
+      "g": 179,
+      "b": 154
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E108",
+    "name": "E108",
+    "hex": "#FAAD96",
+    "rgb": {
+      "r": 250,
+      "g": 173,
+      "b": 150
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G324",
+    "name": "G324",
+    "hex": "#F5B99A",
+    "rgb": {
+      "r": 245,
+      "g": 185,
+      "b": 154
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E176",
+    "name": "E176",
+    "hex": "#FAA498",
+    "rgb": {
+      "r": 250,
+      "g": 164,
+      "b": 152
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G310",
+    "name": "G310",
+    "hex": "#FFA994",
+    "rgb": {
+      "r": 255,
+      "g": 169,
+      "b": 148
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3442",
+    "name": "R3442",
+    "hex": "#FFD3A8",
+    "rgb": {
+      "r": 255,
+      "g": 211,
+      "b": 168
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E442",
+    "name": "E442",
+    "hex": "#FFCE9C",
+    "rgb": {
+      "r": 255,
+      "g": 206,
+      "b": 156
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E205",
+    "name": "E205",
+    "hex": "#FFD28F",
+    "rgb": {
+      "r": 255,
+      "g": 210,
+      "b": 143
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R09",
+    "name": "R09",
+    "hex": "#FFCB86",
+    "rgb": {
+      "r": 255,
+      "g": 203,
+      "b": 134
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E009",
+    "name": "E009",
+    "hex": "#FFD28A",
+    "rgb": {
+      "r": 255,
+      "g": 210,
+      "b": 138
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R16",
+    "name": "R16",
+    "hex": "#FFC47D",
+    "rgb": {
+      "r": 255,
+      "g": 196,
+      "b": 125
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3102",
+    "name": "R3102",
+    "hex": "#FFC47D",
+    "rgb": {
+      "r": 255,
+      "g": 196,
+      "b": 125
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G360",
+    "name": "G360",
+    "hex": "#FCC286",
+    "rgb": {
+      "r": 252,
+      "g": 194,
+      "b": 134
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1549",
+    "name": "G1549",
+    "hex": "#FCC286",
+    "rgb": {
+      "r": 252,
+      "g": 194,
+      "b": 134
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9416",
+    "name": "R9416",
+    "hex": "#FCC286",
+    "rgb": {
+      "r": 252,
+      "g": 194,
+      "b": 134
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3408",
+    "name": "R3408",
+    "hex": "#FCC286",
+    "rgb": {
+      "r": 252,
+      "g": 194,
+      "b": 134
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3408",
+    "name": "P3408",
+    "hex": "#FCC286",
+    "rgb": {
+      "r": 252,
+      "g": 194,
+      "b": 134
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G342",
+    "name": "G342",
+    "hex": "#F7AA4F",
+    "rgb": {
+      "r": 247,
+      "g": 170,
+      "b": 79
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1546",
+    "name": "G1546",
+    "hex": "#F7AA4F",
+    "rgb": {
+      "r": 247,
+      "g": 170,
+      "b": 79
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G343",
+    "name": "G343",
+    "hex": "#FA8E1B",
+    "rgb": {
+      "r": 250,
+      "g": 142,
+      "b": 27
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E285",
+    "name": "E285",
+    "hex": "#F7AF5C",
+    "rgb": {
+      "r": 247,
+      "g": 175,
+      "b": 92
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G385",
+    "name": "G385",
+    "hex": "#FFDB75",
+    "rgb": {
+      "r": 255,
+      "g": 219,
+      "b": 117
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E774",
+    "name": "E774",
+    "hex": "#FFC49C",
+    "rgb": {
+      "r": 255,
+      "g": 196,
+      "b": 156
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E775",
+    "name": "E775",
+    "hex": "#FFBA8C",
+    "rgb": {
+      "r": 255,
+      "g": 186,
+      "b": 140
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E744",
+    "name": "E744",
+    "hex": "#F7C757",
+    "rgb": {
+      "r": 247,
+      "g": 199,
+      "b": 87
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E286",
+    "name": "E286",
+    "hex": "#F8963E",
+    "rgb": {
+      "r": 248,
+      "g": 150,
+      "b": 62
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E287",
+    "name": "E287",
+    "hex": "#F77F1E",
+    "rgb": {
+      "r": 247,
+      "g": 127,
+      "b": 30
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3441",
+    "name": "R3441",
+    "hex": "#F7B14F",
+    "rgb": {
+      "r": 247,
+      "g": 177,
+      "b": 79
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R316",
+    "name": "R316",
+    "hex": "#F7AA4F",
+    "rgb": {
+      "r": 247,
+      "g": 170,
+      "b": 79
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3411",
+    "name": "R3411",
+    "hex": "#F7AA4F",
+    "rgb": {
+      "r": 247,
+      "g": 170,
+      "b": 79
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3411",
+    "name": "P3411",
+    "hex": "#F7AA4F",
+    "rgb": {
+      "r": 247,
+      "g": 170,
+      "b": 79
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3401",
+    "name": "R3401",
+    "hex": "#F7AA4F",
+    "rgb": {
+      "r": 247,
+      "g": 170,
+      "b": 79
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E441",
+    "name": "E441",
+    "hex": "#F7BF4F",
+    "rgb": {
+      "r": 247,
+      "g": 191,
+      "b": 79
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3407",
+    "name": "R3407",
+    "hex": "#F78D1F",
+    "rgb": {
+      "r": 247,
+      "g": 141,
+      "b": 31
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3407",
+    "name": "P3407",
+    "hex": "#F78D1F",
+    "rgb": {
+      "r": 247,
+      "g": 141,
+      "b": 31
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E204",
+    "name": "E204",
+    "hex": "#FF9B30",
+    "rgb": {
+      "r": 255,
+      "g": 155,
+      "b": 48
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E236",
+    "name": "E236",
+    "hex": "#FF8438",
+    "rgb": {
+      "r": 255,
+      "g": 132,
+      "b": 56
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E776",
+    "name": "E776",
+    "hex": "#FF8345",
+    "rgb": {
+      "r": 255,
+      "g": 131,
+      "b": 69
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R811",
+    "name": "R811",
+    "hex": "#FFAA7A",
+    "rgb": {
+      "r": 255,
+      "g": 170,
+      "b": 122
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R813",
+    "name": "R813",
+    "hex": "#FF9847",
+    "rgb": {
+      "r": 255,
+      "g": 152,
+      "b": 71
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R17",
+    "name": "R17",
+    "hex": "#FF934B",
+    "rgb": {
+      "r": 255,
+      "g": 147,
+      "b": 75
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E651",
+    "name": "E651",
+    "hex": "#FFB95C",
+    "rgb": {
+      "r": 255,
+      "g": 185,
+      "b": 92
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E604",
+    "name": "E604",
+    "hex": "#FFC470",
+    "rgb": {
+      "r": 255,
+      "g": 196,
+      "b": 112
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E652",
+    "name": "E652",
+    "hex": "#FF752B",
+    "rgb": {
+      "r": 255,
+      "g": 117,
+      "b": 43
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R317",
+    "name": "R317",
+    "hex": "#FF7418",
+    "rgb": {
+      "r": 255,
+      "g": 116,
+      "b": 24
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E147",
+    "name": "E147",
+    "hex": "#FF7438",
+    "rgb": {
+      "r": 255,
+      "g": 116,
+      "b": 56
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G375",
+    "name": "G375",
+    "hex": "#FF9343",
+    "rgb": {
+      "r": 255,
+      "g": 147,
+      "b": 67
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R18",
+    "name": "R18",
+    "hex": "#FF9343",
+    "rgb": {
+      "r": 255,
+      "g": 147,
+      "b": 67
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3106",
+    "name": "R3106",
+    "hex": "#FF9343",
+    "rgb": {
+      "r": 255,
+      "g": 147,
+      "b": 67
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G382",
+    "name": "G382",
+    "hex": "#F59E33",
+    "rgb": {
+      "r": 245,
+      "g": 158,
+      "b": 51
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1594",
+    "name": "G1594",
+    "hex": "#F59E33",
+    "rgb": {
+      "r": 245,
+      "g": 158,
+      "b": 51
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E020",
+    "name": "E020",
+    "hex": "#FF8A24",
+    "rgb": {
+      "r": 255,
+      "g": 138,
+      "b": 36
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R20",
+    "name": "R20",
+    "hex": "#FF871C",
+    "rgb": {
+      "r": 255,
+      "g": 135,
+      "b": 28
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3114",
+    "name": "P3114",
+    "hex": "#FF871C",
+    "rgb": {
+      "r": 255,
+      "g": 135,
+      "b": 28
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G388",
+    "name": "G388",
+    "hex": "#FFB11F",
+    "rgb": {
+      "r": 255,
+      "g": 177,
+      "b": 31
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E179",
+    "name": "E179",
+    "hex": "#FF9900",
+    "rgb": {
+      "r": 255,
+      "g": 153,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E770",
+    "name": "E770",
+    "hex": "#FF8A0D",
+    "rgb": {
+      "r": 255,
+      "g": 138,
+      "b": 13
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E105",
+    "name": "E105",
+    "hex": "#FF760D",
+    "rgb": {
+      "r": 255,
+      "g": 118,
+      "b": 13
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E237",
+    "name": "E237",
+    "hex": "#F08F56",
+    "rgb": {
+      "r": 240,
+      "g": 143,
+      "b": 86
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R303",
+    "name": "R303",
+    "hex": "#FF8A4A",
+    "rgb": {
+      "r": 255,
+      "g": 138,
+      "b": 74
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3310",
+    "name": "R3310",
+    "hex": "#FF8170",
+    "rgb": {
+      "r": 255,
+      "g": 129,
+      "b": 112
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G323",
+    "name": "G323",
+    "hex": "#FF8170",
+    "rgb": {
+      "r": 255,
+      "g": 129,
+      "b": 112
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1590",
+    "name": "G1590",
+    "hex": "#FF8170",
+    "rgb": {
+      "r": 255,
+      "g": 129,
+      "b": 112
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R318",
+    "name": "R318",
+    "hex": "#FF6F29",
+    "rgb": {
+      "r": 255,
+      "g": 111,
+      "b": 41
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G320",
+    "name": "G320",
+    "hex": "#FF6417",
+    "rgb": {
+      "r": 255,
+      "g": 100,
+      "b": 23
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E779",
+    "name": "E779",
+    "hex": "#F56A2F",
+    "rgb": {
+      "r": 245,
+      "g": 106,
+      "b": 47
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E158",
+    "name": "E158",
+    "hex": "#FF5E00",
+    "rgb": {
+      "r": 255,
+      "g": 94,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E134",
+    "name": "E134",
+    "hex": "#F5632F",
+    "rgb": {
+      "r": 245,
+      "g": 99,
+      "b": 47
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R21",
+    "name": "R21",
+    "hex": "#FF6613",
+    "rgb": {
+      "r": 255,
+      "g": 102,
+      "b": 19
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P5600",
+    "name": "P5600",
+    "hex": "#FF6613",
+    "rgb": {
+      "r": 255,
+      "g": 102,
+      "b": 19
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E021",
+    "name": "E021",
+    "hex": "#FF4800",
+    "rgb": {
+      "r": 255,
+      "g": 72,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E008",
+    "name": "E008",
+    "hex": "#FF5E48",
+    "rgb": {
+      "r": 255,
+      "g": 94,
+      "b": 72
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R23",
+    "name": "R23",
+    "hex": "#FF5A00",
+    "rgb": {
+      "r": 255,
+      "g": 90,
+      "b": 0
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G315",
+    "name": "G315",
+    "hex": "#FF4F14",
+    "rgb": {
+      "r": 255,
+      "g": 79,
+      "b": 20
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E780",
+    "name": "E780",
+    "hex": "#FF3B05",
+    "rgb": {
+      "r": 255,
+      "g": 59,
+      "b": 5
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E778",
+    "name": "E778",
+    "hex": "#FF4405",
+    "rgb": {
+      "r": 255,
+      "g": 68,
+      "b": 5
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G335",
+    "name": "G335",
+    "hex": "#FF6E00",
+    "rgb": {
+      "r": 255,
+      "g": 110,
+      "b": 0
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1540",
+    "name": "G1540",
+    "hex": "#FF6E00",
+    "rgb": {
+      "r": 255,
+      "g": 110,
+      "b": 0
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G345",
+    "name": "G345",
+    "hex": "#FF5A00",
+    "rgb": {
+      "r": 255,
+      "g": 90,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E135",
+    "name": "E135",
+    "hex": "#FF4A00",
+    "rgb": {
+      "r": 255,
+      "g": 74,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R22",
+    "name": "R22",
+    "hex": "#FF430A",
+    "rgb": {
+      "r": 255,
+      "g": 67,
+      "b": 10
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E022",
+    "name": "E022",
+    "hex": "#FF1900",
+    "rgb": {
+      "r": 255,
+      "g": 25,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P5900",
+    "name": "P5900",
+    "hex": "#FF1900",
+    "rgb": {
+      "r": 255,
+      "g": 25,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R321",
+    "name": "R321",
+    "hex": "#FF943C",
+    "rgb": {
+      "r": 255,
+      "g": 148,
+      "b": 60
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R2002",
+    "name": "R2002",
+    "hex": "#FF6C00",
+    "rgb": {
+      "r": 255,
+      "g": 108,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3420",
+    "name": "R3420",
+    "hex": "#FF6C00",
+    "rgb": {
+      "r": 255,
+      "g": 108,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3152",
+    "name": "R3152",
+    "hex": "#F5802C",
+    "rgb": {
+      "r": 245,
+      "g": 128,
+      "b": 44
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E777",
+    "name": "E777",
+    "hex": "#D94F18",
+    "rgb": {
+      "r": 217,
+      "g": 79,
+      "b": 24
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R325",
+    "name": "R325",
+    "hex": "#E32B0C",
+    "rgb": {
+      "r": 227,
+      "g": 43,
+      "b": 12
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E781",
+    "name": "E781",
+    "hex": "#FF0F0D",
+    "rgb": {
+      "r": 255,
+      "g": 15,
+      "b": 13
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9206",
+    "name": "R9206",
+    "hex": "#FFBFC6",
+    "rgb": {
+      "r": 255,
+      "g": 191,
+      "b": 198
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E749",
+    "name": "E749",
+    "hex": "#FFBCBA",
+    "rgb": {
+      "r": 255,
+      "g": 188,
+      "b": 186
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R05",
+    "name": "R05",
+    "hex": "#FFD7D3",
+    "rgb": {
+      "r": 255,
+      "g": 215,
+      "b": 211
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4615",
+    "name": "R4615",
+    "hex": "#F5BBB0",
+    "rgb": {
+      "r": 245,
+      "g": 187,
+      "b": 176
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9321",
+    "name": "R9321",
+    "hex": "#F5BBB0",
+    "rgb": {
+      "r": 245,
+      "g": 187,
+      "b": 176
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E154",
+    "name": "E154",
+    "hex": "#FFB2BA",
+    "rgb": {
+      "r": 255,
+      "g": 178,
+      "b": 186
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9316",
+    "name": "R9316",
+    "hex": "#FFB2BA",
+    "rgb": {
+      "r": 255,
+      "g": 178,
+      "b": 186
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R305",
+    "name": "R305",
+    "hex": "#F5BAB8",
+    "rgb": {
+      "r": 245,
+      "g": 186,
+      "b": 184
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R331",
+    "name": "R331",
+    "hex": "#FF9D8D",
+    "rgb": {
+      "r": 255,
+      "g": 157,
+      "b": 141
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R825",
+    "name": "R825",
+    "hex": "#FDCAD4",
+    "rgb": {
+      "r": 253,
+      "g": 202,
+      "b": 212
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1018",
+    "name": "P1018",
+    "hex": "#FF9D8D",
+    "rgb": {
+      "r": 255,
+      "g": 157,
+      "b": 141
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E790",
+    "name": "E790",
+    "hex": "#FF919C",
+    "rgb": {
+      "r": 255,
+      "g": 145,
+      "b": 156
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4630",
+    "name": "R4630",
+    "hex": "#F5AD9F",
+    "rgb": {
+      "r": 245,
+      "g": 173,
+      "b": 159
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R30",
+    "name": "R30",
+    "hex": "#FF7A59",
+    "rgb": {
+      "r": 255,
+      "g": 122,
+      "b": 89
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R40",
+    "name": "R40",
+    "hex": "#FF4F1F",
+    "rgb": {
+      "r": 255,
+      "g": 79,
+      "b": 31
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4660",
+    "name": "R4660",
+    "hex": "#FF7859",
+    "rgb": {
+      "r": 255,
+      "g": 120,
+      "b": 89
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E025",
+    "name": "E025",
+    "hex": "#FF4B2B",
+    "rgb": {
+      "r": 255,
+      "g": 75,
+      "b": 43
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4690",
+    "name": "R4690",
+    "hex": "#FF2B2B",
+    "rgb": {
+      "r": 255,
+      "g": 43,
+      "b": 43
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E166",
+    "name": "E166",
+    "hex": "#FF3352",
+    "rgb": {
+      "r": 255,
+      "g": 51,
+      "b": 82
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R41",
+    "name": "R41",
+    "hex": "#FF5D30",
+    "rgb": {
+      "r": 255,
+      "g": 93,
+      "b": 48
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R324",
+    "name": "R324",
+    "hex": "#F50F39",
+    "rgb": {
+      "r": 245,
+      "g": 15,
+      "b": 57
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R24",
+    "name": "R24",
+    "hex": "#F50014",
+    "rgb": {
+      "r": 245,
+      "g": 0,
+      "b": 20
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E507",
+    "name": "E507",
+    "hex": "#E93511",
+    "rgb": {
+      "r": 233,
+      "g": 53,
+      "b": 17
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E024",
+    "name": "E024",
+    "hex": "#F00E25",
+    "rgb": {
+      "r": 240,
+      "g": 14,
+      "b": 37
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R19",
+    "name": "R19",
+    "hex": "#FF390B",
+    "rgb": {
+      "r": 255,
+      "g": 57,
+      "b": 11
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G290",
+    "name": "G290",
+    "hex": "#FF2008",
+    "rgb": {
+      "r": 255,
+      "g": 32,
+      "b": 8
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G280",
+    "name": "G280",
+    "hex": "#FF0D00",
+    "rgb": {
+      "r": 255,
+      "g": 13,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E164",
+    "name": "E164",
+    "hex": "#F02225",
+    "rgb": {
+      "r": 240,
+      "g": 34,
+      "b": 37
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E019",
+    "name": "E019",
+    "hex": "#ED2000",
+    "rgb": {
+      "r": 237,
+      "g": 32,
+      "b": 0
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G270",
+    "name": "G270",
+    "hex": "#E81300",
+    "rgb": {
+      "r": 232,
+      "g": 19,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R25",
+    "name": "R25",
+    "hex": "#E51F00",
+    "rgb": {
+      "r": 229,
+      "g": 31,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R818",
+    "name": "R818",
+    "hex": "#F64800",
+    "rgb": {
+      "r": 246,
+      "g": 72,
+      "b": 0
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G245",
+    "name": "G245",
+    "hex": "#E10022",
+    "rgb": {
+      "r": 225,
+      "g": 0,
+      "b": 34
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G250",
+    "name": "G250",
+    "hex": "#DE0012",
+    "rgb": {
+      "r": 222,
+      "g": 0,
+      "b": 18
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E106",
+    "name": "E106",
+    "hex": "#DE0000",
+    "rgb": {
+      "r": 222,
+      "g": 0,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E182",
+    "name": "E182",
+    "hex": "#CC0000",
+    "rgb": {
+      "r": 204,
+      "g": 0,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R26",
+    "name": "R26",
+    "hex": "#D70229",
+    "rgb": {
+      "r": 215,
+      "g": 2,
+      "b": 41
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1019",
+    "name": "P1019",
+    "hex": "#FF390B",
+    "rgb": {
+      "r": 255,
+      "g": 57,
+      "b": 11
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1025",
+    "name": "P1025",
+    "hex": "#E51F00",
+    "rgb": {
+      "r": 229,
+      "g": 31,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P6100",
+    "name": "P6100",
+    "hex": "#D70229",
+    "rgb": {
+      "r": 215,
+      "g": 2,
+      "b": 41
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R2001",
+    "name": "R2001",
+    "hex": "#E10700",
+    "rgb": {
+      "r": 225,
+      "g": 7,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E026",
+    "name": "E026",
+    "hex": "#C70011",
+    "rgb": {
+      "r": 199,
+      "g": 0,
+      "b": 17
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E029",
+    "name": "E029",
+    "hex": "#BC0010",
+    "rgb": {
+      "r": 188,
+      "g": 0,
+      "b": 16
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R821",
+    "name": "R821",
+    "hex": "#A11000",
+    "rgb": {
+      "r": 161,
+      "g": 16,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R823",
+    "name": "R823",
+    "hex": "#7E0000",
+    "rgb": {
+      "r": 126,
+      "g": 0,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R27",
+    "name": "R27",
+    "hex": "#B00202",
+    "rgb": {
+      "r": 176,
+      "g": 2,
+      "b": 2
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P6500",
+    "name": "P6500",
+    "hex": "#B00202",
+    "rgb": {
+      "r": 176,
+      "g": 2,
+      "b": 2
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E027",
+    "name": "E027",
+    "hex": "#A10000",
+    "rgb": {
+      "r": 161,
+      "g": 0,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E789",
+    "name": "E789",
+    "hex": "#99000D",
+    "rgb": {
+      "r": 153,
+      "g": 0,
+      "b": 13
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E787",
+    "name": "E787",
+    "hex": "#91001B",
+    "rgb": {
+      "r": 145,
+      "g": 0,
+      "b": 27
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3318",
+    "name": "R3318",
+    "hex": "#FDEBF3",
+    "rgb": {
+      "r": 253,
+      "g": 235,
+      "b": 243
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G109",
+    "name": "G109",
+    "hex": "#FDF3F7",
+    "rgb": {
+      "r": 253,
+      "g": 243,
+      "b": 247
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G NCR3",
+    "name": "G NCR3",
+    "hex": "#FDF3F7",
+    "rgb": {
+      "r": 253,
+      "g": 243,
+      "b": 247
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9301",
+    "name": "R9301",
+    "hex": "#FDF3F7",
+    "rgb": {
+      "r": 253,
+      "g": 243,
+      "b": 247
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3318",
+    "name": "P3318",
+    "hex": "#FDEBF3",
+    "rgb": {
+      "r": 253,
+      "g": 235,
+      "b": 243
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E279",
+    "name": "E279",
+    "hex": "#FCE8F3",
+    "rgb": {
+      "r": 252,
+      "g": 232,
+      "b": 243
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1033",
+    "name": "P1033",
+    "hex": "#FCE8F3",
+    "rgb": {
+      "r": 252,
+      "g": 232,
+      "b": 243
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3314",
+    "name": "R3314",
+    "hex": "#FBD7E3",
+    "rgb": {
+      "r": 251,
+      "g": 215,
+      "b": 227
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9306",
+    "name": "R9306",
+    "hex": "#FBD7E3",
+    "rgb": {
+      "r": 251,
+      "g": 215,
+      "b": 227
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3314",
+    "name": "P3314",
+    "hex": "#FBD7E3",
+    "rgb": {
+      "r": 251,
+      "g": 215,
+      "b": 227
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E249",
+    "name": "E249",
+    "hex": "#FADEE8",
+    "rgb": {
+      "r": 250,
+      "g": 222,
+      "b": 232
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G108",
+    "name": "G108",
+    "hex": "#FFE8F1",
+    "rgb": {
+      "r": 255,
+      "g": 232,
+      "b": 241
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G107",
+    "name": "G107",
+    "hex": "#FFD1E3",
+    "rgb": {
+      "r": 255,
+      "g": 209,
+      "b": 227
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1583",
+    "name": "G1583",
+    "hex": "#FFD1E3",
+    "rgb": {
+      "r": 255,
+      "g": 209,
+      "b": 227
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G106",
+    "name": "G106",
+    "hex": "#FFBFD8",
+    "rgb": {
+      "r": 255,
+      "g": 191,
+      "b": 216
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E248",
+    "name": "E248",
+    "hex": "#FACDE0",
+    "rgb": {
+      "r": 250,
+      "g": 205,
+      "b": 224
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R333",
+    "name": "R333",
+    "hex": "#F9C5D8",
+    "rgb": {
+      "r": 249,
+      "g": 197,
+      "b": 216
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3313",
+    "name": "R3313",
+    "hex": "#F9C5D8",
+    "rgb": {
+      "r": 249,
+      "g": 197,
+      "b": 216
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3313",
+    "name": "P3313",
+    "hex": "#F9C5D8",
+    "rgb": {
+      "r": 249,
+      "g": 197,
+      "b": 216
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3309",
+    "name": "R3309",
+    "hex": "#FFBFDA",
+    "rgb": {
+      "r": 255,
+      "g": 191,
+      "b": 218
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G105",
+    "name": "G105",
+    "hex": "#FFAED8",
+    "rgb": {
+      "r": 255,
+      "g": 174,
+      "b": 216
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1580",
+    "name": "G1580",
+    "hex": "#FFAED8",
+    "rgb": {
+      "r": 255,
+      "g": 174,
+      "b": 216
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R37",
+    "name": "R37",
+    "hex": "#F7B1CB",
+    "rgb": {
+      "r": 247,
+      "g": 177,
+      "b": 203
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G105X",
+    "name": "G105X",
+    "hex": "#FFB8D6",
+    "rgb": {
+      "r": 255,
+      "g": 184,
+      "b": 214
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3308",
+    "name": "R3308",
+    "hex": "#F7B1CB",
+    "rgb": {
+      "r": 247,
+      "g": 177,
+      "b": 203
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1030",
+    "name": "P1030",
+    "hex": "#FF7A59",
+    "rgb": {
+      "r": 255,
+      "g": 122,
+      "b": 89
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G104",
+    "name": "G104",
+    "hex": "#FF9EBD",
+    "rgb": {
+      "r": 255,
+      "g": 158,
+      "b": 189
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1578",
+    "name": "G1578",
+    "hex": "#FF9EBD",
+    "rgb": {
+      "r": 255,
+      "g": 158,
+      "b": 189
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E039",
+    "name": "E039",
+    "hex": "#FAC0D8",
+    "rgb": {
+      "r": 250,
+      "g": 192,
+      "b": 216
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R337",
+    "name": "R337",
+    "hex": "#FFAFC2",
+    "rgb": {
+      "r": 255,
+      "g": 175,
+      "b": 194
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4815",
+    "name": "R4815",
+    "hex": "#F8BAC7",
+    "rgb": {
+      "r": 248,
+      "g": 186,
+      "b": 199
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9311",
+    "name": "R9311",
+    "hex": "#F8BAC7",
+    "rgb": {
+      "r": 248,
+      "g": 186,
+      "b": 199
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R33",
+    "name": "R33",
+    "hex": "#FFC2D0",
+    "rgb": {
+      "r": 255,
+      "g": 194,
+      "b": 208
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R35",
+    "name": "R35",
+    "hex": "#FFA7BB",
+    "rgb": {
+      "r": 255,
+      "g": 167,
+      "b": 187
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E035",
+    "name": "E035",
+    "hex": "#FFB8CE",
+    "rgb": {
+      "r": 255,
+      "g": 184,
+      "b": 206
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E247",
+    "name": "E247",
+    "hex": "#FFB8D0",
+    "rgb": {
+      "r": 255,
+      "g": 184,
+      "b": 208
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G160",
+    "name": "G160",
+    "hex": "#FFA3C4",
+    "rgb": {
+      "r": 255,
+      "g": 163,
+      "b": 196
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4830",
+    "name": "R4830",
+    "hex": "#F599AB",
+    "rgb": {
+      "r": 245,
+      "g": 153,
+      "b": 171
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4860",
+    "name": "R4860",
+    "hex": "#F27089",
+    "rgb": {
+      "r": 242,
+      "g": 112,
+      "b": 137
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4890",
+    "name": "R4890",
+    "hex": "#EF486B",
+    "rgb": {
+      "r": 239,
+      "g": 72,
+      "b": 107
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E110",
+    "name": "E110",
+    "hex": "#FFA3CA",
+    "rgb": {
+      "r": 255,
+      "g": 163,
+      "b": 202
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1337",
+    "name": "P1337",
+    "hex": "#FFA3CA",
+    "rgb": {
+      "r": 255,
+      "g": 163,
+      "b": 202
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E153",
+    "name": "E153",
+    "hex": "#FFB2BA",
+    "rgb": {
+      "r": 255,
+      "g": 178,
+      "b": 186
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E109",
+    "name": "E109",
+    "hex": "#FF919C",
+    "rgb": {
+      "r": 255,
+      "g": 145,
+      "b": 156
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E107",
+    "name": "E107",
+    "hex": "#FF809F",
+    "rgb": {
+      "r": 255,
+      "g": 128,
+      "b": 159
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G190",
+    "name": "G190",
+    "hex": "#FF9193",
+    "rgb": {
+      "r": 255,
+      "g": 145,
+      "b": 147
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R834",
+    "name": "R834",
+    "hex": "#FCAAB4",
+    "rgb": {
+      "r": 252,
+      "g": 170,
+      "b": 180
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G195",
+    "name": "G195",
+    "hex": "#FF9991",
+    "rgb": {
+      "r": 255,
+      "g": 153,
+      "b": 145
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R34",
+    "name": "R34",
+    "hex": "#FF8D8D",
+    "rgb": {
+      "r": 255,
+      "g": 141,
+      "b": 141
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R826",
+    "name": "R826",
+    "hex": "#FFA8B7",
+    "rgb": {
+      "r": 255,
+      "g": 168,
+      "b": 183
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R31",
+    "name": "R31",
+    "hex": "#FF847F",
+    "rgb": {
+      "r": 255,
+      "g": 132,
+      "b": 127
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E036",
+    "name": "E036",
+    "hex": "#FF6E9E",
+    "rgb": {
+      "r": 255,
+      "g": 110,
+      "b": 158
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R36",
+    "name": "R36",
+    "hex": "#FF6D96",
+    "rgb": {
+      "r": 255,
+      "g": 109,
+      "b": 150
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G152",
+    "name": "G152",
+    "hex": "#FF789E",
+    "rgb": {
+      "r": 255,
+      "g": 120,
+      "b": 158
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E111",
+    "name": "E111",
+    "hex": "#FF63A4",
+    "rgb": {
+      "r": 255,
+      "g": 99,
+      "b": 164
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E192",
+    "name": "E192",
+    "hex": "#FF639F",
+    "rgb": {
+      "r": 255,
+      "g": 99,
+      "b": 159
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E794",
+    "name": "E794",
+    "hex": "#FF82DE",
+    "rgb": {
+      "r": 255,
+      "g": 130,
+      "b": 222
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R336",
+    "name": "R336",
+    "hex": "#FF73B7",
+    "rgb": {
+      "r": 255,
+      "g": 115,
+      "b": 183
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E002",
+    "name": "E002",
+    "hex": "#FF40B9",
+    "rgb": {
+      "r": 255,
+      "g": 64,
+      "b": 185
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R44",
+    "name": "R44",
+    "hex": "#FF33B5",
+    "rgb": {
+      "r": 255,
+      "g": 51,
+      "b": 181
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R344",
+    "name": "R344",
+    "hex": "#FF05D3",
+    "rgb": {
+      "r": 255,
+      "g": 5,
+      "b": 211
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G110",
+    "name": "G110",
+    "hex": "#FF34AE",
+    "rgb": {
+      "r": 255,
+      "g": 52,
+      "b": 174
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E328",
+    "name": "E328",
+    "hex": "#FF33A0",
+    "rgb": {
+      "r": 255,
+      "g": 51,
+      "b": 160
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R828",
+    "name": "R828",
+    "hex": "#D767C2",
+    "rgb": {
+      "r": 215,
+      "g": 103,
+      "b": 194
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G120",
+    "name": "G120",
+    "hex": "#FF369E",
+    "rgb": {
+      "r": 255,
+      "g": 54,
+      "b": 158
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R43",
+    "name": "R43",
+    "hex": "#FF3E93",
+    "rgb": {
+      "r": 255,
+      "g": 62,
+      "b": 147
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G150",
+    "name": "G150",
+    "hex": "#FF2E7E",
+    "rgb": {
+      "r": 255,
+      "g": 46,
+      "b": 126
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1421",
+    "name": "P1421",
+    "hex": "#FFAFC2",
+    "rgb": {
+      "r": 255,
+      "g": 175,
+      "b": 194
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P4758",
+    "name": "P4758",
+    "hex": "#FF3E93",
+    "rgb": {
+      "r": 255,
+      "g": 62,
+      "b": 147
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R343",
+    "name": "R343",
+    "hex": "#FF397F",
+    "rgb": {
+      "r": 255,
+      "g": 57,
+      "b": 127
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R339",
+    "name": "R339",
+    "hex": "#FF1283",
+    "rgb": {
+      "r": 255,
+      "g": 18,
+      "b": 131
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E128",
+    "name": "E128",
+    "hex": "#FF177F",
+    "rgb": {
+      "r": 255,
+      "g": 23,
+      "b": 127
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E332",
+    "name": "E332",
+    "hex": "#FF0D6A",
+    "rgb": {
+      "r": 255,
+      "g": 13,
+      "b": 106
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G180",
+    "name": "G180",
+    "hex": "#FF2164",
+    "rgb": {
+      "r": 255,
+      "g": 33,
+      "b": 100
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E793",
+    "name": "E793",
+    "hex": "#FF12AC",
+    "rgb": {
+      "r": 255,
+      "g": 18,
+      "b": 172
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R837",
+    "name": "R837",
+    "hex": "#BC2B68",
+    "rgb": {
+      "r": 188,
+      "g": 43,
+      "b": 104
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G140",
+    "name": "G140",
+    "hex": "#F300B2",
+    "rgb": {
+      "r": 243,
+      "g": 0,
+      "b": 178
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E795",
+    "name": "E795",
+    "hex": "#FF00C8",
+    "rgb": {
+      "r": 255,
+      "g": 0,
+      "b": 200
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E157",
+    "name": "E157",
+    "hex": "#FF4551",
+    "rgb": {
+      "r": 255,
+      "g": 69,
+      "b": 81
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E193",
+    "name": "E193",
+    "hex": "#FF454B",
+    "rgb": {
+      "r": 255,
+      "g": 69,
+      "b": 75
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R32",
+    "name": "R32",
+    "hex": "#FF413C",
+    "rgb": {
+      "r": 255,
+      "g": 65,
+      "b": 60
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R332",
+    "name": "R332",
+    "hex": "#FF2957",
+    "rgb": {
+      "r": 255,
+      "g": 41,
+      "b": 87
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E148",
+    "name": "E148",
+    "hex": "#FF1472",
+    "rgb": {
+      "r": 255,
+      "g": 20,
+      "b": 114
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G235",
+    "name": "G235",
+    "hex": "#FF2937",
+    "rgb": {
+      "r": 255,
+      "g": 41,
+      "b": 55
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G220",
+    "name": "G220",
+    "hex": "#FF1D47",
+    "rgb": {
+      "r": 255,
+      "g": 29,
+      "b": 71
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R832",
+    "name": "R832",
+    "hex": "#D4275B",
+    "rgb": {
+      "r": 212,
+      "g": 39,
+      "b": 91
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R342",
+    "name": "R342",
+    "hex": "#FF1562",
+    "rgb": {
+      "r": 255,
+      "g": 21,
+      "b": 98
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P4630",
+    "name": "P4630",
+    "hex": "#FF1562",
+    "rgb": {
+      "r": 255,
+      "g": 21,
+      "b": 98
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E113",
+    "name": "E113",
+    "hex": "#FF004D",
+    "rgb": {
+      "r": 255,
+      "g": 0,
+      "b": 77
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R42",
+    "name": "R42",
+    "hex": "#FF1C26",
+    "rgb": {
+      "r": 255,
+      "g": 28,
+      "b": 38
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G100",
+    "name": "G100",
+    "hex": "#D75873",
+    "rgb": {
+      "r": 215,
+      "g": 88,
+      "b": 115
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E748",
+    "name": "E748",
+    "hex": "#C23061",
+    "rgb": {
+      "r": 194,
+      "g": 48,
+      "b": 97
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R50",
+    "name": "R50",
+    "hex": "#BB002C",
+    "rgb": {
+      "r": 187,
+      "g": 0,
+      "b": 44
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R836",
+    "name": "R836",
+    "hex": "#9A454F",
+    "rgb": {
+      "r": 154,
+      "g": 69,
+      "b": 79
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E127",
+    "name": "E127",
+    "hex": "#BB334C",
+    "rgb": {
+      "r": 187,
+      "g": 51,
+      "b": 76
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R45",
+    "name": "R45",
+    "hex": "#EB016D",
+    "rgb": {
+      "r": 235,
+      "g": 1,
+      "b": 109
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R39",
+    "name": "R39",
+    "hex": "#E800BC",
+    "rgb": {
+      "r": 232,
+      "g": 0,
+      "b": 188
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R46",
+    "name": "R46",
+    "hex": "#BD045D",
+    "rgb": {
+      "r": 189,
+      "g": 4,
+      "b": 93
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E046",
+    "name": "E046",
+    "hex": "#C5004F",
+    "rgb": {
+      "r": 197,
+      "g": 0,
+      "b": 79
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4715",
+    "name": "R4715",
+    "hex": "#F8C1D9",
+    "rgb": {
+      "r": 248,
+      "g": 193,
+      "b": 217
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R38",
+    "name": "R38",
+    "hex": "#FFBBE2",
+    "rgb": {
+      "r": 255,
+      "g": 187,
+      "b": 226
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G135",
+    "name": "G135",
+    "hex": "#E88BAD",
+    "rgb": {
+      "r": 232,
+      "g": 139,
+      "b": 173
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4730",
+    "name": "R4730",
+    "hex": "#F5A3C7",
+    "rgb": {
+      "r": 245,
+      "g": 163,
+      "b": 199
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4760",
+    "name": "R4760",
+    "hex": "#F173AC",
+    "rgb": {
+      "r": 241,
+      "g": 115,
+      "b": 172
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R346",
+    "name": "R346",
+    "hex": "#FF2DD5",
+    "rgb": {
+      "r": 255,
+      "g": 45,
+      "b": 213
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4790",
+    "name": "R4790",
+    "hex": "#EC008C",
+    "rgb": {
+      "r": 236,
+      "g": 0,
+      "b": 140
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R2010",
+    "name": "R2010",
+    "hex": "#EC008C",
+    "rgb": {
+      "r": 236,
+      "g": 0,
+      "b": 140
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R48",
+    "name": "R48",
+    "hex": "#C800CF",
+    "rgb": {
+      "r": 200,
+      "g": 0,
+      "b": 207
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E048",
+    "name": "E048",
+    "hex": "#C43BFF",
+    "rgb": {
+      "r": 196,
+      "g": 59,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R349",
+    "name": "R349",
+    "hex": "#F000FF",
+    "rgb": {
+      "r": 240,
+      "g": 0,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P4640",
+    "name": "P4640",
+    "hex": "#F000FF",
+    "rgb": {
+      "r": 240,
+      "g": 0,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R348",
+    "name": "R348",
+    "hex": "#DA2DFF",
+    "rgb": {
+      "r": 218,
+      "g": 45,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E126",
+    "name": "E126",
+    "hex": "#D400DB",
+    "rgb": {
+      "r": 212,
+      "g": 0,
+      "b": 219
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G995",
+    "name": "G995",
+    "hex": "#DD17FF",
+    "rgb": {
+      "r": 221,
+      "g": 23,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E049",
+    "name": "E049",
+    "hex": "#BE00D4",
+    "rgb": {
+      "r": 190,
+      "g": 0,
+      "b": 212
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R49",
+    "name": "R49",
+    "hex": "#C900E6",
+    "rgb": {
+      "r": 201,
+      "g": 0,
+      "b": 230
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R838",
+    "name": "R838",
+    "hex": "#9B2BA5",
+    "rgb": {
+      "r": 155,
+      "g": 43,
+      "b": 165
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P4763",
+    "name": "P4763",
+    "hex": "#C900E6",
+    "rgb": {
+      "r": 201,
+      "g": 0,
+      "b": 230
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E797",
+    "name": "E797",
+    "hex": "#AD00CC",
+    "rgb": {
+      "r": 173,
+      "g": 0,
+      "b": 204
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R347",
+    "name": "R347",
+    "hex": "#B101DD",
+    "rgb": {
+      "r": 177,
+      "g": 1,
+      "b": 221
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E003",
+    "name": "E003",
+    "hex": "#F5E6FF",
+    "rgb": {
+      "r": 245,
+      "g": 230,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R351",
+    "name": "R351",
+    "hex": "#EFDCFF",
+    "rgb": {
+      "r": 239,
+      "g": 220,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E169",
+    "name": "E169",
+    "hex": "#EBDAF5",
+    "rgb": {
+      "r": 235,
+      "g": 218,
+      "b": 245
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4915",
+    "name": "R4915",
+    "hex": "#E0B9FB",
+    "rgb": {
+      "r": 224,
+      "g": 185,
+      "b": 251
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G980",
+    "name": "G980",
+    "hex": "#E8CCFF",
+    "rgb": {
+      "r": 232,
+      "g": 204,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G982",
+    "name": "G982",
+    "hex": "#DA9EFF",
+    "rgb": {
+      "r": 218,
+      "g": 158,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R51",
+    "name": "R51",
+    "hex": "#E6CBFF",
+    "rgb": {
+      "r": 230,
+      "g": 203,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E5404",
+    "name": "E5404",
+    "hex": "#DFCFFF",
+    "rgb": {
+      "r": 223,
+      "g": 207,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E702",
+    "name": "E702",
+    "hex": "#DACCFF",
+    "rgb": {
+      "r": 218,
+      "g": 204,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R54",
+    "name": "R54",
+    "hex": "#E6C7FF",
+    "rgb": {
+      "r": 230,
+      "g": 199,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4930",
+    "name": "R4930",
+    "hex": "#D396FF",
+    "rgb": {
+      "r": 211,
+      "g": 150,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E341",
+    "name": "E341",
+    "hex": "#CD9BD1",
+    "rgb": {
+      "r": 205,
+      "g": 155,
+      "b": 209
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G103",
+    "name": "G103",
+    "hex": "#D973B2",
+    "rgb": {
+      "r": 217,
+      "g": 115,
+      "b": 178
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E136",
+    "name": "E136",
+    "hex": "#E2C7FF",
+    "rgb": {
+      "r": 226,
+      "g": 199,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E704",
+    "name": "E704",
+    "hex": "#E2BAFF",
+    "rgb": {
+      "r": 226,
+      "g": 186,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E705",
+    "name": "E705",
+    "hex": "#D59EFF",
+    "rgb": {
+      "r": 213,
+      "g": 158,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G970",
+    "name": "G970",
+    "hex": "#DFB5FF",
+    "rgb": {
+      "r": 223,
+      "g": 181,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R840",
+    "name": "R840",
+    "hex": "#A6A4D8",
+    "rgb": {
+      "r": 166,
+      "g": 164,
+      "b": 216
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R52",
+    "name": "R52",
+    "hex": "#DDBFFF",
+    "rgb": {
+      "r": 221,
+      "g": 191,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E052",
+    "name": "E052",
+    "hex": "#D7BAFF",
+    "rgb": {
+      "r": 215,
+      "g": 186,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E170",
+    "name": "E170",
+    "hex": "#DAADFF",
+    "rgb": {
+      "r": 218,
+      "g": 173,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E703",
+    "name": "E703",
+    "hex": "#C587FF",
+    "rgb": {
+      "r": 197,
+      "g": 135,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4960",
+    "name": "R4960",
+    "hex": "#B356F4",
+    "rgb": {
+      "r": 179,
+      "g": 86,
+      "b": 244
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G990",
+    "name": "G990",
+    "hex": "#DE4AFF",
+    "rgb": {
+      "r": 222,
+      "g": 74,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R47",
+    "name": "R47",
+    "hex": "#CC4EB9",
+    "rgb": {
+      "r": 204,
+      "g": 78,
+      "b": 185
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E345",
+    "name": "E345",
+    "hex": "#C953DB",
+    "rgb": {
+      "r": 201,
+      "g": 83,
+      "b": 219
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4990",
+    "name": "R4990",
+    "hex": "#9900E0",
+    "rgb": {
+      "r": 153,
+      "g": 0,
+      "b": 224
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R2009",
+    "name": "R2009",
+    "hex": "#630091",
+    "rgb": {
+      "r": 99,
+      "g": 0,
+      "b": 145
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E701",
+    "name": "E701",
+    "hex": "#9A3BFF",
+    "rgb": {
+      "r": 154,
+      "g": 59,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G960",
+    "name": "G960",
+    "hex": "#CB82FF",
+    "rgb": {
+      "r": 203,
+      "g": 130,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R58",
+    "name": "R58",
+    "hex": "#933FFD",
+    "rgb": {
+      "r": 147,
+      "g": 63,
+      "b": 253
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E058",
+    "name": "E058",
+    "hex": "#9235FD",
+    "rgb": {
+      "r": 146,
+      "g": 53,
+      "b": 253
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1048",
+    "name": "P1048",
+    "hex": "#9235FD",
+    "rgb": {
+      "r": 146,
+      "g": 53,
+      "b": 253
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E706",
+    "name": "E706",
+    "hex": "#6600FF",
+    "rgb": {
+      "r": 102,
+      "g": 0,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R358",
+    "name": "R358",
+    "hex": "#8E0AEA",
+    "rgb": {
+      "r": 142,
+      "g": 10,
+      "b": 234
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G985",
+    "name": "G985",
+    "hex": "#CF09D9",
+    "rgb": {
+      "r": 207,
+      "g": 9,
+      "b": 217
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E5084",
+    "name": "E5084",
+    "hex": "#8800C7",
+    "rgb": {
+      "r": 136,
+      "g": 0,
+      "b": 199
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E798",
+    "name": "E798",
+    "hex": "#7B0FFF",
+    "rgb": {
+      "r": 123,
+      "g": 15,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R356",
+    "name": "R356",
+    "hex": "#C38DFF",
+    "rgb": {
+      "r": 195,
+      "g": 141,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R57",
+    "name": "R57",
+    "hex": "#B482FF",
+    "rgb": {
+      "r": 180,
+      "g": 130,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G940",
+    "name": "G940",
+    "hex": "#B38AFF",
+    "rgb": {
+      "r": 179,
+      "g": 138,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R843",
+    "name": "R843",
+    "hex": "#0053BC",
+    "rgb": {
+      "r": 0,
+      "g": 83,
+      "b": 188
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R56",
+    "name": "R56",
+    "hex": "#8C2FFF",
+    "rgb": {
+      "r": 140,
+      "g": 47,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E180",
+    "name": "E180",
+    "hex": "#8B2BFF",
+    "rgb": {
+      "r": 139,
+      "g": 43,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E700",
+    "name": "E700",
+    "hex": "#7500EB",
+    "rgb": {
+      "r": 117,
+      "g": 0,
+      "b": 235
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R359",
+    "name": "R359",
+    "hex": "#683FFF",
+    "rgb": {
+      "r": 104,
+      "g": 63,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R846",
+    "name": "R846",
+    "hex": "#0068C4",
+    "rgb": {
+      "r": 0,
+      "g": 104,
+      "b": 196
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G948",
+    "name": "G948",
+    "hex": "#841FFF",
+    "rgb": {
+      "r": 132,
+      "g": 31,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R357",
+    "name": "R357",
+    "hex": "#8A2BFF",
+    "rgb": {
+      "r": 138,
+      "g": 43,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E343",
+    "name": "E343",
+    "hex": "#7345FF",
+    "rgb": {
+      "r": 115,
+      "g": 69,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E707",
+    "name": "E707",
+    "hex": "#7500F2",
+    "rgb": {
+      "r": 117,
+      "g": 0,
+      "b": 242
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R53",
+    "name": "R53",
+    "hex": "#E4DCFF",
+    "rgb": {
+      "r": 228,
+      "g": 220,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E053",
+    "name": "E053",
+    "hex": "#E5DEFF",
+    "rgb": {
+      "r": 229,
+      "g": 222,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G920",
+    "name": "G920",
+    "hex": "#EEDCFF",
+    "rgb": {
+      "r": 238,
+      "g": 220,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4215",
+    "name": "R4215",
+    "hex": "#CAC9FF",
+    "rgb": {
+      "r": 202,
+      "g": 201,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4230",
+    "name": "R4230",
+    "hex": "#A298FF",
+    "rgb": {
+      "r": 162,
+      "g": 152,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R55",
+    "name": "R55",
+    "hex": "#C0AAFD",
+    "rgb": {
+      "r": 192,
+      "g": 170,
+      "b": 253
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R842",
+    "name": "R842",
+    "hex": "#558EE0",
+    "rgb": {
+      "r": 85,
+      "g": 142,
+      "b": 224
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1054",
+    "name": "P1054",
+    "hex": "#C0AAFD",
+    "rgb": {
+      "r": 192,
+      "g": 170,
+      "b": 253
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E709",
+    "name": "E709",
+    "hex": "#7394FF",
+    "rgb": {
+      "r": 115,
+      "g": 148,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E137",
+    "name": "E137",
+    "hex": "#B695FC",
+    "rgb": {
+      "r": 182,
+      "g": 149,
+      "b": 252
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R353",
+    "name": "R353",
+    "hex": "#C4ADFF",
+    "rgb": {
+      "r": 196,
+      "g": 173,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1481",
+    "name": "P1481",
+    "hex": "#FF3E93",
+    "rgb": {
+      "r": 255,
+      "g": 62,
+      "b": 147
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R841",
+    "name": "R841",
+    "hex": "#6689D8",
+    "rgb": {
+      "r": 102,
+      "g": 137,
+      "b": 216
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E194",
+    "name": "E194",
+    "hex": "#AC82FF",
+    "rgb": {
+      "r": 172,
+      "g": 130,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R355",
+    "name": "R355",
+    "hex": "#A590FF",
+    "rgb": {
+      "r": 165,
+      "g": 144,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4260",
+    "name": "R4260",
+    "hex": "#755FFF",
+    "rgb": {
+      "r": 117,
+      "g": 95,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E142",
+    "name": "E142",
+    "hex": "#AA96FF",
+    "rgb": {
+      "r": 170,
+      "g": 150,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E344",
+    "name": "E344",
+    "hex": "#A98AFF",
+    "rgb": {
+      "r": 169,
+      "g": 138,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R844",
+    "name": "R844",
+    "hex": "#0079D9",
+    "rgb": {
+      "r": 0,
+      "g": 121,
+      "b": 217
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R378",
+    "name": "R378",
+    "hex": "#8474FD",
+    "rgb": {
+      "r": 132,
+      "g": 116,
+      "b": 253
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G910",
+    "name": "G910",
+    "hex": "#6A57FF",
+    "rgb": {
+      "r": 106,
+      "g": 87,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E710",
+    "name": "E710",
+    "hex": "#554CFF",
+    "rgb": {
+      "r": 85,
+      "g": 76,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4290",
+    "name": "R4290",
+    "hex": "#5722F1",
+    "rgb": {
+      "r": 87,
+      "g": 34,
+      "b": 241
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G925",
+    "name": "G925",
+    "hex": "#5600E1",
+    "rgb": {
+      "r": 86,
+      "g": 0,
+      "b": 225
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G915",
+    "name": "G915",
+    "hex": "#381BF5",
+    "rgb": {
+      "r": 56,
+      "g": 27,
+      "b": 245
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R377",
+    "name": "R377",
+    "hex": "#7124FF",
+    "rgb": {
+      "r": 113,
+      "g": 36,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R2008",
+    "name": "R2008",
+    "hex": "#4100D4",
+    "rgb": {
+      "r": 65,
+      "g": 0,
+      "b": 212
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E5085",
+    "name": "E5085",
+    "hex": "#6D00F2",
+    "rgb": {
+      "r": 109,
+      "g": 0,
+      "b": 242
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R59",
+    "name": "R59",
+    "hex": "#7200FF",
+    "rgb": {
+      "r": 114,
+      "g": 0,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1059",
+    "name": "P1059",
+    "hex": "#7200FF",
+    "rgb": {
+      "r": 114,
+      "g": 0,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G515",
+    "name": "G515",
+    "hex": "#F9FFE3",
+    "rgb": {
+      "r": 249,
+      "g": 255,
+      "b": 227
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1589",
+    "name": "G1589",
+    "hex": "#F9FFE3",
+    "rgb": {
+      "r": 249,
+      "g": 255,
+      "b": 227
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3317",
+    "name": "R3317",
+    "hex": "#F9FFE3",
+    "rgb": {
+      "r": 249,
+      "g": 255,
+      "b": 227
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E278",
+    "name": "E278",
+    "hex": "#F6FFE0",
+    "rgb": {
+      "r": 246,
+      "g": 255,
+      "b": 224
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G525",
+    "name": "G525",
+    "hex": "#F2FDCA",
+    "rgb": {
+      "r": 242,
+      "g": 253,
+      "b": 202
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1588",
+    "name": "G1588",
+    "hex": "#F2FDCA",
+    "rgb": {
+      "r": 242,
+      "g": 253,
+      "b": 202
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3316",
+    "name": "R3316",
+    "hex": "#F2FDCA",
+    "rgb": {
+      "r": 242,
+      "g": 253,
+      "b": 202
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E246",
+    "name": "E246",
+    "hex": "#F0FCD2",
+    "rgb": {
+      "r": 240,
+      "g": 252,
+      "b": 210
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R96",
+    "name": "R96",
+    "hex": "#F3FF6B",
+    "rgb": {
+      "r": 243,
+      "g": 255,
+      "b": 107
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E245",
+    "name": "E245",
+    "hex": "#EAFCB8",
+    "rgb": {
+      "r": 234,
+      "g": 252,
+      "b": 184
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G535",
+    "name": "G535",
+    "hex": "#F0FFBA",
+    "rgb": {
+      "r": 240,
+      "g": 255,
+      "b": 186
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1587",
+    "name": "G1587",
+    "hex": "#F0FFBA",
+    "rgb": {
+      "r": 240,
+      "g": 255,
+      "b": 186
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3315",
+    "name": "R3315",
+    "hex": "#F0FFBA",
+    "rgb": {
+      "r": 240,
+      "g": 255,
+      "b": 186
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R87",
+    "name": "R87",
+    "hex": "#F0FFBA",
+    "rgb": {
+      "r": 240,
+      "g": 255,
+      "b": 186
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1384",
+    "name": "P1384",
+    "hex": "#0500D0",
+    "rgb": {
+      "r": 5,
+      "g": 0,
+      "b": 208
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E213",
+    "name": "E213",
+    "hex": "#E0FCB3",
+    "rgb": {
+      "r": 224,
+      "g": 252,
+      "b": 179
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4415",
+    "name": "R4415",
+    "hex": "#CBFF9D",
+    "rgb": {
+      "r": 203,
+      "g": 255,
+      "b": 157
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E244",
+    "name": "E244",
+    "hex": "#E0FC90",
+    "rgb": {
+      "r": 224,
+      "g": 252,
+      "b": 144
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G540",
+    "name": "G540",
+    "hex": "#DCFE92",
+    "rgb": {
+      "r": 220,
+      "g": 254,
+      "b": 146
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1585",
+    "name": "G1585",
+    "hex": "#DCFE92",
+    "rgb": {
+      "r": 220,
+      "g": 254,
+      "b": 146
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R88",
+    "name": "R88",
+    "hex": "#DCFE92",
+    "rgb": {
+      "r": 220,
+      "g": 254,
+      "b": 146
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3304",
+    "name": "R3304",
+    "hex": "#DCFE92",
+    "rgb": {
+      "r": 220,
+      "g": 254,
+      "b": 146
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R388",
+    "name": "R388",
+    "hex": "#D0F54E",
+    "rgb": {
+      "r": 208,
+      "g": 245,
+      "b": 78
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3388",
+    "name": "P3388",
+    "hex": "#D0F54E",
+    "rgb": {
+      "r": 208,
+      "g": 245,
+      "b": 78
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E138",
+    "name": "E138",
+    "hex": "#B4FFA8",
+    "rgb": {
+      "r": 180,
+      "g": 255,
+      "b": 168
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4430",
+    "name": "R4430",
+    "hex": "#97F459",
+    "rgb": {
+      "r": 151,
+      "g": 244,
+      "b": 89
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E733",
+    "name": "E733",
+    "hex": "#A8E5C7",
+    "rgb": {
+      "r": 168,
+      "g": 229,
+      "b": 199
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E505",
+    "name": "E505",
+    "hex": "#BFFF59",
+    "rgb": {
+      "r": 191,
+      "g": 255,
+      "b": 89
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E088",
+    "name": "E088",
+    "hex": "#BEFF85",
+    "rgb": {
+      "r": 190,
+      "g": 255,
+      "b": 133
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R86",
+    "name": "R86",
+    "hex": "#89FA19",
+    "rgb": {
+      "r": 137,
+      "g": 250,
+      "b": 25
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E121",
+    "name": "E121",
+    "hex": "#93FF54",
+    "rgb": {
+      "r": 147,
+      "g": 255,
+      "b": 84
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G570",
+    "name": "G570",
+    "hex": "#63DC00",
+    "rgb": {
+      "r": 99,
+      "g": 220,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E738",
+    "name": "E738",
+    "hex": "#5FE300",
+    "rgb": {
+      "r": 95,
+      "g": 227,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R386",
+    "name": "R386",
+    "hex": "#7BD300",
+    "rgb": {
+      "r": 123,
+      "g": 211,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4460",
+    "name": "R4460",
+    "hex": "#40DC00",
+    "rgb": {
+      "r": 64,
+      "g": 220,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R89",
+    "name": "R89",
+    "hex": "#51F655",
+    "rgb": {
+      "r": 81,
+      "g": 246,
+      "b": 85
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E122",
+    "name": "E122",
+    "hex": "#74F55D",
+    "rgb": {
+      "r": 116,
+      "g": 245,
+      "b": 93
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1086",
+    "name": "P1086",
+    "hex": "#74F55D",
+    "rgb": {
+      "r": 116,
+      "g": 245,
+      "b": 93
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3315",
+    "name": "P3315",
+    "hex": "#F0FFBA",
+    "rgb": {
+      "r": 240,
+      "g": 255,
+      "b": 186
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G666",
+    "name": "G666",
+    "hex": "#00CF1C",
+    "rgb": {
+      "r": 0,
+      "g": 207,
+      "b": 28
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R389",
+    "name": "R389",
+    "hex": "#29F433",
+    "rgb": {
+      "r": 41,
+      "g": 244,
+      "b": 51
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P4959",
+    "name": "P4959",
+    "hex": "#29F433",
+    "rgb": {
+      "r": 41,
+      "g": 244,
+      "b": 51
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E730",
+    "name": "E730",
+    "hex": "#A3F7DB",
+    "rgb": {
+      "r": 163,
+      "g": 247,
+      "b": 219
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E731",
+    "name": "E731",
+    "hex": "#B4F0D2",
+    "rgb": {
+      "r": 180,
+      "g": 240,
+      "b": 210
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E728",
+    "name": "E728",
+    "hex": "#95DEDA",
+    "rgb": {
+      "r": 149,
+      "g": 222,
+      "b": 218
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E5455",
+    "name": "E5455",
+    "hex": "#7DFFB1",
+    "rgb": {
+      "r": 125,
+      "g": 255,
+      "b": 177
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E243",
+    "name": "E243",
+    "hex": "#87E5B6",
+    "rgb": {
+      "r": 135,
+      "g": 229,
+      "b": 182
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E242",
+    "name": "E242",
+    "hex": "#5AE2C7",
+    "rgb": {
+      "r": 90,
+      "g": 226,
+      "b": 199
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E241",
+    "name": "E241",
+    "hex": "#1AD8D8",
+    "rgb": {
+      "r": 26,
+      "g": 216,
+      "b": 216
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E219",
+    "name": "E219",
+    "hex": "#2EE8CF",
+    "rgb": {
+      "r": 46,
+      "g": 232,
+      "b": 207
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4490",
+    "name": "R4490",
+    "hex": "#27B900",
+    "rgb": {
+      "r": 39,
+      "g": 185,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E089",
+    "name": "E089",
+    "hex": "#00CD55",
+    "rgb": {
+      "r": 0,
+      "g": 205,
+      "b": 85
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E124",
+    "name": "E124",
+    "hex": "#00AB44",
+    "rgb": {
+      "r": 0,
+      "g": 171,
+      "b": 68
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R871",
+    "name": "R871",
+    "hex": "#00986B",
+    "rgb": {
+      "r": 0,
+      "g": 152,
+      "b": 107
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G690",
+    "name": "G690",
+    "hex": "#01A4A6",
+    "rgb": {
+      "r": 1,
+      "g": 164,
+      "b": 166
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R395",
+    "name": "R395",
+    "hex": "#00726A",
+    "rgb": {
+      "r": 0,
+      "g": 114,
+      "b": 106
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P4853",
+    "name": "P4853",
+    "hex": "#00726A",
+    "rgb": {
+      "r": 0,
+      "g": 114,
+      "b": 106
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R393",
+    "name": "R393",
+    "hex": "#007150",
+    "rgb": {
+      "r": 0,
+      "g": 113,
+      "b": 80
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R94",
+    "name": "R94",
+    "hex": "#00985D",
+    "rgb": {
+      "r": 0,
+      "g": 152,
+      "b": 93
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G670",
+    "name": "G670",
+    "hex": "#007D3A",
+    "rgb": {
+      "r": 0,
+      "g": 125,
+      "b": 58
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G655",
+    "name": "G655",
+    "hex": "#007F06",
+    "rgb": {
+      "r": 0,
+      "g": 127,
+      "b": 6
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R2004",
+    "name": "R2004",
+    "hex": "#1F9201",
+    "rgb": {
+      "r": 31,
+      "g": 146,
+      "b": 1
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G650",
+    "name": "G650",
+    "hex": "#005E19",
+    "rgb": {
+      "r": 0,
+      "g": 94,
+      "b": 25
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E139",
+    "name": "E139",
+    "hex": "#009107",
+    "rgb": {
+      "r": 0,
+      "g": 145,
+      "b": 7
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R90",
+    "name": "R90",
+    "hex": "#007F06",
+    "rgb": {
+      "r": 0,
+      "g": 127,
+      "b": 6
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P5156",
+    "name": "P5156",
+    "hex": "#007F06",
+    "rgb": {
+      "r": 0,
+      "g": 127,
+      "b": 6
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P4954",
+    "name": "P4954",
+    "hex": "#00870B",
+    "rgb": {
+      "r": 0,
+      "g": 135,
+      "b": 11
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E090",
+    "name": "E090",
+    "hex": "#00870B",
+    "rgb": {
+      "r": 0,
+      "g": 135,
+      "b": 11
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E740",
+    "name": "E740",
+    "hex": "#354D15",
+    "rgb": {
+      "r": 53,
+      "g": 77,
+      "b": 21
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E736",
+    "name": "E736",
+    "hex": "#0D5700",
+    "rgb": {
+      "r": 13,
+      "g": 87,
+      "b": 0
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R91",
+    "name": "R91",
+    "hex": "#005E2C",
+    "rgb": {
+      "r": 0,
+      "g": 94,
+      "b": 44
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E327",
+    "name": "E327",
+    "hex": "#006539",
+    "rgb": {
+      "r": 0,
+      "g": 101,
+      "b": 57
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E735",
+    "name": "E735",
+    "hex": "#005C1D",
+    "rgb": {
+      "r": 0,
+      "g": 92,
+      "b": 29
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E325",
+    "name": "E325",
+    "hex": "#005C46",
+    "rgb": {
+      "r": 0,
+      "g": 92,
+      "b": 70
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4307",
+    "name": "R4307",
+    "hex": "#F0FBFF",
+    "rgb": {
+      "r": 240,
+      "g": 251,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4315",
+    "name": "R4315",
+    "hex": "#E7F5F8",
+    "rgb": {
+      "r": 231,
+      "g": 245,
+      "b": 248
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4330",
+    "name": "R4330",
+    "hex": "#B9E3EC",
+    "rgb": {
+      "r": 185,
+      "g": 227,
+      "b": 236
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E504",
+    "name": "E504",
+    "hex": "#B3DCE3",
+    "rgb": {
+      "r": 179,
+      "g": 220,
+      "b": 227
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R848",
+    "name": "R848",
+    "hex": "#77CBE6",
+    "rgb": {
+      "r": 119,
+      "g": 203,
+      "b": 230
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4360",
+    "name": "R4360",
+    "hex": "#6CCBDA",
+    "rgb": {
+      "r": 108,
+      "g": 203,
+      "b": 218
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R92",
+    "name": "R92",
+    "hex": "#19FFC1",
+    "rgb": {
+      "r": 25,
+      "g": 255,
+      "b": 193
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G680",
+    "name": "G680",
+    "hex": "#00F0B0",
+    "rgb": {
+      "r": 0,
+      "g": 240,
+      "b": 176
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G685",
+    "name": "G685",
+    "hex": "#00D79D",
+    "rgb": {
+      "r": 0,
+      "g": 215,
+      "b": 157
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R4390",
+    "name": "R4390",
+    "hex": "#3FBACA",
+    "rgb": {
+      "r": 63,
+      "g": 186,
+      "b": 202
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1073",
+    "name": "P1073",
+    "hex": "#3FBACA",
+    "rgb": {
+      "r": 63,
+      "g": 186,
+      "b": 202
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E131",
+    "name": "E131",
+    "hex": "#02E3CC",
+    "rgb": {
+      "r": 2,
+      "g": 227,
+      "b": 204
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E323",
+    "name": "E323",
+    "hex": "#02E2A3",
+    "rgb": {
+      "r": 2,
+      "g": 226,
+      "b": 163
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E322",
+    "name": "E322",
+    "hex": "#02E59A",
+    "rgb": {
+      "r": 2,
+      "g": 229,
+      "b": 154
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R93",
+    "name": "R93",
+    "hex": "#01A3A0",
+    "rgb": {
+      "r": 1,
+      "g": 163,
+      "b": 160
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G710",
+    "name": "G710",
+    "hex": "#008797",
+    "rgb": {
+      "r": 0,
+      "g": 135,
+      "b": 151
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R73",
+    "name": "R73",
+    "hex": "#00A4B8",
+    "rgb": {
+      "r": 0,
+      "g": 164,
+      "b": 184
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G730",
+    "name": "G730",
+    "hex": "#6DB4CA",
+    "rgb": {
+      "r": 109,
+      "g": 180,
+      "b": 202
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R374",
+    "name": "R374",
+    "hex": "#01A4A6",
+    "rgb": {
+      "r": 1,
+      "g": 164,
+      "b": 166
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R854",
+    "name": "R854",
+    "hex": "#00C2DF",
+    "rgb": {
+      "r": 0,
+      "g": 194,
+      "b": 223
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R375",
+    "name": "R375",
+    "hex": "#00B5DE",
+    "rgb": {
+      "r": 0,
+      "g": 181,
+      "b": 222
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E115",
+    "name": "E115",
+    "hex": "#00C9BF",
+    "rgb": {
+      "r": 0,
+      "g": 201,
+      "b": 191
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E354",
+    "name": "E354",
+    "hex": "#00BFD8",
+    "rgb": {
+      "r": 0,
+      "g": 191,
+      "b": 216
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R370",
+    "name": "R370",
+    "hex": "#01CDDF",
+    "rgb": {
+      "r": 1,
+      "g": 205,
+      "b": 223
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R2005",
+    "name": "R2005",
+    "hex": "#0095A8",
+    "rgb": {
+      "r": 0,
+      "g": 149,
+      "b": 168
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R392",
+    "name": "R392",
+    "hex": "#009493",
+    "rgb": {
+      "r": 0,
+      "g": 148,
+      "b": 147
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R877",
+    "name": "R877",
+    "hex": "#007B8C",
+    "rgb": {
+      "r": 0,
+      "g": 123,
+      "b": 140
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E5461",
+    "name": "E5461",
+    "hex": "#02BF9C",
+    "rgb": {
+      "r": 2,
+      "g": 191,
+      "b": 156
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E5454",
+    "name": "E5454",
+    "hex": "#009C72",
+    "rgb": {
+      "r": 0,
+      "g": 156,
+      "b": 114
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E116",
+    "name": "E116",
+    "hex": "#009E96",
+    "rgb": {
+      "r": 0,
+      "g": 158,
+      "b": 150
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R95",
+    "name": "R95",
+    "hex": "#009C91",
+    "rgb": {
+      "r": 0,
+      "g": 156,
+      "b": 145
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E729",
+    "name": "E729",
+    "hex": "#007070",
+    "rgb": {
+      "r": 0,
+      "g": 112,
+      "b": 112
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R66",
+    "name": "R66",
+    "hex": "#94EAFF",
+    "rgb": {
+      "r": 148,
+      "g": 234,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G720",
+    "name": "G720",
+    "hex": "#B5EAFF",
+    "rgb": {
+      "r": 181,
+      "g": 234,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R849",
+    "name": "R849",
+    "hex": "#6CC9E5",
+    "rgb": {
+      "r": 108,
+      "g": 201,
+      "b": 229
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R363",
+    "name": "R363",
+    "hex": "#ABE9FF",
+    "rgb": {
+      "r": 171,
+      "g": 233,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1062",
+    "name": "P1062",
+    "hex": "#ABE9FF",
+    "rgb": {
+      "r": 171,
+      "g": 233,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E725",
+    "name": "E725",
+    "hex": "#8CDFFF",
+    "rgb": {
+      "r": 140,
+      "g": 223,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E117",
+    "name": "E117",
+    "hex": "#A3E2FF",
+    "rgb": {
+      "r": 163,
+      "g": 226,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R70",
+    "name": "R70",
+    "hex": "#6CE5FF",
+    "rgb": {
+      "r": 108,
+      "g": 229,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R366",
+    "name": "R366",
+    "hex": "#29C0F9",
+    "rgb": {
+      "r": 41,
+      "g": 192,
+      "b": 249
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E140",
+    "name": "E140",
+    "hex": "#38CAFF",
+    "rgb": {
+      "r": 56,
+      "g": 202,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E724",
+    "name": "E724",
+    "hex": "#2BC7FF",
+    "rgb": {
+      "r": 43,
+      "g": 199,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R369",
+    "name": "R369",
+    "hex": "#00C6FF",
+    "rgb": {
+      "r": 0,
+      "g": 198,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R72",
+    "name": "R72",
+    "hex": "#55CCFF",
+    "rgb": {
+      "r": 85,
+      "g": 204,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E353",
+    "name": "E353",
+    "hex": "#54D5FF",
+    "rgb": {
+      "r": 84,
+      "g": 213,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G725",
+    "name": "G725",
+    "hex": "#39D1DC",
+    "rgb": {
+      "r": 57,
+      "g": 209,
+      "b": 220
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E352",
+    "name": "E352",
+    "hex": "#00A6FF",
+    "rgb": {
+      "r": 0,
+      "g": 166,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E118",
+    "name": "E118",
+    "hex": "#00B7FF",
+    "rgb": {
+      "r": 0,
+      "g": 183,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R853",
+    "name": "R853",
+    "hex": "#00BEE9",
+    "rgb": {
+      "r": 0,
+      "g": 190,
+      "b": 233
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R71",
+    "name": "R71",
+    "hex": "#0096C7",
+    "rgb": {
+      "r": 0,
+      "g": 150,
+      "b": 199
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E172",
+    "name": "E172",
+    "hex": "#00AACC",
+    "rgb": {
+      "r": 0,
+      "g": 170,
+      "b": 204
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E5463",
+    "name": "E5463",
+    "hex": "#00A6B5",
+    "rgb": {
+      "r": 0,
+      "g": 166,
+      "b": 181
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P5700",
+    "name": "P5700",
+    "hex": "#00A6B5",
+    "rgb": {
+      "r": 0,
+      "g": 166,
+      "b": 181
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E141",
+    "name": "E141",
+    "hex": "#00ACF0",
+    "rgb": {
+      "r": 0,
+      "g": 172,
+      "b": 240
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P5400",
+    "name": "P5400",
+    "hex": "#00ACF0",
+    "rgb": {
+      "r": 0,
+      "g": 172,
+      "b": 240
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E183",
+    "name": "E183",
+    "hex": "#00BAF2",
+    "rgb": {
+      "r": 0,
+      "g": 186,
+      "b": 242
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R69",
+    "name": "R69",
+    "hex": "#00A3F7",
+    "rgb": {
+      "r": 0,
+      "g": 163,
+      "b": 247
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R856",
+    "name": "R856",
+    "hex": "#0094D1",
+    "rgb": {
+      "r": 0,
+      "g": 148,
+      "b": 209
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R859",
+    "name": "R859",
+    "hex": "#008EC5",
+    "rgb": {
+      "r": 0,
+      "g": 142,
+      "b": 197
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G740",
+    "name": "G740",
+    "hex": "#00B1CC",
+    "rgb": {
+      "r": 0,
+      "g": 177,
+      "b": 204
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G750",
+    "name": "G750",
+    "hex": "#00B7FF",
+    "rgb": {
+      "r": 0,
+      "g": 183,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E143",
+    "name": "E143",
+    "hex": "#007194",
+    "rgb": {
+      "r": 0,
+      "g": 113,
+      "b": 148
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R75",
+    "name": "R75",
+    "hex": "#007AAC",
+    "rgb": {
+      "r": 0,
+      "g": 122,
+      "b": 172
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G780",
+    "name": "G780",
+    "hex": "#00A1D7",
+    "rgb": {
+      "r": 0,
+      "g": 161,
+      "b": 215
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G770",
+    "name": "G770",
+    "hex": "#00A2EE",
+    "rgb": {
+      "r": 0,
+      "g": 162,
+      "b": 238
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G760",
+    "name": "G760",
+    "hex": "#008BB5",
+    "rgb": {
+      "r": 0,
+      "g": 139,
+      "b": 181
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R376",
+    "name": "R376",
+    "hex": "#0087B1",
+    "rgb": {
+      "r": 0,
+      "g": 135,
+      "b": 177
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R76",
+    "name": "R76",
+    "hex": "#005773",
+    "rgb": {
+      "r": 0,
+      "g": 87,
+      "b": 115
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1076",
+    "name": "P1076",
+    "hex": "#005773",
+    "rgb": {
+      "r": 0,
+      "g": 87,
+      "b": 115
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E727",
+    "name": "E727",
+    "hex": "#007385",
+    "rgb": {
+      "r": 0,
+      "g": 115,
+      "b": 133
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1064",
+    "name": "P1064",
+    "hex": "#50AEFD",
+    "rgb": {
+      "r": 80,
+      "g": 174,
+      "b": 253
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R77",
+    "name": "R77",
+    "hex": "#014E95",
+    "rgb": {
+      "r": 1,
+      "g": 78,
+      "b": 149
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3216",
+    "name": "R3216",
+    "hex": "#EEF1FF",
+    "rgb": {
+      "r": 238,
+      "g": 241,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G870",
+    "name": "G870",
+    "hex": "#EEF1FF",
+    "rgb": {
+      "r": 238,
+      "g": 241,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1535",
+    "name": "G1535",
+    "hex": "#EEF1FF",
+    "rgb": {
+      "r": 238,
+      "g": 241,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E503",
+    "name": "E503",
+    "hex": "#F0F5FF",
+    "rgb": {
+      "r": 240,
+      "g": 245,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E218",
+    "name": "E218",
+    "hex": "#EBF3FF",
+    "rgb": {
+      "r": 235,
+      "g": 243,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R373",
+    "name": "R373",
+    "hex": "#E0E9FD",
+    "rgb": {
+      "r": 224,
+      "g": 233,
+      "b": 253
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G885",
+    "name": "G885",
+    "hex": "#E8EBFF",
+    "rgb": {
+      "r": 232,
+      "g": 235,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1532",
+    "name": "G1532",
+    "hex": "#E8EBFF",
+    "rgb": {
+      "r": 232,
+      "g": 235,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E203",
+    "name": "E203",
+    "hex": "#E0EDFF",
+    "rgb": {
+      "r": 224,
+      "g": 237,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G872",
+    "name": "G872",
+    "hex": "#EBEEFF",
+    "rgb": {
+      "r": 235,
+      "g": 238,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1534",
+    "name": "G1534",
+    "hex": "#EBEEFF",
+    "rgb": {
+      "r": 235,
+      "g": 238,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3208",
+    "name": "P3208",
+    "hex": "#E0EDFF",
+    "rgb": {
+      "r": 224,
+      "g": 237,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3208",
+    "name": "R3208",
+    "hex": "#E8ECFF",
+    "rgb": {
+      "r": 232,
+      "g": 236,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3206",
+    "name": "R3206",
+    "hex": "#D6DCFF",
+    "rgb": {
+      "r": 214,
+      "g": 220,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E502",
+    "name": "E502",
+    "hex": "#D9E3FF",
+    "rgb": {
+      "r": 217,
+      "g": 227,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R372",
+    "name": "R372",
+    "hex": "#D9DCFF",
+    "rgb": {
+      "r": 217,
+      "g": 220,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3204",
+    "name": "R3204",
+    "hex": "#C9D1FF",
+    "rgb": {
+      "r": 201,
+      "g": 209,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R360",
+    "name": "R360",
+    "hex": "#C9D1FF",
+    "rgb": {
+      "r": 201,
+      "g": 209,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G830",
+    "name": "G830",
+    "hex": "#CCD4FF",
+    "rgb": {
+      "r": 204,
+      "g": 212,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R60",
+    "name": "R60",
+    "hex": "#CCD8FF",
+    "rgb": {
+      "r": 204,
+      "g": 216,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E5211",
+    "name": "E5211",
+    "hex": "#E8F4FF",
+    "rgb": {
+      "r": 232,
+      "g": 244,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E061",
+    "name": "E061",
+    "hex": "#D6E8FF",
+    "rgb": {
+      "r": 214,
+      "g": 232,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R61",
+    "name": "R61",
+    "hex": "#D3EAFF",
+    "rgb": {
+      "r": 211,
+      "g": 234,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E063",
+    "name": "E063",
+    "hex": "#B0D5F7",
+    "rgb": {
+      "r": 176,
+      "g": 213,
+      "b": 247
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3216",
+    "name": "P3216",
+    "hex": "#EEF1FF",
+    "rgb": {
+      "r": 238,
+      "g": 241,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R63",
+    "name": "R63",
+    "hex": "#A4D3FF",
+    "rgb": {
+      "r": 164,
+      "g": 211,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1371",
+    "name": "P1371",
+    "hex": "#FFE0B8",
+    "rgb": {
+      "r": 255,
+      "g": 224,
+      "b": 184
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G785",
+    "name": "G785",
+    "hex": "#CCEDFF",
+    "rgb": {
+      "r": 204,
+      "g": 237,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R62",
+    "name": "R62",
+    "hex": "#A1CEFF",
+    "rgb": {
+      "r": 161,
+      "g": 206,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E5264",
+    "name": "E5264",
+    "hex": "#96C9FF",
+    "rgb": {
+      "r": 150,
+      "g": 201,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E5202",
+    "name": "E5202",
+    "hex": "#B8D4FF",
+    "rgb": {
+      "r": 184,
+      "g": 212,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E202",
+    "name": "E202",
+    "hex": "#B8D5FF",
+    "rgb": {
+      "r": 184,
+      "g": 213,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3204",
+    "name": "P3204",
+    "hex": "#B8D5FF",
+    "rgb": {
+      "r": 184,
+      "g": 213,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G842",
+    "name": "G842",
+    "hex": "#C2C7FF",
+    "rgb": {
+      "r": 194,
+      "g": 199,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R362",
+    "name": "R362",
+    "hex": "#A7BCFF",
+    "rgb": {
+      "r": 167,
+      "g": 188,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E708",
+    "name": "E708",
+    "hex": "#BFC8FF",
+    "rgb": {
+      "r": 191,
+      "g": 200,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3203",
+    "name": "R3203",
+    "hex": "#B4BEFF",
+    "rgb": {
+      "r": 180,
+      "g": 190,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3203",
+    "name": "P3203",
+    "hex": "#B4BEFF",
+    "rgb": {
+      "r": 180,
+      "g": 190,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R371",
+    "name": "R371",
+    "hex": "#A3A8FF",
+    "rgb": {
+      "r": 163,
+      "g": 168,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E501",
+    "name": "E501",
+    "hex": "#BFC7FB",
+    "rgb": {
+      "r": 191,
+      "g": 199,
+      "b": 251
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3202",
+    "name": "R3202",
+    "hex": "#909FFF",
+    "rgb": {
+      "r": 144,
+      "g": 159,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R365",
+    "name": "R365",
+    "hex": "#909FFF",
+    "rgb": {
+      "r": 144,
+      "g": 159,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G888",
+    "name": "G888",
+    "hex": "#AEB4FF",
+    "rgb": {
+      "r": 174,
+      "g": 180,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E201",
+    "name": "E201",
+    "hex": "#73A9FF",
+    "rgb": {
+      "r": 115,
+      "g": 169,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3202",
+    "name": "P3202",
+    "hex": "#73A9FF",
+    "rgb": {
+      "r": 115,
+      "g": 169,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3218",
+    "name": "R3218",
+    "hex": "#8793FF",
+    "rgb": {
+      "r": 135,
+      "g": 147,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G882",
+    "name": "G882",
+    "hex": "#8793FF",
+    "rgb": {
+      "r": 135,
+      "g": 147,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1523",
+    "name": "G1523",
+    "hex": "#8793FF",
+    "rgb": {
+      "r": 135,
+      "g": 147,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E281",
+    "name": "E281",
+    "hex": "#9CC5FF",
+    "rgb": {
+      "r": 156,
+      "g": 197,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E283",
+    "name": "E283",
+    "hex": "#759EE5",
+    "rgb": {
+      "r": 117,
+      "g": 158,
+      "b": 229
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E366",
+    "name": "E366",
+    "hex": "#5783CF",
+    "rgb": {
+      "r": 87,
+      "g": 131,
+      "b": 207
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E174",
+    "name": "E174",
+    "hex": "#52B4FF",
+    "rgb": {
+      "r": 82,
+      "g": 180,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R64",
+    "name": "R64",
+    "hex": "#50AEFD",
+    "rgb": {
+      "r": 80,
+      "g": 174,
+      "b": 253
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R67",
+    "name": "R67",
+    "hex": "#14A9FF",
+    "rgb": {
+      "r": 20,
+      "g": 169,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R851",
+    "name": "R851",
+    "hex": "#009BDA",
+    "rgb": {
+      "r": 0,
+      "g": 155,
+      "b": 218
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G840",
+    "name": "G840",
+    "hex": "#63A4FF",
+    "rgb": {
+      "r": 99,
+      "g": 164,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R65",
+    "name": "R65",
+    "hex": "#00A9FF",
+    "rgb": {
+      "r": 0,
+      "g": 169,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R855",
+    "name": "R855",
+    "hex": "#00A9DB",
+    "rgb": {
+      "r": 0,
+      "g": 169,
+      "b": 219
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R850",
+    "name": "R850",
+    "hex": "#00ACDC",
+    "rgb": {
+      "r": 0,
+      "g": 172,
+      "b": 220
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E144",
+    "name": "E144",
+    "hex": "#4FC4FF",
+    "rgb": {
+      "r": 79,
+      "g": 196,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E196",
+    "name": "E196",
+    "hex": "#00A1FF",
+    "rgb": {
+      "r": 0,
+      "g": 161,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1065",
+    "name": "P1065",
+    "hex": "#00A1FF",
+    "rgb": {
+      "r": 0,
+      "g": 161,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G815",
+    "name": "G815",
+    "hex": "#ADC0FF",
+    "rgb": {
+      "r": 173,
+      "g": 192,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R367",
+    "name": "R367",
+    "hex": "#44A5FF",
+    "rgb": {
+      "r": 68,
+      "g": 165,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E161",
+    "name": "E161",
+    "hex": "#4AABFF",
+    "rgb": {
+      "r": 74,
+      "g": 171,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R361",
+    "name": "R361",
+    "hex": "#669EFC",
+    "rgb": {
+      "r": 102,
+      "g": 158,
+      "b": 252
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E165",
+    "name": "E165",
+    "hex": "#1CACFF",
+    "rgb": {
+      "r": 28,
+      "g": 172,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R364",
+    "name": "R364",
+    "hex": "#8CA9FF",
+    "rgb": {
+      "r": 140,
+      "g": 169,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E711",
+    "name": "E711",
+    "hex": "#224ED4",
+    "rgb": {
+      "r": 34,
+      "g": 78,
+      "b": 212
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E712",
+    "name": "E712",
+    "hex": "#3853FF",
+    "rgb": {
+      "r": 56,
+      "g": 83,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E500",
+    "name": "E500",
+    "hex": "#6977FF",
+    "rgb": {
+      "r": 105,
+      "g": 119,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R78",
+    "name": "R78",
+    "hex": "#6F6FFF",
+    "rgb": {
+      "r": 111,
+      "g": 111,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G847",
+    "name": "G847",
+    "hex": "#4C73FF",
+    "rgb": {
+      "r": 76,
+      "g": 115,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1520",
+    "name": "G1520",
+    "hex": "#4C73FF",
+    "rgb": {
+      "r": 76,
+      "g": 115,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E719",
+    "name": "E719",
+    "hex": "#2265F5",
+    "rgb": {
+      "r": 34,
+      "g": 101,
+      "b": 245
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E200",
+    "name": "E200",
+    "hex": "#0F5BFF",
+    "rgb": {
+      "r": 15,
+      "g": 91,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R368",
+    "name": "R368",
+    "hex": "#448AFF",
+    "rgb": {
+      "r": 68,
+      "g": 138,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E525",
+    "name": "E525",
+    "hex": "#2261D6",
+    "rgb": {
+      "r": 34,
+      "g": 97,
+      "b": 214
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E197",
+    "name": "E197",
+    "hex": "#1958CF",
+    "rgb": {
+      "r": 25,
+      "g": 88,
+      "b": 207
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E075",
+    "name": "E075",
+    "hex": "#4C79FF",
+    "rgb": {
+      "r": 76,
+      "g": 121,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P5590",
+    "name": "P5590",
+    "hex": "#4C79FF",
+    "rgb": {
+      "r": 76,
+      "g": 121,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R81",
+    "name": "R81",
+    "hex": "#486FFF",
+    "rgb": {
+      "r": 72,
+      "g": 111,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E132",
+    "name": "E132",
+    "hex": "#5286FF",
+    "rgb": {
+      "r": 82,
+      "g": 134,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G813",
+    "name": "G813",
+    "hex": "#0072D7",
+    "rgb": {
+      "r": 0,
+      "g": 114,
+      "b": 215
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G835",
+    "name": "G835",
+    "hex": "#1152F5",
+    "rgb": {
+      "r": 17,
+      "g": 82,
+      "b": 245
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R68",
+    "name": "R68",
+    "hex": "#447DFF",
+    "rgb": {
+      "r": 68,
+      "g": 125,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E068",
+    "name": "E068",
+    "hex": "#597DFF",
+    "rgb": {
+      "r": 89,
+      "g": 125,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R80",
+    "name": "R80",
+    "hex": "#0048FF",
+    "rgb": {
+      "r": 0,
+      "g": 72,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R857",
+    "name": "R857",
+    "hex": "#007FC7",
+    "rgb": {
+      "r": 0,
+      "g": 127,
+      "b": 199
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P1080",
+    "name": "P1080",
+    "hex": "#0048FF",
+    "rgb": {
+      "r": 0,
+      "g": 72,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R2006",
+    "name": "R2006",
+    "hex": "#0048FF",
+    "rgb": {
+      "r": 0,
+      "g": 72,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E714",
+    "name": "E714",
+    "hex": "#0F17FF",
+    "rgb": {
+      "r": 15,
+      "g": 23,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R862",
+    "name": "R862",
+    "hex": "#0079C4",
+    "rgb": {
+      "r": 0,
+      "g": 121,
+      "b": 196
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R79",
+    "name": "R79",
+    "hex": "#1626FF",
+    "rgb": {
+      "r": 22,
+      "g": 38,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R861",
+    "name": "R861",
+    "hex": "#0085D1",
+    "rgb": {
+      "r": 0,
+      "g": 133,
+      "b": 209
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R84",
+    "name": "R84",
+    "hex": "#5767FF",
+    "rgb": {
+      "r": 87,
+      "g": 103,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E723",
+    "name": "E723",
+    "hex": "#0031F7",
+    "rgb": {
+      "r": 0,
+      "g": 49,
+      "b": 247
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E079",
+    "name": "E079",
+    "hex": "#3700EB",
+    "rgb": {
+      "r": 55,
+      "g": 0,
+      "b": 235
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E722",
+    "name": "E722",
+    "hex": "#0024C2",
+    "rgb": {
+      "r": 0,
+      "g": 36,
+      "b": 194
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R82",
+    "name": "R82",
+    "hex": "#4F34F8",
+    "rgb": {
+      "r": 79,
+      "g": 52,
+      "b": 248
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R74",
+    "name": "R74",
+    "hex": "#4200FF",
+    "rgb": {
+      "r": 66,
+      "g": 0,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P5100",
+    "name": "P5100",
+    "hex": "#4200FF",
+    "rgb": {
+      "r": 66,
+      "g": 0,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E119",
+    "name": "E119",
+    "hex": "#3300D9",
+    "rgb": {
+      "r": 51,
+      "g": 0,
+      "b": 217
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3220",
+    "name": "R3220",
+    "hex": "#3A54FF",
+    "rgb": {
+      "r": 58,
+      "g": 84,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R2007",
+    "name": "R2007",
+    "hex": "#3A54FF",
+    "rgb": {
+      "r": 58,
+      "g": 84,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R83",
+    "name": "R83",
+    "hex": "#0228EC",
+    "rgb": {
+      "r": 2,
+      "g": 40,
+      "b": 236
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E195",
+    "name": "E195",
+    "hex": "#0003CC",
+    "rgb": {
+      "r": 0,
+      "g": 3,
+      "b": 204
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E716",
+    "name": "E716",
+    "hex": "#2600BF",
+    "rgb": {
+      "r": 38,
+      "g": 0,
+      "b": 191
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E721",
+    "name": "E721",
+    "hex": "#0036E8",
+    "rgb": {
+      "r": 0,
+      "g": 54,
+      "b": 232
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E715",
+    "name": "E715",
+    "hex": "#072EDE",
+    "rgb": {
+      "r": 7,
+      "g": 46,
+      "b": 222
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E199",
+    "name": "E199",
+    "hex": "#3700EE",
+    "rgb": {
+      "r": 55,
+      "g": 0,
+      "b": 238
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E363",
+    "name": "E363",
+    "hex": "#0236DF",
+    "rgb": {
+      "r": 2,
+      "g": 54,
+      "b": 223
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E5287",
+    "name": "E5287",
+    "hex": "#002DE3",
+    "rgb": {
+      "r": 0,
+      "g": 45,
+      "b": 227
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E071",
+    "name": "E071",
+    "hex": "#3600B1",
+    "rgb": {
+      "r": 54,
+      "g": 0,
+      "b": 177
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P4600",
+    "name": "P4600",
+    "hex": "#3600B1",
+    "rgb": {
+      "r": 54,
+      "g": 0,
+      "b": 177
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R383",
+    "name": "R383",
+    "hex": "#0022D1",
+    "rgb": {
+      "r": 0,
+      "g": 34,
+      "b": 209
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R385",
+    "name": "R385",
+    "hex": "#4F02CF",
+    "rgb": {
+      "r": 79,
+      "g": 2,
+      "b": 207
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E198",
+    "name": "E198",
+    "hex": "#43009C",
+    "rgb": {
+      "r": 67,
+      "g": 0,
+      "b": 156
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R381",
+    "name": "R381",
+    "hex": "#391DE6",
+    "rgb": {
+      "r": 57,
+      "g": 29,
+      "b": 230
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R384",
+    "name": "R384",
+    "hex": "#0500D0",
+    "rgb": {
+      "r": 5,
+      "g": 0,
+      "b": 208
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G890",
+    "name": "G890",
+    "hex": "#004CD9",
+    "rgb": {
+      "r": 0,
+      "g": 76,
+      "b": 217
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G889",
+    "name": "G889",
+    "hex": "#5400CA",
+    "rgb": {
+      "r": 84,
+      "g": 0,
+      "b": 202
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G905",
+    "name": "G905",
+    "hex": "#5100DE",
+    "rgb": {
+      "r": 81,
+      "g": 0,
+      "b": 222
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E713",
+    "name": "E713",
+    "hex": "#1F009A",
+    "rgb": {
+      "r": 31,
+      "g": 0,
+      "b": 154
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G855",
+    "name": "G855",
+    "hex": "#0B00D4",
+    "rgb": {
+      "r": 11,
+      "g": 0,
+      "b": 212
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R85",
+    "name": "R85",
+    "hex": "#0049CE",
+    "rgb": {
+      "r": 0,
+      "g": 73,
+      "b": 206
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E120",
+    "name": "E120",
+    "hex": "#2800C9",
+    "rgb": {
+      "r": 40,
+      "g": 0,
+      "b": 201
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R866",
+    "name": "R866",
+    "hex": "#004277",
+    "rgb": {
+      "r": 0,
+      "g": 66,
+      "b": 119
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E085",
+    "name": "E085",
+    "hex": "#1A00BF",
+    "rgb": {
+      "r": 26,
+      "g": 0,
+      "b": 191
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E799",
+    "name": "E799",
+    "hex": "#120096",
+    "rgb": {
+      "r": 18,
+      "g": 0,
+      "b": 150
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E508",
+    "name": "E508",
+    "hex": "#1602AA",
+    "rgb": {
+      "r": 22,
+      "g": 2,
+      "b": 170
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G930",
+    "name": "G930",
+    "hex": "#29007A",
+    "rgb": {
+      "r": 41,
+      "g": 0,
+      "b": 122
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E181",
+    "name": "E181",
+    "hex": "#29007A",
+    "rgb": {
+      "r": 41,
+      "g": 0,
+      "b": 122
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R382",
+    "name": "R382",
+    "hex": "#250070",
+    "rgb": {
+      "r": 37,
+      "g": 0,
+      "b": 112
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P4200",
+    "name": "P4200",
+    "hex": "#250070",
+    "rgb": {
+      "r": 37,
+      "g": 0,
+      "b": 112
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G327",
+    "name": "G327",
+    "hex": "#F8E6DA",
+    "rgb": {
+      "r": 248,
+      "g": 230,
+      "b": 218
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9326",
+    "name": "R9326",
+    "hex": "#F8E6DA",
+    "rgb": {
+      "r": 248,
+      "g": 230,
+      "b": 218
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G NCR6",
+    "name": "G NCR6",
+    "hex": "#F8E6DA",
+    "rgb": {
+      "r": 248,
+      "g": 230,
+      "b": 218
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9331",
+    "name": "R9331",
+    "hex": "#E8A67D",
+    "rgb": {
+      "r": 232,
+      "g": 166,
+      "b": 125
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G330",
+    "name": "G330",
+    "hex": "#D7835A",
+    "rgb": {
+      "r": 215,
+      "g": 131,
+      "b": 90
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9201",
+    "name": "R9201",
+    "hex": "#E5BCBA",
+    "rgb": {
+      "r": 229,
+      "g": 188,
+      "b": 186
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R882",
+    "name": "R882",
+    "hex": "#907A63",
+    "rgb": {
+      "r": 144,
+      "g": 122,
+      "b": 99
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E742",
+    "name": "E742",
+    "hex": "#8E5324",
+    "rgb": {
+      "r": 142,
+      "g": 83,
+      "b": 36
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E232",
+    "name": "E232",
+    "hex": "#AD6824",
+    "rgb": {
+      "r": 173,
+      "g": 104,
+      "b": 36
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E207",
+    "name": "E207",
+    "hex": "#A86300",
+    "rgb": {
+      "r": 168,
+      "g": 99,
+      "b": 0
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G380",
+    "name": "G380",
+    "hex": "#B06730",
+    "rgb": {
+      "r": 176,
+      "g": 103,
+      "b": 48
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1556",
+    "name": "G1556",
+    "hex": "#B06730",
+    "rgb": {
+      "r": 176,
+      "g": 103,
+      "b": 48
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3405",
+    "name": "R3405",
+    "hex": "#B16B2B",
+    "rgb": {
+      "r": 177,
+      "g": 107,
+      "b": 43
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E238",
+    "name": "E238",
+    "hex": "#E5B1A0",
+    "rgb": {
+      "r": 229,
+      "g": 177,
+      "b": 160
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E747",
+    "name": "E747",
+    "hex": "#CC8C7C",
+    "rgb": {
+      "r": 204,
+      "g": 140,
+      "b": 124
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E017",
+    "name": "E017",
+    "hex": "#CC5F3D",
+    "rgb": {
+      "r": 204,
+      "g": 95,
+      "b": 61
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E156",
+    "name": "E156",
+    "hex": "#C57951",
+    "rgb": {
+      "r": 197,
+      "g": 121,
+      "b": 81
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R99",
+    "name": "R99",
+    "hex": "#D08864",
+    "rgb": {
+      "r": 208,
+      "g": 136,
+      "b": 100
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G370",
+    "name": "G370",
+    "hex": "#97542A",
+    "rgb": {
+      "r": 151,
+      "g": 84,
+      "b": 42
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1557",
+    "name": "G1557",
+    "hex": "#97542A",
+    "rgb": {
+      "r": 151,
+      "g": 84,
+      "b": 42
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3406",
+    "name": "R3406",
+    "hex": "#925324",
+    "rgb": {
+      "r": 146,
+      "g": 83,
+      "b": 36
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E208",
+    "name": "E208",
+    "hex": "#974400",
+    "rgb": {
+      "r": 151,
+      "g": 68,
+      "b": 0
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G390",
+    "name": "G390",
+    "hex": "#873B12",
+    "rgb": {
+      "r": 135,
+      "g": 59,
+      "b": 18
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1558",
+    "name": "G1558",
+    "hex": "#873B12",
+    "rgb": {
+      "r": 135,
+      "g": 59,
+      "b": 18
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E746",
+    "name": "E746",
+    "hex": "#753900",
+    "rgb": {
+      "r": 117,
+      "g": 57,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E653",
+    "name": "E653",
+    "hex": "#5E2A02",
+    "rgb": {
+      "r": 94,
+      "g": 42,
+      "b": 2
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3415",
+    "name": "R3415",
+    "hex": "#D4D3D3",
+    "rgb": {
+      "r": 212,
+      "g": 211,
+      "b": 211
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3415",
+    "name": "P3415",
+    "hex": "#D4D3D3",
+    "rgb": {
+      "r": 212,
+      "g": 211,
+      "b": 211
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R397",
+    "name": "R397",
+    "hex": "#D4D3D3",
+    "rgb": {
+      "r": 212,
+      "g": 211,
+      "b": 211
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1514",
+    "name": "G1514",
+    "hex": "#D4D3D3",
+    "rgb": {
+      "r": 212,
+      "g": 211,
+      "b": 211
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E298",
+    "name": "E298",
+    "hex": "#DCD9D9",
+    "rgb": {
+      "r": 220,
+      "g": 217,
+      "b": 217
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3402",
+    "name": "R3402",
+    "hex": "#C0BFC0",
+    "rgb": {
+      "r": 192,
+      "g": 191,
+      "b": 192
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3402",
+    "name": "P3402",
+    "hex": "#C0BFC0",
+    "rgb": {
+      "r": 192,
+      "g": 191,
+      "b": 192
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R97",
+    "name": "R97",
+    "hex": "#C0BFC0",
+    "rgb": {
+      "r": 192,
+      "g": 191,
+      "b": 192
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1515",
+    "name": "G1515",
+    "hex": "#C0BFC0",
+    "rgb": {
+      "r": 192,
+      "g": 191,
+      "b": 192
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9501",
+    "name": "R9501",
+    "hex": "#C0BFC0",
+    "rgb": {
+      "r": 192,
+      "g": 191,
+      "b": 192
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E209",
+    "name": "E209",
+    "hex": "#BFBDBD",
+    "rgb": {
+      "r": 191,
+      "g": 189,
+      "b": 189
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R398",
+    "name": "R398",
+    "hex": "#B0B4B9",
+    "rgb": {
+      "r": 176,
+      "g": 180,
+      "b": 185
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E210",
+    "name": "E210",
+    "hex": "#969595",
+    "rgb": {
+      "r": 150,
+      "g": 149,
+      "b": 149
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9506",
+    "name": "R9506",
+    "hex": "#8F8989",
+    "rgb": {
+      "r": 143,
+      "g": 137,
+      "b": 137
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9216",
+    "name": "R9216",
+    "hex": "#9E9D9D",
+    "rgb": {
+      "r": 158,
+      "g": 157,
+      "b": 157
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R880",
+    "name": "R880",
+    "hex": "#939490",
+    "rgb": {
+      "r": 147,
+      "g": 148,
+      "b": 144
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R98",
+    "name": "R98",
+    "hex": "#8F8989",
+    "rgb": {
+      "r": 143,
+      "g": 137,
+      "b": 137
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3403",
+    "name": "R3403",
+    "hex": "#8F8989",
+    "rgb": {
+      "r": 143,
+      "g": 137,
+      "b": 137
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3403",
+    "name": "P3403",
+    "hex": "#8F8989",
+    "rgb": {
+      "r": 143,
+      "g": 137,
+      "b": 137
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E211",
+    "name": "E211",
+    "hex": "#636262",
+    "rgb": {
+      "r": 99,
+      "g": 98,
+      "b": 98
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1517",
+    "name": "G1517",
+    "hex": "#686E67",
+    "rgb": {
+      "r": 104,
+      "g": 110,
+      "b": 103
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3404",
+    "name": "R3404",
+    "hex": "#686E67",
+    "rgb": {
+      "r": 104,
+      "g": 110,
+      "b": 103
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1518",
+    "name": "G1518",
+    "hex": "#373D27",
+    "rgb": {
+      "r": 55,
+      "g": 61,
+      "b": 39
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E299",
+    "name": "E299",
+    "hex": "#474747",
+    "rgb": {
+      "r": 71,
+      "g": 71,
+      "b": 71
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R883",
+    "name": "R883",
+    "hex": "#383B43",
+    "rgb": {
+      "r": 56,
+      "g": 59,
+      "b": 67
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E276",
+    "name": "E276",
+    "hex": "#000000",
+    "rgb": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E130",
+    "name": "E130",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1505",
+    "name": "G1505",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R00",
+    "name": "R00",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R1991",
+    "name": "R1991",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E269",
+    "name": "E269",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G99",
+    "name": "G99",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R3114",
+    "name": "R3114",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E226",
+    "name": "E226",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "GamColor",
+    "code": "G1510",
+    "name": "G1510",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P8100",
+    "name": "P8100",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P4000",
+    "name": "P4000",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3699",
+    "name": "P3699",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Permacolor",
+    "code": "P3660",
+    "name": "P3660",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "e-colour+",
+    "code": "E239",
+    "name": "E239",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R7300",
+    "name": "R7300",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9121",
+    "name": "R9121",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9116",
+    "name": "R9116",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9101",
+    "name": "R9101",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  },
+  {
+    "brand": "Roscolux",
+    "code": "R9106",
+    "name": "R9106",
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    }
+  }
+]

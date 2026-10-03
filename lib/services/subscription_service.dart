@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:shared_preferences/shared_preferences.dart';
+import 'entitlement_service.dart';
 
 enum SubscriptionCategory {
   video,
@@ -9,28 +9,16 @@ enum SubscriptionCategory {
   console,
   electricity,
   rigging,
+  sonRf,
+  network,
   pro,
 }
 
 extension SubscriptionCategoryExt on SubscriptionCategory {
-  String get key {
-    switch (this) {
-      case SubscriptionCategory.video:
-        return 'sub_video';
-      case SubscriptionCategory.lumiere:
-        return 'sub_lumiere';
-      case SubscriptionCategory.laser:
-        return 'sub_laser';
-      case SubscriptionCategory.console:
-        return 'sub_console';
-      case SubscriptionCategory.electricity:
-        return 'sub_electricity';
-      case SubscriptionCategory.rigging:
-        return 'sub_rigging';
-      case SubscriptionCategory.pro:
-        return 'sub_pro';
-    }
-  }
+  /// Doit rester strictement synchronisé avec le nom de l'enum : c'est la
+  /// clé utilisée côté serveur (functions/src/config.ts, CATEGORIES) pour
+  /// écrire/lire entitlements/{uid}.categories.{key}.
+  String get key => name;
 
   String get productId {
     if (Platform.isIOS) {
@@ -44,9 +32,13 @@ extension SubscriptionCategoryExt on SubscriptionCategory {
         case SubscriptionCategory.console:
           return 'ShowTechTools_Console';
         case SubscriptionCategory.electricity:
-          return 'ShowTechTools_Electricity';
+          return 'ShowTechTools_electricicty';
         case SubscriptionCategory.rigging:
           return 'ShowTechTools_Rigging';
+        case SubscriptionCategory.sonRf:
+          return 'ShowTechTools_SonRF';
+        case SubscriptionCategory.network:
+          return 'ShowTechTools_Network';
         case SubscriptionCategory.pro:
           return 'eu.openwhite.showtechtools.pro.year';
       }
@@ -65,12 +57,25 @@ extension SubscriptionCategoryExt on SubscriptionCategory {
         return 'showtech.electricity.year';
       case SubscriptionCategory.rigging:
         return 'showtech.rigging.year';
+      case SubscriptionCategory.sonRf:
+        return 'showtech.sonrf.year';
+      case SubscriptionCategory.network:
+        return 'showtech.network.year';
       case SubscriptionCategory.pro:
         return 'eu.openwhite.showtechtools.pro.year';
     }
   }
 }
 
+/// Façade au-dessus d'EntitlementService : c'est ce que le reste de l'app
+/// (pages video/lumiere/laser/...) continue d'appeler, sans rien changer à
+/// son propre code — seule la source de vérité change (Firestore
+/// server-verified au lieu de SharedPreferences local).
+///
+/// Il n'y a plus de méthode `activate`/`deactivate` ici : un accès ne peut
+/// plus être débloqué localement par le client. Après un achat/restauration,
+/// voir functions/src/verifyPurchase.ts (appelée via cloud_functions) — seule
+/// une vérification serveur réussie écrit l'entitlement.
 class SubscriptionService {
   static Set<String> get allProductIds {
     return SubscriptionCategory.values.map((category) {
@@ -78,40 +83,24 @@ class SubscriptionService {
     }).toSet();
   }
 
-  static Future<bool> hasAccess(SubscriptionCategory category) async {
-    final prefs = await SharedPreferences.getInstance();
-
-    final hasPro = prefs.getBool(SubscriptionCategory.pro.key) ?? false;
-    if (hasPro) {
-      return true;
-    }
-
-    return prefs.getBool(category.key) ?? false;
+  /// true si `category` est active, ou si "pro" (qui inclut tout) l'est.
+  static Future<bool> hasAccess(SubscriptionCategory category) {
+    return EntitlementService.hasCategoryAccess(category.key);
   }
 
-  static Future<bool> hasDirectAccess(SubscriptionCategory category) async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getBool(category.key) ?? false;
-  }
-
-  static Future<void> activate(SubscriptionCategory category) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool(category.key, true);
-  }
-
-  static Future<void> deactivate(SubscriptionCategory category) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool(category.key, false);
+  /// true si `category` précisément est active (sans hériter de "pro").
+  static Future<bool> hasDirectAccess(SubscriptionCategory category) {
+    return EntitlementService.isCategoryDirectlyActive(category.key);
   }
 
   static Future<Map<SubscriptionCategory, bool>>
       getDirectSubscriptions() async {
-    final prefs = await SharedPreferences.getInstance();
-
-    return {
-      for (final category in SubscriptionCategory.values)
-        category: prefs.getBool(category.key) ?? false,
-    };
+    final result = <SubscriptionCategory, bool>{};
+    for (final category in SubscriptionCategory.values) {
+      result[category] =
+          await EntitlementService.isCategoryDirectlyActive(category.key);
+    }
+    return result;
   }
 
   static SubscriptionCategory? categoryFromProductId(String productId) {

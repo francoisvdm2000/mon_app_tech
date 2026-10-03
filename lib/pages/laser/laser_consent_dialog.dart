@@ -22,7 +22,7 @@ class _LaserConsentDialogState extends State<LaserConsentDialog> {
     final loc = AppLocalizations.of(context);
 
     return AlertDialog(
-      backgroundColor: const Color(0xFF111111),
+      backgroundColor: const Color(0xFF161622),
       title: Text(
         loc.laserConsentTitle,
         style: const TextStyle(fontWeight: FontWeight.bold),

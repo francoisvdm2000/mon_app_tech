@@ -1,0 +1,29 @@
+{
+  "name": "showtechtools-functions",
+  "description": "Vérification côté serveur des achats in-app (Apple App Store Server API + Google Play Developer API) pour ShowTech Tools.",
+  "private": true,
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "npm run build && firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "fetch-apple-root-certs": "bash scripts/fetch-apple-root-certs.sh"
+  },
+  "dependencies": {
+    "@apple/app-store-server-library": "^3.1.0",
+    "firebase-admin": "^14.2.0",
+    "firebase-functions": "^7.3.2",
+    "google-auth-library": "^11.0.2",
+    "googleapis": "^174.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

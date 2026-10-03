@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import '../../l10n_gen/app_localizations.dart';
 import 'widgets/rigging_bridle_diagram.dart';
 import 'widgets/rigging_result_card.dart';
+import '../about/about_favorites.dart';
 
 enum _BridleKnownInput {
   drop,
@@ -57,7 +58,13 @@ class _RiggingBridle2PointsPageState extends State<RiggingBridle2PointsPage> {
     final result = _calculate();
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.riggingToolBridleTitle)),
+      appBar: AppBar(
+        title: Text(loc.riggingToolBridleTitle),
+        actions: const [
+          AboutPinButton(pageId: 'tool:rigging_bridle_2points', sectionId: 'main'),
+          SizedBox(width: 4),
+        ],
+      ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
@@ -157,6 +164,7 @@ class _RiggingBridle2PointsPageState extends State<RiggingBridle2PointsPage> {
                   offset: loc.riggingOffsetLabel,
                   load: loc.riggingLoadShortLabel,
                   tension: loc.riggingTensionLabel,
+                  angles: loc.riggingBridleAnglesLegend,
                 ),
               ),
             ],

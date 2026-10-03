@@ -63,7 +63,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutSacnSubtitle =>
-      'Standard DMX sur IP orienté réseau “pro”.\nMulticast/unicast, IGMP snooping/querier, priorités multi-sources.';
+      'Standard DMX sur IP orienté réseau \"pro\".\nMulticast/unicast, IGMP snooping/querier, priorités multi-sources.';
 
   @override
   String get aboutSacnTitle => 'sACN';
@@ -422,7 +422,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get laserSavedProjectorsTitle => 'Projecteurs enregistrés';
 
   @override
-  String get laserSearchHint => 'ex: “RGB 5W”';
+  String get laserSearchHint => 'ex: \"RGB 5W\"';
 
   @override
   String get laserTargetDistanceHint => 'ex: 10';
@@ -474,6 +474,54 @@ class AppLocalizationsFr extends AppLocalizations {
   String get lightPhotometryTitle => 'Photométrie';
 
   @override
+  String get lightExposureMeterTitle => 'Posemètre (lux)';
+
+  @override
+  String get lightExposureMeterDescription =>
+      'Calcule l\'éclairement en lux à partir des réglages ISO / ouverture / vitesse d\'un appareil photo.';
+
+  @override
+  String get lightExposureMeterIsoLabel => 'Sensibilité ISO';
+
+  @override
+  String get lightExposureMeterApertureLabel => 'Ouverture';
+
+  @override
+  String get lightExposureMeterShutterLabel => 'Vitesse d\'obturation';
+
+  @override
+  String get lightExposureMeterShutterDenomLabel =>
+      'Vitesse (dénominateur, 1/x s)';
+
+  @override
+  String get lightExposureMeterResultTitle => 'Éclairement estimé';
+
+  @override
+  String get lightExposureMeterReferenceTitle => 'Repères d\'éclairement';
+
+  @override
+  String get lightExposureMeterRefMoonlight => 'Clair de lune';
+
+  @override
+  String get lightExposureMeterRefDimStage => 'Scène faiblement éclairée';
+
+  @override
+  String get lightExposureMeterRefOffice => 'Bureau';
+
+  @override
+  String get lightExposureMeterRefOvercast => 'Jour couvert (extérieur)';
+
+  @override
+  String get lightExposureMeterRefFollowSpot => 'Poursuite / découpe sur scène';
+
+  @override
+  String get lightExposureMeterRefSunlight => 'Plein soleil';
+
+  @override
+  String get lightExposureMeterFormulaNote =>
+      'Lux = (N² × 250 × 1/t) / ISO — méthode du posemètre à lumière incidente. Valeurs à lire sur l\'appareil photo (mode manuel ou infos EXIF).';
+
+  @override
   String get lightProjectionDescription =>
       'Calcul indicatif de la taille de tache selon l’angle, la distance et le diamètre.';
 
@@ -482,6 +530,19 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get menuTitle => 'Menu';
+
+  @override
+  String get homeGreetingMorning => 'Bonjour';
+
+  @override
+  String get homeGreetingAfternoon => 'Bon après-midi';
+
+  @override
+  String get homeGreetingEvening => 'Bonsoir';
+
+  @override
+  String get homeGreetingTagline =>
+      'Tous tes outils de régie, prêts à l\'emploi.';
 
   @override
   String get mireBlendLabel => 'BLEND';
@@ -2190,7 +2251,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutIpBasicsToc06 =>
-      '6) Plans IP “show” simples (exemples prêts à copier)';
+      '6) Plans IP \"show\" simples (exemples prêts à copier)';
 
   @override
   String get aboutIpBasicsToc07 =>
@@ -2563,6 +2624,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get riggingAngleVRightLabel => 'Angle V (droit)';
 
   @override
+  String get riggingBridleAnglesLegend => 'Angles';
+
+  @override
   String get riggingIncludedAngleLabel => 'Angle entre brins';
 
   @override
@@ -2826,7 +2890,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutArtnetCopyLine5 =>
-      'RDM: possible via “RDM proxy” selon nodes (support variable).';
+      'RDM: possible via \"RDM proxy\" selon nodes (support variable).';
 
   @override
   String get aboutArtnetSection1Title => '1) Art-Net — c’est quoi et pourquoi';
@@ -2870,8 +2934,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get aboutArtnetPillNodesDmxOut => 'Nodes DMX-out';
 
   @override
-  String get aboutArtnetSection1Paragraph =>
-      'Art-Net transporte des univers DMX sur un réseau Ethernet (IP). Au lieu de tirer une ligne DMX par univers, tu envoies des “paquets” sur le réseau, et un node convertit en DMX près des machines.';
+  String get aboutArtnetSection1Paragraph => ' des \"paquets\" sur le réseau';
 
   @override
   String get aboutArtnetSection1CalloutTitle => 'Pourquoi c’est utile';
@@ -3035,7 +3098,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutDmxS1Intro =>
-      'DMX512 est un protocole de contrôle très utilisé en spectacle (lumière, effets, dimmers). C’est un flux série (RS-485) qui envoie en boucle une “trame” contenant jusqu’à 512 valeurs. Chaque valeur = un canal (0→255).';
+      'DMX512 est un protocole de contrôle très utilisé en spectacle (lumière, effets, dimmers). C’est un flux série (RS-485) qui envoie en boucle une \"trame\" contenant jusqu’à 512 valeurs. Chaque valeur = un canal (0→255).';
 
   @override
   String get aboutDmxS1RememberTitle => 'À retenir';
@@ -3050,7 +3113,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutDmxS1RememberB3 =>
-      'Le contrôleur renvoie tout en continu : si tu arrêtes d’émettre, les appareils “gèlent” (ou passent en fallback).';
+      'Le contrôleur renvoie tout en continu : si tu arrêtes d’émettre, les appareils \"gèlent\" (ou passent en fallback).';
 
   @override
   String get aboutDmxS4bisTitle => '4bis) RDM — limites & compatibilités';
@@ -3094,7 +3157,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutDmxS10B2 =>
-      'Chaîne courte avec un câble “connu OK” pour isoler.';
+      'Chaîne courte avec un câble \"connu OK\" pour isoler.';
 
   @override
   String get aboutDmxS10B3 => 'Daisy-chain (pas de Y passif).';
@@ -3224,7 +3287,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get elecSection2PowerconBullet1 =>
-      'PowerCON TRUE1 = plus “terrain” (verrouillage, IP).';
+      'PowerCON TRUE1 = plus \"terrain\" (verrouillage, IP).';
 
   @override
   String get elecSection2PowerconBullet2 =>
@@ -3308,7 +3371,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get elecSection5DontDoBullet2 => 'Mélanger des phases sans savoir.';
 
   @override
-  String get elecSection5DontDoBullet3 => '“Bridger” une terre douteuse.';
+  String get elecSection5DontDoBullet3 => '\"Bridger\" une terre douteuse.';
 
   @override
   String get elecSection5WarningTitle => 'Signaux d’alerte';
@@ -3321,7 +3384,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get elecSection5WarningBullet2 => 'Tension qui chute (brown-out).';
 
   @override
-  String get elecSection5WarningBullet3 => 'Disjoncteur “fatigué” ou inadapté.';
+  String get elecSection5WarningBullet3 =>
+      'Disjoncteur \"fatigué\" ou inadapté.';
 
   @override
   String get elecSection6Title => '6) Checklist';
@@ -3386,7 +3450,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get infoUsbCriticalBullet2 =>
-      'Un câble USB-C peut être “charge only” et ne pas passer la data/vidéo.';
+      'Un câble USB-C peut être \"charge only\" et ne pas passer la data/vidéo.';
 
   @override
   String get infoUsbSpeedTitle => 'Repères vitesses (ordre de grandeur)';
@@ -3405,7 +3469,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get infoUsbParagraph =>
-      'En show : si un périphérique “déconne”, suspecte le câble (qualité/standard) avant le device.';
+      'En show : si un périphérique \"déconne\", suspecte le câble (qualité/standard) avant le device.';
 
   @override
   String get infoStorageSataNvmeTitle => 'SATA vs NVMe';
@@ -3453,7 +3517,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get infoVideoLinksCompareBullet2 =>
-      'DisplayPort : très courant PC, souvent très “capable” en débit.';
+      'DisplayPort : très courant PC, souvent très \"capable\" en débit.';
 
   @override
   String get infoPcieGpuParagraph =>
@@ -3467,7 +3531,7 @@ class AppLocalizationsFr extends AppLocalizations {
       'Bloquer une version de driver stable avant un gros show.';
 
   @override
-  String get infoPcieGpuFieldBullet2 => 'Éviter les adaptateurs “cheap”.';
+  String get infoPcieGpuFieldBullet2 => 'Éviter les adaptateurs \"cheap\".';
 
   @override
   String get infoPcieGpuFieldBullet3 =>
@@ -3515,7 +3579,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsMemo3 =>
-      'Masque / sous-réseau = dit quelle partie est “réseau” vs “machine”.';
+      'Masque / sous-réseau = dit quelle partie est \"réseau\" vs \"machine\".';
 
   @override
   String get ipBasicsMemo4 =>
@@ -3545,7 +3609,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsToc6 =>
-      '6) Plans IP “show” simples (exemples prêts à copier)';
+      '6) Plans IP \"show\" simples (exemples prêts à copier)';
 
   @override
   String get ipBasicsToc7 =>
@@ -3560,7 +3624,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection1Paragraph =>
-      'Une adresse IP (IPv4) est un identifiant logique sur un réseau. Elle permet de dire : “envoie ce paquet à cet appareil”.\n\nQuand tu branches une console, un node Art-Net/sACN, un PC, un switch géré… tout ce qui parle en réseau doit avoir une IP cohérente pour que les appareils se trouvent.';
+      'Une adresse IP (IPv4) est un identifiant logique sur un réseau. Elle permet de dire : \"envoie ce paquet à cet appareil\".\n\nQuand tu branches une console, un node Art-Net/sACN, un PC, un switch géré… tout ce qui parle en réseau doit avoir une IP cohérente pour que les appareils se trouvent.';
 
   @override
   String get ipBasicsSection1CalloutTitle => 'Image mentale';
@@ -3571,15 +3635,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection1Bullet2 =>
-      'IP = adresse “postale” sur un réseau (changeable).';
+      'IP = adresse \"postale\" sur un réseau (changeable).';
 
   @override
   String get ipBasicsSection1Bullet3 =>
-      'Masque = “quartier / code postal” (délimite le sous-réseau).';
+      'Masque = \"quartier / code postal\" (délimite le sous-réseau).';
 
   @override
   String get ipBasicsSection1Bullet4 =>
-      'Passerelle = “sortie du quartier” (routeur).';
+      'Passerelle = \"sortie du quartier\" (routeur).';
 
   @override
   String get ipBasicsSection1Subtitle => 'IPv4 en 10 secondes';
@@ -3601,7 +3665,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection2Paragraph =>
-      'Certaines plages d’adresses IPv4 sont réservées aux réseaux privés (LAN). Elles ne sont pas routées sur Internet. C’est pour ça qu’on les utilise en show : tu peux faire ton réseau local sans “consommer” des IP publiques.';
+      'Certaines plages d’adresses IPv4 sont réservées aux réseaux privés (LAN). Elles ne sont pas routées sur Internet. C’est pour ça qu’on les utilise en show : tu peux faire ton réseau local sans \"consommer\" des IP publiques.';
 
   @override
   String get ipBasicsSection2CalloutTitle =>
@@ -3609,15 +3673,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection2Bullet1 =>
-      '10.0.0.0 → 10.255.255.255 (souvent écrit “10.x.x.x”)';
+      '10.0.0.0 → 10.255.255.255 (souvent écrit \"10.x.x.x\")';
 
   @override
   String get ipBasicsSection2Bullet2 =>
-      '172.16.0.0 → 172.31.255.255 (souvent “172.16–31.x.x”)';
+      '172.16.0.0 → 172.31.255.255 (souvent \"172.16–31.x.x\")';
 
   @override
   String get ipBasicsSection2Bullet3 =>
-      '192.168.0.0 → 192.168.255.255 (souvent “192.168.x.x”)';
+      '192.168.0.0 → 192.168.255.255 (souvent \"192.168.x.x\")';
 
   @override
   String get ipBasicsSection2Subtitle1 =>
@@ -3629,7 +3693,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection2SubBullet2 =>
-      'C’est devenu un “standard de fait” en petits LAN.';
+      'C’est devenu un \"standard de fait\" en petits LAN.';
 
   @override
   String get ipBasicsSection2SubBullet3 =>
@@ -3644,11 +3708,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection2SubBullet5 =>
-      'C’est “pratique” en plug&play (sans DHCP), mais ça surprend si ton PC est en 192.168.x.x.';
+      'C’est \"pratique\" en plug&play (sans DHCP), mais ça surprend si ton PC est en 192.168.x.x.';
 
   @override
   String get ipBasicsSection2SubBullet6 =>
-      'Important : le “2.x” n’a rien de magique pour le broadcast/unicast.';
+      'Important : le \"2.x\" n’a rien de magique pour le broadcast/unicast.';
 
   @override
   String get ipBasicsSection2SubBullet7 =>
@@ -3664,22 +3728,22 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection3Paragraph =>
-      'Le masque (subnet mask) dit quelles adresses sont “dans le même réseau”. Sans masque, une IP ne veut pas dire grand-chose.\n\nRègle terrain : si deux appareils sont dans le même sous-réseau, ils se parlent directement. Sinon, ils ont besoin d’une passerelle (routeur).';
+      'Le masque (subnet mask) dit quelles adresses sont \"dans le même réseau\". Sans masque, une IP ne veut pas dire grand-chose.\n\nRègle terrain : si deux appareils sont dans le même sous-réseau, ils se parlent directement. Sinon, ils ont besoin d’une passerelle (routeur).';
 
   @override
   String get ipBasicsSection3Callout1Title => 'Masques les plus courants';
 
   @override
   String get ipBasicsSection3Bullet1 =>
-      '255.0.0.0 ( /8 )   → réseau 10.x.x.x typique “large”';
+      '255.0.0.0 ( /8 )   → réseau 10.x.x.x typique \"large\"';
 
   @override
   String get ipBasicsSection3Bullet2 =>
-      '255.255.0.0 ( /16 ) → réseau 10.10.x.x ou 192.168.x.x “large”';
+      '255.255.0.0 ( /16 ) → réseau 10.10.x.x ou 192.168.x.x \"large\"';
 
   @override
   String get ipBasicsSection3Bullet3 =>
-      '255.255.255.0 ( /24 ) → réseau 192.168.0.x “classique” (254 appareils)';
+      '255.255.255.0 ( /24 ) → réseau 192.168.0.x \"classique\" (254 appareils)';
 
   @override
   String get ipBasicsSection3Callout2Title =>
@@ -3687,7 +3751,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection3Bullet4 =>
-      'Le broadcast dépend du sous-réseau, donc du masque (pas de “2 vs 192”).';
+      'Le broadcast dépend du sous-réseau, donc du masque (pas de \"2 vs 192\").';
 
   @override
   String get ipBasicsSection3Bullet5 =>
@@ -3699,7 +3763,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection3Bullet7 =>
-      'Plus le réseau est “grand”, plus un broadcast peut faire du bruit (si tu l’utilises souvent).';
+      'Plus le réseau est \"grand\", plus un broadcast peut faire du bruit (si tu l’utilises souvent).';
 
   @override
   String get ipBasicsSection3Subtitle1 =>
@@ -3716,7 +3780,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection3SubBullet4 =>
-      'Appareils “dans le même réseau” : 192.168.0.1 → 192.168.0.254';
+      'Appareils \"dans le même réseau\" : 192.168.0.1 → 192.168.0.254';
 
   @override
   String get ipBasicsSection3SubBullet5 =>
@@ -3727,7 +3791,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection3SubBullet6 =>
-      'Organisation : séparer “lumière”, “vidéo”, “intercom”, “internet”…';
+      'Organisation : séparer \"lumière\", \"vidéo\", \"intercom\", \"internet\"…';
 
   @override
   String get ipBasicsSection3SubBullet7 =>
@@ -3735,18 +3799,18 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection3SubBullet8 =>
-      'Sécurité : éviter qu’un PC “invité” voie/perturbe le réseau show.';
+      'Sécurité : éviter qu’un PC \"invité\" voie/perturbe le réseau show.';
 
   @override
   String get ipBasicsSection3SubBullet9 =>
-      'Diagnostic : plus simple de savoir “où” est un appareil.';
+      'Diagnostic : plus simple de savoir \"où\" est un appareil.';
 
   @override
   String get ipBasicsSection3Callout3Title => 'Piège classique';
 
   @override
   String get ipBasicsSection3Bullet8 =>
-      'Même “début” d’IP ≠ même réseau si le masque n’est pas identique.';
+      'Même \"début\" d’IP ≠ même réseau si le masque n’est pas identique.';
 
   @override
   String get ipBasicsSection3Bullet9 =>
@@ -3757,7 +3821,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection4SubBullet1 =>
-      'Un serveur DHCP “donne” : IP + masque + passerelle + DNS.';
+      'Un serveur DHCP \"donne\" : IP + masque + passerelle + DNS.';
 
   @override
   String get ipBasicsSection4SubBullet2 => 'Pratique : tu branches, ça marche.';
@@ -3786,7 +3850,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection4Bullet1 =>
-      'C’est l’adresse du routeur : elle sert pour aller “hors du réseau local”.';
+      'C’est l’adresse du routeur : elle sert pour aller \"hors du réseau local\".';
 
   @override
   String get ipBasicsSection4Bullet2 =>
@@ -3801,7 +3865,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection4Bullet4 =>
-      'DNS = “annuaire” : transforme un nom (ex: example.com) en IP.';
+      'DNS = \"annuaire\" : transforme un nom (ex: example.com) en IP.';
 
   @override
   String get ipBasicsSection4Bullet5 =>
@@ -3841,11 +3905,11 @@ class AppLocalizationsFr extends AppLocalizations {
       'B = 192.168.1.50 /24 → réseau différent → besoin routeur/passerelle.';
 
   @override
-  String get ipBasicsSection5Subtitle => 'Pourquoi ça “ping” pas ?';
+  String get ipBasicsSection5Subtitle => 'Pourquoi ça \"ping\" pas ?';
 
   @override
   String get ipBasicsSection5SubBullet1 =>
-      'Masque différent → A pense que B est “ailleurs” (ou inversement).';
+      'Masque différent → A pense que B est \"ailleurs\" (ou inversement).';
 
   @override
   String get ipBasicsSection5SubBullet2 =>
@@ -3869,7 +3933,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection5Bullet5 =>
-      'Broadcast : “à tous” sur le sous-réseau (bruyant).';
+      'Broadcast : \"à tous\" sur le sous-réseau (bruyant).';
 
   @override
   String get ipBasicsSection5Bullet6 =>
@@ -3899,7 +3963,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection6Subtitle2 =>
-      'Plan B — “10.x” quand tu veux grandir';
+      'Plan B — \"10.x\" quand tu veux grandir';
 
   @override
   String get ipBasicsSection6Code2 =>
@@ -3918,7 +3982,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection6Subtitle3 =>
-      'Plan C — compat Art-Net “2.x.x.x” (legacy)';
+      'Plan C — compat Art-Net \"2.x.x.x\" (legacy)';
 
   @override
   String get ipBasicsSection6Code3 =>
@@ -3933,30 +3997,30 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection6Bullet7 =>
-      'Mais évite de mélanger avec un LAN “normal” (192.168.x.x) sans routeur.';
+      'Mais évite de mélanger avec un LAN \"normal\" (192.168.x.x) sans routeur.';
 
   @override
   String get ipBasicsSection7Callout1Title => 'Symptômes → causes probables';
 
   @override
   String get ipBasicsSection7Bullet1 =>
-      '“Je vois le node mais ça répond pas” → masque différent / VLAN / pare-feu.';
+      '\"Je vois le node mais ça répond pas\" → masque différent / VLAN / pare-feu.';
 
   @override
   String get ipBasicsSection7Bullet2 =>
-      '“Un appareil marche puis disparaît” → DHCP instable / conflit d’IP.';
+      '\"Un appareil marche puis disparaît\" → DHCP instable / conflit d’IP.';
 
   @override
   String get ipBasicsSection7Bullet3 =>
-      '“Rien ne marche sauf sur le switch” → IP pas dans le même réseau / mauvais câble / port VLAN.';
+      '\"Rien ne marche sauf sur le switch\" → IP pas dans le même réseau / mauvais câble / port VLAN.';
 
   @override
   String get ipBasicsSection7Bullet4 =>
-      '“Tout rame / pertes” → broadcast/multicast trop large / switch bas de gamme / boucle réseau.';
+      '\"Tout rame / pertes\" → broadcast/multicast trop large / switch bas de gamme / boucle réseau.';
 
   @override
   String get ipBasicsSection7Bullet5 =>
-      '“Ça marche en filaire mais pas en Wi-Fi” → jitter / roaming / bande saturée / power saving.';
+      '\"Ça marche en filaire mais pas en Wi-Fi\" → jitter / roaming / bande saturée / power saving.';
 
   @override
   String get ipBasicsSection7Subtitle => 'Méthode pro en 5 minutes';
@@ -3986,11 +4050,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection7Bullet6 =>
-      'Masque “hérité” sur un PC (255.255.0.0 au lieu de 255.255.255.0).';
+      'Masque \"hérité\" sur un PC (255.255.0.0 au lieu de 255.255.255.0).';
 
   @override
   String get ipBasicsSection7Bullet7 =>
-      'Résultat : tu crois être “dans le même réseau”, mais pas comme l’autre appareil.';
+      'Résultat : tu crois être \"dans le même réseau\", mais pas comme l’autre appareil.';
 
   @override
   String get ipBasicsSection8Subtitle1 =>
@@ -4038,7 +4102,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ipBasicsSection8Subtitle3 =>
-      'Exercice 3 : éviter les IP “bizarres”';
+      'Exercice 3 : éviter les IP \"bizarres\"';
 
   @override
   String get ipBasicsSection8SubBullet7 =>
@@ -4106,7 +4170,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get aboutDmxPainterPin3 => 'Pin 3 : Data+';
 
   @override
-  String get aboutDmxPainterPin45 => 'Pin 4/5 : “data 2” (rare / optionnel)';
+  String get aboutDmxPainterPin45 => 'Pin 4/5 : \"data 2\" (rare / optionnel)';
 
   @override
   String get aboutDmxPainterXlr3Practice =>
@@ -4155,7 +4219,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutArtnetSection2Bullet1 =>
-      '1) Écris sur papier: “Univers 1 → Node A port 1”, “Univers 2 → Node A port 2”, etc.';
+      '1) Écris sur papier: \"Univers 1 → Node A port 1\", \"Univers 2 → Node A port 2\", etc.';
 
   @override
   String get aboutArtnetSection2Bullet2 =>
@@ -4170,7 +4234,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutArtnetSection2SubBullet1 =>
-      'Broadcast : tu envoies à tout le monde → facile mais peut “flood” un switch.';
+      'Broadcast : tu envoies à tout le monde → facile mais peut \"flood\" un switch.';
 
   @override
   String get aboutArtnetSection2SubBullet2 =>
@@ -4188,15 +4252,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutArtnetSection2SubBullet5 =>
-      'Évite “un univers partout” : documente tes mappings.';
+      'Évite \"un univers partout\" : documente tes mappings.';
 
   @override
   String get aboutArtnetSection2SubBullet6 =>
-      'Sur certains setups, “Net/Subnet/Universe” existent : pense “mapping”, pas “magie”.';
+      'Sur certains setups, \"Net/Subnet/Universe\" existent : pense \"mapping\", pas \"magie\".';
 
   @override
   String get aboutArtnetSection3CalloutTitle =>
-      'Les limites “réelles” (dans l’ordre)';
+      'Les limites \"réelles\" (dans l’ordre)';
 
   @override
   String get aboutArtnetSection3Bullet1 =>
@@ -4208,7 +4272,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutArtnetSection3Bullet3 =>
-      'Switch “bas de gamme” : buffers limités, gestion multicast/broadcast médiocre.';
+      'Switch \"bas de gamme\" : buffers limités, gestion multicast/broadcast médiocre.';
 
   @override
   String get aboutArtnetSection3Bullet4 =>
@@ -4223,7 +4287,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutArtnetSection3SubBullet1 =>
-      'Le DMX “classique” est souvent ~20–44 fps selon trame.';
+      'Le DMX \"classique\" est souvent ~20–44 fps selon trame.';
 
   @override
   String get aboutArtnetSection3SubBullet2 =>
@@ -4231,7 +4295,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutArtnetSection3SubBullet3 =>
-      'Stabilité > fréquence : mieux vaut stable à 30–40 fps que “vite” mais instable.';
+      'Stabilité > fréquence : mieux vaut stable à 30–40 fps que \"vite\" mais instable.';
 
   @override
   String get aboutArtnetSection3Subtitle2 => 'Règles simples';
@@ -4271,7 +4335,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutArtnetSection4Bullet1 =>
-      'Certains nodes supportent un “RDM proxy” : la console voit/configure les appareils RDM via IP.';
+      'Certains nodes supportent un \"RDM proxy\" : la console voit/configure les appareils RDM via IP.';
 
   @override
   String get aboutArtnetSection4Bullet2 =>
@@ -4279,7 +4343,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutArtnetSection4Bullet3 =>
-      'Un splitter opto “classique” peut bloquer le retour RDM (selon modèle).';
+      'Un splitter opto \"classique\" peut bloquer le retour RDM (selon modèle).';
 
   @override
   String get aboutArtnetSection4Bullet4 =>
@@ -4317,7 +4381,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutArtnetSection5Bullet5 =>
-      'RDM discovery impossible → node/splitter non compatible RDM, câblage DMX “borderline”.';
+      'RDM discovery impossible → node/splitter non compatible RDM, câblage DMX \"borderline\".';
 
   @override
   String get aboutArtnetSection5Subtitle => 'Méthode rapide';
@@ -4408,7 +4472,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutArtnetChecklistBullet6 =>
-      'Si RDM: node “RDM proxy” confirmé + câblage DMX stable';
+      'Si RDM: node \"RDM proxy\" confirmé + câblage DMX stable';
 
   @override
   String get aboutArtnetFooterNote =>
@@ -4601,7 +4665,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutNetworkBasicsParagraph =>
-      'Un réseau lumière doit être prévisible: faible perte, faible jitter, architecture simple. Quand ça bug, c’est rarement “le protocole” et souvent l’infra (switch, Wi-Fi, boucles, flood).';
+      'Un réseau lumière doit être prévisible: faible perte, faible jitter, architecture simple. Quand ça bug, c’est rarement \"le protocole\" et souvent l’infra (switch, Wi-Fi, boucles, flood).';
 
   @override
   String get aboutNetworkBasicsCalloutTitle => 'Règle de base';
@@ -4679,7 +4743,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutNetworkVlanSubBullet2 =>
-      'Si tu ne maîtrises pas: réseau dédié “physique” est souvent plus simple.';
+      'Si tu ne maîtrises pas: réseau dédié \"physique\" est souvent plus simple.';
 
   @override
   String get aboutNetworkIgmpPill1 => 'IGMP snooping';
@@ -4703,7 +4767,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutNetworkIgmpBullet2 =>
-      'Sans querier: selon les switchs, les abonnements expirent et tu vois des “glitches”.';
+      'Sans querier: selon les switchs, les abonnements expirent et tu vois des \"glitches\".';
 
   @override
   String get aboutNetworkIgmpBullet3 =>
@@ -5005,7 +5069,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutDmxS4SplittersB3 =>
-      'Pratique pour “re-driver” un signal sur de longues distances.';
+      'Pratique pour \"re-driver\" un signal sur de longues distances.';
 
   @override
   String get aboutDmxS5Title =>
@@ -5042,7 +5106,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutDmxS5IfFlickerB1 =>
-      'Cherche un “Y” caché, un splitter non adapté, ou un mauvais adaptateur XLR.';
+      'Cherche un \"Y\" caché, un splitter non adapté, ou un mauvais adaptateur XLR.';
 
   @override
   String get aboutDmxS5IfFlickerB2 =>
@@ -5137,7 +5201,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutDmxS7KeyIdeasB1 =>
-      'Multicast : un univers est un “groupe” réseau (les nodes s’abonnent).';
+      'Multicast : un univers est un \"groupe\" réseau (les nodes s’abonnent).';
 
   @override
   String get aboutDmxS7KeyIdeasB2 =>
@@ -5172,7 +5236,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutDmxS8QuickB3 =>
-      'sACN : plus “pro grands systèmes”, multicast + priorités, demande un réseau bien configuré.';
+      'sACN : plus \"pro grands systèmes\", multicast + priorités, demande un réseau bien configuré.';
 
   @override
   String get aboutDmxS8QuickB4 =>
@@ -5212,7 +5276,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutReseauChecklistCopy =>
-      'RÉSEAU — Checklist\n☐ Plan IP clair (plage / masques)\n☐ Switch correct (IGMP si sACN multicast)\n☐ VLAN si plusieurs “mondes” (lumière/vidéo/IT)\n☐ Câbles testés + étiquetés\n☐ Fibre : modules compatibles + connecteurs propres\n☐ Éviter boucles (STP) + éviter Wi-Fi public sur show LAN';
+      'RÉSEAU — Checklist\n☐ Plan IP clair (plage / masques)\n☐ Switch correct (IGMP si sACN multicast)\n☐ VLAN si plusieurs \"mondes\" (lumière/vidéo/IT)\n☐ Câbles testés + étiquetés\n☐ Fibre : modules compatibles + connecteurs propres\n☐ Éviter boucles (STP) + éviter Wi-Fi public sur show LAN';
 
   @override
   String get aboutReseauChecklistCopyTooltip => 'Copier';
@@ -5253,7 +5317,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutReseauSection1Bullet2 =>
-      'LAN = réseau local via switch (pas “internet”).';
+      'LAN = réseau local via switch (pas \"internet\").';
 
   @override
   String get aboutReseauSection1Bullet3 =>
@@ -5268,7 +5332,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutReseauSection1Bullet5 =>
-      'Évite les “daisy-chain réseau” au hasard.';
+      'Évite les \"daisy-chain réseau\" au hasard.';
 
   @override
   String get aboutReseauSection1Bullet6 =>
@@ -5279,7 +5343,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutReseauSection2Bullet1 =>
-      'Cat5e : 1 Gbit/s “classique” (jusqu’à 100m).';
+      'Cat5e : 1 Gbit/s \"classique\" (jusqu’à 100m).';
 
   @override
   String get aboutReseauSection2Bullet2 =>
@@ -5302,7 +5366,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutReseauSection2Bullet6 =>
-      'Évite les connecteurs abîmés : un RJ45 “fatigué” = pannes fantômes.';
+      'Évite les connecteurs abîmés : un RJ45 \"fatigué\" = pannes fantômes.';
 
   @override
   String get aboutReseauSection2Bullet7 =>
@@ -5321,7 +5385,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutReseauSection3Bullet2 =>
-      'Le switch a un “budget” total (ex: 120W).';
+      'Le switch a un \"budget\" total (ex: 120W).';
 
   @override
   String get aboutReseauSection3Bullet3 =>
@@ -5347,7 +5411,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutReseauSection4Bullet4 =>
-      'Multimode (MM) : distances “moyennes” (souvent bâtiment / plateau).';
+      'Multimode (MM) : distances \"moyennes\" (souvent bâtiment / plateau).';
 
   @override
   String get aboutReseauSection4Bullet5 =>
@@ -5411,7 +5475,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutReseauSection6Bullet4 =>
-      'Switch “cheap” qui flood le multicast → réseau qui s’écroule.';
+      'Switch \"cheap\" qui flood le multicast → réseau qui s’écroule.';
 
   @override
   String get aboutReseauSection6Bullet5 =>
@@ -5448,7 +5512,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutReseauSection7Bullet6 =>
-      'Sur gros shows : sACN + IGMP est souvent le choix “propre”.';
+      'Sur gros shows : sACN + IGMP est souvent le choix \"propre\".';
 
   @override
   String get aboutReseauChecklistTitle => 'Rapide';
@@ -5529,7 +5593,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutSacnSection1Paragraph =>
-      'sACN (E1.31) est un standard largement utilisé pour transporter des univers DMX sur IP. Il est souvent privilégié quand on veut une architecture réseau propre: multicast bien géré, priorités standardisées, et un comportement plus “réseau pro”.';
+      'sACN (E1.31) est un standard largement utilisé pour transporter des univers DMX sur IP. Il est souvent privilégié quand on veut une architecture réseau propre: multicast bien géré, priorités standardisées, et un comportement plus \"réseau pro\".';
 
   @override
   String get aboutSacnSection1Title => 'Quand c’est top';
@@ -5544,7 +5608,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutSacnSection1Bullet3 =>
-      'Quand tu veux éviter le “broadcast partout”.';
+      'Quand tu veux éviter le \"broadcast partout\".';
 
   @override
   String get aboutSacnSection2Pill1 => 'Universe 1..63999';
@@ -5565,7 +5629,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutSacnSection2Bullet2 =>
-      'Tu patches “Universe 0” alors que le matériel attend une base 1.';
+      'Tu patches \"Universe 0\" alors que le matériel attend une base 1.';
 
   @override
   String get aboutSacnSection2Bullet3 =>
@@ -5573,7 +5637,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutSacnSection3Paragraph =>
-      'sACN utilise souvent le multicast: chaque univers “vit” sur un groupe multicast, et les nodes s’abonnent aux univers dont ils ont besoin.';
+      'sACN utilise souvent le multicast: chaque univers \"vit\" sur un groupe multicast, et les nodes s’abonnent aux univers dont ils ont besoin.';
 
   @override
   String get aboutSacnSection3Title =>
@@ -5581,7 +5645,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutSacnSection3Bullet1 =>
-      'Sans IGMP: le switch “flood” le multicast partout → surcharge possible.';
+      'Sans IGMP: le switch \"flood\" le multicast partout → surcharge possible.';
 
   @override
   String get aboutSacnSection3Bullet2 =>
@@ -5589,7 +5653,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutSacnSection3Bullet3 =>
-      'Sur gros volumes: IGMP est souvent LA différence entre “ça marche” et “c’est l’enfer”.';
+      'Sur gros volumes: IGMP est souvent LA différence entre \"ça marche\" et \"c’est l’enfer\".';
 
   @override
   String get aboutSacnSection3Subtitle => 'Schéma : multicast & IGMP';
@@ -5623,7 +5687,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutSacnSection4Bullet1 =>
-      'Deux sources non voulues sur le même univers → “ça se bat”.';
+      'Deux sources non voulues sur le même univers → \"ça se bat\".';
 
   @override
   String get aboutSacnSection4Bullet2 =>
@@ -5676,7 +5740,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutSacnSection6Paragraph =>
-      'Comme avec Art-Net, le RDM “sur IP” dépend souvent d’un mécanisme de proxy dans les nodes. Le standard sACN n’implique pas automatiquement que ton node fait du RDM correctement.';
+      'Comme avec Art-Net, le RDM \"sur IP\" dépend souvent d’un mécanisme de proxy dans les nodes. Le standard sACN n’implique pas automatiquement que ton node fait du RDM correctement.';
 
   @override
   String get aboutSacnSection6Title => 'À vérifier dans la doc du node';
@@ -5713,7 +5777,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get aboutSacnSection7Subtitle2 => 'Priorités (2 sources)';
 
   @override
-  String get aboutSacnChecklistTitle => 'Avant d’accuser “le protocole”';
+  String get aboutSacnChecklistTitle => 'Avant d’accuser \"le protocole\"';
 
   @override
   String get aboutSacnChecklistBullet1 => 'IGMP snooping activé si multicast.';
@@ -6549,7 +6613,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get sunTimesThresholdNote =>
-      'Astuce : pour un repérage “utilisable sans éclairage”, on vise souvent > 100–300 lx. Pour un travail fin, plutôt 500 lx et +.';
+      'Astuce : pour un repérage \"utilisable sans éclairage\", on vise souvent > 100–300 lx. Pour un travail fin, plutôt 500 lx et +.';
 
   @override
   String get sunTimesParamsTitle => 'Paramètres';
@@ -6620,7 +6684,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get sunTimesTwilightAstronomical =>
-      'Astronomique (-18°) : le ciel est considéré comme “noir” (hors pollution lumineise).';
+      'Astronomique (-18°) : le ciel est considéré comme \"noir\" (hors pollution lumineise).';
 
   @override
   String get sunTimesTwilightAnglesNote =>
@@ -6733,6 +6797,13 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get consoleGdtfSubtitle => 'Créer ou analyser un fichier GDTF';
+
+  @override
+  String get consoleMa3ForgeTitle => 'MA3 Plugin Forge';
+
+  @override
+  String get consoleMa3ForgeSubtitle =>
+      'Génère des plugins Lua pour grandMA3 avec IA';
 
   @override
   String lightFilterLedProfileSaved(String name) {
@@ -6969,6 +7040,34 @@ class AppLocalizationsFr extends AppLocalizations {
   String get riggingProSection => 'Abonnement Rigging';
 
   @override
+  String get videoFreeSection => 'Gratuit';
+
+  @override
+  String get videoProSection => 'Abonnement Vidéo';
+
+  @override
+  String get lumiereFreeSection => 'Gratuit';
+
+  @override
+  String get lumiereProSection => 'Abonnement Lumière';
+
+  @override
+  String get consoleFreeSection => 'Gratuit';
+
+  @override
+  String get consoleProSection => 'Abonnement Console';
+
+  @override
+  String get lumiereFilterEquivDescription =>
+      'Équivalences Lee ↔ Roscolux ↔ e-colour+';
+
+  @override
+  String get audioSplModeDistance => 'Distance → SPL';
+
+  @override
+  String get audioSplModePower => 'Puissance → SPL';
+
+  @override
   String get homeElectricityTitle => 'Électricité';
 
   @override
@@ -7013,6 +7112,147 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get electricityToolPhasePowerSubtitle =>
       'Répartir une puissance totale et lire le courant par phase.';
+
+  @override
+  String get electricityToolLoadBalancerTitle => 'Répartition de charge';
+
+  @override
+  String get electricityToolLoadBalancerSubtitle =>
+      'Ajouter des fixtures depuis le catalogue, assigner par phase et vérifier l\'ampérage de ton tableau.';
+
+  @override
+  String get electricityToolGeneratorTitle => 'Groupe électrogène';
+
+  @override
+  String get electricityPowerFactorToolTitle =>
+      'Facteur de puissance (kVA ↔ kW)';
+
+  @override
+  String get electricityToolPowerFactorSubtitle =>
+      'Convertit puissance apparente (kVA), active (kW) et cos φ dans les deux sens, avec la puissance réactive (kVAR).';
+
+  @override
+  String get electricityPowerFactorModeTitle => 'Sens de calcul';
+
+  @override
+  String get electricityPowerFactorModeKvaToKw => 'kVA → kW';
+
+  @override
+  String get electricityPowerFactorModeKwToKva => 'kW → kVA';
+
+  @override
+  String get electricityPowerFactorInputsTitle => 'Données connues';
+
+  @override
+  String get electricityPowerFactorApparentLabel => 'Puissance apparente';
+
+  @override
+  String get electricityPowerFactorApparentHint => 'Ex : 10';
+
+  @override
+  String get electricityPowerFactorActiveLabel => 'Puissance active';
+
+  @override
+  String get electricityPowerFactorActiveHint => 'Ex : 8';
+
+  @override
+  String get electricityPowerFactorCosPhiLabel =>
+      'Facteur de puissance (cos φ)';
+
+  @override
+  String get electricityPowerFactorCosPhiHint => '0.1 – 1.0, ex : 0.8';
+
+  @override
+  String get electricityPowerFactorResultsTitle => 'Résultats';
+
+  @override
+  String get electricityPowerFactorReactiveLabel => 'Puissance réactive';
+
+  @override
+  String get electricityPowerFactorAngleLabel => 'Angle de déphasage';
+
+  @override
+  String get electricityPowerFactorEnterValues =>
+      'Renseignez les valeurs pour voir le résultat.';
+
+  @override
+  String get electricityPowerFactorFormulaNote =>
+      'kW = kVA × cos φ · kVA = kW / cos φ · kVAR = √(kVA² − kW²). cos φ = 1 correspond à une charge purement résistive (aucune puissance réactive).';
+
+  @override
+  String get electricityToolGeneratorSubtitle =>
+      'Dimensionnement : puissance active → kVA, foisonnement, marge de sécurité, taille standard recommandée.';
+
+  @override
+  String get electricityGeneratorInputsTitle => 'Charge à alimenter';
+
+  @override
+  String get electricityGeneratorActivePowerLabel =>
+      'Puissance active installée';
+
+  @override
+  String get electricityGeneratorActivePowerHint =>
+      'Somme des puissances actives (voir répartiteur de charges)';
+
+  @override
+  String get electricityGeneratorCosPhiLabel => 'Cos φ moyen';
+
+  @override
+  String get electricityGeneratorCosPhiHint =>
+      '0,85–0,95 typique (gradateurs, LED, ampli)';
+
+  @override
+  String get electricityGeneratorDiversityLabel => 'Facteur de foisonnement';
+
+  @override
+  String get electricityGeneratorDiversityHint =>
+      '% de la puissance installée réellement sollicitée en simultané';
+
+  @override
+  String get electricityGeneratorMarginLabel => 'Marge de sécurité';
+
+  @override
+  String get electricityGeneratorMarginHint =>
+      'Headroom recommandé pour démarrages et pointes';
+
+  @override
+  String get electricityGeneratorFuelRateLabel => 'Consommation spécifique';
+
+  @override
+  String get electricityGeneratorFuelRateHint =>
+      '≈0,25 L/kWh typique pour un diesel bien chargé';
+
+  @override
+  String get electricityGeneratorResultsTitle => 'Groupe recommandé';
+
+  @override
+  String get electricityGeneratorRecommendedLabel =>
+      'Taille standard recommandée';
+
+  @override
+  String get electricityGeneratorRecommendedOverMax =>
+      '> 800 kVA — dimensionnement sur mesure, consultez un loueur';
+
+  @override
+  String get electricityGeneratorApparentNeededLabel =>
+      'Puissance apparente nécessaire';
+
+  @override
+  String get electricityGeneratorCurrentLabel => 'Courant estimé en sortie';
+
+  @override
+  String get electricityGeneratorFuelPerHourLabel => 'Consommation estimée';
+
+  @override
+  String get electricityGeneratorFuelPerShowLabel => 'Sur 8 h de show';
+
+  @override
+  String get electricityGeneratorEnterValues =>
+      'Saisissez la puissance active pour calculer';
+
+  @override
+  String get electricityGeneratorDisclaimer =>
+      'Estimation indicative — vérifiez toujours avec les préconisations du loueur/fabricant du groupe (altitude, température, charges non-linéaires).';
 
   @override
   String get electricityToolCableSectionTitle => 'Section de câble';
@@ -7361,6 +7601,41 @@ class AppLocalizationsFr extends AppLocalizations {
       'Voir rapidement l’effet de l’angle sur la tension dans les brins.';
 
   @override
+  String get riggingToolMultiPointTitle => 'Bridage multi-points';
+
+  @override
+  String get riggingToolMultiPointSubtitle =>
+      'Tension par brin pour un bridage symétrique à 2-8 points, avec vérification WLL.';
+
+  @override
+  String get riggingLegCountLabel => 'Nombre de brins';
+
+  @override
+  String get riggingWllPerLegLabel => 'WLL par brin';
+
+  @override
+  String get riggingMultiPointSymmetricNote =>
+      'Calcul valable pour un bridage symétrique : brins de même longueur, charge centrée, tension répartie également. Pour une configuration asymétrique ou complexe, fais appel à un rigger qualifié ou un logiciel certifié.';
+
+  @override
+  String get riggingToolHoistTitle => 'Sélection de palan';
+
+  @override
+  String get riggingToolHoistSubtitle =>
+      'Charge à lever → taille de palan standard recommandée, avec marge de sécurité.';
+
+  @override
+  String get riggingHoistRecommendedLabel => 'Palan recommandé';
+
+  @override
+  String get riggingHoistOverMaxLabel =>
+      '> 10 000 kg — hors gamme standard, consultez un spécialiste levage';
+
+  @override
+  String get riggingHoistAvailabilityNote =>
+      'Tailles standard indicatives (0,125 à 10 t) — la disponibilité réelle dépend du fabricant et du loueur.';
+
+  @override
   String get riggingToolWllTitle => 'Vérification WLL / CMU';
 
   @override
@@ -7504,4 +7779,7832 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get riggingKnownInputLabel => 'Je connais';
+
+  @override
+  String get homeConversionsTitle => 'Conversions';
+
+  @override
+  String get homeConversionsSubtitle =>
+      'Unités, distance, vidéo, audio, DMX et conversions terrain.';
+
+  @override
+  String get conversionsTitle => 'Conversions';
+
+  @override
+  String get conversionsDistanceTitle => 'Distance';
+
+  @override
+  String get conversionsTemperatureTitle => 'Température';
+
+  @override
+  String get conversionsAnglesTitle => 'Angles';
+
+  @override
+  String get conversionsVideoTitle => 'Vidéo';
+
+  @override
+  String get conversionsAudioTitle => 'Audio';
+
+  @override
+  String get conversionsDmxTitle => 'DMX';
+
+  @override
+  String get conversionsSwap => 'Inverser';
+
+  @override
+  String get conversionsDisclaimer =>
+      'Indication uniquement. Vérifie toujours les valeurs critiques avec la documentation constructeur.';
+
+  @override
+  String get conversionMetersFeet => 'Mètres <> feet';
+
+  @override
+  String get conversionCentimetersInches => 'Centimètres <> pouces';
+
+  @override
+  String get conversionMetersYards => 'Mètres <> yards';
+
+  @override
+  String get conversionCelsiusFahrenheit => 'Celsius <> Fahrenheit';
+
+  @override
+  String get conversionDegreesRadians => 'Degrés <> radians';
+
+  @override
+  String get conversionSlopePercentDegrees => 'Pente % <> degrés';
+
+  @override
+  String get conversionNitsFootLambert => 'Nits <> foot-lambert';
+
+  @override
+  String get conversionFpsFrameTime => 'FPS <> durée image';
+
+  @override
+  String get conversionBpmMs => 'BPM <> millisecondes';
+
+  @override
+  String get conversionDelayDistance => 'Délai <> distance';
+
+  @override
+  String get conversionDmxPercent => 'DMX <> %';
+
+  @override
+  String get conversionEightBitSixteenBit => '8 bit <> 16 bit';
+
+  @override
+  String get subscriptionDurationYear => 'Abonnement 1 an';
+
+  @override
+  String get conversionAudioLevel => 'dBu / dBV / V';
+
+  @override
+  String get conversionDmxAbsolute => 'Univers <> DMX absolu';
+
+  @override
+  String get conversionDmxToAbsoluteHint => 'Univers + adresse → absolu';
+
+  @override
+  String get conversionDmxFromAbsoluteHint => 'Absolu → univers + adresse';
+
+  @override
+  String get conversionDmxUniverseLabel => 'Univers';
+
+  @override
+  String get conversionDmxAddressLabel => 'Adresse';
+
+  @override
+  String get conversionDmxAbsoluteLabel => 'DMX Absolu';
+
+  @override
+  String get gdtfTitle => 'GDTF';
+
+  @override
+  String get gdtfSearchTab => 'Recherche';
+
+  @override
+  String get gdtfGenerateFromPdfTab => 'Générer depuis PDF';
+
+  @override
+  String get gdtfSearchHint => 'ex: Martin MAC Aura, Chauvet Rogue…';
+
+  @override
+  String get gdtfFixtureNameLabel => 'Nom de la fixture';
+
+  @override
+  String get gdtfSearchInfo =>
+      'Recherche dans la base GDTF Share (6000+ fixtures).\nSi introuvable, utilise l\'onglet \"Générer depuis PDF\".';
+
+  @override
+  String get gdtfNoFixtureFound => 'Aucune fixture trouvée';
+
+  @override
+  String get gdtfNoFixtureFoundHelp =>
+      'Tu peux générer un GDTF depuis le PDF du manuel.';
+
+  @override
+  String get gdtfGenerateFromPdfTitle => 'Générer un GDTF depuis un PDF';
+
+  @override
+  String get gdtfGenerateFromPdfIntro =>
+      'Upload le manuel technique de ta fixture. L\'IA extrait les modes DMX — tu vérifies et corriges avant de générer le fichier.\n\n⚠️ Clé du succès : saisis le nom exact de la machine tel qu\'il apparaît dans le manuel. Et si tu ajoutes des modes manuellement, utilise les noms exacts des modes DMX — sinon l\'IA ne retrouve pas les bonnes données.';
+
+  @override
+  String get gdtfManufacturerHint => 'ex: Martin, Chauvet, Robe…';
+
+  @override
+  String get gdtfModelHint => 'ex: MAC Aura XIP, Rogue R2X…';
+
+  @override
+  String get gdtfSelectManualPdf => 'Sélectionner le PDF du manuel';
+
+  @override
+  String get gdtfDetectingModes => 'Détection des modes…';
+
+  @override
+  String get gdtfAnalyzePdf => 'Analyser le PDF';
+
+  @override
+  String get gdtfAnalyzePdfHelp =>
+      'L\'IA détecte les modes DMX disponibles dans le manuel. Tu choisis ensuite ceux à extraire avant de générer le fichier.';
+
+  @override
+  String get gdtfBackToForm => 'Revenir au formulaire';
+
+  @override
+  String gdtfDetectedModesInManual(int count) {
+    return '$count mode(s) DMX détecté(s) dans le manuel';
+  }
+
+  @override
+  String get gdtfSearchModeHint => 'Rechercher un mode…';
+
+  @override
+  String get gdtfSelectAll => 'Tout';
+
+  @override
+  String get gdtfSelectNone => 'Aucun';
+
+  @override
+  String gdtfSelectedModesCount(int selected, int total) {
+    return '$selected sélectionné(s) sur $total';
+  }
+
+  @override
+  String get gdtfNoModeMatchesSearch =>
+      'Aucun mode ne correspond à la recherche.';
+
+  @override
+  String gdtfDmxChannelCount(int count) {
+    return '$count canaux DMX';
+  }
+
+  @override
+  String get gdtfExtractionInProgressLong =>
+      'Extraction en cours… cela peut prendre jusqu\'à 10 minutes selon le manuel. Ne ferme pas l\'app.';
+
+  @override
+  String get gdtfExtractionMayTakeLong =>
+      'L\'extraction peut prendre jusqu\'à 10 minutes selon la taille du manuel et le nombre de modes sélectionnés.';
+
+  @override
+  String get gdtfExtractingChannels => 'Extraction des canaux…';
+
+  @override
+  String gdtfExtractModes(int count) {
+    return 'Extraire $count mode(s)';
+  }
+
+  @override
+  String get gdtfBackToModeSelection => 'Revenir à la sélection des modes';
+
+  @override
+  String gdtfDetectedModesCount(int count) {
+    return '$count mode(s) détecté(s)';
+  }
+
+  @override
+  String gdtfUnextractedModesCount(int count) {
+    return '$count mode(s) non extraits';
+  }
+
+  @override
+  String get gdtfGenerating => 'Génération…';
+
+  @override
+  String get gdtfGenerateGdtfFile => 'Générer le fichier .gdtf';
+
+  @override
+  String get gdtfModeNameHint => 'Nom du mode';
+
+  @override
+  String gdtfChannelCount(int count) {
+    return '$count canaux';
+  }
+
+  @override
+  String get gdtfChannelShort => 'Ch';
+
+  @override
+  String get gdtfBits => 'Bits';
+
+  @override
+  String get gdtfName => 'Nom';
+
+  @override
+  String get gdtfDefaultValueLabel => 'Valeur par défaut (0-255) :';
+
+  @override
+  String get gdtfValueRangesLabel => 'Plages de valeurs / Sous-fonctions :';
+
+  @override
+  String get gdtfValueRangesHint =>
+      'ex: 0-9=fermé, 10-100=strobe lent, 255=ouvert';
+
+  @override
+  String get gdtfAddChannel => 'Ajouter un canal';
+
+  @override
+  String get gdtfFileGenerated => 'Fichier généré !';
+
+  @override
+  String get gdtfShareGdtfFile => 'Partager le fichier .gdtf';
+
+  @override
+  String get gdtfGenerateAnotherFile => 'Générer un autre fichier';
+
+  @override
+  String get gdtfGmailIosTitle => 'Gmail sur iOS ? Lis ça 👀';
+
+  @override
+  String get gdtfGmailIosWarning =>
+      'Gmail sur iOS bloque souvent les pièces jointes .gdtf (\"impossible à joindre le fichier\"). Astuce : renomme le fichier en .zip avant de l\'envoyer — le destinataire le renomme en .gdtf après réception. WhatsApp, Messenger et AirDrop fonctionnent sans souci.';
+
+  @override
+  String get gdtfDownload => 'Télécharger';
+
+  @override
+  String gdtfModeFootprint(String name, int count) {
+    return '$name (${count}ch)';
+  }
+
+  @override
+  String gdtfDownloadingFixture(String fixture) {
+    return 'Téléchargement de $fixture…';
+  }
+
+  @override
+  String gdtfErrorStatus(int statusCode) {
+    return 'Erreur $statusCode';
+  }
+
+  @override
+  String gdtfErrorStatusParentheses(int statusCode) {
+    return 'Erreur ($statusCode)';
+  }
+
+  @override
+  String gdtfNetworkError(String error) {
+    return 'Erreur réseau : $error';
+  }
+
+  @override
+  String gdtfErrorDetails(String error) {
+    return 'Erreur : $error';
+  }
+
+  @override
+  String get gdtfErrorFillManufacturerAndModel =>
+      'Remplis le fabricant et le modèle.';
+
+  @override
+  String get gdtfErrorSelectPdf => 'Sélectionne un fichier PDF.';
+
+  @override
+  String get gdtfErrorCannotExtractDmxPages =>
+      'Impossible d\'extraire les pages DMX du PDF.';
+
+  @override
+  String get gdtfUnknownError => 'Erreur inconnue';
+
+  @override
+  String get gdtfUnknownErrorLowercase => 'erreur inconnue';
+
+  @override
+  String get gdtfNoDmxModeDetected => 'Aucun mode DMX détecté dans le manuel.';
+
+  @override
+  String get gdtfErrorSelectAtLeastOneMode =>
+      'Sélectionne au moins un mode à extraire.';
+
+  @override
+  String get gdtfErrorManualDataLost =>
+      'Données du manuel perdues, relance l\'analyse.';
+
+  @override
+  String get mireVideoPageTitle => 'Mires écran vidéo';
+
+  @override
+  String get mireVideoWidthPxLabel => 'Largeur (px)';
+
+  @override
+  String get mireVideoHeightPxLabel => 'Hauteur (px)';
+
+  @override
+  String get mireVideoProjectorCountLabel => 'Nombre de projecteurs (N)';
+
+  @override
+  String get mireVideoOverlapPercentLabel => 'Overlap (%)';
+
+  @override
+  String get mireVideoHint1920 => 'ex: 1920';
+
+  @override
+  String get mireVideoHint1080 => 'ex: 1080';
+
+  @override
+  String get mireVideoHint3840 => 'ex: 3840';
+
+  @override
+  String get mireVideoHint2160 => 'ex: 2160';
+
+  @override
+  String get mireVideoHint2 => 'ex: 2';
+
+  @override
+  String get mireVideoHint10Percent => 'ex: 10.0';
+
+  @override
+  String get mireVideoTestPatternTypeLabel => 'Type de mire';
+
+  @override
+  String get mireVideoSimpleTypeComboAll =>
+      'Combo (grille + cercles + 2 barres centrées)';
+
+  @override
+  String get mireVideoSimpleTypeGridSafe => 'Grille + safe + cercles';
+
+  @override
+  String get mireVideoSimpleTypeColorBars => 'Barres + rampes + cercles';
+
+  @override
+  String get mireVideoSimpleTypeUniformity => 'Uniformité + cercles';
+
+  @override
+  String get mireVideoSimpleTypeCheckerboard => 'Damier + cercles';
+
+  @override
+  String get mireVideoExportPngButton => 'Exporter PNG';
+
+  @override
+  String get mireVideoOrientationLabel => 'Orientation';
+
+  @override
+  String get mireVideoOrientationHorizontal => 'Horizontal';
+
+  @override
+  String get mireVideoOrientationVertical => 'Vertical';
+
+  @override
+  String get mireVideoMappingTypeLabel => 'Type mapping';
+
+  @override
+  String get mireVideoMappingTypeCombo => 'Combo (zones + overlap + blend)';
+
+  @override
+  String get mireVideoMappingTypeZonesAndOverlap => 'Zones + overlap';
+
+  @override
+  String get mireVideoMappingTypeBlendRamps => 'Blend ramps';
+
+  @override
+  String get mireVideoErrorInvalidWidthHeight =>
+      '❌ Largeur/hauteur invalides (px).';
+
+  @override
+  String get mireVideoErrorInvalidProjectorCount =>
+      '❌ Nombre de projecteurs invalide (N > 0).';
+
+  @override
+  String get mireVideoErrorInvalidOverlap => '❌ Overlap invalide (0 à 99.9).';
+
+  @override
+  String get cinemaTitle => 'Cinéma / Film';
+
+  @override
+  String get cinemaIntroTitle => 'Outils cinéma et tournage';
+
+  @override
+  String get cinemaIntroBody =>
+      'Calculs utiles pour l’optique, le cadrage, l’exposition, le stockage, le timecode et la projection cinéma.';
+
+  @override
+  String get cinemaFieldOfViewTitle => 'Angle de champ';
+
+  @override
+  String get cinemaFieldOfViewSubtitle =>
+      'Calcul horizontal, vertical et diagonal selon capteur et focale.';
+
+  @override
+  String get cinemaFieldOfViewDescription =>
+      'Calcule l’angle de champ selon le format capteur et la focale.';
+
+  @override
+  String get cinemaFieldOfViewInfo =>
+      'Formule : angle = 2 × atan(taille capteur ÷ (2 × focale)).';
+
+  @override
+  String get cinemaSubjectDistanceTitle => 'Distance caméra / sujet';
+
+  @override
+  String get cinemaSubjectDistanceSubtitle =>
+      'Estime la distance nécessaire pour cadrer un sujet.';
+
+  @override
+  String get cinemaSubjectDistanceDescription =>
+      'Estime la distance caméra nécessaire pour cadrer un sujet en hauteur.';
+
+  @override
+  String get cinemaSubjectDistanceInfo =>
+      'Approximation géométrique idéale. La distance réelle peut varier selon le breathing optique, le mode capteur et le recadrage.';
+
+  @override
+  String get cinemaDepthOfFieldTitle => 'Profondeur de champ';
+
+  @override
+  String get cinemaDepthOfFieldSubtitle =>
+      'Zone nette, limite proche, limite lointaine et hyperfocale.';
+
+  @override
+  String get cinemaDepthOfFieldDescription =>
+      'Calcule la zone de netteté théorique selon focale, ouverture, distance et cercle de confusion.';
+
+  @override
+  String get cinemaDepthOfFieldInfo =>
+      'Résultat théorique. La perception de netteté dépend aussi de la résolution, de la taille d’affichage et de la distance de visionnage.';
+
+  @override
+  String get cinemaLensEquivalenceTitle => 'Équivalence de focale';
+
+  @override
+  String get cinemaLensEquivalenceSubtitle =>
+      'Conversion de focale entre formats de capteurs.';
+
+  @override
+  String get cinemaLensEquivalenceDescription =>
+      'Convertit une focale d’un format capteur vers un autre en conservant un angle de champ diagonal similaire.';
+
+  @override
+  String get cinemaLensEquivalenceInfo =>
+      'Conversion basée sur la diagonale. Pour un cadrage strictement horizontal ou vertical, le facteur peut être légèrement différent.';
+
+  @override
+  String get cinemaAnamorphicTitle => 'Anamorphique';
+
+  @override
+  String get cinemaAnamorphicSubtitle =>
+      'Désqueeze, ratio final et focale horizontale équivalente.';
+
+  @override
+  String get cinemaAnamorphicDescription =>
+      'Calcule le ratio final après désqueeze et l’équivalence horizontale de la focale.';
+
+  @override
+  String get cinemaAnamorphicInfo =>
+      'Une optique anamorphique élargit le champ horizontal après désqueeze, mais conserve le comportement vertical de la focale.';
+
+  @override
+  String get cinemaShutterTitle => 'Shutter angle / shutter speed';
+
+  @override
+  String get cinemaShutterSubtitle =>
+      'Conversion entre angle d’obturation, FPS et vitesse.';
+
+  @override
+  String get cinemaShutterDescription =>
+      'Convertit un angle d’obturation cinéma en vitesse d’obturation.';
+
+  @override
+  String get cinemaShutterInfo =>
+      'À 180°, la vitesse est environ 1 ÷ (2 × fps). Exemple : 25 fps → 1/50 s.';
+
+  @override
+  String get cinemaFlickerTitle => 'Flicker free';
+
+  @override
+  String get cinemaFlickerSubtitle =>
+      'Vitesses d’obturation sûres selon 50 Hz ou 60 Hz.';
+
+  @override
+  String get cinemaFlickerDescription =>
+      'Liste des vitesses d’obturation généralement sûres selon la fréquence secteur.';
+
+  @override
+  String get cinemaFlickerInfo =>
+      'Les LEDs, écrans et sources dimmées peuvent quand même scintiller selon leur électronique, leur PWM ou leur fréquence de refresh.';
+
+  @override
+  String get cinemaNdExposureTitle => 'ND / exposition';
+
+  @override
+  String get cinemaNdExposureSubtitle =>
+      'Stops, densité ND, facteur ND et correction d’exposition.';
+
+  @override
+  String get cinemaNdExposureDescription =>
+      'Convertit une correction en stops vers densité ND et facteur de réduction lumineuse.';
+
+  @override
+  String get cinemaNdExposureInfo =>
+      'Repères : ND 0.3 = 1 stop, ND 0.6 = 2 stops, ND 0.9 = 3 stops, ND 1.2 = 4 stops.';
+
+  @override
+  String get cinemaRecordingStorageTitle => 'Temps d’enregistrement';
+
+  @override
+  String get cinemaRecordingStorageSubtitle =>
+      'Durée disponible selon capacité et bitrate.';
+
+  @override
+  String get cinemaRecordingStorageDescription =>
+      'Estime la durée disponible selon la capacité de carte/disque et le bitrate vidéo.';
+
+  @override
+  String get cinemaRecordingStorageInfo =>
+      'Calcul décimal simplifié : 1 GB = 8000 Mb. Prévoir une marge pour l’audio, les métadonnées, le système de fichiers et la réserve média.';
+
+  @override
+  String get cinemaTimecodeTitle => 'Timecode';
+
+  @override
+  String get cinemaTimecodeSubtitle =>
+      'Conversion timecode ↔ frames et durée entre deux TC.';
+
+  @override
+  String get cinemaTimecodeDescription =>
+      'Convertit deux timecodes en frames et calcule la durée entre les deux.';
+
+  @override
+  String get cinemaTimecodeInfo =>
+      'Cette première version utilise du timecode entier non-drop-frame. Le 29.97 drop-frame peut être ajouté ensuite séparément.';
+
+  @override
+  String get cinemaSlowMotionTitle => 'Ralenti / framerate';
+
+  @override
+  String get cinemaSlowMotionSubtitle =>
+      'Facteur de ralenti et durée de lecture.';
+
+  @override
+  String get cinemaSlowMotionDescription =>
+      'Calcule le facteur de ralenti et la durée de lecture finale.';
+
+  @override
+  String get cinemaSlowMotionInfo =>
+      'Exemple : 100 fps tourné, 25 fps lu = ralenti ×4.';
+
+  @override
+  String get cinemaProjectionTitle => 'Projection cinéma';
+
+  @override
+  String get cinemaProjectionSubtitle =>
+      'Écran, ratio, throw, luminance, nits et ft-L.';
+
+  @override
+  String get cinemaProjectionDescription =>
+      'Calcule les dimensions écran, la distance projecteur et une luminance approximative.';
+
+  @override
+  String get cinemaProjectionInfo =>
+      'Luminance approximative : nits ≈ lumens × gain ÷ (π × surface). Les pertes optiques, zoom, vieillissement lampe/laser et calibration ne sont pas inclus.';
+
+  @override
+  String get cinemaGlobalDisclaimer =>
+      'Ces outils donnent des valeurs techniques indicatives. Les résultats peuvent varier selon la caméra, l’optique, le codec, le profil image, le projecteur, la toile ou les conditions réelles de tournage.';
+
+  @override
+  String get cinemaSensorLabel => 'Capteur';
+
+  @override
+  String get cinemaFocalLengthLabel => 'Focale';
+
+  @override
+  String get cinemaHorizontalAngleResult => 'Angle horizontal';
+
+  @override
+  String get cinemaVerticalAngleResult => 'Angle vertical';
+
+  @override
+  String get cinemaDiagonalAngleResult => 'Angle diagonal';
+
+  @override
+  String get cinemaSensorDiagonalResult => 'Diagonale capteur';
+
+  @override
+  String get cinemaSubjectHeightLabel => 'Hauteur du sujet';
+
+  @override
+  String get cinemaFrameFillLabel => 'Occupation du cadre en hauteur';
+
+  @override
+  String get cinemaEstimatedDistanceResult => 'Distance estimée';
+
+  @override
+  String get cinemaFrameHeightResult => 'Hauteur cadre à cette distance';
+
+  @override
+  String get cinemaApertureLabel => 'Ouverture';
+
+  @override
+  String get cinemaSubjectDistanceInputLabel => 'Distance sujet';
+
+  @override
+  String get cinemaCocLabel => 'Cercle de confusion';
+
+  @override
+  String get cinemaCocHelper => 'Exemple Full Frame : 0.03 mm';
+
+  @override
+  String get cinemaHyperfocalResult => 'Hyperfocale';
+
+  @override
+  String get cinemaNearLimitResult => 'Limite proche';
+
+  @override
+  String get cinemaFarLimitResult => 'Limite lointaine';
+
+  @override
+  String get cinemaTotalDepthResult => 'Profondeur totale';
+
+  @override
+  String get cinemaSourceSensorLabel => 'Capteur source';
+
+  @override
+  String get cinemaTargetSensorLabel => 'Capteur cible';
+
+  @override
+  String get cinemaSourceFocalLengthLabel => 'Focale source';
+
+  @override
+  String get cinemaEquivalentFocalResult => 'Focale équivalente';
+
+  @override
+  String get cinemaAppliedFactorResult => 'Facteur appliqué';
+
+  @override
+  String get cinemaSensorRecordingRatioLabel =>
+      'Ratio capteur / enregistrement';
+
+  @override
+  String get cinemaSensorRecordingRatioHelper =>
+      '16:9 = 1.78, 4:3 = 1.33, 3:2 = 1.50';
+
+  @override
+  String get cinemaAnamorphicFactorLabel => 'Facteur anamorphique';
+
+  @override
+  String get cinemaAnamorphicFactorHelper => '1.33, 1.5, 1.8, 2.0';
+
+  @override
+  String get cinemaOpticalFocalLengthLabel => 'Focale optique';
+
+  @override
+  String get cinemaFinalRatioResult => 'Ratio final';
+
+  @override
+  String get cinemaHorizontalEquivalentFocalResult =>
+      'Focale horizontale équivalente';
+
+  @override
+  String get cinemaVerticalFocalResult => 'Focale verticale';
+
+  @override
+  String get cinemaFramerateLabel => 'Framerate';
+
+  @override
+  String get cinemaShutterAngleLabel => 'Angle d’obturation';
+
+  @override
+  String get cinemaExposureTimeResult => 'Temps d’exposition';
+
+  @override
+  String get cinemaEquivalentShutterSpeedResult => 'Vitesse équivalente';
+
+  @override
+  String get cinemaMainsFrequencyLabel => 'Fréquence secteur';
+
+  @override
+  String get cinemaMains50Hz => '50 Hz — Europe';
+
+  @override
+  String get cinemaMains60Hz => '60 Hz — USA / autres';
+
+  @override
+  String get cinemaRecommendedSpeedsResult => 'Vitesses conseillées';
+
+  @override
+  String get cinemaMainsBaseResult => 'Base secteur';
+
+  @override
+  String get cinemaReductionLabel => 'Réduction souhaitée';
+
+  @override
+  String get cinemaNdDensityResult => 'Densité ND';
+
+  @override
+  String get cinemaNdFactorResult => 'Facteur ND';
+
+  @override
+  String get cinemaApproxTransmissionResult => 'Transmission approx.';
+
+  @override
+  String get cinemaMediaCapacityLabel => 'Capacité média';
+
+  @override
+  String get cinemaBitrateLabel => 'Bitrate';
+
+  @override
+  String get cinemaBitrateHelper => 'Attention : Mb/s, pas MB/s';
+
+  @override
+  String get cinemaAvailableDurationResult => 'Durée disponible';
+
+  @override
+  String get cinemaStorageConsumptionResult => 'Consommation';
+
+  @override
+  String get cinemaIntegerFramerateLabel => 'Framerate entier';
+
+  @override
+  String get cinemaIntegerFramerateHelper => '24, 25, 30, 50, 60…';
+
+  @override
+  String get cinemaTcInLabel => 'TC IN';
+
+  @override
+  String get cinemaTcOutLabel => 'TC OUT';
+
+  @override
+  String get cinemaTimecodeFormatHelper => 'Format HH:MM:SS:FF';
+
+  @override
+  String get cinemaTcInFramesResult => 'Frames TC IN';
+
+  @override
+  String get cinemaTcOutFramesResult => 'Frames TC OUT';
+
+  @override
+  String get cinemaDurationFramesResult => 'Durée en frames';
+
+  @override
+  String get cinemaDurationTcResult => 'Durée TC';
+
+  @override
+  String get cinemaDurationResult => 'Durée';
+
+  @override
+  String get cinemaCaptureFramerateLabel => 'Framerate tournage';
+
+  @override
+  String get cinemaPlaybackFramerateLabel => 'Framerate lecture';
+
+  @override
+  String get cinemaRealDurationLabel => 'Durée réelle filmée';
+
+  @override
+  String get cinemaSlowMotionFactorResult => 'Facteur de ralenti';
+
+  @override
+  String get cinemaPlaybackDurationResult => 'Durée de lecture';
+
+  @override
+  String get cinemaScreenWidthLabel => 'Largeur écran';
+
+  @override
+  String get cinemaImageRatioLabel => 'Ratio image';
+
+  @override
+  String get cinemaImageRatioHelper => '1.85, 2.39, 1.78…';
+
+  @override
+  String get cinemaThrowRatioLabel => 'Throw ratio';
+
+  @override
+  String get cinemaProjectorLumensLabel => 'Flux projecteur';
+
+  @override
+  String get cinemaScreenGainLabel => 'Gain toile';
+
+  @override
+  String get cinemaScreenHeightResult => 'Hauteur écran';
+
+  @override
+  String get cinemaScreenAreaResult => 'Surface écran';
+
+  @override
+  String get cinemaProjectorDistanceResult => 'Distance projecteur';
+
+  @override
+  String get cinemaApproxLuminanceResult => 'Luminance approx.';
+
+  @override
+  String get gdtfScannedPdfOcrEnabled =>
+      'PDF scanné détecté : mode OCR activé. L\'analyse peut prendre 1 à 2 minutes supplémentaires.';
+
+  @override
+  String get gdtfAddModeDialogTitle => 'Ajouter un mode';
+
+  @override
+  String get gdtfModeNameExampleHint => 'Ex: Standard, Easy, Pixel Engine…';
+
+  @override
+  String get gdtfDmxChannelCountLabel => 'Nombre de canaux DMX';
+
+  @override
+  String get gdtfDmxChannelCountHint => 'Ex: 24';
+
+  @override
+  String get gdtfCancel => 'Annuler';
+
+  @override
+  String get gdtfAdd => 'Ajouter';
+
+  @override
+  String get gdtfErrorModeNameRequired => 'Le nom est requis';
+
+  @override
+  String get gdtfErrorInvalidChannelCount =>
+      'Nombre de canaux invalide (1-1000)';
+
+  @override
+  String get gdtfErrorModeAlreadyExists => 'Un mode portant ce nom existe déjà';
+
+  @override
+  String get gdtfHowToUseThisPageTooltip => 'Comment utiliser cette page';
+
+  @override
+  String get gdtfHowToGetGdtfTitle => 'Comment obtenir un GDTF';
+
+  @override
+  String get gdtfWorkflowIntro =>
+      'Pour chaque fixture, suis ces 3 étapes dans l\'ordre.';
+
+  @override
+  String get gdtfWorkflowSearchTitle => 'Recherche';
+
+  @override
+  String get gdtfWorkflowSearchBody =>
+      'Onglet « Recherche ». Tape le nom de ta fixture (ex: \"Spiider\", \"MAC Viper\", \"Q-10\"). La base GDTF Share contient 6000+ fixtures officielles validées par les fabricants. C\'est gratuit, instantané, et 100% fiable. À utiliser EN PREMIER pour 90% des cas.';
+
+  @override
+  String get gdtfWorkflowPdfTitle => 'Générer depuis PDF';
+
+  @override
+  String get gdtfWorkflowPdfBody =>
+      'Si la recherche ne donne rien, passe à l\'onglet « Générer depuis PDF ». Upload le manuel/datasheet PDF — l\'IA extrait les modes DMX automatiquement. ⚠️ Important : saisis le nom exact de la machine (tel qu\'écrit dans le manuel), et si tu ajoutes des modes manuellement, utilise les noms exacts des modes DMX — sinon l\'IA ne retrouve pas les bonnes données. Marche bien sur les PDFs propres (Robe, Martin, etc.) et moins bien sur les manuels scannés ou en chinois traduit.';
+
+  @override
+  String get gdtfWorkflowManualTitle => 'Ajout / correction manuels';
+
+  @override
+  String get gdtfWorkflowManualBody =>
+      'Quand l\'IA a terminé l\'analyse, tu arrives sur la page de sélection des modes. Le bouton « Ajouter un mode manuellement » est TOUJOURS dispo en haut de la liste. Sers-t\'en pour : (a) ajouter un mode que l\'IA a oublié, (b) supprimer une hallucination via la poubelle, (c) corriger un compte de canaux erroné (poubelle + réajout au bon nombre). C\'est ta dernière ligne de défense avant la génération du GDTF — vérifie toujours.';
+
+  @override
+  String get gdtfWorkflowTip =>
+      'Astuce : avant d\'extraire un PDF, vérifie toujours sur gdtf-share — ça t\'évite l\'extraction IA (plus longue et moins fiable) quand un GDTF officiel existe déjà. Et souviens-toi : nom de machine et noms de modes doivent être les exacts du manuel — l\'IA en dépend !';
+
+  @override
+  String get gdtfUnderstood => 'Compris';
+
+  @override
+  String get gdtfWorkflowSearchShortBody =>
+      'Tape le nom de la fixture ci-dessus. Base GDTF Share (6000+ fixtures officielles). C\'est gratuit, instantané, validé fabricant. Résout 90% des cas.';
+
+  @override
+  String get gdtfWorkflowPdfShortBody =>
+      'Pas trouvé ? Onglet « Générer depuis PDF ». Upload le manuel — l\'IA extrait les modes DMX. Marche mieux sur les PDFs propres.';
+
+  @override
+  String get gdtfWorkflowManualShortBody =>
+      'Sur la page des modes, vérifie toujours ce que l\'IA a sorti. Tu peux : ajouter un mode oublié, supprimer une hallucination (icône poubelle), ou corriger un compte de canaux faux (supprimer + réajouter à la bonne valeur). L\'IA est rapide mais pas infaillible — tu restes maître de la liste finale.';
+
+  @override
+  String get gdtfAddModeManually => 'Ajouter un mode manuellement';
+
+  @override
+  String get gdtfNoModeDetectedAutomatically =>
+      'Aucun mode détecté automatiquement.';
+
+  @override
+  String get gdtfNoModeDetectedHelp =>
+      'Le PDF est probablement scanné ou avec une mise en page complexe. Ajoute les modes manuellement avec le bouton ci-dessus, et l\'extraction des canaux se fera ensuite sur le texte OCR / extrait du manuel.';
+
+  @override
+  String get gdtfAddMode => 'Ajouter un mode';
+
+  @override
+  String get gdtfDeleteModeTooltip => 'Supprimer ce mode';
+
+  @override
+  String get audioHomeTitle => 'Son';
+
+  @override
+  String get audioHomeSubtitle =>
+      'Sub cardioïde, end-fire, délais, SPL et outils pour l’ingénieur du son.';
+
+  @override
+  String get homeRfTitle => 'RF & Sans-fil';
+
+  @override
+  String get homeRfSubtitle =>
+      'WiFi 2.4/5 GHz, coexistence, bandes UHF/VHF, calculateur d’antenne.';
+
+  @override
+  String get homeCinemaTitle => 'Cinéma / Film';
+
+  @override
+  String get homeCinemaSubtitle =>
+      'Optique, cadrage, exposition, timecode, stockage et projection cinéma.';
+
+  @override
+  String get audioSectionPlacementDirectivity => 'Placement & Directivité';
+
+  @override
+  String get audioSectionAcousticLevels => 'Acoustique & Niveaux';
+
+  @override
+  String get audioSectionAmpCabling => 'Ampli & Câblage';
+
+  @override
+  String get audioSectionTimingAlignment => 'Timing & Alignement';
+
+  @override
+  String get audioSubCardioidTitle => 'Sub Cardioïde';
+
+  @override
+  String get audioSubCardioidSubtitle =>
+      'Délais pour configuration cardioïde (2 subs) ou end-fire (N subs en ligne). Annulation arrière, renforcement frontal.';
+
+  @override
+  String get audioSplDistanceTitle => 'SPL & Distance';
+
+  @override
+  String get audioSplDistanceSubtitle =>
+      'Loi du carré inverse : SPL selon la distance. Calcul depuis puissance + sensibilité enceinte.';
+
+  @override
+  String get audioSplSumTitle => 'Addition de Sources SPL';
+
+  @override
+  String get audioSplSumSubtitle =>
+      'N sources incohérentes : +10·log(N) dB. Ou addition de 2 sources différentes.';
+
+  @override
+  String get audioElectroacousticTitle => 'Électroacoustique';
+
+  @override
+  String get audioElectroacousticSubtitle =>
+      'SPL depuis sensibilité enceinte + puissance. Table distances. Couplage cohérent/incohérent.';
+
+  @override
+  String get audioWavelengthTitle => 'Fréquence & Longueur d’onde';
+
+  @override
+  String get audioWavelengthSubtitle =>
+      'Conversion Hz ↔ λ (m), λ/4, λ/2. Tableau du spectre audio par bandes.';
+
+  @override
+  String get audioAmpLoadTitle => 'Charge Ampli / Enceintes';
+
+  @override
+  String get audioCrossoverTitle => 'Fréquence de Coupure / Crossover';
+
+  @override
+  String get audioRt60Title => 'Temps de Réverbération (RT60)';
+
+  @override
+  String get audioRt60LengthLabel => 'Longueur';
+
+  @override
+  String get audioRt60WidthLabel => 'Largeur';
+
+  @override
+  String get audioRt60HeightLabel => 'Hauteur';
+
+  @override
+  String get audioRt60AbsorptionLabel => 'Coefficient d\'absorption moyen (α)';
+
+  @override
+  String get audioRt60PresetHard => 'Très réverbérant (béton, verre)';
+
+  @override
+  String get audioRt60PresetMedium => 'Salle moyenne (bureaux, bois)';
+
+  @override
+  String get audioRt60PresetTreated => 'Salle traitée (rideaux, moquette)';
+
+  @override
+  String get audioRt60PresetAbsorbent => 'Très absorbant (studio traité)';
+
+  @override
+  String get audioRt60ResultTitle => 'RT60 estimé';
+
+  @override
+  String get audioRt60VolumeLabel => 'Volume de la salle';
+
+  @override
+  String get audioRt60SurfaceLabel => 'Surface totale';
+
+  @override
+  String get audioRt60QualLive => 'Très réverbérant';
+
+  @override
+  String get audioRt60QualComfortable => 'Confortable pour la voix';
+
+  @override
+  String get audioRt60QualDry => 'Sec / contrôlé';
+
+  @override
+  String get audioRt60FormulaNote =>
+      'RT60 = 0,161 × V / (α × S) — formule de Sabine, estimation avec absorption moyenne uniforme';
+
+  @override
+  String get audioSplMeterTitle => 'Sonomètre';
+
+  @override
+  String get audioDelayTimeTitle => 'Temps de Delay (BPM)';
+
+  @override
+  String get audioDelayTimeBpmLabel => 'BPM';
+
+  @override
+  String get audioDelayTimeResultsTitle => 'Temps par division';
+
+  @override
+  String get audioDelayTimeEmptyState =>
+      'Entre un BPM pour calculer les temps de delay.';
+
+  @override
+  String get audioDelayTimeNormalLabel => 'Normale';
+
+  @override
+  String get audioDelayTimeDottedLabel => 'Pointée';
+
+  @override
+  String get audioDelayTimeTripletLabel => 'Triolet';
+
+  @override
+  String get audioDelayTimeFormulaNote =>
+      'Temps (ms) = 60000 / BPM × fraction de la noire. Pointée ×1,5 · Triolet ×2/3.';
+
+  @override
+  String get audioSplMeterPermissionTitle => 'Accès au microphone requis';
+
+  @override
+  String get audioSplMeterPermissionBody =>
+      'Le sonomètre utilise le microphone du téléphone pour estimer le niveau sonore ambiant en temps réel.';
+
+  @override
+  String get audioSplMeterAllowMic => 'Autoriser le micro';
+
+  @override
+  String get audioSplMeterOpenSettings => 'Ouvrir les réglages';
+
+  @override
+  String get audioSplMeterLiveTitle => 'Niveau en direct';
+
+  @override
+  String get audioSplMeterStartHint => 'Toucher pour démarrer';
+
+  @override
+  String get audioSplMeterStopHint => 'Toucher pour arrêter';
+
+  @override
+  String get audioSplMeterStatsTitle => 'Statistiques de la session';
+
+  @override
+  String get audioSplMeterStatsEmpty =>
+      'Démarre une mesure pour voir les statistiques min/moy/max.';
+
+  @override
+  String get audioSplMeterMinLabel => 'Minimum';
+
+  @override
+  String get audioSplMeterAvgLabel => 'Moyenne';
+
+  @override
+  String get audioSplMeterMaxLabel => 'Maximum';
+
+  @override
+  String get audioSplMeterReferenceTitle => 'Repères de niveaux sonores';
+
+  @override
+  String get audioSplMeterRefQuiet => 'Pièce calme';
+
+  @override
+  String get audioSplMeterRefConversation => 'Conversation normale';
+
+  @override
+  String get audioSplMeterRefTraffic => 'Circulation urbaine';
+
+  @override
+  String get audioSplMeterRefConcert => 'Concert / salle amplifiée';
+
+  @override
+  String get audioSplMeterRefPain => 'Seuil de douleur';
+
+  @override
+  String get audioSplMeterDisclaimer =>
+      'Mesure indicative via le micro du téléphone (non calibré) — ne remplace pas un sonomètre certifié IEC 61672.';
+
+  @override
+  String get audioCrossoverFreqLabel => 'Fréquence de coupure';
+
+  @override
+  String get audioCrossoverImpedanceLabel => 'Impédance du haut-parleur';
+
+  @override
+  String get audioCrossoverCapacitorLabel => 'Condensateur (passe-haut)';
+
+  @override
+  String get audioCrossoverInductorLabel => 'Bobine (passe-bas)';
+
+  @override
+  String get audioCrossoverOrderNote => 'Filtre du 1er ordre (6 dB/octave)';
+
+  @override
+  String get audioCrossoverReferenceTitle => 'Repères de fréquences de coupure';
+
+  @override
+  String get audioCrossoverRefSubTop => 'Sub / Top';
+
+  @override
+  String get audioCrossoverRef2Way => '2 voies (LF/HF)';
+
+  @override
+  String get audioCrossoverRef3WayLow => '3 voies — LF/MF';
+
+  @override
+  String get audioCrossoverRef3WayHigh => '3 voies — MF/HF';
+
+  @override
+  String get audioCrossoverFormulaNote => 'C = 1 / (2π·f·Z)    L = Z / (2π·f)';
+
+  @override
+  String get audioAmpLoadSubtitle =>
+      'Combien d’enceintes par voie d’ampli. Impédance résultante, puissance par enceinte.';
+
+  @override
+  String get audioImpedanceTitle => 'Impédance Série / Parallèle';
+
+  @override
+  String get audioImpedanceModeLabel => 'Mode de câblage';
+
+  @override
+  String get audioImpedanceModeSeries => 'Série';
+
+  @override
+  String get audioImpedanceModeParallel => 'Parallèle';
+
+  @override
+  String get audioImpedanceSpeakerLabel => 'Enceinte';
+
+  @override
+  String get audioImpedanceAddSpeaker => 'Ajouter une enceinte';
+
+  @override
+  String get audioImpedanceTotalTitle => 'Impédance totale';
+
+  @override
+  String get audioImpedanceEmptyState =>
+      'Entre au moins une impédance pour calculer le total.';
+
+  @override
+  String get audioImpedanceWarningLow =>
+      'Impédance basse : vérifie que ton ampli supporte cette charge (souvent 2 Ω minimum).';
+
+  @override
+  String get audioImpedanceFormulaNote =>
+      'Série : Zt = Z1 + Z2 + …    Parallèle : 1/Zt = 1/Z1 + 1/Z2 + …';
+
+  @override
+  String get audioLevelsTitle => 'Niveaux & Câbles';
+
+  @override
+  String get audioLevelsSubtitle =>
+      'Convertisseur dBu / dBV / V rms. Niveaux de référence −10 dBV, +4 dBu, +18 dBu.';
+
+  @override
+  String get audioDelayDistanceTitle => 'Délai de Distance';
+
+  @override
+  String get audioDelayDistanceSubtitle =>
+      'Distance → ms pour aligner delay stacks, fills ou diffusion distribuée. Multi-points.';
+
+  @override
+  String get subscriptionCategorySonRfShort => 'SON & RF';
+
+  @override
+  String get subscriptionProShort => 'PRO';
+
+  @override
+  String get audioConditions => 'Conditions';
+
+  @override
+  String get audioAmbientTemperature => 'Température ambiante';
+
+  @override
+  String get audioSpeedOfSound => 'Vitesse du son';
+
+  @override
+  String get audioListeningPoints => 'Points d’écoute';
+
+  @override
+  String audioDistancePoint(int index) {
+    return 'Distance point $index';
+  }
+
+  @override
+  String get audioAddPoint => 'Ajouter un point';
+
+  @override
+  String get audioCalculatedDelays => 'Délais calculés';
+
+  @override
+  String get audioTypicalUseCases => 'Cas d’usage typiques';
+
+  @override
+  String get audioDelayStackFillsTitle => 'Delay stack / fills';
+
+  @override
+  String get audioDelayStackFillsText =>
+      'Mesurez la distance entre le main system et le delay tower. Appliquez ce délai au delay tower pour l’aligner avec les mains.';
+
+  @override
+  String get audioDistributedSoundTitle => 'Diffusion distribuée';
+
+  @override
+  String get audioDistributedSoundText =>
+      'Pour chaque zone de haut-parleurs, mesurez la distance depuis le système de référence et appliquez le délai correspondant.';
+
+  @override
+  String get audioRoomFillTitle => 'Remplissage de salle';
+
+  @override
+  String get audioRoomFillText =>
+      'Les enceintes proches du public sont retardées par rapport au son de la scène pour éviter la perception de double-source.';
+
+  @override
+  String get audioDelayNote =>
+      'Le délai calculé correspond à la propagation acoustique en air libre.\nAjustez finement à l’oreille ou avec un analyseur de phase.';
+
+  @override
+  String get audioFromSpeakerSensitivity => 'SPL depuis sensibilité enceinte';
+
+  @override
+  String get audioSensitivity => 'Sensibilité';
+
+  @override
+  String get audioAmpPower => 'Puissance ampli';
+
+  @override
+  String get audioMeasurementDistance => 'Distance de mesure';
+
+  @override
+  String get audioTypicalSensitivities => 'Sensibilités typiques';
+
+  @override
+  String get audioSourceCoupling => 'Couplage de sources';
+
+  @override
+  String get audioSourceCouplingIntro =>
+      'En ajoutant des sources identiques côte à côte, le gain dépend du type de couplage :';
+
+  @override
+  String audioSourcesCount(int count) {
+    return '$count sources';
+  }
+
+  @override
+  String get audioPracticalRules => 'Règles pratiques';
+
+  @override
+  String get audioRuleDoubleDistance =>
+      'Doubler la distance = −6 dB (champ libre). Dans une salle, l’atténuation est moindre grâce aux réflexions.';
+
+  @override
+  String get audioRuleDoublePower =>
+      'Doubler la puissance = +3 dB. Multiplier par 10 = +10 dB. Il faut ×100 la puissance pour gagner +20 dB.';
+
+  @override
+  String get audioRuleCoupling =>
+      'Couplage cohérent (sources en phase, dos à dos) : +6 dB par doublement. Couplage incohérent : +3 dB.';
+
+  @override
+  String get audioRuleSafety =>
+      'Seuil de douleur ≈ 120 dB SPL. Risque auditif à partir de 85 dB (8h) selon NIOSH. Chaque +3 dB divise le temps d’exposition par 2.';
+
+  @override
+  String get audioDistance => 'Distance';
+
+  @override
+  String get audioSpl => 'SPL';
+
+  @override
+  String get audioIncoherent => 'Incohérent';
+
+  @override
+  String get audioCoherent => 'Cohérent';
+
+  @override
+  String get audioIncoherentSubtitle =>
+      'Sources décalées\nou non-synchronisées';
+
+  @override
+  String get audioCoherentSubtitle => 'Sources en phase\nalignées';
+
+  @override
+  String get audioLevelConverter => 'Convertisseur de niveaux';
+
+  @override
+  String get audioReferenceLevels => 'Niveaux de référence';
+
+  @override
+  String get audioGainStagingRules => 'Gain staging — règles pratiques';
+
+  @override
+  String get audioAmplifierPerChannel => 'AMPLIFICATEUR — par voie';
+
+  @override
+  String get audioMinimumImpedance => 'Z min (Ω)';
+
+  @override
+  String get audioPowerW => 'Puissance (W)';
+
+  @override
+  String get audioAtOhm => 'à (Ω)';
+
+  @override
+  String get audioSpeaker => 'ENCEINTE';
+
+  @override
+  String get audioNominalImpedance => 'Z nominale (Ω)';
+
+  @override
+  String get audioContinuousPower => 'P continue (W)';
+
+  @override
+  String get audioParallelConnection => 'BRANCHEMENT PARALLÈLE';
+
+  @override
+  String get audioLoadImpedance => 'Z charge';
+
+  @override
+  String get audioPowerPerSpeaker => 'P / enc.';
+
+  @override
+  String get audioStatus => 'Statut';
+
+  @override
+  String audioTooLowImpedance(String diff) {
+    return '✗  Z trop basse (−$diff Ω)';
+  }
+
+  @override
+  String get audioExceedsContinuousPower => '⚠  Dépasse P continue';
+
+  @override
+  String audioNearLimit(int percent) {
+    return '⚠  Proche limite (>$percent%)';
+  }
+
+  @override
+  String audioOkContinuousPower(int percent) {
+    return '✓  OK  ($percent% P cont.)';
+  }
+
+  @override
+  String get audioAmpLoadNote =>
+      'Calcul basé sur les puissances publiées par le fabricant de l’ampli à chaque impédance (interpolées). La puissance de la voie est partagée entre les N enceintes en parallèle. Une marge ×1,5 à ×2 sur la tenue RMS/AES est courante si un limiteur est réglé. Valeurs issues des fiches techniques : vérifiez toujours avec les presets et recommandations du fabricant.';
+
+  @override
+  String get audioConfiguration => 'Configuration';
+
+  @override
+  String get audioParameters => 'Paramètres';
+
+  @override
+  String get audioSubDistance => 'Distance entre subs';
+
+  @override
+  String get audioSubCount => 'Nombre de subs';
+
+  @override
+  String get audioCardioid2Subs => 'Cardioïde — 2 subs';
+
+  @override
+  String get audioCardioid2SubsDescription =>
+      '1 sub normal + 1 sub retourné avec délai';
+
+  @override
+  String get audioEndFireNSubs => 'End-fire — N subs en ligne';
+
+  @override
+  String get audioEndFireNSubsDescription =>
+      'Tous face avant, délais décalés par rang';
+
+  @override
+  String get audioResults => 'Résultats';
+
+  @override
+  String get audioEnterDistanceToCalculate =>
+      'Saisissez une distance pour calculer';
+
+  @override
+  String get audioDelayToApply => 'Délai à appliquer';
+
+  @override
+  String get audioRearSubDelaySublabel => 'sur le sub retourné (arrière)';
+
+  @override
+  String get audioOptimalFrequency => 'Fréquence optimale';
+
+  @override
+  String get audioFrontSub => 'Sub avant';
+
+  @override
+  String get audioRearSubReversed => 'Sub arrière (retourné)';
+
+  @override
+  String get audioNormalPolarity => 'Normal ✓';
+
+  @override
+  String get audioInvertedPolarity => 'Inversée 🔄';
+
+  @override
+  String get audioDelayBetweenRows => 'Délai entre chaque rang';
+
+  @override
+  String get audioMaxDelayRearSub => 'Délai max (sub arrière)';
+
+  @override
+  String get audioFrontReferenceSub => 'Sub avant (référence)';
+
+  @override
+  String audioSubNumber(int index) {
+    return 'Sub $index';
+  }
+
+  @override
+  String get audioEndFireReferenceNote =>
+      '→ Le sub 1 (avant) est la référence. Les subs suivants ont un délai croissant.';
+
+  @override
+  String get audioHowTo => 'Comment faire ?';
+
+  @override
+  String get audioCardioidStep1 =>
+      'Placez le sub A face au public (position normale).';
+
+  @override
+  String get audioCardioidStep2 =>
+      'Placez le sub B juste derrière, physiquement retourné face à l’arrière de la scène.';
+
+  @override
+  String get audioCardioidStep3 =>
+      'Dans votre processeur ou console, inversez la polarité du sub B (bouton Ø / Phase).';
+
+  @override
+  String get audioCardioidStep4 =>
+      'Appliquez le délai calculé au sub B. Ne retardez pas le sub A.';
+
+  @override
+  String get audioCardioidStep5 =>
+      'Vérifiez l’annulation arrière avec un micro de mesure ou en marchant derrière l’array.';
+
+  @override
+  String get audioCardioidTip =>
+      '💡 La distance idéale entre les subs correspond à λ/4 de la fréquence centrale du sub (ex. 90 Hz → ~0.95 m à 20 °C). Ajustez pour trouver le meilleur compromis entre annulation et puissance.';
+
+  @override
+  String get audioEndFireStep1 =>
+      'Alignez tous les subs en ligne, tous face au public, avec la même distance d entre chaque.';
+
+  @override
+  String get audioEndFireStep2 =>
+      'Le sub le plus en avant (sub 1) est la référence : délai = 0.';
+
+  @override
+  String get audioEndFireStep3 =>
+      'Appliquez un délai croissant à chaque rang suivant (sub 2 → 1×délai, sub 3 → 2×délai, etc.).';
+
+  @override
+  String get audioEndFireStep4 =>
+      'Tous les subs gardent la même polarité (pas d’inversion).';
+
+  @override
+  String get audioEndFireStep5 =>
+      'Mesurez à l’arrière pour vérifier l’atténuation.';
+
+  @override
+  String get audioEndFireTip =>
+      '💡 L’end-fire offre un gain de directivité légèrement inférieur au cardioïde classique, mais fonctionne avec plus de 2 subs et ne nécessite pas de retournement physique.';
+
+  @override
+  String get audioConversion => 'Conversion';
+
+  @override
+  String get audioFrequency => 'Fréquence';
+
+  @override
+  String get audioWavelength => 'Longueur d’onde';
+
+  @override
+  String get audioResult => 'Résultat';
+
+  @override
+  String get audioEnterValueToCalculate => 'Saisissez une valeur pour calculer';
+
+  @override
+  String audioWavelengthAt(String frequency) {
+    return 'Longueur d’onde à $frequency';
+  }
+
+  @override
+  String audioFrequencyForLambda(String lambda) {
+    return 'Fréquence pour λ = $lambda m';
+  }
+
+  @override
+  String get audioHalfWave => 'λ/2 (demi-onde)';
+
+  @override
+  String get audioQuarterWave => 'λ/4 (quart d’onde)';
+
+  @override
+  String get audioSpectrumMarkers => 'Spectre audio — repères';
+
+  @override
+  String get audioWavelengthFormula =>
+      'Formule : λ = v / f    |    v = 331,3 + 0,606 × T (°C)';
+
+  @override
+  String get audioHzToLambda => 'Hz → λ (m)';
+
+  @override
+  String get audioLambdaToHz => 'λ (m) → Hz';
+
+  @override
+  String get audioSubBass => 'Sub-basses';
+
+  @override
+  String get audioBass => 'Basses';
+
+  @override
+  String get audioLowMid => 'Bas-médiums';
+
+  @override
+  String get audioMid => 'Médiums';
+
+  @override
+  String get audioHighMid => 'Hauts-médiums';
+
+  @override
+  String get audioTreble => 'Aigus';
+
+  @override
+  String get audioIncoherentSources => 'Sources incohérentes';
+
+  @override
+  String get audioIdenticalSources => 'N sources identiques';
+
+  @override
+  String get audioSingleSourceSpl => 'SPL d’une source';
+
+  @override
+  String audioTotalSplSources(int count) {
+    return 'SPL total ($count sources)';
+  }
+
+  @override
+  String get audioTwoDifferentSources => '2 sources différentes';
+
+  @override
+  String get audioSourceA => 'Source A';
+
+  @override
+  String get audioSourceB => 'Source B';
+
+  @override
+  String get audioTotalSplAB => 'SPL total (A + B)';
+
+  @override
+  String get audioDoublingReference => 'Référence — gain par doublement';
+
+  @override
+  String get audioIncoherentShort => 'Incoh. : ';
+
+  @override
+  String get audioCoherentShort => 'Cohér. : ';
+
+  @override
+  String get audioCalculationMode => 'Mode de calcul';
+
+  @override
+  String get audioReferenceSpl => 'SPL de référence';
+
+  @override
+  String get audioReferenceDistance => 'Distance de référence';
+
+  @override
+  String get audioTargetDistance => 'Distance cible';
+
+  @override
+  String get audioEnterValuesToCalculate =>
+      'Saisissez les valeurs pour calculer';
+
+  @override
+  String audioSplAtDistance(String distance) {
+    return 'SPL à $distance m';
+  }
+
+  @override
+  String get audioVariation => 'Variation';
+
+  @override
+  String get audioListeningDistance => 'Distance d’écoute';
+
+  @override
+  String get audioMaxSplAt1m => 'SPL max à 1 m';
+
+  @override
+  String get audioDistanceToSpl => 'Distance → SPL';
+
+  @override
+  String get audioPowerToSpl => 'Puissance → SPL';
+
+  @override
+  String get audioSoundLevelReference => 'Référence niveaux sonores';
+
+  @override
+  String get audioSectionSafety => 'Sécurité auditive';
+
+  @override
+  String get audioNoiseDoseTitle => 'Dose sonore & temps d’exposition';
+
+  @override
+  String get audioNoiseDoseIntro =>
+      'Chaque +3 dB divise par deux le temps d’exposition admissible (règle d’échange 3 dB). Entrez le niveau sonore mesuré ou prévu pour estimer le temps avant d’atteindre les seuils réglementaires d’exposition au bruit.';
+
+  @override
+  String get audioNoiseDoseLevelCardTitle => 'Niveau mesuré';
+
+  @override
+  String get audioNoiseDoseLevelLabel => 'Niveau sonore';
+
+  @override
+  String get audioNoiseDoseAllowedTimeTitle => 'Temps admissible avant la dose';
+
+  @override
+  String get audioNoiseDoseVaiLabel => 'Valeur d’action inférieure';
+
+  @override
+  String get audioNoiseDoseVasLabel => 'Valeur d’action supérieure';
+
+  @override
+  String get audioNoiseDoseVleLabel => 'Valeur limite d’exposition';
+
+  @override
+  String get audioNoiseDoseUnlimited => '≥ 8 h (pas de risque sur une journée)';
+
+  @override
+  String get audioNoiseDoseTableTitle =>
+      'Repères — temps admissible par niveau';
+
+  @override
+  String get audioNoiseDoseTableLevelHeader => 'Niveau';
+
+  @override
+  String get audioNoiseDoseTableTimeHeader => 'Temps admissible (VLE 87 dB)';
+
+  @override
+  String get audioNoiseDoseVenueTitle =>
+      'Seuils lieux de diffusion (décret spectacles)';
+
+  @override
+  String get audioNoiseDoseVenueText =>
+      'Le décret n°2017-1244 impose un niveau moyen LAeq sur 15 min ≤ 102 dB(A) (lieu non habituel) ou 105 dB(A) (lieu habituel), avec un niveau crête ≤ 118 ou 120 dB(C). Ces seuils s’appliquent au public, en continu, via un limiteur — ils sont distincts de l’exposition professionnelle calculée ci-dessus.';
+
+  @override
+  String get audioNoiseDoseDisclaimer =>
+      'Outil indicatif basé sur la règle d’échange 3 dB (Code du travail, art. R.4431-2). Ne remplace pas un sonomètre ou un dosimètre certifié, ni une mesure réglementaire sur site.';
+
+  @override
+  String get audioSectionOrganization => 'Organisation';
+
+  @override
+  String get audioInputListTitle => 'Liste d’inputs';
+
+  @override
+  String get audioInputListIntro =>
+      'Construisez votre liste d’inputs micro/DI pour la balance ou la feuille de patch. L’ordre des lignes définit le numéro de canal — glissez pour réorganiser.';
+
+  @override
+  String get audioInputListEmpty =>
+      'Aucune entrée pour l’instant. Ajoutez la première ligne de votre liste d’inputs.';
+
+  @override
+  String get audioInputListAddButton => 'Ajouter une entrée';
+
+  @override
+  String audioInputListChannel(Object n) {
+    return 'Canal $n';
+  }
+
+  @override
+  String get audioInputListNameLabel => 'Source';
+
+  @override
+  String get audioInputListPositionLabel => 'Position';
+
+  @override
+  String get audioInputListNotesLabel => 'Notes';
+
+  @override
+  String get audioInputListTypeMic => 'Micro';
+
+  @override
+  String get audioInputListTypeDi => 'DI';
+
+  @override
+  String get audioInputListTypeLine => 'Ligne';
+
+  @override
+  String get audioInputListTypeWireless => 'Sans-fil';
+
+  @override
+  String get audioInputListTypeOther => 'Autre';
+
+  @override
+  String get audioInputListCopyAction => 'Copier la liste';
+
+  @override
+  String get audioInputListCopiedSnackbar =>
+      'Liste copiée dans le presse-papiers';
+
+  @override
+  String get audioInputListClearAction => 'Tout effacer';
+
+  @override
+  String get audioInputListClearConfirmTitle => 'Effacer toute la liste ?';
+
+  @override
+  String get audioInputListClearConfirmBody =>
+      'Cette action supprime toutes les entrées de la liste d’inputs. Elle est irréversible.';
+
+  @override
+  String get pluginCommunity => 'Plugin Community';
+
+  @override
+  String get pluginCommunitySubtitle =>
+      'Partage et découvre des plugins grandMA3 créés par la communauté';
+
+  @override
+  String get pluginCommunitySubtitleAuth =>
+      'Partage et découvre des plugins\ngrandMA3 créés par la communauté.';
+
+  @override
+  String get continueWithGoogle => 'Continuer avec Google';
+
+  @override
+  String get authChoosePseudo => 'Choisis ton pseudo';
+
+  @override
+  String get authPseudoHint => 'Ton pseudo dans la communauté';
+
+  @override
+  String get confirm => 'Confirmer';
+
+  @override
+  String get loginCancelled => 'Connexion annulée.';
+
+  @override
+  String get anonymous => 'Anonyme';
+
+  @override
+  String get share => 'Partager';
+
+  @override
+  String get searchPluginHint => 'Rechercher un plugin…';
+
+  @override
+  String get allPluginsFilter => '⭐ Tous';
+
+  @override
+  String get loginRequiredLike => 'Connecte-toi pour liker 👋';
+
+  @override
+  String get noPluginsYet => 'Aucun plugin ici encore.';
+
+  @override
+  String get beFirstToShare => 'Sois le premier à partager !';
+
+  @override
+  String get signOut => 'Se déconnecter';
+
+  @override
+  String get luaCode => 'Code Lua';
+
+  @override
+  String get copied => 'Copié !';
+
+  @override
+  String get copyCode => 'Copier le code';
+
+  @override
+  String get pluginPublished => '🚀 Plugin publié !';
+
+  @override
+  String get sharePlugin => 'Partager un plugin';
+
+  @override
+  String get pluginTitle => 'Titre du plugin';
+
+  @override
+  String get pluginTitleHint => 'ex: Batch couleurs RGB — 30 presets';
+
+  @override
+  String get pluginTitleRequired => 'Titre requis';
+
+  @override
+  String get category => 'Catégorie';
+
+  @override
+  String get optionalDescription => 'Description (optionnel)';
+
+  @override
+  String get pluginDescriptionHint =>
+      'Ce que fait le plugin, ce qu\'il demande à l\'utilisateur...';
+
+  @override
+  String get codeRequired => 'Code requis';
+
+  @override
+  String get codeMustContainReturnMain =>
+      'Le code doit contenir \"return main\"';
+
+  @override
+  String get pluginTestedWarning =>
+      'Assurez-vous que le plugin est testé dans MA3 avant de le partager.';
+
+  @override
+  String get attachFiles => 'Joindre des fichiers';
+
+  @override
+  String get addFiles => 'Ajouter des fichiers (.lua, .xml…)';
+
+  @override
+  String filesSelected(Object count) {
+    return '$count fichier(s) sélectionné(s)';
+  }
+
+  @override
+  String get codeOptional => 'Coller le code (optionnel)';
+
+  @override
+  String get codeOrFileRequired =>
+      'Ajoute au moins un fichier ou colle le code';
+
+  @override
+  String get downloadFile => 'Télécharger';
+
+  @override
+  String get pluginFiles => 'Fichiers';
+
+  @override
+  String get uploadingFiles => 'Envoi des fichiers…';
+
+  @override
+  String get publishPlugin => 'Publier le plugin';
+
+  @override
+  String get free => 'GRATUIT';
+
+  @override
+  String get pro => 'PRO';
+
+  @override
+  String get console => 'Console';
+
+  @override
+  String pluginError(Object error) {
+    return 'Erreur : $error';
+  }
+
+  @override
+  String get pluginCategory_all => 'Tous';
+
+  @override
+  String get pluginCategory_color => 'Couleur';
+
+  @override
+  String get pluginCategory_movement => 'Mouvement';
+
+  @override
+  String get pluginCategory_effect => 'Effets';
+
+  @override
+  String get pluginCategory_dimmer => 'Intensité';
+
+  @override
+  String get pluginCategory_layout => 'Layout';
+
+  @override
+  String get pluginCategory_select => 'Sélection';
+
+  @override
+  String get pluginCategory_macro => 'Macro';
+
+  @override
+  String get pluginCategory_utility => 'Utilitaire';
+
+  @override
+  String get pluginCategory_custom => 'Sur mesure';
+
+  @override
+  String get ma3AppTitlePrefix => 'MA3 Plugin ';
+
+  @override
+  String get ma3AppTitleAccent => 'Forge';
+
+  @override
+  String get ma3New => '↺ Nouveau';
+
+  @override
+  String get ma3StepCategory => 'Catégorie';
+
+  @override
+  String get ma3StepSettings => 'Paramètres';
+
+  @override
+  String get ma3StepGeneratedCode => 'Code généré';
+
+  @override
+  String get ma3ChoosePluginType => 'Quel type de plugin ?';
+
+  @override
+  String get ma3ChooseCategorySubtitle =>
+      'Choisis une catégorie pour commencer';
+
+  @override
+  String get ma3Continue => 'Continuer →';
+
+  @override
+  String get ma3PluginName => 'Nom du plugin';
+
+  @override
+  String get ma3PluginNameHint => 'Mon Plugin MA3';
+
+  @override
+  String get ma3PluginSettings => 'Paramètres du plugin';
+
+  @override
+  String get ma3AdditionalDetails => '💬 Détails supplémentaires (optionnel)';
+
+  @override
+  String get ma3AdditionalDetailsHint =>
+      'Ajoute des précisions, cas particuliers, contraintes...';
+
+  @override
+  String get ma3Back => '← Retour';
+
+  @override
+  String get ma3GeneratePlugin => '⚡ Générer le Plugin';
+
+  @override
+  String get ma3GeneratedReady => 'Plugin généré — prêt à coller dans MA3';
+
+  @override
+  String get ma3InstallInMa3 => 'Installer dans MA3 : ';
+
+  @override
+  String get ma3Menu => 'Menu ';
+
+  @override
+  String get ma3Plugin => 'Plugin';
+
+  @override
+  String get ma3NewPlugin => 'New Plugin';
+
+  @override
+  String get ma3PasteSaveAs => ' → colle → sauvegarde comme ';
+
+  @override
+  String get ma3Run => 'Run';
+
+  @override
+  String get ma3Copied => '✓ Copié !';
+
+  @override
+  String get ma3Copy => '⎘ Copier';
+
+  @override
+  String get ma3Edit => '← Modifier';
+
+  @override
+  String get ma3Regenerate => '↺ Régénérer';
+
+  @override
+  String get ma3NewPluginButton => '+ Nouveau plugin';
+
+  @override
+  String get ma3Choose => '— Choisir —';
+
+  @override
+  String get ma3Add => 'Ajouter...';
+
+  @override
+  String get ma3GeneratedPluginFallback => 'Plugin';
+
+  @override
+  String get ma3CategoryColor => 'Couleur';
+
+  @override
+  String get ma3CategoryColorDesc => 'Layout RGB, palette, presets couleur';
+
+  @override
+  String get ma3CategoryMovement => 'Mouvement';
+
+  @override
+  String get ma3CategoryMovementDesc => 'Pan/Tilt, cercle, figure 8, positions';
+
+  @override
+  String get ma3CategoryEffect => 'Effets';
+
+  @override
+  String get ma3CategoryEffectDesc => 'Strobe, pulse, chase, séquences';
+
+  @override
+  String get ma3CategoryDimmer => 'Intensité';
+
+  @override
+  String get ma3CategoryDimmerDesc => 'Dimmer, bump, fade, blackout';
+
+  @override
+  String get ma3CategoryLayout => 'Layout';
+
+  @override
+  String get ma3CategoryLayoutDesc => 'Créer/organiser des layouts MA3';
+
+  @override
+  String get ma3CategorySelect => 'Sélection';
+
+  @override
+  String get ma3CategorySelectDesc => 'Sélection groupes, fixtures, filtres';
+
+  @override
+  String get ma3CategoryMacro => 'Macro';
+
+  @override
+  String get ma3CategoryMacroDesc => 'Macros multi-étapes, séquences console';
+
+  @override
+  String get ma3CategoryUtility => 'Utilitaire';
+
+  @override
+  String get ma3CategoryUtilityDesc => 'Label, store, organiser le show file';
+
+  @override
+  String get ma3CategoryCustom => 'Sur mesure';
+
+  @override
+  String get ma3CategoryCustomDesc => 'Décris librement ce que tu veux';
+
+  @override
+  String get ma3FieldColorSpace => 'Espace couleur des machines';
+
+  @override
+  String get ma3FieldColors => 'Couleurs à proposer comme presets';
+
+  @override
+  String get ma3FieldGroupSelect => 'Le plugin demande le groupe au lancement';
+
+  @override
+  String get ma3YesViaMa3Dialog => 'Oui — via dialog MA3';
+
+  @override
+  String get ma3NoUseCurrentSelection => 'Non — utilise la sélection courante';
+
+  @override
+  String get ma3FieldMovementType => 'Type de mouvement à créer';
+
+  @override
+  String get ma3MovePresetPositions =>
+      'Presets positions (scène, face, côtés...)';
+
+  @override
+  String get ma3MoveCircle => 'Effect Engine — Cercle';
+
+  @override
+  String get ma3MoveFigure8 => 'Effect Engine — Figure 8';
+
+  @override
+  String get ma3MovePanSweep => 'Effect Engine — Pan sweep';
+
+  @override
+  String get ma3MoveTiltSweep => 'Effect Engine — Tilt sweep';
+
+  @override
+  String get ma3MoveRandom => 'Effect Engine — Aléatoire';
+
+  @override
+  String get ma3FieldSpeedSourceEffects => 'Source de vitesse (pour effects)';
+
+  @override
+  String get ma3SpeedBpmConsole => 'BPM — valeur saisie dans la console';
+
+  @override
+  String get ma3SpeedExecutorConsole =>
+      'Executeur de vitesse — numéro saisi dans la console';
+
+  @override
+  String get ma3SpeedBothConsole => 'Les deux — choix proposé dans la console';
+
+  @override
+  String get ma3FieldEffectType => 'Type d\'effet à créer';
+
+  @override
+  String get ma3FieldOutput => 'Ce que le plugin crée';
+
+  @override
+  String get ma3OutputEffectPresets => 'Presets effet';
+
+  @override
+  String get ma3OutputChaseSequence => 'Séquence chase';
+
+  @override
+  String get ma3OutputTriggerMacro => 'Macro déclencheur';
+
+  @override
+  String get ma3FieldSpeedSource => 'Source de vitesse';
+
+  @override
+  String get ma3FieldFeatures => 'Fonctionnalités à inclure';
+
+  @override
+  String get ma3OutputIntensityMacros => 'Macros intensité';
+
+  @override
+  String get ma3OutputIntensityPresets => 'Presets intensité';
+
+  @override
+  String get ma3FieldLayoutSections => 'Sections à inclure dans le layout';
+
+  @override
+  String get ma3SectionColors => 'Couleurs';
+
+  @override
+  String get ma3SectionGroups => 'Groupes';
+
+  @override
+  String get ma3SectionPresets => 'Presets';
+
+  @override
+  String get ma3FieldVisualStyle => 'Style visuel';
+
+  @override
+  String get ma3FieldGroupNameNumber =>
+      'Le plugin demande le nom/numéro au lancement';
+
+  @override
+  String get ma3NoHardcodedGenericName => 'Non — nom générique codé en dur';
+
+  @override
+  String get ma3FieldSelectionCriteria => 'Critères de sélection à proposer';
+
+  @override
+  String get ma3CriteriaEvenOdd => 'Pairs/Impairs';
+
+  @override
+  String get ma3CriteriaThirds => '1/3 — 2/3 — 3/3';
+
+  @override
+  String get ma3CriteriaPosition => 'Par position (avant/milieu/arrière)';
+
+  @override
+  String get ma3CriteriaAll => 'Tous';
+
+  @override
+  String get ma3CriteriaFirstLast => 'Premier/Dernier';
+
+  @override
+  String get ma3OutputSelectionMacros => 'Macros de sélection';
+
+  @override
+  String get ma3OutputGroupButtonsLayout => 'Boutons de groupe dans un layout';
+
+  @override
+  String get ma3FieldMacroSteps => 'Décris les étapes de la macro';
+
+  @override
+  String get ma3MacroStepsHint =>
+      'ex:\n1. Sélectionner un groupe (dialog)\n2. Blackout\n3. Attendre 1s\n4. Fade In 3s';
+
+  @override
+  String get ma3FieldTrigger => 'Déclencheur';
+
+  @override
+  String get ma3TriggerManual => 'Manuel';
+
+  @override
+  String get ma3FieldTask => 'Tâche à effectuer';
+
+  @override
+  String get ma3TaskNameFixtures => 'Nommer les fixtures du patch';
+
+  @override
+  String get ma3TaskCreateGroups => 'Créer les groupes automatiquement';
+
+  @override
+  String get ma3TaskStorePresets => 'Stocker tous les presets';
+
+  @override
+  String get ma3TaskCleanEmptyObjects => 'Nettoyer les objets vides';
+
+  @override
+  String get ma3TaskCloneLayout => 'Cloner un layout';
+
+  @override
+  String get ma3TaskShowReport =>
+      'Rapport du show (fixtures, groupes, presets)';
+
+  @override
+  String get ma3FieldConfirmEachAction => 'Confirmer avant chaque action';
+
+  @override
+  String get ma3Yes => 'Oui';
+
+  @override
+  String get ma3No => 'Non';
+
+  @override
+  String get ma3FieldCustomDescription =>
+      'Décris ce que le plugin doit faire dans MA3';
+
+  @override
+  String get ma3ColorRed => 'Rouge';
+
+  @override
+  String get ma3ColorGreen => 'Vert';
+
+  @override
+  String get ma3ColorBlue => 'Bleu';
+
+  @override
+  String get ma3ColorYellow => 'Jaune';
+
+  @override
+  String get ma3ColorOrange => 'Orange';
+
+  @override
+  String get ma3ColorPink => 'Rose';
+
+  @override
+  String get ma3ColorColdWhite => 'Blanc froid';
+
+  @override
+  String get ma3ColorWarmWhite => 'Blanc chaud';
+
+  @override
+  String get ma3EffectStrobe => 'Strobe';
+
+  @override
+  String get ma3EffectPulse => 'Pulse';
+
+  @override
+  String get ma3EffectChase => 'Chase';
+
+  @override
+  String get ma3EffectTwinkle => 'Twinkle';
+
+  @override
+  String get ma3EffectFire => 'Fire';
+
+  @override
+  String get ma3EffectSawtooth => 'Sawtooth';
+
+  @override
+  String get ma3EffectRandom => 'Random';
+
+  @override
+  String get ma3Blackout => 'Blackout';
+
+  @override
+  String get ma3Full => 'Full';
+
+  @override
+  String get ma3Bump => 'Bump';
+
+  @override
+  String get ma3FadeIn => 'Fade In';
+
+  @override
+  String get ma3FadeOut => 'Fade Out';
+
+  @override
+  String get ma3DimmerChase => 'Dimmer Chase';
+
+  @override
+  String get ma3Compact => 'Compact';
+
+  @override
+  String get ma3Large => 'Large';
+
+  @override
+  String get ma3Tablet => 'Tablette';
+
+  @override
+  String get ma3Wing => 'Wing';
+
+  @override
+  String get ma3Random => 'Aléatoire';
+
+  @override
+  String get ma3FirstLast => 'Premier/Dernier';
+
+  @override
+  String ma3Error(Object error) {
+    return 'Erreur : $error';
+  }
+
+  @override
+  String get ma3Text_RGB => 'RGB';
+
+  @override
+  String get ma3Text_CMY => 'CMY';
+
+  @override
+  String get ma3Text_HSI => 'HSI';
+
+  @override
+  String get ma3Text_RGBW => 'RGBW';
+
+  @override
+  String get ma3Text_RGBWW => 'RGBWW';
+
+  @override
+  String get ma3Text_RGBA => 'RGBA';
+
+  @override
+  String get ma3Text_RGBL => 'RGBL';
+
+  @override
+  String get ma3Text_RGBWA => 'RGBWA';
+
+  @override
+  String get ma3Text_RGBUV => 'RGBUV';
+
+  @override
+  String get ma3Text_Gel_Color => 'Gel Color';
+
+  @override
+  String get ma3Text_Cyan => 'Cyan';
+
+  @override
+  String get ma3Text_Magenta => 'Magenta';
+
+  @override
+  String get ma3Text_Lime => 'Lime';
+
+  @override
+  String get ma3Text_UV => 'UV';
+
+  @override
+  String get ma3Text_OFF => 'OFF';
+
+  @override
+  String get ma3Text_50 => '50%';
+
+  @override
+  String get ma3Text_25 => '25%';
+
+  @override
+  String get ma3Text_GO_button => 'GO button';
+
+  @override
+  String get ma3Text_Timecode => 'Timecode';
+
+  @override
+  String get ma3Text_OSC => 'OSC';
+
+  @override
+  String get ma3Text_MIDI => 'MIDI';
+
+  @override
+  String get gdtfShareAsZip => 'Partager en .zip';
+
+  @override
+  String get gdtfZipShareHelp =>
+      '💡 Utile si Gmail ou votre messagerie bloque le .gdtf — renommez le fichier en .gdtf après réception.';
+
+  @override
+  String get rfAntennaTitle => 'Calculateur d\'antenne';
+
+  @override
+  String get rfSplitterTitle => 'Perte Répartiteur / Combineur';
+
+  @override
+  String get rfCableAntennaTitle => 'Câble RF & Antennes';
+
+  @override
+  String get rfCableLossSectionTitle => 'Perte dans le câble coaxial';
+
+  @override
+  String get rfCableLossCableTypeLabel => 'Type de câble';
+
+  @override
+  String get rfCableAntennaFrequencyLabel => 'Fréquence';
+
+  @override
+  String get rfCableLossLengthLabel => 'Longueur du câble';
+
+  @override
+  String get rfCableAntennaEmptyState =>
+      'Renseignez les valeurs pour voir le résultat.';
+
+  @override
+  String get rfCableLossResultLabel => 'Perte totale';
+
+  @override
+  String get rfCableLossFormulaNote =>
+      'Atténuation ≈ k1·√f + k2·f (dB/100 m) — modèle empirique par type de câble, ±5 % typique entre 100 MHz et 2,5 GHz. Valeurs indicatives : se référer à la datasheet du câble pour un budget de liaison critique.';
+
+  @override
+  String get rfDiversitySectionTitle => 'Espacement antennes diversity (λ/4)';
+
+  @override
+  String get rfDiversityResultLabel => 'Espacement recommandé';
+
+  @override
+  String get rfDiversityFormulaNote =>
+      'λ/4 = 75 / f(MHz) mètres — espacement minimal recommandé entre deux antennes diversity pour limiter les évanouissements (fading) par trajets multiples.';
+
+  @override
+  String get rfPlannerTitle => 'Planificateur de Fréquences HF';
+
+  @override
+  String get rfPlannerBandLabel => 'Bande de fréquences';
+
+  @override
+  String get rfPlannerCustomBand => 'Personnalisée';
+
+  @override
+  String get rfPlannerMinFreqLabel => 'Fréquence min';
+
+  @override
+  String get rfPlannerMaxFreqLabel => 'Fréquence max';
+
+  @override
+  String get rfPlannerChannelCountLabel => 'Nombre de canaux souhaités';
+
+  @override
+  String get rfPlannerMinSpacingLabel => 'Espacement minimum entre canaux';
+
+  @override
+  String get rfPlannerResultTitle => 'Fréquences proposées';
+
+  @override
+  String get rfPlannerFoundLabel => 'Canaux trouvés';
+
+  @override
+  String get rfPlannerNotEnoughWarning =>
+      'Impossible de trouver tous les canaux demandés dans cette bande avec cet espacement — essaie une bande plus large ou réduis le nombre de canaux/l\'espacement minimum.';
+
+  @override
+  String get rfPlannerFormulaNote =>
+      'Évite les produits d\'intermodulation du 3e ordre (2fA−fB, fA+fB−fC) entre tous les canaux, tolérance ±200 kHz — pas de garantie absolue, vérifie sur le terrain avec un scan RF.';
+
+  @override
+  String get rfSplitterWaysLabel => 'Nombre de voies';
+
+  @override
+  String get rfSplitterExcessLossLabel => 'Perte excédentaire du répartiteur';
+
+  @override
+  String get rfSplitterAdditionalLossLabel => 'Pertes câbles & connecteurs';
+
+  @override
+  String get rfSplitterTotalTitle => 'Perte totale d\'insertion';
+
+  @override
+  String get rfSplitterTheoreticalLabel => 'Perte théorique (10·log₁₀N)';
+
+  @override
+  String get rfSplitterReferenceTitle => 'Repères par nombre de voies';
+
+  @override
+  String get rfSplitterFormulaNote =>
+      'Perte totale ≈ perte théorique + perte excédentaire + pertes câbles/connecteurs';
+
+  @override
+  String get rfFrequency => 'Fréquence';
+
+  @override
+  String get rfVelocityFactorTitle => 'Facteur de vélocité (Vf)';
+
+  @override
+  String get rfAntennaLengths => 'Longueurs d\'antenne';
+
+  @override
+  String get rfEnterFrequencyToCalculate =>
+      'Saisissez une fréquence pour calculer';
+
+  @override
+  String get rfFullWave => 'Onde complète (λ)';
+
+  @override
+  String get rfHalfWave => 'Demi-onde (λ/2)';
+
+  @override
+  String get rfStandardDipole => 'Dipôle standard';
+
+  @override
+  String get rfQuarterWave => 'Quart d\'onde (λ/4)';
+
+  @override
+  String get rfWhipAntenna => 'Antenne fouet — la plus courante';
+
+  @override
+  String get rfFiveEighthWave => '5/8 onde (5λ/8)';
+
+  @override
+  String get rfFiveEighthWaveDescription => 'Gain +3 dB vs λ/4';
+
+  @override
+  String get rfReferenceFrequencies => 'Fréquences de référence';
+
+  @override
+  String get rfFmRadio => 'FM Radio (88 MHz)';
+
+  @override
+  String get rfVhfLow => 'VHF Bas (174 MHz)';
+
+  @override
+  String get rfUhf470 => 'UHF 470 MHz';
+
+  @override
+  String get rfUhf600 => 'UHF 600 MHz';
+
+  @override
+  String get rfUhf694 => 'UHF 694 MHz (limite FR)';
+
+  @override
+  String get rfIsm863 => 'ISM 863 MHz';
+
+  @override
+  String get rfWifi24 => 'WiFi 2.4 GHz';
+
+  @override
+  String get rfWifi5 => 'WiFi 5 GHz (centre)';
+
+  @override
+  String get rfFormulaExplanation =>
+      'λ = c / f × Vf    |    c = 299.792 m/µs\nVf = facteur de vélocité du câble (1.00 pour l\'air libre)';
+
+  @override
+  String get rfPresetFreeSpace => 'Air libre';
+
+  @override
+  String get rfCoexTitle => 'Coexistence 2.4 GHz';
+
+  @override
+  String get rfCoexBandOccupancyTitle => 'Qui occupe la bande 2.4 GHz ?';
+
+  @override
+  String get rfCoexAvProtocolsTitle => '⚡ Protocoles AV sur 2.4 GHz';
+
+  @override
+  String get rfCoexAllProtocolsTitle => 'Tous les protocoles';
+
+  @override
+  String get rfCoexFrequentConflictsTitle =>
+      'Conflits fréquents en événementiel';
+
+  @override
+  String get rfCoexFieldRecommendationsTitle => 'Recommandations terrain';
+
+  @override
+  String get rfCoexProtocolWifi24Name => 'WiFi 2.4 GHz';
+
+  @override
+  String get rfCoexProtocolWifi24Note =>
+      'Canaux fixes, bande large. Forte puissance d\'émission.';
+
+  @override
+  String get rfCoexProtocolBluetoothClassicName => 'Bluetooth Classic';
+
+  @override
+  String get rfCoexProtocolBluetoothClassicNote =>
+      'Saute entre 1600 fréquences/s. Coexistence avec WiFi via AFH.';
+
+  @override
+  String get rfCoexProtocolBluetoothLeName => 'Bluetooth LE';
+
+  @override
+  String get rfCoexProtocolBluetoothLeNote =>
+      'Canaux 37, 38, 39 = advertising (fixes). Risque avec WiFi ch1.';
+
+  @override
+  String get rfCoexProtocolZigbeeName => 'Zigbee (IEEE 802.15.4)';
+
+  @override
+  String get rfCoexProtocolZigbeeNote =>
+      'Canaux 11–26, chacun 2 MHz large. Compatible avec WiFi ch1/6/11.';
+
+  @override
+  String get rfCoexProtocolDigitalMics24Name => 'Micros num. 2.4 GHz';
+
+  @override
+  String get rfCoexProtocolDigitalMics24Note =>
+      'Shure GLX-D, Line6 XD-V, Sennheiser EW-D 2.4 GHz. Très sensibles aux interférences WiFi.';
+
+  @override
+  String get rfCoexProtocolWirelessDmxName => 'DMX / RDM sans-fil';
+
+  @override
+  String get rfCoexProtocolWirelessDmxNote =>
+      'Lumen Radio CRMX, W-DMX, City Theatrical. FHSS = robuste mais partage la bande.';
+
+  @override
+  String get rfCoexProtocolWirelessVideoName => 'Vidéo sans-fil';
+
+  @override
+  String get rfCoexProtocolWirelessVideoNote =>
+      'Hollyland Mars, DJI O3, Teradek Bolt 4K. Très large bande, conflits majeurs possibles.';
+
+  @override
+  String get rfCoexTypeDsssOfdm => 'DSSS / OFDM';
+
+  @override
+  String get rfCoexTypeFhss79 => 'FHSS 79 canaux';
+
+  @override
+  String get rfCoexTypeFhss40 => 'FHSS 40 canaux';
+
+  @override
+  String get rfCoexTypeDsss16 => 'DSSS 16 canaux';
+
+  @override
+  String get rfCoexTypeFhssDsss => 'FHSS / DSSS';
+
+  @override
+  String get rfCoexTypeFhss => 'FHSS';
+
+  @override
+  String get rfCoexTypeOfdm => 'OFDM';
+
+  @override
+  String get rfCoexConflictWifiCh6 => 'WiFi ch6';
+
+  @override
+  String get rfCoexConflictMic24 => 'Micro 2.4 GHz';
+
+  @override
+  String get rfCoexConflictBleAdvertising => 'BLE advertising';
+
+  @override
+  String get rfCoexConflictWifiCh1 => 'WiFi ch1';
+
+  @override
+  String get rfCoexConflictWirelessVideo => 'Vidéo sans-fil';
+
+  @override
+  String get rfCoexConflictEverythingElse => 'Tout le reste';
+
+  @override
+  String get rfCoexConflictZigbeeCh11 => 'Zigbee ch11';
+
+  @override
+  String get rfCoexRiskHigh => 'ÉLEVÉ';
+
+  @override
+  String get rfCoexRiskMedium => 'MOYEN';
+
+  @override
+  String get rfCoexConflictWifiCh6Mic24Desc =>
+      'Le WiFi ch6 chevauche directement les fréquences favorites des micros numériques.';
+
+  @override
+  String get rfCoexConflictBleWifiCh1Desc =>
+      'Les canaux BLE 37/38/39 se trouvent à 2402, 2426 et 2480 MHz.';
+
+  @override
+  String get rfCoexConflictVideoEverythingDesc =>
+      'Les liens vidéo sans-fil utilisent une bande large et saturent facilement la bande.';
+
+  @override
+  String get rfCoexConflictZigbeeWifiCh1Desc =>
+      'Le canal Zigbee 11 (2405 MHz) est directement dans la bande du WiFi canal 1.';
+
+  @override
+  String get rfCoexTipWifiChannels =>
+      'Réservez le WiFi aux canaux 1 et/ou 11. Évitez le canal 6 si vous avez des micros 2.4 GHz.';
+
+  @override
+  String get rfCoexTipUhfMics =>
+      'Pour les micros HF en zone dense, préférez les systèmes UHF (470–694 MHz) aux systèmes 2.4 GHz.';
+
+  @override
+  String get rfCoexTipWirelessVideo5Ghz =>
+      'Les liens vidéo sans-fil : utilisez impérativement la bande 5 GHz quand c\'est possible.';
+
+  @override
+  String get rfCoexTipWirelessDmxFhss =>
+      'Le DMX sans-fil FHSS est le plus robuste — il saute automatiquement les fréquences occupées.';
+
+  @override
+  String get rfCoexTipSpectrumScan =>
+      'Faites un scan du spectre avant l\'event avec une app RF (WiFi Analyzer, Chanalyzer, etc.).';
+
+  @override
+  String get rfPageTitle => 'RF & Sans-fil';
+
+  @override
+  String get rfSectionMicrosHf => 'Micros HF & Antennes';
+
+  @override
+  String get rfSectionCalcHf => 'Calculs HF';
+
+  @override
+  String get rfSectionWifi => 'WiFi';
+
+  @override
+  String get rfSectionCoexistence => 'Coexistence';
+
+  @override
+  String get rfSectionScanTerrain => 'Scan & Terrain';
+
+  @override
+  String get rfFreeLabel => 'GRATUIT';
+
+  @override
+  String get rfToolUhfBandsTitle => 'Bandes UHF / VHF';
+
+  @override
+  String get rfToolUhfBandsSubtitle =>
+      'Bandes légales France (ANFR), UHF 470–694 MHz, dividende numérique, DECT, ISM 863 MHz.';
+
+  @override
+  String get rfToolAntennaTitle => 'Calculateur d\'Antenne';
+
+  @override
+  String get rfToolAntennaSubtitle =>
+      'Fréquence → λ/4, λ/2, 5λ/8. Facteur de vélocité pour câbles coaxiaux. Références UHF/WiFi.';
+
+  @override
+  String get rfToolIm3Title => 'Intermodulation IM3';
+
+  @override
+  String get rfToolIm3Subtitle =>
+      'Calcule 2Fi−Fj pour 2 à 16 fréquences. Détecte les produits qui tombent sur vos canaux.';
+
+  @override
+  String get rfToolWifi24Title => 'Canaux WiFi 2.4 GHz';
+
+  @override
+  String get rfToolWifi24Subtitle =>
+      '13 canaux, chevauchements visuels, simulateur de conflits. Canaux non-conflictuels 1, 6, 11.';
+
+  @override
+  String get rfToolWifi5Title => 'Canaux WiFi 5 GHz';
+
+  @override
+  String get rfToolWifi5Subtitle =>
+      'Bandes UNII-1/2A/2C, DFS, canaux disponibles en France. Non-chevauchants à 80 MHz.';
+
+  @override
+  String get rfToolCoexTitle => 'Coexistence 2.4 GHz';
+
+  @override
+  String get rfToolCoexSubtitle =>
+      'Qui partage la bande : WiFi, Bluetooth, Zigbee, micros numériques, DMX sans-fil, vidéo. Conflits typiques.';
+
+  @override
+  String get rfToolScanWifiTitle => 'Scan WiFi';
+
+  @override
+  String get rfToolScanWifiSubtitle =>
+      'Analyse les réseaux WiFi environnants : canaux, RSSI, bandes 2.4/5 GHz. Visualisation occupation du spectre.';
+
+  @override
+  String get rfToolScanLogTitle => 'Journal de Scan RF';
+
+  @override
+  String get rfToolScanLogSubtitle =>
+      'Relevé manuel des fréquences : niveau signal, statut (libre/borderline/occupé), notes terrain.';
+
+  @override
+  String get rfIm3PageTitle => 'Intermodulation IM3';
+
+  @override
+  String get rfIm3WhatIs => 'Qu\'est-ce que l\'IM3 ?';
+
+  @override
+  String get rfIm3WhatIsBody =>
+      'Quand deux émetteurs F1 et F2 entrent dans un ampli ou un récepteur, ils génèrent des fréquences parasites à 2F1−F2 et 2F2−F1. Ces produits d\'intermodulation du 3ᵉ ordre tombent près des fréquences originales et peuvent bloquer un canal HF voisin.';
+
+  @override
+  String get rfIm3QuickMode => 'Mode rapide — 2 fréquences';
+
+  @override
+  String get rfIm3AdvancedMode => 'Mode avancé — jusqu\'à 16 fréquences';
+
+  @override
+  String rfIm3FrequencyN(int index) {
+    return 'Fréquence $index';
+  }
+
+  @override
+  String get rfIm3AddFrequency => 'Ajouter une fréquence';
+
+  @override
+  String get rfIm3Tips => 'Conseils terrain';
+
+  @override
+  String get rfIm3Tip1 =>
+      'Espacez vos fréquences de façon irrégulière. Des écarts réguliers génèrent des IM3 qui tombent pile sur vos canaux.';
+
+  @override
+  String get rfIm3Tip2 =>
+      'Tolérance de détection : ±200 kHz. Adaptez selon la largeur de bande de vos systèmes (généralement 200–400 kHz).';
+
+  @override
+  String get rfIm3Tip3 =>
+      'Les outils Shure Wireless Workbench, Sennheiser WSM et Audio-Technica Frequency Manager intègrent le calcul IM3 pour leurs gammes — utilisez-les pour le déploiement final.';
+
+  @override
+  String get rfIm3OutOfBand => 'Hors bande (< 0 MHz)';
+
+  @override
+  String get rfIm3ConflictOnFreq =>
+      '⚠ Tombe sur une fréquence utilisée (±200 kHz)';
+
+  @override
+  String get rfIm3TableFormula => 'Formule';
+
+  @override
+  String get rfIm3TableFreqIm3 => 'Fréquence IM3';
+
+  @override
+  String get rfIm3TableStatus => 'Statut';
+
+  @override
+  String get rfIm3Footnote =>
+      'IM3 = 2×Fi − Fj    |    Tolérance conflit : ±200 kHz\nLes produits négatifs (hors spectre) sont affichés mais non conflictuels.';
+
+  @override
+  String rfIm3Conflicts(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 's',
+      one: '',
+    );
+    return '$count conflit$_temp0';
+  }
+
+  @override
+  String get rfScanLogTitle => 'Journal de Scan RF';
+
+  @override
+  String get rfScanLogClearAll => 'Tout effacer';
+
+  @override
+  String get rfScanLogAdd => 'Ajouter';
+
+  @override
+  String get rfScanLogClearConfirmTitle => 'Effacer le journal ?';
+
+  @override
+  String get rfScanLogClearConfirmContent =>
+      'Toutes les entrées seront supprimées.';
+
+  @override
+  String get rfScanLogCancel => 'Annuler';
+
+  @override
+  String get rfScanLogDelete => 'Effacer';
+
+  @override
+  String get rfScanLogNewEntry => 'Nouvelle entrée';
+
+  @override
+  String get rfScanLogFrequency => 'Fréquence';
+
+  @override
+  String get rfScanLogOptionalLevel => 'Niveau mesuré (optionnel)';
+
+  @override
+  String get rfScanLogNote => 'Note';
+
+  @override
+  String get rfScanLogNoteHint => 'ex: canal 36, salle B, interférence TV...';
+
+  @override
+  String get rfScanLogStatusLabel => 'Statut :';
+
+  @override
+  String get rfScanLogSave => 'Enregistrer';
+
+  @override
+  String get rfScanLogEmptyTitle => 'Journal vide';
+
+  @override
+  String get rfScanLogEmptyBody =>
+      'Notez vos mesures terrain ici : fréquence, niveau mesuré sur l\'analyseur, statut et commentaire.';
+
+  @override
+  String get rfScanLogFirstEntry => 'Première entrée';
+
+  @override
+  String get rfScanLogStatusFree => 'Libre';
+
+  @override
+  String get rfScanLogStatusOccupied => 'Occupée';
+
+  @override
+  String get rfScanLogStatusBorderline => 'Borderline';
+
+  @override
+  String get rfScanLogInstant => 'À l\'instant';
+
+  @override
+  String rfScanLogMinutesAgo(int n) {
+    return 'Il y a $n min';
+  }
+
+  @override
+  String rfScanLogHoursAgo(int n) {
+    return 'Il y a $n h';
+  }
+
+  @override
+  String get rfScanLogFreePlural => 'Libres';
+
+  @override
+  String get rfScanLogOccupiedPlural => 'Occupées';
+
+  @override
+  String get rfScanLogBorderlinePlural => 'Border.';
+
+  @override
+  String get rfScanLogTotal => 'Total';
+
+  @override
+  String get rfUhfBandsTitle => 'Bandes UHF / VHF';
+
+  @override
+  String get rfUhfBandsOverview => 'Vue d\'ensemble — France';
+
+  @override
+  String get rfUhfBandsTips => 'Conseils pour le choix de bande';
+
+  @override
+  String get rfUhfBandsSource =>
+      'Source : ANFR / ARCEP — Réglementation française.\nLes règles peuvent varier selon les pays.\nVérifiez toujours la conformité de votre matériel.';
+
+  @override
+  String get rfUhfBand1Name => 'VHF Bas';
+
+  @override
+  String get rfUhfBand1Status => 'Limité';
+
+  @override
+  String get rfUhfBand1Desc =>
+      'Ancienne bande TV analogique. Quelques systèmes HF utilisent cette plage. Moins commune en événementiel.';
+
+  @override
+  String get rfUhfBand1Examples =>
+      'Certains anciens systèmes Sennheiser, Shure';
+
+  @override
+  String get rfUhfBand2Name => 'UHF — Bloc TV';
+
+  @override
+  String get rfUhfBand2Status => 'Pro (autorisation)';
+
+  @override
+  String get rfUhfBand2Desc =>
+      'Principale bande pour micros HF professionnels en France. Partage avec la TNT. Requiert une autorisation ANFR pour usage commercial. Usage libre pour la production audiovisuelle sous conditions.';
+
+  @override
+  String get rfUhfBand2Examples =>
+      'Shure Axient, Sennheiser 2000, Sony DWX, Audio-Technica 3000';
+
+  @override
+  String get rfUhfBand3Name => 'Dividende numérique';
+
+  @override
+  String get rfUhfBand3Status => 'INTERDIT';
+
+  @override
+  String get rfUhfBand3Desc =>
+      'Bande allouée aux réseaux mobiles 4G/5G en France depuis 2017. Tout matériel sans-fil audio dans cette bande est illégal depuis cette date.';
+
+  @override
+  String get rfUhfBand4Name => 'ISM / SRD 863 MHz';
+
+  @override
+  String get rfUhfBand4Status => 'Libre (10 mW)';
+
+  @override
+  String get rfUhfBand4Desc =>
+      'Bande libre en Europe (SRD — Short Range Device). Pas d\'autorisation requise. Limite de puissance : 10 mW ERP, 25 kHz de largeur de bande.';
+
+  @override
+  String get rfUhfBand4Examples =>
+      'Certains systèmes d\'entrée de gamme, télécommandes';
+
+  @override
+  String get rfUhfBand5Name => 'DECT';
+
+  @override
+  String get rfUhfBand5Status => 'Libre (250 mW)';
+
+  @override
+  String get rfUhfBand5Desc =>
+      'Standard dédié à la voix sans-fil. Pas d\'interférences avec WiFi/Bluetooth. Utilisé pour les systèmes de conférence, intercom et certains micros sans-fil.';
+
+  @override
+  String get rfUhfBand5Examples =>
+      'Bosch CCS-800 Ultro, Sennheiser SpeechLine, Beyerdynamic Quinta';
+
+  @override
+  String get rfUhfBand6Name => 'Micro num. 2.4 GHz';
+
+  @override
+  String get rfUhfBand6Status => 'Libre (100 mW)';
+
+  @override
+  String get rfUhfBand6Desc =>
+      'Bande ISM, libre sans autorisation. Sujette aux interférences WiFi et Bluetooth. Convient aux petites productions, éviter les grandes salles avec WiFi dense.';
+
+  @override
+  String get rfUhfBand6Examples =>
+      'Shure GLX-D, Line6 XD-V, Sennheiser EW-D (variante 2.4G)';
+
+  @override
+  String get rfUhfBand7Name => 'Sans-fil 5.8 GHz';
+
+  @override
+  String get rfUhfBand7Status => 'Limité (FR)';
+
+  @override
+  String get rfUhfBand7Desc =>
+      'Non disponible pour WiFi en France, mais certains systèmes propriétaires utilisent cette plage. Vérifier la conformité ARCEP de chaque équipement.';
+
+  @override
+  String get rfUhfBand7Examples => 'Certains systèmes IEM haut de gamme';
+
+  @override
+  String get rfUhfOverviewSublabel1 => 'VHF / transitoire';
+
+  @override
+  String get rfUhfOverviewSublabel2 => 'UHF pro (autorisation)';
+
+  @override
+  String get rfUhfOverviewSublabel3 => '4G/5G — INTERDIT';
+
+  @override
+  String get rfUhfOverviewSublabel4 => 'ISM libre';
+
+  @override
+  String get rfUhfOverviewSublabel5 => 'DECT libre';
+
+  @override
+  String get rfUhfOverviewSublabel6 => 'ISM (WiFi + micros num.)';
+
+  @override
+  String get rfUhfTip1 =>
+      '470–694 MHz : optimal pour les productions pro. Large choix de fréquences, bon comportement RF. Déclarer l\'usage à l\'ANFR pour les événements professionnels.';
+
+  @override
+  String get rfUhfTip2 =>
+      'Vérifiez impérativement que votre matériel est hors bande 694–790 MHz. Les anciens systèmes non revendus post-2017 sont illégaux sur scène.';
+
+  @override
+  String get rfUhfTip3 =>
+      'DECT (1880–1900 MHz) est idéal pour les systèmes de conférence : bande dédiée, pas d\'interférences WiFi/BT.';
+
+  @override
+  String get rfUhfTip4 =>
+      'Les systèmes 2.4 GHz sont pratiques mais sensibles aux environnements WiFi denses. À éviter dans les grandes salles de congrès.';
+
+  @override
+  String get rfLegendPro => 'Pro (autorisation)';
+
+  @override
+  String get rfLegendFree => 'Libre';
+
+  @override
+  String get rfLegendForbidden => 'Interdit';
+
+  @override
+  String get rfWifi24PageTitle => 'WiFi 2.4 GHz';
+
+  @override
+  String get rfWifi24SpectrumTitle => 'Spectre 2.4 GHz — chevauchements';
+
+  @override
+  String get rfWifi24SimulateTitle => 'Simuler la coexistence';
+
+  @override
+  String get rfWifi24SelectChannels =>
+      'Sélectionnez les canaux utilisés dans votre environnement :';
+
+  @override
+  String get rfWifi24ConflictWarning =>
+      '⚠️ Les canaux sélectionnés se chevauchent — risque d\'interférences mutuelles.';
+
+  @override
+  String get rfWifi24ChannelTableTitle => 'Tableau des canaux';
+
+  @override
+  String get rfWifi24BestPractices => 'Bonnes pratiques';
+
+  @override
+  String get rfWifi24LegendNonOverlap => 'Canal non-chevauchant';
+
+  @override
+  String get rfWifi24LegendOk => 'Sélectionné OK';
+
+  @override
+  String get rfWifi24LegendConflict => 'Conflit';
+
+  @override
+  String get rfWifi24HdrChannel => 'Canal';
+
+  @override
+  String get rfWifi24HdrCenter => 'Centre';
+
+  @override
+  String get rfWifi24HdrStart => 'Début';
+
+  @override
+  String get rfWifi24HdrEnd => 'Fin';
+
+  @override
+  String get rfWifi24Tip1 =>
+      'Utilisez toujours les canaux 1, 6 et 11 pour 3 réseaux WiFi non-chevauchants.';
+
+  @override
+  String get rfWifi24Tip2 =>
+      'Avec des canaux à 20 MHz, les canaux 1, 5, 9 et 13 sont également non-chevauchants.';
+
+  @override
+  String get rfWifi24Tip3 =>
+      'Le WiFi 2.4 GHz partage la bande avec Bluetooth, Zigbee et les micros numériques 2.4 GHz.';
+
+  @override
+  String get rfWifi24Tip4 =>
+      'En zone dense, préférez le 5 GHz (moins encombré) pour les équipements sensibles.';
+
+  @override
+  String get rfWifi5PageTitle => 'WiFi 5 GHz';
+
+  @override
+  String get rfWifi5RegulationTitle => 'Réglementation France (ARCEP)';
+
+  @override
+  String get rfWifi5BandsAvailable => 'Bandes disponibles';
+
+  @override
+  String get rfWifi5Unii3Forbidden => 'UNII-3 (5725–5850)';
+
+  @override
+  String get rfWifi5ForbiddenLabel => 'Interdit';
+
+  @override
+  String get rfWifi5DfsNote =>
+      '⚠️ DFS (Dynamic Frequency Selection) : les canaux UNII-2A et 2C nécessitent la détection radar. L\'équipement peut changer automatiquement de canal si un radar est détecté.';
+
+  @override
+  String get rfWifi5ChannelWidthsTitle => 'Largeurs de canal';
+
+  @override
+  String get rfWifi5Bw20 => 'Compatibilité max, débit limité';
+
+  @override
+  String get rfWifi5Bw40 => '2 canaux liés — 802.11n';
+
+  @override
+  String get rfWifi5Bw80 => '4 canaux liés — 802.11ac/ax';
+
+  @override
+  String get rfWifi5Bw160 => '8 canaux liés — 802.11ax seulement';
+
+  @override
+  String get rfWifi5NonOverlapTitle =>
+      'Canaux non-chevauchants à 80 MHz (France)';
+
+  @override
+  String get rfWifi5NonOverlapFor3 =>
+      'Pour 3 réseaux 80 MHz sans chevauchement (France) :';
+
+  @override
+  String get rfWifi5MaxNetworks =>
+      '→ Jusqu\'à 6 réseaux 80 MHz disponibles sur UNII-2C seul.';
+
+  @override
+  String get rfWifi5ChannelsMhz => 'Canaux (20 MHz)';
+
+  @override
+  String get rfWifi5ForbiddenFR => 'Interdit FR';
+
+  @override
+  String get rfWifi5Indoor => 'Indoor';
+
+  @override
+  String get rfWifiScanTitle => 'Scan WiFi';
+
+  @override
+  String get rfWifiScanPlatformInfo =>
+      'Scan actif sur Android (permission localisation requise). Sur iOS, seul le réseau connecté est visible.';
+
+  @override
+  String get rfWifiScanStart => 'Lancer le scan';
+
+  @override
+  String get rfWifiScanInProgress => 'Scan en cours…';
+
+  @override
+  String get rfWifiScanGroupedTooltip => 'Vue liste';
+
+  @override
+  String get rfWifiScanFlatTooltip => 'Vue groupée';
+
+  @override
+  String get rfWifiScanNoResults =>
+      'Lance le scan pour voir les réseaux voisins.';
+
+  @override
+  String get rfWifiScanOccupation => 'Occupation canaux 2.4 GHz';
+
+  @override
+  String get rfWifiScanNonOverlapNote =>
+      'Canaux en gras (1, 6, 11) = non-chevauchants';
+
+  @override
+  String get rfWifiScanHidden => '(réseau caché)';
+
+  @override
+  String rfWifiScanNetworks24(int count) {
+    return '$count réseaux';
+  }
+
+  @override
+  String rfWifiScanNetworks5(int count) {
+    return '$count réseaux';
+  }
+
+  @override
+  String rfWifiScanTotal(int count) {
+    return '$count total';
+  }
+
+  @override
+  String get rfWifiScanSub24 => '2.4 GHz';
+
+  @override
+  String get rfWifiScanSub5 => '5 GHz';
+
+  @override
+  String get rfWifiScanSubTotal => 'réseaux';
+
+  @override
+  String get rfWifiRssiExcellent => 'Excellent';
+
+  @override
+  String get rfWifiRssiBon => 'Bon';
+
+  @override
+  String get rfWifiRssiMoyen => 'Moyen';
+
+  @override
+  String get rfWifiRssiFaible => 'Faible';
+
+  @override
+  String get audioLevelInputDbu => 'Valeur en dBu';
+
+  @override
+  String get audioLevelInputDbv => 'Valeur en dBV';
+
+  @override
+  String get audioLevelInputVrms => 'Tension RMS';
+
+  @override
+  String get audioLevelDbfsNote =>
+      '* dBFS relatif à +24 dBu = 0 dBFS (valeur typique — varie selon le système)';
+
+  @override
+  String get audioGainStagingTip1 =>
+      'Visez +4 dBu en nominal sur chaque étage. Gardez ~18 dB de headroom avant le clip.';
+
+  @override
+  String get audioGainStagingTip2 =>
+      'La différence consumer/pro (+4 dBu vs −10 dBV) est de ~11.8 dB — compensez le gain à chaque interface.';
+
+  @override
+  String get audioGainStagingTip3 =>
+      'Ligne symétrique (XLR) : +4 dBu. Ligne asymétrique (Jack TS) : −10 dBV. DI box pour adapter impédance et niveau.';
+
+  @override
+  String get audioGainStagingTip4 =>
+      'dBu = dB rapporté à 0.775 V (600 Ω). dBV = dB rapporté à 1 V. dBV = dBu − 2.218.';
+
+  @override
+  String get audioDiffTipEqual =>
+      'Sources quasi-égales : gain de ~+3 dB sur la plus forte.';
+
+  @override
+  String audioDiffTipSmall(String diff) {
+    return 'Différence de $diff dB : la plus faible contribue peu.';
+  }
+
+  @override
+  String audioDiffTipMedium(String diff, String gain) {
+    return 'Différence de $diff dB : gain limité à ~$gain dB sur la source dominante.';
+  }
+
+  @override
+  String get audioDiffTipLarge =>
+      'Différence > 10 dB : la source faible est négligeable. Gain ≈ +0 dB.';
+
+  @override
+  String get audioIncoherentShortLabel => 'Incoh. : ';
+
+  @override
+  String get audioCoherentShortLabel => 'Cohér. : ';
+
+  @override
+  String audioAtDistance(String dist) {
+    return 'À $dist m';
+  }
+
+  @override
+  String get rfWifiScanErrLocationRequired =>
+      'Permission de localisation requise pour le scan WiFi.';
+
+  @override
+  String get rfWifiScanErrLocationDenied =>
+      'Permission de localisation refusée. Activez-la dans les réglages.';
+
+  @override
+  String get rfWifiScanErrLocationDisabled =>
+      'Service de localisation désactivé. Activez-le sur l\'appareil.';
+
+  @override
+  String get rfWifiScanErrNotSupported =>
+      'Scan WiFi non supporté sur cet appareil ou cette version d\'OS.';
+
+  @override
+  String get rfWifiScanErrFailed => 'Impossible de démarrer le scan.';
+
+  @override
+  String get rfWifiScanErrDefault => 'Scan impossible sur cet appareil.';
+
+  @override
+  String get rfWifiScanErrReadResults =>
+      'Impossible de lire les résultats du scan.';
+
+  @override
+  String rfWifiScanErrGeneric(String error) {
+    return 'Erreur lors du scan : $error';
+  }
+
+  @override
+  String get homeNetworkTitle => 'Réseau';
+
+  @override
+  String get homeNetworkSubtitle => 'Scan réseau local, Art-Net, sACN / E1.31.';
+
+  @override
+  String get networkPageTitle => 'Réseau';
+
+  @override
+  String get networkScanCardTitle => 'Scan réseau';
+
+  @override
+  String get networkScanCardSubtitle =>
+      'Détecter les appareils actifs sur le réseau local.';
+
+  @override
+  String get networkArtNetCardTitle => 'Visualizer Art-Net';
+
+  @override
+  String get networkArtNetAddressingTitle => 'Adressage Art-Net';
+
+  @override
+  String get networkArtNetToPortTitle =>
+      'Net / Sub-Net / Universe → Port-Address';
+
+  @override
+  String get networkArtNetFromPortTitle =>
+      'Port-Address → Net / Sub-Net / Universe';
+
+  @override
+  String get networkArtNetNetLabel => 'Net';
+
+  @override
+  String get networkArtNetSubNetLabel => 'Sub-Net';
+
+  @override
+  String get networkArtNetUniverseLabel => 'Universe';
+
+  @override
+  String get networkArtNetPortAddressLabel => 'Port-Address';
+
+  @override
+  String get networkArtNetEmptyState =>
+      'Renseignez des valeurs valides pour voir le résultat.';
+
+  @override
+  String get networkArtNetFormulaNote =>
+      'Port-Address (15 bits) = (Net « 8) | (Sub-Net « 4) | Universe — Net 0-127, Sub-Net 0-15, Universe 0-15, Port-Address 0-32767 (spec Art-Net 4).';
+
+  @override
+  String get networkArtNetCardSubtitle =>
+      'Écoute et analyse des paquets ArtDMX en temps réel.';
+
+  @override
+  String get networkSacnCardTitle => 'Visualizer sACN / E1.31';
+
+  @override
+  String get networkSacnCardSubtitle =>
+      'Écoute et analyse des paquets sACN / E1.31 en temps réel.';
+
+  @override
+  String get networkComingSoon => 'À venir';
+
+  @override
+  String get networkFutureLuminex => 'Monitoring Luminex';
+
+  @override
+  String get networkFutureMaNet => 'Détection MA-Net';
+
+  @override
+  String get networkFutureAlarms => 'Alarmes réseau';
+
+  @override
+  String get networkFutureSnapshots => 'Snapshots réseau';
+
+  @override
+  String get networkFutureExport => 'Export PDF / CSV';
+
+  @override
+  String get networkScanTitle => 'Scan réseau';
+
+  @override
+  String get networkPoeTitle => 'Calculateur PoE';
+
+  @override
+  String get networkFiberTitle => 'Budget de Liaison Fibre';
+
+  @override
+  String get networkSubnetTitle => 'Calculateur de Sous-réseau';
+
+  @override
+  String get networkSubnetIpLabel => 'Adresse IP';
+
+  @override
+  String get networkSubnetPrefixLabel => 'Masque (CIDR)';
+
+  @override
+  String get networkSubnetNetworkLabel => 'Adresse réseau';
+
+  @override
+  String get networkSubnetBroadcastLabel => 'Adresse de broadcast';
+
+  @override
+  String get networkSubnetNetmaskLabel => 'Masque de sous-réseau';
+
+  @override
+  String get networkSubnetWildcardLabel => 'Masque générique (wildcard)';
+
+  @override
+  String get networkSubnetFirstHostLabel => 'Première IP utilisable';
+
+  @override
+  String get networkSubnetLastHostLabel => 'Dernière IP utilisable';
+
+  @override
+  String get networkSubnetHostCountLabel => 'Nombre d\'hôtes utilisables';
+
+  @override
+  String get networkSubnetInvalidIp =>
+      'Adresse IP invalide (format attendu : 192.168.1.0)';
+
+  @override
+  String get networkSubnetDivideTitle => 'Diviser en sous-réseaux égaux';
+
+  @override
+  String get networkSubnetDivideNote =>
+      'Choisis en combien de sous-réseaux diviser ce réseau.';
+
+  @override
+  String get networkFiberTypeLabel => 'Type de fibre';
+
+  @override
+  String get networkFiberDistanceLabel => 'Distance';
+
+  @override
+  String get networkFiberAttenuationLabel => 'Atténuation (par km)';
+
+  @override
+  String get networkFiberAdditionalLossLabel =>
+      'Pertes connecteurs & épissures';
+
+  @override
+  String get networkFiberBudgetLabel =>
+      'Budget de liaison émetteur/récepteur (optionnel)';
+
+  @override
+  String get networkFiberTotalTitle => 'Perte totale de la liaison';
+
+  @override
+  String get networkFiberMarginLabel => 'Marge restante';
+
+  @override
+  String get networkFiberWarningOver =>
+      'Marge dépassée : la liaison risque de ne pas fonctionner correctement sur cette distance.';
+
+  @override
+  String get networkFiberFormulaNote =>
+      'Perte totale = atténuation × distance + pertes connecteurs/épissures';
+
+  @override
+  String get networkPoeBudgetLabel => 'Budget de l\'injecteur / switch';
+
+  @override
+  String get networkPoeDeviceLabel => 'Appareil';
+
+  @override
+  String get networkPoeClassLabel => 'Classe PoE';
+
+  @override
+  String get networkPoeClassManual => 'Manuel (valeur libre)';
+
+  @override
+  String get networkPoeClassWord => 'Classe';
+
+  @override
+  String get networkPoeDevicePowerLabel => 'Puissance';
+
+  @override
+  String get networkPoeAddDevice => 'Ajouter un appareil';
+
+  @override
+  String get networkPoeTotalTitle => 'Consommation totale';
+
+  @override
+  String get networkPoeRemainingLabel => 'Budget restant';
+
+  @override
+  String get networkPoeEmptyState =>
+      'Ajoute au moins un appareil pour calculer.';
+
+  @override
+  String get networkPoeWarningOver =>
+      'Budget dépassé : retire des appareils ou choisis un switch/injecteur plus puissant.';
+
+  @override
+  String get networkPoeFormulaNote =>
+      'Consommation totale = somme des appareils. Prévois une marge d\'environ 10 à 20 % sous le budget total.';
+
+  @override
+  String get networkScanStartButton => 'Lancer le scan';
+
+  @override
+  String get networkScanStopButton => 'Arrêter le scan';
+
+  @override
+  String get networkScanScanning => 'Scan en cours…';
+
+  @override
+  String networkScanProgress(int done, int total) {
+    return '$done / $total IP scannées';
+  }
+
+  @override
+  String networkScanDevicesFound(int count) {
+    return '$count appareil(s) trouvé(s)';
+  }
+
+  @override
+  String get networkScanNoDevicesFound =>
+      'Aucun appareil trouvé sur ce réseau.';
+
+  @override
+  String get networkScanNoNetwork =>
+      'Aucun réseau local (Wi-Fi) détecté. Connectez-vous à un réseau.';
+
+  @override
+  String get networkScanIosLimitation =>
+      'Sur iOS, les adresses MAC et le fabricant ne sont pas accessibles par les apps (restriction Apple).';
+
+  @override
+  String get networkScanLocalIp => 'IP locale';
+
+  @override
+  String get networkScanSubnet => 'Masque';
+
+  @override
+  String get networkScanStatusOnline => 'En ligne';
+
+  @override
+  String networkScanResponseMs(int ms) {
+    return '$ms ms';
+  }
+
+  @override
+  String get networkScanPermissionDenied =>
+      'Permission réseau refusée. Vérifiez les autorisations.';
+
+  @override
+  String get networkScanErrorGeneric =>
+      'Erreur réseau. Vérifiez votre connexion.';
+
+  @override
+  String get networkScanHint =>
+      'Appuyez sur « Lancer le scan » pour détecter les appareils.';
+
+  @override
+  String get artnetTitle => 'Visualizer Art-Net';
+
+  @override
+  String get artnetStartButton => 'Démarrer l\'écoute';
+
+  @override
+  String get artnetStopButton => 'Arrêter';
+
+  @override
+  String get artnetListening => 'Écoute — Port 6454';
+
+  @override
+  String get artnetNotListening => 'Inactif';
+
+  @override
+  String get artnetNoPackets => 'En attente de paquets Art-Net…';
+
+  @override
+  String get artnetUniversesTitle => 'Univers reçus';
+
+  @override
+  String artnetUniverseTitle(int universe) {
+    return 'Univers $universe';
+  }
+
+  @override
+  String artnetSourceIp(Object ip) {
+    return 'Source : $ip';
+  }
+
+  @override
+  String artnetPackets(int count) {
+    return '$count paquets';
+  }
+
+  @override
+  String artnetFps(Object fps) {
+    return '$fps fps';
+  }
+
+  @override
+  String get artnetShowActiveOnly => 'Canaux actifs uniquement';
+
+  @override
+  String artnetActiveCount(int count) {
+    return '$count canaux actifs';
+  }
+
+  @override
+  String get artnetPlatformInfo =>
+      'Art-Net — UDP port 6454. Doit être sur le même réseau que la source.';
+
+  @override
+  String get artnetErrorBind =>
+      'Impossible d\'ouvrir le socket UDP. Vérifiez les permissions réseau.';
+
+  @override
+  String get sacnTitle => 'Visualizer sACN';
+
+  @override
+  String get sacnStartButton => 'Démarrer l\'écoute';
+
+  @override
+  String get sacnStopButton => 'Arrêter';
+
+  @override
+  String get sacnListening => 'Écoute — Port 5568';
+
+  @override
+  String get sacnNotListening => 'Inactif';
+
+  @override
+  String get sacnNoPackets => 'En attente de paquets sACN…';
+
+  @override
+  String get sacnUniversesTitle => 'Univers reçus';
+
+  @override
+  String sacnUniverseTitle(int universe) {
+    return 'Univers $universe';
+  }
+
+  @override
+  String sacnSource(Object name) {
+    return 'Source : $name';
+  }
+
+  @override
+  String sacnPriority(int value) {
+    return 'Priorité : $value';
+  }
+
+  @override
+  String sacnCid(Object cid) {
+    return 'CID : $cid';
+  }
+
+  @override
+  String sacnPackets(int count) {
+    return '$count paquets';
+  }
+
+  @override
+  String sacnFps(Object fps) {
+    return '$fps fps';
+  }
+
+  @override
+  String get sacnShowActiveOnly => 'Canaux actifs uniquement';
+
+  @override
+  String sacnActiveCount(int count) {
+    return '$count canaux actifs';
+  }
+
+  @override
+  String get sacnPlatformInfo =>
+      'sACN / E1.31 — UDP port 5568. Multicast 239.255.x.x et unicast supportés.';
+
+  @override
+  String get sacnErrorBind =>
+      'Impossible d\'ouvrir le socket UDP. Vérifiez les permissions réseau.';
+
+  @override
+  String get sacnIosMulticastNote =>
+      'Sur iOS 14+, le multicast sACN peut nécessiter l\'autorisation d\'accès au réseau local.';
+
+  @override
+  String get diagCardTitle => 'Diagnostic réseau';
+
+  @override
+  String get diagCardSubtitle =>
+      'Analyse automatique du réseau, Art-Net et sACN.';
+
+  @override
+  String get diagPageTitle => 'Diagnostic réseau';
+
+  @override
+  String get diagPlatformInfo =>
+      'Lance un scan réseau + écoute Art-Net/sACN pendant quelques secondes, puis analyse les problèmes potentiels.';
+
+  @override
+  String get diagAnalyseButton => 'Analyser';
+
+  @override
+  String get diagCancelButton => 'Annuler';
+
+  @override
+  String get diagClearButton => 'Effacer';
+
+  @override
+  String get diagSnapshotButton => 'Snapshot';
+
+  @override
+  String get diagScoreLabel => 'Score santé réseau';
+
+  @override
+  String get diagStatusOk => 'Réseau OK';
+
+  @override
+  String get diagStatusWarning => 'Attention';
+
+  @override
+  String get diagStatusCritical => 'Critique';
+
+  @override
+  String diagAnalysisDate(Object date) {
+    return 'Analysé le $date';
+  }
+
+  @override
+  String get diagSeverityInfo => 'Info';
+
+  @override
+  String get diagSeverityWarning => 'Avertissement';
+
+  @override
+  String get diagSeverityCritical => 'Critique';
+
+  @override
+  String get diagScanningNetwork => 'Scan réseau en cours…';
+
+  @override
+  String get diagCollectingFlux => 'Collecte des flux Art-Net / sACN…';
+
+  @override
+  String get diagAnalyzing => 'Analyse en cours…';
+
+  @override
+  String diagScanProgress(int done, int total) {
+    return '$done / $total IPs scannées';
+  }
+
+  @override
+  String get diagNoResultYet =>
+      'Appuyez sur « Analyser » pour lancer le diagnostic réseau.';
+
+  @override
+  String get diagAlertsTitle => 'Alertes';
+
+  @override
+  String get diagNoAlerts => 'Aucune alerte détectée — réseau sain.';
+
+  @override
+  String get diagSnapshotSaved => 'Snapshot sauvegardé.';
+
+  @override
+  String get diagNoLocalIp =>
+      'Aucune adresse IP locale détectée ou adresse invalide.';
+
+  @override
+  String get diagNoDevices => 'Aucun appareil détecté sur le réseau.';
+
+  @override
+  String get diagNoArtNet => 'Aucun flux Art-Net reçu.';
+
+  @override
+  String get diagNoSacn => 'Aucun flux sACN / E1.31 reçu.';
+
+  @override
+  String diagDuplicateIp(Object ip) {
+    return 'Adresse IP en doublon détectée : $ip.';
+  }
+
+  @override
+  String diagArtNetLowFps(int universe, Object fps) {
+    return 'Art-Net Univers $universe : FPS faible ($fps fps).';
+  }
+
+  @override
+  String diagSacnLowFps(int universe, Object fps) {
+    return 'sACN Univers $universe : FPS faible ($fps fps).';
+  }
+
+  @override
+  String diagZeroDmxChannels(Object protocol, int universe) {
+    return '$protocol Univers $universe : flux actif mais tous les canaux DMX sont à zéro.';
+  }
+
+  @override
+  String diagManyUnknownDevices(int count) {
+    return '$count appareil(s) sans nom détectés sur le réseau.';
+  }
+
+  @override
+  String get ndiCardTitle => 'Découverte NDI';
+
+  @override
+  String get ndiCardSubtitle => 'Sources NDI / NewTek sur le réseau via mDNS.';
+
+  @override
+  String get ndiPageTitle => 'Découverte NDI';
+
+  @override
+  String get ndiStartButton => 'Démarrer';
+
+  @override
+  String get ndiStopButton => 'Arrêter';
+
+  @override
+  String get ndiDiscovering => 'Recherche en cours…';
+
+  @override
+  String get ndiHint =>
+      'Appuyez sur « Démarrer » pour rechercher les sources NDI sur le réseau.';
+
+  @override
+  String get ndiNoSources => 'Aucune source NDI détectée sur ce réseau.';
+
+  @override
+  String get ndiIosNote =>
+      'Sur iOS, la découverte mDNS peut être limitée selon la configuration réseau.';
+
+  @override
+  String ndiSourcesFound(int count) {
+    return '$count source(s) NDI trouvée(s)';
+  }
+
+  @override
+  String get ndiLabelName => 'Source';
+
+  @override
+  String get ndiLabelHost => 'Machine';
+
+  @override
+  String get ndiLabelIp => 'IP';
+
+  @override
+  String get ndiLabelPort => 'Port';
+
+  @override
+  String get ndiLabelService => 'Service';
+
+  @override
+  String get snapshotCardTitle => 'Snapshots réseau';
+
+  @override
+  String get snapshotCardSubtitle =>
+      'Enregistrez et comparez l\'état du réseau à différents moments.';
+
+  @override
+  String get snapshotPageTitle => 'Snapshots réseau';
+
+  @override
+  String get snapshotEmpty => 'Aucun snapshot enregistré.';
+
+  @override
+  String get snapshotDeleteConfirm => 'Supprimer ce snapshot ?';
+
+  @override
+  String get snapshotDeleteButton => 'Supprimer';
+
+  @override
+  String get snapshotCompareButton => 'Comparer';
+
+  @override
+  String get snapshotComparisonTitle => 'Comparaison';
+
+  @override
+  String get snapshotComparisonSelectTwo =>
+      'Sélectionnez deux snapshots à comparer.';
+
+  @override
+  String get snapshotSnapshotA => 'Snapshot A';
+
+  @override
+  String get snapshotSnapshotB => 'Snapshot B';
+
+  @override
+  String get snapshotDevices => 'Appareils';
+
+  @override
+  String get snapshotArtnetUniverses => 'Univers Art-Net';
+
+  @override
+  String get snapshotSacnUniverses => 'Univers sACN';
+
+  @override
+  String get snapshotNdiSources => 'Sources NDI';
+
+  @override
+  String get snapshotAlerts => 'Alertes';
+
+  @override
+  String get snapshotAdded => 'Apparu(s)';
+
+  @override
+  String get snapshotRemoved => 'Disparu(s)';
+
+  @override
+  String get snapshotNoChanges => 'Aucune différence entre les deux snapshots.';
+
+  @override
+  String get snapshotNoScore => 'Score non disponible';
+
+  @override
+  String get subscriptionCategoryNetworkTitle => 'Réseau Pro';
+
+  @override
+  String get subscriptionCategoryNetworkDescription =>
+      'Outils réseau avancés : Art-Net, sACN, NDI, diagnostic et snapshots.';
+
+  @override
+  String get subscriptionHeadlineNetworkSubtitle =>
+      'Débloque l\'Art-Net viewer, sACN viewer, NDI, le diagnostic réseau et les snapshots.';
+
+  @override
+  String get networkPremiumLabel => 'PREMIUM';
+
+  @override
+  String get networkPremiumUnlockButton => 'Débloquer';
+
+  @override
+  String get networkPremiumBannerText =>
+      'Art-Net, sACN, NDI, diagnostic et snapshots nécessitent un abonnement Réseau Pro.';
+
+  @override
+  String get subscriptionCategoryNetworkShort => 'RÉSEAU';
+
+  @override
+  String get dashboardPageTitle => 'Tableau de bord réseau';
+
+  @override
+  String get dashboardCardTitle => 'Dashboard réseau';
+
+  @override
+  String get dashboardCardSubtitle => 'Vue réseau en temps réel';
+
+  @override
+  String get dashboardStatusIdle => 'En attente';
+
+  @override
+  String get dashboardStatusScanning => 'Scan en cours…';
+
+  @override
+  String get dashboardStatusCompleted => 'Scan terminé';
+
+  @override
+  String get dashboardStatusError => 'Erreur réseau';
+
+  @override
+  String get dashboardStatusListening => 'Écoute active';
+
+  @override
+  String get dashboardKpiDevices => 'Appareils';
+
+  @override
+  String get dashboardKpiArtnet => 'Art-Net';
+
+  @override
+  String get dashboardKpiSacn => 'sACN';
+
+  @override
+  String get dashboardKpiNdi => 'NDI';
+
+  @override
+  String get dashboardKpiScore => 'Score';
+
+  @override
+  String get dashboardNoScore => '–';
+
+  @override
+  String get dashboardSectionAlerts => 'Alertes actives';
+
+  @override
+  String get dashboardNoAlerts => 'Aucune alerte active';
+
+  @override
+  String get dashboardSectionSnapshot => 'Dernier snapshot';
+
+  @override
+  String get dashboardNoSnapshot => 'Aucun snapshot enregistré';
+
+  @override
+  String get dashboardSectionQuickAccess => 'Accès rapide';
+
+  @override
+  String get dashboardRescanButton => 'Rescanner';
+
+  @override
+  String get dashboardNdiRefreshButton => 'Actualiser NDI';
+
+  @override
+  String get dashboardArtnetActive => 'Art-Net actif';
+
+  @override
+  String get dashboardSacnActive => 'sACN actif';
+
+  @override
+  String get dashboardNdiScanning => 'Découverte NDI…';
+
+  @override
+  String dashboardAlertNewDevice(Object ip) {
+    return 'Nouvel appareil : $ip';
+  }
+
+  @override
+  String dashboardAlertLostDevice(Object ip) {
+    return 'Appareil disparu : $ip';
+  }
+
+  @override
+  String dashboardAlertNewArtnetUniverse(int universe) {
+    return 'Nouvel univers Art-Net : $universe';
+  }
+
+  @override
+  String dashboardAlertLostArtnetUniverse(int universe) {
+    return 'Univers Art-Net disparu : $universe';
+  }
+
+  @override
+  String dashboardAlertNewSacnUniverse(int universe) {
+    return 'Nouvel univers sACN : $universe';
+  }
+
+  @override
+  String dashboardAlertLostSacnUniverse(int universe) {
+    return 'Univers sACN disparu : $universe';
+  }
+
+  @override
+  String dashboardAlertNewNdiSource(Object name) {
+    return 'Nouvelle source NDI : $name';
+  }
+
+  @override
+  String dashboardAlertLostNdiSource(Object name) {
+    return 'Source NDI disparue : $name';
+  }
+
+  @override
+  String dashboardAlertArtnetLowFps(int universe, Object fps) {
+    return 'Art-Net U$universe : FPS faible ($fps)';
+  }
+
+  @override
+  String dashboardAlertSacnLowFps(int universe, Object fps) {
+    return 'sACN U$universe : FPS faible ($fps)';
+  }
+
+  @override
+  String dashboardAlertSacnDuplicate(int universe, int count) {
+    return 'sACN U$universe : $count sources actives';
+  }
+
+  @override
+  String dashboardAlertSacnPriority(int universe) {
+    return 'sACN U$universe : conflit de priorité';
+  }
+
+  @override
+  String dashboardScanProgress(int progress) {
+    return 'Scan réseau : $progress%';
+  }
+
+  @override
+  String get luminexPageTitle => 'Luminex Monitor';
+
+  @override
+  String get luminexMonitorCardTitle => 'Luminex Monitor';
+
+  @override
+  String get luminexMonitorCardSubtitle => 'Supervision des switches GigaCore';
+
+  @override
+  String get luminexAddDevice => 'Ajouter un équipement';
+
+  @override
+  String get luminexAddDeviceTitle => 'Adresse IP du switch';
+
+  @override
+  String get luminexAddDeviceHint => '192.168.x.x';
+
+  @override
+  String get luminexAddDeviceConfirm => 'Ajouter';
+
+  @override
+  String get luminexAddDeviceCancel => 'Annuler';
+
+  @override
+  String get luminexNoDevices => 'Aucun switch Luminex';
+
+  @override
+  String get luminexNoDevicesHint =>
+      'Ajoutez une IP manuellement ou lancez un scan réseau.';
+
+  @override
+  String get luminexRefreshAll => 'Tout actualiser';
+
+  @override
+  String get luminexRemoveDevice => 'Retirer';
+
+  @override
+  String get luminexScanForDevices => 'Chercher sur le réseau';
+
+  @override
+  String get luminexReachable => 'Accessible';
+
+  @override
+  String get luminexUnreachable => 'Inaccessible';
+
+  @override
+  String get luminexPolling => 'Interrogation…';
+
+  @override
+  String get luminexNoAlarms => 'Aucune alarme';
+
+  @override
+  String get luminexSectionSystem => 'Informations système';
+
+  @override
+  String get luminexSectionPorts => 'Ports';
+
+  @override
+  String get luminexSectionAlarms => 'Alarmes actives';
+
+  @override
+  String get luminexLabelName => 'Nom';
+
+  @override
+  String get luminexLabelModel => 'Modèle';
+
+  @override
+  String get luminexLabelFirmware => 'Firmware';
+
+  @override
+  String get luminexLabelUptime => 'Uptime';
+
+  @override
+  String get luminexLabelTemperature => 'Température';
+
+  @override
+  String get luminexLabelPsu => 'Alimentation';
+
+  @override
+  String get luminexPsuOk => 'OK';
+
+  @override
+  String get luminexPsuAbsent => 'Absente';
+
+  @override
+  String get luminexLabelApi => 'API';
+
+  @override
+  String get luminexGen1 => 'Gen 1 (texte)';
+
+  @override
+  String get luminexGen2 => 'Gen 2 (JSON)';
+
+  @override
+  String get luminexGenUnknown => 'Inconnue';
+
+  @override
+  String get luminexPortUp => 'Actif';
+
+  @override
+  String get luminexPortDown => 'Inactif';
+
+  @override
+  String get luminexPortUnknown => 'Inconnu';
+
+  @override
+  String get luminexPortPoeActive => 'PoE actif';
+
+  @override
+  String get luminexPortPoeFault => 'PoE défaut';
+
+  @override
+  String get luminexPortPoeOff => 'PoE inactif';
+
+  @override
+  String get luminexPortNoPoe => 'Sans PoE';
+
+  @override
+  String get luminexDetectedScan => 'Scan réseau';
+
+  @override
+  String get luminexDetectedManual => 'Ajout manuel';
+
+  @override
+  String get luminexNotAvailable => 'N/D';
+
+  @override
+  String get luminexAlarmInaccessible => 'Switch inaccessible';
+
+  @override
+  String get luminexAlarmPsuAbsent => 'Alimentation absente';
+
+  @override
+  String luminexAlarmCount(int count) {
+    return '$count alarme(s) active(s)';
+  }
+
+  @override
+  String luminexPortSpeed(int speed) {
+    return '$speed Mb/s';
+  }
+
+  @override
+  String luminexPortRxErrors(int count) {
+    return 'RX : $count err.';
+  }
+
+  @override
+  String luminexPortTxErrors(int count) {
+    return 'TX : $count err.';
+  }
+
+  @override
+  String luminexAlarmPortDown(int port) {
+    return 'Port $port hors ligne';
+  }
+
+  @override
+  String luminexAlarmSpeedDegraded(int port, int speed) {
+    return 'Port $port : vitesse dégradée ($speed Mb/s)';
+  }
+
+  @override
+  String luminexAlarmHighRxErrors(int port, int count) {
+    return 'Port $port : erreurs RX élevées ($count)';
+  }
+
+  @override
+  String luminexAlarmHighTxErrors(int port, int count) {
+    return 'Port $port : erreurs TX élevées ($count)';
+  }
+
+  @override
+  String luminexAlarmPoeFault(int port) {
+    return 'Port $port : défaut PoE';
+  }
+
+  @override
+  String luminexAlarmHighTemp(Object temp) {
+    return 'Température élevée : $temp°C';
+  }
+
+  @override
+  String get manetPageTitle => 'MA-Net Monitor';
+
+  @override
+  String get manetMonitorCardTitle => 'MA-Net Monitor';
+
+  @override
+  String get manetMonitorCardSubtitle => 'Détection des nœuds grandMA2/3';
+
+  @override
+  String get manetNoNodes => 'Aucun nœud MA-Net détecté';
+
+  @override
+  String get manetListening => 'Écoute en cours…';
+
+  @override
+  String get manetNodeType => 'Type';
+
+  @override
+  String get manetFirmware => 'Firmware';
+
+  @override
+  String get manetMac => 'Adresse MAC';
+
+  @override
+  String get manetLastSeen => 'Vu il y a';
+
+  @override
+  String get manetProtocol => 'MA-Net';
+
+  @override
+  String get manetProtocolMaNet2 => 'MA-Net2';
+
+  @override
+  String get manetProtocolMaNet3 => 'MA-Net3';
+
+  @override
+  String get manetEmptyHint =>
+      'Assurez-vous d’être sur le même réseau que les équipements MA Lighting';
+
+  @override
+  String manetNodeCount(int count) {
+    return '$count nœud(s) en ligne';
+  }
+
+  @override
+  String manetPortListening(int port) {
+    return 'UDP :$port';
+  }
+
+  @override
+  String get helpPageTitle => 'Guide des outils réseau';
+
+  @override
+  String get helpIntro =>
+      'Tous les outils fonctionnent en lecture seule sur votre réseau local. Appuyez sur un outil pour afficher le détail.';
+
+  @override
+  String get helpSectionDoes => 'Ce que ça fait';
+
+  @override
+  String get helpSectionDelay => 'Délais';
+
+  @override
+  String get helpSectionLimits => 'Ce que ça ne fait pas';
+
+  @override
+  String get helpSectionTip => 'Conseil';
+
+  @override
+  String get helpGeneralTitle => 'Conseils généraux';
+
+  @override
+  String get helpGeneralSubnet =>
+      'Tous les outils opèrent sur le subnet /24 local. Un équipement sur un VLAN différent ou derrière un routeur ne sera pas détecté.';
+
+  @override
+  String get helpGeneralFirewall =>
+      'Les pare-feux logiciels peuvent bloquer certaines sondes. En cas d\'équipements manquants, vérifiez les règles de filtrage.';
+
+  @override
+  String get helpGeneralWifi =>
+      'Les réseaux WiFi avec isolation de clients bloquent la découverte. Préférez une connexion filaire ou un WiFi en mode bridge.';
+
+  @override
+  String get helpToolScanDoes =>
+      'Balaye le subnet /24 en parallèle et identifie les équipements actifs. Affiche l\'IP, le nom d\'hôte, le fabricant (via OUI MAC) et les ports ouverts courants.';
+
+  @override
+  String get helpToolScanDelay =>
+      '15 à 30 secondes selon la taille du réseau. 50 sondes simultanées.';
+
+  @override
+  String get helpToolScanLimits =>
+      'Ne traverse pas les VLANs ni les routeurs. N\'effectue pas d\'analyse de ports complète ni de scan WAN.';
+
+  @override
+  String get helpToolScanTip =>
+      'Si des équipements n\'apparaissent pas, vérifiez que votre pare-feu n\'bloque pas les sondes TCP/ICMP entrantes.';
+
+  @override
+  String get helpToolDashboardDoes =>
+      'Affiche en temps réel l\'état des équipements détectés : disponibilité, latence, alertes réseau actives.';
+
+  @override
+  String get helpToolDashboardDelay =>
+      'Mise à jour toutes les 30 secondes. Premier chargement immédiat après le scan.';
+
+  @override
+  String get helpToolDashboardLimits =>
+      'Ne conserve pas l\'historique entre les sessions. Nécessite un scan préalable pour peupler la liste d\'équipements.';
+
+  @override
+  String get helpToolDashboardTip =>
+      'Lancez un scan réseau avant d\'ouvrir le dashboard pour voir tous les équipements disponibles.';
+
+  @override
+  String get helpToolArtNetDoes =>
+      'Écoute passivement les paquets Art-Net (UDP 6454) et affiche les univers DMX actifs avec leurs valeurs en temps réel.';
+
+  @override
+  String get helpToolArtNetDelay =>
+      'Temps réel — les données apparaissent en moins d\'une seconde dès réception du paquet.';
+
+  @override
+  String get helpToolArtNetLimits =>
+      'Aucune sortie DMX. Ne configure pas les nodes Art-Net et ne gère pas le protocole RDM.';
+
+  @override
+  String get helpToolArtNetTip =>
+      'Art-Net ne traverse pas les routeurs. Tous les équipements doivent être sur le même réseau L2 (même switch ou même segment).';
+
+  @override
+  String get helpToolSacnDoes =>
+      'Écoute les flux sACN/E1.31 (UDP 5568) en multicast et affiche les univers actifs, les priorités de source et les valeurs DMX.';
+
+  @override
+  String get helpToolSacnDelay =>
+      'Temps réel — latence inférieure à une seconde.';
+
+  @override
+  String get helpToolSacnLimits =>
+      'Pas de sortie DMX. Ne modifie pas les priorités ni la configuration des sources sACN.';
+
+  @override
+  String get helpToolSacnTip =>
+      'Le multicast sACN nécessite un switch géré avec IGMP snooping activé pour éviter les tempêtes de broadcast sur le réseau.';
+
+  @override
+  String get helpToolNdiDoes =>
+      'Détecte les sources vidéo NDI sur le LAN via le protocole de découverte NDI. Affiche le nom, l\'adresse IP et le type de chaque source.';
+
+  @override
+  String get helpToolNdiDelay =>
+      'Les sources apparaissent entre 5 et 15 secondes après leur connexion au réseau.';
+
+  @override
+  String get helpToolNdiLimits =>
+      'Pas de lecture vidéo ni de routing NDI. Ne détecte pas les sources NDI|HX sans découverte mDNS active.';
+
+  @override
+  String get helpToolNdiTip =>
+      'NDI nécessite 100 Mb/s minimum par flux. Évitez le WiFi pour la production — préférez une connexion Gigabit filaire.';
+
+  @override
+  String get helpToolDiagDoes =>
+      'Exécute une série de tests de santé réseau : connectivité, résolution DNS, latence, perte de paquets et disponibilité des services.';
+
+  @override
+  String get helpToolDiagDelay => 'Diagnostic complet en 20 à 30 secondes.';
+
+  @override
+  String get helpToolDiagLimits =>
+      'Diagnostic uniquement — aucune réparation automatique, aucune modification de configuration.';
+
+  @override
+  String get helpToolDiagTip =>
+      'Lancez un diagnostic avant et après une intervention réseau pour comparer l\'état et isoler rapidement les régressions.';
+
+  @override
+  String get helpToolSnapshotDoes =>
+      'Capture l\'état du réseau à un instant T (équipements, services) et permet de comparer deux snapshots pour identifier les changements.';
+
+  @override
+  String get helpToolSnapshotDelay =>
+      'Capture en 30 à 45 secondes selon la taille du réseau.';
+
+  @override
+  String get helpToolSnapshotLimits =>
+      'Pas de monitoring continu ni d\'alertes automatiques. L\'historique est conservé uniquement sur cet appareil.';
+
+  @override
+  String get helpToolSnapshotTip =>
+      'Idéal pour documenter l\'état avant/après un changement d\'infrastructure ou pour isoler une régression lors d\'un dépannage.';
+
+  @override
+  String get helpToolLuminexDoes =>
+      'Interroge les switches GigaCore Luminex via leur API HTTP. Affiche l\'état des ports (lien, vitesse, PoE, erreurs), la température, les alimentations et déclenche des alarmes.';
+
+  @override
+  String get helpToolLuminexDelay =>
+      'Sondage toutes les 30 secondes. Découverte automatique sur le subnet : 15 à 30 secondes.';
+
+  @override
+  String get helpToolLuminexLimits =>
+      'Lecture seule. Aucune modification de VLAN, groupe ou configuration de port. Ne supporte pas MA-Net ou la vidéo NDI.';
+
+  @override
+  String get helpToolLuminexTip =>
+      'Authentification par défaut : admin / mot de passe vide. Les Gen2 exposent /api/v1/, les Gen1 répondent sur /stat/ports en texte brut.';
+
+  @override
+  String get helpToolManetDoes =>
+      'Écoute passivement le port UDP 6549 et détecte les consoles et nodes grandMA2/3 qui s\'annoncent sur le réseau. Affiche nom, type d\'équipement, version firmware et adresse MAC.';
+
+  @override
+  String get helpToolManetDelay =>
+      'Les équipements apparaissent dès leur prochain broadcast réseau, généralement en moins de 10 secondes.';
+
+  @override
+  String get helpToolManetLimits =>
+      'Lecture seule. Aucune donnée de show, aucune valeur DMX, aucune configuration. Ne traverse pas les VLANs.';
+
+  @override
+  String get helpToolManetTip =>
+      'Si aucun équipement n\'apparaît : vérifiez que la grandMA broadcaster sur le LAN et que le port UDP 6549 n\'est pas bloqué par un pare-feu.';
+
+  @override
+  String get bwCardTitle => 'Bande passante';
+
+  @override
+  String get bwCardSubtitle => 'Broadcast + switch SNMP';
+
+  @override
+  String get bwHubTitle => 'Bande passante';
+
+  @override
+  String get bwHubSubtitle =>
+      'Option 1 — trafic broadcast uniquement (sans équipement). Option 2 — bande passante réelle par port via SNMP (switch managé requis).';
+
+  @override
+  String get bwHubTagFree => 'GRATUIT';
+
+  @override
+  String get bwHubCardBroadcastTitle => 'Broadcast réseau';
+
+  @override
+  String get bwHubCardBroadcastSubtitle => 'Art-Net · sACN · MA-Net';
+
+  @override
+  String get bwHubCardBroadcastLimit =>
+      'Trafic unicast non visible (NDI, Dante…)';
+
+  @override
+  String get bwHubCardSnmpTitle => 'Ports switch';
+
+  @override
+  String get bwHubCardSnmpSubtitle => 'Vue par port, tout le trafic';
+
+  @override
+  String get bwHubCardSnmpRequires => 'Switch managé SNMP requis';
+
+  @override
+  String get bwBroadcastPageTitle => 'Broadcast réseau';
+
+  @override
+  String get bwBroadcastWarning =>
+      'Broadcast & multicast uniquement. Le trafic unicast (NDI, Dante…) n\'est pas visible depuis cet appareil.';
+
+  @override
+  String get bwBroadcastListening => 'En écoute';
+
+  @override
+  String get bwBroadcastTotal => 'Total';
+
+  @override
+  String get bwSnmpPageTitle => 'Ports switch';
+
+  @override
+  String get bwSnmpConfigTitle => 'Connexion SNMP';
+
+  @override
+  String get bwSnmpHost => 'IP du switch';
+
+  @override
+  String get bwSnmpHostHint => '192.168.1.1';
+
+  @override
+  String get bwSnmpCommunity => 'Community';
+
+  @override
+  String get bwSnmpCommunityHint => 'public';
+
+  @override
+  String get bwSnmpConnect => 'Connecter';
+
+  @override
+  String get bwSnmpDisconnect => 'Déconnecter';
+
+  @override
+  String get bwSnmpConnecting => 'Connexion…';
+
+  @override
+  String get bwSnmpError => 'Erreur SNMP';
+
+  @override
+  String get bwSnmpReqTitle => 'Prérequis';
+
+  @override
+  String get bwSnmpReq1 => 'Switch managé avec SNMP v2c activé';
+
+  @override
+  String get bwSnmpReq2 =>
+      'Community string (par défaut : \"public\" sur Luminex GigaCore)';
+
+  @override
+  String get bwSnmpReq3 => 'IP du switch accessible depuis cet appareil';
+
+  @override
+  String get bwSnmpPortUp => 'Actif';
+
+  @override
+  String get bwSnmpPortDown => 'Inactif';
+
+  @override
+  String get bwSnmpNoData => 'En attente de données…';
+
+  @override
+  String bwSnmpPortCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 's',
+      one: '',
+    );
+    return '$count port$_temp0';
+  }
+
+  @override
+  String get bwUnitKbps => 'kbps';
+
+  @override
+  String get bwUnitMbps => 'Mbps';
+
+  @override
+  String get bwUnitPkts => 'paq./s';
+
+  @override
+  String get bwLabelIn => '↓ Entrant';
+
+  @override
+  String get bwLabelOut => '↑ Sortant';
+
+  @override
+  String get conversionsVolumesTitle => 'Volumes';
+
+  @override
+  String get volumeCalcCardTitle => 'Volume — cube, cylindre, sphère…';
+
+  @override
+  String get volumeCalcUnitLabel => 'Unité des dimensions';
+
+  @override
+  String get volumeCalcPlaceholder =>
+      'Remplis les dimensions pour voir le volume ✨';
+
+  @override
+  String get volumeShapeCube => 'Cube';
+
+  @override
+  String get volumeShapeBox => 'Pavé droit';
+
+  @override
+  String get volumeShapeCylinder => 'Cylindre';
+
+  @override
+  String get volumeShapeSphere => 'Sphère';
+
+  @override
+  String get volumeShapeCone => 'Cône';
+
+  @override
+  String get volumeShapeSquarePyramid => 'Pyramide (base carrée)';
+
+  @override
+  String get volumeFieldSide => 'Côté';
+
+  @override
+  String get volumeFieldLength => 'Longueur';
+
+  @override
+  String get volumeFieldWidth => 'Largeur';
+
+  @override
+  String get volumeFieldHeight => 'Hauteur';
+
+  @override
+  String get volumeFieldRadius => 'Rayon';
+
+  @override
+  String get volumeFieldRadiusBase => 'Rayon (base)';
+
+  @override
+  String get volumeFieldSideBase => 'Côté (base)';
+
+  @override
+  String get aboutVesaTitle => 'Supports VESA & tailles d\'écran';
+
+  @override
+  String get aboutVesaSubtitle =>
+      'Normes VESA, recherche de standard et calcul de diagonale';
+
+  @override
+  String get vesaIntroTitle => 'VESA & écrans, en un coup d\'œil';
+
+  @override
+  String get vesaIntroBody =>
+      'VESA (Video Electronics Standards Association) normalise l\'entraxe des trous de fixation au dos des écrans, TV et moniteurs. Plus l\'écran est grand et lourd, plus l\'entraxe est large. Vérifie toujours le poids et le VESA indiqués par le fabricant avant de choisir un support — cette page donne des ordres de grandeur, pas des valeurs garanties.';
+
+  @override
+  String get vesaTableTitle => 'Standards VESA courants';
+
+  @override
+  String get vesaColEntraxe => 'Entraxe';
+
+  @override
+  String get vesaColScreenSize => 'Taille écran';
+
+  @override
+  String get vesaColMaxWeight => 'Poids max.';
+
+  @override
+  String get vesaTableFooterNote =>
+      'Plages indicatives : un fabricant peut tout à fait proposer un VESA plus large que la moyenne pour un écran donné, notamment sur les écrans pro et les murs LED. Vérifie toujours la fiche technique.';
+
+  @override
+  String get vesaLargeFormat => 'Grands formats / murs LED';
+
+  @override
+  String get vesaFinderTitle => 'Quel VESA ai-je mesuré ?';
+
+  @override
+  String get vesaFinderHint =>
+      'Mesure l\'entraxe entre deux trous (horizontal et vertical) au dos de l\'écran, en millimètres.';
+
+  @override
+  String get vesaFieldHorizontal => 'Entraxe horizontal (mm)';
+
+  @override
+  String get vesaFieldVertical => 'Entraxe vertical (mm)';
+
+  @override
+  String get vesaFinderPlaceholder =>
+      'Renseigne les deux entraxes pour identifier le standard.';
+
+  @override
+  String vesaFinderExactMatch(Object pattern) {
+    return 'Standard VESA $pattern 🎯';
+  }
+
+  @override
+  String vesaFinderNearestMatch(Object pattern, Object delta) {
+    return 'Pas de correspondance exacte — le plus proche est $pattern (écart $delta mm cumulés). Vérifie ta mesure.';
+  }
+
+  @override
+  String get vesaScreenCalcTitle =>
+      'Dimensions d\'un écran depuis sa diagonale';
+
+  @override
+  String get vesaFieldDiagonal => 'Diagonale (pouces)';
+
+  @override
+  String get vesaScreenCalcPlaceholder => 'Indique une diagonale en pouces.';
+
+  @override
+  String get vesaResultDiagonal => 'Diagonale';
+
+  @override
+  String get vesaResultWidth => 'Largeur';
+
+  @override
+  String get vesaResultHeight => 'Hauteur';
+
+  @override
+  String get vesaResultArea => 'Surface';
+
+  @override
+  String get vesaTipsTitle => 'Conseils de fixation';
+
+  @override
+  String get vesaTip1 =>
+      'Utilise toujours les 4 (ou plus) vis fournies — jamais 2 en diagonale.';
+
+  @override
+  String get vesaTip2 =>
+      'Respecte le couple de serrage indiqué : trop serré peut fissurer le châssis.';
+
+  @override
+  String get vesaTip3 =>
+      'Pour un accroche en hauteur ou sur un pont, prévois une élingue ou une sécurité secondaire indépendante du support VESA.';
+
+  @override
+  String get vesaTip4 =>
+      'En charge dynamique (mouvement, vibrations, transport), réduis la charge admissible par rapport à la charge statique du fabricant.';
+
+  @override
+  String get vesaTip5 =>
+      'Vérifie la longueur des vis : trop longues, elles peuvent endommager l\'électronique interne de l\'écran.';
+
+  @override
+  String get vesaTip6 =>
+      'Un adaptateur VESA (75→100, 100→200…) doit être noté sur la fiche de charge — il ajoute du poids et un bras de levier.';
+
+  @override
+  String get cctFilterTitle => 'Filtre ↔ Température (K)';
+
+  @override
+  String get cctFilterTileDescription =>
+      'Quel CTO/CTB choisir entre deux températures, et dans tous les sens';
+
+  @override
+  String get cctFilterIntro =>
+      'Trouve en un instant le filtre CTO/CTB qu\'il te faut, ou vérifie le résultat d\'un filtre déjà en main — dans tous les sens ✨';
+
+  @override
+  String get cctModeFindFilter => 'Quel filtre ?';
+
+  @override
+  String get cctModeSourcePlusFilter => 'K + filtre → K ?';
+
+  @override
+  String get cctModeTargetPlusFilter => 'K cible + filtre → K départ ?';
+
+  @override
+  String get cctFieldSourceK => 'Température de départ (K)';
+
+  @override
+  String get cctFieldTargetK => 'Température souhaitée (K)';
+
+  @override
+  String get cctFieldTargetKFinal => 'Température finale souhaitée (K)';
+
+  @override
+  String get cctFieldFilter => 'Filtre';
+
+  @override
+  String get cctDescEighthCtb => 'Rafraîchit très légèrement';
+
+  @override
+  String get cctDescQuarterCtb => 'Rafraîchit légèrement';
+
+  @override
+  String get cctDescHalfCtb => 'Rafraîchit modérément';
+
+  @override
+  String get cctDescThreeQuarterCtb => 'Rafraîchit fortement';
+
+  @override
+  String get cctDescFullCtb => 'Tungstène → lumière du jour';
+
+  @override
+  String get cctDescEighthCto => 'Réchauffe très légèrement';
+
+  @override
+  String get cctDescQuarterCto => 'Réchauffe légèrement';
+
+  @override
+  String get cctDescHalfCto => 'Réchauffe modérément';
+
+  @override
+  String get cctDescThreeQuarterCto => 'Réchauffe fortement';
+
+  @override
+  String get cctDescFullCto => 'Lumière du jour → tungstène';
+
+  @override
+  String get cctFindFilterPlaceholder =>
+      'Renseigne les deux températures pour trouver le filtre adapté.';
+
+  @override
+  String get cctRequiredShiftLabel => 'Décalage requis';
+
+  @override
+  String get cctMiredShiftLabel => 'Mired shift';
+
+  @override
+  String cctBestChoice(Object name, Object k) {
+    return 'Meilleur choix : $name → ≈ $k K';
+  }
+
+  @override
+  String cctApproxKelvin(Object k) {
+    return '≈ $k K';
+  }
+
+  @override
+  String get cctOtherFiltersNearby => 'Autres filtres proches';
+
+  @override
+  String get cctDisclaimer =>
+      'Valeurs de décalage mired standard, approximatives — vérifie la fiche technique du fabricant pour un usage critique.';
+
+  @override
+  String get cctSourcePlaceholder => 'Renseigne la température de départ.';
+
+  @override
+  String get cctTargetPlaceholder =>
+      'Renseigne la température finale souhaitée.';
+
+  @override
+  String get cctOutOfRange =>
+      'Combinaison hors plage (résultat non physique) — essaie une autre température ou un autre filtre.';
+
+  @override
+  String get cctResultObtainedTemp => 'Température obtenue';
+
+  @override
+  String get cctResultAppliedFilter => 'Filtre appliqué';
+
+  @override
+  String get cctResultRequiredSource => 'Source nécessaire';
+
+  @override
+  String get cctResultFilterToApply => 'Filtre à appliquer';
+
+  @override
+  String get cctBrandLabel => 'Marque de filtre';
+
+  @override
+  String get cctAllBrands => 'Toutes les marques';
+
+  @override
+  String get timecodeHubTitle => 'Timecode';
+
+  @override
+  String get timecodeToolConverterLabel => 'Convertisseur\nde débit';
+
+  @override
+  String get timecodeToolMathLabel => 'Durée &\ndécalage';
+
+  @override
+  String get timecodeToolDelayLabel => 'Frame ↔ ms';
+
+  @override
+  String get timecodeToolCountdownLabel => 'Compte à\nrebours';
+
+  @override
+  String get timecodeBadgeFree => 'GRATUIT';
+
+  @override
+  String get timecodeBadgeNew => 'NOUVEAU';
+
+  @override
+  String get timecodeConverterTitle => 'Convertisseur de débit';
+
+  @override
+  String get timecodeConverterSourceCardTitle => 'Timecode source';
+
+  @override
+  String get timecodeConverterFieldLabel => 'HH:MM:SS:FF';
+
+  @override
+  String get timecodeConverterFieldHint => '01:00:00:00';
+
+  @override
+  String get timecodeConverterSourceRateLabel => 'Débit source';
+
+  @override
+  String get timecodeConverterSwapTooltip => 'Inverser source / cible';
+
+  @override
+  String get timecodeConverterTargetCardTitle => 'Débit cible';
+
+  @override
+  String get timecodeConverterTargetRateLabel => 'Débit cible';
+
+  @override
+  String get timecodeConverterButton => 'Convertir';
+
+  @override
+  String timecodeConverterErrorInvalid(String rateLabel, int frameBase) {
+    return '❌ Timecode invalide pour $rateLabel (attendu : HH:MM:SS:FF, FF < $frameBase).';
+  }
+
+  @override
+  String timecodeConverterResult(String rateLabel, String tc, String seconds) {
+    return 'TC en $rateLabel :\n$tc\n\n(≈ $seconds s écoulées depuis 00:00:00:00)';
+  }
+
+  @override
+  String get timecodeMathTitle => 'Durée & décalage';
+
+  @override
+  String get timecodeMathModeDuration => 'Durée entre 2 TC';
+
+  @override
+  String get timecodeMathModeOffset => 'Décaler un TC';
+
+  @override
+  String get timecodeMathRateCardTitle => 'Débit';
+
+  @override
+  String get timecodeMathDurationCardTitle => 'Timecode In / Out';
+
+  @override
+  String get timecodeMathTcInLabel => 'TC In (HH:MM:SS:FF)';
+
+  @override
+  String get timecodeMathTcOutLabel => 'TC Out (HH:MM:SS:FF)';
+
+  @override
+  String get timecodeMathComputeDurationButton => 'Calculer la durée';
+
+  @override
+  String timecodeMathErrorDuration(int frameBase) {
+    return '❌ Vérifie les deux timecodes (HH:MM:SS:FF, FF < $frameBase).';
+  }
+
+  @override
+  String timecodeMathDurationResult(
+      String duration, int frames, String rateLabel) {
+    return 'Durée : $duration\n($frames frame(s) à $rateLabel)';
+  }
+
+  @override
+  String get timecodeMathOffsetCardTitle => 'Timecode de départ + décalage';
+
+  @override
+  String get timecodeMathBaseTcLabel => 'TC de départ (HH:MM:SS:FF)';
+
+  @override
+  String get timecodeMathAddLabel => '+ Ajouter';
+
+  @override
+  String get timecodeMathSubtractLabel => '− Soustraire';
+
+  @override
+  String get timecodeMathOffsetLabel => 'Décalage — durée (HH:MM:SS:FF)';
+
+  @override
+  String get timecodeMathComputeOffsetButton => 'Calculer le nouveau TC';
+
+  @override
+  String timecodeMathErrorOffset(int frameBase) {
+    return '❌ Vérifie le timecode de départ et le décalage (HH:MM:SS:FF, FF < $frameBase).';
+  }
+
+  @override
+  String timecodeMathOffsetResult(String tc) {
+    return 'Nouveau timecode :\n$tc';
+  }
+
+  @override
+  String get timecodeDelayTitle => 'Frame ↔ ms';
+
+  @override
+  String get timecodeDelayCardTitle => 'Retard vidéo / audio';
+
+  @override
+  String get timecodeDelayIntro =>
+      'Pratique pour corriger un décalage lip-sync ou un retard de processeur vidéo/LED : entre une valeur, choisis son unité, et récupère l\'équivalent.';
+
+  @override
+  String get timecodeDelayRateLabel => 'Débit';
+
+  @override
+  String get timecodeDelayUnitFrames => 'Frames';
+
+  @override
+  String get timecodeDelayUnitMs => 'Millisecondes';
+
+  @override
+  String get timecodeDelayValueLabelFrames => 'Nombre de frames';
+
+  @override
+  String get timecodeDelayValueLabelMs => 'Millisecondes';
+
+  @override
+  String get timecodeDelayButton => 'Convertir';
+
+  @override
+  String get timecodeDelayErrorInvalid => '❌ Valeur invalide.';
+
+  @override
+  String timecodeDelayResultFromFrames(
+      int frames, String rateLabel, String ms, String duration) {
+    return '$frames frame(s) à $rateLabel\n= $ms ms\n= $duration';
+  }
+
+  @override
+  String timecodeDelayResultFromMs(
+      String ms, String rateLabel, int frames, String duration) {
+    return '$ms ms à $rateLabel\n= $frames frame(s)\n= $duration';
+  }
+
+  @override
+  String get timecodeCountdownTitle => 'Compte à rebours';
+
+  @override
+  String get timecodeCountdownSettingsCardTitle => 'Réglages';
+
+  @override
+  String get timecodeCountdownRateLabel => 'Débit';
+
+  @override
+  String get timecodeCountdownCurrentTcLabel => 'TC actuel (HH:MM:SS:FF)';
+
+  @override
+  String get timecodeCountdownFillNowTooltip =>
+      'Remplir avec l\'heure du téléphone';
+
+  @override
+  String get timecodeCountdownTargetTcLabel => 'TC cible (HH:MM:SS:FF)';
+
+  @override
+  String get timecodeCountdownStartButton => 'Démarrer';
+
+  @override
+  String get timecodeCountdownStopButton => 'Arrêter';
+
+  @override
+  String timecodeCountdownErrorInvalid(int frameBase) {
+    return '❌ Vérifie les deux timecodes (HH:MM:SS:FF, FF < $frameBase).';
+  }
+
+  @override
+  String get timecodeCountdownLiveCardTitle => 'En direct';
+
+  @override
+  String timecodeCountdownLiveText(String tc, String remaining) {
+    return 'TC actuel (estimé) : $tc\nTemps restant : $remaining';
+  }
+
+  @override
+  String timecodeCountdownOverdue(String duration) {
+    return '−$duration (TC dépassé)';
+  }
+
+  @override
+  String get homeTimecodeTitle => 'Timecode';
+
+  @override
+  String get homeTimecodeSubtitle => 'Débit, durée, décalage, retard';
+
+  @override
+  String get vconsoleTitle => 'Console Virtuelle';
+
+  @override
+  String get vconsoleTileDescription =>
+      'Envoie de l\'Art-Net/sACN en WiFi pour tester tes machines';
+
+  @override
+  String get vconsoleSectionConnection => 'Connexion réseau';
+
+  @override
+  String get vconsoleUniverseLabel => 'Univers de départ';
+
+  @override
+  String get vconsoleUniverseCountLabel => 'Nombre d\'univers';
+
+  @override
+  String get rdmPageTitle => 'RDM';
+
+  @override
+  String get rdmScanButton => 'Scanner le réseau';
+
+  @override
+  String get rdmScanningStatus => 'Recherche des fixtures RDM…';
+
+  @override
+  String get rdmEmptyState =>
+      'Aucune fixture RDM trouvée. Lancez une recherche.';
+
+  @override
+  String rdmDeviceCountLabel(Object count) {
+    return '$count fixture(s) trouvée(s)';
+  }
+
+  @override
+  String get rdmUidLabel => 'UID';
+
+  @override
+  String get rdmManufacturerLabel => 'Fabricant';
+
+  @override
+  String get rdmStartAddressLabel => 'Adresse DMX';
+
+  @override
+  String get rdmFootprintLabel => 'Empreinte (canaux)';
+
+  @override
+  String get rdmPersonalityLabel => 'Mode (personality)';
+
+  @override
+  String get rdmSoftwareVersionLabel => 'Version logicielle';
+
+  @override
+  String get rdmIdentifyButton => 'Identifier';
+
+  @override
+  String get rdmEditTitle => 'Modifier la fixture';
+
+  @override
+  String rdmConfirmSetStartAddress(Object uid, Object value) {
+    return 'Changer l\'adresse DMX de $uid en $value ?';
+  }
+
+  @override
+  String rdmConfirmSetPersonality(Object uid, Object value) {
+    return 'Changer le mode de $uid en $value ?';
+  }
+
+  @override
+  String rdmConfirmSetLabel(Object uid, Object value) {
+    return 'Renommer $uid en « $value » ?';
+  }
+
+  @override
+  String get rdmConfirmButton => 'Confirmer';
+
+  @override
+  String get rdmCancelButton => 'Annuler';
+
+  @override
+  String get rdmSetSuccess => 'Modifié avec succès';
+
+  @override
+  String get rdmSetFailed => 'Échec de la modification';
+
+  @override
+  String get rdmNoResponse => 'Pas de réponse de la fixture';
+
+  @override
+  String get rdmRefreshTooltip => 'Rafraîchir';
+
+  @override
+  String get rdmWriteWarning =>
+      'Modifier une fixture en direct peut perturber un show en cours. À utiliser avec précaution.';
+
+  @override
+  String get vconsoleTargetBroadcast => 'Broadcast (auto)';
+
+  @override
+  String get vconsoleTargetUnicast => 'IP précise';
+
+  @override
+  String get vconsoleManualIpLabel => 'IP du node (ex: 192.168.1.50)';
+
+  @override
+  String get vconsoleStop => 'Arrêter l\'envoi';
+
+  @override
+  String get vconsoleStart => 'Démarrer l\'envoi';
+
+  @override
+  String get vconsoleBlackout => 'Blackout';
+
+  @override
+  String vconsoleStatusLive(Object fps) {
+    return 'En direct • $fps fps';
+  }
+
+  @override
+  String get vconsoleStatusStopped => 'Arrêté';
+
+  @override
+  String vconsoleUniversePill(Object universe) {
+    return 'Univers $universe';
+  }
+
+  @override
+  String vconsoleTargetPill(Object target) {
+    return '→ $target';
+  }
+
+  @override
+  String vconsoleErrorLabel(Object message) {
+    return 'Erreur : $message';
+  }
+
+  @override
+  String vconsoleStartFailed(Object message) {
+    return 'Impossible de démarrer : $message';
+  }
+
+  @override
+  String get vconsoleTabFaders => 'Faders simples';
+
+  @override
+  String get vconsoleTabGdtf => 'GDTF';
+
+  @override
+  String get vconsoleTabPatch => 'Mon Patch';
+
+  @override
+  String get vconsoleChannelCountLabel => 'Nombre de canaux';
+
+  @override
+  String get vconsoleAllZero => 'Tout à 0';
+
+  @override
+  String get vconsoleAllFull => 'Tout à 255';
+
+  @override
+  String get vconsoleSearchTitle => 'Rechercher sur GDTF Share';
+
+  @override
+  String get vconsoleSearchHint => 'Ex: MAC Viper, Spiider...';
+
+  @override
+  String get vconsoleImportLocal => 'Importer un fichier .gdtf';
+
+  @override
+  String vconsoleModeDialogTitleFor(Object fixture) {
+    return 'Mode DMX — $fixture';
+  }
+
+  @override
+  String vconsoleModeDialogOption(Object mode, Object count) {
+    return '$mode ($count ch)';
+  }
+
+  @override
+  String get vconsoleModeDialogTitleGeneric => 'Mode DMX';
+
+  @override
+  String get vconsoleNoModeFound =>
+      'Aucun mode DMX trouvé dans ce fichier .gdtf';
+
+  @override
+  String vconsolePickFailed(Object message) {
+    return 'Sélection impossible : $message';
+  }
+
+  @override
+  String vconsoleDownloadFailed(Object code) {
+    return 'Téléchargement impossible ($code)';
+  }
+
+  @override
+  String vconsoleSearchResultSubtitle(Object count, Object size) {
+    return '$count mode(s) • $size';
+  }
+
+  @override
+  String get vconsoleChooseFixtureHint =>
+      'Choisis une fixture pour afficher ses faders.';
+
+  @override
+  String get vconsolePatchSectionTitle => 'Mon Patch (import MVR)';
+
+  @override
+  String get vconsolePatchEmpty =>
+      'Aucune fixture patchée pour l\'instant. Importe un fichier MVR depuis l\'outil Patch pour les retrouver ici.';
+
+  @override
+  String vconsolePatchEntrySubtitle(
+      Object universe, Object start, Object end, Object count) {
+    return 'Univers $universe • $start-$end • $count ch';
+  }
+
+  @override
+  String get vconsoleChoosePatchedFixtureHint =>
+      'Choisis une fixture patchée pour afficher ses faders.';
+
+  @override
+  String get vconsoleStartAddressLabel => 'Adresse de départ';
+
+  @override
+  String get vconsoleFixtureFallbackTitle => 'Fixture';
+
+  @override
+  String vconsoleUniverseArrow(Object universe) {
+    return '→ univers $universe';
+  }
+
+  @override
+  String vconsoleSearchError(Object code) {
+    return 'Erreur $code';
+  }
+
+  @override
+  String vconsoleNetworkError(Object message) {
+    return 'Erreur réseau : $message';
+  }
+
+  @override
+  String vconsoleChannelShortLabel(Object n) {
+    return 'Ch $n';
+  }
+
+  @override
+  String get vconsoleContinueToSource => 'Choisir la source';
+
+  @override
+  String get vconsoleContinueToSourceHint =>
+      'Faders simples, fixture GDTF ou machine déjà patchée (MVR).';
+
+  @override
+  String get vconsoleControlGroupTooltip => 'Piloter tout le groupe';
+
+  @override
+  String vconsoleGroupInfo(Object count, Object universe) {
+    return '$count machine(s) • univers $universe';
+  }
+
+  @override
+  String vconsoleGroupInfoWithExcluded(
+      Object count, Object universe, Object excluded) {
+    return '$count machine(s) • univers $universe • $excluded hors groupe (autre univers)';
+  }
+
+  @override
+  String vconsoleGroupSubtitle(Object count, Object universes) {
+    return '$count machines • univers $universes';
+  }
+
+  @override
+  String get vconsoleOpenFaders => 'Ouvrir la console';
+
+  @override
+  String vconsolePresetsTitleFor(Object channel) {
+    return 'Presets — $channel';
+  }
+
+  @override
+  String get vconsolePresetsTooltip => 'Presets';
+
+  @override
+  String get vconsoleSourceStepTitle => 'Choisir la source';
+
+  @override
+  String get vconsoleUnit8Bit => '8 bit';
+
+  @override
+  String get vconsoleUnitPercent => '%';
+
+  @override
+  String get vconsoleHomeTooltip =>
+      'Position Home (dimmer 100%, pan/tilt centrés, shutter ouvert)';
+
+  @override
+  String get vconsoleHomeButton => 'Home';
+
+  @override
+  String get filterCorrespondenceTitle => 'Correspondance filtres';
+
+  @override
+  String get filterCorrespondenceSearchHint => 'Rechercher (n° ou nom)…';
+
+  @override
+  String get filterCorrespondenceColLeeName => 'Lee / Nom';
+
+  @override
+  String get filterCorrespondenceEmpty => 'Aucune correspondance';
+
+  @override
+  String filterCorrespondenceResultsCount(Object count) {
+    return '$count correspondance(s)';
+  }
+
+  @override
+  String filterCorrespondenceFilteredOf(Object total) {
+    return ' (filtré sur $total)';
+  }
+
+  @override
+  String get lbResetDialogTitle => 'Tout remettre à zéro ?';
+
+  @override
+  String get lbResetDialogBody =>
+      'La liste de fixtures sera vidée. La config du tableau sera conservée.';
+
+  @override
+  String get lbClearAction => 'Vider';
+
+  @override
+  String get lbPageTitle => 'Répartition de charge';
+
+  @override
+  String get lbResetTooltip => 'Remettre à zéro';
+
+  @override
+  String get lbPanelConfigTitle => 'Configuration du tableau';
+
+  @override
+  String get lbVoltageTypeLabel => 'Type de réseau';
+
+  @override
+  String get lbPanelSizeLabel => 'Taille du tableau';
+
+  @override
+  String get lbCosPhiLabel => 'Facteur de puissance (cos φ)';
+
+  @override
+  String get lbPhaseGaugesTitle => 'Ampérage par phase';
+
+  @override
+  String lbFixturesListTitle(Object count, Object totalW) {
+    return 'Fixtures — $count lignes · $totalW W total';
+  }
+
+  @override
+  String get lbEmptyTitle => 'Aucune fixture pour l\'instant';
+
+  @override
+  String get lbEmptyBody => 'Appuie sur + pour ajouter\ndepuis le catalogue.';
+
+  @override
+  String get lbAddFixtureButton => 'Ajouter une fixture';
+
+  @override
+  String get lbSheetTitleDefault => '⚡ Ajouter une fixture';
+
+  @override
+  String get lbPickerSearchHint => 'Rechercher fabricant ou fixture…';
+
+  @override
+  String get lbNoResults => 'Aucun résultat 🤷';
+
+  @override
+  String lbProductsWithPowerCount(Object count) {
+    return '$count fixture(s) avec données conso';
+  }
+
+  @override
+  String get lbUnknownPower => 'conso inconnue';
+
+  @override
+  String get lbFixtureSectionLabel => 'Fixture';
+
+  @override
+  String get lbPowerLabel => 'Consommation (W)';
+
+  @override
+  String get lbQuantityLabel => 'Quantité';
+
+  @override
+  String get lbPhaseLabel => 'Phase';
+
+  @override
+  String get lbPowerHint => 'ex: 350';
+
+  @override
+  String get lbAddToDistribution => 'Ajouter à la distribution';
+
+  @override
+  String get filterLedFiltreLabel => 'Filtre';
+
+  @override
+  String get filterLedTransmissionLabel => 'Transmission';
+
+  @override
+  String get filterLedSaveProfileTooltip => 'Sauvegarder le profil';
+
+  @override
+  String get filterLedColorComparisonTitle => 'Comparaison couleur';
+
+  @override
+  String get proHeaderBody =>
+      'Débloque tous les outils avancés pour les techniciens lumière, vidéo et laser.';
+
+  @override
+  String get proPerYear => '/ an';
+
+  @override
+  String get proSubscribeButton => 'S\'abonner';
+
+  @override
+  String get proRestorePurchases => 'Restaurer les achats';
+
+  @override
+  String get proPrivacyPolicy => 'Politique de confidentialité';
+
+  @override
+  String get proTermsOfUse => 'Conditions d\'utilisation';
+
+  @override
+  String get rfIm3ConflictBadge => '⚠ CONFLIT';
+
+  @override
+  String get filterLedHideCalibration => 'Masquer calibration';
+
+  @override
+  String get filterLedShowCalibration => 'Calibrer ma fixture';
+
+  @override
+  String get aboutAudioTitle => 'Audio — son & diffusion';
+
+  @override
+  String get aboutAudioSubtitle =>
+      'Gain staging, SPL/distance, délais, subs cardioïdes, câblage.';
+
+  @override
+  String get aboutAudioPageTitle => 'Audio — repères terrain';
+
+  @override
+  String get audioRefTocCopyText => 'Copier le sommaire';
+
+  @override
+  String get audioRefSection1Title => 'Chaîne du signal & gain staging';
+
+  @override
+  String get audioRefSection1FormulasTitle => 'Repères de niveaux';
+
+  @override
+  String get audioRefSection1Formula1 =>
+      '0 dBu ≈ 0,775 V RMS — référence pro analogique';
+
+  @override
+  String get audioRefSection1Formula2 =>
+      '0 dBFS = niveau numérique maximal avant écrêtage — toujours garder de la marge (headroom)';
+
+  @override
+  String get audioRefSection1Formula3 =>
+      'Gain staging : régler chaque étage (source → console → ampli) pour un bon rapport signal/bruit, sans saturer';
+
+  @override
+  String get audioRefSection1FieldMarksTitle => 'Repères terrain';
+
+  @override
+  String get audioRefSection1FieldMark1 =>
+      'Vise un niveau d\'entrée qui pulse dans le vert/jaune, jamais dans le rouge en continu';
+
+  @override
+  String get audioRefSection1FieldMark2 =>
+      'Un système mal réglé sonne bruyant même à faible volume : le problème vient souvent d\'un étage saturé en amont';
+
+  @override
+  String get audioRefSection2Title => 'SPL & distance';
+
+  @override
+  String get audioRefSection2FormulaTitle => 'Loi de l\'inverse du carré';
+
+  @override
+  String get audioRefSection2Formula1 =>
+      'Chaque doublement de distance = -6 dB SPL en champ libre';
+
+  @override
+  String get audioRefSection2Formula2 =>
+      'SPL(d2) = SPL(d1) - 20 × log10(d2 / d1)';
+
+  @override
+  String get audioRefSection2NoteTitle => 'À nuancer sur le terrain';
+
+  @override
+  String get audioRefSection2Note1 =>
+      'En intérieur, les réflexions (murs, plafond) réduisent la chute réelle par rapport à la théorie';
+
+  @override
+  String get audioRefSection2Note2 =>
+      'Un line array bien conçu chute moins vite qu\'une source ponctuelle sur l\'axe de couverture';
+
+  @override
+  String get audioRefSection3Title => 'Alignement de délai (time alignment)';
+
+  @override
+  String get audioRefSection3Paragraph =>
+      'Un système annexe (delay tower, rappel de façade) doit être retardé pour que son son arrive en même temps que celui du système principal, perçu comme une seule source.';
+
+  @override
+  String get audioRefSection3FormulaTitle => 'Formule de base';
+
+  @override
+  String get audioRefSection3Formula1 =>
+      'Délai (ms) = distance entre les systèmes (m) / 0,343 m/ms (vitesse du son ≈ 343 m/s)';
+
+  @override
+  String get audioRefSection3TipsTitle => 'Bonnes pratiques';
+
+  @override
+  String get audioRefSection3Tip1 =>
+      'Mesure la distance réelle entre les deux sources, pas juste la distance au public';
+
+  @override
+  String get audioRefSection3Tip2 =>
+      'Ajoute quelques ms de délai supplémentaire (2-5 ms) pour renforcer l\'effet de précédence (loi de Haas) et garder le système principal comme source perçue';
+
+  @override
+  String get audioRefSection3Tip3 =>
+      'Vérifie à l\'oreille et/ou avec un analyseur (ex: corrélation de phase) après réglage';
+
+  @override
+  String get audioRefSection4Title =>
+      'Directivité de subs (cardioïde / end-fire)';
+
+  @override
+  String get audioRefSection4Paragraph =>
+      'Un arrangement cardioïde ou end-fire réduit l\'énergie basse envoyée vers la scène/régie en renforçant celle vers le public, en jouant sur le délai et la polarité entre subs.';
+
+  @override
+  String get audioRefSection4TypesTitle => 'Configurations courantes';
+
+  @override
+  String get audioRefSection4Type1 =>
+      'End-fire : subs alignés en ligne, celui de devant avancé et retardé électroniquement';
+
+  @override
+  String get audioRefSection4Type2 =>
+      'Cardioïde 2 subs : un sub avant (normal), un sub arrière inversé en polarité et retardé';
+
+  @override
+  String get audioRefSection4Type3 =>
+      'Cardioïde 3 subs : deux avant en phase, un arrière inversé et retardé — meilleur compromis niveau/rejet arrière';
+
+  @override
+  String get audioRefSection5Title => 'Câblage & connecteurs';
+
+  @override
+  String get audioRefSection5XlrTitle => 'XLR symétrique';
+
+  @override
+  String get audioRefSection5XlrBullet1 =>
+      'Toujours préférer une liaison symétrique (XLR/TRS) sur de longues distances pour rejeter les parasites';
+
+  @override
+  String get audioRefSection5XlrBullet2 =>
+      'Au-delà de ~50-100 m en analogique, envisage une liaison numérique (AES/EBU, Dante, etc.)';
+
+  @override
+  String get audioRefSection5SpeakonTitle => 'Speakon (haut-parleurs)';
+
+  @override
+  String get audioRefSection5SpeakonBullet1 =>
+      'Ne jamais utiliser de XLR pour du haut-parleur : la puissance véhiculée peut endommager du matériel prévu pour du signal ligne';
+
+  @override
+  String get audioRefSection5SpeakonBullet2 =>
+      'Vérifie la section de câble adaptée à la puissance et à la distance (chute de tension) avant un tirage long';
+
+  @override
+  String get audioRefSection5GroundTitle => 'Masse & ronflement';
+
+  @override
+  String get audioRefSection5GroundBullet1 =>
+      'Une boucle de masse (ground loop) entre deux appareils reliés au secteur par des chemins différents peut créer un ronflement 50/60 Hz';
+
+  @override
+  String get audioRefSection5GroundBullet2 =>
+      'Un « ground lift » ou un DI box avec isolation galvanique peut résoudre ce problème sans couper la terre de sécurité';
+
+  @override
+  String get audioRefSection6Title => 'Sécurité auditive & bonnes pratiques';
+
+  @override
+  String get audioRefSection6DontDoTitle => 'À éviter';
+
+  @override
+  String get audioRefSection6DontDoBullet1 =>
+      'Exposer le public ou l\'équipe à plus de 100 dB SPL en continu sans limitation de durée';
+
+  @override
+  String get audioRefSection6DontDoBullet2 =>
+      'Pousser un système au-delà de sa puissance nominale pour compenser un mauvais placement';
+
+  @override
+  String get audioRefSection6WarningTitle => 'Repères d\'exposition';
+
+  @override
+  String get audioRefSection6WarningBullet1 =>
+      '85 dB SPL : limite recommandée pour une exposition prolongée (8h) sans protection';
+
+  @override
+  String get audioRefSection6WarningBullet2 =>
+      '100 dB SPL : quelques minutes seulement avant risque, la plupart des concerts dépassent ce seuil';
+
+  @override
+  String get audioRefSection6WarningBullet3 =>
+      'Utilise systématiquement un limiteur système en sortie pour protéger le matériel et le public';
+
+  @override
+  String get audioRefSection7Title => 'Checklist rapide';
+
+  @override
+  String get audioRefSection7QuickTitle => 'Avant le show';
+
+  @override
+  String get audioRefSection7Bullet1 =>
+      'Gain staging vérifié de la source à l\'ampli, aucune saturation';
+
+  @override
+  String get audioRefSection7Bullet2 =>
+      'Délais des systèmes annexes calculés et appliqués';
+
+  @override
+  String get audioRefSection7Bullet3 => 'Limiteur système actif et réglé';
+
+  @override
+  String get audioRefSection7Bullet4 =>
+      'Polarité vérifiée entre subs et top (pas d\'annulation)';
+
+  @override
+  String get audioRefSection7Bullet5 =>
+      'Niveau SPL mesuré en régie et en fond de salle';
+
+  @override
+  String get audioRefFooterNote =>
+      'Ces repères sont généraux — vérifie toujours les préconisations du fabricant et la réglementation locale sur les niveaux sonores.';
+
+  @override
+  String get aboutRfTitle => 'RF — HF & Wi-Fi';
+
+  @override
+  String get aboutRfSubtitle =>
+      'Bandes UHF, Wi-Fi, coexistence IM3, antennes, scan RF.';
+
+  @override
+  String get aboutRfPageTitle => 'RF — repères terrain';
+
+  @override
+  String get rfRefTocCopyText => 'Copier le sommaire';
+
+  @override
+  String get rfRefSection1Title => 'Bases du spectre RF';
+
+  @override
+  String get rfRefSection1FormulasTitle =>
+      'Repères fréquence / longueur d\'onde';
+
+  @override
+  String get rfRefSection1Formula1 =>
+      'λ (m) = 300 / f (MHz) — longueur d\'onde approximative';
+
+  @override
+  String get rfRefSection1Formula2 =>
+      'Plus la fréquence est haute, plus la longueur d\'onde est courte et plus la portée en espace dégagé diminue';
+
+  @override
+  String get rfRefSection1FieldMarksTitle => 'Repères terrain';
+
+  @override
+  String get rfRefSection1FieldMark1 =>
+      'Le corps humain absorbe et réfléchit les ondes RF — la position d\'un récepteur HF sur le corps influence la réception';
+
+  @override
+  String get rfRefSection1FieldMark2 =>
+      'Privilégie toujours une ligne de vue directe (line of sight) entre émetteur et récepteur';
+
+  @override
+  String get rfRefSection2Title => 'Bandes UHF pour micros HF';
+
+  @override
+  String get rfRefSection2Paragraph =>
+      'Les micros et in-ears HF utilisent principalement la bande UHF (470-694 MHz en Europe selon les pays), partagée avec la diffusion TV — la disponibilité réelle dépend de la réglementation locale.';
+
+  @override
+  String get rfRefSection2NoteTitle => 'À vérifier avant chaque date';
+
+  @override
+  String get rfRefSection2Note1 =>
+      'Les bandes disponibles varient selon le pays — vérifie la réglementation locale (ANFR en France, Ofcom au Royaume-Uni, etc.)';
+
+  @override
+  String get rfRefSection2Note2 =>
+      'Une bande libre à un endroit peut être occupée par un émetteur TV ou un autre prestataire ailleurs';
+
+  @override
+  String get rfRefSection3Title => 'Wi-Fi 2,4 GHz vs 5 GHz';
+
+  @override
+  String get rfRefSection3TableTitle => 'Différences clés';
+
+  @override
+  String get rfRefSection3Bullet1 =>
+      '2,4 GHz : 3 canaux non-chevauchants (1, 6, 11), meilleure portée, plus encombré (Bluetooth, micros HF haut de bande, autres réseaux)';
+
+  @override
+  String get rfRefSection3Bullet2 =>
+      '5 GHz : beaucoup plus de canaux non-chevauchants, débit supérieur, portée plus courte, moins d\'interférences en général';
+
+  @override
+  String get rfRefSection3Bullet3 =>
+      'Pour la régie/contrôle (consoles, visualisation), privilégier le 5 GHz quand c\'est possible';
+
+  @override
+  String get rfRefSection4Title => 'Coexistence & intermodulation (IM3)';
+
+  @override
+  String get rfRefSection4Paragraph =>
+      'Quand plusieurs émetteurs HF fonctionnent ensemble, leurs fréquences peuvent créer des produits d\'intermodulation (IM3) qui tombent sur d\'autres fréquences utilisées et provoquent des interférences.';
+
+  @override
+  String get rfRefSection4FormulaTitle => 'Formule IM3 (3ᵉ ordre)';
+
+  @override
+  String get rfRefSection4Formula1 => 'IM3 = 2×f1 − f2 et 2×f2 − f1';
+
+  @override
+  String get rfRefSection4Tip1 =>
+      'Plus le nombre de canaux HF augmente, plus le risque de produits IM3 tombant sur une fréquence utilisée augmente — d\'où l\'intérêt d\'un plan de fréquences calculé en amont';
+
+  @override
+  String get rfRefSection5Title => 'Antennes & diversity';
+
+  @override
+  String get rfRefSection5Bullet1 =>
+      'La réception « diversity » utilise deux antennes légèrement décalées pour éviter les zones d\'annulation (trous RF)';
+
+  @override
+  String get rfRefSection5Bullet2 =>
+      'Espace les antennes d\'au moins un quart de longueur d\'onde, sans les positionner en ligne droite avec l\'émetteur';
+
+  @override
+  String get rfRefSection5Bullet3 =>
+      'Évite de poser les antennes à même le sol ou collées à une structure métallique qui peut désaccorder ou masquer le signal';
+
+  @override
+  String get rfRefSection6Title => 'Scan RF avant un show';
+
+  @override
+  String get rfRefSection6Bullet1 =>
+      'Toujours scanner la bande sur place, à l\'heure du show — l\'environnement RF change entre le jour et le soir (autres prestataires, public avec hotspots, etc.)';
+
+  @override
+  String get rfRefSection6Bullet2 =>
+      'Note les fréquences occupées et documente-les pour la prochaine date au même lieu si possible';
+
+  @override
+  String get rfRefSection6Bullet3 =>
+      'Prévois une marge de fréquences libres pour un remplacement de dernière minute (matériel HS, interférence imprévue)';
+
+  @override
+  String get rfRefSection7Title => 'Checklist rapide';
+
+  @override
+  String get rfRefSection7Bullet1 => 'Scan RF effectué à l\'heure du show';
+
+  @override
+  String get rfRefSection7Bullet2 => 'Plan de fréquences calculé (IM3 vérifié)';
+
+  @override
+  String get rfRefSection7Bullet3 =>
+      'Antennes en ligne de vue, espacées correctement';
+
+  @override
+  String get rfRefSection7Bullet4 =>
+      'Bandes UHF utilisées conformes à la réglementation locale';
+
+  @override
+  String get rfRefFooterNote =>
+      'La réglementation RF varie fortement selon le pays — vérifie toujours les fréquences autorisées localement avant un show.';
+
+  @override
+  String get aboutLaserTitle => 'Laser — physique & sécurité';
+
+  @override
+  String get aboutLaserSubtitle =>
+      'Comment ça marche, scanners, classes, normes, NOHD/SZED/CZED.';
+
+  @override
+  String get aboutLaserPageTitle => 'Laser — référence de terrain';
+
+  @override
+  String get laserRefTocCopyText => 'Copier le sommaire';
+
+  @override
+  String get laserRefSection1Title => 'Qu\'est-ce qu\'un laser ?';
+
+  @override
+  String get laserRefSection1AcronymTitle => 'L\'acronyme LASER';
+
+  @override
+  String get laserRefSection1AcronymBody =>
+      'LASER signifie « Light Amplification by Stimulated Emission of Radiation » (amplification de lumière par émission stimulée de rayonnement).';
+
+  @override
+  String get laserRefSection1HowTitle => 'Le principe physique';
+
+  @override
+  String get laserRefSection1HowBody =>
+      'Un milieu actif (diode, cristal DPSS...) est « pompé » électriquement ou optiquement, ce qui provoque une émission stimulée de photons. Une cavité résonante (deux miroirs, dont un semi-réfléchissant) amplifie cette lumière, qui ressort cohérente, monochromatique et très collimatée — contrairement à une source lumineuse classique.';
+
+  @override
+  String get laserRefSection1TypesTitle => 'Types courants en spectacle';
+
+  @override
+  String get laserRefSection1Type1 =>
+      'Diode directe : compacte, souvent utilisée en RGB pour mélanger les couleurs';
+
+  @override
+  String get laserRefSection1Type2 =>
+      'DPSS (Diode Pumped Solid State) : diode qui pompe un cristal, historiquement utilisée pour le vert et d\'autres longueurs d\'onde spécifiques';
+
+  @override
+  String get laserRefSection2Title =>
+      'Comment on dessine : scanners et vitesse';
+
+  @override
+  String get laserRefSection2Paragraph =>
+      'Le faisceau est dirigé par deux miroirs galvanométriques (« galvos »), un pour l\'axe X et un pour l\'axe Y, qui pivotent très rapidement. Contrairement à la vidéo (balayage ligne par ligne), un show laser dessine des formes vectorielles, point par point, en suivant les contours de l\'image.';
+
+  @override
+  String get laserRefSection2SpeedTitle => 'Vitesse de scan';
+
+  @override
+  String get laserRefSection2Speed1 =>
+      'La vitesse se mesure en points par seconde (pps) ou en kilopoints par seconde (kpps)';
+
+  @override
+  String get laserRefSection2Speed2 =>
+      'ILDA (International Laser Display Association) standardise le connecteur, le format de fichier .ild et un motif de test utilisé pour évaluer objectivement un scanner';
+
+  @override
+  String get laserRefSection2FieldTitle => 'Repères de terrain';
+
+  @override
+  String get laserRefSection2Field1 =>
+      'Plus l\'image contient de points, plus il faut de pps pour éviter le scintillement (flicker) — un show fluide tourne généralement autour de 20 à 30 kpps';
+
+  @override
+  String get laserRefSection2Field2 =>
+      'Le motif de test ILDA permet de comparer deux scanners sur des critères objectifs (vitesse, précision, amortissement)';
+
+  @override
+  String get laserRefSection3Title => 'Classes de laser & normes';
+
+  @override
+  String get laserRefSection3ClassesTitle => 'Classes IEC 60825-1';
+
+  @override
+  String get laserRefSection3Class1 =>
+      'Classe 1 : sûre en usage normal, aucune précaution particulière';
+
+  @override
+  String get laserRefSection3Class2 =>
+      'Classe 1M / 2M : sûres à l\'œil nu, mais dangereuses avec des instruments optiques (jumelles, loupe)';
+
+  @override
+  String get laserRefSection3Class3 =>
+      'Classe 2 : visible, protégée par le réflexe de clignement (< 1 mW)';
+
+  @override
+  String get laserRefSection3Class4 =>
+      'Classe 3R : risque modéré, danger direct limité';
+
+  @override
+  String get laserRefSection3Class5 =>
+      'Classe 3B : dangereuse pour l\'œil en vision directe — la majorité des lasers de spectacle se situent ici ou en classe 4';
+
+  @override
+  String get laserRefSection3Class6 =>
+      'Classe 4 : dangereuse pour l\'œil et la peau, risque d\'incendie — précautions maximales';
+
+  @override
+  String get laserRefSection3StandardsTitle => 'Normes de référence';
+
+  @override
+  String get laserRefSection3Standard1 =>
+      'IEC 60825-1 : sécurité produit et classification des lasers';
+
+  @override
+  String get laserRefSection3Standard2 =>
+      'IEC 60825-3 : lignes directrices spécifiques aux shows et vitrines laser (notion de MPE variable selon la durée d\'exposition)';
+
+  @override
+  String get laserRefSection3Standard3 =>
+      'Réglementations locales : déclaration/autorisation selon la puissance et le pays (ex. FDA/CDRH 21 CFR 1040.10 aux États-Unis avec procédure de variance pour les shows)';
+
+  @override
+  String get laserRefSection3FieldNote =>
+      'Vérifie toujours la réglementation locale avant un show, en particulier pour l\'audience scanning et à proximité d\'un aéroport.';
+
+  @override
+  String get laserRefSection4Title => 'Mesures de sécurité';
+
+  @override
+  String get laserRefSection4Bullet1 =>
+      'Un Laser Safety Officer (LSO) formé est désigné et responsable du show';
+
+  @override
+  String get laserRefSection4Bullet2 =>
+      'Interrupteur à clé et arrêt d\'urgence facilement accessibles';
+
+  @override
+  String get laserRefSection4Bullet3 =>
+      'Verrouillage (interlock) qui coupe l\'émission si un capot ou un boîtier est ouvert';
+
+  @override
+  String get laserRefSection4Bullet4 =>
+      'Détection de panne de scan (scan-fail) qui coupe le faisceau si les galvos s\'arrêtent — indispensable pour l\'audience scanning';
+
+  @override
+  String get laserRefSection4Bullet5 =>
+      'Aucun faisceau fixe pointé vers le public — uniquement de l\'audience scanning avec les protections et calculs d\'exposition dédiés';
+
+  @override
+  String get laserRefSection4Bullet6 =>
+      'Jamais de visée vers une zone aérienne, un avion, ou une surface réfléchissante non contrôlée (verre, miroir, écran)';
+
+  @override
+  String get laserRefSection5Title => 'NOHD, SZED, CZED expliqués';
+
+  @override
+  String get laserRefSection5Paragraph =>
+      'Ces distances de sécurité sont calculées par l\'outil « Zones de sécurité » de l\'app à partir de la puissance, la divergence et le diamètre de sortie du faisceau.';
+
+  @override
+  String get laserRefSection5NohdTitle =>
+      'NOHD — Nominal Ocular Hazard Distance';
+
+  @override
+  String get laserRefSection5NohdBody =>
+      'Distance oculaire de danger nominal : au-delà de cette distance, l\'irradiance directe du faisceau descend sous la limite d\'exposition maximale (MPE) admise pour une exposition accidentelle et brève. C\'est la référence de base définie par l\'IEC 60825-1.';
+
+  @override
+  String get laserRefSection5SzedTitle => 'SZED — Show Zone Exposure Distance';
+
+  @override
+  String get laserRefSection5SzedBody =>
+      'Distance d\'exposition de la zone de spectacle : délimite la zone où le public peut se trouver pendant un show avec balayage (audience scanning), avec un seuil MPE plus prudent que le NOHD.';
+
+  @override
+  String get laserRefSection5CzedTitle =>
+      'CZED — Controlled Zone Exposure Distance';
+
+  @override
+  String get laserRefSection5CzedBody =>
+      'Distance d\'exposition de la zone contrôlée : la plus prudente des trois, réservée à la zone où seul le personnel formé (opérateurs, techniciens) peut se trouver, en tenant compte d\'une exposition potentiellement plus longue.';
+
+  @override
+  String get laserRefSection5FieldNote =>
+      'Dans l\'app, plus le seuil MPE utilisé est bas, plus la distance calculée est grande — d\'où l\'ordre CZED > SZED > NOHD. Ces distances restent indicatives : elles ne remplacent pas une étude réalisée par un Laser Safety Officer qualifié, ni la réglementation locale en vigueur.';
+
+  @override
+  String get laserRefSection6Title => 'Checklist rapide';
+
+  @override
+  String get laserRefSection6Bullet1 =>
+      'Classe du laser identifiée, déclarée si nécessaire';
+
+  @override
+  String get laserRefSection6Bullet2 =>
+      'LSO désigné et présent pendant tout le show';
+
+  @override
+  String get laserRefSection6Bullet3 =>
+      'Zones NOHD/SZED/CZED calculées et matérialisées';
+
+  @override
+  String get laserRefSection6Bullet4 =>
+      'Détection de panne de scan active si audience scanning';
+
+  @override
+  String get laserRefSection6Bullet5 => 'Arrêt d\'urgence testé et accessible';
+
+  @override
+  String get laserRefSection6Bullet6 =>
+      'Aucune visée vers une zone aérienne ou une surface réfléchissante non contrôlée';
+
+  @override
+  String get laserRefFooterNote =>
+      'Ces informations sont générales et pédagogiques — elles ne remplacent pas une formation de Laser Safety Officer ni la réglementation locale (IEC 60825, FDA/CDRH, autorités aéronautiques...).';
+
+  @override
+  String get aboutRiggingTitle => 'Rigging';
+
+  @override
+  String get aboutRiggingSubtitle => 'Bases, élingage et facteur d\'angle';
+
+  @override
+  String get aboutRiggingPageTitle => 'Rigging — cours rapide';
+
+  @override
+  String get riggingRefTocCopyText => 'Copier le sommaire';
+
+  @override
+  String get riggingRefSection1Title => 'Bases du rigging';
+
+  @override
+  String get riggingRefSection2Title => 'Élingage à 2 points (bridle)';
+
+  @override
+  String get riggingRefSection3Title => 'Facteur d\'angle';
+
+  @override
+  String get riggingRefSection4Title => 'Checklist';
+
+  @override
+  String get riggingRefSection1Bullet1 =>
+      'WLL (Working Load Limit) : charge maximale d\'utilisation autorisée pour un accessoire, indiquée par le fabricant.';
+
+  @override
+  String get riggingRefSection1Bullet2 =>
+      'Coefficient de sécurité : rapport entre la charge de rupture et la WLL, généralement 5:1 ou 10:1 selon le matériel et la réglementation.';
+
+  @override
+  String get riggingRefSection1Bullet3 =>
+      'Chaîne de charge : chaque maillon (point d\'accroche, élingue, manille, structure) doit être dimensionné pour la charge totale — le maillon le plus faible fixe la limite de l\'ensemble.';
+
+  @override
+  String get riggingRefSection2Bullet1 =>
+      'Un bridage à 2 points répartit la charge entre deux élingues formant un angle par rapport à la verticale.';
+
+  @override
+  String get riggingRefSection2Bullet2 =>
+      'Plus l\'angle par rapport à la verticale augmente, plus la tension dans chaque élingue augmente.';
+
+  @override
+  String get riggingRefSection2Bullet3 =>
+      'Recommandation courante : rester sous 90° d\'angle inclus entre les deux brins pour limiter la tension supplémentaire.';
+
+  @override
+  String get riggingRefSection3FormulaTitle => 'Formule';
+
+  @override
+  String get riggingRefSection3Formula1 =>
+      'Tension par élingue = (Charge / nombre d\'élingues) × facteur d\'angle, avec facteur d\'angle = 1 / cos(angle par rapport à la verticale).';
+
+  @override
+  String get riggingRefSection3Bullet1 =>
+      'Exemples : 0° → facteur 1.0 ; 45° → facteur environ 1.41 ; 60° → facteur 2.0.';
+
+  @override
+  String get riggingRefSection3Bullet2 =>
+      'Plus l\'angle par rapport à la verticale est grand, plus le facteur — et donc la tension — augmente rapidement.';
+
+  @override
+  String get riggingRefSection4Bullet1 =>
+      'Vérifier la WLL de chaque accessoire (élingue, manille, mousqueton, structure) avant l\'accroche.';
+
+  @override
+  String get riggingRefSection4Bullet2 =>
+      'Calculer la tension réelle par élingue en tenant compte du facteur d\'angle, pas seulement de la charge totale divisée par le nombre de brins.';
+
+  @override
+  String get riggingRefSection4Bullet3 =>
+      'Inspecter visuellement les accessoires (déformation, corrosion, usure) avant chaque utilisation.';
+
+  @override
+  String get riggingRefSection4Bullet4 =>
+      'Faire vérifier l\'ensemble par une personne compétente ou un rigger qualifié pour les charges importantes ou les configurations complexes.';
+
+  @override
+  String get riggingRefFooterNote =>
+      'Ce contenu est un rappel pédagogique général et ne remplace pas les normes locales, la formation rigger, ni la vérification par une personne compétente.';
+
+  @override
+  String get aboutConsoleTitle => 'Console & patch';
+
+  @override
+  String get aboutConsoleSubtitle => 'Console virtuelle, GDTF et patch DMX';
+
+  @override
+  String get aboutConsolePageTitle => 'Console — cours rapide';
+
+  @override
+  String get consoleRefTocCopyText => 'Copier le sommaire';
+
+  @override
+  String get consoleRefSection1Title => 'Console virtuelle & DMX sans fil';
+
+  @override
+  String get consoleRefSection2Title => 'GDTF & GDTF Share';
+
+  @override
+  String get consoleRefSection3Title => 'Patch & univers';
+
+  @override
+  String get consoleRefSection4Title => 'Checklist';
+
+  @override
+  String get consoleRefSection1Paragraph =>
+      'Une console virtuelle permet de piloter un show depuis une tablette ou un smartphone, en envoyant du DMX via le réseau (Art-Net ou sACN) plutôt que par câble DMX direct.';
+
+  @override
+  String get consoleRefSection1Bullet1 =>
+      'Le Wi-Fi introduit de la latence et des risques de coupure : à réserver aux réglages, pas au live critique sans solution de secours filaire.';
+
+  @override
+  String get consoleRefSection1Bullet2 =>
+      'Vérifier que le node/interface DMX-sur-IP reçoit bien le bon univers Art-Net ou sACN configuré sur la console virtuelle.';
+
+  @override
+  String get consoleRefSection1Bullet3 =>
+      'Prévoir un accès filaire de secours (DMX direct ou Ethernet) pour les moments critiques du show.';
+
+  @override
+  String get consoleRefSection2GdtfTitle => 'GDTF (General Device Type Format)';
+
+  @override
+  String get consoleRefSection2GdtfBody =>
+      'Format de fichier standardisé qui décrit les caractéristiques d\'un projecteur (modes DMX, roues de couleur, géométrie 3D) pour un import fiable dans n\'importe quelle console compatible.';
+
+  @override
+  String get consoleRefSection2ShareTitle => 'GDTF Share';
+
+  @override
+  String get consoleRefSection2ShareBody =>
+      'Base de données en ligne officielle où les fabricants publient les fichiers GDTF de leurs appareils, téléchargeables gratuitement pour le patch.';
+
+  @override
+  String get consoleRefSection3Bullet1 =>
+      'Un univers DMX contient 512 canaux ; chaque appareil occupe un ou plusieurs canaux selon son mode DMX choisi.';
+
+  @override
+  String get consoleRefSection3Bullet2 =>
+      'Toujours vérifier le mode DMX réellement réglé sur l\'appareil physique — il doit correspondre à celui sélectionné dans le patch de la console.';
+
+  @override
+  String get consoleRefSection3Bullet3 =>
+      'Documenter le patch (adresses, univers, modes) facilite le dépannage et la reprise du show par une autre personne.';
+
+  @override
+  String get consoleRefSection4Bullet1 =>
+      'Vérifier la connexion réseau (Wi-Fi ou filaire) entre la console virtuelle et le node DMX avant le show.';
+
+  @override
+  String get consoleRefSection4Bullet2 =>
+      'Confirmer que chaque appareil est patché dans le bon univers et à la bonne adresse de départ.';
+
+  @override
+  String get consoleRefSection4Bullet3 =>
+      'Utiliser un fichier GDTF à jour depuis GDTF Share plutôt qu\'un profil générique.';
+
+  @override
+  String get consoleRefSection4Bullet4 =>
+      'Prévoir un plan de secours en cas de coupure réseau ou Wi-Fi pendant le show.';
+
+  @override
+  String get consoleRefFooterNote =>
+      'Ce contenu est un rappel général ; se référer à la documentation du fabricant pour les modes DMX et procédures spécifiques.';
+
+  @override
+  String get aboutCinemaTitle => 'Cinéma';
+
+  @override
+  String get aboutCinemaSubtitle => 'Caméra, profondeur de champ et cadence';
+
+  @override
+  String get aboutCinemaPageTitle => 'Cinéma — cours rapide';
+
+  @override
+  String get cinemaRefTocCopyText => 'Copier le sommaire';
+
+  @override
+  String get cinemaRefSection1Title => 'Notions de base caméra';
+
+  @override
+  String get cinemaRefSection2Title => 'Profondeur de champ & mise au point';
+
+  @override
+  String get cinemaRefSection3Title => 'Cadence & obturateur';
+
+  @override
+  String get cinemaRefSection4Title => 'Checklist';
+
+  @override
+  String get cinemaRefSection1Bullet1 =>
+      'Capteur : surface photosensible qui capture l\'image ; sa taille influence le champ de vision et la profondeur de champ pour une focale donnée.';
+
+  @override
+  String get cinemaRefSection1Bullet2 =>
+      'Focale : distance (en mm) qui détermine l\'angle de champ — une focale courte est grand-angle, une focale longue est un téléobjectif.';
+
+  @override
+  String get cinemaRefSection1Bullet3 =>
+      'Ouverture (f/) : taille du diaphragme, qui contrôle la quantité de lumière entrante et la profondeur de champ.';
+
+  @override
+  String get cinemaRefSection2Paragraph =>
+      'La profondeur de champ est la zone de netteté acceptable devant et derrière le sujet mis au point.';
+
+  @override
+  String get cinemaRefSection2Bullet1 =>
+      'Une ouverture large (f/1.4, f/2) donne une profondeur de champ réduite (arrière-plan flou).';
+
+  @override
+  String get cinemaRefSection2Bullet2 =>
+      'Une ouverture fermée (f/11, f/16) donne une profondeur de champ étendue (tout net).';
+
+  @override
+  String get cinemaRefSection3FormulaTitle => 'Formule shutter angle';
+
+  @override
+  String get cinemaRefSection3Formula1 =>
+      'Vitesse d\'obturation = 1 / (2 × cadence en images/seconde) pour un angle d\'obturation de 180°, la référence standard en cinéma.';
+
+  @override
+  String get cinemaRefSection3Bullet1 =>
+      '24 images/seconde est la cadence standard du cinéma ; 25 ou 30 i/s sont courantes en broadcast selon la norme vidéo (PAL/NTSC).';
+
+  @override
+  String get cinemaRefSection3Bullet2 =>
+      'Un angle d\'obturation plus fermé (90°, 45°) donne un rendu plus saccadé, utilisé pour les scènes d\'action stylisées.';
+
+  @override
+  String get cinemaRefSection4Bullet1 =>
+      'Vérifier que la cadence caméra correspond à la fréquence des sources lumineuses (éviter le flicker).';
+
+  @override
+  String get cinemaRefSection4Bullet2 =>
+      'Adapter l\'ouverture au rendu de profondeur de champ souhaité, pas seulement à l\'exposition.';
+
+  @override
+  String get cinemaRefSection4Bullet3 =>
+      'Garder un angle d\'obturation cohérent sur l\'ensemble du tournage pour une texture de mouvement homogène.';
+
+  @override
+  String get cinemaRefSection4Bullet4 =>
+      'Toujours tester en conditions réelles de plateau avant le tournage définitif.';
+
+  @override
+  String get cinemaRefFooterNote =>
+      'Ce contenu est un rappel pédagogique général ; les réglages définitifs dépendent du matériel et de l\'intention artistique.';
+
+  @override
+  String get aboutTimecodeTitle => 'Timecode';
+
+  @override
+  String get aboutTimecodeSubtitle => 'SMPTE, drop-frame et cadences';
+
+  @override
+  String get aboutTimecodePageTitle => 'Timecode — cours rapide';
+
+  @override
+  String get timecodeRefTocCopyText => 'Copier le sommaire';
+
+  @override
+  String get timecodeRefSection1Title => 'Qu\'est-ce que le timecode SMPTE';
+
+  @override
+  String get timecodeRefSection2Title => 'Drop-frame vs Non-drop-frame';
+
+  @override
+  String get timecodeRefSection3Title => 'Cadences courantes';
+
+  @override
+  String get timecodeRefSection4Title => 'Checklist';
+
+  @override
+  String get timecodeRefSection1FormatTitle => 'Format';
+
+  @override
+  String get timecodeRefSection1FormatBody =>
+      'HH:MM:SS:FF — heures, minutes, secondes et numéro d\'image (frame), remis à zéro à chaque cadence complète.';
+
+  @override
+  String get timecodeRefSection1Bullet1 =>
+      'Le timecode SMPTE synchronise image, son et éclairage sur une référence temporelle commune.';
+
+  @override
+  String get timecodeRefSection1Bullet2 =>
+      'Chaque image porte une adresse unique, ce qui permet un référencement précis en post-production comme en régie live.';
+
+  @override
+  String get timecodeRefSection2Paragraph =>
+      'Le drop-frame (DF) existe car certaines cadences (29.97 i/s) ne sont pas des nombres entiers d\'images par seconde, ce qui décale le timecode par rapport au temps réel s\'il n\'est pas corrigé.';
+
+  @override
+  String get timecodeRefSection2Bullet1 =>
+      'Non-drop-frame (NDF) : compte les images sans saut ; simple mais dérive légèrement par rapport au temps réel en 29.97 i/s.';
+
+  @override
+  String get timecodeRefSection2Bullet2 =>
+      'Drop-frame (DF) : saute périodiquement des numéros d\'image (pas d\'image réelle) pour recaler le timecode sur le temps réel.';
+
+  @override
+  String get timecodeRefSection3Bullet1 => '24 i/s : cadence cinéma classique.';
+
+  @override
+  String get timecodeRefSection3Bullet2 =>
+      '25 i/s : standard PAL (Europe) ; 30 i/s (ou 29.97 DF/NDF) : standard NTSC (Amérique du Nord, Japon).';
+
+  @override
+  String get timecodeRefSection3Bullet3 =>
+      '50 i/s et 59.94/60 i/s : cadences haute fréquence utilisées en broadcast et pour les ralentis.';
+
+  @override
+  String get timecodeRefSection3Bullet4 =>
+      'Toujours vérifier que toutes les sources (caméra, son, éclairage, vidéo) utilisent la même cadence de référence.';
+
+  @override
+  String get timecodeRefSection4Bullet1 =>
+      'Confirmer la cadence et le mode (DF/NDF) sur toutes les sources avant le début du show ou du tournage.';
+
+  @override
+  String get timecodeRefSection4Bullet2 =>
+      'Vérifier que la source maître de timecode (master clock) est bien identifiée et distribuée à tous les appareils.';
+
+  @override
+  String get timecodeRefSection4Bullet3 =>
+      'En cas de doute sur une dérive, comparer le timecode affiché à une horloge de référence sur une durée suffisante.';
+
+  @override
+  String get timecodeRefFooterNote =>
+      'Ce contenu est un rappel général ; se référer aux spécifications SMPTE et à la documentation des appareils utilisés.';
+
+  @override
+  String get aboutConversionsTitle => 'Conversions & BPM';
+
+  @override
+  String get aboutConversionsSubtitle => 'Unités, BPM et DMX en un coup d\'œil';
+
+  @override
+  String get aboutConversionsPageTitle => 'Conversions & BPM — cours rapide';
+
+  @override
+  String get conversionsRefTocCopyText => 'Copier le sommaire';
+
+  @override
+  String get conversionsRefSection1Title => 'Pourquoi convertir';
+
+  @override
+  String get conversionsRefSection2Title => 'BPM ↔ millisecondes';
+
+  @override
+  String get conversionsRefSection3Title =>
+      'DMX ↔ pourcentage / 8-bit ↔ 16-bit';
+
+  @override
+  String get conversionsRefSection4Title => 'Checklist';
+
+  @override
+  String get conversionsRefSection1Paragraph =>
+      'En régie, les unités se mélangent souvent (BPM musicaux, millisecondes de delay, pourcentages DMX, valeurs 8/16-bit) : convertir rapidement et sans erreur évite les décalages entre effets lumière, son et vidéo.';
+
+  @override
+  String get conversionsRefSection2FormulaTitle => 'Formule';
+
+  @override
+  String get conversionsRefSection2Formula1 =>
+      'Durée d\'un battement (ms) = 60 000 / BPM.';
+
+  @override
+  String get conversionsRefSection2Bullet1 =>
+      'Exemple : à 120 BPM, un battement dure 500 ms ; une double-croche (1/4 de battement) dure 125 ms.';
+
+  @override
+  String get conversionsRefSection2Bullet2 =>
+      'Utile pour caler un effet lumière, un delay audio ou un clip vidéo sur le tempo d\'un morceau.';
+
+  @override
+  String get conversionsRefSection3Bullet1 =>
+      'Une valeur DMX 8-bit va de 0 à 255 ; en pourcentage, 255 correspond à 100 %.';
+
+  @override
+  String get conversionsRefSection3Bullet2 =>
+      'En 16-bit, deux canaux (fin/grossier) combinés donnent une résolution de 0 à 65 535 pour un contrôle plus fin (dimmer, pan/tilt).';
+
+  @override
+  String get conversionsRefSection3Bullet3 =>
+      'Vérifier le mode (8-bit ou 16-bit) réellement configuré sur l\'appareil avant de patcher, sous peine de décalage de valeurs.';
+
+  @override
+  String get conversionsRefSection4Bullet1 =>
+      'Toujours vérifier l\'unité affichée avant de saisir une valeur (ms, BPM, %, 8-bit, 16-bit).';
+
+  @override
+  String get conversionsRefSection4Bullet2 =>
+      'Recalculer plutôt que d\'arrondir de tête pour les valeurs critiques (synchronisation, sécurité).';
+
+  @override
+  String get conversionsRefSection4Bullet3 =>
+      'Documenter les conversions utilisées dans la fiche technique pour faciliter la reprise du show.';
+
+  @override
+  String get conversionsRefFooterNote =>
+      'Ce contenu est un rappel général ; se référer à la documentation de l\'appareil pour ses modes de résolution exacts.';
+
+  @override
+  String get aboutCategoryNetworkTitle => 'Réseau & protocoles';
+
+  @override
+  String get aboutCategoryAudioRfTitle => 'Audio & RF';
+
+  @override
+  String get aboutCategoryVideoCinemaTitle => 'Vidéo & cinéma';
+
+  @override
+  String get aboutCategoryLightingTitle => 'Éclairage, laser & console';
+
+  @override
+  String get aboutCategoryRiggingElecTitle => 'Rigging & électricité';
+
+  @override
+  String get aboutCategoryToolsTitle => 'Outils pratiques';
+
+  @override
+  String get pinnedItemsTitle => 'Mes épingles';
+
+  @override
+  String get homePinnedItemsSubtitle =>
+      'Retrouvez rapidement vos outils et références épinglés.';
+
+  @override
+  String get pinnedItemsEmpty =>
+      'Aucun outil ni référence épinglé pour le moment.';
+
+  @override
+  String get fixtureInfoSectionIdentification => 'Identification';
+
+  @override
+  String get fixtureInfoLabelName => 'Nom';
+
+  @override
+  String get fixtureInfoLabelId => 'ID';
+
+  @override
+  String get fixtureInfoSectionDmx => 'DMX / Réseau';
+
+  @override
+  String get fixtureInfoLabelUniverse => 'Univers';
+
+  @override
+  String get fixtureInfoLabelAddress => 'Adresse';
+
+  @override
+  String get fixtureInfoLabelMode => 'Mode';
+
+  @override
+  String get fixtureInfoLabelChannelCount => 'Canaux';
+
+  @override
+  String get fixtureInfoLabelGdtfSpec => 'Fichier GDTF';
+
+  @override
+  String get fixtureInfoSectionPhysical => 'Physique';
+
+  @override
+  String get fixtureInfoLabelWeight => 'Poids';
+
+  @override
+  String fixtureInfoValueKg(Object kg) {
+    return '$kg kg';
+  }
+
+  @override
+  String get fixtureInfoLabelDimensions => 'Dimensions';
+
+  @override
+  String fixtureInfoValueDimensionsCm(
+      Object heightCm, Object lengthCm, Object widthCm) {
+    return '$lengthCm × $widthCm × $heightCm cm';
+  }
+
+  @override
+  String get fixtureInfoLabelLegHeight => 'Hauteur des pieds';
+
+  @override
+  String fixtureInfoValueCm(Object cm) {
+    return '$cm cm';
+  }
+
+  @override
+  String get fixtureInfoSectionElectrical => 'Électrique';
+
+  @override
+  String get fixtureInfoLabelPower => 'Puissance';
+
+  @override
+  String fixtureInfoValueWatts(Object watts) {
+    return '$watts W';
+  }
+
+  @override
+  String get fixtureInfoSectionEnvironment => 'Environnement';
+
+  @override
+  String get fixtureInfoLabelOperatingTemp => 'Température de fonctionnement';
+
+  @override
+  String fixtureInfoValueTempRange(Object highC, Object lowC) {
+    return '$lowC°C – $highC°C';
+  }
+
+  @override
+  String get fixtureInfoNoGdtfData =>
+      'Aucune information physique disponible (GDTF non fourni ou incomplet).';
+
+  @override
+  String get patch3dTitle => 'Visualiseur 3D';
+
+  @override
+  String get patch3dOpenButton => 'Voir en 3D';
+
+  @override
+  String get patch3dResetCameraTooltip => 'Recentrer la caméra';
+
+  @override
+  String get patch3dFiltersTooltip => 'Filtres et couleurs';
+
+  @override
+  String get patch3dZoomToFitTooltip => 'Cadrer sur tout';
+
+  @override
+  String get patch3dCameraViewsTooltip => 'Vues caméra';
+
+  @override
+  String get patch3dCameraViewFront => 'Face';
+
+  @override
+  String get patch3dCameraViewTop => 'Dessus';
+
+  @override
+  String get patch3dCameraViewSide => 'Côté';
+
+  @override
+  String get patch3dCameraViewIso => 'Isométrique';
+
+  @override
+  String get patch3dBackgroundColorLabel => 'Couleur de fond';
+
+  @override
+  String patch3dEntriesWithoutPosition(Object count) {
+    return '$count fixture(s) sans position 3D (pas de Matrix dans le MVR).';
+  }
+
+  @override
+  String get patch3dNoPositionedFixtures =>
+      'Aucune fixture positionnée à afficher. Importe un MVR contenant des positions 3D.';
+
+  @override
+  String get patch3dMissingModelTitle => 'Modèles 3D manquants';
+
+  @override
+  String patch3dMissingModelBody(Object count) {
+    return '$count type(s) de machine n’ont pas de modèle 3D dans leur GDTF. Un cube générique (30×30×30 cm) est utilisé à la place :';
+  }
+
+  @override
+  String get patch3dColorModeLabel => 'Colorisation';
+
+  @override
+  String get patch3dColorModeByType => 'Par type';
+
+  @override
+  String get patch3dColorModeByUniverse => 'Par univers';
+
+  @override
+  String get patch3dFilterUniverseLabel => 'Univers';
+
+  @override
+  String get patch3dFilterTypeLabel => 'Type de machine';
+
+  @override
+  String get patch3dFilterShowAll => 'Tout afficher';
+
+  @override
+  String get gdtfWizardSuggestionOpen => 'Ouvert';
+
+  @override
+  String get gdtfWizardSuggestionClosed => 'Fermé';
+
+  @override
+  String gdtfWizardSuggestionGoboSlot(int n) {
+    return 'Gobo $n';
+  }
+
+  @override
+  String gdtfWizardSuggestionColorSlot(int n) {
+    return 'Couleur $n';
+  }
+
+  @override
+  String get gdtfWizardColorWhite => 'Blanc';
+
+  @override
+  String get gdtfWizardColorRed => 'Rouge';
+
+  @override
+  String get gdtfWizardColorGreen => 'Vert';
+
+  @override
+  String get gdtfWizardColorBlue => 'Bleu';
+
+  @override
+  String get gdtfWizardColorYellow => 'Jaune';
+
+  @override
+  String get gdtfWizardColorCyan => 'Cyan';
+
+  @override
+  String get gdtfWizardColorMagenta => 'Magenta';
+
+  @override
+  String get gdtfWizardColorRainbow => 'Arc-en-ciel';
+
+  @override
+  String get gdtfWizardStrobeSlowToFast => 'Strobe lent → rapide';
+
+  @override
+  String get gdtfWizardStrobeRandom => 'Strobe aléatoire';
+
+  @override
+  String get gdtfWizardAppBarTitle => 'Assistant manuel GDTF';
+
+  @override
+  String get gdtfWizardStepTitleStyle => 'Style de projecteur';
+
+  @override
+  String get gdtfWizardStepTitleFunction => 'Fonction';
+
+  @override
+  String get gdtfWizardStepTitleChannels => 'Canaux';
+
+  @override
+  String get gdtfWizardStepTitlePixels => 'Pixels';
+
+  @override
+  String get gdtfWizardStepTitleStructure => 'Structure';
+
+  @override
+  String gdtfWizardStepHeader(int step, String title) {
+    return 'Étape $step/5 — $title';
+  }
+
+  @override
+  String get gdtfWizardErrStyle =>
+      'Choisis un style de projecteur pour continuer.';
+
+  @override
+  String get gdtfWizardErrFunction =>
+      'Sélectionne au moins une fonction (wash, spot ou beam).';
+
+  @override
+  String get gdtfWizardErrChannels =>
+      'Coche au moins un canal — la machine doit bien piloter quelque chose !';
+
+  @override
+  String get gdtfWizardErrPixelCount =>
+      'Il faut au moins 2 pixels/instances pour une structure multi-pixel.';
+
+  @override
+  String get gdtfWizardErrRepeatCount =>
+      'Sélectionne au moins 2 canaux répétables (ex : Red + Green, ou Pan/Tilt) pour que chaque pixel soit bien reconnu comme une instance distincte.';
+
+  @override
+  String get gdtfWizardErrRowsCols =>
+      'Renseigne un nombre de lignes et de colonnes valide.';
+
+  @override
+  String get gdtfWizardErrModeName => 'Donne un nom à ce mode DMX.';
+
+  @override
+  String get gdtfWizardStyleIntro => 'Quel type de machine crées-tu ?';
+
+  @override
+  String get gdtfWizardStyleLyreTitle => 'Lyre (moving head)';
+
+  @override
+  String get gdtfWizardStyleLyreSubtitle =>
+      'Tête mobile avec pan/tilt — spot, wash ou beam sur lyre.';
+
+  @override
+  String get gdtfWizardStyleParTitle => 'PAR / Fixe';
+
+  @override
+  String get gdtfWizardStyleParSubtitle =>
+      'Projecteur statique, sans mouvement (PAR LED, découpe fixe…).';
+
+  @override
+  String get gdtfWizardStyleBarreTitle => 'Barre (bar)';
+
+  @override
+  String get gdtfWizardStyleBarreSubtitle =>
+      'Barre linéaire, souvent à pixels (barre LED, X4 Bar…).';
+
+  @override
+  String get gdtfWizardPanTiltCheckTitle =>
+      'Cette machine a un moteur Pan/Tilt';
+
+  @override
+  String get gdtfWizardPanTiltCheckSubtitle =>
+      'Ajoute les canaux Pan/Tilt en 16 bits (norme GDTF).';
+
+  @override
+  String get gdtfWizardFunctionIntro =>
+      'Quelle(s) fonction(s) pour cette machine ? (choix multiples)';
+
+  @override
+  String get gdtfWizardFunctionWash => 'Wash';
+
+  @override
+  String get gdtfWizardFunctionSpot => 'Spot';
+
+  @override
+  String get gdtfWizardFunctionBeam => 'Beam';
+
+  @override
+  String get gdtfWizardFunctionHint =>
+      'Sert juste à pré-cocher des canaux utiles à l\'étape suivante (Wash → Frost/Zoom, Spot → Gobo/Focus/Prisme, Beam → faisceau serré). Tu pourras tout ajuster juste après.';
+
+  @override
+  String get gdtfWizardChannelsIntro => 'Coche les canaux DMX de la machine.';
+
+  @override
+  String get gdtfWizardSectionIntensity => 'INTENSITÉ';
+
+  @override
+  String get gdtfWizardChannelDimmer => 'Dimmer';
+
+  @override
+  String get gdtfWizardChannelStrobe => 'Obturateur / Strobe';
+
+  @override
+  String get gdtfWizardSectionColor => 'COULEUR';
+
+  @override
+  String get gdtfWizardChannelCto => 'Molette CTO (température de couleur)';
+
+  @override
+  String get gdtfWizardChannelColorMacro => 'Macro couleur (préréglages)';
+
+  @override
+  String get gdtfWizardSectionPosition => 'POSITION';
+
+  @override
+  String get gdtfWizardPanTiltNote =>
+      'Pan/Tilt ajoutés automatiquement (16 bits). Pour une fixture à plusieurs têtes mobiles indépendantes, tu pourras le répartir par tête à l\'étape Pixels.';
+
+  @override
+  String get gdtfWizardSectionBeamShaping => 'FAISCEAU';
+
+  @override
+  String get gdtfWizardChannelZoom => 'Zoom';
+
+  @override
+  String get gdtfWizardChannelFocus => 'Focus';
+
+  @override
+  String get gdtfWizardChannelIris => 'Iris';
+
+  @override
+  String get gdtfWizardChannelFrost => 'Frost';
+
+  @override
+  String get gdtfWizardChannelPrism => 'Prisme';
+
+  @override
+  String get gdtfWizardChannelPrismRot => 'Rotation du prisme';
+
+  @override
+  String get gdtfWizardSectionGobos => 'GOBOS';
+
+  @override
+  String get gdtfWizardChannelGobo1 => 'Roue de gobos 1';
+
+  @override
+  String get gdtfWizardChannelGobo1Rot => 'Rotation gobo 1';
+
+  @override
+  String get gdtfWizardChannelGobo2 => 'Roue de gobos 2';
+
+  @override
+  String get gdtfWizardChannelGobo2Rot => 'Rotation gobo 2';
+
+  @override
+  String get gdtfWizardSectionEffectsControl => 'EFFETS & CONTRÔLE';
+
+  @override
+  String get gdtfWizardChannelEffects => 'Effets / macros';
+
+  @override
+  String get gdtfWizardChannelReset => 'Reset';
+
+  @override
+  String get gdtfWizardSlotsHint =>
+      'Slots (un par ligne, facultatif) — ex : Ouvert, Gobo 1…';
+
+  @override
+  String get gdtfWizardSlotsTooltip => 'Suggestion';
+
+  @override
+  String get gdtfWizardChannelPanTiltPerHead => 'Pan/Tilt (par tête)';
+
+  @override
+  String get gdtfWizardPixelsIntro =>
+      'Cette machine a-t-elle plusieurs pixels/cellules pilotables séparément (matrice LED, barre à pixels…) ?';
+
+  @override
+  String get gdtfWizardMultiplePixelsTitle => 'Plusieurs pixels / instances';
+
+  @override
+  String get gdtfWizardMultiplePixelsSubtitle =>
+      'Sinon, tous les canaux cochés à l\'étape précédente restent uniques (une seule sortie).';
+
+  @override
+  String get gdtfWizardSectionPixelCount => 'NOMBRE DE PIXELS';
+
+  @override
+  String get gdtfWizardSectionPixelContent => 'CONTENU D\'UN PIXEL';
+
+  @override
+  String get gdtfWizardNoRepeatableChannels =>
+      'Aucun canal répétable pour l\'instant. Retourne à l\'étape « Style » (Pan/Tilt) ou « Canaux » (Dimmer, Obturateur/Strobe, couleur…) et coche au moins un attribut à répéter par tête/pixel.';
+
+  @override
+  String gdtfWizardRepeatPerPixelSubtitle(String label) {
+    return 'Un canal par pixel (ex: $label 1, $label 2…)';
+  }
+
+  @override
+  String get gdtfWizardRepeatGlobalSubtitle =>
+      'Reste un seul canal global pour toute la machine';
+
+  @override
+  String get gdtfWizardModeNameLabel => 'Nom du mode DMX';
+
+  @override
+  String get gdtfWizardModeNameHint => 'ex : Standard, 16 bits, Pixel Mode…';
+
+  @override
+  String get gdtfWizardSingleOutputNote =>
+      'Machine à une seule sortie (pas de pixels multiples) : rien à configurer ici, chaque canal coché reste unique.';
+
+  @override
+  String get gdtfWizardSectionLayout => 'AGENCEMENT';
+
+  @override
+  String get gdtfWizardArrangementLinearTitle => 'Barre linéaire';
+
+  @override
+  String gdtfWizardArrangementLinearSubtitle(int count) {
+    return 'Pixels alignés en ligne (ex : X4 Bar). Numérotés 1 à $count.';
+  }
+
+  @override
+  String get gdtfWizardArrangementMatrixTitle => 'Matrice (grille)';
+
+  @override
+  String get gdtfWizardArrangementMatrixSubtitle =>
+      'Pixels organisés en lignes × colonnes (ex : mur LED, JDC1 pixel curve).';
+
+  @override
+  String get gdtfWizardArrangementModulesTitle => 'Modules indépendants';
+
+  @override
+  String get gdtfWizardArrangementModulesSubtitle =>
+      'Plusieurs têtes/modules identiques sur un même châssis (ex : JDC1).';
+
+  @override
+  String get gdtfWizardRowsLabel => 'Lignes';
+
+  @override
+  String get gdtfWizardColsLabel => 'Colonnes';
+
+  @override
+  String gdtfWizardMatrixTotal(int count) {
+    return 'Total : $count pixels (numérotés en lecture ligne par ligne).';
+  }
+
+  @override
+  String get gdtfWizardModulesNote =>
+      'Chaque module peut avoir sa propre couleur/dimmer/strobe ET son propre zoom/focus/iris/frost/prisme/gobo — retourne à l\'étape « Pixels » et coche, pour chaque canal faisceau concerné, qu\'il doit se répéter par module plutôt que rester commun à tous.';
+
+  @override
+  String get gdtfWizardCancel => 'Annuler';
+
+  @override
+  String get gdtfWizardBack => 'Retour';
+
+  @override
+  String get gdtfWizardValidateAndEdit => 'Valider et éditer';
+
+  @override
+  String get gdtfWizardNext => 'Suivant';
+
+  @override
+  String get gdtfWizardDefaultModeName => 'Manuel';
+
+  @override
+  String get gdtfWizardOrDivider => 'OU';
+
+  @override
+  String get gdtfWizardManualButtonLabel =>
+      'Assistant manuel (sans PDF) — style, canaux, pixels…';
+
+  @override
+  String get gdtfWizardColorModeNone => 'Aucune';
+
+  @override
+  String get gdtfWizardColorModeRgb => 'RVB';
+
+  @override
+  String get gdtfWizardColorModeRgbw => 'RVB + Blanc';
+
+  @override
+  String get gdtfWizardColorModeRgbwaUv => 'RVB + Blanc + Ambre + UV';
+
+  @override
+  String get gdtfWizardColorModeCmy => 'CMJ (Cyan/Magenta/Jaune)';
+
+  @override
+  String get gdtfWizardColorModeWheel => 'Roue de couleurs';
+
+  @override
+  String get gdtfWizardColorAmber => 'Ambre';
+
+  @override
+  String get gdtfWizardColorUv => 'UV';
+
+  @override
+  String get gdtfWizardChannelCtoShort => 'CTO';
+
+  @override
+  String get gdtfManualTab => 'Assistant manuel';
+
+  @override
+  String get gdtfWizardManualTabTitle => 'Créer un GDTF sans PDF';
+
+  @override
+  String get gdtfWizardManualTabIntro =>
+      'Pas de manuel PDF sous la main, ou fixture trop simple pour ça ? Décris ta machine en 5 étapes (style, fonctions, canaux, pixels, structure) et l\'app construit directement un GDTF conforme, sans IA ni upload.';
+
+  @override
+  String get gdtfWizardSlotsAddButton => 'Ajouter';
+
+  @override
+  String get gdtfWizardSlotsRowHint => 'Nom du slot';
+
+  @override
+  String get gdtfWizardSlotsRemoveTooltip => 'Supprimer';
+
+  @override
+  String get gdtfWizardSlotsEmptyHint =>
+      'Aucun slot nommé pour l\'instant — ajoute-en un ou utilise une suggestion.';
+
+  @override
+  String get ma3CalcTitle => 'Paramètres MA3';
+
+  @override
+  String get ma3CalcTileDescription =>
+      'Combien de paramètres pour ton show, et combien de PU ?';
+
+  @override
+  String get ma3CalcTabMvr => 'Depuis un MVR';
+
+  @override
+  String get ma3CalcTabList => 'Liste de machines';
+
+  @override
+  String get ma3CalcAddFixture => 'Ajouter une machine';
+
+  @override
+  String get ma3CalcAddSheetTitle => 'Quelle machine ?';
+
+  @override
+  String get ma3CalcAddSheetSubtitle =>
+      'Recherche dans GDTF Share, importe un .gdtf ou saisis la valeur toi-même.';
+
+  @override
+  String get ma3CalcSearchHint => 'ex. MAC Aura, Robe Spiider…';
+
+  @override
+  String get ma3CalcSearchFailed =>
+      'Recherche impossible pour le moment. Vérifie ta connexion.';
+
+  @override
+  String get ma3CalcNoResult =>
+      'Aucun résultat. Essaie un autre nom, ou la saisie manuelle.';
+
+  @override
+  String get ma3CalcImportGdtf => 'Fichier .gdtf';
+
+  @override
+  String get ma3CalcManualEntry => 'Saisie manuelle';
+
+  @override
+  String get ma3CalcManualName => 'Nom de la machine';
+
+  @override
+  String get ma3CalcChooseMode => 'Quel mode DMX ?';
+
+  @override
+  String ma3CalcModeSummary(int params, int channels) {
+    return '$params param. MA3 · $channels canaux DMX';
+  }
+
+  @override
+  String get ma3CalcModeUnknown => 'Mode sans canaux lisibles';
+
+  @override
+  String get ma3CalcHowMany => 'Combien de machines ?';
+
+  @override
+  String get ma3CalcDownloadFailed => 'Téléchargement du GDTF impossible.';
+
+  @override
+  String get ma3CalcGdtfUnreadable =>
+      'Ce GDTF est illisible (fichier abîmé ?).';
+
+  @override
+  String get ma3CalcGdtfNoMode => 'Aucun mode DMX dans ce GDTF.';
+
+  @override
+  String ma3CalcNotGdtf(String name) {
+    return '« $name » n\'est pas un fichier .gdtf.';
+  }
+
+  @override
+  String ma3CalcNotMvr(String name) {
+    return '« $name » n\'est pas un fichier .mvr.';
+  }
+
+  @override
+  String get ma3CalcPickFailed => 'Impossible d\'ouvrir le fichier.';
+
+  @override
+  String get ma3CalcMvrUnreadable =>
+      'Ce MVR est illisible (ce n\'est pas une archive valide).';
+
+  @override
+  String get ma3CalcMvrNoScene =>
+      'Pas de GeneralSceneDescription.xml dans ce MVR.';
+
+  @override
+  String get ma3CalcMvrNoFixtures => 'Aucune machine dans ce MVR.';
+
+  @override
+  String get ma3CalcMvrEmptyTitle => 'Balance ton MVR 🎛️';
+
+  @override
+  String get ma3CalcMvrEmptyBody =>
+      'Export Vectorworks, Capture, grandMA3, Depence… On compte les machines, on lit leurs GDTF et on te dit combien de paramètres (et de PU) il te faut.';
+
+  @override
+  String get ma3CalcPickMvr => 'Choisir un fichier .mvr';
+
+  @override
+  String get ma3CalcChangeFile => 'Changer';
+
+  @override
+  String get ma3CalcListEmptyTitle => 'Ton kit, machine par machine';
+
+  @override
+  String get ma3CalcListEmptyBody =>
+      'Genre 6 × MAC Aura, 23 × Studio Color… Ajoute tes machines, choisis le mode, et le total s\'affiche tout seul.';
+
+  @override
+  String get ma3CalcYourSystem => 'Ta console';
+
+  @override
+  String get ma3CalcSafetyMargin => 'Marge de sécurité';
+
+  @override
+  String get ma3CalcNoMargin => 'Aucune';
+
+  @override
+  String get ma3CalcTotalParams => 'Paramètres MA3';
+
+  @override
+  String ma3CalcFixturesAndUniverses(int fixtures, int universes) {
+    return '$fixtures machines · ≈ $universes univers DMX';
+  }
+
+  @override
+  String ma3CalcWithMargin(int percent, String value) {
+    return 'Avec $percent % de marge : $value';
+  }
+
+  @override
+  String get ma3CalcCopySummary => 'Copier le résumé';
+
+  @override
+  String ma3CalcVerdictSessionMax(String max) {
+    return 'Au-delà de $max paramètres : c\'est le maximum d\'une session grandMA3.';
+  }
+
+  @override
+  String ma3CalcVerdictOnPcTooSmall(String max) {
+    return 'onPC plafonne à $max paramètres';
+  }
+
+  @override
+  String get ma3CalcVerdictOnPcTooSmallSub =>
+      'Il te faut une console grandMA3 (+ PU si besoin) : choisis-la au-dessus pour voir la config.';
+
+  @override
+  String get ma3CalcVerdictOnPcOk => 'onPC suffit 👌';
+
+  @override
+  String ma3CalcVerdictOnPcOkSub(String max) {
+    return 'N\'importe quel matériel onPC (command wing, fader wing, node 4k, rack-unit…) débloque $max paramètres.';
+  }
+
+  @override
+  String ma3CalcVerdictBaseOk(String console) {
+    return 'Ta $console suffit, pas besoin de PU 🎉';
+  }
+
+  @override
+  String ma3CalcVerdictCapacity(String capacity) {
+    return 'Capacité totale : $capacity paramètres.';
+  }
+
+  @override
+  String ma3CalcVerdictAddPu(String units) {
+    return 'Ajoute $units';
+  }
+
+  @override
+  String ma3CalcVerdictXlOnly(int count) {
+    return 'Ou, plus simple : $count × PU XL.';
+  }
+
+  @override
+  String ma3CalcUnknownNotCounted(int count) {
+    return '$count machine(s) sans données ne sont pas comptées : corrige-les ci-dessous.';
+  }
+
+  @override
+  String ma3CalcFixtureTypes(int count) {
+    return 'Types de machines ($count)';
+  }
+
+  @override
+  String ma3CalcMvrCounts(int fixtures, int unpatched) {
+    return '$fixtures machines · $unpatched non patchées';
+  }
+
+  @override
+  String ma3CalcMultipatchNote(int count) {
+    return 'Dont $count multipatch, comptés par sécurité.';
+  }
+
+  @override
+  String ma3CalcPerUnit(int params) {
+    return '$params param. par machine';
+  }
+
+  @override
+  String get ma3CalcUnknownParams => 'Paramètres inconnus';
+
+  @override
+  String get ma3CalcTapToFix => 'Touche pour saisir la valeur toi-même →';
+
+  @override
+  String get ma3CalcSwipeHint =>
+      'Glisse une ligne vers la gauche pour la supprimer · touche-la pour corriger ses paramètres.';
+
+  @override
+  String get ma3CalcClear => 'Vider';
+
+  @override
+  String get ma3CalcClearListTitle => 'Vider la liste ?';
+
+  @override
+  String get ma3CalcClearListBody =>
+      'Toutes les machines de la liste seront supprimées.';
+
+  @override
+  String get ma3CalcCancel => 'Annuler';
+
+  @override
+  String get ma3CalcOk => 'OK';
+
+  @override
+  String get ma3CalcParamsPerUnitTitle => 'Paramètres par machine';
+
+  @override
+  String get ma3CalcParamsUnit => 'param.';
+
+  @override
+  String ma3CalcGdtfValue(int value) {
+    return 'Valeur calculée depuis le GDTF : $value';
+  }
+
+  @override
+  String get ma3CalcParamsHelp =>
+      'Astuce : 1 paramètre = 1 canal DMX, les canaux « fine » 16 bits ne comptent pas.';
+
+  @override
+  String get ma3CalcBackToGdtf => 'Valeur du GDTF';
+
+  @override
+  String get ma3CalcReliabilityOkTitle => 'GDTF complets à première vue ✅';
+
+  @override
+  String get ma3CalcReliabilityOkBody =>
+      'Tous les modes sont trouvés et cohérents. Le calcul reste basé sur ces GDTF.';
+
+  @override
+  String ma3CalcReliabilityWarnTitle(int count) {
+    return '$count type(s) de machine à vérifier';
+  }
+
+  @override
+  String get ma3CalcReliabilityWarnBody =>
+      'Certains GDTF semblent incomplets ou incohérents : le total peut être faux. Détails sous chaque machine.';
+
+  @override
+  String ma3CalcReliabilityBadTitle(int count) {
+    return '$count type(s) de machine sans données';
+  }
+
+  @override
+  String get ma3CalcReliabilityBadBody =>
+      'GDTF absent ou mode introuvable : ces machines ne sont pas comptées, donc le total est trop bas. Touche-les pour saisir la valeur.';
+
+  @override
+  String get ma3CalcDisclaimer =>
+      'Le calcul est basé sur les GDTF. Si un GDTF est incomplet ou faux, le résultat le sera aussi. Vérifie toujours dans la grandMA3 (fenêtre System Information ou Patch › DMX Universes, colonne Coarse Params).';
+
+  @override
+  String get ma3CalcDisclaimerShort =>
+      'Calcul basé sur les GDTF : à vérifier dans la grandMA3.';
+
+  @override
+  String get ma3CalcHowTitle => 'Comment c\'est calculé ?';
+
+  @override
+  String get ma3CalcHowBody =>
+      'Pour grandMA3, 1 paramètre = 1 attribut piloté = 1 canal DMX « coarse ». Les canaux fine (16/24 bits) sont gratuits et les canaux virtuels (dimmer virtuel…) ne comptent pas pour la licence. Les machines multi-instance (pixels, cellules) sont dépliées instance par instance. La reco privilégie le moins de boîtiers possible.';
+
+  @override
+  String get ma3CalcHowHardware => 'Paramètres par matériel (doc MA, v2.3)';
+
+  @override
+  String ma3CalcHowSessionMax(String max) {
+    return 'Maximum par session : $max';
+  }
+
+  @override
+  String get ma3CalcIssueGdtfMissing =>
+      'GDTF absent du MVR : paramètres inconnus.';
+
+  @override
+  String get ma3CalcIssueUnreadable => 'GDTF illisible.';
+
+  @override
+  String ma3CalcIssueModeMissing(String modes) {
+    return 'Aucun mode indiqué dans le MVR. Modes du GDTF : $modes';
+  }
+
+  @override
+  String ma3CalcIssueModeNotFound(String mode, String modes) {
+    return 'Mode « $mode » introuvable dans le GDTF. Modes dispo : $modes';
+  }
+
+  @override
+  String get ma3CalcIssueModeGuessed =>
+      'Pas de mode dans le MVR : le seul mode du GDTF a été utilisé.';
+
+  @override
+  String ma3CalcIssueModePartial(String mode) {
+    return 'Mode trouvé par nom approchant : « $mode ».';
+  }
+
+  @override
+  String get ma3CalcIssueNoChannels => 'Ce mode ne contient aucun canal DMX.';
+
+  @override
+  String ma3CalcIssueNoFunction(int count) {
+    return '$count canal(aux) sans fonction ni attribut : GDTF probablement incomplet.';
+  }
+
+  @override
+  String ma3CalcIssueOverlap(int count) {
+    return '$count canal(aux) sur une adresse DMX déjà prise : GDTF incohérent.';
+  }
+
+  @override
+  String ma3CalcIssueGaps(int count) {
+    return '$count adresse(s) DMX vide(s) dans le mode : canaux manquants ?';
+  }
+
+  @override
+  String ma3CalcIssueNameMismatch(int announced, int found) {
+    return 'Le nom du mode annonce $announced canaux, le GDTF en décrit $found.';
+  }
+
+  @override
+  String ma3CalcIssueUnknownGeometry(int count) {
+    return '$count canal(aux) liés à une géométrie inexistante.';
+  }
+
+  @override
+  String get ma3CalcIssueManual => 'Valeur saisie à la main.';
+
+  @override
+  String ma3CalcMarginChip(int percent) {
+    return '+$percent %';
+  }
+
+  @override
+  String ma3CalcHwLine(String name, String value) {
+    return '$name : $value';
+  }
+
+  @override
+  String ma3CalcHowOnPcMax(String max) {
+    return 'onPC : $max max. (avec n\'importe quel matériel onPC)';
+  }
+
+  @override
+  String get accountSignInCta => 'Se connecter';
+
+  @override
+  String get accountSignInCtaSubtitle =>
+      'Ton Pro et tes plugins, sur tous tes appareils ✨';
+
+  @override
+  String get accountAuthTitle => 'Ton compte ShowTech';
+
+  @override
+  String get accountAuthSubtitle =>
+      'Connecte-toi pour retrouver ton abonnement Pro\net participer à la communauté.';
+
+  @override
+  String get accountSignedInSnack => 'Connecté ! Bienvenue à bord 🎉';
+
+  @override
+  String get accountSignedOutSnack => 'Déconnecté. À bientôt 👋';
+
+  @override
+  String get accountSignOutConfirmTitle => 'Se déconnecter ?';
+
+  @override
+  String get accountSignOutConfirmBody =>
+      'Ton abonnement Pro reste lié à ton compte Google : reconnecte-toi quand tu veux pour le retrouver.';
+
+  @override
+  String get videoLmCalcDistTitle => 'Distance de projection (Ratio × Écran)';
+
+  @override
+  String get videoLmSizeModeLabel => 'Taille d\'écran connue';
+
+  @override
+  String get videoLmModeWidth => 'Largeur';
+
+  @override
+  String get videoLmModeHeight => 'Hauteur';
+
+  @override
+  String get videoLmModeDiagonal => 'Diagonale';
+
+  @override
+  String get videoLmImageHeightLabel => 'Hauteur d\'image (m)';
+
+  @override
+  String get videoLmImageHeightHint => 'ex: 3.375';
+
+  @override
+  String get videoLmDiagonalLabel => 'Diagonale (pouces)';
+
+  @override
+  String get videoLmDiagonalHint => 'ex: 200';
+
+  @override
+  String get videoLmRatioMinLabel => 'Ratio de projection (ou mini si zoom)';
+
+  @override
+  String get videoLmRatioMaxLabel => 'Ratio maxi (optionnel, zoom)';
+
+  @override
+  String get videoLmRatioMaxHint => 'ex: 2.10';
+
+  @override
+  String get videoLmErrMissingSizeRatio =>
+      '❌ Données manquantes : Taille d\'écran + Ratio.';
+
+  @override
+  String get videoLmErrSizeGt0 => '❌ La taille d\'écran doit être > 0.';
+
+  @override
+  String videoLmResultImage(Object width, Object height, Object format) {
+    return '📐 Image : $width × $height m ($format)';
+  }
+
+  @override
+  String videoLmResultDistance(Object distance) {
+    return '✅ Distance = $distance m';
+  }
+
+  @override
+  String videoLmResultDistanceRange(Object min, Object max) {
+    return '✅ Distance : de $min m à $max m';
+  }
+
+  @override
+  String get videoLmDistanceNote =>
+      'ℹ️ Distance mesurée depuis l\'objectif : vérifie la référence du fabricant (avant de l\'objectif ou du boîtier).';
+
+  @override
+  String get menuViewModeList => 'Affichage en lignes';
+
+  @override
+  String get menuViewModeGrid => 'Affichage en cases';
+
+  @override
+  String get audioRt60Subtitle => 'Temps de réverbération d\'une salle';
+
+  @override
+  String get audioSplMeterSubtitle =>
+      'Mesure le niveau sonore avec le micro du téléphone';
+
+  @override
+  String get audioImpedanceSubtitle => 'Haut-parleurs en série ou en parallèle';
+
+  @override
+  String get audioCrossoverSubtitle => 'Fréquences de coupure et filtres';
+
+  @override
+  String get audioDelayTimeSubtitle => 'Temps de delay calé sur le tempo';
+
+  @override
+  String get audioNoiseDoseSubtitle => 'Exposition sonore et durée maximale';
+
+  @override
+  String get audioInputListSubtitle => 'Prépare et partage ta liste d\'entrées';
+
+  @override
+  String get networkPoeSubtitle => 'Budget de puissance PoE d\'un switch';
+
+  @override
+  String get networkFiberSubtitle => 'Pertes et marge d\'une liaison fibre';
+
+  @override
+  String get networkSubnetSubtitle => 'Masque, plage d\'adresses et broadcast';
+
+  @override
+  String get networkArtNetAddressingSubtitle =>
+      'Univers DMX ↔ Net / Sub-Net / Univers';
+
+  @override
+  String get rdmPageSubtitle => 'Découverte et réglage des appareils RDM';
+
+  @override
+  String get rfSplitterSubtitle =>
+      'Pertes d\'insertion des répartiteurs et combineurs';
+
+  @override
+  String get rfCableAntennaSubtitle => 'Pertes câble et gain d\'antenne';
+
+  @override
+  String get rfPlannerSubtitle => 'Plan de fréquences HF sans intermodulation';
+
+  @override
+  String get timecodeToolConverterSubtitle =>
+      'Convertir un timecode d\'une cadence à l\'autre';
+
+  @override
+  String get timecodeToolMathSubtitle =>
+      'Additionner, soustraire et décaler du timecode';
+
+  @override
+  String get timecodeToolDelaySubtitle => 'Convertir frames et millisecondes';
+
+  @override
+  String get timecodeToolCountdownSubtitle =>
+      'Compte à rebours jusqu\'à un timecode';
+
+  @override
+  String get filterCorrespondenceSubtitle =>
+      'Équivalences entre gammes de filtres';
+
+  @override
+  String get ma3CalcEditSheetTitle => 'MODIFIER CETTE MACHINE';
+
+  @override
+  String get ma3CalcActionChangeMode => 'Changer de mode';
+
+  @override
+  String get ma3CalcActionChangeModeSub =>
+      'Garder la machine, choisir un autre mode DMX';
+
+  @override
+  String get ma3CalcActionChangeType => 'Changer de machine (GDTF)';
+
+  @override
+  String get ma3CalcActionChangeTypeSub =>
+      'Remplacer ou ajouter le GDTF : GDTF Share ou fichier';
+
+  @override
+  String get ma3CalcActionManual => 'Saisir les paramètres à la main';
+
+  @override
+  String get ma3CalcActionManualSub => 'Forcer une valeur par machine';
+
+  @override
+  String get ma3CalcNeedGdtfFirst =>
+      'Pas de GDTF pour cette machine : choisis-le d\'abord.';
+
+  @override
+  String get ma3CalcReplaceSheetTitle => 'Choisir la machine';
+
+  @override
+  String ma3CalcLineUpdated(Object label) {
+    return '✅ $label mis à jour';
+  }
+
+  @override
+  String get audioPickAmplifier => 'Choisir un amplificateur';
+
+  @override
+  String get audioPickSpeaker => 'Choisir une enceinte';
+
+  @override
+  String get audioSearchBrandModel => 'Rechercher une marque ou un modèle';
+
+  @override
+  String get audioCustomPreset => 'Personnalisé';
+
+  @override
+  String get audioCustomPresetHint => 'Saisir vos propres valeurs';
+
+  @override
+  String audioModelsCount(Object count) {
+    return '$count modèles';
+  }
+
+  @override
+  String get audioNoResults => 'Aucun résultat';
+
+  @override
+  String audioChannelsCount(Object count) {
+    return '$count voies';
+  }
+
+  @override
+  String audioRecommendedAmp(Object range) {
+    return 'Ampli recommandé : $range';
+  }
+
+  @override
+  String audioPowerHandling(Object watts) {
+    return 'Tenue en puissance : $watts W';
+  }
+
+  @override
+  String get audioNoPowerData =>
+      'Tenue en puissance non publiée par le fabricant : seule l’impédance est vérifiée. Utilisez ses presets / contrôleurs.';
+
+  @override
+  String get audioActiveSection =>
+      'Enceinte active : une voie d’ampli par section.';
+
+  @override
+  String audioStatusZTooLow(Object diff) {
+    return '✗  Z trop basse (−$diff Ω)';
+  }
+
+  @override
+  String audioStatusOkPct(Object pct) {
+    return '✓  OK ($pct % RMS)';
+  }
+
+  @override
+  String audioStatusUnderpowered(Object pct) {
+    return '↓  Sous-alimenté ($pct % RMS)';
+  }
+
+  @override
+  String audioStatusHeadroom(Object ratio) {
+    return '✓  Marge ×$ratio';
+  }
+
+  @override
+  String audioStatusOverpowered(Object ratio) {
+    return '✗  Trop puissant ×$ratio';
+  }
+
+  @override
+  String get audioStatusInRange => '✓  Dans la plage fabricant';
+
+  @override
+  String get audioStatusBelowRange => '↓  Sous la plage recommandée';
+
+  @override
+  String get audioStatusAboveRange => '⚠  Au-dessus de la plage';
+
+  @override
+  String get audioStatusZOkNoData => '✓  Z OK — P non publiée';
+
+  @override
+  String audioStatusLimiterRequired(Object ratio) {
+    return '⚠  ×$ratio — limiteur indispensable';
+  }
 }

@@ -8,6 +8,8 @@ import 'subscription_page.dart';
 import 'laser/laser_calculations.dart';
 import 'laser/laser_storage.dart';
 import 'laser/laser_beam_size_page.dart';
+import 'about/about_favorites.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class LaserPage extends StatefulWidget {
   const LaserPage({super.key});
@@ -367,7 +369,7 @@ class _LaserPageState extends State<LaserPage> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
       decoration: BoxDecoration(
-        color: const Color(0xFF0B0B0B),
+        color: const Color(0xFF0E0E18),
         borderRadius: BorderRadius.circular(14),
         border: Border.all(color: Colors.white.withValues(alpha: 0.10)),
       ),
@@ -457,6 +459,10 @@ class _LaserPageState extends State<LaserPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(loc.homeLaserTitle),
+        actions: const [
+          AboutPinButton(pageId: 'tool:laser_safety_zones', sectionId: 'main'),
+          SizedBox(width: 4),
+        ],
       ),
       body: SafeArea(
         bottom: true,
@@ -465,6 +471,7 @@ class _LaserPageState extends State<LaserPage> {
           child: Column(
             children: [
               SectionCard(
+                accentColor: kSectionLaser,
                 title: loc.laserToolsTitle,
                 icon: Icons.build_outlined,
                 child: Column(
@@ -499,6 +506,7 @@ class _LaserPageState extends State<LaserPage> {
               ),
               const SizedBox(height: 12),
               SectionCard(
+                accentColor: kSectionLaser,
                 title: loc.laserInputsTitle,
                 icon: Icons.tune,
                 child: Column(
@@ -593,6 +601,7 @@ class _LaserPageState extends State<LaserPage> {
               ),
               const SizedBox(height: 12),
               SectionCard(
+                accentColor: kSectionLaser,
                 title: loc.laserSavedProjectorsTitle,
                 icon: Icons.bookmarks_outlined,
                 child: Column(
@@ -666,6 +675,7 @@ class _LaserPageState extends State<LaserPage> {
               ),
               const SizedBox(height: 16),
               ExpandSectionCard(
+                accentColor: kSectionLaser,
                 title: loc.laserNormativeParamsTitle,
                 icon: Icons.info_outline,
                 initiallyExpanded: false,
@@ -673,7 +683,7 @@ class _LaserPageState extends State<LaserPage> {
                   width: double.infinity,
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF0B0B0B),
+                    color: const Color(0xFF0E0E18),
                     borderRadius: BorderRadius.circular(14),
                     border:
                         Border.all(color: Colors.white.withValues(alpha: 0.10)),

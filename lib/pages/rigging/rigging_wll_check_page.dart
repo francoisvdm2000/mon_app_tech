@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import '../../l10n_gen/app_localizations.dart';
 import 'widgets/rigging_result_card.dart';
+import '../about/about_favorites.dart';
 
 class RiggingWllCheckPage extends StatefulWidget {
   const RiggingWllCheckPage({super.key});
@@ -50,7 +51,13 @@ class _RiggingWllCheckPageState extends State<RiggingWllCheckPage> {
             : Colors.redAccent;
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.riggingToolWllTitle)),
+      appBar: AppBar(
+        title: Text(loc.riggingToolWllTitle),
+        actions: const [
+          AboutPinButton(pageId: 'tool:rigging_wll_check', sectionId: 'main'),
+          SizedBox(width: 4),
+        ],
+      ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [

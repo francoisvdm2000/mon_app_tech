@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 
 import '../../l10n_gen/app_localizations.dart';
 import 'widgets/rigging_result_card.dart';
+import '../about/about_favorites.dart';
 
 class RiggingAngleFactorPage extends StatefulWidget {
   const RiggingAngleFactorPage({super.key});
@@ -36,7 +37,13 @@ class _RiggingAngleFactorPageState extends State<RiggingAngleFactorPage> {
     final color = angle == null ? Colors.orangeAccent : _angleStatusColor(angle);
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.riggingToolAngleFactorTitle)),
+      appBar: AppBar(
+        title: Text(loc.riggingToolAngleFactorTitle),
+        actions: const [
+          AboutPinButton(pageId: 'tool:rigging_angle_factor', sectionId: 'main'),
+          SizedBox(width: 4),
+        ],
+      ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [

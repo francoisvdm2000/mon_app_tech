@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import '../../app/ui/widgets.dart'; // SectionCard
 import 'laser_calculations.dart';
+import '../about/about_favorites.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class LaserBeamSizePage extends StatefulWidget {
   const LaserBeamSizePage({super.key});
@@ -87,6 +89,10 @@ class _LaserBeamSizePageState extends State<LaserBeamSizePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(loc.laserBeamSizeTitle),
+        actions: const [
+          AboutPinButton(pageId: 'tool:laser_beam_size', sectionId: 'main'),
+          SizedBox(width: 4),
+        ],
       ),
       body: SafeArea(
         bottom: true,
@@ -95,6 +101,7 @@ class _LaserBeamSizePageState extends State<LaserBeamSizePage> {
           child: Column(
             children: [
               SectionCard(
+                accentColor: kSectionLaser,
                 title: loc.laserBeamInputsTitle,
                 icon: Icons.straighten,
                 child: Column(
@@ -147,6 +154,7 @@ class _LaserBeamSizePageState extends State<LaserBeamSizePage> {
               ),
               const SizedBox(height: 12),
               SectionCard(
+                accentColor: kSectionLaser,
                 title: loc.laserBeamResultsTitle,
                 icon: Icons.analytics_outlined,
                 child: Column(
@@ -216,7 +224,7 @@ class _ResultRow extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFF0B0B0B),
+        color: const Color(0xFF0E0E18),
         borderRadius: BorderRadius.circular(14),
         border: Border.all(color: Colors.white.withValues(alpha: 0.10)),
       ),

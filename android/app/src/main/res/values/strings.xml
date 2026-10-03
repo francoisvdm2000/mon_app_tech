@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ShowTech Tools</string>
+
+    <!-- Meta / Facebook SDK -->
+    <!-- Remplacer YOUR_FACEBOOK_CLIENT_TOKEN par la valeur dans -->
+    <!-- Meta Developer Console > Paramètres > Avancé > Token client -->
+    <string name="facebook_app_id">1613587436417586</string>
+    <string name="facebook_client_token">3361ade0ee78af60d0ec63b659282693</string>
+</resources>

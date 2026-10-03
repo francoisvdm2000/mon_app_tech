@@ -5,6 +5,7 @@ import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'patch_mvr_import_page.dart';
 import 'patch_universe_page.dart';
 import 'patch_store.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class PatchHubPage extends StatelessWidget {
   const PatchHubPage({super.key});
@@ -31,6 +32,7 @@ class PatchHubPage extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
             children: [
               SectionCard(
+                accentColor: kSectionLight,
                 title: loc.patchHubWorksiteTitle,
                 icon: Icons.lock_outline,
                 child: Text(
@@ -50,6 +52,7 @@ class PatchHubPage extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               SectionCard(
+                accentColor: kSectionLight,
                 title: loc.patchHubStateTitle,
                 icon: Icons.info_outline,
                 child: Text(

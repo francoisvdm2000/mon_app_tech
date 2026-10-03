@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "184476147032",
+    "firebase_url": "https://showtech-tools-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "showtech-tools",
+    "storage_bucket": "showtech-tools.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184476147032:android:de8e7b6fa5c0d7138e592d",
+        "android_client_info": {
+          "package_name": "eu.openwhite.showtechtools"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "184476147032-1a14qi92qf0s8165f8tmrl3u8h7l7scu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "eu.openwhite.showtechtools",
+            "certificate_hash": "3982151b7011f16e5b75ec70278f10d29774291d"
+          }
+        },
+        {
+          "client_id": "184476147032-rrcjqrv2ibpvhhhercuqgkc21aj19dje.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "eu.openwhite.showtechtools",
+            "certificate_hash": "017d4b8705951f5501b58338b0deebadf37d8a14"
+          }
+        },
+        {
+          "client_id": "184476147032-tburjehti3io7aomb9paj4nf841utq5g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "eu.openwhite.showtechtools",
+            "certificate_hash": "5575eb58152c2204375c7033049abe6c28a5d3e9"
+          }
+        },
+        {
+          "client_id": "184476147032-ne4t5616j85bbhrpciligmi68hmnmplr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubAEJukFq9xeOndNetdmw4TuFj9-rwKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "184476147032-ne4t5616j85bbhrpciligmi68hmnmplr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "184476147032-gf50jagf6555kpjcthoun22ecn029tfa.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "eu.openwhite.showtechtools"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

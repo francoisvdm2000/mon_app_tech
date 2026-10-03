@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../../app/ui/widgets.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'photometry_calculations.dart';
+import '../about/about_favorites.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class PhotometryPage extends StatefulWidget {
   const PhotometryPage({super.key});
@@ -317,6 +319,7 @@ class _PhotometryPageState extends State<PhotometryPage> {
       appBar: AppBar(
         title: Text(loc.lightPhotometryTitle),
         actions: [
+          const AboutPinButton(pageId: 'tool:lumiere_photometry', sectionId: 'main'),
           IconButton(
             tooltip: loc.commonReset,
             onPressed: _resetAll,
@@ -329,6 +332,7 @@ class _PhotometryPageState extends State<PhotometryPage> {
         child: Column(
           children: [
             ExpandSectionCard(
+              accentColor: kSectionLight,
               // Section 1 : Lux <> Candela
               title: loc.photometrySection1Title,
               icon: Icons.light_mode,
@@ -374,6 +378,7 @@ class _PhotometryPageState extends State<PhotometryPage> {
             ),
             const SizedBox(height: 14),
             ExpandSectionCard(
+              accentColor: kSectionLight,
               // Section 2 : Lux <> Candela (titre renommé comme demandé)
               title: loc.photometrySection2Title,
               icon: Icons.flash_on,
@@ -419,6 +424,7 @@ class _PhotometryPageState extends State<PhotometryPage> {
             ),
             const SizedBox(height: 14),
             ExpandSectionCard(
+              accentColor: kSectionLight,
               // Section 3 : Lumen > Lux
               title: loc.photometrySection3Title,
               icon: Icons.calculate,
@@ -464,6 +470,7 @@ class _PhotometryPageState extends State<PhotometryPage> {
             ),
             const SizedBox(height: 14),
             ExpandSectionCard(
+              accentColor: kSectionLight,
               // Section 4 : Lux > Lumen
               title: loc.photometrySection4Title,
               icon: Icons.swap_horiz,

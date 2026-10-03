@@ -2,7 +2,7 @@ name: mon_app_tech
 description: "A new Flutter project."
 publish_to: 'none'
 
-version: 2.1.0+9
+version: 3.7.1+100
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -11,8 +11,13 @@ dependencies:
   flutter:
     sdk: flutter
   package_info_plus: ^8.0.2
-  in_app_purchase: ^3.1.13
+  network_info_plus: ^6.0.0
+  permission_handler: ^11.3.0
+  noise_meter: ^6.0.0
+  multicast_dns: ^0.3.2
+  in_app_purchase: ^3.3.0
   syncfusion_flutter_pdf: ^33.1.49
+  
 
   flutter_localizations:
     sdk: flutter
@@ -25,18 +30,67 @@ dependencies:
   http: ^1.2.0
   url_launcher: ^6.3.0
   file_picker: ^8.0.0
-  archive: ^3.6.1
+  archive: ^4.0.9
   xml: ^6.5.0
   web: ^1.0.0
   share_plus: ^10.0.2
   path_provider: ^2.1.4
+  wifi_scan: ^0.4.1
 
+  # Visualiseur MVR 3D (six plateformes : android/ios/linux/macos/web/windows)
+  three_js: ^0.3.0
+  three_js_controls: ^0.3.0
 
+  # Meta / Facebook App Events
+  facebook_app_events: ^0.27.2
+
+  # Firebase
+  firebase_core: ^3.6.0
+  firebase_storage: ^12.3.0
+  cloud_firestore: ^5.4.4
+  firebase_auth: ^5.3.1
+  cloud_functions: ^5.1.0
+  google_sign_in: ^6.2.2
+
+  intl: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
   flutter_launcher_icons: ^0.13.1
+
+# Écran noir sur Android avec three_js_angle_renderer 0.0.1 (pub.dev, publié
+# avant le correctif) : bug connu du mainteneur (mauvaise adresse mémoire
+# TypedData transmise à ANGLE côté Vulkan sur certains GPU — voir
+# https://github.com/Knightro63/three_js/issues/136). Le correctif est déjà
+# sur la branche main du dépôt mais n'a pas encore été republié sur pub.dev,
+# d'où cette dépendance vers le dépôt Git en attendant une nouvelle version.
+#
+# IMPORTANT : les 3 overrides ci-dessous pointent vers le MÊME commit figé
+# (ref:), jamais vers "main" flottant (sinon le prochain `pub get` récupère
+# une nouvelle version de main qui peut casser le build, comme le 15/09/2026 :
+# three_js_angle_renderer (Git) utilise des classes — Info, Properties — qui
+# n'existent pas encore dans three_js_core 0.3.0 publié sur pub.dev, d'où
+# l'erreur "Type 'Info' not found" tant que three_js_core n'est pas, lui
+# aussi, épinglé sur ce même commit Git.
+# Pour mettre à jour vers un commit plus récent : changer les 3 `ref:`
+# ensemble, jamais un seul isolément.
+dependency_overrides:
+  three_js_angle_renderer:
+    git:
+      url: https://github.com/Knightro63/three_js.git
+      path: packages/three_js_angle_renderer
+      ref: 43814addd7ce3ed2c560dcd08cb491a9546977b0
+  three_js_math:
+    git:
+      url: https://github.com/Knightro63/three_js.git
+      path: packages/three_js_math
+      ref: 43814addd7ce3ed2c560dcd08cb491a9546977b0
+  three_js_core:
+    git:
+      url: https://github.com/Knightro63/three_js.git
+      path: packages/three_js_core
+      ref: 43814addd7ce3ed2c560dcd08cb491a9546977b0
 
 flutter:
   uses-material-design: true
@@ -46,6 +100,8 @@ flutter:
     - assets/lumiere/fixtures.json
     - assets/icon/
     - assets/lumiere/filters.json
+    - assets/lumiere/filter_equivalents.json
+    - assets/tool_icons/
 
 flutter_launcher_icons:
   android: true

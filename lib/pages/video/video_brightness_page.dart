@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../../app/ui/widgets.dart'; // numFormatter, ExpandSectionCard, ResultBox, copyToClipboard
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
+import '../about/about_favorites.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class VideoBrightnessPage extends StatefulWidget {
   const VideoBrightnessPage({super.key});
@@ -172,6 +174,7 @@ class _VideoBrightnessPageState extends State<VideoBrightnessPage> {
     required String calcLabel,
   }) {
     return ExpandSectionCard(
+      accentColor: kSectionVideo,
       title: title,
       icon: icon,
       initiallyExpanded: true,
@@ -260,7 +263,13 @@ class _VideoBrightnessPageState extends State<VideoBrightnessPage> {
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.videoBrightnessTitle)),
+      appBar: AppBar(
+        title: Text(loc.videoBrightnessTitle),
+        actions: const [
+          AboutPinButton(pageId: 'tool:video_brightness', sectionId: 'main'),
+          SizedBox(width: 4),
+        ],
+      ),
       body: SafeArea(
         bottom: true,
         child: SingleChildScrollView(

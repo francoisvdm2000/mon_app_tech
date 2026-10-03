@@ -163,7 +163,7 @@ final List<_TocItem> items;
               (it) => Padding(
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Material(
-                  color: const Color(0xFF0B0B0B),
+                  color: const Color(0xFF0E0E18),
                   borderRadius: BorderRadius.circular(12),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(12),
@@ -647,7 +647,7 @@ class _CodeBox extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFF0B0B0B),
+        color: const Color(0xFF0E0E18),
         borderRadius: BorderRadius.circular(14),
         border: Border.all(color: Colors.white.withValues(alpha: 0.10)),
       ),

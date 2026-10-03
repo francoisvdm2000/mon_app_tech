@@ -5,7 +5,9 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
+import '../services/meta_analytics_service.dart';
 import '../services/subscription_service.dart';
+import '../services/purchase_verification_service.dart';
 
 class SubscriptionPage extends StatefulWidget {
   const SubscriptionPage({super.key, this.category});
@@ -107,6 +109,8 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
     if (widget.category == null) {
       return const [
         SubscriptionCategory.pro,
+        SubscriptionCategory.network,
+        SubscriptionCategory.sonRf,
         SubscriptionCategory.video,
         SubscriptionCategory.lumiere,
         SubscriptionCategory.laser,
@@ -137,14 +141,46 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
             SubscriptionService.categoryFromProductId(purchase.productID);
 
         if (category != null) {
-          await SubscriptionService.activate(category);
-          shouldClose = widget.category != null;
+          // Revérification serveur obligatoire (Apple/Google, jamais le
+          // seul statut local) avant de considérer l'achat comme actif.
+          final active = await PurchaseVerificationService.verify(purchase);
+          shouldClose = active && widget.category != null;
+
+          // ── Meta App Events ───────────────────────────────────────────
+          // Log uniquement pour les nouveaux achats confirmés par le
+          // serveur (pas les restaurations, pas les achats non vérifiés).
+          if (active && purchase.status == PurchaseStatus.purchased) {
+            ProductDetails? product;
+            try {
+              product =
+                  _products.firstWhere((p) => p.id == purchase.productID);
+            } catch (_) {}
+
+            await MetaAnalyticsService.logPurchase(
+              productId: purchase.productID,
+              price: product?.rawPrice ?? 0.0,
+              currency: product?.currencyCode ?? 'EUR',
+            );
+            await MetaAnalyticsService.logSubscribe(
+              productId: purchase.productID,
+            );
+          }
+          // ──────────────────────────────────────────────────────────────
         }
 
         if (purchase.pendingCompletePurchase) {
           await _iap.completePurchase(purchase);
         }
       } else if (purchase.status == PurchaseStatus.error) {
+        if (mounted) {
+          setState(() => _purchasing = false);
+        }
+      } else if (purchase.status == PurchaseStatus.canceled) {
+        if (mounted) {
+          setState(() => _purchasing = false);
+        }
+      } else if (purchase.status == PurchaseStatus.pending) {
+        // Achat en attente (ex: Ask to Buy familial) — on libère l'UI
         if (mounted) {
           setState(() => _purchasing = false);
         }
@@ -203,6 +239,41 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
   bool _isIncludedViaPro(SubscriptionCategory category) =>
       category != SubscriptionCategory.pro && _hasPro();
 
+  // Couleurs alignées avec les badges de l'app
+  static const _kColorPro         = Color(0xFF7C4DFF); // violet premium
+  static const _kColorVideo       = Color(0xFF00B4D8);
+  static const _kColorLight       = Color(0xFFFFB703);
+  static const _kColorLaser       = Color(0xFFDA77FF);
+  static const _kColorConsole     = Color(0xFF4CC9F0);
+  static const _kColorElectricity = Color(0xFFFF9F1C);
+  static const _kColorRigging     = Color(0xFF2DC653);
+
+  static const _kColorSonRf    = Color(0xFF00E5FF);
+  static const _kColorNetwork  = Color(0xFF00BCD4); // teal réseau
+
+  Color _categoryColor(SubscriptionCategory category) {
+    switch (category) {
+      case SubscriptionCategory.pro:
+        return _kColorPro;
+      case SubscriptionCategory.video:
+        return _kColorVideo;
+      case SubscriptionCategory.lumiere:
+        return _kColorLight;
+      case SubscriptionCategory.laser:
+        return _kColorLaser;
+      case SubscriptionCategory.console:
+        return _kColorConsole;
+      case SubscriptionCategory.electricity:
+        return _kColorElectricity;
+      case SubscriptionCategory.rigging:
+        return _kColorRigging;
+      case SubscriptionCategory.sonRf:
+        return _kColorSonRf;
+      case SubscriptionCategory.network:
+        return _kColorNetwork;
+    }
+  }
+
   IconData _categoryIcon(SubscriptionCategory category) {
     switch (category) {
       case SubscriptionCategory.video:
@@ -219,6 +290,10 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
         return Icons.construction;
       case SubscriptionCategory.pro:
         return Icons.workspace_premium;
+      case SubscriptionCategory.sonRf:
+        return Icons.speaker_group_rounded;
+      case SubscriptionCategory.network:
+        return Icons.wifi_tethering_rounded;
     }
   }
 
@@ -241,6 +316,10 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
         return loc.subscriptionCategoryRiggingTitle;
       case SubscriptionCategory.pro:
         return loc.subscriptionCategoryProTitle;
+      case SubscriptionCategory.sonRf:
+        return 'Son & RF';
+      case SubscriptionCategory.network:
+        return loc.subscriptionCategoryNetworkTitle;
     }
   }
 
@@ -263,6 +342,10 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
         return loc.subscriptionCategoryRiggingDescription;
       case SubscriptionCategory.pro:
         return loc.subscriptionCategoryProDescription;
+      case SubscriptionCategory.sonRf:
+        return 'Outils avancés Son & RF : sub cardioïde, SPL, IM3, WiFi, scan terrain et plus.';
+      case SubscriptionCategory.network:
+        return loc.subscriptionCategoryNetworkDescription;
     }
   }
 
@@ -292,6 +375,10 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
         return loc.subscriptionHeadlineRiggingSubtitle;
       case SubscriptionCategory.pro:
         return loc.subscriptionHeadlineProSubtitle;
+      case SubscriptionCategory.sonRf:
+        return 'Débloquez les outils Son & RF avancés : sub cardioïde, SPL, intermodulation IM3, canaux WiFi, scan terrain et journal de fréquences.';
+      case SubscriptionCategory.network:
+        return loc.subscriptionHeadlineNetworkSubtitle;
       case null:
         return loc.subscriptionHeadlineAllSubtitle;
     }
@@ -303,6 +390,10 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
     }
 
     return loc.subscriptionSubscribeModule(_categoryTitle(loc, category));
+  }
+
+  String _subscriptionDurationLabel(AppLocalizations loc) {
+    return loc.subscriptionDurationYear;
   }
 
   Widget _statusChip({
@@ -356,12 +447,25 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
     return ListView(
       padding: const EdgeInsets.fromLTRB(20, 24, 20, 40),
       children: [
-        Icon(
-          widget.category == null
-              ? Icons.workspace_premium
-              : _categoryIcon(widget.category!),
-          size: 56,
-          color: Colors.white70,
+        Container(
+          width: 80,
+          height: 80,
+          decoration: BoxDecoration(
+            color: (widget.category == null
+                    ? _kColorPro
+                    : _categoryColor(widget.category!))
+                .withValues(alpha: 0.15),
+            shape: BoxShape.circle,
+          ),
+          child: Icon(
+            widget.category == null
+                ? Icons.workspace_premium
+                : _categoryIcon(widget.category!),
+            size: 42,
+            color: widget.category == null
+                ? _kColorPro
+                : _categoryColor(widget.category!),
+          ),
         ),
         const SizedBox(height: 16),
         Text(
@@ -436,22 +540,15 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
     final includedViaPro = _isIncludedViaPro(category);
     final isOwned = directlyOwned || includedViaPro;
 
-    final borderColor = isPro
-        ? Colors.amber.withValues(alpha: 0.8)
-        : isOwned
-            ? Colors.green.withValues(alpha: 0.55)
-            : Colors.white24;
+    final accent = _categoryColor(category);
 
-    final backgroundColor = isPro
-        ? Colors.amber.withValues(alpha: 0.06)
-        : isOwned
-            ? Colors.green.withValues(alpha: 0.05)
-            : Colors.white.withValues(alpha: 0.04);
+    final borderColor = accent.withValues(alpha: isOwned ? 0.90 : isPro ? 0.80 : 0.50);
+    final backgroundColor = accent.withValues(alpha: isPro ? 0.07 : 0.04);
 
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(
           color: borderColor,
           width: isPro ? 1.5 : 1,
@@ -468,13 +565,13 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                 margin: const EdgeInsets.only(bottom: 10),
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                 decoration: BoxDecoration(
-                  color: Colors.amber,
-                  borderRadius: BorderRadius.circular(4),
+                  color: accent,
+                  borderRadius: BorderRadius.circular(6),
                 ),
                 child: Text(
                   loc.subscriptionBestValue,
                   style: const TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontSize: 10,
                     fontWeight: FontWeight.w800,
                   ),
@@ -483,9 +580,18 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(
-                  _categoryIcon(category),
-                  color: isPro ? Colors.amber : Colors.white70,
+                Container(
+                  width: 42,
+                  height: 42,
+                  decoration: BoxDecoration(
+                    color: accent.withValues(alpha: 0.14),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Icon(
+                    _categoryIcon(category),
+                    color: accent,
+                    size: 22,
+                  ),
                 ),
                 const SizedBox(width: 12),
                 Expanded(
@@ -497,6 +603,7 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                         style: const TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 16,
+                          color: Colors.white,
                         ),
                       ),
                       const SizedBox(height: 4),
@@ -505,19 +612,34 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                         style: const TextStyle(
                           color: Colors.white54,
                           fontSize: 13,
+                          height: 1.3,
                         ),
                       ),
                     ],
                   ),
                 ),
                 const SizedBox(width: 12),
-                Text(
-                  product?.price ?? '—',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w800,
-                    color: isPro ? Colors.amber : Colors.white,
-                  ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      product?.price ?? '—',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w800,
+                        color: accent,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      _subscriptionDurationLabel(loc),
+                      style: TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w600,
+                        color: accent.withValues(alpha: 0.65),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -525,14 +647,14 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
             if (includedViaPro)
               _statusChip(
                 label: loc.subscriptionIncludedInPro,
-                foreground: Colors.greenAccent,
-                background: Colors.green.withValues(alpha: 0.10),
+                foreground: accent,
+                background: accent.withValues(alpha: 0.12),
               )
             else if (directlyOwned)
               _statusChip(
                 label: loc.subscriptionOwned,
-                foreground: Colors.greenAccent,
-                background: Colors.green.withValues(alpha: 0.10),
+                foreground: accent,
+                background: accent.withValues(alpha: 0.12),
               )
             else if (product == null)
               Text(
@@ -545,8 +667,11 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                 child: ElevatedButton(
                   onPressed: () => _buy(product),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: isPro ? Colors.amber : null,
-                    foregroundColor: isPro ? Colors.black : null,
+                    backgroundColor: accent,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
                   child: Text(_buttonLabel(loc, category)),
                 ),

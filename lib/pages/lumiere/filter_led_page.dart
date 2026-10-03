@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../about/about_favorites.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // ENTRY POINT
@@ -191,7 +192,7 @@ class _FilterLedPageState extends State<FilterLedPage>
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        backgroundColor: const Color(0xFF1A1A2E),
+        backgroundColor: const Color(0xFF161622),
         title: Text(loc.lightFilterLedSaveProfileTitle),
         content: TextField(
           controller: nameCtrl,
@@ -268,18 +269,49 @@ class _FilterLedPageState extends State<FilterLedPage>
     return Scaffold(
       appBar: AppBar(
         title: Text(loc.lightFilterLedTitle),
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: [
-            Tab(
-              icon: const Icon(Icons.palette_outlined),
-              text: loc.lightFilterLedTabConvert,
+        actions: const [
+          AboutPinButton(pageId: 'tool:lumiere_filter_led', sectionId: 'main'),
+          SizedBox(width: 4),
+        ],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(56),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 10),
+            child: Container(
+              decoration: BoxDecoration(
+                color: const Color(0xFF0E0E18),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                    color: Colors.white.withValues(alpha: 0.08)),
+              ),
+              child: TabBar(
+                controller: _tabController,
+                labelColor: const Color(0xFFFFB703),
+                unselectedLabelColor: Colors.white38,
+                dividerColor: Colors.transparent,
+                indicatorSize: TabBarIndicatorSize.tab,
+                indicator: BoxDecoration(
+                  color: const Color(0xFFFFB703).withValues(alpha: 0.13),
+                  borderRadius: BorderRadius.circular(11),
+                  border: Border.all(
+                      color: const Color(0xFFFFB703).withValues(alpha: 0.40)),
+                ),
+                overlayColor: WidgetStateProperty.all(Colors.transparent),
+                tabs: [
+                  Tab(
+                    icon: const Icon(Icons.palette_outlined, size: 18),
+                    text: loc.lightFilterLedTabConvert,
+                    height: 46,
+                  ),
+                  Tab(
+                    icon: const Icon(Icons.tune, size: 18),
+                    text: loc.lightFilterLedTabProfiles,
+                    height: 46,
+                  ),
+                ],
+              ),
             ),
-            Tab(
-              icon: const Icon(Icons.tune),
-              text: loc.lightFilterLedTabProfiles,
-            ),
-          ],
+          ),
         ),
       ),
       body: TabBarView(
@@ -385,7 +417,9 @@ class _FilterLedPageState extends State<FilterLedPage>
                     .map((f) => DropdownMenuItem(
                           value: f,
                           child: Text(
-                            '${f.code} — ${f.name}',
+                            f.name == f.code
+                                ? f.code
+                                : '${f.code} — ${f.name}',
                             overflow: TextOverflow.ellipsis,
                           ),
                         ))
@@ -558,11 +592,14 @@ class _BlockCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: child,
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: const Color(0xFF161622),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.07)),
       ),
+      child: child,
     );
   }
 }
@@ -594,7 +631,7 @@ class _FilterPreviewCard extends StatelessWidget {
               // original swatch
               _ColorSwatch(
                 color: filter.displayColor,
-                label: 'Filtre',
+                label: AppLocalizations.of(context).filterLedFiltreLabel,
                 size: 56,
               ),
               const SizedBox(width: 8),
@@ -685,7 +722,7 @@ class _TransmissionBar extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Transmission',
+            Text(AppLocalizations.of(context).filterLedTransmissionLabel,
                 style: const TextStyle(color: Colors.white54, fontSize: 12)),
             Text('${(value * 100).toStringAsFixed(1)} %',
                 style: const TextStyle(color: Colors.white70, fontSize: 12)),
@@ -751,17 +788,17 @@ class _ResultCard extends StatelessWidget {
               IconButton(
                 icon: Icon(
                   Icons.tune,
-                  color: calibrationMode ? Colors.amber : Colors.white38,
+                  color: calibrationMode ? const Color(0xFFFFB703) : Colors.white38,
                 ),
                 tooltip: calibrationMode
-                    ? 'Masquer calibration'
-                    : 'Calibrer ma fixture',
+                    ? AppLocalizations.of(context).filterLedHideCalibration
+                    : AppLocalizations.of(context).filterLedShowCalibration,
                 onPressed: onToggleCalibration,
               ),
               // save profile
               IconButton(
                 icon: const Icon(Icons.save_outlined, color: Colors.white38),
-                tooltip: 'Sauvegarder le profil',
+                tooltip: AppLocalizations.of(context).filterLedSaveProfileTooltip,
                 onPressed: onSaveProfile,
               ),
             ],
@@ -945,7 +982,7 @@ class _ChannelBar extends StatelessWidget {
                   textAlign: TextAlign.right,
                   style: TextStyle(
                     fontSize: 11,
-                    color: offset == 0 ? Colors.white38 : Colors.amber,
+                    color: offset == 0 ? Colors.white38 : const Color(0xFFFFB703),
                   ),
                 ),
               ),
@@ -971,7 +1008,7 @@ class _ColorComparisonBar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Divider(height: 24, color: Colors.white12),
-        Text('Comparaison couleur',
+        Text(AppLocalizations.of(context).filterLedColorComparisonTitle,
             style: const TextStyle(color: Colors.white54, fontSize: 12)),
         const SizedBox(height: 8),
         ClipRRect(
@@ -983,8 +1020,8 @@ class _ColorComparisonBar extends StatelessWidget {
                   children: [
                     Container(height: 32, color: original),
                     const SizedBox(height: 4),
-                    const Text('Filtre',
-                        style: TextStyle(color: Colors.white38, fontSize: 11)),
+                    Text(AppLocalizations.of(context).filterLedFiltreLabel,
+                        style: const TextStyle(color: Colors.white38, fontSize: 11)),
                   ],
                 ),
               ),
@@ -1019,27 +1056,27 @@ class _ProfileBanner extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
-        color: Colors.amber.withValues(alpha: 0.12),
+        color: const Color(0xFFFFB703).withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.amber.withValues(alpha: 0.4)),
+        border: Border.all(color: const Color(0xFFFFB703).withValues(alpha: 0.4)),
       ),
       child: Row(
         children: [
-          const Icon(Icons.tune, color: Colors.amber, size: 18),
+          const Icon(Icons.tune, color: Color(0xFFFFB703), size: 18),
           const SizedBox(width: 8),
           Expanded(
             child: Text(
               profile.name,
               style: const TextStyle(
-                  color: Colors.amber, fontWeight: FontWeight.w600),
+                  color: Color(0xFFFFB703), fontWeight: FontWeight.w600),
             ),
           ),
           Text(
             profile.engine.label,
-            style: const TextStyle(color: Colors.amber, fontSize: 12),
+            style: const TextStyle(color: Color(0xFFFFB703), fontSize: 12),
           ),
           IconButton(
-            icon: const Icon(Icons.close, size: 16, color: Colors.amber),
+            icon: const Icon(Icons.close, size: 16, color: Color(0xFFFFB703)),
             onPressed: onClear,
             padding: EdgeInsets.zero,
             constraints: const BoxConstraints(),
@@ -1066,28 +1103,40 @@ class _ProfileCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final hasOffsets = profile.offsets.values.any((v) => v != 0);
 
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-        side: isActive
-            ? const BorderSide(color: Colors.amber, width: 1.5)
-            : BorderSide.none,
+    const kAccent = Color(0xFFFFB703);
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFF161622),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: isActive
+              ? kAccent.withValues(alpha: 0.50)
+              : Colors.white.withValues(alpha: 0.07),
+          width: isActive ? 1.5 : 1.0,
+        ),
       ),
       child: ListTile(
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        leading: CircleAvatar(
-          backgroundColor:
-              isActive ? Colors.amber.withValues(alpha: 0.2) : Colors.white10,
+        leading: Container(
+          width: 40,
+          height: 40,
+          decoration: BoxDecoration(
+            color: isActive
+                ? kAccent.withValues(alpha: 0.15)
+                : Colors.white.withValues(alpha: 0.07),
+            borderRadius: BorderRadius.circular(10),
+          ),
           child: Icon(
             Icons.memory_outlined,
-            color: isActive ? Colors.amber : Colors.white54,
+            color: isActive ? kAccent : Colors.white38,
+            size: 20,
           ),
         ),
         title: Text(
           profile.name,
           style: TextStyle(
-            fontWeight: FontWeight.w600,
-            color: isActive ? Colors.amber : Colors.white,
+            fontWeight: FontWeight.w700,
+            color: isActive ? kAccent : Colors.white,
           ),
         ),
         subtitle: Column(
@@ -1095,12 +1144,14 @@ class _ProfileCard extends StatelessWidget {
           children: [
             Text(
               profile.engine.label,
-              style: const TextStyle(color: Colors.white54),
+              style: TextStyle(
+                  color: Colors.white.withValues(alpha: 0.55), fontSize: 12.5),
             ),
             if (hasOffsets)
               Text(
                 _offsetSummary(profile.offsets),
-                style: const TextStyle(color: Colors.white38, fontSize: 11),
+                style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.35), fontSize: 11),
               ),
           ],
         ),
@@ -1110,7 +1161,7 @@ class _ProfileCard extends StatelessWidget {
             if (!isActive)
               TextButton(
                 onPressed: onApply,
-                child: const Text('Appliquer'),
+                child: Text(AppLocalizations.of(context).commonApply),
               ),
             IconButton(
               icon: const Icon(Icons.delete_outline,

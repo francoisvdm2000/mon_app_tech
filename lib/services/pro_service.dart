@@ -18,14 +18,6 @@ class ProService {
     return SubscriptionService.hasDirectAccess(SubscriptionCategory.pro);
   }
 
-  static Future<void> activatePro() {
-    return SubscriptionService.activate(SubscriptionCategory.pro);
-  }
-
-  static Future<void> deactivatePro() {
-    return SubscriptionService.deactivate(SubscriptionCategory.pro);
-  }
-
   static Future<bool> canAccessCategory(SubscriptionCategory category) async {
     return SubscriptionService.hasAccess(category);
   }

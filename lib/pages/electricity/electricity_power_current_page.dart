@@ -6,6 +6,8 @@ import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 import 'widgets/electricity_form_widgets.dart';
 import 'widgets/electricity_result_card.dart';
+import '../about/about_favorites.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class ElectricityPowerCurrentPage extends StatefulWidget {
   const ElectricityPowerCurrentPage({super.key});
@@ -156,7 +158,13 @@ class _ElectricityPowerCurrentPageState
     ];
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.electricityToolPowerCurrentTitle)),
+      appBar: AppBar(
+        title: Text(loc.electricityToolPowerCurrentTitle),
+        actions: const [
+          AboutPinButton(pageId: 'tool:electricity_power_current', sectionId: 'main'),
+          SizedBox(width: 4),
+        ],
+      ),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
         children: [
@@ -194,6 +202,7 @@ class _ElectricityPowerCurrentPageState
           ),
           const SizedBox(height: 16),
           SectionCard(
+            accentColor: kSectionElectricity,
             title: loc.electricityCircuitType,
             icon: Icons.electrical_services,
             child: Row(
@@ -222,6 +231,7 @@ class _ElectricityPowerCurrentPageState
           ),
           const SizedBox(height: 12),
           SectionCard(
+            accentColor: kSectionElectricity,
             title: loc.electricityCalcFor,
             icon: Icons.calculate,
             child: Column(
@@ -341,6 +351,7 @@ class _ElectricityPowerCurrentPageState
             ),
           const SizedBox(height: 16),
           SectionCard(
+            accentColor: kSectionElectricity,
             title: loc.electricityRefTitle,
             icon: Icons.info_outline,
             child: Column(

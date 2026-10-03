@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../l10n_gen/app_localizations.dart';
 import 'widgets/electricity_form_widgets.dart';
 import 'widgets/electricity_result_card.dart';
+import '../about/about_favorites.dart';
 
 enum _CircuitType {
   singlePhase,
@@ -249,7 +250,13 @@ class _ElectricityCableSectionPageState
     final result = _calculate();
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.electricityToolCableSectionTitle)),
+      appBar: AppBar(
+        title: Text(loc.electricityToolCableSectionTitle),
+        actions: const [
+          AboutPinButton(pageId: 'tool:electricity_cable_section', sectionId: 'main'),
+          SizedBox(width: 4),
+        ],
+      ),
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
@@ -562,31 +569,35 @@ class _CardSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 0,
-      color: const Color(0xFF1C1C21),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFF161622),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.07)),
+      ),
       child: Padding(
-        padding: const EdgeInsets.all(18),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Row(
               children: [
-                Icon(icon, color: Colors.white),
-                const SizedBox(width: 12),
+                Icon(icon, color: Colors.white70, size: 22),
+                const SizedBox(width: 10),
                 Expanded(
                   child: Text(
                     title,
                     style: const TextStyle(
-                      fontSize: 19,
-                      fontWeight: FontWeight.w900,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                      letterSpacing: 0.1,
                     ),
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 14),
             child,
           ],
         ),

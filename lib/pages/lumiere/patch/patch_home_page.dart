@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../app/ui/widgets.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'patch_mvr_import_page.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class PatchHomePage extends StatelessWidget {
   const PatchHomePage({super.key});
@@ -24,6 +25,7 @@ class PatchHomePage extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
             onTap: () => _open(context, const PatchMvrImportPage()),
             child: SectionCard(
+              accentColor: kSectionLight,
               title: loc.patchHomeImportMvrTitle,
               icon: Icons.upload_file,
               trailing: const Icon(Icons.chevron_right, color: Colors.white70),

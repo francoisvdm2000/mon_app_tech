@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '../../app/ui/widgets.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'projection_calculations.dart';
+import '../about/about_favorites.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 enum _Field { angle, distance, diameter }
 
@@ -180,6 +182,7 @@ class _ProjectionPageState extends State<ProjectionPage> {
       appBar: AppBar(
         title: Text(loc.lightProjectionTitle),
         actions: [
+          const AboutPinButton(pageId: 'tool:lumiere_projection', sectionId: 'main'),
           IconButton(
             tooltip: loc.commonReset,
             onPressed: _resetAll,
@@ -192,6 +195,7 @@ class _ProjectionPageState extends State<ProjectionPage> {
         child: Column(
           children: [
             ExpandSectionCard(
+              accentColor: kSectionLight,
               title: loc.projectionInputsTitle,
               icon: Icons.edit,
               initiallyExpanded: true,
@@ -239,6 +243,7 @@ class _ProjectionPageState extends State<ProjectionPage> {
             ),
             const SizedBox(height: 14),
             ExpandSectionCard(
+              accentColor: kSectionLight,
               title: loc.projectionResultsTitle,
               icon: Icons.calculate,
               initiallyExpanded: true,

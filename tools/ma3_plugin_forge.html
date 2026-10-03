@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MA3 Plugin Forge — ShowTech Tools</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+</head>
+<body style="margin:0;padding:0;background:#0b0d12">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useRef, useEffect } = React;
+
+    // ─── MA3 Knowledge Base ────────────────────────────────────────────────
+    const CATEGORIES = [
+      { id: "color",    icon: "◈", label: "Couleur",      desc: "Layout RGB, palette, presets couleur" },
+      { id: "movement", icon: "◎", label: "Mouvement",    desc: "Pan/Tilt, circles, figure 8, positions" },
+      { id: "effect",   icon: "◇", label: "Effets",       desc: "Strobe, pulse, chase, séquences" },
+      { id: "dimmer",   icon: "◑", label: "Intensité",    desc: "Dimmer, bump, fade, blackout" },
+      { id: "layout",   icon: "▦", label: "Layout",       desc: "Créer/organiser des layouts MA3" },
+      { id: "select",   icon: "◻", label: "Sélection",    desc: "Sélection groupes, fixtures, filtres" },
+      { id: "macro",    icon: "⊞", label: "Macro",        desc: "Macros multi-étapes, séquences console" },
+      { id: "utility",  icon: "⚙", label: "Utilitaire",   desc: "Label, store, organiser le show file" },
+      { id: "custom",   icon: "✦", label: "Sur mesure",   desc: "Décris librement ce que tu veux" },
+    ];
+
+    const FIELDS = {
+      color: [
+        { id: "fixtures",    label: "Types de machines",    type: "tags",    placeholder: "Moving Heads, LED Bars, PAR..." },
+        { id: "groups",      label: "Références groups MA3", type: "tags",   placeholder: "Group 1, Group 2..." },
+        { id: "colorspace",  label: "Espace couleur",        type: "select", options: ["RGB","CMY","HSI","Gel Color","RGBW","RGBWW"] },
+        { id: "colors",      label: "Couleurs à inclure",    type: "chips",  options: ["Rouge","Vert","Bleu","Cyan","Magenta","Jaune","Orange","Rose","Blanc","Chaud","OFF","Tout"] },
+        { id: "output",      label: "Format de sortie",      type: "select", options: ["Layout + Macros","Macros seulement","Presets couleur"] },
+        { id: "macroOffset", label: "Numéro macro de départ",type: "number", placeholder: "900" },
+        { id: "layoutName",  label: "Nom du layout",         type: "text",   placeholder: "Mon Color Layout" },
+      ],
+      movement: [
+        { id: "fixtures",   label: "Types de machines",     type: "tags",   placeholder: "Moving Heads, Spots..." },
+        { id: "groups",     label: "Références groups MA3", type: "tags",   placeholder: "Group 1, Group 2..." },
+        { id: "movetype",   label: "Type de mouvement",     type: "select", options: ["Positions absolues","Cercle","Figure 8","Pan sweep","Tilt sweep","Aléatoire"] },
+        { id: "speed",      label: "Vitesse",               type: "select", options: ["Lent (4s)","Moyen (2s)","Rapide (1s)","Très rapide (0.5s)","Personnalisée"] },
+        { id: "size",       label: "Amplitude",             type: "select", options: ["Petite","Moyenne","Grande","Max"] },
+        { id: "output",     label: "Format",                type: "select", options: ["Effect Engine","Macros positions","Layout contrôle"] },
+      ],
+      effect: [
+        { id: "fixtures",   label: "Types de machines",     type: "tags",   placeholder: "All fixtures, LEDs..." },
+        { id: "groups",     label: "Références groups MA3", type: "tags",   placeholder: "Group 1..." },
+        { id: "effecttype", label: "Type d'effet",          type: "chips",  options: ["Strobe","Pulse","Chase","Twinkle","Fire","Sawtooth","Random"] },
+        { id: "rate",       label: "Rate",                  type: "select", options: ["Lent (0.5Hz)","Moyen (1Hz)","Rapide (2Hz)","Flash (5Hz)","Personnalisé"] },
+        { id: "spread",     label: "Spread / offset",       type: "select", options: ["Aucun","Petit (15°)","Moyen (45°)","Grand (90°)","Full (180°)"] },
+        { id: "output",     label: "Format",                type: "select", options: ["Effect Engine MA3","Macros séquence","Exécuteur"] },
+      ],
+      dimmer: [
+        { id: "fixtures",   label: "Types de machines",     type: "tags",   placeholder: "All, Spots, Wash..." },
+        { id: "groups",     label: "Références groups MA3", type: "tags",   placeholder: "Group 1..." },
+        { id: "features",   label: "Fonctionnalités",       type: "chips",  options: ["Blackout","Full","50%","Bump","Fade In","Fade Out","Dimmer Chase","Toggle"] },
+        { id: "fadeTime",   label: "Temps de fade par défaut", type: "select", options: ["Instantané","0.3s","0.5s","1s","2s","5s"] },
+        { id: "output",     label: "Format",                type: "select", options: ["Layout + Macros","Macros seulement","Exécuteur"] },
+      ],
+      layout: [
+        { id: "layoutName", label: "Nom du layout",         type: "text",   placeholder: "Master Control" },
+        { id: "sections",   label: "Sections à inclure",    type: "chips",  options: ["Couleurs","Intensité","Mouvement","Effets","Groups","Presets","Custom"] },
+        { id: "style",      label: "Style de layout",       type: "select", options: ["Compact","Large","Tablette","Wing"] },
+        { id: "groups",     label: "Références groups MA3", type: "tags",   placeholder: "Group 1, Group 2..." },
+      ],
+      select: [
+        { id: "groups",     label: "Groups à créer",        type: "tags",   placeholder: "Moving Heads, LED Bars..." },
+        { id: "criteria",   label: "Critères de sélection", type: "chips",  options: ["Par type","Par position scène","Par couleur fixture","Par fabricant","Pairs/Impairs","1/3, 2/3"] },
+        { id: "output",     label: "Format",                type: "select", options: ["Macros de sélection","Layout sélection","Boutons groupes"] },
+      ],
+      macro: [
+        { id: "macroName",  label: "Nom de la macro",       type: "text",   placeholder: "Ma Macro" },
+        { id: "steps",      label: "Étapes (décris chaque étape)", type: "textarea", placeholder: "1. Sélectionner Group 1\n2. Mettre à Full\n3. Attendre 2s\n4. Fade out 3s..." },
+        { id: "trigger",    label: "Déclencheur",           type: "select", options: ["Manuel","GO","Timecode","OSC","MIDI"] },
+      ],
+      utility: [
+        { id: "task",       label: "Tâche",                 type: "chips",  options: ["Nommer fixtures","Organiser groupes","Stocker presets","Nettoyer show","Cloner layout","Backup config"] },
+        { id: "scope",      label: "Portée",                type: "select", options: ["Patch complet","Un groupe","Un type de machine","Tout le show"] },
+        { id: "naming",     label: "Convention de nommage", type: "text",   placeholder: "ex: [Type]_[Num] ou [Pos]_[Couleur]" },
+      ],
+      custom: [
+        { id: "description", label: "Décris ton plugin",   type: "textarea", placeholder: "Ex: Je veux un plugin qui crée automatiquement un layout avec une ligne par type de machine dans mon patch..." },
+        { id: "context",    label: "Contexte MA3",          type: "textarea", placeholder: "Ex: J'ai 12 Moving Heads (Group 1), 8 LED Bars (Group 2), console en mode 2-Port..." },
+      ],
+    };
+
+    const MA3_SYSTEM_PROMPT = `Tu es un expert grandMA3 Lua. Tu génères des plugins Lua complets, fonctionnels et robustes pour grandMA3.
+RÈGLES ABSOLUES :
+- Code Lua pur, sans markdown, sans backticks, sans explication en dehors des commentaires
+- Toujours inclure la fonction main() et return main
+- Utiliser gma.cmd() pour les commandes console MA3
+- Utiliser gma.feedback() pour informer l'utilisateur
+- Utiliser gma.gui.confirm() si action destructive
+- Utiliser gma.sleep() pour les pauses (en secondes)
+- Toujours gérer les erreurs avec pcall si nécessaire
+- Commenter chaque section du code
+- Le code doit marcher du premier coup
+API MA3 DISPONIBLE :
+- gma.cmd("commande") → exécuter commande console
+- gma.feedback("message") → afficher message
+- gma.sleep(seconds) → pause
+- gma.gui.confirm("title","msg") → dialog oui/non
+- gma.gui.input("title","msg") → input utilisateur
+- gma.show.getobj.handle("Fixture 1") → obtenir handle objet
+- gma.show.property.get(handle, "property") → lire propriété
+- string.format() pour formater les strings
+COMMANDES MA3 UTILES (via gma.cmd) :
+- "Store Macro N /merge" → créer macro N
+- "Label Macro N \\"nom\\"" → nommer macro
+- "Assign Macro N Cue 1 /cmd=\\"commande\\"" → ajouter ligne à macro
+- "Store Layout \\"nom\\" /merge" → créer layout
+- "Group N" → sélectionner groupe N
+- "Attribute \\"ColorRGB_R\\" At 100" → RGB rouge à 100%
+- "Attribute \\"ColorRGB_G\\" At 0"
+- "Attribute \\"ColorRGB_B\\" At 0"
+- "Dimmer At 100" / "Dimmer At 0"
+- "Effect N At 1" → activer effet
+- "Pan At 50 ; Tilt At 50" → position
+- "SelFix Group N" → sélectionner fixtures du groupe
+STRUCTURE D'UN PLUGIN COMPLET :
+-- Titre et description du plugin
+-- Généré pour grandMA3
+local function main()
+  -- Config
+  -- Logique principale
+  -- Feedback
+end
+return main`;
+
+    // ─── Syntax highlighting ──────────────────────────────────────────────
+    function syntaxHL(code) {
+      let s = code.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      s = s.replace(/(--[^\n]*)/g, '<c>$1</c>');
+      s = s.replace(/"([^"]*)"/g, '<st>"$1"</st>');
+      s = s.replace(/\b(local|function|return|for|in|do|end|if|then|else|elseif|and|or|not|nil|true|false|repeat|until|while|break)\b/g, '<kw>$1</kw>');
+      s = s.replace(/\b(\d+\.?\d*)\b/g, '<nm>$1</nm>');
+      s = s.replace(/\b(gma\.[a-zA-Z.]+)/g, '<fn>$1</fn>');
+      return s
+        .replace(/<c>/g,'<span style="color:#5c7080;font-style:italic">')
+        .replace(/<\/c>/g,'</span>')
+        .replace(/<st>/g,'<span style="color:#98c379">')
+        .replace(/<\/st>/g,'</span>')
+        .replace(/<kw>/g,'<span style="color:#c678dd">')
+        .replace(/<\/kw>/g,'</span>')
+        .replace(/<nm>/g,'<span style="color:#d19a66">')
+        .replace(/<\/nm>/g,'</span>')
+        .replace(/<fn>/g,'<span style="color:#61afef">')
+        .replace(/<\/fn>/g,'</span>');
+    }
+
+    // ─── Field Components ────────────────────────────────────────────────
+    function TagInput({ value = [], onChange, placeholder }) {
+      const [input, setInput] = useState("");
+      const add = () => {
+        const v = input.trim();
+        if (v && !value.includes(v)) onChange([...value, v]);
+        setInput("");
+      };
+      return (
+        <div style={{ display:"flex", flexWrap:"wrap", gap:6, padding:"6px 8px",
+          background:"var(--s2)", border:"1px solid var(--bdr)", borderRadius:5, minHeight:38 }}>
+          {value.map(t => (
+            <span key={t} style={{ display:"flex", alignItems:"center", gap:4,
+              background:"var(--amber20)", border:"1px solid var(--amber40)",
+              borderRadius:3, padding:"2px 8px", fontSize:12, color:"var(--amber)", fontFamily:"monospace" }}>
+              {t}
+              <button onClick={() => onChange(value.filter(x=>x!==t))}
+                style={{ background:"none", border:"none", color:"var(--amber)", cursor:"pointer", fontSize:14, lineHeight:1 }}>×</button>
+            </span>
+          ))}
+          <input value={input} onChange={e=>setInput(e.target.value)}
+            onKeyDown={e => { if(e.key==="Enter"||e.key===",") { e.preventDefault(); add(); }}}
+            onBlur={add}
+            placeholder={value.length===0 ? placeholder : "Ajouter..."}
+            style={{ flex:1, minWidth:80, background:"none", border:"none", outline:"none",
+              color:"var(--txt)", fontFamily:"monospace", fontSize:12 }} />
+        </div>
+      );
+    }
+
+    function ChipSelect({ options, value = [], onChange }) {
+      const toggle = (o) => {
+        if (o === "Tout") { onChange(options.filter(x=>x!=="Tout")); return; }
+        value.includes(o) ? onChange(value.filter(x=>x!==o)) : onChange([...value, o]);
+      };
+      return (
+        <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
+          {options.map(o => (
+            <button key={o} onClick={() => toggle(o)}
+              style={{ padding:"5px 12px", borderRadius:4, fontSize:12, fontFamily:"'Barlow Condensed',sans-serif",
+                fontWeight:700, letterSpacing:"0.05em", cursor:"pointer", transition:"all 0.15s",
+                background: value.includes(o) ? "var(--amber)" : "var(--s2)",
+                border: value.includes(o) ? "1px solid var(--amber)" : "1px solid var(--bdr)",
+                color: value.includes(o) ? "#000" : "var(--dim)" }}>
+              {o}
+            </button>
+          ))}
+        </div>
+      );
+    }
+
+    function FieldRow({ field, value, onChange }) {
+      const common = {
+        width:"100%", background:"var(--s2)", border:"1px solid var(--bdr)", borderRadius:5,
+        color:"var(--txt)", fontSize:13, padding:"8px 10px", outline:"none",
+        fontFamily: (field.type==="text"||field.type==="number") ? "monospace" : "'Barlow Condensed',sans-serif",
+        transition:"border-color 0.2s"
+      };
+      return (
+        <div style={{ marginBottom:14 }}>
+          <label style={{ display:"block", fontSize:10, letterSpacing:"0.1em", textTransform:"uppercase",
+            color:"var(--amber60)", marginBottom:6, fontFamily:"'Barlow Condensed',sans-serif", fontWeight:700 }}>
+            {field.label}
+          </label>
+          {field.type === "text" && (
+            <input type="text" value={value||""} placeholder={field.placeholder}
+              onChange={e=>onChange(e.target.value)} style={common}
+              onFocus={e=>e.target.style.borderColor="var(--amber)"}
+              onBlur={e=>e.target.style.borderColor="var(--bdr)"} />
+          )}
+          {field.type === "number" && (
+            <input type="number" value={value||""} placeholder={field.placeholder}
+              onChange={e=>onChange(e.target.value)} style={common}
+              onFocus={e=>e.target.style.borderColor="var(--amber)"}
+              onBlur={e=>e.target.style.borderColor="var(--bdr)"} />
+          )}
+          {field.type === "select" && (
+            <select value={value||""} onChange={e=>onChange(e.target.value)}
+              style={{...common, appearance:"none",
+                backgroundImage:`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23f5a623' fill='none' stroke-width='1.5'/%3E%3C/svg%3E")`,
+                backgroundRepeat:"no-repeat", backgroundPosition:"right 10px center", paddingRight:28 }}>
+              <option value="">— Choisir —</option>
+              {field.options.map(o => <option key={o} value={o}>{o}</option>)}
+            </select>
+          )}
+          {field.type === "tags" && (
+            <TagInput value={value||[]} onChange={onChange} placeholder={field.placeholder} />
+          )}
+          {field.type === "chips" && (
+            <ChipSelect options={field.options} value={value||[]} onChange={onChange} />
+          )}
+          {field.type === "textarea" && (
+            <textarea value={value||""} placeholder={field.placeholder}
+              onChange={e=>onChange(e.target.value)} rows={4}
+              style={{...common, fontFamily:"'Barlow Condensed',sans-serif", fontSize:14, resize:"vertical", lineHeight:1.5}}
+              onFocus={e=>e.target.style.borderColor="var(--amber)"}
+              onBlur={e=>e.target.style.borderColor="var(--bdr)"} />
+          )}
+        </div>
+      );
+    }
+
+    // ─── API Key Modal ────────────────────────────────────────────────────
+    function ApiKeyModal({ onSave }) {
+      const [key, setKey] = useState("");
+      return (
+        <div style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", display:"flex",
+          alignItems:"center", justifyContent:"center", zIndex:9999, backdropFilter:"blur(4px)" }}>
+          <div style={{ background:"#111318", border:"1px solid #252b3a", borderRadius:12,
+            padding:"32px", maxWidth:440, width:"90%", boxShadow:"0 24px 80px rgba(0,0,0,0.6)" }}>
+            <div style={{ fontSize:22, fontWeight:900, color:"#e8ecf5", marginBottom:6,
+              fontFamily:"'Barlow Condensed',sans-serif", letterSpacing:"0.03em" }}>
+              ⚡ MA3 Plugin Forge
+            </div>
+            <div style={{ fontSize:13, color:"#50596a", marginBottom:24, lineHeight:1.5 }}>
+              Connecte ta clé API Anthropic pour générer des plugins grandMA3 avec Claude.
+            </div>
+            <label style={{ display:"block", fontSize:10, fontWeight:700, letterSpacing:"0.1em",
+              textTransform:"uppercase", color:"rgba(245,166,35,0.7)", marginBottom:8,
+              fontFamily:"'Barlow Condensed',sans-serif" }}>
+              Clé API Anthropic
+            </label>
+            <input
+              type="password"
+              value={key}
+              onChange={e => setKey(e.target.value)}
+              placeholder="sk-ant-api03-..."
+              onKeyDown={e => e.key === "Enter" && key.startsWith("sk-") && onSave(key)}
+              style={{ width:"100%", background:"#171a22", border:"1px solid #252b3a",
+                borderRadius:6, color:"#bfc5d4", fontSize:13, padding:"10px 12px",
+                outline:"none", fontFamily:"monospace", marginBottom:20 }} />
+            <div style={{ fontSize:11, color:"#50596a", marginBottom:20, lineHeight:1.5 }}>
+              Ta clé reste dans cette page — elle n'est jamais stockée ni transmise ailleurs.
+              Obtiens-la sur{" "}
+              <a href="https://console.anthropic.com/settings/keys" target="_blank"
+                style={{ color:"#f5a623", textDecoration:"none" }}>
+                console.anthropic.com
+              </a>
+            </div>
+            <button
+              onClick={() => key.startsWith("sk-") && onSave(key)}
+              disabled={!key.startsWith("sk-")}
+              style={{ width:"100%", background:"#f5a623", border:"none", borderRadius:6,
+                color:"#000", fontSize:13, fontWeight:800, letterSpacing:"0.06em",
+                textTransform:"uppercase", padding:"11px", cursor: key.startsWith("sk-") ? "pointer" : "not-allowed",
+                opacity: key.startsWith("sk-") ? 1 : 0.4, fontFamily:"'Barlow Condensed',sans-serif" }}>
+              Lancer MA3 Plugin Forge →
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    // ─── Main Component ───────────────────────────────────────────────────
+    function MA3PluginForge() {
+      const [apiKey, setApiKey]       = useState("");
+      const [step, setStep]           = useState(1);
+      const [category, setCategory]   = useState(null);
+      const [formData, setFormData]   = useState({});
+      const [freeDesc, setFreeDesc]   = useState("");
+      const [loading, setLoading]     = useState(false);
+      const [code, setCode]           = useState("");
+      const [pluginName, setPluginName] = useState("");
+      const [error, setError]         = useState("");
+      const [copied, setCopied]       = useState(false);
+      const [history, setHistory]     = useState([]);
+
+      const cat = CATEGORIES.find(c=>c.id===category);
+      const fields = FIELDS[category] || [];
+
+      const buildPrompt = () => {
+        const catLabel = cat?.label || "Custom";
+        let params = "";
+        fields.forEach(f => {
+          const v = formData[f.id];
+          if (!v || (Array.isArray(v) && v.length===0)) return;
+          params += `- ${f.label} : ${Array.isArray(v) ? v.join(", ") : v}\n`;
+        });
+        if (freeDesc) params += `\nDétails supplémentaires : ${freeDesc}`;
+        return `Génère un plugin Lua complet pour grandMA3.
+Catégorie : ${catLabel}
+Paramètres :
+${params || "Aucun paramètre spécifique, génère un exemple fonctionnel."}
+Exigences :
+- Code 100% fonctionnel, prêt à coller dans MA3
+- Commentaires en français
+- Structure complète avec main() et return main
+- Robuste et idiot-proof (vérifie les entrées, donne du feedback clair)
+- Si layout : créer les macros associées
+- Si plusieurs groupes/fixtures : boucler proprement`;
+      };
+
+      const generate = async () => {
+        setLoading(true);
+        setError("");
+        setCode("");
+        try {
+          const resp = await fetch("https://api.anthropic.com/v1/messages", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "x-api-key": apiKey,
+              "anthropic-version": "2023-06-01",
+              "anthropic-dangerous-direct-browser-access": "true",
+            },
+            body: JSON.stringify({
+              model: "claude-sonnet-4-20250514",
+              max_tokens: 2000,
+              system: MA3_SYSTEM_PROMPT,
+              messages: [{ role: "user", content: buildPrompt() }],
+            }),
+          });
+          const data = await resp.json();
+          if (data.error) throw new Error(data.error.message);
+          const text = data.content?.find(b=>b.type==="text")?.text || "";
+          const clean = text.replace(/```lua\n?/gi,"").replace(/```\n?/g,"").trim();
+          setCode(clean);
+          const name = formData.layoutName || formData.macroName || `${cat?.label} Plugin`;
+          setPluginName(name);
+          setHistory(h => [{ name, category: cat?.label, code: clean, ts: Date.now() }, ...h.slice(0,9)]);
+          setStep(3);
+        } catch(e) {
+          setError("Erreur : " + e.message);
+        }
+        setLoading(false);
+      };
+
+      const copy = () => {
+        navigator.clipboard.writeText(code);
+        setCopied(true);
+        setTimeout(()=>setCopied(false), 2000);
+      };
+
+      const reset = () => { setStep(1); setCategory(null); setFormData({}); setFreeDesc(""); setCode(""); setError(""); };
+
+      const css = `
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap');
+        *{box-sizing:border-box;margin:0;padding:0}
+        :root{
+          --bg:#0b0d12; --s1:#111318; --s2:#171a22; --s3:#1d2130;
+          --bdr:#252b3a; --bdr2:#2e3548;
+          --amber:#f5a623; --amber20:rgba(245,166,35,0.12); --amber40:rgba(245,166,35,0.35); --amber60:rgba(245,166,35,0.7);
+          --txt:#bfc5d4; --dim:#50596a; --white:#e8ecf5;
+          --green:#3ddc84; --red:#e85050; --blue:#4a9eff;
+        }
+        body{background:var(--bg);color:var(--txt);font-family:'Barlow Condensed',sans-serif}
+        ::-webkit-scrollbar{width:4px;height:4px}
+        ::-webkit-scrollbar-track{background:var(--bg)}
+        ::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:2px}
+        .root{min-height:100vh;display:flex;flex-direction:column}
+        .topbar{display:flex;align-items:center;gap:12px;padding:14px 20px;
+          background:var(--s1);border-bottom:1px solid var(--bdr);flex-shrink:0}
+        .logo{display:flex;align-items:center;gap:8px}
+        .logo-mark{width:28px;height:28px;background:var(--amber);border-radius:4px;
+          display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#000}
+        .logo-text{font-size:15px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--white)}
+        .logo-text span{color:var(--amber)}
+        .topbar-right{margin-left:auto;display:flex;align-items:center;gap:8px}
+        .pill{background:var(--s2);border:1px solid var(--bdr);border-radius:20px;padding:3px 10px;
+          font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim)}
+        .progress{display:flex;align-items:center;gap:0;padding:0 20px;background:var(--s1);border-bottom:1px solid var(--bdr);flex-shrink:0}
+        .step-item{display:flex;align-items:center;gap:8px;padding:12px 0;flex:1;cursor:pointer;opacity:0.4;transition:opacity 0.2s}
+        .step-item.active,.step-item.done{opacity:1}
+        .step-num{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--dim);
+          display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+        .step-item.active .step-num{border-color:var(--amber);color:var(--amber)}
+        .step-item.done .step-num{background:var(--amber);border-color:var(--amber);color:#000}
+        .step-label{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase}
+        .step-item.active .step-label{color:var(--amber)}
+        .step-sep{width:24px;height:1px;background:var(--bdr2);flex-shrink:0}
+        .body{display:flex;flex:1;overflow:hidden}
+        .main{flex:1;overflow-y:auto;padding:24px 20px}
+        .sidebar{width:220px;background:var(--s1);border-left:1px solid var(--bdr);
+          overflow-y:auto;padding:16px;flex-shrink:0;display:flex;flex-direction:column;gap:4px}
+        @media(max-width:640px){.sidebar{display:none}.body{flex-direction:column}}
+        .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:680px}
+        @media(max-width:500px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
+        .cat-card{background:var(--s2);border:1px solid var(--bdr);border-radius:8px;
+          padding:16px 14px;cursor:pointer;transition:all 0.15s;position:relative;overflow:hidden}
+        .cat-card:hover{border-color:var(--amber40);background:var(--s3)}
+        .cat-card.selected{border-color:var(--amber);background:var(--amber20)}
+        .cat-icon{font-size:22px;margin-bottom:8px;display:block;color:var(--dim);transition:color 0.15s}
+        .cat-card:hover .cat-icon,.cat-card.selected .cat-icon{color:var(--amber)}
+        .cat-name{font-size:14px;font-weight:800;letter-spacing:0.04em;color:var(--white);margin-bottom:4px}
+        .cat-desc{font-size:11px;color:var(--dim);line-height:1.4}
+        .section-title{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+          color:var(--amber60);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--bdr)}
+        .page-title{font-size:20px;font-weight:900;letter-spacing:0.03em;color:var(--white);margin-bottom:4px}
+        .page-sub{font-size:13px;color:var(--dim);margin-bottom:24px}
+        .btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:5px;
+          font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.06em;
+          text-transform:uppercase;cursor:pointer;border:none;transition:all 0.15s}
+        .btn-primary{background:var(--amber);color:#000}
+        .btn-primary:hover{background:#ffc040}
+        .btn-primary:disabled{opacity:0.4;cursor:not-allowed}
+        .btn-ghost{background:transparent;border:1px solid var(--bdr2);color:var(--dim)}
+        .btn-ghost:hover{border-color:var(--amber40);color:var(--amber)}
+        .btn-ghost.ok{border-color:var(--green)!important;color:var(--green)!important}
+        .btn-row{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;align-items:center}
+        .code-wrap{position:relative;background:#0a0c10;border:1px solid var(--bdr);border-radius:8px;overflow:hidden}
+        .code-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;
+          background:#0d0f14;border-bottom:1px solid var(--bdr)}
+        .code-filename{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim)}
+        .code-pre{font-family:'JetBrains Mono',monospace;font-size:11.5px;line-height:1.75;
+          color:#abb2bf;padding:16px;overflow:auto;max-height:460px;tab-size:2}
+        .free-desc{margin-top:20px;padding-top:20px;border-top:1px solid var(--bdr)}
+        .free-label{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+          color:var(--blue);margin-bottom:8px}
+        .loader{display:inline-flex;gap:4px;align-items:center}
+        .loader span{width:6px;height:6px;border-radius:50%;background:var(--amber);animation:bob 0.9s ease-in-out infinite}
+        .loader span:nth-child(2){animation-delay:0.15s}
+        .loader span:nth-child(3){animation-delay:0.3s}
+        @keyframes bob{0%,100%{transform:translateY(0);opacity:0.4}50%{transform:translateY(-5px);opacity:1}}
+        .error-box{background:rgba(232,80,80,0.1);border:1px solid rgba(232,80,80,0.3);border-radius:6px;
+          padding:12px 14px;color:var(--red);font-size:13px;margin-top:12px}
+        .hist-item{padding:8px 10px;border-radius:4px;cursor:pointer;font-size:12px;
+          border:1px solid transparent;transition:all 0.15s}
+        .hist-item:hover{background:var(--s2);border-color:var(--bdr)}
+        .hist-name{font-weight:700;color:var(--txt);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .hist-cat{font-size:10px;color:var(--dim);letter-spacing:0.06em;text-transform:uppercase}
+        .success-bar{display:flex;align-items:center;gap:10px;background:rgba(61,220,132,0.1);
+          border:1px solid rgba(61,220,132,0.25);border-radius:6px;padding:10px 14px;margin-bottom:16px}
+        .success-dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0}
+        .success-text{font-size:13px;color:var(--green);font-weight:600}
+        .form-card{background:var(--s2);border:1px solid var(--bdr);border-radius:8px;padding:18px}
+        .key-badge{display:flex;align-items:center;gap:6px;background:rgba(245,166,35,0.1);
+          border:1px solid rgba(245,166,35,0.25);border-radius:4px;padding:3px 10px;
+          font-size:10px;color:var(--amber);cursor:pointer;font-family:'Barlow Condensed',sans-serif;
+          font-weight:700;letter-spacing:0.06em;text-transform:uppercase;transition:all 0.15s}
+        .key-badge:hover{background:rgba(245,166,35,0.2)}
+      `;
+
+      if (!apiKey) {
+        return (
+          <>
+            <style>{css}</style>
+            <ApiKeyModal onSave={setApiKey} />
+          </>
+        );
+      }
+
+      return (
+        <>
+          <style>{css}</style>
+          <div className="root">
+            {/* Top bar */}
+            <div className="topbar">
+              <div className="logo">
+                <div className="logo-mark">⚡</div>
+                <div className="logo-text">MA3 Plugin <span>Forge</span></div>
+              </div>
+              <div className="topbar-right">
+                <div className="pill">grandMA3 Lua</div>
+                <div className="key-badge" onClick={() => setApiKey("")} title="Changer de clé API">
+                  🔑 Clé connectée
+                </div>
+                {step > 1 && (
+                  <button className="btn btn-ghost" style={{padding:"5px 12px",fontSize:11}} onClick={reset}>
+                    ↺ Nouveau
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* Progress */}
+            <div className="progress">
+              {[{n:1,l:"Catégorie"},{n:2,l:"Paramètres"},{n:3,l:"Code généré"}].map((s,i) => (
+                <div key={s.n} style={{display:"flex",alignItems:"center",flex:1}}>
+                  <div className={`step-item ${step===s.n?"active":step>s.n?"done":""}`}
+                    onClick={() => step > s.n && setStep(s.n)}>
+                    <div className="step-num">{step > s.n ? "✓" : s.n}</div>
+                    <div className="step-label">{s.l}</div>
+                  </div>
+                  {i < 2 && <div className="step-sep"/>}
+                </div>
+              ))}
+            </div>
+
+            {/* Body */}
+            <div className="body">
+              <div className="main">
+
+                {/* Step 1 */}
+                {step === 1 && (
+                  <>
+                    <div className="page-title">Quel type de plugin ?</div>
+                    <div className="page-sub">Choisis une catégorie pour commencer</div>
+                    <div className="cat-grid">
+                      {CATEGORIES.map(c => (
+                        <div key={c.id} className={`cat-card ${category===c.id?"selected":""}`}
+                          onClick={() => { setCategory(c.id); setFormData({}); }}>
+                          <span className="cat-icon">{c.icon}</span>
+                          <div className="cat-name">{c.label}</div>
+                          <div className="cat-desc">{c.desc}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="btn-row">
+                      <button className="btn btn-primary" disabled={!category} onClick={() => setStep(2)}>
+                        Continuer →
+                      </button>
+                    </div>
+                  </>
+                )}
+
+                {/* Step 2 */}
+                {step === 2 && cat && (
+                  <>
+                    <div className="page-title">{cat.icon} {cat.label}</div>
+                    <div className="page-sub">{cat.desc}</div>
+                    <div className="form-card">
+                      <div className="section-title">Paramètres du plugin</div>
+                      {fields.map(f => (
+                        <FieldRow key={f.id} field={f}
+                          value={formData[f.id]}
+                          onChange={v => setFormData({...formData, [f.id]: v})} />
+                      ))}
+                    </div>
+                    {category !== "custom" && (
+                      <div className="free-desc">
+                        <div className="free-label">💬 Détails supplémentaires (optionnel)</div>
+                        <textarea value={freeDesc} onChange={e=>setFreeDesc(e.target.value)}
+                          placeholder="Ajoute des précisions, cas particuliers, contraintes..."
+                          rows={3}
+                          style={{ width:"100%", background:"var(--s2)", border:"1px solid var(--bdr)",
+                            borderRadius:5, color:"var(--txt)", fontSize:14, padding:"10px",
+                            fontFamily:"'Barlow Condensed',sans-serif", resize:"vertical",
+                            outline:"none", lineHeight:1.5 }} />
+                      </div>
+                    )}
+                    {error && <div className="error-box">{error}</div>}
+                    <div className="btn-row">
+                      <button className="btn btn-ghost" onClick={() => setStep(1)}>← Retour</button>
+                      <button className="btn btn-primary" onClick={generate} disabled={loading}>
+                        {loading
+                          ? <><div className="loader"><span/><span/><span/></div> Génération...</>
+                          : "⚡ Générer le Plugin"}
+                      </button>
+                    </div>
+                  </>
+                )}
+
+                {/* Step 3 */}
+                {step === 3 && code && (
+                  <>
+                    <div className="success-bar">
+                      <div className="success-dot"/>
+                      <div className="success-text">Plugin généré — prêt à coller dans MA3</div>
+                    </div>
+                    <div style={{ background:"var(--s2)", border:"1px solid var(--bdr)", borderRadius:8,
+                      padding:"12px 16px", marginBottom:16, fontSize:13, color:"var(--dim)", lineHeight:1.6 }}>
+                      <span style={{color:"var(--amber)",fontWeight:700}}>Installer dans MA3 : </span>
+                      Copie le code → dans MA3 ouvre <code>Plugin</code> → <code>New Plugin</code> → colle →
+                      sauvegarde comme <code style={{color:"var(--amber)"}}>{pluginName}.lua</code> → <code>Run</code>
+                    </div>
+                    <div className="code-wrap">
+                      <div className="code-header">
+                        <div className="code-filename">{pluginName.toLowerCase().replace(/\s+/g,"_")}.lua</div>
+                        <div style={{ display:"flex", gap:8 }}>
+                          <button className={`btn btn-ghost ${copied?"ok":""}`}
+                            style={{padding:"4px 12px",fontSize:11}}
+                            onClick={copy}>
+                            {copied ? "✓ Copié !" : "⎘ Copier"}
+                          </button>
+                        </div>
+                      </div>
+                      <pre className="code-pre"
+                        dangerouslySetInnerHTML={{ __html: syntaxHL(code) }} />
+                    </div>
+                    <div className="btn-row">
+                      <button className="btn btn-ghost" onClick={() => setStep(2)}>← Modifier</button>
+                      <button className="btn btn-ghost" onClick={generate} disabled={loading}>
+                        {loading ? "..." : "↺ Régénérer"}
+                      </button>
+                      <button className="btn btn-primary" onClick={reset}>+ Nouveau plugin</button>
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {/* Sidebar */}
+              <div className="sidebar">
+                <div style={{ fontSize:10, fontWeight:700, letterSpacing:"0.1em", textTransform:"uppercase",
+                  color:"var(--amber60)", marginBottom:10, paddingBottom:8, borderBottom:"1px solid var(--bdr)" }}>
+                  Historique
+                </div>
+                {history.length === 0 ? (
+                  <div style={{ fontSize:11, color:"var(--dim)", textAlign:"center", marginTop:20 }}>
+                    Aucun plugin généré
+                  </div>
+                ) : history.map((h, i) => (
+                  <div key={i} className="hist-item"
+                    onClick={() => { setCode(h.code); setPluginName(h.name); setStep(3); }}>
+                    <div className="hist-name">{h.name}</div>
+                    <div className="hist-cat">{h.category}</div>
+                  </div>
+                ))}
+                <div style={{ marginTop:"auto", paddingTop:20, borderTop:"1px solid var(--bdr)" }}>
+                  <div style={{ fontSize:10, color:"var(--dim)", lineHeight:1.6, letterSpacing:"0.02em" }}>
+                    ✦ Powered by Claude<br/>
+                    grandMA3 Lua API<br/>
+                    ShowTech Tools
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<MA3PluginForge />);
+  </script>
+</body>
+</html>

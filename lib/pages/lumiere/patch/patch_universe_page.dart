@@ -4,6 +4,7 @@ import '../../../app/ui/widgets.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'patch_models.dart';
 import 'patch_store.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class PatchUniversePage extends StatefulWidget {
   const PatchUniversePage({super.key});
@@ -191,6 +192,7 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
             children: [
               SectionCard(
+                accentColor: kSectionLight,
                 title: loc.patchUniverseReferenceTitle,
                 icon: Icons.lock_outline,
                 child: Text(
@@ -202,6 +204,7 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
               ),
               const SizedBox(height: 12),
               SectionCard(
+                accentColor: kSectionLight,
                 title: loc.patchUniverseUniverseTitle,
                 icon: Icons.layers_outlined,
                 child: Column(
@@ -250,6 +253,7 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
 
               // ---- ZOOM AU DESSUS DE LA GRILLE ----
               SectionCard(
+                accentColor: kSectionLight,
                 title: loc.patchUniverseZoomTitle,
                 icon: Icons.zoom_in,
                 child: Row(
@@ -283,6 +287,7 @@ class _PatchUniversePageState extends State<PatchUniversePage> {
               const SizedBox(height: 12),
 
               SectionCard(
+                accentColor: kSectionLight,
                 title: loc.patchUniverseGridTitle,
                 icon: Icons.grid_on,
                 child: _Full512Grid10Cols(
@@ -397,7 +402,7 @@ class _Full512Grid10Cols extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF0B0B0B),
+        color: const Color(0xFF0E0E18),
         borderRadius: BorderRadius.circular(14),
         border: Border.all(color: Colors.white12),
       ),

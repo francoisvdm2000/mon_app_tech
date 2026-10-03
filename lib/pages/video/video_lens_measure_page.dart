@@ -1,7 +1,11 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import '../../app/ui/widgets.dart'; // numFormatter, ExpandSectionCard, ResultBox, copyToClipboard
+import '../about/about_favorites.dart';
+import 'package:mon_app_tech/app/constants.dart';
 
 class VideoLensMeasurePage extends StatefulWidget {
   const VideoLensMeasurePage({super.key});
@@ -11,6 +15,14 @@ class VideoLensMeasurePage extends StatefulWidget {
 }
 
 class _VideoLensMeasurePageState extends State<VideoLensMeasurePage> {
+  // ---- CALC 0 (Distance = Ratio × Largeur, depuis largeur / hauteur / diagonale)
+  String _sizeMode = 'w'; // 'w' largeur (m), 'h' hauteur (m), 'd' diagonale (pouces)
+  String _format0 = '16:9';
+  final _c0SizeCtrl = TextEditingController();
+  final _c0RatioMinCtrl = TextEditingController();
+  final _c0RatioMaxCtrl = TextEditingController();
+  String _r0 = '';
+
   // ---- CALC 1 (Ratio = Distance / Largeur)
   String _format1 = '16:9';
   final _c1DistanceCtrl = TextEditingController();
@@ -29,6 +41,9 @@ class _VideoLensMeasurePageState extends State<VideoLensMeasurePage> {
 
   @override
   void dispose() {
+    _c0SizeCtrl.dispose();
+    _c0RatioMinCtrl.dispose();
+    _c0RatioMaxCtrl.dispose();
     _c1DistanceCtrl.dispose();
     _c1WidthCtrl.dispose();
     _c2DistanceCtrl.dispose();
@@ -102,12 +117,15 @@ class _VideoLensMeasurePageState extends State<VideoLensMeasurePage> {
     required List<Widget> inputs,
     required VoidCallback onCalc,
     required String result,
+    bool expanded = false,
   }) {
     final loc = AppLocalizations.of(context);
 
     return ExpandSectionCard(
+      accentColor: kSectionVideo,
       title: title,
       icon: icon,
+      initiallyExpanded: expanded,
       child: Column(
         children: [
           ...inputs,
@@ -137,6 +155,64 @@ class _VideoLensMeasurePageState extends State<VideoLensMeasurePage> {
   }
 
   // ---------- CALCS
+  void _calc0() {
+    final loc = AppLocalizations.of(context);
+
+    final size = _d(_c0SizeCtrl);
+    var rMin = _d(_c0RatioMinCtrl);
+    var rMax = _d(_c0RatioMaxCtrl);
+
+    if (size == null || rMin == null) {
+      setState(() => _r0 = loc.videoLmErrMissingSizeRatio);
+      return;
+    }
+    if (size <= 0) {
+      setState(() => _r0 = loc.videoLmErrSizeGt0);
+      return;
+    }
+    if (rMin <= 0 || (rMax != null && rMax <= 0)) {
+      setState(() => _r0 = loc.videoLmErrRatioGt0);
+      return;
+    }
+    if (rMax != null && rMax < rMin) {
+      final t = rMin;
+      rMin = rMax;
+      rMax = t;
+    }
+
+    final a = _ratioWHFromFormat(_format0);
+    final double w;
+    switch (_sizeMode) {
+      case 'h':
+        w = size * a;
+        break;
+      case 'd':
+        final diagM = size * 0.0254;
+        w = diagM * a / math.sqrt(a * a + 1);
+        break;
+      case 'w':
+      default:
+        w = size;
+    }
+    final h = w / a;
+
+    final lines = <String>[
+      loc.videoLmResultImage(
+        w.toStringAsFixed(2),
+        h.toStringAsFixed(2),
+        _format0,
+      ),
+      (rMax == null || (rMax - rMin).abs() < 1e-9)
+          ? loc.videoLmResultDistance((rMin * w).toStringAsFixed(2))
+          : loc.videoLmResultDistanceRange(
+              (rMin * w).toStringAsFixed(2),
+              (rMax * w).toStringAsFixed(2),
+            ),
+      loc.videoLmDistanceNote,
+    ];
+    setState(() => _r0 = lines.join('\n'));
+  }
+
   void _calc1() {
     final loc = AppLocalizations.of(context);
 
@@ -209,13 +285,90 @@ class _VideoLensMeasurePageState extends State<VideoLensMeasurePage> {
     final bottom = MediaQuery.of(context).viewPadding.bottom;
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.videoLensMeasureTitle)),
+      appBar: AppBar(
+        title: Text(loc.videoLensMeasureTitle),
+        actions: const [
+          AboutPinButton(pageId: 'tool:video_lens_measure', sectionId: 'main'),
+          SizedBox(width: 4),
+        ],
+      ),
       body: SafeArea(
         bottom: true,
         child: SingleChildScrollView(
           padding: EdgeInsets.fromLTRB(16, 12, 16, 16 + bottom),
           child: Column(
             children: [
+              _calcSection(
+                title: loc.videoLmCalcDistTitle,
+                icon: Icons.settings_overscan,
+                inputs: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: Text(
+                        loc.videoLmSizeModeLabel,
+                        style: Theme.of(context).textTheme.labelLarge,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: SegmentedButton<String>(
+                      showSelectedIcon: false,
+                      segments: [
+                        ButtonSegment(value: 'w', label: Text(loc.videoLmModeWidth)),
+                        ButtonSegment(value: 'h', label: Text(loc.videoLmModeHeight)),
+                        ButtonSegment(value: 'd', label: Text(loc.videoLmModeDiagonal)),
+                      ],
+                      selected: {_sizeMode},
+                      onSelectionChanged: (v) => setState(() {
+                        _sizeMode = v.first;
+                        _r0 = '';
+                      }),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  _formatDropdown(
+                    value: _format0,
+                    onChanged: (v) => setState(() => _format0 = v),
+                  ),
+                  const SizedBox(height: 12),
+                  _numField(
+                    controller: _c0SizeCtrl,
+                    label: _sizeMode == 'h'
+                        ? loc.videoLmImageHeightLabel
+                        : _sizeMode == 'd'
+                            ? loc.videoLmDiagonalLabel
+                            : loc.videoLmImageWidthLabel,
+                    hint: _sizeMode == 'h'
+                        ? loc.videoLmImageHeightHint
+                        : _sizeMode == 'd'
+                            ? loc.videoLmDiagonalHint
+                            : loc.videoLmImageWidthHint,
+                    action: TextInputAction.next,
+                  ),
+                  const SizedBox(height: 12),
+                  _numField(
+                    controller: _c0RatioMinCtrl,
+                    label: loc.videoLmRatioMinLabel,
+                    hint: loc.videoLmThrowRatioHint,
+                    action: TextInputAction.next,
+                  ),
+                  const SizedBox(height: 12),
+                  _numField(
+                    controller: _c0RatioMaxCtrl,
+                    label: loc.videoLmRatioMaxLabel,
+                    hint: loc.videoLmRatioMaxHint,
+                    action: TextInputAction.done,
+                    onDone: _calc0,
+                  ),
+                ],
+                onCalc: _calc0,
+                result: _r0,
+                expanded: true,
+              ),
+              const SizedBox(height: 12),
               _calcSection(
                 title: loc.videoLmCalc1Title,
                 icon: Icons.straighten,
