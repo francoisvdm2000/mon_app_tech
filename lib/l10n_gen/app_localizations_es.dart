@@ -15815,32 +15815,26 @@ class AppLocalizationsEs extends AppLocalizations {
       'Herramienta de ayuda a la redacción. El contenido de los documentos sigue siendo responsabilidad de la empresa firmante.';
 
   @override
-  String get ppspsListTitle =>
-      'Planes de seguridad';
+  String get ppspsListTitle => 'Planes de seguridad';
 
   @override
-  String get ppspsNew =>
-      'Nuevo plan';
+  String get ppspsNew => 'Nuevo plan';
 
   @override
-  String get ppspsEmptyTitle =>
-      'Todavía no hay planes';
+  String get ppspsEmptyTitle => 'Todavía no hay planes';
 
   @override
   String get ppspsEmptyBody =>
       'Cree su primer plan de seguridad. Después podrá duplicarlo para sus próximos eventos.';
 
   @override
-  String get ppspsChooseCountry =>
-      'País de la obra';
+  String get ppspsChooseCountry => 'País de la obra';
 
   @override
-  String get ppspsStatusDraft =>
-      'Borrador';
+  String get ppspsStatusDraft => 'Borrador';
 
   @override
-  String get ppspsStatusFinal =>
-      'Finalizado';
+  String get ppspsStatusFinal => 'Finalizado';
 
   @override
   String ppspsStepProgress(Object done, Object total) {
@@ -15848,140 +15842,107 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get ppspsUntitled =>
-      'Sin título';
+  String get ppspsUntitled => 'Sin título';
 
   @override
-  String get ppspsDuplicate =>
-      'Duplicar';
+  String get ppspsDuplicate => 'Duplicar';
 
   @override
-  String get ppspsDelete =>
-      'Eliminar';
+  String get ppspsDelete => 'Eliminar';
 
   @override
   String get ppspsDeleteConfirm =>
       '¿Eliminar este plan? Esta acción es definitiva.';
 
   @override
-  String get ppspsCancel =>
-      'Cancelar';
+  String get ppspsCancel => 'Cancelar';
 
   @override
-  String get ppspsSave =>
-      'Guardar';
+  String get ppspsSave => 'Guardar';
 
   @override
-  String get ppspsNext =>
-      'Siguiente';
+  String get ppspsNext => 'Siguiente';
 
   @override
-  String get ppspsPrevious =>
-      'Anterior';
+  String get ppspsPrevious => 'Anterior';
 
   @override
-  String get ppspsStepProject =>
-      'Proyecto';
+  String get ppspsStepProject => 'Proyecto';
 
   @override
-  String get ppspsStepWorkers =>
-      'Intervinientes';
+  String get ppspsStepWorkers => 'Intervinientes';
 
   @override
-  String get ppspsStepRisks =>
-      'Riesgos';
+  String get ppspsStepRisks => 'Riesgos';
 
   @override
-  String get ppspsStepEmergency =>
-      'Emergencia';
+  String get ppspsStepEmergency => 'Emergencia';
 
   @override
-  String get ppspsStepExport =>
-      'Exportar';
+  String get ppspsStepExport => 'Exportar';
 
   @override
-  String get ppspsFieldEventName =>
-      'Nombre del evento';
+  String get ppspsFieldEventName => 'Nombre del evento';
 
   @override
-  String get ppspsFieldVenue =>
-      'Lugar';
+  String get ppspsFieldVenue => 'Lugar';
 
   @override
-  String get ppspsFieldAddress =>
-      'Dirección';
+  String get ppspsFieldAddress => 'Dirección';
 
   @override
-  String get ppspsFieldOrganizer =>
-      'Organizador (promotor)';
+  String get ppspsFieldOrganizer => 'Organizador (promotor)';
 
   @override
-  String get ppspsFieldCoordinator =>
-      'Coordinador de seguridad';
+  String get ppspsFieldCoordinator => 'Coordinador de seguridad';
 
   @override
-  String get ppspsSectionPhases =>
-      'Fases y fechas';
+  String get ppspsSectionPhases => 'Fases y fechas';
 
   @override
-  String get ppspsPhaseMontage =>
-      'Montaje';
+  String get ppspsPhaseMontage => 'Montaje';
 
   @override
-  String get ppspsPhaseExploitation =>
-      'Explotación';
+  String get ppspsPhaseExploitation => 'Explotación';
 
   @override
-  String get ppspsPhaseDemontage =>
-      'Desmontaje';
+  String get ppspsPhaseDemontage => 'Desmontaje';
 
   @override
-  String get ppspsPhaseNotSet =>
-      'No previsto';
+  String get ppspsPhaseNotSet => 'No previsto';
 
   @override
-  String get ppspsPhaseFilterAll =>
-      'Todas';
+  String get ppspsPhaseFilterAll => 'Todas';
 
   @override
-  String get ppspsSectionCompany =>
-      'Su empresa';
+  String get ppspsSectionCompany => 'Su empresa';
 
   @override
-  String get ppspsFieldCompanyName =>
-      'Razón social';
+  String get ppspsFieldCompanyName => 'Razón social';
 
   @override
-  String get ppspsFieldCompanyActivity =>
-      'Actividad en la obra';
+  String get ppspsFieldCompanyActivity => 'Actividad en la obra';
 
   @override
-  String get ppspsFieldResponsible =>
-      'Responsable en el lugar';
+  String get ppspsFieldResponsible => 'Responsable en el lugar';
 
   @override
-  String get ppspsFieldPhone =>
-      'Teléfono';
+  String get ppspsFieldPhone => 'Teléfono';
 
   @override
-  String get ppspsFieldCompany =>
-      'Empresa';
+  String get ppspsFieldCompany => 'Empresa';
 
   @override
-  String get ppspsFieldTrade =>
-      'Oficio';
+  String get ppspsFieldTrade => 'Oficio';
 
   @override
-  String get ppspsFieldContact =>
-      'Contacto';
+  String get ppspsFieldContact => 'Contacto';
 
   @override
-  String get ppspsFieldHeadcount =>
-      'Número de personas';
+  String get ppspsFieldHeadcount => 'Número de personas';
 
   @override
-  String get ppspsAddWorker =>
-      'Añadir un interviniente';
+  String get ppspsAddWorker => 'Añadir un interviniente';
 
   @override
   String get ppspsWorkersEmpty =>
@@ -15993,20 +15954,16 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get ppspsMeasuresTitle =>
-      'Medidas preventivas';
+  String get ppspsMeasuresTitle => 'Medidas preventivas';
 
   @override
-  String get ppspsMeasureCollective =>
-      'Colectiva';
+  String get ppspsMeasureCollective => 'Colectiva';
 
   @override
-  String get ppspsMeasureIndividual =>
-      'Individual';
+  String get ppspsMeasureIndividual => 'Individual';
 
   @override
-  String get ppspsMeasureOrganisational =>
-      'Organizativa';
+  String get ppspsMeasureOrganisational => 'Organizativa';
 
   @override
   String ppspsMeasureCount(Object count) {
@@ -16014,12 +15971,10 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get ppspsAddCustomMeasure =>
-      'Añadir una medida';
+  String get ppspsAddCustomMeasure => 'Añadir una medida';
 
   @override
-  String get ppspsCustomMeasureHint =>
-      'Otra medida propia de esta obra';
+  String get ppspsCustomMeasureHint => 'Otra medida propia de esta obra';
 
   @override
   String ppspsRisksSummary(Object risks, Object measures) {
@@ -16027,58 +15982,82 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get ppspsSectionNumbers =>
-      'Números de emergencia';
+  String get ppspsSectionNumbers => 'Números de emergencia';
 
   @override
-  String get ppspsSectionHospital =>
-      'Hospital más cercano';
+  String get ppspsSectionHospital => 'Hospital más cercano';
 
   @override
-  String get ppspsFieldHospitalName =>
-      'Nombre del hospital';
+  String get ppspsFieldHospitalName => 'Nombre del hospital';
 
   @override
-  String get ppspsSectionOnSite =>
-      'En el lugar';
+  String get ppspsSectionOnSite => 'En el lugar';
 
   @override
-  String get ppspsFieldFirstAiders =>
-      'Socorristas presentes';
+  String get ppspsFieldFirstAiders => 'Socorristas presentes';
 
   @override
-  String get ppspsFieldAssemblyPoint =>
-      'Punto de reunión';
+  String get ppspsFieldAssemblyPoint => 'Punto de reunión';
 
   @override
   String get ppspsFieldEquipment =>
       'Material de emergencia (extintores, desfibrilador…)';
 
   @override
-  String get ppspsCritical =>
-      'altos';
+  String get ppspsCritical => 'altos';
 
   @override
-  String get ppspsMedium =>
-      'medios';
+  String get ppspsMedium => 'medios';
 
   @override
-  String get ppspsLow =>
-      'bajos';
+  String get ppspsLow => 'bajos';
 
   @override
-  String get ppspsExportReady =>
-      'Todos los pasos están completos.';
+  String get ppspsExportReady => 'Todos los pasos están completos.';
 
   @override
-  String get ppspsExportMissing =>
-      'Por completar';
+  String get ppspsExportMissing => 'Por completar';
 
   @override
-  String get ppspsExportPdf =>
-      'Exportar en PDF';
+  String get ppspsExportPdf => 'Exportar en PDF';
 
   @override
-  String get ppspsMarkFinal =>
-      'Marcar como finalizado';
+  String get ppspsMarkFinal => 'Marcar como finalizado';
+
+  @override
+  String get safetyCountryFR =>
+      'Francia';
+
+  @override
+  String get safetyCountryBE =>
+      'Bélgica';
+
+  @override
+  String get safetyCountryUK =>
+      'Reino Unido';
+
+  @override
+  String get safetyCountryLU =>
+      'Luxemburgo';
+
+  @override
+  String get safetyCountryDE =>
+      'Alemania';
+
+  @override
+  String get safetyCountryNL =>
+      'Países Bajos';
+
+  @override
+  String get ppspsExportLanguages =>
+      'Idiomas del documento';
+
+  @override
+  String get ppspsExportLanguagesHint =>
+      'Se crea un PDF por cada idioma seleccionado.';
+
+  @override
+  String ppspsExportPdfMulti(Object count) {
+    return 'Exportar $count PDF';
+  }
 }

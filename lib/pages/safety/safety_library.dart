@@ -35,17 +35,25 @@ SafetyMeasureType safetyMeasureTypeFrom(String raw) {
   return SafetyMeasureType.organisationnelle;
 }
 
-/// Texte bilingue de la bibliothèque. Les autres langues de l'app retombent
-/// sur l'anglais en attendant des colonnes dédiées dans la feuille.
-class SafetyText {
-  final String fr;
-  final String en;
+/// Langues prises en charge par la bibliothèque et par les documents.
+const List<String> kSafetyLanguages = ['fr', 'en', 'nl', 'de', 'es', 'pt'];
 
-  const SafetyText(this.fr, this.en);
+/// Texte multilingue de la bibliothèque. Une langue absente retombe sur
+/// l'anglais, puis sur le français.
+class SafetyText {
+  final Map<String, String> values;
+
+  const SafetyText(this.values);
+
+  String get fr => values['fr'] ?? '';
+  String get en => values['en'] ?? '';
 
   String forLanguage(String languageCode) {
-    if (languageCode == 'fr') return fr.isNotEmpty ? fr : en;
-    return en.isNotEmpty ? en : fr;
+    for (final code in [languageCode, 'en', 'fr']) {
+      final v = values[code];
+      if (v != null && v.isNotEmpty) return v;
+    }
+    return values.values.firstWhere((v) => v.isNotEmpty, orElse: () => '');
   }
 }
 
@@ -193,7 +201,10 @@ class SafetyLibrary {
   }
 
   factory SafetyLibrary.fromJson(Map<String, dynamic> json) {
-    SafetyText text(Map m) => SafetyText(jStr(m['fr']), jStr(m['en']));
+    SafetyText text(Map m) => SafetyText({
+          for (final l in kSafetyLanguages)
+            if (jStr(m[l]).isNotEmpty) l: jStr(m[l]),
+        });
     String country(dynamic v) {
       final s = jStr(v).toUpperCase();
       return s.isEmpty ? 'ALL' : s;

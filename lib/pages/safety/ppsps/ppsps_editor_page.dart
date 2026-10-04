@@ -8,6 +8,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:printing/printing.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../../../l10n_gen/app_localizations.dart';
 import '../safety_library.dart';
@@ -732,7 +733,7 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
                   dense: true,
                   leading: const Icon(Icons.phone_in_talk_rounded,
                       color: kSafetyCritHigh),
-                  title: Text(n.label,
+                  title: Text(n.labelFor(_lang),
                       style: const TextStyle(color: Colors.white)),
                   trailing: Text(
                     n.number,
@@ -792,18 +793,67 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
 
   // ── Étape 5 : export ──────────────────────────────────────────────────────
 
-  Future<void> _exportPdf() async {
+  /// Noms des langues de document, chacun dans sa propre langue.
+  static const Map<String, String> _kLanguageNames = {
+    'fr': 'Français',
+    'en': 'English',
+    'nl': 'Nederlands',
+    'de': 'Deutsch',
+    'es': 'Español',
+    'pt': 'Português',
+  };
+
+  /// Langues cochées pour l'export (par défaut : la langue du pays).
+  List<String> get _pdfLanguages => _doc.pdfLanguages.isNotEmpty
+      ? _doc.pdfLanguages
+      : [PpspsPdf.defaultLanguage(_doc.country)];
+
+  void _togglePdfLanguage(String code, bool selected) {
+    final langs = {..._pdfLanguages};
+    if (selected) {
+      langs.add(code);
+    } else if (langs.length > 1) {
+      langs.remove(code);
+    }
+    _update(_doc.copyWith(pdfLanguages: [
+      for (final l in kSafetyLanguages)
+        if (langs.contains(l)) l,
+    ]));
+  }
+
+  /// Une langue : aperçu d'impression. Plusieurs langues : un PDF par langue,
+  /// partagés ensemble (mail, Fichiers, AirDrop…).
+  Future<void> _exportPdf(Rect? shareOrigin) async {
     if (_exporting) return;
     setState(() => _exporting = true);
     try {
       await PpspsStorage.save(_doc);
-      final bytes = await PpspsPdf.build(_doc, widget.library);
-      final name = _doc.eventName.trim().isEmpty
+      final base = _doc.eventName.trim().isEmpty
           ? 'plan_securite'
           : _doc.eventName.trim().replaceAll(RegExp(r'[^\w\-]+'), '_');
-      await Printing.layoutPdf(
-        onLayout: (_) async => bytes,
-        name: '$name.pdf',
+      final langs = _pdfLanguages;
+
+      if (langs.length == 1) {
+        final bytes = await PpspsPdf.build(_doc, widget.library,
+            language: langs.first);
+        await Printing.layoutPdf(
+          onLayout: (_) async => bytes,
+          name: '${base}_${langs.first.toUpperCase()}.pdf',
+        );
+        return;
+      }
+
+      final files = <XFile>[];
+      for (final l in langs) {
+        final bytes =
+            await PpspsPdf.build(_doc, widget.library, language: l);
+        final name = '${base}_${l.toUpperCase()}.pdf';
+        files.add(XFile.fromData(bytes, name: name, mimeType: 'application/pdf'));
+      }
+      await Share.shareXFiles(
+        files,
+        subject: _doc.eventName.trim().isEmpty ? null : _doc.eventName.trim(),
+        sharePositionOrigin: shareOrigin,
       );
     } finally {
       if (mounted) setState(() => _exporting = false);
@@ -891,22 +941,59 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
             ],
           ),
         ),
+        _sectionTitle(loc.ppspsExportLanguages),
+        Wrap(
+          spacing: 8,
+          runSpacing: 8,
+          children: [
+            for (final l in kSafetyLanguages)
+              FilterChip(
+                label: Text(_kLanguageNames[l] ?? l),
+                selected: _pdfLanguages.contains(l),
+                selectedColor: kSafetyAccent.withValues(alpha: 0.25),
+                checkmarkColor: kSafetyAccent,
+                onSelected: (v) => _togglePdfLanguage(l, v),
+              ),
+          ],
+        ),
+        const SizedBox(height: 6),
+        Text(
+          loc.ppspsExportLanguagesHint,
+          style: TextStyle(
+              fontSize: 12, color: Colors.white.withValues(alpha: 0.55)),
+        ),
         const SizedBox(height: 20),
-        FilledButton.icon(
-          style: FilledButton.styleFrom(
-            backgroundColor: kSafetyAccent,
-            foregroundColor: kSafetyOnAccent,
-            minimumSize: const Size.fromHeight(54),
+        Builder(
+          builder: (btnCtx) => FilledButton.icon(
+            style: FilledButton.styleFrom(
+              backgroundColor: kSafetyAccent,
+              foregroundColor: kSafetyOnAccent,
+              minimumSize: const Size.fromHeight(54),
+            ),
+            onPressed: _exporting
+                ? null
+                : () {
+                    // Position du bouton : nécessaire sur iPad pour ancrer
+                    // la feuille de partage.
+                    final box = btnCtx.findRenderObject() as RenderBox?;
+                    final origin = box == null
+                        ? null
+                        : box.localToGlobal(Offset.zero) & box.size;
+                    _exportPdf(origin);
+                  },
+            icon: _exporting
+                ? const SizedBox(
+                    width: 18,
+                    height: 18,
+                    child: CircularProgressIndicator(strokeWidth: 2))
+                : const Icon(Icons.picture_as_pdf_rounded),
+            label: Text(
+              _pdfLanguages.length > 1
+                  ? loc.ppspsExportPdfMulti(_pdfLanguages.length)
+                  : loc.ppspsExportPdf,
+              style: const TextStyle(fontWeight: FontWeight.w700),
+            ),
           ),
-          onPressed: _exporting ? null : _exportPdf,
-          icon: _exporting
-              ? const SizedBox(
-                  width: 18,
-                  height: 18,
-                  child: CircularProgressIndicator(strokeWidth: 2))
-              : const Icon(Icons.picture_as_pdf_rounded),
-          label: Text(loc.ppspsExportPdf,
-              style: const TextStyle(fontWeight: FontWeight.w700)),
         ),
         const SizedBox(height: 12),
         SwitchListTile(
@@ -1038,7 +1125,7 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
             ),
             if (country != null)
               Text(
-                '${_doc.country} · $country',
+                '${safetyCountryName(loc, _doc.country)} · $country',
                 style: TextStyle(
                     fontSize: 12, color: Colors.white.withValues(alpha: 0.6)),
                 overflow: TextOverflow.ellipsis,

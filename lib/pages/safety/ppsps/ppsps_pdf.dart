@@ -19,6 +19,7 @@ import 'ppsps_models.dart';
 /// Libellés du PDF, par langue de document.
 const Map<String, Map<String, String>> _kTexts = {
   'fr': {
+    'title': 'Plan de sécurité et de santé',
     'general': 'Renseignements généraux',
     'event': 'Événement',
     'venue': 'Lieu',
@@ -68,6 +69,7 @@ const Map<String, Map<String, String>> _kTexts = {
         'Document établi à l\'aide d\'un outil d\'aide à la rédaction. Son contenu reste sous la responsabilité de l\'entreprise signataire.',
   },
   'en': {
+    'title': 'Health and safety plan',
     'general': 'General information',
     'event': 'Event',
     'venue': 'Venue',
@@ -116,6 +118,202 @@ const Map<String, Map<String, String>> _kTexts = {
     'disclaimer':
         'This document was prepared with a drafting aid. Its content remains the responsibility of the signing company.',
   },
+  'nl': {
+    'title': 'Veiligheids- en gezondheidsplan',
+    'general': 'Algemene gegevens',
+    'event': 'Evenement',
+    'venue': 'Locatie',
+    'address': 'Adres',
+    'organizer': 'Organisator (opdrachtgever)',
+    'coordinator': 'Veiligheidscoördinator',
+    'phases': 'Fasen van de werf',
+    'montage': 'Opbouw',
+    'exploitation': 'Evenement',
+    'demontage': 'Afbouw',
+    'company': 'Opstellende onderneming',
+    'companyName': 'Bedrijfsnaam',
+    'activity': 'Activiteit op de werf',
+    'responsible': 'Verantwoordelijke ter plaatse',
+    'phone': 'Telefoon',
+    'workers': 'Uitvoerders',
+    'workerCompany': 'Bedrijf',
+    'trade': 'Vakgebied',
+    'contact': 'Contactpersoon',
+    'headcount': 'Aantal',
+    'total': 'Totaal aantal personen',
+    'risks': 'Risicoanalyse en preventiemaatregelen',
+    'riskSummary': 'weerhouden risico\'s',
+    'severity': 'Ernst',
+    'probability': 'Waarschijnlijkheid',
+    'criticality': 'Risiconiveau',
+    'collective': 'Collectieve bescherming',
+    'individuelle': 'Persoonlijke bescherming',
+    'organisationnelle': 'Organisatie',
+    'custom': 'Aanvullende maatregelen',
+    'emergency': 'Organisatie van de hulpverlening',
+    'numbers': 'Noodnummers',
+    'hospital': 'Dichtstbijzijnde ziekenhuis',
+    'firstAiders': 'Aanwezige hulpverleners',
+    'assembly': 'Verzamelplaats',
+    'equipment': 'Noodmateriaal',
+    'regulation': 'Regelgevend kader',
+    'signatures': 'Handtekeningen',
+    'signedBy': 'Opgesteld door',
+    'coordVisa': 'Visum van de coördinator',
+    'date': 'Datum',
+    'draft': 'CONCEPT',
+    'generated': 'Document aangemaakt met ShowTech Tools op',
+    'page': 'Pagina',
+    'none': 'Geen',
+    'disclaimer': 'Document opgesteld met een hulpmiddel. De inhoud blijft de verantwoordelijkheid van het ondertekenende bedrijf.',
+  },
+  'de': {
+    'title': 'Sicherheits- und Gesundheitsschutzplan',
+    'general': 'Allgemeine Angaben',
+    'event': 'Veranstaltung',
+    'venue': 'Veranstaltungsort',
+    'address': 'Adresse',
+    'organizer': 'Veranstalter (Bauherr)',
+    'coordinator': 'Sicherheitskoordinator',
+    'phases': 'Phasen der Baustelle',
+    'montage': 'Aufbau',
+    'exploitation': 'Veranstaltung',
+    'demontage': 'Abbau',
+    'company': 'Erstellendes Unternehmen',
+    'companyName': 'Firmenname',
+    'activity': 'Tätigkeit vor Ort',
+    'responsible': 'Verantwortlicher vor Ort',
+    'phone': 'Telefon',
+    'workers': 'Beteiligte Unternehmen',
+    'workerCompany': 'Unternehmen',
+    'trade': 'Gewerk',
+    'contact': 'Ansprechpartner',
+    'headcount': 'Personen',
+    'total': 'Personen insgesamt',
+    'risks': 'Gefährdungsbeurteilung und Schutzmaßnahmen',
+    'riskSummary': 'berücksichtigte Risiken',
+    'severity': 'Schwere',
+    'probability': 'Wahrscheinlichkeit',
+    'criticality': 'Risikostufe',
+    'collective': 'Kollektiver Schutz',
+    'individuelle': 'Persönlicher Schutz',
+    'organisationnelle': 'Organisation',
+    'custom': 'Zusätzliche Maßnahmen',
+    'emergency': 'Organisation der Ersten Hilfe',
+    'numbers': 'Notrufnummern',
+    'hospital': 'Nächstes Krankenhaus',
+    'firstAiders': 'Ersthelfer vor Ort',
+    'assembly': 'Sammelplatz',
+    'equipment': 'Notfallausrüstung',
+    'regulation': 'Rechtlicher Rahmen',
+    'signatures': 'Unterschriften',
+    'signedBy': 'Erstellt von',
+    'coordVisa': 'Freigabe des Koordinators',
+    'date': 'Datum',
+    'draft': 'ENTWURF',
+    'generated': 'Dokument erstellt mit ShowTech Tools am',
+    'page': 'Seite',
+    'none': 'Keine',
+    'disclaimer': 'Dieses Dokument wurde mit einer Erstellungshilfe erstellt. Für den Inhalt bleibt das unterzeichnende Unternehmen verantwortlich.',
+  },
+  'es': {
+    'title': 'Plan de seguridad y salud',
+    'general': 'Datos generales',
+    'event': 'Evento',
+    'venue': 'Lugar',
+    'address': 'Dirección',
+    'organizer': 'Organizador (promotor)',
+    'coordinator': 'Coordinador de seguridad',
+    'phases': 'Fases de la obra',
+    'montage': 'Montaje',
+    'exploitation': 'Explotación',
+    'demontage': 'Desmontaje',
+    'company': 'Empresa redactora',
+    'companyName': 'Razón social',
+    'activity': 'Actividad en la obra',
+    'responsible': 'Responsable en el lugar',
+    'phone': 'Teléfono',
+    'workers': 'Intervinientes',
+    'workerCompany': 'Empresa',
+    'trade': 'Oficio',
+    'contact': 'Contacto',
+    'headcount': 'Personas',
+    'total': 'Total de personas',
+    'risks': 'Evaluación de riesgos y medidas preventivas',
+    'riskSummary': 'riesgos identificados',
+    'severity': 'Gravedad',
+    'probability': 'Probabilidad',
+    'criticality': 'Nivel de riesgo',
+    'collective': 'Protección colectiva',
+    'individuelle': 'Protección individual',
+    'organisationnelle': 'Organización',
+    'custom': 'Medidas complementarias',
+    'emergency': 'Organización de emergencias',
+    'numbers': 'Números de emergencia',
+    'hospital': 'Hospital más cercano',
+    'firstAiders': 'Socorristas presentes',
+    'assembly': 'Punto de reunión',
+    'equipment': 'Material de emergencia',
+    'regulation': 'Marco normativo',
+    'signatures': 'Firmas',
+    'signedBy': 'Elaborado por',
+    'coordVisa': 'Visto bueno del coordinador',
+    'date': 'Fecha',
+    'draft': 'BORRADOR',
+    'generated': 'Documento generado con ShowTech Tools el',
+    'page': 'Página',
+    'none': 'Ninguno',
+    'disclaimer': 'Documento elaborado con una herramienta de ayuda a la redacción. Su contenido sigue siendo responsabilidad de la empresa firmante.',
+  },
+  'pt': {
+    'title': 'Plano de segurança e saúde',
+    'general': 'Informações gerais',
+    'event': 'Evento',
+    'venue': 'Local',
+    'address': 'Morada',
+    'organizer': 'Organizador (dono da obra)',
+    'coordinator': 'Coordenador de segurança',
+    'phases': 'Fases da obra',
+    'montage': 'Montagem',
+    'exploitation': 'Exploração',
+    'demontage': 'Desmontagem',
+    'company': 'Empresa redatora',
+    'companyName': 'Denominação social',
+    'activity': 'Atividade na obra',
+    'responsible': 'Responsável no local',
+    'phone': 'Telefone',
+    'workers': 'Intervenientes',
+    'workerCompany': 'Empresa',
+    'trade': 'Ofício',
+    'contact': 'Contacto',
+    'headcount': 'Pessoas',
+    'total': 'Total de pessoas',
+    'risks': 'Avaliação de riscos e medidas de prevenção',
+    'riskSummary': 'riscos identificados',
+    'severity': 'Gravidade',
+    'probability': 'Probabilidade',
+    'criticality': 'Nível de risco',
+    'collective': 'Proteção coletiva',
+    'individuelle': 'Proteção individual',
+    'organisationnelle': 'Organização',
+    'custom': 'Medidas complementares',
+    'emergency': 'Organização da emergência',
+    'numbers': 'Números de emergência',
+    'hospital': 'Hospital mais próximo',
+    'firstAiders': 'Socorristas presentes',
+    'assembly': 'Ponto de encontro',
+    'equipment': 'Material de emergência',
+    'regulation': 'Enquadramento regulamentar',
+    'signatures': 'Assinaturas',
+    'signedBy': 'Elaborado por',
+    'coordVisa': 'Visto do coordenador',
+    'date': 'Data',
+    'draft': 'RASCUNHO',
+    'generated': 'Documento gerado com ShowTech Tools em',
+    'page': 'Página',
+    'none': 'Nenhum',
+    'disclaimer': 'Documento elaborado com uma ferramenta de apoio à redação. O seu conteúdo continua a ser da responsabilidade da empresa signatária.',
+  },
 };
 
 class PpspsPdf {
@@ -127,9 +325,6 @@ class PpspsPdf {
   static const PdfColor _high = PdfColor.fromInt(0xFFC62828);
   static const PdfColor _mid = PdfColor.fromInt(0xFFE08A00);
   static const PdfColor _low = PdfColor.fromInt(0xFF2E7D32);
-
-  static String _docLanguage(String country) =>
-      const {'FR', 'BE', 'LU'}.contains(country) ? 'fr' : 'en';
 
   static PdfColor _critColor(int c) =>
       c >= 12 ? _high : (c >= 6 ? _mid : _low);
@@ -144,13 +339,21 @@ class PpspsPdf {
     return '$start – ${_fmtDate(p.end!)}';
   }
 
-  static Future<Uint8List> build(PpspsDocument doc, SafetyLibrary lib) async {
+  /// Langue proposée par défaut pour un pays de chantier.
+  static String defaultLanguage(String country) =>
+      const {'FR', 'BE', 'LU'}.contains(country) ? 'fr' : 'en';
+
+  static Future<Uint8List> build(
+    PpspsDocument doc,
+    SafetyLibrary lib, {
+    required String language,
+  }) async {
     final regular =
         pw.Font.ttf(await rootBundle.load('assets/fonts/pdf/IBMPlexSans-Regular.ttf'));
     final bold =
         pw.Font.ttf(await rootBundle.load('assets/fonts/pdf/IBMPlexSans-Bold.ttf'));
 
-    final lang = _docLanguage(doc.country);
+    final lang = _kTexts.containsKey(language) ? language : 'en';
     final t = _kTexts[lang]!;
     String phaseName(SafetyPhase p) => t[p.name]!;
 
@@ -158,9 +361,14 @@ class PpspsPdf {
     for (final c in lib.countries) {
       if (c.code == doc.country) country = c;
     }
-    final docTitle = country?.document.isNotEmpty == true
-        ? country!.document
-        : (lang == 'fr' ? 'Plan de sécurité' : 'Safety plan');
+    // Le nom légal du document (ex. « PPSPS ») est conservé dans la langue
+    // du pays ; dans une autre langue, on utilise l'intitulé traduit.
+    final legalLanguage =
+        country?.languages.isNotEmpty == true ? country!.languages.first : 'fr';
+    final docTitle =
+        lang == legalLanguage && country?.document.isNotEmpty == true
+            ? country!.document
+            : t['title']!;
 
     final categories = {for (final c in lib.categories) c.id: c};
     final selectedRisks = lib.risks
@@ -474,7 +682,7 @@ class PpspsPdf {
                           text: '${n.number}  ',
                           style: pw.TextStyle(
                               font: bold, fontSize: 11, color: _high)),
-                      pw.TextSpan(text: n.label, style: body),
+                      pw.TextSpan(text: n.labelFor(lang), style: body),
                     ]),
                   ),
                 ),

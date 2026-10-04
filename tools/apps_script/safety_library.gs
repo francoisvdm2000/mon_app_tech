@@ -11,6 +11,8 @@
  *   - Mesures    : ID, ID risque, Type, Mesure (FR), Measure (EN), Pays, Obligatoire
  *   - Contrôles  : ID, Famille, Point de contrôle (FR), Check (EN), Pays, Photo requise, Actif
  *   - Pays       : Code, Pays, Document, Langues, Références réglementaires, Statut
+ *   Colonnes de traduction facultatives : « Catégorie (NL) », « Risque (DE) »,
+ *   « Mesure (ES) », « Point de contrôle (PT) »… (langues NL, DE, ES, PT).
  * Une ligne sans ID est ignorée ; un risque ou un contrôle décoché (Actif) aussi,
  * ainsi que les mesures rattachées à un risque inactif.
  *
@@ -30,6 +32,17 @@ const SAFETY_CFG = {
 
 function safetyStr_(v) {
   return String(v === null || v === undefined ? '' : v).trim();
+}
+
+/** Langues supplémentaires lues si la colonne « <libellé> (XX) » existe. */
+const SAFETY_EXTRA_LANGS = ['nl', 'de', 'es', 'pt'];
+
+function safetyLangs_(r, prefix, target) {
+  SAFETY_EXTRA_LANGS.forEach(l => {
+    const v = safetyStr_(r[`${prefix} (${l.toUpperCase()})`]);
+    if (v) target[l] = v;
+  });
+  return target;
 }
 
 function safetyInt_(v, def) {
@@ -58,7 +71,7 @@ function safetyReadTab_(name) {
 }
 
 function buildSafetyLibraryJson_() {
-  const categories = safetyReadTab_('Catégories').map(r => ({
+  const categories = safetyReadTab_('Catégories').map(r => safetyLangs_(r, 'Catégorie', {
     id: safetyStr_(r['ID']),
     fr: safetyStr_(r['Catégorie (FR)']),
     en: safetyStr_(r['Category (EN)']),
@@ -67,7 +80,7 @@ function buildSafetyLibraryJson_() {
 
   const risks = safetyReadTab_('Risques')
     .filter(r => safetyBool_(r['Actif']))
-    .map(r => ({
+    .map(r => safetyLangs_(r, 'Risque', {
       id: safetyStr_(r['ID']),
       category: safetyStr_(r['Catégorie']),
       fr: safetyStr_(r['Risque (FR)']),
@@ -82,7 +95,7 @@ function buildSafetyLibraryJson_() {
 
   const measures = safetyReadTab_('Mesures')
     .filter(r => riskIds[safetyStr_(r['ID risque'])])
-    .map(r => ({
+    .map(r => safetyLangs_(r, 'Mesure', {
       id: safetyStr_(r['ID']),
       risk: safetyStr_(r['ID risque']),
       type: safetyStr_(r['Type']),
@@ -94,7 +107,7 @@ function buildSafetyLibraryJson_() {
 
   const controls = safetyReadTab_('Contrôles')
     .filter(r => safetyBool_(r['Actif']))
-    .map(r => ({
+    .map(r => safetyLangs_(r, 'Point de contrôle', {
       id: safetyStr_(r['ID']),
       family: safetyStr_(r['Famille']),
       fr: safetyStr_(r['Point de contrôle (FR)']),

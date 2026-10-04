@@ -155,31 +155,83 @@ class PpspsEmergency {
       );
 }
 
-/// Numéro d'urgence affiché dans le plan.
+/// Numéro d'urgence affiché dans le plan, avec son libellé dans chaque
+/// langue de document.
 class EmergencyNumber {
-  final String label;
   final String number;
-  const EmergencyNumber(this.label, this.number);
+  final Map<String, String> labels;
+  const EmergencyNumber(this.number, this.labels);
+
+  String labelFor(String lang) => labels[lang] ?? labels['en'] ?? number;
 }
 
-/// Numéros d'urgence par pays (libellés dans la langue du document).
+const Map<String, String> _kEu112 = {
+  'fr': 'Numéro d\'urgence européen',
+  'en': 'European emergency number',
+  'nl': 'Europees noodnummer',
+  'de': 'Europäischer Notruf',
+  'es': 'Número de emergencia europeo',
+  'pt': 'Número de emergência europeu',
+};
+const Map<String, String> _kSamu = {
+  'fr': 'SAMU (urgences médicales)',
+  'en': 'SAMU (medical emergencies)',
+  'nl': 'SAMU (medische spoed)',
+  'de': 'SAMU (medizinischer Notruf)',
+  'es': 'SAMU (urgencias médicas)',
+  'pt': 'SAMU (emergência médica)',
+};
+const Map<String, String> _kFire = {
+  'fr': 'Pompiers',
+  'en': 'Fire brigade',
+  'nl': 'Brandweer',
+  'de': 'Feuerwehr',
+  'es': 'Bomberos',
+  'pt': 'Bombeiros',
+};
+const Map<String, String> _kPolice = {
+  'fr': 'Police',
+  'en': 'Police',
+  'nl': 'Politie',
+  'de': 'Polizei',
+  'es': 'Policía',
+  'pt': 'Polícia',
+};
+const Map<String, String> _kFireAmbulance = {
+  'fr': 'Pompiers et ambulance',
+  'en': 'Fire and ambulance',
+  'nl': 'Brandweer en ziekenwagen',
+  'de': 'Feuerwehr und Rettungsdienst',
+  'es': 'Bomberos y ambulancia',
+  'pt': 'Bombeiros e ambulância',
+};
+const Map<String, String> _kPoison = {
+  'fr': 'Centre Antipoisons',
+  'en': 'Poison Centre',
+  'nl': 'Antigifcentrum',
+  'de': 'Giftnotruf',
+  'es': 'Centro Antivenenos',
+  'pt': 'Centro Antivenenos',
+};
+
+/// Numéros d'urgence du pays du chantier.
 List<EmergencyNumber> emergencyNumbersFor(String country) {
   switch (country) {
     case 'FR':
       return const [
-        EmergencyNumber('Numéro d\'urgence européen', '112'),
-        EmergencyNumber('SAMU', '15'),
-        EmergencyNumber('Pompiers', '18'),
-        EmergencyNumber('Police', '17'),
+        EmergencyNumber('112', _kEu112),
+        EmergencyNumber('15', _kSamu),
+        EmergencyNumber('18', _kFire),
+        EmergencyNumber('17', _kPolice),
       ];
     case 'BE':
       return const [
-        EmergencyNumber('Pompiers et ambulance', '112'),
-        EmergencyNumber('Police', '101'),
-        EmergencyNumber('Centre Antipoisons', '070 245 245'),
+        EmergencyNumber('112', _kFireAmbulance),
+        EmergencyNumber('101', _kPolice),
+        EmergencyNumber('070 245 245', _kPoison),
       ];
     default:
-      return const [EmergencyNumber('Emergency', '112')];
+      return const [EmergencyNumber('112', _kEu112)];
   }
 }
 
@@ -214,6 +266,9 @@ class PpspsDocument {
   // ── Secours ──
   final PpspsEmergency emergency;
 
+  /// Langues choisies au dernier export PDF (codes fr, nl, en…).
+  final List<String> pdfLanguages;
+
   const PpspsDocument({
     required this.id,
     required this.createdAt,
@@ -234,6 +289,7 @@ class PpspsDocument {
     this.workers = const [],
     this.risks = const {},
     this.emergency = const PpspsEmergency(),
+    this.pdfLanguages = const [],
   });
 
   factory PpspsDocument.create(String country) {
@@ -282,6 +338,7 @@ class PpspsDocument {
     List<PpspsWorker>? workers,
     Map<String, PpspsRiskSelection>? risks,
     PpspsEmergency? emergency,
+    List<String>? pdfLanguages,
   }) =>
       PpspsDocument(
         id: id,
@@ -303,6 +360,7 @@ class PpspsDocument {
         workers: workers ?? this.workers,
         risks: risks ?? this.risks,
         emergency: emergency ?? this.emergency,
+        pdfLanguages: pdfLanguages ?? this.pdfLanguages,
       );
 
   /// Copie pour un nouvel événement : garde l'entreprise, les intervenants,
@@ -327,6 +385,7 @@ class PpspsDocument {
       workers: workers,
       risks: risks,
       emergency: emergency,
+      pdfLanguages: pdfLanguages,
     );
   }
 
@@ -352,6 +411,7 @@ class PpspsDocument {
         'workers': [for (final w in workers) w.toJson()],
         'risks': {for (final e in risks.entries) e.key: e.value.toJson()},
         'emergency': emergency.toJson(),
+        'pdfLanguages': pdfLanguages,
       };
 
   factory PpspsDocument.fromJson(Map<String, dynamic> json) {
@@ -401,6 +461,9 @@ class PpspsDocument {
           json['emergency'] is Map<String, dynamic>
               ? json['emergency'] as Map<String, dynamic>
               : null),
+      pdfLanguages: [
+        for (final l in (json['pdfLanguages'] as List? ?? const [])) _s(l)
+      ],
     );
   }
 }

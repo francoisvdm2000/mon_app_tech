@@ -91,7 +91,10 @@ class _PpspsListPageState extends State<PpspsListPage> {
             for (final c in countries)
               ListTile(
                 leading: _CountryBadge(code: c.code),
-                title: Text(c.name, style: const TextStyle(color: Colors.white)),
+                title: Text(
+                  safetyCountryName(loc, c.code, fallback: c.name),
+                  style: const TextStyle(color: Colors.white),
+                ),
                 subtitle: Text(
                   c.document,
                   style: TextStyle(color: Colors.white.withValues(alpha: 0.6)),

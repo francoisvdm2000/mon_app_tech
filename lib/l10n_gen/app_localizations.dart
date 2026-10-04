@@ -27812,7 +27812,7 @@ abstract class AppLocalizations {
   /// No description provided for @ppspsEmptyTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Aucun plan pour l'instant'**
+  /// **'Aucun plan pour l\'instant'**
   String get ppspsEmptyTitle;
 
   /// No description provided for @ppspsEmptyBody.
@@ -27926,7 +27926,7 @@ abstract class AppLocalizations {
   /// No description provided for @ppspsFieldEventName.
   ///
   /// In fr, this message translates to:
-  /// **'Nom de l'événement'**
+  /// **'Nom de l\'événement'**
   String get ppspsFieldEventName;
 
   /// No description provided for @ppspsFieldVenue.
@@ -27944,7 +27944,7 @@ abstract class AppLocalizations {
   /// No description provided for @ppspsFieldOrganizer.
   ///
   /// In fr, this message translates to:
-  /// **'Organisateur (maître d'ouvrage)'**
+  /// **'Organisateur (maître d\'ouvrage)'**
   String get ppspsFieldOrganizer;
 
   /// No description provided for @ppspsFieldCoordinator.
@@ -28112,7 +28112,7 @@ abstract class AppLocalizations {
   /// No description provided for @ppspsSectionNumbers.
   ///
   /// In fr, this message translates to:
-  /// **'Numéros d'urgence'**
+  /// **'Numéros d\'urgence'**
   String get ppspsSectionNumbers;
 
   /// No description provided for @ppspsSectionHospital.
@@ -28124,7 +28124,7 @@ abstract class AppLocalizations {
   /// No description provided for @ppspsFieldHospitalName.
   ///
   /// In fr, this message translates to:
-  /// **'Nom de l'hôpital'**
+  /// **'Nom de l\'hôpital'**
   String get ppspsFieldHospitalName;
 
   /// No description provided for @ppspsSectionOnSite.
@@ -28192,6 +28192,60 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Marquer comme finalisé'**
   String get ppspsMarkFinal;
+
+  /// No description provided for @safetyCountryFR.
+  ///
+  /// In fr, this message translates to:
+  /// **'France'**
+  String get safetyCountryFR;
+
+  /// No description provided for @safetyCountryBE.
+  ///
+  /// In fr, this message translates to:
+  /// **'Belgique'**
+  String get safetyCountryBE;
+
+  /// No description provided for @safetyCountryUK.
+  ///
+  /// In fr, this message translates to:
+  /// **'Royaume-Uni'**
+  String get safetyCountryUK;
+
+  /// No description provided for @safetyCountryLU.
+  ///
+  /// In fr, this message translates to:
+  /// **'Luxembourg'**
+  String get safetyCountryLU;
+
+  /// No description provided for @safetyCountryDE.
+  ///
+  /// In fr, this message translates to:
+  /// **'Allemagne'**
+  String get safetyCountryDE;
+
+  /// No description provided for @safetyCountryNL.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pays-Bas'**
+  String get safetyCountryNL;
+
+  /// No description provided for @ppspsExportLanguages.
+  ///
+  /// In fr, this message translates to:
+  /// **'Langues du document'**
+  String get ppspsExportLanguages;
+
+  /// No description provided for @ppspsExportLanguagesHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Un PDF est créé pour chaque langue cochée.'**
+  String get ppspsExportLanguagesHint;
+
+  /// No description provided for @ppspsExportPdfMulti.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exporter {count} PDF'**
+  String ppspsExportPdfMulti(Object count);
 }
 
 class _AppLocalizationsDelegate

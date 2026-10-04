@@ -6056,5 +6056,19 @@
   "ppspsExportReady": "Todos los pasos están completos.",
   "ppspsExportMissing": "Por completar",
   "ppspsExportPdf": "Exportar en PDF",
-  "ppspsMarkFinal": "Marcar como finalizado"
+  "ppspsMarkFinal": "Marcar como finalizado",
+  "safetyCountryFR": "Francia",
+  "safetyCountryBE": "Bélgica",
+  "safetyCountryUK": "Reino Unido",
+  "safetyCountryLU": "Luxemburgo",
+  "safetyCountryDE": "Alemania",
+  "safetyCountryNL": "Países Bajos",
+  "ppspsExportLanguages": "Idiomas del documento",
+  "ppspsExportLanguagesHint": "Se crea un PDF por cada idioma seleccionado.",
+  "ppspsExportPdfMulti": "Exportar {count} PDF",
+  "@ppspsExportPdfMulti": {
+    "placeholders": {
+      "count": {}
+    }
+  }
 }

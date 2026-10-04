@@ -1,0 +1,11 @@
+{
+  "safetyCountryFR": {"fr": "France", "en": "France", "de": "Frankreich", "es": "Francia", "nl": "Frankrijk", "pt": "França"},
+  "safetyCountryBE": {"fr": "Belgique", "en": "Belgium", "de": "Belgien", "es": "Bélgica", "nl": "België", "pt": "Bélgica"},
+  "safetyCountryUK": {"fr": "Royaume-Uni", "en": "United Kingdom", "de": "Vereinigtes Königreich", "es": "Reino Unido", "nl": "Verenigd Koninkrijk", "pt": "Reino Unido"},
+  "safetyCountryLU": {"fr": "Luxembourg", "en": "Luxembourg", "de": "Luxemburg", "es": "Luxemburgo", "nl": "Luxemburg", "pt": "Luxemburgo"},
+  "safetyCountryDE": {"fr": "Allemagne", "en": "Germany", "de": "Deutschland", "es": "Alemania", "nl": "Duitsland", "pt": "Alemanha"},
+  "safetyCountryNL": {"fr": "Pays-Bas", "en": "Netherlands", "de": "Niederlande", "es": "Países Bajos", "nl": "Nederland", "pt": "Países Baixos"},
+  "ppspsExportLanguages": {"fr": "Langues du document", "en": "Document languages", "de": "Sprachen des Dokuments", "es": "Idiomas del documento", "nl": "Talen van het document", "pt": "Idiomas do documento"},
+  "ppspsExportLanguagesHint": {"fr": "Un PDF est créé pour chaque langue cochée.", "en": "One PDF is created for each selected language.", "de": "Für jede ausgewählte Sprache wird ein PDF erstellt.", "es": "Se crea un PDF por cada idioma seleccionado.", "nl": "Voor elke aangevinkte taal wordt een PDF gemaakt.", "pt": "É criado um PDF para cada idioma selecionado."},
+  "ppspsExportPdfMulti": {"placeholders": ["count"], "fr": "Exporter {count} PDF", "en": "Export {count} PDFs", "de": "{count} PDFs exportieren", "es": "Exportar {count} PDF", "nl": "{count} PDF's exporteren", "pt": "Exportar {count} PDF"}
+}
