@@ -16004,4 +16004,227 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get ppspsSignValidate =>
       'Confirm signature';
+
+  @override
+  String get attestationListTitle =>
+      'Installation certificates';
+
+  @override
+  String get attestationNew =>
+      'New certificate';
+
+  @override
+  String get attestationNewTitle =>
+      'New certificate';
+
+  @override
+  String get attestationNewBlank =>
+      'Blank certificate';
+
+  @override
+  String get attestationNewFromPlan =>
+      'Or from a safety plan (reuses the event and company):';
+
+  @override
+  String get attestationEmptyTitle =>
+      'No certificates yet';
+
+  @override
+  String get attestationEmptyBody =>
+      'After load-in, check each element, record any reservations and sign the certificate on site.';
+
+  @override
+  String get attestationDeleteConfirm =>
+      'Delete this certificate and its photos? This cannot be undone.';
+
+  @override
+  String get attestationStatusSigned =>
+      'Signed';
+
+  @override
+  String get attestationStatusReserve =>
+      'Signed with reservations';
+
+  @override
+  String attestationElementCount(Object count) {
+    return '$count elements';
+  }
+
+  @override
+  String get attestationSignatureCleared =>
+      'Content changed: the signature was removed, please sign again.';
+
+  @override
+  String get attestationFieldCompany =>
+      'Installing company';
+
+  @override
+  String get attestationElementName =>
+      'Element name (e.g. Front truss)';
+
+  @override
+  String get attestationElementDesc =>
+      'Description (e.g. 40×40 truss, 12 m, 4 × 1 t hoists)';
+
+  @override
+  String get attestationElementFamilies =>
+      'Checks to perform';
+
+  @override
+  String get attestationAppliedLoad =>
+      'Applied load (kg)';
+
+  @override
+  String get attestationRatedLoad =>
+      'Rated load (kg)';
+
+  @override
+  String get attestationDeleteElementConfirm =>
+      'Delete this element, its checks and photos?';
+
+  @override
+  String attestationLoadSummary(Object applied, Object rated) {
+    return 'Load: $applied kg / $rated kg rated';
+  }
+
+  @override
+  String get attestationOverload =>
+      'Load exceeds the rated load';
+
+  @override
+  String get attestationElementsEmpty =>
+      'Add the installed elements: trusses, grid, towers, hoists, stage, screens…';
+
+  @override
+  String get attestationAddElement =>
+      'Add an element';
+
+  @override
+  String get attestationTakePhoto =>
+      'Take a photo';
+
+  @override
+  String get attestationPickPhoto =>
+      'Choose from gallery';
+
+  @override
+  String get attestationPhotoError =>
+      'Could not add the photo. Check camera access in settings.';
+
+  @override
+  String get attestationOk =>
+      'OK';
+
+  @override
+  String get attestationNc =>
+      'NC';
+
+  @override
+  String get attestationNa =>
+      'N/A';
+
+  @override
+  String get attestationReserveLabel =>
+      'Reservation: finding and planned action (required)';
+
+  @override
+  String get attestationPhotoRequired =>
+      'Photo recommended for this check';
+
+  @override
+  String get attestationNoElements =>
+      'No elements to check: add them in the Elements step.';
+
+  @override
+  String get attestationReservesMissing =>
+      'Each non-compliant check needs a written reservation before signing.';
+
+  @override
+  String get attestationSignTitle =>
+      'Certificate signature';
+
+  @override
+  String attestationUnanswered(Object count) {
+    return '$count checks not answered';
+  }
+
+  @override
+  String attestationReservesMissingCount(Object count) {
+    return '$count non-conformities without a written reservation (signing blocked)';
+  }
+
+  @override
+  String attestationPhotosMissing(Object count) {
+    return '$count recommended photos missing';
+  }
+
+  @override
+  String get attestationStatElements =>
+      'elements';
+
+  @override
+  String get attestationStatReserves =>
+      'reservations';
+
+  @override
+  String get attestationStatPhotos =>
+      'photos';
+
+  @override
+  String attestationStatement(Object name) {
+    return 'I, the undersigned, $name, certify that the listed installations have been assembled in accordance with the manufacturers\' instructions and good practice, and were inspected before the audience was admitted.';
+  }
+
+  @override
+  String attestationStatementReserve(Object name) {
+    return 'I, the undersigned, $name, certify that the listed installations have been assembled in accordance with the manufacturers\' instructions and good practice, and were inspected before the audience was admitted, subject to the reservations below.';
+  }
+
+  @override
+  String get attestationReserve =>
+      'Reservation';
+
+  @override
+  String get attestationReserveEmpty =>
+      'Reservation to be written (Checks step)';
+
+  @override
+  String get attestationSignerSection =>
+      'Signatory';
+
+  @override
+  String get attestationSignerRole =>
+      'Position (e.g. head rigger, production manager)';
+
+  @override
+  String get attestationSign =>
+      'Sign the certificate';
+
+  @override
+  String get attestationSignWithReserve =>
+      'Sign with reservations';
+
+  @override
+  String get attestationStepInfo =>
+      'Info';
+
+  @override
+  String get attestationStepElements =>
+      'Elements';
+
+  @override
+  String get attestationStepControls =>
+      'Checks';
+
+  @override
+  String get attestationStepSignature =>
+      'Signature';
+
+  @override
+  String get attestationNextElement =>
+      'Next element';
+
+  @override
+  String get attestationDeletePhotoConfirm =>
+      'Delete this photo?';
 }

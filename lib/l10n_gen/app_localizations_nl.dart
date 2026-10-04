@@ -16127,4 +16127,227 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get ppspsSignValidate =>
       'Handtekening bevestigen';
+
+  @override
+  String get attestationListTitle =>
+      'Montageattesten';
+
+  @override
+  String get attestationNew =>
+      'Nieuw attest';
+
+  @override
+  String get attestationNewTitle =>
+      'Nieuw attest';
+
+  @override
+  String get attestationNewBlank =>
+      'Leeg attest';
+
+  @override
+  String get attestationNewFromPlan =>
+      'Of vanuit een veiligheidsplan (neemt evenement en bedrijf over):';
+
+  @override
+  String get attestationEmptyTitle =>
+      'Nog geen attesten';
+
+  @override
+  String get attestationEmptyBody =>
+      'Controleer na de opbouw elk element, noteer de voorbehouden en onderteken het attest ter plaatse.';
+
+  @override
+  String get attestationDeleteConfirm =>
+      'Dit attest en de foto\'s verwijderen? Dit kan niet ongedaan worden gemaakt.';
+
+  @override
+  String get attestationStatusSigned =>
+      'Ondertekend';
+
+  @override
+  String get attestationStatusReserve =>
+      'Ondertekend met voorbehoud';
+
+  @override
+  String attestationElementCount(Object count) {
+    return '$count elementen';
+  }
+
+  @override
+  String get attestationSignatureCleared =>
+      'Inhoud gewijzigd: de handtekening is verwijderd, onderteken opnieuw.';
+
+  @override
+  String get attestationFieldCompany =>
+      'Monterend bedrijf';
+
+  @override
+  String get attestationElementName =>
+      'Naam van het element (bv. Voorste truss)';
+
+  @override
+  String get attestationElementDesc =>
+      'Beschrijving (bv. Truss 40×40, 12 m, 4 takels 1 t)';
+
+  @override
+  String get attestationElementFamilies =>
+      'Uit te voeren controles';
+
+  @override
+  String get attestationAppliedLoad =>
+      'Toegepaste last (kg)';
+
+  @override
+  String get attestationRatedLoad =>
+      'Toelaatbare last (kg)';
+
+  @override
+  String get attestationDeleteElementConfirm =>
+      'Dit element met controles en foto\'s verwijderen?';
+
+  @override
+  String attestationLoadSummary(Object applied, Object rated) {
+    return 'Last: $applied kg / $rated kg toelaatbaar';
+  }
+
+  @override
+  String get attestationOverload =>
+      'Last hoger dan de toelaatbare last';
+
+  @override
+  String get attestationElementsEmpty =>
+      'Voeg de gemonteerde elementen toe: trussen, grid, torens, takels, podium, schermen…';
+
+  @override
+  String get attestationAddElement =>
+      'Element toevoegen';
+
+  @override
+  String get attestationTakePhoto =>
+      'Foto nemen';
+
+  @override
+  String get attestationPickPhoto =>
+      'Kiezen uit galerij';
+
+  @override
+  String get attestationPhotoError =>
+      'Foto kon niet worden toegevoegd. Controleer de cameratoegang in de instellingen.';
+
+  @override
+  String get attestationOk =>
+      'OK';
+
+  @override
+  String get attestationNc =>
+      'NC';
+
+  @override
+  String get attestationNa =>
+      'N.v.t.';
+
+  @override
+  String get attestationReserveLabel =>
+      'Voorbehoud: vaststelling en geplande actie (verplicht)';
+
+  @override
+  String get attestationPhotoRequired =>
+      'Foto aanbevolen voor dit punt';
+
+  @override
+  String get attestationNoElements =>
+      'Geen elementen te controleren: voeg ze toe in de stap Elementen.';
+
+  @override
+  String get attestationReservesMissing =>
+      'Elk niet-conform punt heeft een schriftelijk voorbehoud nodig vóór ondertekening.';
+
+  @override
+  String get attestationSignTitle =>
+      'Ondertekening van het attest';
+
+  @override
+  String attestationUnanswered(Object count) {
+    return '$count controlepunten zonder antwoord';
+  }
+
+  @override
+  String attestationReservesMissingCount(Object count) {
+    return '$count non-conformiteiten zonder voorbehoud (ondertekening geblokkeerd)';
+  }
+
+  @override
+  String attestationPhotosMissing(Object count) {
+    return '$count aanbevolen foto\'s ontbreken';
+  }
+
+  @override
+  String get attestationStatElements =>
+      'elementen';
+
+  @override
+  String get attestationStatReserves =>
+      'voorbehouden';
+
+  @override
+  String get attestationStatPhotos =>
+      'foto\'s';
+
+  @override
+  String attestationStatement(Object name) {
+    return 'Ondergetekende, $name, verklaart dat de vermelde installaties gemonteerd zijn volgens de handleidingen van de fabrikanten en de regels van goed vakmanschap, en gecontroleerd zijn vóór de toegang van het publiek.';
+  }
+
+  @override
+  String attestationStatementReserve(Object name) {
+    return 'Ondergetekende, $name, verklaart dat de vermelde installaties gemonteerd zijn volgens de handleidingen van de fabrikanten en de regels van goed vakmanschap, en gecontroleerd zijn vóór de toegang van het publiek, onder voorbehoud van de onderstaande punten.';
+  }
+
+  @override
+  String get attestationReserve =>
+      'Voorbehoud';
+
+  @override
+  String get attestationReserveEmpty =>
+      'Voorbehoud nog te schrijven (stap Controles)';
+
+  @override
+  String get attestationSignerSection =>
+      'Ondertekenaar';
+
+  @override
+  String get attestationSignerRole =>
+      'Functie (bv. hoofdrigger, productieleider)';
+
+  @override
+  String get attestationSign =>
+      'Attest ondertekenen';
+
+  @override
+  String get attestationSignWithReserve =>
+      'Ondertekenen met voorbehoud';
+
+  @override
+  String get attestationStepInfo =>
+      'Gegevens';
+
+  @override
+  String get attestationStepElements =>
+      'Elementen';
+
+  @override
+  String get attestationStepControls =>
+      'Controles';
+
+  @override
+  String get attestationStepSignature =>
+      'Handtekening';
+
+  @override
+  String get attestationNextElement =>
+      'Volgend element';
+
+  @override
+  String get attestationDeletePhotoConfirm =>
+      'Deze foto verwijderen?';
 }

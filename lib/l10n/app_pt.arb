@@ -6106,5 +6106,95 @@
   "ppspsSignName": "Nome do signatário",
   "ppspsSignHint": "Assine com o dedo no quadro branco.",
   "ppspsSignClear": "Apagar",
-  "ppspsSignValidate": "Confirmar a assinatura"
+  "ppspsSignValidate": "Confirmar a assinatura",
+  "attestationListTitle": "Certificados de montagem",
+  "attestationNew": "Novo certificado",
+  "attestationNewTitle": "Novo certificado",
+  "attestationNewBlank": "Certificado em branco",
+  "attestationNewFromPlan": "Ou a partir de um plano de segurança (retoma o evento e a empresa):",
+  "attestationEmptyTitle": "Ainda não há certificados",
+  "attestationEmptyBody": "Após a montagem, controle cada elemento, registe as reservas e assine o certificado no local.",
+  "attestationDeleteConfirm": "Eliminar este certificado e as suas fotos? Esta ação é definitiva.",
+  "attestationStatusSigned": "Assinado",
+  "attestationStatusReserve": "Assinado com reservas",
+  "attestationElementCount": "{count} elementos",
+  "@attestationElementCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationSignatureCleared": "Conteúdo alterado: a assinatura foi removida, assine novamente.",
+  "attestationFieldCompany": "Empresa montadora",
+  "attestationElementName": "Nome do elemento (ex. Truss frontal)",
+  "attestationElementDesc": "Descrição (ex. Estrutura 40×40, 12 m, 4 diferenciais 1 t)",
+  "attestationElementFamilies": "Controlos a efetuar",
+  "attestationAppliedLoad": "Carga aplicada (kg)",
+  "attestationRatedLoad": "Carga admissível (kg)",
+  "attestationDeleteElementConfirm": "Eliminar este elemento, os seus controlos e fotos?",
+  "attestationLoadSummary": "Carga: {applied} kg / {rated} kg admissíveis",
+  "@attestationLoadSummary": {
+    "placeholders": {
+      "applied": {},
+      "rated": {}
+    }
+  },
+  "attestationOverload": "Carga superior à carga admissível",
+  "attestationElementsEmpty": "Adicione os elementos montados: truss, grelha, torres, diferenciais, palco, ecrãs…",
+  "attestationAddElement": "Adicionar um elemento",
+  "attestationTakePhoto": "Tirar uma foto",
+  "attestationPickPhoto": "Escolher da galeria",
+  "attestationPhotoError": "Não foi possível adicionar a foto. Verifique o acesso à câmara nas definições.",
+  "attestationOk": "OK",
+  "attestationNc": "NC",
+  "attestationNa": "N/A",
+  "attestationReserveLabel": "Reserva: constatação e ação prevista (obrigatório)",
+  "attestationPhotoRequired": "Foto recomendada para este ponto",
+  "attestationNoElements": "Nenhum elemento a controlar: adicione-os no passo Elementos.",
+  "attestationReservesMissing": "Cada ponto não conforme precisa de uma reserva escrita antes da assinatura.",
+  "attestationSignTitle": "Assinatura do certificado",
+  "attestationUnanswered": "{count} pontos de controlo sem resposta",
+  "@attestationUnanswered": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationReservesMissingCount": "{count} não conformidades sem reserva escrita (assinatura bloqueada)",
+  "@attestationReservesMissingCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationPhotosMissing": "Faltam {count} fotos recomendadas",
+  "@attestationPhotosMissing": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationStatElements": "elementos",
+  "attestationStatReserves": "reservas",
+  "attestationStatPhotos": "fotos",
+  "attestationStatement": "O(A) abaixo assinado(a), {name}, certifica que as instalações indicadas foram montadas de acordo com os manuais dos fabricantes e as boas práticas, e verificadas antes da entrada do público.",
+  "@attestationStatement": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "attestationStatementReserve": "O(A) abaixo assinado(a), {name}, certifica que as instalações indicadas foram montadas de acordo com os manuais dos fabricantes e as boas práticas, e verificadas antes da entrada do público, sob reserva dos pontos abaixo.",
+  "@attestationStatementReserve": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "attestationReserve": "Reserva",
+  "attestationReserveEmpty": "Reserva por escrever (passo Controlos)",
+  "attestationSignerSection": "Signatário",
+  "attestationSignerRole": "Função (ex. chefe de rigging, diretor técnico)",
+  "attestationSign": "Assinar o certificado",
+  "attestationSignWithReserve": "Assinar com reservas",
+  "attestationStepInfo": "Dados",
+  "attestationStepElements": "Elementos",
+  "attestationStepControls": "Controlos",
+  "attestationStepSignature": "Assinatura",
+  "attestationNextElement": "Elemento seguinte",
+  "attestationDeletePhotoConfirm": "Eliminar esta foto?"
 }

@@ -6106,5 +6106,95 @@
   "ppspsSignName": "Signatory's name",
   "ppspsSignHint": "Sign with your finger in the white box.",
   "ppspsSignClear": "Clear",
-  "ppspsSignValidate": "Confirm signature"
+  "ppspsSignValidate": "Confirm signature",
+  "attestationListTitle": "Installation certificates",
+  "attestationNew": "New certificate",
+  "attestationNewTitle": "New certificate",
+  "attestationNewBlank": "Blank certificate",
+  "attestationNewFromPlan": "Or from a safety plan (reuses the event and company):",
+  "attestationEmptyTitle": "No certificates yet",
+  "attestationEmptyBody": "After load-in, check each element, record any reservations and sign the certificate on site.",
+  "attestationDeleteConfirm": "Delete this certificate and its photos? This cannot be undone.",
+  "attestationStatusSigned": "Signed",
+  "attestationStatusReserve": "Signed with reservations",
+  "attestationElementCount": "{count} elements",
+  "@attestationElementCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationSignatureCleared": "Content changed: the signature was removed, please sign again.",
+  "attestationFieldCompany": "Installing company",
+  "attestationElementName": "Element name (e.g. Front truss)",
+  "attestationElementDesc": "Description (e.g. 40×40 truss, 12 m, 4 × 1 t hoists)",
+  "attestationElementFamilies": "Checks to perform",
+  "attestationAppliedLoad": "Applied load (kg)",
+  "attestationRatedLoad": "Rated load (kg)",
+  "attestationDeleteElementConfirm": "Delete this element, its checks and photos?",
+  "attestationLoadSummary": "Load: {applied} kg / {rated} kg rated",
+  "@attestationLoadSummary": {
+    "placeholders": {
+      "applied": {},
+      "rated": {}
+    }
+  },
+  "attestationOverload": "Load exceeds the rated load",
+  "attestationElementsEmpty": "Add the installed elements: trusses, grid, towers, hoists, stage, screens…",
+  "attestationAddElement": "Add an element",
+  "attestationTakePhoto": "Take a photo",
+  "attestationPickPhoto": "Choose from gallery",
+  "attestationPhotoError": "Could not add the photo. Check camera access in settings.",
+  "attestationOk": "OK",
+  "attestationNc": "NC",
+  "attestationNa": "N/A",
+  "attestationReserveLabel": "Reservation: finding and planned action (required)",
+  "attestationPhotoRequired": "Photo recommended for this check",
+  "attestationNoElements": "No elements to check: add them in the Elements step.",
+  "attestationReservesMissing": "Each non-compliant check needs a written reservation before signing.",
+  "attestationSignTitle": "Certificate signature",
+  "attestationUnanswered": "{count} checks not answered",
+  "@attestationUnanswered": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationReservesMissingCount": "{count} non-conformities without a written reservation (signing blocked)",
+  "@attestationReservesMissingCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationPhotosMissing": "{count} recommended photos missing",
+  "@attestationPhotosMissing": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationStatElements": "elements",
+  "attestationStatReserves": "reservations",
+  "attestationStatPhotos": "photos",
+  "attestationStatement": "I, the undersigned, {name}, certify that the listed installations have been assembled in accordance with the manufacturers' instructions and good practice, and were inspected before the audience was admitted.",
+  "@attestationStatement": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "attestationStatementReserve": "I, the undersigned, {name}, certify that the listed installations have been assembled in accordance with the manufacturers' instructions and good practice, and were inspected before the audience was admitted, subject to the reservations below.",
+  "@attestationStatementReserve": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "attestationReserve": "Reservation",
+  "attestationReserveEmpty": "Reservation to be written (Checks step)",
+  "attestationSignerSection": "Signatory",
+  "attestationSignerRole": "Position (e.g. head rigger, production manager)",
+  "attestationSign": "Sign the certificate",
+  "attestationSignWithReserve": "Sign with reservations",
+  "attestationStepInfo": "Info",
+  "attestationStepElements": "Elements",
+  "attestationStepControls": "Checks",
+  "attestationStepSignature": "Signature",
+  "attestationNextElement": "Next element",
+  "attestationDeletePhotoConfirm": "Delete this photo?"
 }

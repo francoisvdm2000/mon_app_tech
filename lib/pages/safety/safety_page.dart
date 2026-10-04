@@ -10,6 +10,7 @@ import '../../l10n_gen/app_localizations.dart';
 import '../../services/subscription_service.dart';
 import '../shared/app_grid_tile.dart';
 import '../subscription_page.dart';
+import 'attestation/attestation_list_page.dart';
 import 'ppsps/ppsps_list_page.dart';
 import 'safety_library.dart';
 import 'safety_theme.dart';
@@ -83,10 +84,11 @@ class _SafetyPageState extends State<SafetyPage> {
     );
   }
 
-  void _comingSoon() {
-    final loc = AppLocalizations.of(context);
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(loc.safetyComingSoon)),
+  void _openAttestations() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (_) => AttestationListPage(library: _library)),
     );
   }
 
@@ -211,7 +213,7 @@ class _SafetyPageState extends State<SafetyPage> {
                   subtitle: loc.safetyAttestationSubtitle,
                   accentColor: kSafetyAccent,
                   locked: !_hasAccess,
-                  onTap: () => _openOrSubscribe(_comingSoon),
+                  onTap: () => _openOrSubscribe(_openAttestations),
                 ),
               ],
             ),

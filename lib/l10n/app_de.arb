@@ -5785,5 +5785,95 @@
   "ppspsSignName": "Name des Unterzeichners",
   "ppspsSignHint": "Unterschreiben Sie mit dem Finger im weißen Feld.",
   "ppspsSignClear": "Löschen",
-  "ppspsSignValidate": "Unterschrift bestätigen"
+  "ppspsSignValidate": "Unterschrift bestätigen",
+  "attestationListTitle": "Montageabnahmen",
+  "attestationNew": "Neue Abnahme",
+  "attestationNewTitle": "Neue Abnahme",
+  "attestationNewBlank": "Leere Abnahme",
+  "attestationNewFromPlan": "Oder aus einem Sicherheitsplan (übernimmt Veranstaltung und Unternehmen):",
+  "attestationEmptyTitle": "Noch keine Abnahmen",
+  "attestationEmptyBody": "Prüfen Sie nach dem Aufbau jedes Element, halten Sie Vorbehalte fest und unterschreiben Sie die Abnahme vor Ort.",
+  "attestationDeleteConfirm": "Diese Abnahme und ihre Fotos löschen? Dies kann nicht rückgängig gemacht werden.",
+  "attestationStatusSigned": "Unterschrieben",
+  "attestationStatusReserve": "Mit Vorbehalt unterschrieben",
+  "attestationElementCount": "{count} Elemente",
+  "@attestationElementCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationSignatureCleared": "Inhalt geändert: Die Unterschrift wurde entfernt, bitte erneut unterschreiben.",
+  "attestationFieldCompany": "Montageunternehmen",
+  "attestationElementName": "Name des Elements (z. B. vordere Traverse)",
+  "attestationElementDesc": "Beschreibung (z. B. Traverse 40×40, 12 m, 4 Kettenzüge 1 t)",
+  "attestationElementFamilies": "Durchzuführende Prüfungen",
+  "attestationAppliedLoad": "Aufgebrachte Last (kg)",
+  "attestationRatedLoad": "Zulässige Last (kg)",
+  "attestationDeleteElementConfirm": "Dieses Element mit Prüfungen und Fotos löschen?",
+  "attestationLoadSummary": "Last: {applied} kg / {rated} kg zulässig",
+  "@attestationLoadSummary": {
+    "placeholders": {
+      "applied": {},
+      "rated": {}
+    }
+  },
+  "attestationOverload": "Last überschreitet die zulässige Last",
+  "attestationElementsEmpty": "Fügen Sie die montierten Elemente hinzu: Traversen, Grid, Türme, Kettenzüge, Bühne, Screens…",
+  "attestationAddElement": "Element hinzufügen",
+  "attestationTakePhoto": "Foto aufnehmen",
+  "attestationPickPhoto": "Aus der Galerie wählen",
+  "attestationPhotoError": "Foto konnte nicht hinzugefügt werden. Prüfen Sie den Kamerazugriff in den Einstellungen.",
+  "attestationOk": "OK",
+  "attestationNc": "M",
+  "attestationNa": "Entf.",
+  "attestationReserveLabel": "Vorbehalt: Befund und geplante Maßnahme (Pflicht)",
+  "attestationPhotoRequired": "Foto für diesen Prüfpunkt empfohlen",
+  "attestationNoElements": "Keine Elemente zu prüfen: Fügen Sie sie im Schritt Elemente hinzu.",
+  "attestationReservesMissing": "Jeder Mangel braucht vor der Unterschrift einen schriftlichen Vorbehalt.",
+  "attestationSignTitle": "Unterschrift der Abnahme",
+  "attestationUnanswered": "{count} Prüfpunkte ohne Antwort",
+  "@attestationUnanswered": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationReservesMissingCount": "{count} Mängel ohne schriftlichen Vorbehalt (Unterschrift gesperrt)",
+  "@attestationReservesMissingCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationPhotosMissing": "{count} empfohlene Fotos fehlen",
+  "@attestationPhotosMissing": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationStatElements": "Elemente",
+  "attestationStatReserves": "Vorbehalte",
+  "attestationStatPhotos": "Fotos",
+  "attestationStatement": "Ich, {name}, bescheinige, dass die aufgeführten Einrichtungen gemäß den Herstellerangaben und den anerkannten Regeln der Technik montiert und vor dem Einlass des Publikums geprüft wurden.",
+  "@attestationStatement": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "attestationStatementReserve": "Ich, {name}, bescheinige, dass die aufgeführten Einrichtungen gemäß den Herstellerangaben und den anerkannten Regeln der Technik montiert und vor dem Einlass des Publikums geprüft wurden, vorbehaltlich der unten genannten Punkte.",
+  "@attestationStatementReserve": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "attestationReserve": "Vorbehalt",
+  "attestationReserveEmpty": "Vorbehalt noch zu schreiben (Schritt Prüfungen)",
+  "attestationSignerSection": "Unterzeichner",
+  "attestationSignerRole": "Funktion (z. B. Head Rigger, Produktionsleiter)",
+  "attestationSign": "Abnahme unterschreiben",
+  "attestationSignWithReserve": "Mit Vorbehalt unterschreiben",
+  "attestationStepInfo": "Angaben",
+  "attestationStepElements": "Elemente",
+  "attestationStepControls": "Prüfungen",
+  "attestationStepSignature": "Unterschrift",
+  "attestationNextElement": "Nächstes Element",
+  "attestationDeletePhotoConfirm": "Dieses Foto löschen?"
 }

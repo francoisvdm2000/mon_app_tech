@@ -16145,4 +16145,227 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get ppspsSignValidate =>
       'Unterschrift bestätigen';
+
+  @override
+  String get attestationListTitle =>
+      'Montageabnahmen';
+
+  @override
+  String get attestationNew =>
+      'Neue Abnahme';
+
+  @override
+  String get attestationNewTitle =>
+      'Neue Abnahme';
+
+  @override
+  String get attestationNewBlank =>
+      'Leere Abnahme';
+
+  @override
+  String get attestationNewFromPlan =>
+      'Oder aus einem Sicherheitsplan (übernimmt Veranstaltung und Unternehmen):';
+
+  @override
+  String get attestationEmptyTitle =>
+      'Noch keine Abnahmen';
+
+  @override
+  String get attestationEmptyBody =>
+      'Prüfen Sie nach dem Aufbau jedes Element, halten Sie Vorbehalte fest und unterschreiben Sie die Abnahme vor Ort.';
+
+  @override
+  String get attestationDeleteConfirm =>
+      'Diese Abnahme und ihre Fotos löschen? Dies kann nicht rückgängig gemacht werden.';
+
+  @override
+  String get attestationStatusSigned =>
+      'Unterschrieben';
+
+  @override
+  String get attestationStatusReserve =>
+      'Mit Vorbehalt unterschrieben';
+
+  @override
+  String attestationElementCount(Object count) {
+    return '$count Elemente';
+  }
+
+  @override
+  String get attestationSignatureCleared =>
+      'Inhalt geändert: Die Unterschrift wurde entfernt, bitte erneut unterschreiben.';
+
+  @override
+  String get attestationFieldCompany =>
+      'Montageunternehmen';
+
+  @override
+  String get attestationElementName =>
+      'Name des Elements (z. B. vordere Traverse)';
+
+  @override
+  String get attestationElementDesc =>
+      'Beschreibung (z. B. Traverse 40×40, 12 m, 4 Kettenzüge 1 t)';
+
+  @override
+  String get attestationElementFamilies =>
+      'Durchzuführende Prüfungen';
+
+  @override
+  String get attestationAppliedLoad =>
+      'Aufgebrachte Last (kg)';
+
+  @override
+  String get attestationRatedLoad =>
+      'Zulässige Last (kg)';
+
+  @override
+  String get attestationDeleteElementConfirm =>
+      'Dieses Element mit Prüfungen und Fotos löschen?';
+
+  @override
+  String attestationLoadSummary(Object applied, Object rated) {
+    return 'Last: $applied kg / $rated kg zulässig';
+  }
+
+  @override
+  String get attestationOverload =>
+      'Last überschreitet die zulässige Last';
+
+  @override
+  String get attestationElementsEmpty =>
+      'Fügen Sie die montierten Elemente hinzu: Traversen, Grid, Türme, Kettenzüge, Bühne, Screens…';
+
+  @override
+  String get attestationAddElement =>
+      'Element hinzufügen';
+
+  @override
+  String get attestationTakePhoto =>
+      'Foto aufnehmen';
+
+  @override
+  String get attestationPickPhoto =>
+      'Aus der Galerie wählen';
+
+  @override
+  String get attestationPhotoError =>
+      'Foto konnte nicht hinzugefügt werden. Prüfen Sie den Kamerazugriff in den Einstellungen.';
+
+  @override
+  String get attestationOk =>
+      'OK';
+
+  @override
+  String get attestationNc =>
+      'M';
+
+  @override
+  String get attestationNa =>
+      'Entf.';
+
+  @override
+  String get attestationReserveLabel =>
+      'Vorbehalt: Befund und geplante Maßnahme (Pflicht)';
+
+  @override
+  String get attestationPhotoRequired =>
+      'Foto für diesen Prüfpunkt empfohlen';
+
+  @override
+  String get attestationNoElements =>
+      'Keine Elemente zu prüfen: Fügen Sie sie im Schritt Elemente hinzu.';
+
+  @override
+  String get attestationReservesMissing =>
+      'Jeder Mangel braucht vor der Unterschrift einen schriftlichen Vorbehalt.';
+
+  @override
+  String get attestationSignTitle =>
+      'Unterschrift der Abnahme';
+
+  @override
+  String attestationUnanswered(Object count) {
+    return '$count Prüfpunkte ohne Antwort';
+  }
+
+  @override
+  String attestationReservesMissingCount(Object count) {
+    return '$count Mängel ohne schriftlichen Vorbehalt (Unterschrift gesperrt)';
+  }
+
+  @override
+  String attestationPhotosMissing(Object count) {
+    return '$count empfohlene Fotos fehlen';
+  }
+
+  @override
+  String get attestationStatElements =>
+      'Elemente';
+
+  @override
+  String get attestationStatReserves =>
+      'Vorbehalte';
+
+  @override
+  String get attestationStatPhotos =>
+      'Fotos';
+
+  @override
+  String attestationStatement(Object name) {
+    return 'Ich, $name, bescheinige, dass die aufgeführten Einrichtungen gemäß den Herstellerangaben und den anerkannten Regeln der Technik montiert und vor dem Einlass des Publikums geprüft wurden.';
+  }
+
+  @override
+  String attestationStatementReserve(Object name) {
+    return 'Ich, $name, bescheinige, dass die aufgeführten Einrichtungen gemäß den Herstellerangaben und den anerkannten Regeln der Technik montiert und vor dem Einlass des Publikums geprüft wurden, vorbehaltlich der unten genannten Punkte.';
+  }
+
+  @override
+  String get attestationReserve =>
+      'Vorbehalt';
+
+  @override
+  String get attestationReserveEmpty =>
+      'Vorbehalt noch zu schreiben (Schritt Prüfungen)';
+
+  @override
+  String get attestationSignerSection =>
+      'Unterzeichner';
+
+  @override
+  String get attestationSignerRole =>
+      'Funktion (z. B. Head Rigger, Produktionsleiter)';
+
+  @override
+  String get attestationSign =>
+      'Abnahme unterschreiben';
+
+  @override
+  String get attestationSignWithReserve =>
+      'Mit Vorbehalt unterschreiben';
+
+  @override
+  String get attestationStepInfo =>
+      'Angaben';
+
+  @override
+  String get attestationStepElements =>
+      'Elemente';
+
+  @override
+  String get attestationStepControls =>
+      'Prüfungen';
+
+  @override
+  String get attestationStepSignature =>
+      'Unterschrift';
+
+  @override
+  String get attestationNextElement =>
+      'Nächstes Element';
+
+  @override
+  String get attestationDeletePhotoConfirm =>
+      'Dieses Foto löschen?';
 }

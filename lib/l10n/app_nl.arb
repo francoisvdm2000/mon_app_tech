@@ -6106,5 +6106,95 @@
   "ppspsSignName": "Naam van de ondertekenaar",
   "ppspsSignHint": "Onderteken met uw vinger in het witte vak.",
   "ppspsSignClear": "Wissen",
-  "ppspsSignValidate": "Handtekening bevestigen"
+  "ppspsSignValidate": "Handtekening bevestigen",
+  "attestationListTitle": "Montageattesten",
+  "attestationNew": "Nieuw attest",
+  "attestationNewTitle": "Nieuw attest",
+  "attestationNewBlank": "Leeg attest",
+  "attestationNewFromPlan": "Of vanuit een veiligheidsplan (neemt evenement en bedrijf over):",
+  "attestationEmptyTitle": "Nog geen attesten",
+  "attestationEmptyBody": "Controleer na de opbouw elk element, noteer de voorbehouden en onderteken het attest ter plaatse.",
+  "attestationDeleteConfirm": "Dit attest en de foto's verwijderen? Dit kan niet ongedaan worden gemaakt.",
+  "attestationStatusSigned": "Ondertekend",
+  "attestationStatusReserve": "Ondertekend met voorbehoud",
+  "attestationElementCount": "{count} elementen",
+  "@attestationElementCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationSignatureCleared": "Inhoud gewijzigd: de handtekening is verwijderd, onderteken opnieuw.",
+  "attestationFieldCompany": "Monterend bedrijf",
+  "attestationElementName": "Naam van het element (bv. Voorste truss)",
+  "attestationElementDesc": "Beschrijving (bv. Truss 40×40, 12 m, 4 takels 1 t)",
+  "attestationElementFamilies": "Uit te voeren controles",
+  "attestationAppliedLoad": "Toegepaste last (kg)",
+  "attestationRatedLoad": "Toelaatbare last (kg)",
+  "attestationDeleteElementConfirm": "Dit element met controles en foto's verwijderen?",
+  "attestationLoadSummary": "Last: {applied} kg / {rated} kg toelaatbaar",
+  "@attestationLoadSummary": {
+    "placeholders": {
+      "applied": {},
+      "rated": {}
+    }
+  },
+  "attestationOverload": "Last hoger dan de toelaatbare last",
+  "attestationElementsEmpty": "Voeg de gemonteerde elementen toe: trussen, grid, torens, takels, podium, schermen…",
+  "attestationAddElement": "Element toevoegen",
+  "attestationTakePhoto": "Foto nemen",
+  "attestationPickPhoto": "Kiezen uit galerij",
+  "attestationPhotoError": "Foto kon niet worden toegevoegd. Controleer de cameratoegang in de instellingen.",
+  "attestationOk": "OK",
+  "attestationNc": "NC",
+  "attestationNa": "N.v.t.",
+  "attestationReserveLabel": "Voorbehoud: vaststelling en geplande actie (verplicht)",
+  "attestationPhotoRequired": "Foto aanbevolen voor dit punt",
+  "attestationNoElements": "Geen elementen te controleren: voeg ze toe in de stap Elementen.",
+  "attestationReservesMissing": "Elk niet-conform punt heeft een schriftelijk voorbehoud nodig vóór ondertekening.",
+  "attestationSignTitle": "Ondertekening van het attest",
+  "attestationUnanswered": "{count} controlepunten zonder antwoord",
+  "@attestationUnanswered": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationReservesMissingCount": "{count} non-conformiteiten zonder voorbehoud (ondertekening geblokkeerd)",
+  "@attestationReservesMissingCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationPhotosMissing": "{count} aanbevolen foto's ontbreken",
+  "@attestationPhotosMissing": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationStatElements": "elementen",
+  "attestationStatReserves": "voorbehouden",
+  "attestationStatPhotos": "foto's",
+  "attestationStatement": "Ondergetekende, {name}, verklaart dat de vermelde installaties gemonteerd zijn volgens de handleidingen van de fabrikanten en de regels van goed vakmanschap, en gecontroleerd zijn vóór de toegang van het publiek.",
+  "@attestationStatement": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "attestationStatementReserve": "Ondergetekende, {name}, verklaart dat de vermelde installaties gemonteerd zijn volgens de handleidingen van de fabrikanten en de regels van goed vakmanschap, en gecontroleerd zijn vóór de toegang van het publiek, onder voorbehoud van de onderstaande punten.",
+  "@attestationStatementReserve": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "attestationReserve": "Voorbehoud",
+  "attestationReserveEmpty": "Voorbehoud nog te schrijven (stap Controles)",
+  "attestationSignerSection": "Ondertekenaar",
+  "attestationSignerRole": "Functie (bv. hoofdrigger, productieleider)",
+  "attestationSign": "Attest ondertekenen",
+  "attestationSignWithReserve": "Ondertekenen met voorbehoud",
+  "attestationStepInfo": "Gegevens",
+  "attestationStepElements": "Elementen",
+  "attestationStepControls": "Controles",
+  "attestationStepSignature": "Handtekening",
+  "attestationNextElement": "Volgend element",
+  "attestationDeletePhotoConfirm": "Deze foto verwijderen?"
 }

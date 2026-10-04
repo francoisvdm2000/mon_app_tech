@@ -6405,5 +6405,95 @@
   "ppspsSignName": "Nom du signataire",
   "ppspsSignHint": "Signez avec le doigt dans le cadre blanc.",
   "ppspsSignClear": "Effacer",
-  "ppspsSignValidate": "Valider la signature"
+  "ppspsSignValidate": "Valider la signature",
+  "attestationListTitle": "Attestations de bon montage",
+  "attestationNew": "Nouvelle attestation",
+  "attestationNewTitle": "Nouvelle attestation",
+  "attestationNewBlank": "Attestation vierge",
+  "attestationNewFromPlan": "Ou à partir d'un plan de sécurité (reprend l'événement et l'entreprise) :",
+  "attestationEmptyTitle": "Aucune attestation pour l'instant",
+  "attestationEmptyBody": "Après le montage, contrôlez chaque élément, notez les réserves et signez l'attestation sur place.",
+  "attestationDeleteConfirm": "Supprimer cette attestation et ses photos ? Cette action est définitive.",
+  "attestationStatusSigned": "Signée",
+  "attestationStatusReserve": "Signée avec réserve",
+  "attestationElementCount": "{count} éléments",
+  "@attestationElementCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationSignatureCleared": "Contenu modifié : la signature a été retirée, signez à nouveau.",
+  "attestationFieldCompany": "Entreprise qui a monté",
+  "attestationElementName": "Nom de l'élément (ex. Pont avant)",
+  "attestationElementDesc": "Description (ex. Structure 40×40, 12 m, 4 palans 1 t)",
+  "attestationElementFamilies": "Contrôles à effectuer",
+  "attestationAppliedLoad": "Charge appliquée (kg)",
+  "attestationRatedLoad": "Charge admissible (kg)",
+  "attestationDeleteElementConfirm": "Supprimer cet élément, ses contrôles et ses photos ?",
+  "attestationLoadSummary": "Charge : {applied} kg / {rated} kg admissibles",
+  "@attestationLoadSummary": {
+    "placeholders": {
+      "applied": {},
+      "rated": {}
+    }
+  },
+  "attestationOverload": "Charge supérieure à la charge admissible",
+  "attestationElementsEmpty": "Ajoutez les éléments montés : ponts, grill, tours, palans, scène, écrans…",
+  "attestationAddElement": "Ajouter un élément",
+  "attestationTakePhoto": "Prendre une photo",
+  "attestationPickPhoto": "Choisir dans la galerie",
+  "attestationPhotoError": "Impossible d'ajouter la photo. Vérifiez l'accès à l'appareil photo dans les réglages.",
+  "attestationOk": "OK",
+  "attestationNc": "NC",
+  "attestationNa": "S.O.",
+  "attestationReserveLabel": "Réserve : constat et action prévue (obligatoire)",
+  "attestationPhotoRequired": "Photo recommandée pour ce point",
+  "attestationNoElements": "Aucun élément à contrôler : ajoutez-les à l'étape Éléments.",
+  "attestationReservesMissing": "Chaque point non conforme doit avoir une réserve écrite avant la signature.",
+  "attestationSignTitle": "Signature de l'attestation",
+  "attestationUnanswered": "{count} points de contrôle sans réponse",
+  "@attestationUnanswered": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationReservesMissingCount": "{count} non-conformités sans réserve écrite (signature bloquée)",
+  "@attestationReservesMissingCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationPhotosMissing": "{count} photos recommandées manquantes",
+  "@attestationPhotosMissing": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "attestationStatElements": "éléments",
+  "attestationStatReserves": "réserves",
+  "attestationStatPhotos": "photos",
+  "attestationStatement": "Je soussigné(e), {name}, atteste que les installations listées ont été montées conformément aux notices des fabricants et aux règles de l'art, et qu'elles ont été vérifiées avant l'accueil du public.",
+  "@attestationStatement": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "attestationStatementReserve": "Je soussigné(e), {name}, atteste que les installations listées ont été montées conformément aux notices des fabricants et aux règles de l'art, et qu'elles ont été vérifiées avant l'accueil du public, sous réserve des points ci-dessous.",
+  "@attestationStatementReserve": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "attestationReserve": "Réserve",
+  "attestationReserveEmpty": "Réserve à écrire (étape Contrôles)",
+  "attestationSignerSection": "Signataire",
+  "attestationSignerRole": "Fonction (ex. chef rigger, régisseur général)",
+  "attestationSign": "Signer l'attestation",
+  "attestationSignWithReserve": "Signer avec réserve",
+  "attestationStepInfo": "Infos",
+  "attestationStepElements": "Éléments",
+  "attestationStepControls": "Contrôles",
+  "attestationStepSignature": "Signature",
+  "attestationNextElement": "Élément suivant",
+  "attestationDeletePhotoConfirm": "Supprimer cette photo ?"
 }

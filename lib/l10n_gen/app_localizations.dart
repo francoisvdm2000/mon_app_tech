@@ -28402,6 +28402,330 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Valider la signature'**
   String get ppspsSignValidate;
+
+  /// No description provided for @attestationListTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Attestations de bon montage'**
+  String get attestationListTitle;
+
+  /// No description provided for @attestationNew.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nouvelle attestation'**
+  String get attestationNew;
+
+  /// No description provided for @attestationNewTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nouvelle attestation'**
+  String get attestationNewTitle;
+
+  /// No description provided for @attestationNewBlank.
+  ///
+  /// In fr, this message translates to:
+  /// **'Attestation vierge'**
+  String get attestationNewBlank;
+
+  /// No description provided for @attestationNewFromPlan.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ou à partir d'un plan de sécurité (reprend l'événement et l'entreprise) :'**
+  String get attestationNewFromPlan;
+
+  /// No description provided for @attestationEmptyTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune attestation pour l'instant'**
+  String get attestationEmptyTitle;
+
+  /// No description provided for @attestationEmptyBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'Après le montage, contrôlez chaque élément, notez les réserves et signez l'attestation sur place.'**
+  String get attestationEmptyBody;
+
+  /// No description provided for @attestationDeleteConfirm.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer cette attestation et ses photos ? Cette action est définitive.'**
+  String get attestationDeleteConfirm;
+
+  /// No description provided for @attestationStatusSigned.
+  ///
+  /// In fr, this message translates to:
+  /// **'Signée'**
+  String get attestationStatusSigned;
+
+  /// No description provided for @attestationStatusReserve.
+  ///
+  /// In fr, this message translates to:
+  /// **'Signée avec réserve'**
+  String get attestationStatusReserve;
+
+  /// No description provided for @attestationElementCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count} éléments'**
+  String attestationElementCount(Object count);
+
+  /// No description provided for @attestationSignatureCleared.
+  ///
+  /// In fr, this message translates to:
+  /// **'Contenu modifié : la signature a été retirée, signez à nouveau.'**
+  String get attestationSignatureCleared;
+
+  /// No description provided for @attestationFieldCompany.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entreprise qui a monté'**
+  String get attestationFieldCompany;
+
+  /// No description provided for @attestationElementName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom de l'élément (ex. Pont avant)'**
+  String get attestationElementName;
+
+  /// No description provided for @attestationElementDesc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Description (ex. Structure 40×40, 12 m, 4 palans 1 t)'**
+  String get attestationElementDesc;
+
+  /// No description provided for @attestationElementFamilies.
+  ///
+  /// In fr, this message translates to:
+  /// **'Contrôles à effectuer'**
+  String get attestationElementFamilies;
+
+  /// No description provided for @attestationAppliedLoad.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charge appliquée (kg)'**
+  String get attestationAppliedLoad;
+
+  /// No description provided for @attestationRatedLoad.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charge admissible (kg)'**
+  String get attestationRatedLoad;
+
+  /// No description provided for @attestationDeleteElementConfirm.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer cet élément, ses contrôles et ses photos ?'**
+  String get attestationDeleteElementConfirm;
+
+  /// No description provided for @attestationLoadSummary.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charge : {applied} kg / {rated} kg admissibles'**
+  String attestationLoadSummary(Object applied, Object rated);
+
+  /// No description provided for @attestationOverload.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charge supérieure à la charge admissible'**
+  String get attestationOverload;
+
+  /// No description provided for @attestationElementsEmpty.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajoutez les éléments montés : ponts, grill, tours, palans, scène, écrans…'**
+  String get attestationElementsEmpty;
+
+  /// No description provided for @attestationAddElement.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajouter un élément'**
+  String get attestationAddElement;
+
+  /// No description provided for @attestationTakePhoto.
+  ///
+  /// In fr, this message translates to:
+  /// **'Prendre une photo'**
+  String get attestationTakePhoto;
+
+  /// No description provided for @attestationPickPhoto.
+  ///
+  /// In fr, this message translates to:
+  /// **'Choisir dans la galerie'**
+  String get attestationPickPhoto;
+
+  /// No description provided for @attestationPhotoError.
+  ///
+  /// In fr, this message translates to:
+  /// **'Impossible d'ajouter la photo. Vérifiez l'accès à l'appareil photo dans les réglages.'**
+  String get attestationPhotoError;
+
+  /// No description provided for @attestationOk.
+  ///
+  /// In fr, this message translates to:
+  /// **'OK'**
+  String get attestationOk;
+
+  /// No description provided for @attestationNc.
+  ///
+  /// In fr, this message translates to:
+  /// **'NC'**
+  String get attestationNc;
+
+  /// No description provided for @attestationNa.
+  ///
+  /// In fr, this message translates to:
+  /// **'S.O.'**
+  String get attestationNa;
+
+  /// No description provided for @attestationReserveLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réserve : constat et action prévue (obligatoire)'**
+  String get attestationReserveLabel;
+
+  /// No description provided for @attestationPhotoRequired.
+  ///
+  /// In fr, this message translates to:
+  /// **'Photo recommandée pour ce point'**
+  String get attestationPhotoRequired;
+
+  /// No description provided for @attestationNoElements.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun élément à contrôler : ajoutez-les à l'étape Éléments.'**
+  String get attestationNoElements;
+
+  /// No description provided for @attestationReservesMissing.
+  ///
+  /// In fr, this message translates to:
+  /// **'Chaque point non conforme doit avoir une réserve écrite avant la signature.'**
+  String get attestationReservesMissing;
+
+  /// No description provided for @attestationSignTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Signature de l'attestation'**
+  String get attestationSignTitle;
+
+  /// No description provided for @attestationUnanswered.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count} points de contrôle sans réponse'**
+  String attestationUnanswered(Object count);
+
+  /// No description provided for @attestationReservesMissingCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count} non-conformités sans réserve écrite (signature bloquée)'**
+  String attestationReservesMissingCount(Object count);
+
+  /// No description provided for @attestationPhotosMissing.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count} photos recommandées manquantes'**
+  String attestationPhotosMissing(Object count);
+
+  /// No description provided for @attestationStatElements.
+  ///
+  /// In fr, this message translates to:
+  /// **'éléments'**
+  String get attestationStatElements;
+
+  /// No description provided for @attestationStatReserves.
+  ///
+  /// In fr, this message translates to:
+  /// **'réserves'**
+  String get attestationStatReserves;
+
+  /// No description provided for @attestationStatPhotos.
+  ///
+  /// In fr, this message translates to:
+  /// **'photos'**
+  String get attestationStatPhotos;
+
+  /// No description provided for @attestationStatement.
+  ///
+  /// In fr, this message translates to:
+  /// **'Je soussigné(e), {name}, atteste que les installations listées ont été montées conformément aux notices des fabricants et aux règles de l'art, et qu'elles ont été vérifiées avant l'accueil du public.'**
+  String attestationStatement(Object name);
+
+  /// No description provided for @attestationStatementReserve.
+  ///
+  /// In fr, this message translates to:
+  /// **'Je soussigné(e), {name}, atteste que les installations listées ont été montées conformément aux notices des fabricants et aux règles de l'art, et qu'elles ont été vérifiées avant l'accueil du public, sous réserve des points ci-dessous.'**
+  String attestationStatementReserve(Object name);
+
+  /// No description provided for @attestationReserve.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réserve'**
+  String get attestationReserve;
+
+  /// No description provided for @attestationReserveEmpty.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réserve à écrire (étape Contrôles)'**
+  String get attestationReserveEmpty;
+
+  /// No description provided for @attestationSignerSection.
+  ///
+  /// In fr, this message translates to:
+  /// **'Signataire'**
+  String get attestationSignerSection;
+
+  /// No description provided for @attestationSignerRole.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fonction (ex. chef rigger, régisseur général)'**
+  String get attestationSignerRole;
+
+  /// No description provided for @attestationSign.
+  ///
+  /// In fr, this message translates to:
+  /// **'Signer l'attestation'**
+  String get attestationSign;
+
+  /// No description provided for @attestationSignWithReserve.
+  ///
+  /// In fr, this message translates to:
+  /// **'Signer avec réserve'**
+  String get attestationSignWithReserve;
+
+  /// No description provided for @attestationStepInfo.
+  ///
+  /// In fr, this message translates to:
+  /// **'Infos'**
+  String get attestationStepInfo;
+
+  /// No description provided for @attestationStepElements.
+  ///
+  /// In fr, this message translates to:
+  /// **'Éléments'**
+  String get attestationStepElements;
+
+  /// No description provided for @attestationStepControls.
+  ///
+  /// In fr, this message translates to:
+  /// **'Contrôles'**
+  String get attestationStepControls;
+
+  /// No description provided for @attestationStepSignature.
+  ///
+  /// In fr, this message translates to:
+  /// **'Signature'**
+  String get attestationStepSignature;
+
+  /// No description provided for @attestationNextElement.
+  ///
+  /// In fr, this message translates to:
+  /// **'Élément suivant'**
+  String get attestationNextElement;
+
+  /// No description provided for @attestationDeletePhotoConfirm.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer cette photo ?'**
+  String get attestationDeletePhotoConfirm;
 }
 
 class _AppLocalizationsDelegate
