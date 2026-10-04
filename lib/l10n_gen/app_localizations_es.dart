@@ -15755,16 +15755,14 @@ class AppLocalizationsEs extends AppLocalizations {
   String get catalogFieldConsumption => 'Consumo';
 
   @override
-  String get homeSafetyTitle =>
-      'Seguridad';
+  String get homeSafetyTitle => 'Seguridad';
 
   @override
   String get homeSafetySubtitle =>
       'Planes de seguridad, certificado de montaje';
 
   @override
-  String get subscriptionCategorySafetyTitle =>
-      'Seguridad';
+  String get subscriptionCategorySafetyTitle => 'Seguridad';
 
   @override
   String get subscriptionCategorySafetyDescription =>
@@ -15775,36 +15773,29 @@ class AppLocalizationsEs extends AppLocalizations {
       'Redacte sus planes de seguridad y certificados de montaje sobre el terreno, con exportación PDF firmada.';
 
   @override
-  String get safetyPageTitle =>
-      'Seguridad';
+  String get safetyPageTitle => 'Seguridad';
 
   @override
-  String get safetySectionDocuments =>
-      'Documentos';
+  String get safetySectionDocuments => 'Documentos';
 
   @override
-  String get safetyPpspsTitle =>
-      'Planes de seguridad';
+  String get safetyPpspsTitle => 'Planes de seguridad';
 
   @override
   String get safetyPpspsSubtitle =>
       'PPSPS (Francia), plan de seguridad (Bélgica)';
 
   @override
-  String get safetyAttestationTitle =>
-      'Montaje correcto';
+  String get safetyAttestationTitle => 'Montaje correcto';
 
   @override
-  String get safetyAttestationSubtitle =>
-      'Controles, reservas y firma';
+  String get safetyAttestationSubtitle => 'Controles, reservas y firma';
 
   @override
-  String get safetyComingSoon =>
-      'Disponible en una próxima versión.';
+  String get safetyComingSoon => 'Disponible en una próxima versión.';
 
   @override
-  String get safetyLibraryTitle =>
-      'Biblioteca';
+  String get safetyLibraryTitle => 'Biblioteca';
 
   @override
   String safetyLibrarySummary(Object risks, Object measures, Object controls) {
@@ -15817,10 +15808,277 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get safetyLibraryOffline =>
-      'Copia local, funciona sin conexión';
+  String get safetyLibraryOffline => 'Copia local, funciona sin conexión';
 
   @override
   String get safetyDisclaimer =>
       'Herramienta de ayuda a la redacción. El contenido de los documentos sigue siendo responsabilidad de la empresa firmante.';
+
+  @override
+  String get ppspsListTitle =>
+      'Planes de seguridad';
+
+  @override
+  String get ppspsNew =>
+      'Nuevo plan';
+
+  @override
+  String get ppspsEmptyTitle =>
+      'Todavía no hay planes';
+
+  @override
+  String get ppspsEmptyBody =>
+      'Cree su primer plan de seguridad. Después podrá duplicarlo para sus próximos eventos.';
+
+  @override
+  String get ppspsChooseCountry =>
+      'País de la obra';
+
+  @override
+  String get ppspsStatusDraft =>
+      'Borrador';
+
+  @override
+  String get ppspsStatusFinal =>
+      'Finalizado';
+
+  @override
+  String ppspsStepProgress(Object done, Object total) {
+    return 'Paso $done/$total';
+  }
+
+  @override
+  String get ppspsUntitled =>
+      'Sin título';
+
+  @override
+  String get ppspsDuplicate =>
+      'Duplicar';
+
+  @override
+  String get ppspsDelete =>
+      'Eliminar';
+
+  @override
+  String get ppspsDeleteConfirm =>
+      '¿Eliminar este plan? Esta acción es definitiva.';
+
+  @override
+  String get ppspsCancel =>
+      'Cancelar';
+
+  @override
+  String get ppspsSave =>
+      'Guardar';
+
+  @override
+  String get ppspsNext =>
+      'Siguiente';
+
+  @override
+  String get ppspsPrevious =>
+      'Anterior';
+
+  @override
+  String get ppspsStepProject =>
+      'Proyecto';
+
+  @override
+  String get ppspsStepWorkers =>
+      'Intervinientes';
+
+  @override
+  String get ppspsStepRisks =>
+      'Riesgos';
+
+  @override
+  String get ppspsStepEmergency =>
+      'Emergencia';
+
+  @override
+  String get ppspsStepExport =>
+      'Exportar';
+
+  @override
+  String get ppspsFieldEventName =>
+      'Nombre del evento';
+
+  @override
+  String get ppspsFieldVenue =>
+      'Lugar';
+
+  @override
+  String get ppspsFieldAddress =>
+      'Dirección';
+
+  @override
+  String get ppspsFieldOrganizer =>
+      'Organizador (promotor)';
+
+  @override
+  String get ppspsFieldCoordinator =>
+      'Coordinador de seguridad';
+
+  @override
+  String get ppspsSectionPhases =>
+      'Fases y fechas';
+
+  @override
+  String get ppspsPhaseMontage =>
+      'Montaje';
+
+  @override
+  String get ppspsPhaseExploitation =>
+      'Explotación';
+
+  @override
+  String get ppspsPhaseDemontage =>
+      'Desmontaje';
+
+  @override
+  String get ppspsPhaseNotSet =>
+      'No previsto';
+
+  @override
+  String get ppspsPhaseFilterAll =>
+      'Todas';
+
+  @override
+  String get ppspsSectionCompany =>
+      'Su empresa';
+
+  @override
+  String get ppspsFieldCompanyName =>
+      'Razón social';
+
+  @override
+  String get ppspsFieldCompanyActivity =>
+      'Actividad en la obra';
+
+  @override
+  String get ppspsFieldResponsible =>
+      'Responsable en el lugar';
+
+  @override
+  String get ppspsFieldPhone =>
+      'Teléfono';
+
+  @override
+  String get ppspsFieldCompany =>
+      'Empresa';
+
+  @override
+  String get ppspsFieldTrade =>
+      'Oficio';
+
+  @override
+  String get ppspsFieldContact =>
+      'Contacto';
+
+  @override
+  String get ppspsFieldHeadcount =>
+      'Número de personas';
+
+  @override
+  String get ppspsAddWorker =>
+      'Añadir un interviniente';
+
+  @override
+  String get ppspsWorkersEmpty =>
+      'Añada las empresas y equipos presentes en la obra.';
+
+  @override
+  String ppspsWorkersTotal(Object count) {
+    return 'Total: $count personas';
+  }
+
+  @override
+  String get ppspsMeasuresTitle =>
+      'Medidas preventivas';
+
+  @override
+  String get ppspsMeasureCollective =>
+      'Colectiva';
+
+  @override
+  String get ppspsMeasureIndividual =>
+      'Individual';
+
+  @override
+  String get ppspsMeasureOrganisational =>
+      'Organizativa';
+
+  @override
+  String ppspsMeasureCount(Object count) {
+    return '$count medidas';
+  }
+
+  @override
+  String get ppspsAddCustomMeasure =>
+      'Añadir una medida';
+
+  @override
+  String get ppspsCustomMeasureHint =>
+      'Otra medida propia de esta obra';
+
+  @override
+  String ppspsRisksSummary(Object risks, Object measures) {
+    return '$risks riesgos · $measures medidas';
+  }
+
+  @override
+  String get ppspsSectionNumbers =>
+      'Números de emergencia';
+
+  @override
+  String get ppspsSectionHospital =>
+      'Hospital más cercano';
+
+  @override
+  String get ppspsFieldHospitalName =>
+      'Nombre del hospital';
+
+  @override
+  String get ppspsSectionOnSite =>
+      'En el lugar';
+
+  @override
+  String get ppspsFieldFirstAiders =>
+      'Socorristas presentes';
+
+  @override
+  String get ppspsFieldAssemblyPoint =>
+      'Punto de reunión';
+
+  @override
+  String get ppspsFieldEquipment =>
+      'Material de emergencia (extintores, desfibrilador…)';
+
+  @override
+  String get ppspsCritical =>
+      'altos';
+
+  @override
+  String get ppspsMedium =>
+      'medios';
+
+  @override
+  String get ppspsLow =>
+      'bajos';
+
+  @override
+  String get ppspsExportReady =>
+      'Todos los pasos están completos.';
+
+  @override
+  String get ppspsExportMissing =>
+      'Por completar';
+
+  @override
+  String get ppspsExportPdf =>
+      'Exportar en PDF';
+
+  @override
+  String get ppspsMarkFinal =>
+      'Marcar como finalizado';
 }

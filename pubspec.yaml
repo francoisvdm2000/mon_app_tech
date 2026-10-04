@@ -104,6 +104,7 @@ flutter:
     - assets/catalogs/sound.json
     - assets/catalogs/laser.json
     - assets/catalogs/safety.json
+    - assets/fonts/pdf/
 
 flutter_launcher_icons:
   android: true

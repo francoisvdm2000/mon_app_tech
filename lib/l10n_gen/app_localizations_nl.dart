@@ -15724,16 +15724,13 @@ class AppLocalizationsNl extends AppLocalizations {
   String get catalogFieldConsumption => 'Verbruik';
 
   @override
-  String get homeSafetyTitle =>
-      'Veiligheid';
+  String get homeSafetyTitle => 'Veiligheid';
 
   @override
-  String get homeSafetySubtitle =>
-      'Veiligheidsplannen, montageattest';
+  String get homeSafetySubtitle => 'Veiligheidsplannen, montageattest';
 
   @override
-  String get subscriptionCategorySafetyTitle =>
-      'Veiligheid';
+  String get subscriptionCategorySafetyTitle => 'Veiligheid';
 
   @override
   String get subscriptionCategorySafetyDescription =>
@@ -15744,36 +15741,30 @@ class AppLocalizationsNl extends AppLocalizations {
       'Stel uw veiligheidsplannen en montageattesten op locatie op, met ondertekende PDF-export.';
 
   @override
-  String get safetyPageTitle =>
-      'Veiligheid';
+  String get safetyPageTitle => 'Veiligheid';
 
   @override
-  String get safetySectionDocuments =>
-      'Documenten';
+  String get safetySectionDocuments => 'Documenten';
 
   @override
-  String get safetyPpspsTitle =>
-      'Veiligheidsplannen';
+  String get safetyPpspsTitle => 'Veiligheidsplannen';
 
   @override
   String get safetyPpspsSubtitle =>
       'PPSPS (Frankrijk), veiligheidsplan (België)';
 
   @override
-  String get safetyAttestationTitle =>
-      'Montageattest';
+  String get safetyAttestationTitle => 'Montageattest';
 
   @override
   String get safetyAttestationSubtitle =>
       'Controles, voorbehouden en handtekening';
 
   @override
-  String get safetyComingSoon =>
-      'Beschikbaar in een volgende versie.';
+  String get safetyComingSoon => 'Beschikbaar in een volgende versie.';
 
   @override
-  String get safetyLibraryTitle =>
-      'Bibliotheek';
+  String get safetyLibraryTitle => 'Bibliotheek';
 
   @override
   String safetyLibrarySummary(Object risks, Object measures, Object controls) {
@@ -15786,10 +15777,277 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get safetyLibraryOffline =>
-      'Lokale kopie, werkt offline';
+  String get safetyLibraryOffline => 'Lokale kopie, werkt offline';
 
   @override
   String get safetyDisclaimer =>
       'Hulpmiddel bij het opstellen. De inhoud van de documenten blijft de verantwoordelijkheid van het ondertekenende bedrijf.';
+
+  @override
+  String get ppspsListTitle =>
+      'Veiligheidsplannen';
+
+  @override
+  String get ppspsNew =>
+      'Nieuw plan';
+
+  @override
+  String get ppspsEmptyTitle =>
+      'Nog geen plannen';
+
+  @override
+  String get ppspsEmptyBody =>
+      'Maak uw eerste veiligheidsplan. Daarna kunt u het dupliceren voor volgende evenementen.';
+
+  @override
+  String get ppspsChooseCountry =>
+      'Land van de werf';
+
+  @override
+  String get ppspsStatusDraft =>
+      'Concept';
+
+  @override
+  String get ppspsStatusFinal =>
+      'Afgerond';
+
+  @override
+  String ppspsStepProgress(Object done, Object total) {
+    return 'Stap $done/$total';
+  }
+
+  @override
+  String get ppspsUntitled =>
+      'Naamloos';
+
+  @override
+  String get ppspsDuplicate =>
+      'Dupliceren';
+
+  @override
+  String get ppspsDelete =>
+      'Verwijderen';
+
+  @override
+  String get ppspsDeleteConfirm =>
+      'Dit plan verwijderen? Dit kan niet ongedaan worden gemaakt.';
+
+  @override
+  String get ppspsCancel =>
+      'Annuleren';
+
+  @override
+  String get ppspsSave =>
+      'Opslaan';
+
+  @override
+  String get ppspsNext =>
+      'Volgende';
+
+  @override
+  String get ppspsPrevious =>
+      'Vorige';
+
+  @override
+  String get ppspsStepProject =>
+      'Project';
+
+  @override
+  String get ppspsStepWorkers =>
+      'Uitvoerders';
+
+  @override
+  String get ppspsStepRisks =>
+      'Risico\'s';
+
+  @override
+  String get ppspsStepEmergency =>
+      'Hulpdiensten';
+
+  @override
+  String get ppspsStepExport =>
+      'Export';
+
+  @override
+  String get ppspsFieldEventName =>
+      'Naam van het evenement';
+
+  @override
+  String get ppspsFieldVenue =>
+      'Locatie';
+
+  @override
+  String get ppspsFieldAddress =>
+      'Adres';
+
+  @override
+  String get ppspsFieldOrganizer =>
+      'Organisator (opdrachtgever)';
+
+  @override
+  String get ppspsFieldCoordinator =>
+      'Veiligheidscoördinator';
+
+  @override
+  String get ppspsSectionPhases =>
+      'Fasen en data';
+
+  @override
+  String get ppspsPhaseMontage =>
+      'Opbouw';
+
+  @override
+  String get ppspsPhaseExploitation =>
+      'Evenement';
+
+  @override
+  String get ppspsPhaseDemontage =>
+      'Afbouw';
+
+  @override
+  String get ppspsPhaseNotSet =>
+      'Niet gepland';
+
+  @override
+  String get ppspsPhaseFilterAll =>
+      'Alle';
+
+  @override
+  String get ppspsSectionCompany =>
+      'Uw bedrijf';
+
+  @override
+  String get ppspsFieldCompanyName =>
+      'Bedrijfsnaam';
+
+  @override
+  String get ppspsFieldCompanyActivity =>
+      'Activiteit op de werf';
+
+  @override
+  String get ppspsFieldResponsible =>
+      'Verantwoordelijke ter plaatse';
+
+  @override
+  String get ppspsFieldPhone =>
+      'Telefoon';
+
+  @override
+  String get ppspsFieldCompany =>
+      'Bedrijf';
+
+  @override
+  String get ppspsFieldTrade =>
+      'Vakgebied';
+
+  @override
+  String get ppspsFieldContact =>
+      'Contactpersoon';
+
+  @override
+  String get ppspsFieldHeadcount =>
+      'Aantal personen';
+
+  @override
+  String get ppspsAddWorker =>
+      'Uitvoerder toevoegen';
+
+  @override
+  String get ppspsWorkersEmpty =>
+      'Voeg de bedrijven en ploegen toe die op de werf aanwezig zijn.';
+
+  @override
+  String ppspsWorkersTotal(Object count) {
+    return 'Totaal: $count personen';
+  }
+
+  @override
+  String get ppspsMeasuresTitle =>
+      'Preventiemaatregelen';
+
+  @override
+  String get ppspsMeasureCollective =>
+      'Collectief';
+
+  @override
+  String get ppspsMeasureIndividual =>
+      'Individueel';
+
+  @override
+  String get ppspsMeasureOrganisational =>
+      'Organisatorisch';
+
+  @override
+  String ppspsMeasureCount(Object count) {
+    return '$count maatregelen';
+  }
+
+  @override
+  String get ppspsAddCustomMeasure =>
+      'Maatregel toevoegen';
+
+  @override
+  String get ppspsCustomMeasureHint =>
+      'Andere maatregel voor deze werf';
+
+  @override
+  String ppspsRisksSummary(Object risks, Object measures) {
+    return '$risks risico\'s · $measures maatregelen';
+  }
+
+  @override
+  String get ppspsSectionNumbers =>
+      'Noodnummers';
+
+  @override
+  String get ppspsSectionHospital =>
+      'Dichtstbijzijnde ziekenhuis';
+
+  @override
+  String get ppspsFieldHospitalName =>
+      'Naam van het ziekenhuis';
+
+  @override
+  String get ppspsSectionOnSite =>
+      'Ter plaatse';
+
+  @override
+  String get ppspsFieldFirstAiders =>
+      'Aanwezige hulpverleners';
+
+  @override
+  String get ppspsFieldAssemblyPoint =>
+      'Verzamelplaats';
+
+  @override
+  String get ppspsFieldEquipment =>
+      'Noodmateriaal (blusmiddelen, AED…)';
+
+  @override
+  String get ppspsCritical =>
+      'hoog';
+
+  @override
+  String get ppspsMedium =>
+      'middel';
+
+  @override
+  String get ppspsLow =>
+      'laag';
+
+  @override
+  String get ppspsExportReady =>
+      'Alle stappen zijn ingevuld.';
+
+  @override
+  String get ppspsExportMissing =>
+      'Nog in te vullen';
+
+  @override
+  String get ppspsExportPdf =>
+      'Exporteren als PDF';
+
+  @override
+  String get ppspsMarkFinal =>
+      'Markeren als afgerond';
 }

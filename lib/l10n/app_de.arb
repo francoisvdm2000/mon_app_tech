@@ -5647,5 +5647,93 @@
     }
   },
   "safetyLibraryOffline": "Lokale Kopie, offline nutzbar",
-  "safetyDisclaimer": "Nur eine Erstellungshilfe. Für den Inhalt der Dokumente bleibt das unterzeichnende Unternehmen verantwortlich."
+  "safetyDisclaimer": "Nur eine Erstellungshilfe. Für den Inhalt der Dokumente bleibt das unterzeichnende Unternehmen verantwortlich.",
+  "ppspsListTitle": "Sicherheitspläne",
+  "ppspsNew": "Neuer Plan",
+  "ppspsEmptyTitle": "Noch keine Pläne",
+  "ppspsEmptyBody": "Erstellen Sie Ihren ersten Sicherheitsplan. Sie können ihn danach für weitere Veranstaltungen duplizieren.",
+  "ppspsChooseCountry": "Land der Baustelle",
+  "ppspsStatusDraft": "Entwurf",
+  "ppspsStatusFinal": "Abgeschlossen",
+  "ppspsStepProgress": "Schritt {done}/{total}",
+  "@ppspsStepProgress": {
+    "placeholders": {
+      "done": {},
+      "total": {}
+    }
+  },
+  "ppspsUntitled": "Ohne Titel",
+  "ppspsDuplicate": "Duplizieren",
+  "ppspsDelete": "Löschen",
+  "ppspsDeleteConfirm": "Diesen Plan löschen? Dies kann nicht rückgängig gemacht werden.",
+  "ppspsCancel": "Abbrechen",
+  "ppspsSave": "Speichern",
+  "ppspsNext": "Weiter",
+  "ppspsPrevious": "Zurück",
+  "ppspsStepProject": "Projekt",
+  "ppspsStepWorkers": "Beteiligte",
+  "ppspsStepRisks": "Risiken",
+  "ppspsStepEmergency": "Notfall",
+  "ppspsStepExport": "Export",
+  "ppspsFieldEventName": "Name der Veranstaltung",
+  "ppspsFieldVenue": "Veranstaltungsort",
+  "ppspsFieldAddress": "Adresse",
+  "ppspsFieldOrganizer": "Veranstalter (Bauherr)",
+  "ppspsFieldCoordinator": "Sicherheitskoordinator",
+  "ppspsSectionPhases": "Phasen und Termine",
+  "ppspsPhaseMontage": "Aufbau",
+  "ppspsPhaseExploitation": "Veranstaltung",
+  "ppspsPhaseDemontage": "Abbau",
+  "ppspsPhaseNotSet": "Nicht geplant",
+  "ppspsPhaseFilterAll": "Alle",
+  "ppspsSectionCompany": "Ihr Unternehmen",
+  "ppspsFieldCompanyName": "Firmenname",
+  "ppspsFieldCompanyActivity": "Tätigkeit vor Ort",
+  "ppspsFieldResponsible": "Verantwortlicher vor Ort",
+  "ppspsFieldPhone": "Telefon",
+  "ppspsFieldCompany": "Unternehmen",
+  "ppspsFieldTrade": "Gewerk",
+  "ppspsFieldContact": "Ansprechpartner",
+  "ppspsFieldHeadcount": "Personenzahl",
+  "ppspsAddWorker": "Beteiligten hinzufügen",
+  "ppspsWorkersEmpty": "Fügen Sie die auf der Baustelle tätigen Firmen und Teams hinzu.",
+  "ppspsWorkersTotal": "Gesamt: {count} Personen",
+  "@ppspsWorkersTotal": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "ppspsMeasuresTitle": "Schutzmaßnahmen",
+  "ppspsMeasureCollective": "Kollektiv",
+  "ppspsMeasureIndividual": "Persönlich",
+  "ppspsMeasureOrganisational": "Organisatorisch",
+  "ppspsMeasureCount": "{count} Maßnahmen",
+  "@ppspsMeasureCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "ppspsAddCustomMeasure": "Maßnahme hinzufügen",
+  "ppspsCustomMeasureHint": "Weitere Maßnahme für diese Baustelle",
+  "ppspsRisksSummary": "{risks} Risiken · {measures} Maßnahmen",
+  "@ppspsRisksSummary": {
+    "placeholders": {
+      "risks": {},
+      "measures": {}
+    }
+  },
+  "ppspsSectionNumbers": "Notrufnummern",
+  "ppspsSectionHospital": "Nächstes Krankenhaus",
+  "ppspsFieldHospitalName": "Name des Krankenhauses",
+  "ppspsSectionOnSite": "Vor Ort",
+  "ppspsFieldFirstAiders": "Ersthelfer vor Ort",
+  "ppspsFieldAssemblyPoint": "Sammelplatz",
+  "ppspsFieldEquipment": "Notfallausrüstung (Feuerlöscher, Defibrillator…)",
+  "ppspsCritical": "hoch",
+  "ppspsMedium": "mittel",
+  "ppspsLow": "niedrig",
+  "ppspsExportReady": "Alle Schritte sind abgeschlossen.",
+  "ppspsExportMissing": "Noch auszufüllen",
+  "ppspsExportPdf": "Als PDF exportieren",
+  "ppspsMarkFinal": "Als abgeschlossen markieren"
 }

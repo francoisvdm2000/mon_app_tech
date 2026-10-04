@@ -5968,5 +5968,93 @@
     }
   },
   "safetyLibraryOffline": "Local copy, works offline",
-  "safetyDisclaimer": "Drafting aid only. The content of the documents remains the responsibility of the signing company."
+  "safetyDisclaimer": "Drafting aid only. The content of the documents remains the responsibility of the signing company.",
+  "ppspsListTitle": "Safety plans",
+  "ppspsNew": "New plan",
+  "ppspsEmptyTitle": "No plans yet",
+  "ppspsEmptyBody": "Create your first safety plan. You can then duplicate it for your next events.",
+  "ppspsChooseCountry": "Country of the site",
+  "ppspsStatusDraft": "Draft",
+  "ppspsStatusFinal": "Finalised",
+  "ppspsStepProgress": "Step {done}/{total}",
+  "@ppspsStepProgress": {
+    "placeholders": {
+      "done": {},
+      "total": {}
+    }
+  },
+  "ppspsUntitled": "Untitled",
+  "ppspsDuplicate": "Duplicate",
+  "ppspsDelete": "Delete",
+  "ppspsDeleteConfirm": "Delete this plan? This cannot be undone.",
+  "ppspsCancel": "Cancel",
+  "ppspsSave": "Save",
+  "ppspsNext": "Next",
+  "ppspsPrevious": "Back",
+  "ppspsStepProject": "Project",
+  "ppspsStepWorkers": "Contractors",
+  "ppspsStepRisks": "Risks",
+  "ppspsStepEmergency": "Emergency",
+  "ppspsStepExport": "Export",
+  "ppspsFieldEventName": "Event name",
+  "ppspsFieldVenue": "Venue",
+  "ppspsFieldAddress": "Address",
+  "ppspsFieldOrganizer": "Client / organiser",
+  "ppspsFieldCoordinator": "Safety coordinator",
+  "ppspsSectionPhases": "Phases and dates",
+  "ppspsPhaseMontage": "Load-in",
+  "ppspsPhaseExploitation": "Show",
+  "ppspsPhaseDemontage": "Load-out",
+  "ppspsPhaseNotSet": "Not scheduled",
+  "ppspsPhaseFilterAll": "All",
+  "ppspsSectionCompany": "Your company",
+  "ppspsFieldCompanyName": "Company name",
+  "ppspsFieldCompanyActivity": "Activity on site",
+  "ppspsFieldResponsible": "Site manager",
+  "ppspsFieldPhone": "Phone",
+  "ppspsFieldCompany": "Company",
+  "ppspsFieldTrade": "Trade",
+  "ppspsFieldContact": "Contact",
+  "ppspsFieldHeadcount": "Headcount",
+  "ppspsAddWorker": "Add a contractor",
+  "ppspsWorkersEmpty": "Add the companies and crews working on site.",
+  "ppspsWorkersTotal": "Total headcount: {count} people",
+  "@ppspsWorkersTotal": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "ppspsMeasuresTitle": "Control measures",
+  "ppspsMeasureCollective": "Collective",
+  "ppspsMeasureIndividual": "Personal",
+  "ppspsMeasureOrganisational": "Organisational",
+  "ppspsMeasureCount": "{count} measures",
+  "@ppspsMeasureCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "ppspsAddCustomMeasure": "Add a measure",
+  "ppspsCustomMeasureHint": "Other measure for this site",
+  "ppspsRisksSummary": "{risks} risks · {measures} measures",
+  "@ppspsRisksSummary": {
+    "placeholders": {
+      "risks": {},
+      "measures": {}
+    }
+  },
+  "ppspsSectionNumbers": "Emergency numbers",
+  "ppspsSectionHospital": "Nearest hospital",
+  "ppspsFieldHospitalName": "Hospital name",
+  "ppspsSectionOnSite": "On site",
+  "ppspsFieldFirstAiders": "First aiders on site",
+  "ppspsFieldAssemblyPoint": "Assembly point",
+  "ppspsFieldEquipment": "Emergency equipment (extinguishers, defibrillator…)",
+  "ppspsCritical": "high",
+  "ppspsMedium": "medium",
+  "ppspsLow": "low",
+  "ppspsExportReady": "All steps are complete.",
+  "ppspsExportMissing": "Still to complete",
+  "ppspsExportPdf": "Export as PDF",
+  "ppspsMarkFinal": "Mark as finalised"
 }

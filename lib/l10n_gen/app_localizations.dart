@@ -27794,8 +27794,404 @@ abstract class AppLocalizations {
   /// No description provided for @safetyDisclaimer.
   ///
   /// In fr, this message translates to:
-  /// **'Outil d'aide à la rédaction. Le contenu des documents reste sous la responsabilité de l'entreprise signataire.'**
+  /// **'Outil d\'aide à la rédaction. Le contenu des documents reste sous la responsabilité de l\'entreprise signataire.'**
   String get safetyDisclaimer;
+
+  /// No description provided for @ppspsListTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Plans de sécurité'**
+  String get ppspsListTitle;
+
+  /// No description provided for @ppspsNew.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nouveau plan'**
+  String get ppspsNew;
+
+  /// No description provided for @ppspsEmptyTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun plan pour l'instant'**
+  String get ppspsEmptyTitle;
+
+  /// No description provided for @ppspsEmptyBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'Créez votre premier plan de sécurité. Vous pourrez ensuite le dupliquer pour vos prochains événements.'**
+  String get ppspsEmptyBody;
+
+  /// No description provided for @ppspsChooseCountry.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pays du chantier'**
+  String get ppspsChooseCountry;
+
+  /// No description provided for @ppspsStatusDraft.
+  ///
+  /// In fr, this message translates to:
+  /// **'Brouillon'**
+  String get ppspsStatusDraft;
+
+  /// No description provided for @ppspsStatusFinal.
+  ///
+  /// In fr, this message translates to:
+  /// **'Finalisé'**
+  String get ppspsStatusFinal;
+
+  /// No description provided for @ppspsStepProgress.
+  ///
+  /// In fr, this message translates to:
+  /// **'Étape {done}/{total}'**
+  String ppspsStepProgress(Object done, Object total);
+
+  /// No description provided for @ppspsUntitled.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sans titre'**
+  String get ppspsUntitled;
+
+  /// No description provided for @ppspsDuplicate.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dupliquer'**
+  String get ppspsDuplicate;
+
+  /// No description provided for @ppspsDelete.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer'**
+  String get ppspsDelete;
+
+  /// No description provided for @ppspsDeleteConfirm.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer ce plan ? Cette action est définitive.'**
+  String get ppspsDeleteConfirm;
+
+  /// No description provided for @ppspsCancel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Annuler'**
+  String get ppspsCancel;
+
+  /// No description provided for @ppspsSave.
+  ///
+  /// In fr, this message translates to:
+  /// **'Enregistrer'**
+  String get ppspsSave;
+
+  /// No description provided for @ppspsNext.
+  ///
+  /// In fr, this message translates to:
+  /// **'Suivant'**
+  String get ppspsNext;
+
+  /// No description provided for @ppspsPrevious.
+  ///
+  /// In fr, this message translates to:
+  /// **'Précédent'**
+  String get ppspsPrevious;
+
+  /// No description provided for @ppspsStepProject.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projet'**
+  String get ppspsStepProject;
+
+  /// No description provided for @ppspsStepWorkers.
+  ///
+  /// In fr, this message translates to:
+  /// **'Intervenants'**
+  String get ppspsStepWorkers;
+
+  /// No description provided for @ppspsStepRisks.
+  ///
+  /// In fr, this message translates to:
+  /// **'Risques'**
+  String get ppspsStepRisks;
+
+  /// No description provided for @ppspsStepEmergency.
+  ///
+  /// In fr, this message translates to:
+  /// **'Secours'**
+  String get ppspsStepEmergency;
+
+  /// No description provided for @ppspsStepExport.
+  ///
+  /// In fr, this message translates to:
+  /// **'Export'**
+  String get ppspsStepExport;
+
+  /// No description provided for @ppspsFieldEventName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom de l'événement'**
+  String get ppspsFieldEventName;
+
+  /// No description provided for @ppspsFieldVenue.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lieu'**
+  String get ppspsFieldVenue;
+
+  /// No description provided for @ppspsFieldAddress.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse'**
+  String get ppspsFieldAddress;
+
+  /// No description provided for @ppspsFieldOrganizer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Organisateur (maître d'ouvrage)'**
+  String get ppspsFieldOrganizer;
+
+  /// No description provided for @ppspsFieldCoordinator.
+  ///
+  /// In fr, this message translates to:
+  /// **'Coordinateur sécurité'**
+  String get ppspsFieldCoordinator;
+
+  /// No description provided for @ppspsSectionPhases.
+  ///
+  /// In fr, this message translates to:
+  /// **'Phases et dates'**
+  String get ppspsSectionPhases;
+
+  /// No description provided for @ppspsPhaseMontage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Montage'**
+  String get ppspsPhaseMontage;
+
+  /// No description provided for @ppspsPhaseExploitation.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exploitation'**
+  String get ppspsPhaseExploitation;
+
+  /// No description provided for @ppspsPhaseDemontage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Démontage'**
+  String get ppspsPhaseDemontage;
+
+  /// No description provided for @ppspsPhaseNotSet.
+  ///
+  /// In fr, this message translates to:
+  /// **'Non prévu'**
+  String get ppspsPhaseNotSet;
+
+  /// No description provided for @ppspsPhaseFilterAll.
+  ///
+  /// In fr, this message translates to:
+  /// **'Toutes'**
+  String get ppspsPhaseFilterAll;
+
+  /// No description provided for @ppspsSectionCompany.
+  ///
+  /// In fr, this message translates to:
+  /// **'Votre entreprise'**
+  String get ppspsSectionCompany;
+
+  /// No description provided for @ppspsFieldCompanyName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Raison sociale'**
+  String get ppspsFieldCompanyName;
+
+  /// No description provided for @ppspsFieldCompanyActivity.
+  ///
+  /// In fr, this message translates to:
+  /// **'Activité sur le chantier'**
+  String get ppspsFieldCompanyActivity;
+
+  /// No description provided for @ppspsFieldResponsible.
+  ///
+  /// In fr, this message translates to:
+  /// **'Responsable sur site'**
+  String get ppspsFieldResponsible;
+
+  /// No description provided for @ppspsFieldPhone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Téléphone'**
+  String get ppspsFieldPhone;
+
+  /// No description provided for @ppspsFieldCompany.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entreprise'**
+  String get ppspsFieldCompany;
+
+  /// No description provided for @ppspsFieldTrade.
+  ///
+  /// In fr, this message translates to:
+  /// **'Métier'**
+  String get ppspsFieldTrade;
+
+  /// No description provided for @ppspsFieldContact.
+  ///
+  /// In fr, this message translates to:
+  /// **'Contact'**
+  String get ppspsFieldContact;
+
+  /// No description provided for @ppspsFieldHeadcount.
+  ///
+  /// In fr, this message translates to:
+  /// **'Effectif'**
+  String get ppspsFieldHeadcount;
+
+  /// No description provided for @ppspsAddWorker.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajouter un intervenant'**
+  String get ppspsAddWorker;
+
+  /// No description provided for @ppspsWorkersEmpty.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajoutez les entreprises et les équipes présentes sur le chantier.'**
+  String get ppspsWorkersEmpty;
+
+  /// No description provided for @ppspsWorkersTotal.
+  ///
+  /// In fr, this message translates to:
+  /// **'Effectif total : {count} personnes'**
+  String ppspsWorkersTotal(Object count);
+
+  /// No description provided for @ppspsMeasuresTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mesures de prévention'**
+  String get ppspsMeasuresTitle;
+
+  /// No description provided for @ppspsMeasureCollective.
+  ///
+  /// In fr, this message translates to:
+  /// **'Collective'**
+  String get ppspsMeasureCollective;
+
+  /// No description provided for @ppspsMeasureIndividual.
+  ///
+  /// In fr, this message translates to:
+  /// **'Individuelle'**
+  String get ppspsMeasureIndividual;
+
+  /// No description provided for @ppspsMeasureOrganisational.
+  ///
+  /// In fr, this message translates to:
+  /// **'Organisationnelle'**
+  String get ppspsMeasureOrganisational;
+
+  /// No description provided for @ppspsMeasureCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count} mesures'**
+  String ppspsMeasureCount(Object count);
+
+  /// No description provided for @ppspsAddCustomMeasure.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajouter une mesure'**
+  String get ppspsAddCustomMeasure;
+
+  /// No description provided for @ppspsCustomMeasureHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Autre mesure propre à ce chantier'**
+  String get ppspsCustomMeasureHint;
+
+  /// No description provided for @ppspsRisksSummary.
+  ///
+  /// In fr, this message translates to:
+  /// **'{risks} risques · {measures} mesures'**
+  String ppspsRisksSummary(Object risks, Object measures);
+
+  /// No description provided for @ppspsSectionNumbers.
+  ///
+  /// In fr, this message translates to:
+  /// **'Numéros d'urgence'**
+  String get ppspsSectionNumbers;
+
+  /// No description provided for @ppspsSectionHospital.
+  ///
+  /// In fr, this message translates to:
+  /// **'Hôpital le plus proche'**
+  String get ppspsSectionHospital;
+
+  /// No description provided for @ppspsFieldHospitalName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom de l'hôpital'**
+  String get ppspsFieldHospitalName;
+
+  /// No description provided for @ppspsSectionOnSite.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sur le site'**
+  String get ppspsSectionOnSite;
+
+  /// No description provided for @ppspsFieldFirstAiders.
+  ///
+  /// In fr, this message translates to:
+  /// **'Secouristes présents'**
+  String get ppspsFieldFirstAiders;
+
+  /// No description provided for @ppspsFieldAssemblyPoint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Point de rassemblement'**
+  String get ppspsFieldAssemblyPoint;
+
+  /// No description provided for @ppspsFieldEquipment.
+  ///
+  /// In fr, this message translates to:
+  /// **'Matériel de secours (extincteurs, défibrillateur…)'**
+  String get ppspsFieldEquipment;
+
+  /// No description provided for @ppspsCritical.
+  ///
+  /// In fr, this message translates to:
+  /// **'critiques'**
+  String get ppspsCritical;
+
+  /// No description provided for @ppspsMedium.
+  ///
+  /// In fr, this message translates to:
+  /// **'moyens'**
+  String get ppspsMedium;
+
+  /// No description provided for @ppspsLow.
+  ///
+  /// In fr, this message translates to:
+  /// **'faibles'**
+  String get ppspsLow;
+
+  /// No description provided for @ppspsExportReady.
+  ///
+  /// In fr, this message translates to:
+  /// **'Toutes les étapes sont complétées.'**
+  String get ppspsExportReady;
+
+  /// No description provided for @ppspsExportMissing.
+  ///
+  /// In fr, this message translates to:
+  /// **'À compléter'**
+  String get ppspsExportMissing;
+
+  /// No description provided for @ppspsExportPdf.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exporter en PDF'**
+  String get ppspsExportPdf;
+
+  /// No description provided for @ppspsMarkFinal.
+  ///
+  /// In fr, this message translates to:
+  /// **'Marquer comme finalisé'**
+  String get ppspsMarkFinal;
 }
 
 class _AppLocalizationsDelegate

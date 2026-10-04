@@ -10,9 +10,9 @@ import '../../l10n_gen/app_localizations.dart';
 import '../../services/subscription_service.dart';
 import '../shared/app_grid_tile.dart';
 import '../subscription_page.dart';
+import 'ppsps/ppsps_list_page.dart';
 import 'safety_library.dart';
-
-const Color kSafetyAccent = Color(0xFFF5A524);
+import 'safety_theme.dart';
 
 class SafetyPage extends StatefulWidget {
   const SafetyPage({super.key});
@@ -74,6 +74,13 @@ class _SafetyPageState extends State<SafetyPage> {
       setState(() => _hasAccess = true);
     }
     open();
+  }
+
+  void _openPpsps() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => PpspsListPage(library: _library)),
+    );
   }
 
   void _comingSoon() {
@@ -169,9 +176,9 @@ class _SafetyPageState extends State<SafetyPage> {
     final loc = AppLocalizations.of(context);
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0D0D14),
+      backgroundColor: kSafetyBg,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0D0D14),
+        backgroundColor: kSafetyBg,
         surfaceTintColor: Colors.transparent,
         scrolledUnderElevation: 0,
         title: Text(
@@ -196,7 +203,7 @@ class _SafetyPageState extends State<SafetyPage> {
                   subtitle: loc.safetyPpspsSubtitle,
                   accentColor: kSafetyAccent,
                   locked: !_hasAccess,
-                  onTap: () => _openOrSubscribe(_comingSoon),
+                  onTap: () => _openOrSubscribe(_openPpsps),
                 ),
                 AppGridTile(
                   icon: Icons.fact_check_rounded,

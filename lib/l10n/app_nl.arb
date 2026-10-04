@@ -5968,5 +5968,93 @@
     }
   },
   "safetyLibraryOffline": "Lokale kopie, werkt offline",
-  "safetyDisclaimer": "Hulpmiddel bij het opstellen. De inhoud van de documenten blijft de verantwoordelijkheid van het ondertekenende bedrijf."
+  "safetyDisclaimer": "Hulpmiddel bij het opstellen. De inhoud van de documenten blijft de verantwoordelijkheid van het ondertekenende bedrijf.",
+  "ppspsListTitle": "Veiligheidsplannen",
+  "ppspsNew": "Nieuw plan",
+  "ppspsEmptyTitle": "Nog geen plannen",
+  "ppspsEmptyBody": "Maak uw eerste veiligheidsplan. Daarna kunt u het dupliceren voor volgende evenementen.",
+  "ppspsChooseCountry": "Land van de werf",
+  "ppspsStatusDraft": "Concept",
+  "ppspsStatusFinal": "Afgerond",
+  "ppspsStepProgress": "Stap {done}/{total}",
+  "@ppspsStepProgress": {
+    "placeholders": {
+      "done": {},
+      "total": {}
+    }
+  },
+  "ppspsUntitled": "Naamloos",
+  "ppspsDuplicate": "Dupliceren",
+  "ppspsDelete": "Verwijderen",
+  "ppspsDeleteConfirm": "Dit plan verwijderen? Dit kan niet ongedaan worden gemaakt.",
+  "ppspsCancel": "Annuleren",
+  "ppspsSave": "Opslaan",
+  "ppspsNext": "Volgende",
+  "ppspsPrevious": "Vorige",
+  "ppspsStepProject": "Project",
+  "ppspsStepWorkers": "Uitvoerders",
+  "ppspsStepRisks": "Risico's",
+  "ppspsStepEmergency": "Hulpdiensten",
+  "ppspsStepExport": "Export",
+  "ppspsFieldEventName": "Naam van het evenement",
+  "ppspsFieldVenue": "Locatie",
+  "ppspsFieldAddress": "Adres",
+  "ppspsFieldOrganizer": "Organisator (opdrachtgever)",
+  "ppspsFieldCoordinator": "Veiligheidscoördinator",
+  "ppspsSectionPhases": "Fasen en data",
+  "ppspsPhaseMontage": "Opbouw",
+  "ppspsPhaseExploitation": "Evenement",
+  "ppspsPhaseDemontage": "Afbouw",
+  "ppspsPhaseNotSet": "Niet gepland",
+  "ppspsPhaseFilterAll": "Alle",
+  "ppspsSectionCompany": "Uw bedrijf",
+  "ppspsFieldCompanyName": "Bedrijfsnaam",
+  "ppspsFieldCompanyActivity": "Activiteit op de werf",
+  "ppspsFieldResponsible": "Verantwoordelijke ter plaatse",
+  "ppspsFieldPhone": "Telefoon",
+  "ppspsFieldCompany": "Bedrijf",
+  "ppspsFieldTrade": "Vakgebied",
+  "ppspsFieldContact": "Contactpersoon",
+  "ppspsFieldHeadcount": "Aantal personen",
+  "ppspsAddWorker": "Uitvoerder toevoegen",
+  "ppspsWorkersEmpty": "Voeg de bedrijven en ploegen toe die op de werf aanwezig zijn.",
+  "ppspsWorkersTotal": "Totaal: {count} personen",
+  "@ppspsWorkersTotal": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "ppspsMeasuresTitle": "Preventiemaatregelen",
+  "ppspsMeasureCollective": "Collectief",
+  "ppspsMeasureIndividual": "Individueel",
+  "ppspsMeasureOrganisational": "Organisatorisch",
+  "ppspsMeasureCount": "{count} maatregelen",
+  "@ppspsMeasureCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "ppspsAddCustomMeasure": "Maatregel toevoegen",
+  "ppspsCustomMeasureHint": "Andere maatregel voor deze werf",
+  "ppspsRisksSummary": "{risks} risico's · {measures} maatregelen",
+  "@ppspsRisksSummary": {
+    "placeholders": {
+      "risks": {},
+      "measures": {}
+    }
+  },
+  "ppspsSectionNumbers": "Noodnummers",
+  "ppspsSectionHospital": "Dichtstbijzijnde ziekenhuis",
+  "ppspsFieldHospitalName": "Naam van het ziekenhuis",
+  "ppspsSectionOnSite": "Ter plaatse",
+  "ppspsFieldFirstAiders": "Aanwezige hulpverleners",
+  "ppspsFieldAssemblyPoint": "Verzamelplaats",
+  "ppspsFieldEquipment": "Noodmateriaal (blusmiddelen, AED…)",
+  "ppspsCritical": "hoog",
+  "ppspsMedium": "middel",
+  "ppspsLow": "laag",
+  "ppspsExportReady": "Alle stappen zijn ingevuld.",
+  "ppspsExportMissing": "Nog in te vullen",
+  "ppspsExportPdf": "Exporteren als PDF",
+  "ppspsMarkFinal": "Markeren als afgerond"
 }
