@@ -16011,32 +16011,25 @@ class AppLocalizationsDe extends AppLocalizations {
   String get ppspsMarkFinal => 'Als abgeschlossen markieren';
 
   @override
-  String get safetyCountryFR =>
-      'Frankreich';
+  String get safetyCountryFR => 'Frankreich';
 
   @override
-  String get safetyCountryBE =>
-      'Belgien';
+  String get safetyCountryBE => 'Belgien';
 
   @override
-  String get safetyCountryUK =>
-      'Vereinigtes Königreich';
+  String get safetyCountryUK => 'Vereinigtes Königreich';
 
   @override
-  String get safetyCountryLU =>
-      'Luxemburg';
+  String get safetyCountryLU => 'Luxemburg';
 
   @override
-  String get safetyCountryDE =>
-      'Deutschland';
+  String get safetyCountryDE => 'Deutschland';
 
   @override
-  String get safetyCountryNL =>
-      'Niederlande';
+  String get safetyCountryNL => 'Niederlande';
 
   @override
-  String get ppspsExportLanguages =>
-      'Sprachen des Dokuments';
+  String get ppspsExportLanguages => 'Sprachen des Dokuments';
 
   @override
   String get ppspsExportLanguagesHint =>
@@ -16046,4 +16039,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String ppspsExportPdfMulti(Object count) {
     return '$count PDFs exportieren';
   }
+
+  @override
+  String get ppspsPhaseOrderError =>
+      'Die Termine sind nicht in der richtigen Reihenfolge: erst Aufbau, dann Veranstaltung, dann Abbau.';
 }

@@ -15870,32 +15870,25 @@ class AppLocalizationsEn extends AppLocalizations {
   String get ppspsMarkFinal => 'Mark as finalised';
 
   @override
-  String get safetyCountryFR =>
-      'France';
+  String get safetyCountryFR => 'France';
 
   @override
-  String get safetyCountryBE =>
-      'Belgium';
+  String get safetyCountryBE => 'Belgium';
 
   @override
-  String get safetyCountryUK =>
-      'United Kingdom';
+  String get safetyCountryUK => 'United Kingdom';
 
   @override
-  String get safetyCountryLU =>
-      'Luxembourg';
+  String get safetyCountryLU => 'Luxembourg';
 
   @override
-  String get safetyCountryDE =>
-      'Germany';
+  String get safetyCountryDE => 'Germany';
 
   @override
-  String get safetyCountryNL =>
-      'Netherlands';
+  String get safetyCountryNL => 'Netherlands';
 
   @override
-  String get ppspsExportLanguages =>
-      'Document languages';
+  String get ppspsExportLanguages => 'Document languages';
 
   @override
   String get ppspsExportLanguagesHint =>
@@ -15905,4 +15898,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String ppspsExportPdfMulti(Object count) {
     return 'Export $count PDFs';
   }
+
+  @override
+  String get ppspsPhaseOrderError =>
+      'The dates are out of order: load-in must come before the show, then load-out.';
 }

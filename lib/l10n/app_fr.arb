@@ -6369,5 +6369,6 @@
     "placeholders": {
       "count": {}
     }
-  }
+  },
+  "ppspsPhaseOrderError": "Les dates ne se suivent pas : le montage doit précéder l'exploitation, puis le démontage."
 }

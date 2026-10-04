@@ -1,0 +1,3 @@
+{
+  "ppspsPhaseOrderError": {"fr": "Les dates ne se suivent pas : le montage doit précéder l'exploitation, puis le démontage.", "en": "The dates are out of order: load-in must come before the show, then load-out.", "de": "Die Termine sind nicht in der richtigen Reihenfolge: erst Aufbau, dann Veranstaltung, dann Abbau.", "es": "Las fechas no siguen el orden: el montaje debe preceder a la explotación y después al desmontaje.", "nl": "De data volgen elkaar niet op: eerst opbouw, dan evenement, dan afbouw.", "pt": "As datas não estão pela ordem: a montagem deve preceder a exploração e depois a desmontagem."}
+}

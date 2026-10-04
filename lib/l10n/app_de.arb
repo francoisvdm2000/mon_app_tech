@@ -5749,5 +5749,6 @@
     "placeholders": {
       "count": {}
     }
-  }
+  },
+  "ppspsPhaseOrderError": "Die Termine sind nicht in der richtigen Reihenfolge: erst Aufbau, dann Veranstaltung, dann Abbau."
 }

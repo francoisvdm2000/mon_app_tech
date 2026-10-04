@@ -15993,32 +15993,25 @@ class AppLocalizationsNl extends AppLocalizations {
   String get ppspsMarkFinal => 'Markeren als afgerond';
 
   @override
-  String get safetyCountryFR =>
-      'Frankrijk';
+  String get safetyCountryFR => 'Frankrijk';
 
   @override
-  String get safetyCountryBE =>
-      'België';
+  String get safetyCountryBE => 'België';
 
   @override
-  String get safetyCountryUK =>
-      'Verenigd Koninkrijk';
+  String get safetyCountryUK => 'Verenigd Koninkrijk';
 
   @override
-  String get safetyCountryLU =>
-      'Luxemburg';
+  String get safetyCountryLU => 'Luxemburg';
 
   @override
-  String get safetyCountryDE =>
-      'Duitsland';
+  String get safetyCountryDE => 'Duitsland';
 
   @override
-  String get safetyCountryNL =>
-      'Nederland';
+  String get safetyCountryNL => 'Nederland';
 
   @override
-  String get ppspsExportLanguages =>
-      'Talen van het document';
+  String get ppspsExportLanguages => 'Talen van het document';
 
   @override
   String get ppspsExportLanguagesHint =>
@@ -16028,4 +16021,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String ppspsExportPdfMulti(Object count) {
     return '$count PDF\'s exporteren';
   }
+
+  @override
+  String get ppspsPhaseOrderError =>
+      'De data volgen elkaar niet op: eerst opbouw, dan evenement, dan afbouw.';
 }

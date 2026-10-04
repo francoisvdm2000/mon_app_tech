@@ -15958,32 +15958,25 @@ class AppLocalizationsPt extends AppLocalizations {
   String get ppspsMarkFinal => 'Marcar como finalizado';
 
   @override
-  String get safetyCountryFR =>
-      'França';
+  String get safetyCountryFR => 'França';
 
   @override
-  String get safetyCountryBE =>
-      'Bélgica';
+  String get safetyCountryBE => 'Bélgica';
 
   @override
-  String get safetyCountryUK =>
-      'Reino Unido';
+  String get safetyCountryUK => 'Reino Unido';
 
   @override
-  String get safetyCountryLU =>
-      'Luxemburgo';
+  String get safetyCountryLU => 'Luxemburgo';
 
   @override
-  String get safetyCountryDE =>
-      'Alemanha';
+  String get safetyCountryDE => 'Alemanha';
 
   @override
-  String get safetyCountryNL =>
-      'Países Baixos';
+  String get safetyCountryNL => 'Países Baixos';
 
   @override
-  String get ppspsExportLanguages =>
-      'Idiomas do documento';
+  String get ppspsExportLanguages => 'Idiomas do documento';
 
   @override
   String get ppspsExportLanguagesHint =>
@@ -15993,4 +15986,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String ppspsExportPdfMulti(Object count) {
     return 'Exportar $count PDF';
   }
+
+  @override
+  String get ppspsPhaseOrderError =>
+      'As datas não estão pela ordem: a montagem deve preceder a exploração e depois a desmontagem.';
 }

@@ -6070,5 +6070,6 @@
     "placeholders": {
       "count": {}
     }
-  }
+  },
+  "ppspsPhaseOrderError": "Las fechas no siguen el orden: el montaje debe preceder a la explotación y después al desmontaje."
 }

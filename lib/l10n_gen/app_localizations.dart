@@ -28246,6 +28246,12 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Exporter {count} PDF'**
   String ppspsExportPdfMulti(Object count);
+
+  /// No description provided for @ppspsPhaseOrderError.
+  ///
+  /// In fr, this message translates to:
+  /// **'Les dates ne se suivent pas : le montage doit précéder l'exploitation, puis le démontage.'**
+  String get ppspsPhaseOrderError;
 }
 
 class _AppLocalizationsDelegate

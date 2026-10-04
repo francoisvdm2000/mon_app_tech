@@ -6070,5 +6070,6 @@
     "placeholders": {
       "count": {}
     }
-  }
+  },
+  "ppspsPhaseOrderError": "The dates are out of order: load-in must come before the show, then load-out."
 }

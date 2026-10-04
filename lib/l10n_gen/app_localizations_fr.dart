@@ -15955,32 +15955,25 @@ class AppLocalizationsFr extends AppLocalizations {
   String get ppspsMarkFinal => 'Marquer comme finalisé';
 
   @override
-  String get safetyCountryFR =>
-      'France';
+  String get safetyCountryFR => 'France';
 
   @override
-  String get safetyCountryBE =>
-      'Belgique';
+  String get safetyCountryBE => 'Belgique';
 
   @override
-  String get safetyCountryUK =>
-      'Royaume-Uni';
+  String get safetyCountryUK => 'Royaume-Uni';
 
   @override
-  String get safetyCountryLU =>
-      'Luxembourg';
+  String get safetyCountryLU => 'Luxembourg';
 
   @override
-  String get safetyCountryDE =>
-      'Allemagne';
+  String get safetyCountryDE => 'Allemagne';
 
   @override
-  String get safetyCountryNL =>
-      'Pays-Bas';
+  String get safetyCountryNL => 'Pays-Bas';
 
   @override
-  String get ppspsExportLanguages =>
-      'Langues du document';
+  String get ppspsExportLanguages => 'Langues du document';
 
   @override
   String get ppspsExportLanguagesHint =>
@@ -15990,4 +15983,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String ppspsExportPdfMulti(Object count) {
     return 'Exporter $count PDF';
   }
+
+  @override
+  String get ppspsPhaseOrderError =>
+      'Les dates ne se suivent pas : le montage doit précéder l\'exploitation, puis le démontage.';
 }

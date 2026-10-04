@@ -6070,5 +6070,6 @@
     "placeholders": {
       "count": {}
     }
-  }
+  },
+  "ppspsPhaseOrderError": "De data volgen elkaar niet op: eerst opbouw, dan evenement, dan afbouw."
 }

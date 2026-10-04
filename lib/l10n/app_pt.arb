@@ -6070,5 +6070,6 @@
     "placeholders": {
       "count": {}
     }
-  }
+  },
+  "ppspsPhaseOrderError": "As datas não estão pela ordem: a montagem deve preceder a exploração e depois a desmontagem."
 }

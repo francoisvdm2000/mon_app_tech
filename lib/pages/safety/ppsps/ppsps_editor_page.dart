@@ -125,19 +125,70 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
     }
   }
 
+  DateTime? _phaseStart(SafetyPhase p) => _doc.phases[p]?.start;
+  DateTime? _phaseEnd(SafetyPhase p) =>
+      _doc.phases[p]?.end ?? _doc.phases[p]?.start;
+
+  /// Les phases se suivent : montage, puis exploitation, puis démontage.
+  /// Une phase peut commencer le jour où la précédente se termine.
+  bool get _phasesInOrder {
+    DateTime? previousEnd;
+    for (final p in SafetyPhase.values) {
+      final start = _phaseStart(p);
+      if (start == null) continue;
+      if (previousEnd != null &&
+          DateUtils.dateOnly(start).isBefore(DateUtils.dateOnly(previousEnd))) {
+        return false;
+      }
+      previousEnd = _phaseEnd(p);
+    }
+    return true;
+  }
+
   Future<void> _pickPhaseDates(SafetyPhase phase) async {
     final current = _doc.phases[phase];
     final now = DateTime.now();
+    final index = SafetyPhase.values.indexOf(phase);
+
+    // Bornes imposées par les phases voisines déjà renseignées : pas avant
+    // la fin de la phase précédente, pas après le début de la suivante.
+    DateTime? lower;
+    for (final p in SafetyPhase.values.take(index)) {
+      final end = _phaseEnd(p);
+      if (end != null && (lower == null || end.isAfter(lower))) lower = end;
+    }
+    DateTime? upper;
+    for (final p in SafetyPhase.values.skip(index + 1)) {
+      final start = _phaseStart(p);
+      if (start != null && (upper == null || start.isBefore(upper))) {
+        upper = start;
+      }
+    }
+
+    var firstDate = DateUtils.dateOnly(lower ?? DateTime(now.year - 1));
+    var lastDate = DateUtils.dateOnly(upper ?? DateTime(now.year + 3));
+    if (lastDate.isBefore(firstDate)) {
+      // Dates voisines déjà incohérentes (ancien plan) : pas de contrainte,
+      // l'avertissement sous les phases invite à corriger.
+      firstDate = DateTime(now.year - 1);
+      lastDate = DateTime(now.year + 3);
+    }
+
+    DateTimeRange? initial;
+    if (current?.start != null) {
+      final start = DateUtils.dateOnly(current!.start!);
+      final end = DateUtils.dateOnly(current.end ?? current.start!);
+      if (!start.isBefore(firstDate) && !end.isAfter(lastDate)) {
+        initial = DateTimeRange(start: start, end: end);
+      }
+    }
+
     final range = await showDateRangePicker(
       context: context,
-      firstDate: DateTime(now.year - 1),
-      lastDate: DateTime(now.year + 3),
-      initialDateRange: current?.start == null
-          ? null
-          : DateTimeRange(
-              start: current!.start!,
-              end: current.end ?? current.start!,
-            ),
+      firstDate: firstDate,
+      lastDate: lastDate,
+      initialDateRange: initial,
+      currentDate: lower,
     );
     if (range == null) return;
     _update(_doc.copyWith(phases: {
@@ -221,6 +272,23 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
             ],
           ),
         ),
+        if (!_phasesInOrder)
+          Padding(
+            padding: const EdgeInsets.only(top: 8),
+            child: Row(
+              children: [
+                const Icon(Icons.error_outline_rounded,
+                    size: 18, color: kSafetyCritHigh),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    loc.ppspsPhaseOrderError,
+                    style: const TextStyle(color: kSafetyCritHigh, fontSize: 13),
+                  ),
+                ),
+              ],
+            ),
+          ),
         _sectionTitle(loc.ppspsSectionCompany),
         _field(
           label: loc.ppspsFieldCompanyName,
