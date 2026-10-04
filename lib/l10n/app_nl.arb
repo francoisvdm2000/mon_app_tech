@@ -472,7 +472,7 @@
   "laserZoneSzedDesc": "Gevoelig gebied",
   "legalNotices": "Juridische mededelingen",
   "lightCatalogDescription": "Selectie op fabrikant, type en product, met informatie en handleiding.",
-  "lightCatalogTitle": "Catalogus",
+  "lightCatalogTitle": "Lichtcatalogus",
   "lightDisclaimerShort": "Indicatieve hulpmiddelen. Controleer altijd de documentatie van de fabrikant.",
   "lightDmxSwitchDescription": "Indicatieve conversie tussen adres DMX en schakelaars, met intervalnavigatie.",
   "lightDmxSwitchTitle": "Dip-schakelaar DMX",
@@ -5910,5 +5910,34 @@
     "placeholders": {
       "ratio": {}
     }
-  }
+  },
+  "catalogSearchHint": "Zoek merk, model, type…",
+  "catalogSearchNoResults": "Geen resultaten",
+  "catalogSearchResultsCount": "{count} resultaten",
+  "@catalogSearchResultsCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "soundCatalogTitle": "Geluidscatalogus",
+  "soundCatalogSubtitle": "Versterkers en luidsprekers: specificaties en handleidingen",
+  "laserCatalogTitle": "Lasercatalogus",
+  "laserCatalogSubtitle": "Laserprojectoren: vermogen, straal, divergentie",
+  "catalogAmplifiers": "Versterkers",
+  "catalogSpeakers": "Luidsprekers",
+  "catalogUseValues": "Gebruiken",
+  "laserPickFromCatalog": "Kiezen uit catalogus",
+  "laserCatalogDisclaimer": "Door de fabrikant opgegeven waarden, niet gemeten.",
+  "laserCatalogMissingValues": "Straaldiameter of divergentie niet gepubliceerd voor deze laser: vul ze handmatig in.",
+  "catalogFieldChannels": "Kanalen",
+  "catalogFieldPowerPerChannel": "Vermogen per kanaal",
+  "catalogFieldType": "Type",
+  "catalogFieldSection": "Sectie",
+  "catalogFieldPowerHandling": "Belastbaarheid (RMS/AES)",
+  "catalogFieldRecommendedAmp": "Aanbevolen versterker",
+  "catalogFieldOpticalPower": "Optisch vermogen",
+  "catalogFieldColors": "Kleuren",
+  "catalogFieldScanner": "Scanners",
+  "catalogFieldClass": "Laserklasse",
+  "catalogFieldConsumption": "Verbruik"
 }

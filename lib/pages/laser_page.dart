@@ -8,6 +8,8 @@ import 'subscription_page.dart';
 import 'laser/laser_calculations.dart';
 import 'laser/laser_storage.dart';
 import 'laser/laser_beam_size_page.dart';
+import 'laser/laser_catalog.dart';
+import 'laser/laser_catalog_page.dart';
 import 'about/about_favorites.dart';
 import 'package:mon_app_tech/app/constants.dart';
 
@@ -40,6 +42,38 @@ class _LaserPageState extends State<LaserPage> {
   );
 
   List<LaserPreset> _presets = [];
+
+  /// Dernier projecteur choisi dans le catalogue (affichage seulement).
+  String? _catalogPickName;
+
+  String _fmtCatalog(double v) {
+    if (v == v.roundToDouble()) return v.round().toString();
+    return v
+        .toStringAsFixed(2)
+        .replaceFirst(RegExp(r'0+$'), '')
+        .replaceFirst(RegExp(r'\.$'), '');
+  }
+
+  Future<void> _pickFromCatalog() async {
+    final loc = AppLocalizations.of(context);
+    final messenger = ScaffoldMessenger.of(context);
+    final p = await Navigator.of(context).push<LaserProduct>(
+      MaterialPageRoute(builder: (_) => const LaserCatalogPage(pick: true)),
+    );
+    if (p == null || !mounted) return;
+    _powerController.text = _fmtCatalog(p.powerMilliwatt);
+    final div = p.divergenceMilliradian;
+    final dia = p.beamDiameterMillimeter;
+    if (div != null) _divergenceController.text = _fmtCatalog(div);
+    if (dia != null) _diameterController.text = _fmtCatalog(dia);
+    setState(() => _catalogPickName = '${p.brand} ${p.name}');
+    if (!p.hasSafetyInputs) {
+      messenger.showSnackBar(
+        SnackBar(content: Text(loc.laserCatalogMissingValues)),
+      );
+    }
+    _recompute();
+  }
 
   @override
   void initState() {
@@ -501,6 +535,31 @@ class _LaserPageState extends State<LaserPage> {
                         );
                       },
                     ),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: const Icon(Icons.menu_book_rounded),
+                      title: Text(
+                        loc.laserCatalogTitle,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      subtitle: Text(
+                        loc.laserCatalogSubtitle,
+                        style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.65),
+                        ),
+                      ),
+                      trailing: const Icon(Icons.chevron_right),
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const LaserCatalogPage(),
+                          ),
+                        );
+                      },
+                    ),
                   ],
                 ),
               ),
@@ -511,6 +570,28 @@ class _LaserPageState extends State<LaserPage> {
                 icon: Icons.tune,
                 child: Column(
                   children: [
+                    SizedBox(
+                      width: double.infinity,
+                      child: OutlinedButton.icon(
+                        onPressed: _pickFromCatalog,
+                        icon: const Icon(Icons.manage_search_rounded),
+                        label: Text(loc.laserPickFromCatalog),
+                      ),
+                    ),
+                    if (_catalogPickName != null) ...[
+                      const SizedBox(height: 6),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '$_catalogPickName — ${loc.laserCatalogDisclaimer}',
+                          style: TextStyle(
+                            color: Colors.white.withValues(alpha: 0.55),
+                            fontSize: 12,
+                          ),
+                        ),
+                      ),
+                    ],
+                    const SizedBox(height: 12),
                     _numField(
                       controller: _powerController,
                       label: loc.laserPowerLabel,

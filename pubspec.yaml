@@ -2,8 +2,7 @@ name: mon_app_tech
 description: "A new Flutter project."
 publish_to: 'none'
 
-version: 3.7.1+100
-
+version: 3.7.3+1012
 environment:
   sdk: ">=3.0.0 <4.0.0"
 
@@ -102,6 +101,8 @@ flutter:
     - assets/lumiere/filters.json
     - assets/lumiere/filter_equivalents.json
     - assets/tool_icons/
+    - assets/catalogs/sound.json
+    - assets/catalogs/laser.json
 
 flutter_launcher_icons:
   android: true

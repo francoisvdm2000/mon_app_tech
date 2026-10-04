@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../about/about_favorites.dart';
 import 'amp_speaker_presets.dart';
+import 'sound_catalog.dart';
 
 const _kAccent = Color(0xFF00E5FF);
 const _kBg = Color(0xFF0D0D14);
@@ -17,6 +19,10 @@ const _cGreen = Color(0xFF66BB6A);
 const _cLime = Color(0xFFC0E15C);
 const _cBlue = Color(0xFF4FC3F7);
 const _cGrey = Color(0xFFB0BEC5);
+
+/// Tolérance sur Z min : 3 × 8 Ω = 2,67 Ω est admis sur un ampli « 2,7 Ω »
+/// (c'est précisément le cas prévu par L-Acoustics pour LA8 / LA12X).
+const _kZTol = 0.98;
 
 String _fmtNum(double v) =>
     v == v.roundToDouble() ? '${v.round()}' : v.toStringAsFixed(1);
@@ -52,6 +58,12 @@ class AudioAmpLoadPage extends StatefulWidget {
 }
 
 class _AudioAmpLoadPageState extends State<AudioAmpLoadPage> {
+  /// Listes affichées : catalogue en ligne (sound.json) si disponible,
+  /// sinon la liste intégrée au code.
+  List<AmpPreset> _amps = kAmpPresets;
+  List<SpkPreset> _spks = kSpkPresets;
+  final _repo = SoundCatalogRepository();
+
   /// null = ampli personnalisé
   AmpPreset? _amp =
       kAmpPresets.firstWhere((a) => a.model == 'D80', orElse: () => kAmpPresets.first);
@@ -91,6 +103,44 @@ class _AudioAmpLoadPageState extends State<AudioAmpLoadPage> {
       );
 
   @override
+  void initState() {
+    super.initState();
+    _loadCatalog();
+  }
+
+  Future<void> _loadCatalog() async {
+    try {
+      final initial = await _repo.loadInitialFast();
+      if (!mounted) return;
+      _applyCatalog(initial);
+      final remote = await _repo.refreshRemote();
+      if (!mounted || remote == null) return;
+      _applyCatalog(remote);
+    } catch (_) {
+      // On garde la liste intégrée.
+    }
+  }
+
+  void _applyCatalog(SoundCatalog c) {
+    setState(() {
+      if (c.amps.isNotEmpty) {
+        _amps = c.amps;
+        final cur = _amp;
+        if (cur != null) {
+          _amp = _amps.firstWhere((a) => a.key == cur.key, orElse: () => cur);
+        }
+      }
+      if (c.speakers.isNotEmpty) {
+        _spks = c.speakers;
+        final cur = _spk;
+        if (cur != null) {
+          _spk = _spks.firstWhere((s) => s.key == cur.key, orElse: () => cur);
+        }
+      }
+    });
+  }
+
+  @override
   void dispose() {
     _ampZminCtrl.dispose();
     _ampPrefCtrl.dispose();
@@ -108,7 +158,7 @@ class _AudioAmpLoadPageState extends State<AudioAmpLoadPage> {
       backgroundColor: Colors.transparent,
       builder: (_) => _PresetPickerSheet<AmpPreset>(
         title: loc.audioPickAmplifier,
-        items: kAmpPresets,
+        items: _amps,
         selected: _amp,
         brandOf: (a) => a.brand,
         titleOf: (a) => a.model,
@@ -138,7 +188,7 @@ class _AudioAmpLoadPageState extends State<AudioAmpLoadPage> {
       backgroundColor: Colors.transparent,
       builder: (_) => _PresetPickerSheet<SpkPreset>(
         title: loc.audioPickSpeaker,
-        items: kSpkPresets,
+        items: _spks,
         selected: _spk,
         brandOf: (s) => s.brand,
         titleOf: (s) => s.label,
@@ -287,7 +337,6 @@ class _AmpDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final loc = AppLocalizations.of(context);
     final pts = amp.sortedRatings.reversed.toList(); // 16 → 2 Ω
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -297,7 +346,6 @@ class _AmpDetails extends StatelessWidget {
           runSpacing: 6,
           children: [
             _Chip(text: 'Z min ${_fmtOhm(amp.zMin)}', color: _cOrange),
-            _Chip(text: loc.audioChannelsCount(amp.channels)),
             for (final r in pts)
               _Chip(text: '${_fmtOhm(r.z)} → ${r.w.round()} W'),
           ],
@@ -306,6 +354,7 @@ class _AmpDetails extends StatelessWidget {
           const SizedBox(height: 8),
           _SmallNote(text: amp.note!),
         ],
+        if (amp.manualUrl != null) _ManualLink(url: amp.manualUrl!),
       ],
     );
   }
@@ -347,6 +396,7 @@ class _SpkDetails extends StatelessWidget {
           const SizedBox(height: 8),
           _SmallNote(text: spk.note!),
         ],
+        if (spk.manualUrl != null) _ManualLink(url: spk.manualUrl!),
       ],
     );
   }
@@ -384,6 +434,30 @@ class _Chip extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _ManualLink extends StatelessWidget {
+  final String url;
+  const _ManualLink({required this.url});
+
+  @override
+  Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+    return Padding(
+      padding: const EdgeInsets.only(top: 6),
+      child: TextButton.icon(
+        style: TextButton.styleFrom(
+          foregroundColor: _kAccent,
+          padding: const EdgeInsets.symmetric(horizontal: 4),
+          visualDensity: VisualDensity.compact,
+        ),
+        icon: const Icon(Icons.menu_book_rounded, size: 18),
+        label: Text(loc.catalogOpenManual),
+        onPressed: () => launchUrl(Uri.parse(url),
+            mode: LaunchMode.externalApplication),
       ),
     );
   }
@@ -434,7 +508,7 @@ _Status _statusFor(
   required double pPerSpk,
   required SpkPreset spk,
 }) {
-  if (zLoad < zMin - 0.01) {
+  if (zLoad < zMin * _kZTol) {
     return _Status(_cRed, loc.audioStatusZTooLow(_fmtNum(zMin - zLoad)));
   }
   final p = spk.pRms;
@@ -479,7 +553,9 @@ class _ResultsTable extends StatelessWidget {
     final zMin = amp.zMin;
     final zNom = spk.zNom;
     final maxN =
-        (zMin > 0 && zNom > 0) ? (zNom / zMin + 1e-6).floor().clamp(1, 8) : 1;
+        (zMin > 0 && zNom > 0)
+        ? (zNom / (zMin * _kZTol)).floor().clamp(1, 8)
+        : 1;
     // On affiche jusqu'à maxN + 1 (pour montrer la limite bloquée)
     final showUpTo = (maxN + 1).clamp(2, 9);
 
@@ -520,7 +596,7 @@ class _ResultsTable extends StatelessWidget {
           for (int n = 1; n <= showUpTo; n++)
             Builder(builder: (context) {
               final zLoad = zNom / n;
-              final ok = zLoad >= zMin - 0.01;
+              final ok = zLoad >= zMin * _kZTol;
               final pPerSpk = ok ? amp.powerAt(zLoad) / n : 0.0;
               return _ResultRow(
                 n: n,

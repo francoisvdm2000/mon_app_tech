@@ -472,7 +472,7 @@
   "laserZoneSzedDesc": "Empfindlicher Bereich",
   "legalNotices": "Rechtliche Hinweise",
   "lightCatalogDescription": "Auswahl nach Hersteller, Typ und Produkt, mit Informationen und Handbuch.",
-  "lightCatalogTitle": "Katalog",
+  "lightCatalogTitle": "Licht-Katalog",
   "lightDisclaimerShort": "Indikative Werkzeuge. Überprüfen Sie immer die Dokumentation des Herstellers.",
   "lightDmxSwitchDescription": "Indikative Konvertierung zwischen Adresse DMX und Schaltern, mit Intervallnavigation.",
   "lightDmxSwitchTitle": "DIP-Schalter DMX",
@@ -5589,5 +5589,34 @@
     "placeholders": {
       "ratio": {}
     }
-  }
+  },
+  "catalogSearchHint": "Marke, Modell, Typ suchen…",
+  "catalogSearchNoResults": "Keine Ergebnisse",
+  "catalogSearchResultsCount": "{count} Ergebnisse",
+  "@catalogSearchResultsCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "soundCatalogTitle": "Sound-Katalog",
+  "soundCatalogSubtitle": "Verstärker und Lautsprecher: Daten und Handbücher",
+  "laserCatalogTitle": "Laser-Katalog",
+  "laserCatalogSubtitle": "Laserprojektoren: Leistung, Strahl, Divergenz",
+  "catalogAmplifiers": "Verstärker",
+  "catalogSpeakers": "Lautsprecher",
+  "catalogUseValues": "Übernehmen",
+  "laserPickFromCatalog": "Aus dem Katalog wählen",
+  "laserCatalogDisclaimer": "Herstellerangaben, nicht gemessen.",
+  "laserCatalogMissingValues": "Strahldurchmesser oder Divergenz für diesen Laser nicht veröffentlicht: bitte manuell eingeben.",
+  "catalogFieldChannels": "Kanäle",
+  "catalogFieldPowerPerChannel": "Leistung pro Kanal",
+  "catalogFieldType": "Typ",
+  "catalogFieldSection": "Sektion",
+  "catalogFieldPowerHandling": "Belastbarkeit (RMS/AES)",
+  "catalogFieldRecommendedAmp": "Empfohlener Verstärker",
+  "catalogFieldOpticalPower": "Optische Leistung",
+  "catalogFieldColors": "Farben",
+  "catalogFieldScanner": "Scanner",
+  "catalogFieldClass": "Laserklasse",
+  "catalogFieldConsumption": "Leistungsaufnahme"
 }

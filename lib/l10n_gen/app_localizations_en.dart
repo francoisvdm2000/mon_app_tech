@@ -447,7 +447,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Selection by manufacturer, type and product, with information and manual.';
 
   @override
-  String get lightCatalogTitle => 'Catalog';
+  String get lightCatalogTitle => 'Lighting catalogue';
 
   @override
   String get lightDisclaimerShort =>
@@ -15523,4 +15523,82 @@ class AppLocalizationsEn extends AppLocalizations {
   String audioStatusLimiterRequired(Object ratio) {
     return '⚠  ×$ratio — limiter required';
   }
+
+  @override
+  String get catalogSearchHint => 'Search a brand, model, type…';
+
+  @override
+  String get catalogSearchNoResults => 'No results';
+
+  @override
+  String catalogSearchResultsCount(Object count) {
+    return '$count results';
+  }
+
+  @override
+  String get soundCatalogTitle => 'Sound catalogue';
+
+  @override
+  String get soundCatalogSubtitle =>
+      'Amplifiers and loudspeakers: specs and manuals';
+
+  @override
+  String get laserCatalogTitle => 'Laser catalogue';
+
+  @override
+  String get laserCatalogSubtitle =>
+      'Laser projectors: power, beam, divergence';
+
+  @override
+  String get catalogAmplifiers => 'Amplifiers';
+
+  @override
+  String get catalogSpeakers => 'Loudspeakers';
+
+  @override
+  String get catalogUseValues => 'Use';
+
+  @override
+  String get laserPickFromCatalog => 'Pick from catalogue';
+
+  @override
+  String get laserCatalogDisclaimer =>
+      'Manufacturer-stated values, not measured.';
+
+  @override
+  String get laserCatalogMissingValues =>
+      'Beam diameter or divergence not published for this laser: fill them in manually.';
+
+  @override
+  String get catalogFieldChannels => 'Channels';
+
+  @override
+  String get catalogFieldPowerPerChannel => 'Power per channel';
+
+  @override
+  String get catalogFieldType => 'Type';
+
+  @override
+  String get catalogFieldSection => 'Section';
+
+  @override
+  String get catalogFieldPowerHandling => 'Power handling (RMS/AES)';
+
+  @override
+  String get catalogFieldRecommendedAmp => 'Recommended amplifier';
+
+  @override
+  String get catalogFieldOpticalPower => 'Optical power';
+
+  @override
+  String get catalogFieldColors => 'Colours';
+
+  @override
+  String get catalogFieldScanner => 'Scanners';
+
+  @override
+  String get catalogFieldClass => 'Laser class';
+
+  @override
+  String get catalogFieldConsumption => 'Power consumption';
 }

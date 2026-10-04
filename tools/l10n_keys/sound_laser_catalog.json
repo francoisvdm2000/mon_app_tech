@@ -1,0 +1,23 @@
+{
+  "soundCatalogTitle": {"fr": "Catalogue son", "en": "Sound catalogue", "de": "Sound-Katalog", "es": "Catálogo de sonido", "nl": "Geluidscatalogus", "pt": "Catálogo de som"},
+  "soundCatalogSubtitle": {"fr": "Amplis et enceintes : specs et manuels", "en": "Amplifiers and loudspeakers: specs and manuals", "de": "Verstärker und Lautsprecher: Daten und Handbücher", "es": "Amplificadores y altavoces: especificaciones y manuales", "nl": "Versterkers en luidsprekers: specificaties en handleidingen", "pt": "Amplificadores e colunas: especificações e manuais"},
+  "laserCatalogTitle": {"fr": "Catalogue laser", "en": "Laser catalogue", "de": "Laser-Katalog", "es": "Catálogo láser", "nl": "Lasercatalogus", "pt": "Catálogo laser"},
+  "laserCatalogSubtitle": {"fr": "Projecteurs laser : puissance, faisceau, divergence", "en": "Laser projectors: power, beam, divergence", "de": "Laserprojektoren: Leistung, Strahl, Divergenz", "es": "Proyectores láser: potencia, haz, divergencia", "nl": "Laserprojectoren: vermogen, straal, divergentie", "pt": "Projetores laser: potência, feixe, divergência"},
+  "catalogAmplifiers": {"fr": "Amplis", "en": "Amplifiers", "de": "Verstärker", "es": "Amplificadores", "nl": "Versterkers", "pt": "Amplificadores"},
+  "catalogSpeakers": {"fr": "Enceintes", "en": "Loudspeakers", "de": "Lautsprecher", "es": "Altavoces", "nl": "Luidsprekers", "pt": "Colunas"},
+  "catalogUseValues": {"fr": "Utiliser", "en": "Use", "de": "Übernehmen", "es": "Usar", "nl": "Gebruiken", "pt": "Usar"},
+  "laserPickFromCatalog": {"fr": "Choisir dans le catalogue", "en": "Pick from catalogue", "de": "Aus dem Katalog wählen", "es": "Elegir del catálogo", "nl": "Kiezen uit catalogus", "pt": "Escolher no catálogo"},
+  "laserCatalogDisclaimer": {"fr": "Valeurs annoncées par le fabricant, non mesurées.", "en": "Manufacturer-stated values, not measured.", "de": "Herstellerangaben, nicht gemessen.", "es": "Valores declarados por el fabricante, no medidos.", "nl": "Door de fabrikant opgegeven waarden, niet gemeten.", "pt": "Valores declarados pelo fabricante, não medidos."},
+  "laserCatalogMissingValues": {"fr": "Diamètre ou divergence non publiés pour ce laser : complétez à la main.", "en": "Beam diameter or divergence not published for this laser: fill them in manually.", "de": "Strahldurchmesser oder Divergenz für diesen Laser nicht veröffentlicht: bitte manuell eingeben.", "es": "Diámetro o divergencia no publicados para este láser: complételos manualmente.", "nl": "Straaldiameter of divergentie niet gepubliceerd voor deze laser: vul ze handmatig in.", "pt": "Diâmetro ou divergência não publicados para este laser: preencha manualmente."},
+  "catalogFieldChannels": {"fr": "Voies", "en": "Channels", "de": "Kanäle", "es": "Canales", "nl": "Kanalen", "pt": "Canais"},
+  "catalogFieldPowerPerChannel": {"fr": "Puissance par voie", "en": "Power per channel", "de": "Leistung pro Kanal", "es": "Potencia por canal", "nl": "Vermogen per kanaal", "pt": "Potência por canal"},
+  "catalogFieldType": {"fr": "Type", "en": "Type", "de": "Typ", "es": "Tipo", "nl": "Type", "pt": "Tipo"},
+  "catalogFieldSection": {"fr": "Section", "en": "Section", "de": "Sektion", "es": "Sección", "nl": "Sectie", "pt": "Secção"},
+  "catalogFieldPowerHandling": {"fr": "Tenue en puissance (RMS/AES)", "en": "Power handling (RMS/AES)", "de": "Belastbarkeit (RMS/AES)", "es": "Potencia admisible (RMS/AES)", "nl": "Belastbaarheid (RMS/AES)", "pt": "Potência admissível (RMS/AES)"},
+  "catalogFieldRecommendedAmp": {"fr": "Ampli recommandé", "en": "Recommended amplifier", "de": "Empfohlener Verstärker", "es": "Amplificador recomendado", "nl": "Aanbevolen versterker", "pt": "Amplificador recomendado"},
+  "catalogFieldOpticalPower": {"fr": "Puissance optique", "en": "Optical power", "de": "Optische Leistung", "es": "Potencia óptica", "nl": "Optisch vermogen", "pt": "Potência ótica"},
+  "catalogFieldColors": {"fr": "Couleurs", "en": "Colours", "de": "Farben", "es": "Colores", "nl": "Kleuren", "pt": "Cores"},
+  "catalogFieldScanner": {"fr": "Scanners", "en": "Scanners", "de": "Scanner", "es": "Escáneres", "nl": "Scanners", "pt": "Scanners"},
+  "catalogFieldClass": {"fr": "Classe laser", "en": "Laser class", "de": "Laserklasse", "es": "Clase láser", "nl": "Laserklasse", "pt": "Classe laser"},
+  "catalogFieldConsumption": {"fr": "Consommation", "en": "Power consumption", "de": "Leistungsaufnahme", "es": "Consumo", "nl": "Verbruik", "pt": "Consumo"}
+}

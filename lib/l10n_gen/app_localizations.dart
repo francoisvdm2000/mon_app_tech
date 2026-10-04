@@ -871,7 +871,7 @@ abstract class AppLocalizations {
   /// No description provided for @lightCatalogTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Catalogue'**
+  /// **'Catalogue lumière'**
   String get lightCatalogTitle;
 
   /// No description provided for @lightDisclaimerShort.
@@ -27550,6 +27550,150 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'⚠  ×{ratio} — limiteur indispensable'**
   String audioStatusLimiterRequired(Object ratio);
+
+  /// No description provided for @catalogSearchHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rechercher une marque, un modèle, un type…'**
+  String get catalogSearchHint;
+
+  /// No description provided for @catalogSearchNoResults.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun résultat'**
+  String get catalogSearchNoResults;
+
+  /// No description provided for @catalogSearchResultsCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'{count} résultats'**
+  String catalogSearchResultsCount(Object count);
+
+  /// No description provided for @soundCatalogTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Catalogue son'**
+  String get soundCatalogTitle;
+
+  /// No description provided for @soundCatalogSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Amplis et enceintes : specs et manuels'**
+  String get soundCatalogSubtitle;
+
+  /// No description provided for @laserCatalogTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Catalogue laser'**
+  String get laserCatalogTitle;
+
+  /// No description provided for @laserCatalogSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projecteurs laser : puissance, faisceau, divergence'**
+  String get laserCatalogSubtitle;
+
+  /// No description provided for @catalogAmplifiers.
+  ///
+  /// In fr, this message translates to:
+  /// **'Amplis'**
+  String get catalogAmplifiers;
+
+  /// No description provided for @catalogSpeakers.
+  ///
+  /// In fr, this message translates to:
+  /// **'Enceintes'**
+  String get catalogSpeakers;
+
+  /// No description provided for @catalogUseValues.
+  ///
+  /// In fr, this message translates to:
+  /// **'Utiliser'**
+  String get catalogUseValues;
+
+  /// No description provided for @laserPickFromCatalog.
+  ///
+  /// In fr, this message translates to:
+  /// **'Choisir dans le catalogue'**
+  String get laserPickFromCatalog;
+
+  /// No description provided for @laserCatalogDisclaimer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeurs annoncées par le fabricant, non mesurées.'**
+  String get laserCatalogDisclaimer;
+
+  /// No description provided for @laserCatalogMissingValues.
+  ///
+  /// In fr, this message translates to:
+  /// **'Diamètre ou divergence non publiés pour ce laser : complétez à la main.'**
+  String get laserCatalogMissingValues;
+
+  /// No description provided for @catalogFieldChannels.
+  ///
+  /// In fr, this message translates to:
+  /// **'Voies'**
+  String get catalogFieldChannels;
+
+  /// No description provided for @catalogFieldPowerPerChannel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance par voie'**
+  String get catalogFieldPowerPerChannel;
+
+  /// No description provided for @catalogFieldType.
+  ///
+  /// In fr, this message translates to:
+  /// **'Type'**
+  String get catalogFieldType;
+
+  /// No description provided for @catalogFieldSection.
+  ///
+  /// In fr, this message translates to:
+  /// **'Section'**
+  String get catalogFieldSection;
+
+  /// No description provided for @catalogFieldPowerHandling.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tenue en puissance (RMS/AES)'**
+  String get catalogFieldPowerHandling;
+
+  /// No description provided for @catalogFieldRecommendedAmp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ampli recommandé'**
+  String get catalogFieldRecommendedAmp;
+
+  /// No description provided for @catalogFieldOpticalPower.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance optique'**
+  String get catalogFieldOpticalPower;
+
+  /// No description provided for @catalogFieldColors.
+  ///
+  /// In fr, this message translates to:
+  /// **'Couleurs'**
+  String get catalogFieldColors;
+
+  /// No description provided for @catalogFieldScanner.
+  ///
+  /// In fr, this message translates to:
+  /// **'Scanners'**
+  String get catalogFieldScanner;
+
+  /// No description provided for @catalogFieldClass.
+  ///
+  /// In fr, this message translates to:
+  /// **'Classe laser'**
+  String get catalogFieldClass;
+
+  /// No description provided for @catalogFieldConsumption.
+  ///
+  /// In fr, this message translates to:
+  /// **'Consommation'**
+  String get catalogFieldConsumption;
 }
 
 class _AppLocalizationsDelegate

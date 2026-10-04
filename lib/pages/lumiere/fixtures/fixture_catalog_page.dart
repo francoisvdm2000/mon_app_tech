@@ -28,6 +28,8 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
 
   late final AnimationController _spinController;
 
+  final TextEditingController _searchCtrl = TextEditingController();
+
   @override
   void initState() {
     super.initState();
@@ -39,6 +41,7 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
   @override
   void dispose() {
     _spinController.dispose();
+    _searchCtrl.dispose();
     super.dispose();
   }
 
@@ -116,6 +119,129 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
     final s =
         (value % 1 == 0) ? value.toStringAsFixed(0) : value.toStringAsFixed(1);
     return '$s $unit';
+  }
+
+  /// Recherche plein texte : tous les mots doivent apparaître dans
+  /// « marque modèle type » (insensible à la casse).
+  List<(Manufacturer, Product)> _search(String query) {
+    final tokens = query
+        .toLowerCase()
+        .split(RegExp(r'\s+'))
+        .where((t) => t.isNotEmpty)
+        .toList();
+    if (tokens.isEmpty || _catalog == null) return const [];
+    final out = <(Manufacturer, Product)>[];
+    for (final m in _catalog!.manufacturers) {
+      for (final p in m.products) {
+        final hay = '${m.name} ${p.name} ${p.type}'.toLowerCase();
+        if (tokens.every(hay.contains)) out.add((m, p));
+      }
+    }
+    out.sort((a, b) {
+      final c = a.$1.name.toLowerCase().compareTo(b.$1.name.toLowerCase());
+      return c != 0 ? c : a.$2.name.toLowerCase().compareTo(b.$2.name.toLowerCase());
+    });
+    return out;
+  }
+
+  void _selectFromSearch(Manufacturer m, Product p) {
+    FocusScope.of(context).unfocus();
+    setState(() {
+      _manufacturerName = m.name;
+      _type = p.type;
+      _productName = p.name;
+      _dmxModeName = null;
+      _searchCtrl.clear();
+    });
+  }
+
+  Widget _searchField(AppLocalizations loc) {
+    final searching = _searchCtrl.text.trim().isNotEmpty;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: TextField(
+        controller: _searchCtrl,
+        onChanged: (_) => setState(() {}),
+        textInputAction: TextInputAction.search,
+        decoration: InputDecoration(
+          hintText: loc.catalogSearchHint,
+          prefixIcon: const Icon(Icons.search_rounded),
+          suffixIcon: searching
+              ? IconButton(
+                  icon: const Icon(Icons.clear_rounded),
+                  onPressed: () => setState(_searchCtrl.clear),
+                )
+              : null,
+          filled: true,
+          fillColor: const Color(0xFF161622),
+          contentPadding: const EdgeInsets.symmetric(vertical: 12),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(14),
+            borderSide: BorderSide.none,
+          ),
+        ),
+      ),
+    );
+  }
+
+  List<Widget> _searchResults(AppLocalizations loc) {
+    final all = _search(_searchCtrl.text);
+    if (all.isEmpty) {
+      return [
+        Padding(
+          padding: const EdgeInsets.all(24),
+          child: Center(
+            child: Text(loc.catalogSearchNoResults,
+                style: const TextStyle(color: Colors.white54)),
+          ),
+        ),
+      ];
+    }
+    const maxShown = 80;
+    final shown = all.take(maxShown);
+    return [
+      Padding(
+        padding: const EdgeInsets.only(bottom: 8, left: 4),
+        child: Text(
+          loc.catalogSearchResultsCount(all.length),
+          style: const TextStyle(color: Colors.white54, fontSize: 12),
+        ),
+      ),
+      for (final (m, p) in shown)
+        Padding(
+          padding: const EdgeInsets.only(bottom: 6),
+          child: Material(
+            color: const Color(0xFF161622),
+            borderRadius: BorderRadius.circular(14),
+            child: ListTile(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14)),
+              title: Text(p.name,
+                  style: const TextStyle(fontWeight: FontWeight.w700)),
+              subtitle: Text('${m.name} · ${p.type}'),
+              trailing: _dmxSummary(p) == null
+                  ? const Icon(Icons.chevron_right_rounded)
+                  : Text(_dmxSummary(p)!,
+                      style: const TextStyle(
+                          color: Colors.white70, fontWeight: FontWeight.w600)),
+              onTap: () => _selectFromSearch(m, p),
+            ),
+          ),
+        ),
+    ];
+  }
+
+  /// « 12–38 ch » d'après les modes DMX, ou le nombre de canaux simple.
+  String? _dmxSummary(Product p) {
+    final chans = p.modes.map((m) => m.dmxChannels).where((c) => c > 0).toList();
+    if (chans.isEmpty) {
+      final c = p.dmxChannels;
+      return (c == null || c <= 0) ? null : '$c ch';
+    }
+    chans.sort();
+    return chans.first == chans.last
+        ? '${chans.first} ch'
+        : '${chans.first}–${chans.last} ch';
   }
 
   @override
@@ -212,6 +338,10 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
               style: const TextStyle(fontStyle: FontStyle.italic),
             ),
           ),
+          _searchField(loc),
+          if (_searchCtrl.text.trim().isNotEmpty)
+            ..._searchResults(loc)
+          else ...[
           _dropdown<String>(
             title: loc.catalogManufacturerTitle(manufacturers.length),
             value: _manufacturerName,
@@ -322,6 +452,7 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
               ),
             ),
           ),
+          ],
         ],
       ),
     );

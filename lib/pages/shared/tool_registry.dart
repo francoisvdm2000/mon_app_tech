@@ -8,6 +8,8 @@ import '../audio/audio_sub_cardioid_page.dart';
 import '../audio/audio_electroacoustic_page.dart';
 import '../audio/audio_spl_sum_page.dart';
 import '../audio/audio_amp_load_page.dart';
+import '../audio/sound_catalog_page.dart';
+import '../laser/laser_catalog_page.dart';
 import '../audio/audio_delay_distance_page.dart';
 import '../audio/audio_levels_page.dart';
 import '../audio/audio_noise_dose_page.dart';
@@ -177,6 +179,14 @@ class ToolRegistry {
         toolTitle: loc.audioAmpLoadTitle,
         icon: Icons.electrical_services_rounded,
         builder: (_) => const AudioAmpLoadPage(),
+      ),
+      ToolRefEntry(
+        pageId: 'tool:audio_sound_catalog',
+        sectionId: 'main',
+        categoryTitle: loc.audioHomeTitle,
+        toolTitle: loc.soundCatalogTitle,
+        icon: Icons.menu_book_rounded,
+        builder: (_) => const SoundCatalogPage(),
       ),
       ToolRefEntry(
         pageId: 'tool:audio_levels',
@@ -467,6 +477,14 @@ class ToolRegistry {
         toolTitle: loc.laserBeamSizeTitle,
         icon: Icons.straighten,
         builder: (_) => const LaserBeamSizePage(),
+      ),
+      ToolRefEntry(
+        pageId: 'tool:laser_catalog',
+        sectionId: 'main',
+        categoryTitle: loc.homeLaserTitle,
+        toolTitle: loc.laserCatalogTitle,
+        icon: Icons.menu_book_rounded,
+        builder: (_) => const LaserCatalogPage(),
       ),
 
       // ── Console ────────────────────────────────────────────────────────

@@ -1,0 +1,27 @@
+{
+  "catalogSearchHint": {
+    "fr": "Rechercher une marque, un modèle, un type…",
+    "en": "Search a brand, model, type…",
+    "de": "Marke, Modell, Typ suchen…",
+    "es": "Buscar marca, modelo, tipo…",
+    "nl": "Zoek merk, model, type…",
+    "pt": "Pesquisar marca, modelo, tipo…"
+  },
+  "catalogSearchNoResults": {
+    "fr": "Aucun résultat",
+    "en": "No results",
+    "de": "Keine Ergebnisse",
+    "es": "Sin resultados",
+    "nl": "Geen resultaten",
+    "pt": "Sem resultados"
+  },
+  "catalogSearchResultsCount": {
+    "placeholders": ["count"],
+    "fr": "{count} résultats",
+    "en": "{count} results",
+    "de": "{count} Ergebnisse",
+    "es": "{count} resultados",
+    "nl": "{count} resultaten",
+    "pt": "{count} resultados"
+  }
+}

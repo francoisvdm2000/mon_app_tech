@@ -39,6 +39,9 @@ class AmpPreset {
   /// Remarque technique courte (neutre en langue : chiffres, sigles).
   final String? note;
 
+  /// Lien vers le manuel / la page produit.
+  final String? manualUrl;
+
   const AmpPreset({
     required this.brand,
     required this.model,
@@ -46,7 +49,11 @@ class AmpPreset {
     required this.zMin,
     required this.ratings,
     this.note,
+    this.manualUrl,
   });
+
+  /// Clé stable pour retrouver un même produit d'une version du catalogue à l'autre.
+  String get key => '$brand|$model';
 
   String get fullName => '$brand $model';
 
@@ -96,6 +103,10 @@ class SpkPreset {
 
   final String? note;
 
+  /// Type (Line array, Point source, Subwoofer…) et lien manuel (catalogue).
+  final String? type;
+  final String? manualUrl;
+
   const SpkPreset({
     required this.brand,
     required this.model,
@@ -105,7 +116,11 @@ class SpkPreset {
     this.ampMin,
     this.ampMax,
     this.note,
+    this.type,
+    this.manualUrl,
   });
+
+  String get key => '$brand|$model|${section ?? ''}';
 
   String get label => section == null ? model : '$model — $section';
   String get fullName => '$brand $label';

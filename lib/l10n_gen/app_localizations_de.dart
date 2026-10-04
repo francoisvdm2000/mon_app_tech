@@ -448,7 +448,7 @@ class AppLocalizationsDe extends AppLocalizations {
       'Auswahl nach Hersteller, Typ und Produkt, mit Informationen und Handbuch.';
 
   @override
-  String get lightCatalogTitle => 'Katalog';
+  String get lightCatalogTitle => 'Licht-Katalog';
 
   @override
   String get lightDisclaimerShort =>
@@ -15662,4 +15662,81 @@ class AppLocalizationsDe extends AppLocalizations {
   String audioStatusLimiterRequired(Object ratio) {
     return '⚠  ×$ratio — Limiter erforderlich';
   }
+
+  @override
+  String get catalogSearchHint => 'Marke, Modell, Typ suchen…';
+
+  @override
+  String get catalogSearchNoResults => 'Keine Ergebnisse';
+
+  @override
+  String catalogSearchResultsCount(Object count) {
+    return '$count Ergebnisse';
+  }
+
+  @override
+  String get soundCatalogTitle => 'Sound-Katalog';
+
+  @override
+  String get soundCatalogSubtitle =>
+      'Verstärker und Lautsprecher: Daten und Handbücher';
+
+  @override
+  String get laserCatalogTitle => 'Laser-Katalog';
+
+  @override
+  String get laserCatalogSubtitle =>
+      'Laserprojektoren: Leistung, Strahl, Divergenz';
+
+  @override
+  String get catalogAmplifiers => 'Verstärker';
+
+  @override
+  String get catalogSpeakers => 'Lautsprecher';
+
+  @override
+  String get catalogUseValues => 'Übernehmen';
+
+  @override
+  String get laserPickFromCatalog => 'Aus dem Katalog wählen';
+
+  @override
+  String get laserCatalogDisclaimer => 'Herstellerangaben, nicht gemessen.';
+
+  @override
+  String get laserCatalogMissingValues =>
+      'Strahldurchmesser oder Divergenz für diesen Laser nicht veröffentlicht: bitte manuell eingeben.';
+
+  @override
+  String get catalogFieldChannels => 'Kanäle';
+
+  @override
+  String get catalogFieldPowerPerChannel => 'Leistung pro Kanal';
+
+  @override
+  String get catalogFieldType => 'Typ';
+
+  @override
+  String get catalogFieldSection => 'Sektion';
+
+  @override
+  String get catalogFieldPowerHandling => 'Belastbarkeit (RMS/AES)';
+
+  @override
+  String get catalogFieldRecommendedAmp => 'Empfohlener Verstärker';
+
+  @override
+  String get catalogFieldOpticalPower => 'Optische Leistung';
+
+  @override
+  String get catalogFieldColors => 'Farben';
+
+  @override
+  String get catalogFieldScanner => 'Scanner';
+
+  @override
+  String get catalogFieldClass => 'Laserklasse';
+
+  @override
+  String get catalogFieldConsumption => 'Leistungsaufnahme';
 }

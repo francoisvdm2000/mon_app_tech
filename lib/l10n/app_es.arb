@@ -472,7 +472,7 @@
   "laserZoneSzedDesc": "zona sensible",
   "legalNotices": "Avisos legales",
   "lightCatalogDescription": "Selección por fabricante, tipo y producto, con información y manual.",
-  "lightCatalogTitle": "Catalogar",
+  "lightCatalogTitle": "Catálogo de iluminación",
   "lightDisclaimerShort": "Herramientas indicativas. Consulta siempre la documentación del fabricante.",
   "lightDmxSwitchDescription": "Conversión indicativa entre dirección DMX e interruptores, con navegación por intervalos.",
   "lightDmxSwitchTitle": "Interruptor DIP DMX",
@@ -5910,5 +5910,34 @@
     "placeholders": {
       "ratio": {}
     }
-  }
+  },
+  "catalogSearchHint": "Buscar marca, modelo, tipo…",
+  "catalogSearchNoResults": "Sin resultados",
+  "catalogSearchResultsCount": "{count} resultados",
+  "@catalogSearchResultsCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "soundCatalogTitle": "Catálogo de sonido",
+  "soundCatalogSubtitle": "Amplificadores y altavoces: especificaciones y manuales",
+  "laserCatalogTitle": "Catálogo láser",
+  "laserCatalogSubtitle": "Proyectores láser: potencia, haz, divergencia",
+  "catalogAmplifiers": "Amplificadores",
+  "catalogSpeakers": "Altavoces",
+  "catalogUseValues": "Usar",
+  "laserPickFromCatalog": "Elegir del catálogo",
+  "laserCatalogDisclaimer": "Valores declarados por el fabricante, no medidos.",
+  "laserCatalogMissingValues": "Diámetro o divergencia no publicados para este láser: complételos manualmente.",
+  "catalogFieldChannels": "Canales",
+  "catalogFieldPowerPerChannel": "Potencia por canal",
+  "catalogFieldType": "Tipo",
+  "catalogFieldSection": "Sección",
+  "catalogFieldPowerHandling": "Potencia admisible (RMS/AES)",
+  "catalogFieldRecommendedAmp": "Amplificador recomendado",
+  "catalogFieldOpticalPower": "Potencia óptica",
+  "catalogFieldColors": "Colores",
+  "catalogFieldScanner": "Escáneres",
+  "catalogFieldClass": "Clase láser",
+  "catalogFieldConsumption": "Consumo"
 }

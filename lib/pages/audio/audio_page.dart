@@ -10,6 +10,7 @@ import 'audio_spl_distance_page.dart';
 import 'audio_delay_distance_page.dart';
 import 'audio_wavelength_page.dart';
 import 'audio_amp_load_page.dart';
+import 'sound_catalog_page.dart';
 import 'audio_spl_sum_page.dart';
 import 'audio_levels_page.dart';
 import 'audio_electroacoustic_page.dart';
@@ -215,6 +216,16 @@ class _AudioPageState extends State<AudioPage> {
                     ? () => Navigator.push(context,
                         MaterialPageRoute(builder: (_) => const AudioAmpLoadPage()))
                     : _goToSubscription,
+              ),
+              _AudioToolTile(
+                icon: Icons.menu_book_rounded,
+                title: loc.soundCatalogTitle,
+                subtitle: loc.soundCatalogSubtitle,
+                free: true,
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => const SoundCatalogPage())),
               ),
               _AudioToolTile(
                 icon: Icons.cable_rounded,
