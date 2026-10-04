@@ -15601,4 +15601,74 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get catalogFieldConsumption => 'Power consumption';
+
+  @override
+  String get homeSafetyTitle =>
+      'Safety';
+
+  @override
+  String get homeSafetySubtitle =>
+      'Safety plans, installation certificate';
+
+  @override
+  String get subscriptionCategorySafetyTitle =>
+      'Safety';
+
+  @override
+  String get subscriptionCategorySafetyDescription =>
+      'Safety plans, installation certificate with photos, reservations and signature, PDF export.';
+
+  @override
+  String get subscriptionHeadlineSafetySubtitle =>
+      'Write your safety plans and installation certificates on site, with signed PDF export.';
+
+  @override
+  String get safetyPageTitle =>
+      'Safety';
+
+  @override
+  String get safetySectionDocuments =>
+      'Documents';
+
+  @override
+  String get safetyPpspsTitle =>
+      'Safety plans';
+
+  @override
+  String get safetyPpspsSubtitle =>
+      'PPSPS (France), safety plan (Belgium)';
+
+  @override
+  String get safetyAttestationTitle =>
+      'Installation check';
+
+  @override
+  String get safetyAttestationSubtitle =>
+      'Checks, reservations and signature';
+
+  @override
+  String get safetyComingSoon =>
+      'Available in a future version.';
+
+  @override
+  String get safetyLibraryTitle =>
+      'Library';
+
+  @override
+  String safetyLibrarySummary(Object risks, Object measures, Object controls) {
+    return '$risks risks · $measures measures · $controls checks';
+  }
+
+  @override
+  String safetyLibraryUpdated(Object date) {
+    return 'Updated: $date';
+  }
+
+  @override
+  String get safetyLibraryOffline =>
+      'Local copy, works offline';
+
+  @override
+  String get safetyDisclaimer =>
+      'Drafting aid only. The content of the documents remains the responsibility of the signing company.';
 }

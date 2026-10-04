@@ -11,6 +11,7 @@ enum SubscriptionCategory {
   rigging,
   sonRf,
   network,
+  safety,
   pro,
 }
 
@@ -39,6 +40,8 @@ extension SubscriptionCategoryExt on SubscriptionCategory {
           return 'ShowTechTools_SonRF';
         case SubscriptionCategory.network:
           return 'ShowTechTools_Network';
+        case SubscriptionCategory.safety:
+          return 'ShowTechTools_Safety';
         case SubscriptionCategory.pro:
           return 'eu.openwhite.showtechtools.pro.year';
       }
@@ -61,6 +64,8 @@ extension SubscriptionCategoryExt on SubscriptionCategory {
         return 'showtech.sonrf.year';
       case SubscriptionCategory.network:
         return 'showtech.network.year';
+      case SubscriptionCategory.safety:
+        return 'showtech.safety.year';
       case SubscriptionCategory.pro:
         return 'eu.openwhite.showtechtools.pro.year';
     }

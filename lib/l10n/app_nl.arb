@@ -5939,5 +5939,34 @@
   "catalogFieldColors": "Kleuren",
   "catalogFieldScanner": "Scanners",
   "catalogFieldClass": "Laserklasse",
-  "catalogFieldConsumption": "Verbruik"
+  "catalogFieldConsumption": "Verbruik",
+  "homeSafetyTitle": "Veiligheid",
+  "homeSafetySubtitle": "Veiligheidsplannen, montageattest",
+  "subscriptionCategorySafetyTitle": "Veiligheid",
+  "subscriptionCategorySafetyDescription": "Veiligheidsplannen, montageattest met foto's, voorbehouden en handtekening, PDF-export.",
+  "subscriptionHeadlineSafetySubtitle": "Stel uw veiligheidsplannen en montageattesten op locatie op, met ondertekende PDF-export.",
+  "safetyPageTitle": "Veiligheid",
+  "safetySectionDocuments": "Documenten",
+  "safetyPpspsTitle": "Veiligheidsplannen",
+  "safetyPpspsSubtitle": "PPSPS (Frankrijk), veiligheidsplan (België)",
+  "safetyAttestationTitle": "Montageattest",
+  "safetyAttestationSubtitle": "Controles, voorbehouden en handtekening",
+  "safetyComingSoon": "Beschikbaar in een volgende versie.",
+  "safetyLibraryTitle": "Bibliotheek",
+  "safetyLibrarySummary": "{risks} risico's · {measures} maatregelen · {controls} controlepunten",
+  "@safetyLibrarySummary": {
+    "placeholders": {
+      "risks": {},
+      "measures": {},
+      "controls": {}
+    }
+  },
+  "safetyLibraryUpdated": "Bijgewerkt: {date}",
+  "@safetyLibraryUpdated": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "safetyLibraryOffline": "Lokale kopie, werkt offline",
+  "safetyDisclaimer": "Hulpmiddel bij het opstellen. De inhoud van de documenten blijft de verantwoordelijkheid van het ondertekenende bedrijf."
 }

@@ -117,6 +117,7 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
         SubscriptionCategory.console,
         SubscriptionCategory.electricity,
         SubscriptionCategory.rigging,
+        SubscriptionCategory.safety,
       ];
     }
 
@@ -250,6 +251,7 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
 
   static const _kColorSonRf    = Color(0xFF00E5FF);
   static const _kColorNetwork  = Color(0xFF00BCD4); // teal réseau
+  static const _kColorSafety   = Color(0xFFF5A524); // ambre sécurité
 
   Color _categoryColor(SubscriptionCategory category) {
     switch (category) {
@@ -271,6 +273,8 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
         return _kColorSonRf;
       case SubscriptionCategory.network:
         return _kColorNetwork;
+      case SubscriptionCategory.safety:
+        return _kColorSafety;
     }
   }
 
@@ -294,6 +298,8 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
         return Icons.speaker_group_rounded;
       case SubscriptionCategory.network:
         return Icons.wifi_tethering_rounded;
+      case SubscriptionCategory.safety:
+        return Icons.health_and_safety_rounded;
     }
   }
 
@@ -320,6 +326,8 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
         return 'Son & RF';
       case SubscriptionCategory.network:
         return loc.subscriptionCategoryNetworkTitle;
+      case SubscriptionCategory.safety:
+        return loc.subscriptionCategorySafetyTitle;
     }
   }
 
@@ -346,6 +354,8 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
         return 'Outils avancés Son & RF : sub cardioïde, SPL, IM3, WiFi, scan terrain et plus.';
       case SubscriptionCategory.network:
         return loc.subscriptionCategoryNetworkDescription;
+      case SubscriptionCategory.safety:
+        return loc.subscriptionCategorySafetyDescription;
     }
   }
 
@@ -379,6 +389,8 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
         return 'Débloquez les outils Son & RF avancés : sub cardioïde, SPL, intermodulation IM3, canaux WiFi, scan terrain et journal de fréquences.';
       case SubscriptionCategory.network:
         return loc.subscriptionHeadlineNetworkSubtitle;
+      case SubscriptionCategory.safety:
+        return loc.subscriptionHeadlineSafetySubtitle;
       case null:
         return loc.subscriptionHeadlineAllSubtitle;
     }

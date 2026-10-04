@@ -5618,5 +5618,34 @@
   "catalogFieldColors": "Farben",
   "catalogFieldScanner": "Scanner",
   "catalogFieldClass": "Laserklasse",
-  "catalogFieldConsumption": "Leistungsaufnahme"
+  "catalogFieldConsumption": "Leistungsaufnahme",
+  "homeSafetyTitle": "Sicherheit",
+  "homeSafetySubtitle": "Sicherheitspläne, Montageabnahme",
+  "subscriptionCategorySafetyTitle": "Sicherheit",
+  "subscriptionCategorySafetyDescription": "Sicherheitspläne, Montageabnahme mit Fotos, Vorbehalten und Unterschrift, PDF-Export.",
+  "subscriptionHeadlineSafetySubtitle": "Erstellen Sie Sicherheitspläne und Montageabnahmen direkt vor Ort, mit unterschriebenem PDF-Export.",
+  "safetyPageTitle": "Sicherheit",
+  "safetySectionDocuments": "Dokumente",
+  "safetyPpspsTitle": "Sicherheitspläne",
+  "safetyPpspsSubtitle": "PPSPS (Frankreich), Sicherheitsplan (Belgien)",
+  "safetyAttestationTitle": "Montageabnahme",
+  "safetyAttestationSubtitle": "Prüfungen, Vorbehalte und Unterschrift",
+  "safetyComingSoon": "In einer kommenden Version verfügbar.",
+  "safetyLibraryTitle": "Bibliothek",
+  "safetyLibrarySummary": "{risks} Risiken · {measures} Maßnahmen · {controls} Prüfpunkte",
+  "@safetyLibrarySummary": {
+    "placeholders": {
+      "risks": {},
+      "measures": {},
+      "controls": {}
+    }
+  },
+  "safetyLibraryUpdated": "Aktualisiert: {date}",
+  "@safetyLibraryUpdated": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "safetyLibraryOffline": "Lokale Kopie, offline nutzbar",
+  "safetyDisclaimer": "Nur eine Erstellungshilfe. Für den Inhalt der Dokumente bleibt das unterzeichnende Unternehmen verantwortlich."
 }

@@ -15722,4 +15722,74 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get catalogFieldConsumption => 'Verbruik';
+
+  @override
+  String get homeSafetyTitle =>
+      'Veiligheid';
+
+  @override
+  String get homeSafetySubtitle =>
+      'Veiligheidsplannen, montageattest';
+
+  @override
+  String get subscriptionCategorySafetyTitle =>
+      'Veiligheid';
+
+  @override
+  String get subscriptionCategorySafetyDescription =>
+      'Veiligheidsplannen, montageattest met foto\'s, voorbehouden en handtekening, PDF-export.';
+
+  @override
+  String get subscriptionHeadlineSafetySubtitle =>
+      'Stel uw veiligheidsplannen en montageattesten op locatie op, met ondertekende PDF-export.';
+
+  @override
+  String get safetyPageTitle =>
+      'Veiligheid';
+
+  @override
+  String get safetySectionDocuments =>
+      'Documenten';
+
+  @override
+  String get safetyPpspsTitle =>
+      'Veiligheidsplannen';
+
+  @override
+  String get safetyPpspsSubtitle =>
+      'PPSPS (Frankrijk), veiligheidsplan (België)';
+
+  @override
+  String get safetyAttestationTitle =>
+      'Montageattest';
+
+  @override
+  String get safetyAttestationSubtitle =>
+      'Controles, voorbehouden en handtekening';
+
+  @override
+  String get safetyComingSoon =>
+      'Beschikbaar in een volgende versie.';
+
+  @override
+  String get safetyLibraryTitle =>
+      'Bibliotheek';
+
+  @override
+  String safetyLibrarySummary(Object risks, Object measures, Object controls) {
+    return '$risks risico\'s · $measures maatregelen · $controls controlepunten';
+  }
+
+  @override
+  String safetyLibraryUpdated(Object date) {
+    return 'Bijgewerkt: $date';
+  }
+
+  @override
+  String get safetyLibraryOffline =>
+      'Lokale kopie, werkt offline';
+
+  @override
+  String get safetyDisclaimer =>
+      'Hulpmiddel bij het opstellen. De inhoud van de documenten blijft de verantwoordelijkheid van het ondertekenende bedrijf.';
 }

@@ -5939,5 +5939,34 @@
   "catalogFieldColors": "Colours",
   "catalogFieldScanner": "Scanners",
   "catalogFieldClass": "Laser class",
-  "catalogFieldConsumption": "Power consumption"
+  "catalogFieldConsumption": "Power consumption",
+  "homeSafetyTitle": "Safety",
+  "homeSafetySubtitle": "Safety plans, installation certificate",
+  "subscriptionCategorySafetyTitle": "Safety",
+  "subscriptionCategorySafetyDescription": "Safety plans, installation certificate with photos, reservations and signature, PDF export.",
+  "subscriptionHeadlineSafetySubtitle": "Write your safety plans and installation certificates on site, with signed PDF export.",
+  "safetyPageTitle": "Safety",
+  "safetySectionDocuments": "Documents",
+  "safetyPpspsTitle": "Safety plans",
+  "safetyPpspsSubtitle": "PPSPS (France), safety plan (Belgium)",
+  "safetyAttestationTitle": "Installation check",
+  "safetyAttestationSubtitle": "Checks, reservations and signature",
+  "safetyComingSoon": "Available in a future version.",
+  "safetyLibraryTitle": "Library",
+  "safetyLibrarySummary": "{risks} risks · {measures} measures · {controls} checks",
+  "@safetyLibrarySummary": {
+    "placeholders": {
+      "risks": {},
+      "measures": {},
+      "controls": {}
+    }
+  },
+  "safetyLibraryUpdated": "Updated: {date}",
+  "@safetyLibraryUpdated": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "safetyLibraryOffline": "Local copy, works offline",
+  "safetyDisclaimer": "Drafting aid only. The content of the documents remains the responsibility of the signing company."
 }

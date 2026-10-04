@@ -20,6 +20,7 @@ export const CATEGORIES = [
   "rigging",
   "sonRf",
   "network",
+  "safety",
   "pro",
 ] as const;
 
@@ -40,6 +41,7 @@ const PRODUCT_ID_TO_CATEGORY: Record<string, Category> = {
   ShowTechTools_Rigging: "rigging",
   ShowTechTools_SonRF: "sonRf",
   ShowTechTools_Network: "network",
+  ShowTechTools_Safety: "safety",
   "eu.openwhite.showtechtools.pro.year": "pro",
   // Android / autres plateformes
   "showtech.video.year": "video",
@@ -50,6 +52,7 @@ const PRODUCT_ID_TO_CATEGORY: Record<string, Category> = {
   "showtech.rigging.year": "rigging",
   "showtech.sonrf.year": "sonRf",
   "showtech.network.year": "network",
+  "showtech.safety.year": "safety",
 };
 
 export function categoryFromProductId(productId: string): Category | null {

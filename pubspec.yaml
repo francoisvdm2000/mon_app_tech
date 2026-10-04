@@ -103,6 +103,7 @@ flutter:
     - assets/tool_icons/
     - assets/catalogs/sound.json
     - assets/catalogs/laser.json
+    - assets/catalogs/safety.json
 
 flutter_launcher_icons:
   android: true

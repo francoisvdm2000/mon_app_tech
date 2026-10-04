@@ -30,6 +30,7 @@ import 'audio/audio_page.dart';
 import 'rf/rf_page.dart';
 import 'network/network_page.dart';
 import 'timecode/timecode_page.dart';
+import 'safety/safety_page.dart';
 
 // ─── Couleurs d'accent par catégorie ───────────────────────────────────────
 const _kColorVideo        = Color(0xFF00B4D8);
@@ -47,6 +48,7 @@ const _kColorBpm          = Color(0xFFF72585);
 const _kColorReferences   = Color(0xFF7B8CDE);
 const _kColorPinned       = Color(0xFFFF7C38);
 const _kColorTimecode     = Color(0xFF5E60CE);
+const _kColorSafety       = Color(0xFFF5A524);
 
 // ─── Couleurs de fond ───────────────────────────────────────────────────────
 const _kBgPage   = Color(0xFF0D0D14);
@@ -646,6 +648,13 @@ class _PageAccueilState extends State<PageAccueil> {
                 subtitle: loc.homeRiggingSubtitle,
                 accentColor: _kColorRigging,
                 onTap: () => _push(const RiggingPage()),
+              ),
+              _homeTile(
+                icon: Icons.health_and_safety_rounded,
+                title: loc.homeSafetyTitle,
+                subtitle: loc.homeSafetySubtitle,
+                accentColor: _kColorSafety,
+                onTap: () => _push(const SafetyPage()),
               ),
               _homeTile(
                 imageAsset: 'assets/tool_icons/icone_conversion.png',

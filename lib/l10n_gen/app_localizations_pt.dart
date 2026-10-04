@@ -15686,4 +15686,74 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get catalogFieldConsumption => 'Consumo';
+
+  @override
+  String get homeSafetyTitle =>
+      'Segurança';
+
+  @override
+  String get homeSafetySubtitle =>
+      'Planos de segurança, certificado de montagem';
+
+  @override
+  String get subscriptionCategorySafetyTitle =>
+      'Segurança';
+
+  @override
+  String get subscriptionCategorySafetyDescription =>
+      'Planos de segurança, certificado de montagem com fotos, reservas e assinatura, exportação PDF.';
+
+  @override
+  String get subscriptionHeadlineSafetySubtitle =>
+      'Elabore os seus planos de segurança e certificados de montagem no local, com exportação PDF assinada.';
+
+  @override
+  String get safetyPageTitle =>
+      'Segurança';
+
+  @override
+  String get safetySectionDocuments =>
+      'Documentos';
+
+  @override
+  String get safetyPpspsTitle =>
+      'Planos de segurança';
+
+  @override
+  String get safetyPpspsSubtitle =>
+      'PPSPS (França), plano de segurança (Bélgica)';
+
+  @override
+  String get safetyAttestationTitle =>
+      'Montagem conforme';
+
+  @override
+  String get safetyAttestationSubtitle =>
+      'Controlos, reservas e assinatura';
+
+  @override
+  String get safetyComingSoon =>
+      'Disponível numa próxima versão.';
+
+  @override
+  String get safetyLibraryTitle =>
+      'Biblioteca';
+
+  @override
+  String safetyLibrarySummary(Object risks, Object measures, Object controls) {
+    return '$risks riscos · $measures medidas · $controls pontos de controlo';
+  }
+
+  @override
+  String safetyLibraryUpdated(Object date) {
+    return 'Atualizado: $date';
+  }
+
+  @override
+  String get safetyLibraryOffline =>
+      'Cópia local, funciona offline';
+
+  @override
+  String get safetyDisclaimer =>
+      'Ferramenta de apoio à redação. O conteúdo dos documentos continua a ser da responsabilidade da empresa signatária.';
 }

@@ -5939,5 +5939,34 @@
   "catalogFieldColors": "Colores",
   "catalogFieldScanner": "Escáneres",
   "catalogFieldClass": "Clase láser",
-  "catalogFieldConsumption": "Consumo"
+  "catalogFieldConsumption": "Consumo",
+  "homeSafetyTitle": "Seguridad",
+  "homeSafetySubtitle": "Planes de seguridad, certificado de montaje",
+  "subscriptionCategorySafetyTitle": "Seguridad",
+  "subscriptionCategorySafetyDescription": "Planes de seguridad, certificado de montaje con fotos, reservas y firma, exportación PDF.",
+  "subscriptionHeadlineSafetySubtitle": "Redacte sus planes de seguridad y certificados de montaje sobre el terreno, con exportación PDF firmada.",
+  "safetyPageTitle": "Seguridad",
+  "safetySectionDocuments": "Documentos",
+  "safetyPpspsTitle": "Planes de seguridad",
+  "safetyPpspsSubtitle": "PPSPS (Francia), plan de seguridad (Bélgica)",
+  "safetyAttestationTitle": "Montaje correcto",
+  "safetyAttestationSubtitle": "Controles, reservas y firma",
+  "safetyComingSoon": "Disponible en una próxima versión.",
+  "safetyLibraryTitle": "Biblioteca",
+  "safetyLibrarySummary": "{risks} riesgos · {measures} medidas · {controls} controles",
+  "@safetyLibrarySummary": {
+    "placeholders": {
+      "risks": {},
+      "measures": {},
+      "controls": {}
+    }
+  },
+  "safetyLibraryUpdated": "Actualizado: {date}",
+  "@safetyLibraryUpdated": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "safetyLibraryOffline": "Copia local, funciona sin conexión",
+  "safetyDisclaimer": "Herramienta de ayuda a la redacción. El contenido de los documentos sigue siendo responsabilidad de la empresa firmante."
 }

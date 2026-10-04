@@ -6238,5 +6238,34 @@
   "catalogFieldColors": "Couleurs",
   "catalogFieldScanner": "Scanners",
   "catalogFieldClass": "Classe laser",
-  "catalogFieldConsumption": "Consommation"
+  "catalogFieldConsumption": "Consommation",
+  "homeSafetyTitle": "Sécurité",
+  "homeSafetySubtitle": "PPSPS, attestation de bon montage",
+  "subscriptionCategorySafetyTitle": "Sécurité",
+  "subscriptionCategorySafetyDescription": "PPSPS et plan de sécurité, attestation de bon montage avec photos, réserves et signature, export PDF.",
+  "subscriptionHeadlineSafetySubtitle": "Rédigez vos plans de sécurité et vos attestations de bon montage sur le terrain, avec export PDF signé.",
+  "safetyPageTitle": "Sécurité",
+  "safetySectionDocuments": "Documents",
+  "safetyPpspsTitle": "Plans de sécurité",
+  "safetyPpspsSubtitle": "PPSPS (France), plan de sécurité (Belgique)",
+  "safetyAttestationTitle": "Bon montage",
+  "safetyAttestationSubtitle": "Contrôles, réserves et signature",
+  "safetyComingSoon": "Disponible dans une prochaine version.",
+  "safetyLibraryTitle": "Bibliothèque",
+  "safetyLibrarySummary": "{risks} risques · {measures} mesures · {controls} points de contrôle",
+  "@safetyLibrarySummary": {
+    "placeholders": {
+      "risks": {},
+      "measures": {},
+      "controls": {}
+    }
+  },
+  "safetyLibraryUpdated": "Mise à jour : {date}",
+  "@safetyLibraryUpdated": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "safetyLibraryOffline": "Copie locale, utilisable hors ligne",
+  "safetyDisclaimer": "Outil d'aide à la rédaction. Le contenu des documents reste sous la responsabilité de l'entreprise signataire."
 }

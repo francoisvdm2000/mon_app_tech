@@ -15684,4 +15684,74 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get catalogFieldConsumption => 'Consommation';
+
+  @override
+  String get homeSafetyTitle =>
+      'Sécurité';
+
+  @override
+  String get homeSafetySubtitle =>
+      'PPSPS, attestation de bon montage';
+
+  @override
+  String get subscriptionCategorySafetyTitle =>
+      'Sécurité';
+
+  @override
+  String get subscriptionCategorySafetyDescription =>
+      'PPSPS et plan de sécurité, attestation de bon montage avec photos, réserves et signature, export PDF.';
+
+  @override
+  String get subscriptionHeadlineSafetySubtitle =>
+      'Rédigez vos plans de sécurité et vos attestations de bon montage sur le terrain, avec export PDF signé.';
+
+  @override
+  String get safetyPageTitle =>
+      'Sécurité';
+
+  @override
+  String get safetySectionDocuments =>
+      'Documents';
+
+  @override
+  String get safetyPpspsTitle =>
+      'Plans de sécurité';
+
+  @override
+  String get safetyPpspsSubtitle =>
+      'PPSPS (France), plan de sécurité (Belgique)';
+
+  @override
+  String get safetyAttestationTitle =>
+      'Bon montage';
+
+  @override
+  String get safetyAttestationSubtitle =>
+      'Contrôles, réserves et signature';
+
+  @override
+  String get safetyComingSoon =>
+      'Disponible dans une prochaine version.';
+
+  @override
+  String get safetyLibraryTitle =>
+      'Bibliothèque';
+
+  @override
+  String safetyLibrarySummary(Object risks, Object measures, Object controls) {
+    return '$risks risques · $measures mesures · $controls points de contrôle';
+  }
+
+  @override
+  String safetyLibraryUpdated(Object date) {
+    return 'Mise à jour : $date';
+  }
+
+  @override
+  String get safetyLibraryOffline =>
+      'Copie locale, utilisable hors ligne';
+
+  @override
+  String get safetyDisclaimer =>
+      'Outil d\'aide à la rédaction. Le contenu des documents reste sous la responsabilité de l\'entreprise signataire.';
 }

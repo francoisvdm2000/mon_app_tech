@@ -27694,6 +27694,108 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Consommation'**
   String get catalogFieldConsumption;
+
+  /// No description provided for @homeSafetyTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sécurité'**
+  String get homeSafetyTitle;
+
+  /// No description provided for @homeSafetySubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'PPSPS, attestation de bon montage'**
+  String get homeSafetySubtitle;
+
+  /// No description provided for @subscriptionCategorySafetyTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sécurité'**
+  String get subscriptionCategorySafetyTitle;
+
+  /// No description provided for @subscriptionCategorySafetyDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'PPSPS et plan de sécurité, attestation de bon montage avec photos, réserves et signature, export PDF.'**
+  String get subscriptionCategorySafetyDescription;
+
+  /// No description provided for @subscriptionHeadlineSafetySubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rédigez vos plans de sécurité et vos attestations de bon montage sur le terrain, avec export PDF signé.'**
+  String get subscriptionHeadlineSafetySubtitle;
+
+  /// No description provided for @safetyPageTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sécurité'**
+  String get safetyPageTitle;
+
+  /// No description provided for @safetySectionDocuments.
+  ///
+  /// In fr, this message translates to:
+  /// **'Documents'**
+  String get safetySectionDocuments;
+
+  /// No description provided for @safetyPpspsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Plans de sécurité'**
+  String get safetyPpspsTitle;
+
+  /// No description provided for @safetyPpspsSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'PPSPS (France), plan de sécurité (Belgique)'**
+  String get safetyPpspsSubtitle;
+
+  /// No description provided for @safetyAttestationTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bon montage'**
+  String get safetyAttestationTitle;
+
+  /// No description provided for @safetyAttestationSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Contrôles, réserves et signature'**
+  String get safetyAttestationSubtitle;
+
+  /// No description provided for @safetyComingSoon.
+  ///
+  /// In fr, this message translates to:
+  /// **'Disponible dans une prochaine version.'**
+  String get safetyComingSoon;
+
+  /// No description provided for @safetyLibraryTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bibliothèque'**
+  String get safetyLibraryTitle;
+
+  /// No description provided for @safetyLibrarySummary.
+  ///
+  /// In fr, this message translates to:
+  /// **'{risks} risques · {measures} mesures · {controls} points de contrôle'**
+  String safetyLibrarySummary(Object risks, Object measures, Object controls);
+
+  /// No description provided for @safetyLibraryUpdated.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mise à jour : {date}'**
+  String safetyLibraryUpdated(Object date);
+
+  /// No description provided for @safetyLibraryOffline.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copie locale, utilisable hors ligne'**
+  String get safetyLibraryOffline;
+
+  /// No description provided for @safetyDisclaimer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Outil d'aide à la rédaction. Le contenu des documents reste sous la responsabilité de l'entreprise signataire.'**
+  String get safetyDisclaimer;
 }
 
 class _AppLocalizationsDelegate
