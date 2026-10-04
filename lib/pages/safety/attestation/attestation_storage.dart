@@ -61,7 +61,7 @@ class AttestationStorage {
   }
 }
 
-/// Photos d'une attestation : <documents de l'app>/attestation_photos/<id>/.
+/// Photos d'une attestation : `<documents de l'app>/attestation_photos/<id>/`.
 class AttestationPhotos {
   static final ImagePicker _picker = ImagePicker();
 
