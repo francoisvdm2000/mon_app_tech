@@ -15902,4 +15902,106 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get ppspsPhaseOrderError =>
       'The dates are out of order: load-in must come before the show, then load-out.';
+
+  @override
+  String get ppspsFindHospital =>
+      'Find the nearest hospital';
+
+  @override
+  String get ppspsFindHospitalSearching =>
+      'Searching…';
+
+  @override
+  String get ppspsFindHospitalNeedAddress =>
+      'First enter the venue or address of the event (Project step).';
+
+  @override
+  String get ppspsFindHospitalNoPlace =>
+      'The event address could not be found. Check it in the Project step, or enter the hospital manually.';
+
+  @override
+  String get ppspsFindHospitalError =>
+      'Search unavailable right now (connection?). Enter the hospital manually.';
+
+  @override
+  String get ppspsFindHospitalNone =>
+      'No hospital found within 30 km. Enter it manually.';
+
+  @override
+  String get ppspsFindHospitalTitle =>
+      'Nearby hospitals';
+
+  @override
+  String get ppspsFindHospitalVerify =>
+      'Check that the chosen hospital has an emergency department open during the event.';
+
+  @override
+  String ppspsDistanceKm(Object km) {
+    return '$km km';
+  }
+
+  @override
+  String get ppspsHospitalEmergency =>
+      'Emergency department';
+
+  @override
+  String get ppspsOsmAttribution =>
+      'Data © OpenStreetMap contributors';
+
+  @override
+  String get ppspsSectionEquipment =>
+      'Emergency equipment';
+
+  @override
+  String get ppspsFieldEquipmentDetails =>
+      'Details (locations, quantities, other equipment)';
+
+  @override
+  String get ppspsSectionSignatures =>
+      'Signatures';
+
+  @override
+  String get ppspsSignAuthor =>
+      'Prepared by';
+
+  @override
+  String get ppspsSignCoordinator =>
+      'Coordinator approval (optional)';
+
+  @override
+  String get ppspsNotSigned =>
+      'Not signed yet';
+
+  @override
+  String ppspsSignedOn(Object date) {
+    return 'Signed on $date';
+  }
+
+  @override
+  String get ppspsSignButton =>
+      'Sign';
+
+  @override
+  String get ppspsSignAgain =>
+      'Redo';
+
+  @override
+  String get ppspsSignRemove =>
+      'Remove signature';
+
+  @override
+  String get ppspsSignName =>
+      'Signatory\'s name';
+
+  @override
+  String get ppspsSignHint =>
+      'Sign with your finger in the white box.';
+
+  @override
+  String get ppspsSignClear =>
+      'Clear';
+
+  @override
+  String get ppspsSignValidate =>
+      'Confirm signature';
 }

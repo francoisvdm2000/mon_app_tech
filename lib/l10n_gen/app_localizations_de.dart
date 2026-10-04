@@ -16043,4 +16043,106 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get ppspsPhaseOrderError =>
       'Die Termine sind nicht in der richtigen Reihenfolge: erst Aufbau, dann Veranstaltung, dann Abbau.';
+
+  @override
+  String get ppspsFindHospital =>
+      'Nächstes Krankenhaus suchen';
+
+  @override
+  String get ppspsFindHospitalSearching =>
+      'Suche läuft…';
+
+  @override
+  String get ppspsFindHospitalNeedAddress =>
+      'Geben Sie zuerst Ort oder Adresse der Veranstaltung ein (Schritt Projekt).';
+
+  @override
+  String get ppspsFindHospitalNoPlace =>
+      'Die Adresse der Veranstaltung wurde nicht gefunden. Prüfen Sie sie im Schritt Projekt oder tragen Sie das Krankenhaus manuell ein.';
+
+  @override
+  String get ppspsFindHospitalError =>
+      'Suche derzeit nicht möglich (Verbindung?). Tragen Sie das Krankenhaus manuell ein.';
+
+  @override
+  String get ppspsFindHospitalNone =>
+      'Kein Krankenhaus im Umkreis von 30 km gefunden. Bitte manuell eintragen.';
+
+  @override
+  String get ppspsFindHospitalTitle =>
+      'Krankenhäuser in der Nähe';
+
+  @override
+  String get ppspsFindHospitalVerify =>
+      'Prüfen Sie, ob das gewählte Krankenhaus während der Veranstaltung eine geöffnete Notaufnahme hat.';
+
+  @override
+  String ppspsDistanceKm(Object km) {
+    return '$km km';
+  }
+
+  @override
+  String get ppspsHospitalEmergency =>
+      'Notaufnahme';
+
+  @override
+  String get ppspsOsmAttribution =>
+      'Daten © OpenStreetMap-Mitwirkende';
+
+  @override
+  String get ppspsSectionEquipment =>
+      'Notfallausrüstung';
+
+  @override
+  String get ppspsFieldEquipmentDetails =>
+      'Details (Standorte, Mengen, weitere Ausrüstung)';
+
+  @override
+  String get ppspsSectionSignatures =>
+      'Unterschriften';
+
+  @override
+  String get ppspsSignAuthor =>
+      'Erstellt von';
+
+  @override
+  String get ppspsSignCoordinator =>
+      'Freigabe des Koordinators (optional)';
+
+  @override
+  String get ppspsNotSigned =>
+      'Noch nicht unterschrieben';
+
+  @override
+  String ppspsSignedOn(Object date) {
+    return 'Unterschrieben am $date';
+  }
+
+  @override
+  String get ppspsSignButton =>
+      'Unterschreiben';
+
+  @override
+  String get ppspsSignAgain =>
+      'Erneut';
+
+  @override
+  String get ppspsSignRemove =>
+      'Unterschrift entfernen';
+
+  @override
+  String get ppspsSignName =>
+      'Name des Unterzeichners';
+
+  @override
+  String get ppspsSignHint =>
+      'Unterschreiben Sie mit dem Finger im weißen Feld.';
+
+  @override
+  String get ppspsSignClear =>
+      'Löschen';
+
+  @override
+  String get ppspsSignValidate =>
+      'Unterschrift bestätigen';
 }

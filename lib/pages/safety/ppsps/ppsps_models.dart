@@ -107,7 +107,8 @@ class PpspsEmergency {
   final String hospitalPhone;
   final String firstAiders; // noms des secouristes présents
   final String assemblyPoint; // point de rassemblement
-  final String equipment; // extincteurs, défibrillateur, trousse
+  final Set<String> equipmentItems; // IDs de kEmergencyEquipment cochés
+  final String equipment; // précisions : emplacements, quantités, autre
 
   const PpspsEmergency({
     this.hospitalName = '',
@@ -115,6 +116,7 @@ class PpspsEmergency {
     this.hospitalPhone = '',
     this.firstAiders = '',
     this.assemblyPoint = '',
+    this.equipmentItems = const {},
     this.equipment = '',
   });
 
@@ -124,6 +126,7 @@ class PpspsEmergency {
     String? hospitalPhone,
     String? firstAiders,
     String? assemblyPoint,
+    Set<String>? equipmentItems,
     String? equipment,
   }) =>
       PpspsEmergency(
@@ -132,6 +135,7 @@ class PpspsEmergency {
         hospitalPhone: hospitalPhone ?? this.hospitalPhone,
         firstAiders: firstAiders ?? this.firstAiders,
         assemblyPoint: assemblyPoint ?? this.assemblyPoint,
+        equipmentItems: equipmentItems ?? this.equipmentItems,
         equipment: equipment ?? this.equipment,
       );
 
@@ -141,6 +145,7 @@ class PpspsEmergency {
         'hospitalPhone': hospitalPhone,
         'firstAiders': firstAiders,
         'assemblyPoint': assemblyPoint,
+        'equipmentItems': equipmentItems.toList(),
         'equipment': equipment,
       };
 
@@ -151,8 +156,126 @@ class PpspsEmergency {
         hospitalPhone: _s(json?['hospitalPhone']),
         firstAiders: _s(json?['firstAiders']),
         assemblyPoint: _s(json?['assemblyPoint']),
+        equipmentItems: {
+          for (final i in (json?['equipmentItems'] as List? ?? const [])) _s(i)
+        },
         equipment: _s(json?['equipment']),
       );
+}
+
+/// Matériel de secours proposé à cocher (libellés dans chaque langue de
+/// document, utilisés à l'écran et dans le PDF).
+class EmergencyEquipment {
+  final String id;
+  final Map<String, String> labels;
+  const EmergencyEquipment(this.id, this.labels);
+
+  String labelFor(String lang) => labels[lang] ?? labels['en'] ?? id;
+}
+
+const List<EmergencyEquipment> kEmergencyEquipment = [
+  EmergencyEquipment('extinguisher', {
+    'fr': 'Extincteurs (eau / poudre)',
+    'en': 'Fire extinguishers (water / powder)',
+    'nl': 'Blustoestellen (water / poeder)',
+    'de': 'Feuerlöscher (Wasser / Pulver)',
+    'es': 'Extintores (agua / polvo)',
+    'pt': 'Extintores (água / pó)',
+  }),
+  EmergencyEquipment('extinguisherCo2', {
+    'fr': 'Extincteurs CO2 (feux électriques)',
+    'en': 'CO2 extinguishers (electrical fires)',
+    'nl': 'CO2-blustoestellen (elektrische branden)',
+    'de': 'CO2-Feuerlöscher (Elektrobrände)',
+    'es': 'Extintores de CO2 (fuegos eléctricos)',
+    'pt': 'Extintores de CO2 (fogos elétricos)',
+  }),
+  EmergencyEquipment('fireBlanket', {
+    'fr': 'Couverture anti-feu',
+    'en': 'Fire blanket',
+    'nl': 'Blusdeken',
+    'de': 'Löschdecke',
+    'es': 'Manta ignífuga',
+    'pt': 'Manta ignífuga',
+  }),
+  EmergencyEquipment('aed', {
+    'fr': 'Défibrillateur (DAE)',
+    'en': 'Defibrillator (AED)',
+    'nl': 'Defibrillator (AED)',
+    'de': 'Defibrillator (AED)',
+    'es': 'Desfibrilador (DEA)',
+    'pt': 'Desfibrilhador (DAE)',
+  }),
+  EmergencyEquipment('firstAidKit', {
+    'fr': 'Trousse de premiers secours',
+    'en': 'First aid kit',
+    'nl': 'EHBO-koffer',
+    'de': 'Erste-Hilfe-Kasten',
+    'es': 'Botiquín de primeros auxilios',
+    'pt': 'Kit de primeiros socorros',
+  }),
+  EmergencyEquipment('eyeWash', {
+    'fr': 'Rince-œil',
+    'en': 'Eye wash',
+    'nl': 'Oogspoeling',
+    'de': 'Augenspülung',
+    'es': 'Lavaojos',
+    'pt': 'Lava-olhos',
+  }),
+  EmergencyEquipment('stretcher', {
+    'fr': 'Brancard',
+    'en': 'Stretcher',
+    'nl': 'Brancard',
+    'de': 'Krankentrage',
+    'es': 'Camilla',
+    'pt': 'Maca',
+  }),
+  EmergencyEquipment('emergencyLighting', {
+    'fr': 'Éclairage de secours et lampes',
+    'en': 'Emergency lighting and torches',
+    'nl': 'Noodverlichting en zaklampen',
+    'de': 'Notbeleuchtung und Taschenlampen',
+    'es': 'Iluminación de emergencia y linternas',
+    'pt': 'Iluminação de emergência e lanternas',
+  }),
+  EmergencyEquipment('radios', {
+    'fr': 'Radios (talkies-walkies)',
+    'en': 'Two-way radios',
+    'nl': 'Portofoons',
+    'de': 'Funkgeräte',
+    'es': 'Radios (walkie-talkies)',
+    'pt': 'Rádios (walkie-talkies)',
+  }),
+];
+
+/// Signature apposée dans l'app (image PNG encodée en base64).
+class PpspsSignature {
+  final String name;
+  final String pngBase64;
+  final DateTime signedAt;
+
+  const PpspsSignature({
+    required this.name,
+    required this.pngBase64,
+    required this.signedAt,
+  });
+
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        'png': pngBase64,
+        'signedAt': signedAt.toIso8601String(),
+      };
+
+  static PpspsSignature? fromJson(dynamic json) {
+    if (json is! Map) return null;
+    final png = _s(json['png']);
+    if (png.isEmpty) return null;
+    return PpspsSignature(
+      name: _s(json['name']),
+      pngBase64: png,
+      signedAt: _date(json['signedAt']) ?? DateTime.now(),
+    );
+  }
 }
 
 /// Numéro d'urgence affiché dans le plan, avec son libellé dans chaque
@@ -269,6 +392,9 @@ class PpspsDocument {
   /// Langues choisies au dernier export PDF (codes fr, nl, en…).
   final List<String> pdfLanguages;
 
+  /// Signatures : « author » (rédacteur) et « coordinator » (visa).
+  final Map<String, PpspsSignature> signatures;
+
   const PpspsDocument({
     required this.id,
     required this.createdAt,
@@ -290,6 +416,7 @@ class PpspsDocument {
     this.risks = const {},
     this.emergency = const PpspsEmergency(),
     this.pdfLanguages = const [],
+    this.signatures = const {},
   });
 
   factory PpspsDocument.create(String country) {
@@ -339,6 +466,7 @@ class PpspsDocument {
     Map<String, PpspsRiskSelection>? risks,
     PpspsEmergency? emergency,
     List<String>? pdfLanguages,
+    Map<String, PpspsSignature>? signatures,
   }) =>
       PpspsDocument(
         id: id,
@@ -361,6 +489,7 @@ class PpspsDocument {
         risks: risks ?? this.risks,
         emergency: emergency ?? this.emergency,
         pdfLanguages: pdfLanguages ?? this.pdfLanguages,
+        signatures: signatures ?? this.signatures,
       );
 
   /// Copie pour un nouvel événement : garde l'entreprise, les intervenants,
@@ -412,6 +541,9 @@ class PpspsDocument {
         'risks': {for (final e in risks.entries) e.key: e.value.toJson()},
         'emergency': emergency.toJson(),
         'pdfLanguages': pdfLanguages,
+        'signatures': {
+          for (final e in signatures.entries) e.key: e.value.toJson()
+        },
       };
 
   factory PpspsDocument.fromJson(Map<String, dynamic> json) {
@@ -464,6 +596,12 @@ class PpspsDocument {
       pdfLanguages: [
         for (final l in (json['pdfLanguages'] as List? ?? const [])) _s(l)
       ],
+      signatures: {
+        if (json['signatures'] is Map)
+          for (final e in (json['signatures'] as Map).entries)
+            if (PpspsSignature.fromJson(e.value) != null)
+              e.key.toString(): PpspsSignature.fromJson(e.value)!,
+      },
     );
   }
 }

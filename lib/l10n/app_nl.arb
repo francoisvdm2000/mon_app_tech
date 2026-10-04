@@ -6071,5 +6071,40 @@
       "count": {}
     }
   },
-  "ppspsPhaseOrderError": "De data volgen elkaar niet op: eerst opbouw, dan evenement, dan afbouw."
+  "ppspsPhaseOrderError": "De data volgen elkaar niet op: eerst opbouw, dan evenement, dan afbouw.",
+  "ppspsFindHospital": "Dichtstbijzijnde ziekenhuis zoeken",
+  "ppspsFindHospitalSearching": "Bezig met zoeken…",
+  "ppspsFindHospitalNeedAddress": "Vul eerst de locatie of het adres van het evenement in (stap Project).",
+  "ppspsFindHospitalNoPlace": "Het adres van het evenement is niet gevonden. Controleer het in de stap Project of vul het ziekenhuis handmatig in.",
+  "ppspsFindHospitalError": "Zoeken lukt nu niet (verbinding?). Vul het ziekenhuis handmatig in.",
+  "ppspsFindHospitalNone": "Geen ziekenhuis gevonden binnen 30 km. Vul het handmatig in.",
+  "ppspsFindHospitalTitle": "Ziekenhuizen in de buurt",
+  "ppspsFindHospitalVerify": "Controleer of het gekozen ziekenhuis tijdens het evenement een open spoedafdeling heeft.",
+  "ppspsDistanceKm": "{km} km",
+  "@ppspsDistanceKm": {
+    "placeholders": {
+      "km": {}
+    }
+  },
+  "ppspsHospitalEmergency": "Spoedafdeling",
+  "ppspsOsmAttribution": "Gegevens © OpenStreetMap-bijdragers",
+  "ppspsSectionEquipment": "Noodmateriaal",
+  "ppspsFieldEquipmentDetails": "Details (plaatsen, aantallen, ander materiaal)",
+  "ppspsSectionSignatures": "Handtekeningen",
+  "ppspsSignAuthor": "Opgesteld door",
+  "ppspsSignCoordinator": "Visum van de coördinator (optioneel)",
+  "ppspsNotSigned": "Nog niet ondertekend",
+  "ppspsSignedOn": "Ondertekend op {date}",
+  "@ppspsSignedOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "ppspsSignButton": "Ondertekenen",
+  "ppspsSignAgain": "Opnieuw",
+  "ppspsSignRemove": "Handtekening verwijderen",
+  "ppspsSignName": "Naam van de ondertekenaar",
+  "ppspsSignHint": "Onderteken met uw vinger in het witte vak.",
+  "ppspsSignClear": "Wissen",
+  "ppspsSignValidate": "Handtekening bevestigen"
 }

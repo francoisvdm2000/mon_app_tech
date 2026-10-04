@@ -5,17 +5,20 @@
 // Chaque modification est enregistrée automatiquement sur l'appareil.
 
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:printing/printing.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../../l10n_gen/app_localizations.dart';
+import '../hospital_finder.dart';
 import '../safety_library.dart';
 import '../safety_theme.dart';
 import 'ppsps_models.dart';
 import 'ppsps_pdf.dart';
 import 'ppsps_storage.dart';
+import '../widgets/signature_pad.dart';
 
 class PpspsEditorPage extends StatefulWidget {
   final PpspsDocument document;
@@ -39,6 +42,11 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
   Timer? _saveTimer;
   SafetyPhase? _phaseFilter;
   bool _exporting = false;
+  bool _searchingHospital = false;
+
+  /// Incrémenté quand des champs sont remplis par l'app (hôpital trouvé),
+  /// pour que les champs texte relisent leur valeur.
+  int _formRevision = 0;
 
   @override
   void initState() {
@@ -92,7 +100,7 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
       child: TextFormField(
         // La clé change avec l'étape : la valeur initiale est relue à chaque
         // affichage de l'étape, sans contrôleur à maintenir.
-        key: ValueKey('$_step-${id ?? label}'),
+        key: ValueKey('$_step-$_formRevision-${id ?? label}'),
         initialValue: value,
         keyboardType: keyboardType,
         maxLines: maxLines,
@@ -815,6 +823,24 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
           ),
         ),
         _sectionTitle(loc.ppspsSectionHospital),
+        OutlinedButton.icon(
+          style: OutlinedButton.styleFrom(
+            foregroundColor: kSafetyAccent,
+            minimumSize: const Size.fromHeight(48),
+            side: BorderSide(color: kSafetyAccent.withValues(alpha: 0.5)),
+          ),
+          onPressed: _searchingHospital ? null : _findHospital,
+          icon: _searchingHospital
+              ? const SizedBox(
+                  width: 18,
+                  height: 18,
+                  child: CircularProgressIndicator(strokeWidth: 2))
+              : const Icon(Icons.local_hospital_rounded),
+          label: Text(_searchingHospital
+              ? loc.ppspsFindHospitalSearching
+              : loc.ppspsFindHospital),
+        ),
+        const SizedBox(height: 12),
         _field(
           label: loc.ppspsFieldHospitalName,
           value: e.hospitalName,
@@ -848,8 +874,40 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
           onChanged: (v) => _update(_doc.copyWith(
               emergency: _doc.emergency.copyWith(assemblyPoint: v))),
         ),
+        _sectionTitle(loc.ppspsSectionEquipment),
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.white.withValues(alpha: 0.05),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Column(
+            children: [
+              for (final item in kEmergencyEquipment)
+                CheckboxListTile(
+                  dense: true,
+                  activeColor: kSafetyAccent,
+                  checkColor: kSafetyOnAccent,
+                  value: e.equipmentItems.contains(item.id),
+                  title: Text(item.labelFor(_lang),
+                      style: const TextStyle(color: Colors.white)),
+                  onChanged: (v) {
+                    final items = {..._doc.emergency.equipmentItems};
+                    if (v == true) {
+                      items.add(item.id);
+                    } else {
+                      items.remove(item.id);
+                    }
+                    _update(_doc.copyWith(
+                        emergency:
+                            _doc.emergency.copyWith(equipmentItems: items)));
+                  },
+                ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 12),
         _field(
-          label: loc.ppspsFieldEquipment,
+          label: loc.ppspsFieldEquipmentDetails,
           value: e.equipment,
           maxLines: 2,
           onChanged: (v) => _update(
@@ -857,6 +915,101 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
         ),
       ],
     );
+  }
+
+  Future<void> _findHospital() async {
+    final loc = AppLocalizations.of(context);
+    final query = [_doc.address, _doc.venue]
+        .map((s) => s.trim())
+        .where((s) => s.isNotEmpty)
+        .join(', ');
+    if (query.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(loc.ppspsFindHospitalNeedAddress)));
+      return;
+    }
+
+    setState(() => _searchingHospital = true);
+    List<HospitalResult> results;
+    try {
+      results = await HospitalFinder.search(query, countryCode: _doc.country);
+    } on HospitalFinderException catch (e) {
+      if (!mounted) return;
+      setState(() => _searchingHospital = false);
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(e.code == 'geocode'
+              ? loc.ppspsFindHospitalNoPlace
+              : loc.ppspsFindHospitalError)));
+      return;
+    }
+    if (!mounted) return;
+    setState(() => _searchingHospital = false);
+
+    if (results.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(loc.ppspsFindHospitalNone)));
+      return;
+    }
+
+    final chosen = await showModalBottomSheet<HospitalResult>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: kSafetySheetBg,
+      showDragHandle: true,
+      builder: (ctx) => SafeArea(
+        child: ListView(
+          shrinkWrap: true,
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 16),
+          children: [
+            Text(loc.ppspsFindHospitalTitle,
+                style: const TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white)),
+            const SizedBox(height: 4),
+            Text(loc.ppspsFindHospitalVerify,
+                style: TextStyle(
+                    fontSize: 12, color: Colors.white.withValues(alpha: 0.6))),
+            const SizedBox(height: 8),
+            for (final h in results)
+              ListTile(
+                contentPadding: EdgeInsets.zero,
+                leading: Icon(Icons.local_hospital_rounded,
+                    color: h.hasEmergency
+                        ? kSafetyCritHigh
+                        : Colors.white.withValues(alpha: 0.5)),
+                title: Text(h.name,
+                    style: const TextStyle(color: Colors.white)),
+                subtitle: Text(
+                  [
+                    loc.ppspsDistanceKm(h.distanceKm.toStringAsFixed(1)),
+                    if (h.hasEmergency) loc.ppspsHospitalEmergency,
+                    if (h.address.isNotEmpty) h.address,
+                  ].join(' · '),
+                  style:
+                      TextStyle(color: Colors.white.withValues(alpha: 0.6)),
+                ),
+                onTap: () => Navigator.pop(ctx, h),
+              ),
+            const SizedBox(height: 8),
+            Text(
+              loc.ppspsOsmAttribution,
+              style: TextStyle(
+                  fontSize: 11, color: Colors.white.withValues(alpha: 0.45)),
+            ),
+          ],
+        ),
+      ),
+    );
+    if (chosen == null || !mounted) return;
+    _update(_doc.copyWith(
+      emergency: _doc.emergency.copyWith(
+        hospitalName: chosen.name,
+        hospitalAddress: chosen.address,
+        hospitalPhone: chosen.phone,
+      ),
+    ));
+    setState(() => _formRevision++);
   }
 
   // ── Étape 5 : export ──────────────────────────────────────────────────────
@@ -1063,6 +1216,11 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
             ),
           ),
         ),
+        _sectionTitle(loc.ppspsSectionSignatures),
+        _signatureTile(loc, 'author', loc.ppspsSignAuthor, _doc.responsibleName),
+        const SizedBox(height: 8),
+        _signatureTile(
+            loc, 'coordinator', loc.ppspsSignCoordinator, _doc.coordinator),
         const SizedBox(height: 12),
         SwitchListTile(
           activeThumbColor: kSafetyAccent,
@@ -1082,6 +1240,90 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
               color: Colors.white.withValues(alpha: 0.55)),
         ),
       ],
+    );
+  }
+
+  Future<void> _sign(String role, String title, String defaultName) async {
+    final existing = _doc.signatures[role];
+    final result = await showSignatureSheet(
+      context,
+      title: title,
+      initialName: existing?.name ?? defaultName,
+    );
+    if (result == null || !mounted) return;
+    _update(_doc.copyWith(signatures: {
+      ..._doc.signatures,
+      role: PpspsSignature(
+        name: result.name,
+        pngBase64: base64Encode(result.png),
+        signedAt: DateTime.now(),
+      ),
+    }));
+  }
+
+  void _removeSignature(String role) {
+    final sigs = {..._doc.signatures}..remove(role);
+    _update(_doc.copyWith(signatures: sigs));
+  }
+
+  Widget _signatureTile(
+      AppLocalizations loc, String role, String title, String defaultName) {
+    final sig = _doc.signatures[role];
+    final m = MaterialLocalizations.of(context);
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 96,
+            height: 52,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            padding: const EdgeInsets.all(4),
+            child: sig == null
+                ? Icon(Icons.draw_rounded, color: Colors.black.withValues(alpha: 0.3))
+                : Image.memory(base64Decode(sig.pngBase64), fit: BoxFit.contain),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title,
+                    style: const TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.w600)),
+                const SizedBox(height: 2),
+                Text(
+                  sig == null
+                      ? loc.ppspsNotSigned
+                      : '${sig.name.isEmpty ? '' : '${sig.name} · '}'
+                          '${loc.ppspsSignedOn(m.formatShortDate(sig.signedAt))}',
+                  style: TextStyle(
+                      fontSize: 12, color: Colors.white.withValues(alpha: 0.6)),
+                ),
+              ],
+            ),
+          ),
+          if (sig != null)
+            IconButton(
+              tooltip: loc.ppspsSignRemove,
+              icon: Icon(Icons.close_rounded,
+                  color: Colors.white.withValues(alpha: 0.6)),
+              onPressed: () => _removeSignature(role),
+            ),
+          TextButton(
+            onPressed: () => _sign(role, title, defaultName),
+            child: Text(sig == null ? loc.ppspsSignButton : loc.ppspsSignAgain,
+                style: const TextStyle(color: kSafetyAccent)),
+          ),
+        ],
+      ),
     );
   }
 

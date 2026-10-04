@@ -16057,4 +16057,106 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get ppspsPhaseOrderError =>
       'Las fechas no siguen el orden: el montaje debe preceder a la explotación y después al desmontaje.';
+
+  @override
+  String get ppspsFindHospital =>
+      'Buscar el hospital más cercano';
+
+  @override
+  String get ppspsFindHospitalSearching =>
+      'Buscando…';
+
+  @override
+  String get ppspsFindHospitalNeedAddress =>
+      'Indique primero el lugar o la dirección del evento (paso Proyecto).';
+
+  @override
+  String get ppspsFindHospitalNoPlace =>
+      'No se encontró la dirección del evento. Revísela en el paso Proyecto o introduzca el hospital a mano.';
+
+  @override
+  String get ppspsFindHospitalError =>
+      'Búsqueda no disponible por ahora (¿conexión?). Introduzca el hospital a mano.';
+
+  @override
+  String get ppspsFindHospitalNone =>
+      'No se encontró ningún hospital a menos de 30 km. Introdúzcalo a mano.';
+
+  @override
+  String get ppspsFindHospitalTitle =>
+      'Hospitales cercanos';
+
+  @override
+  String get ppspsFindHospitalVerify =>
+      'Compruebe que el hospital elegido tiene urgencias abiertas durante el evento.';
+
+  @override
+  String ppspsDistanceKm(Object km) {
+    return '$km km';
+  }
+
+  @override
+  String get ppspsHospitalEmergency =>
+      'Urgencias';
+
+  @override
+  String get ppspsOsmAttribution =>
+      'Datos © colaboradores de OpenStreetMap';
+
+  @override
+  String get ppspsSectionEquipment =>
+      'Material de emergencia';
+
+  @override
+  String get ppspsFieldEquipmentDetails =>
+      'Detalles (ubicación, cantidades, otro material)';
+
+  @override
+  String get ppspsSectionSignatures =>
+      'Firmas';
+
+  @override
+  String get ppspsSignAuthor =>
+      'Elaborado por';
+
+  @override
+  String get ppspsSignCoordinator =>
+      'Visto bueno del coordinador (opcional)';
+
+  @override
+  String get ppspsNotSigned =>
+      'Aún sin firmar';
+
+  @override
+  String ppspsSignedOn(Object date) {
+    return 'Firmado el $date';
+  }
+
+  @override
+  String get ppspsSignButton =>
+      'Firmar';
+
+  @override
+  String get ppspsSignAgain =>
+      'Rehacer';
+
+  @override
+  String get ppspsSignRemove =>
+      'Quitar la firma';
+
+  @override
+  String get ppspsSignName =>
+      'Nombre del firmante';
+
+  @override
+  String get ppspsSignHint =>
+      'Firme con el dedo en el recuadro blanco.';
+
+  @override
+  String get ppspsSignClear =>
+      'Borrar';
+
+  @override
+  String get ppspsSignValidate =>
+      'Confirmar la firma';
 }

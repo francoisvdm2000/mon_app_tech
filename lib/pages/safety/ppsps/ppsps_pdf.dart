@@ -7,6 +7,7 @@
 // Police embarquée (IBM Plex Sans, licence OFL, assets/fonts/pdf/) : couvre
 // les accents, « œ », les guillemets typographiques, etc., hors ligne.
 
+import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:flutter/services.dart' show rootBundle;
@@ -507,26 +508,44 @@ class PpspsPdf {
       );
     }
 
-    pw.Widget signatureBox(String title, String name) => pw.Expanded(
-          child: pw.Container(
-            height: 90,
-            padding: const pw.EdgeInsets.all(8),
-            decoration: pw.BoxDecoration(
-              border: pw.Border.all(color: _line, width: 0.8),
-              borderRadius: pw.BorderRadius.circular(4),
-            ),
-            child: pw.Column(
-              crossAxisAlignment: pw.CrossAxisAlignment.start,
-              children: [
-                pw.Text(title, style: label),
-                if (name.trim().isNotEmpty)
-                  pw.Text(name.trim(), style: body),
-                pw.Spacer(),
-                pw.Text('${t['date']} :', style: small),
-              ],
-            ),
+    pw.Widget signatureBox(
+        String title, String defaultName, PpspsSignature? sig) {
+      final name = (sig?.name.isNotEmpty == true ? sig!.name : defaultName).trim();
+      return pw.Expanded(
+        child: pw.Container(
+          height: 110,
+          padding: const pw.EdgeInsets.all(8),
+          decoration: pw.BoxDecoration(
+            border: pw.Border.all(color: _line, width: 0.8),
+            borderRadius: pw.BorderRadius.circular(4),
           ),
-        );
+          child: pw.Column(
+            crossAxisAlignment: pw.CrossAxisAlignment.start,
+            children: [
+              pw.Text(title, style: label),
+              if (name.isNotEmpty) pw.Text(name, style: body),
+              pw.Expanded(
+                child: sig == null
+                    ? pw.SizedBox()
+                    : pw.Align(
+                        alignment: pw.Alignment.centerLeft,
+                        child: pw.Image(
+                          pw.MemoryImage(base64Decode(sig.pngBase64)),
+                          fit: pw.BoxFit.contain,
+                        ),
+                      ),
+              ),
+              pw.Text(
+                sig == null
+                    ? '${t['date']} :'
+                    : '${t['date']} : ${_fmtDate(sig.signedAt)}',
+                style: small,
+              ),
+            ],
+          ),
+        ),
+      );
+    }
 
     final pdf = pw.Document(
       title: '$docTitle – ${doc.eventName}',
@@ -700,7 +719,16 @@ class PpspsPdf {
             ],
             [t['firstAiders']!, doc.emergency.firstAiders],
             [t['assembly']!, doc.emergency.assemblyPoint],
-            [t['equipment']!, doc.emergency.equipment],
+            [
+              t['equipment']!,
+              [
+                for (final item in kEmergencyEquipment)
+                  if (doc.emergency.equipmentItems.contains(item.id))
+                    item.labelFor(lang),
+                if (doc.emergency.equipment.trim().isNotEmpty)
+                  doc.emergency.equipment.trim(),
+              ].join(' · '),
+            ],
           ]),
 
           // ── 6. Réglementation et signatures ──
@@ -711,9 +739,11 @@ class PpspsPdf {
           section(t['signatures']!),
           pw.Row(
             children: [
-              signatureBox(t['signedBy']!, doc.responsibleName),
+              signatureBox(t['signedBy']!, doc.responsibleName,
+                  doc.signatures['author']),
               pw.SizedBox(width: 12),
-              signatureBox(t['coordVisa']!, doc.coordinator),
+              signatureBox(t['coordVisa']!, doc.coordinator,
+                  doc.signatures['coordinator']),
             ],
           ),
           pw.SizedBox(height: 12),

@@ -6071,5 +6071,40 @@
       "count": {}
     }
   },
-  "ppspsPhaseOrderError": "Las fechas no siguen el orden: el montaje debe preceder a la explotación y después al desmontaje."
+  "ppspsPhaseOrderError": "Las fechas no siguen el orden: el montaje debe preceder a la explotación y después al desmontaje.",
+  "ppspsFindHospital": "Buscar el hospital más cercano",
+  "ppspsFindHospitalSearching": "Buscando…",
+  "ppspsFindHospitalNeedAddress": "Indique primero el lugar o la dirección del evento (paso Proyecto).",
+  "ppspsFindHospitalNoPlace": "No se encontró la dirección del evento. Revísela en el paso Proyecto o introduzca el hospital a mano.",
+  "ppspsFindHospitalError": "Búsqueda no disponible por ahora (¿conexión?). Introduzca el hospital a mano.",
+  "ppspsFindHospitalNone": "No se encontró ningún hospital a menos de 30 km. Introdúzcalo a mano.",
+  "ppspsFindHospitalTitle": "Hospitales cercanos",
+  "ppspsFindHospitalVerify": "Compruebe que el hospital elegido tiene urgencias abiertas durante el evento.",
+  "ppspsDistanceKm": "{km} km",
+  "@ppspsDistanceKm": {
+    "placeholders": {
+      "km": {}
+    }
+  },
+  "ppspsHospitalEmergency": "Urgencias",
+  "ppspsOsmAttribution": "Datos © colaboradores de OpenStreetMap",
+  "ppspsSectionEquipment": "Material de emergencia",
+  "ppspsFieldEquipmentDetails": "Detalles (ubicación, cantidades, otro material)",
+  "ppspsSectionSignatures": "Firmas",
+  "ppspsSignAuthor": "Elaborado por",
+  "ppspsSignCoordinator": "Visto bueno del coordinador (opcional)",
+  "ppspsNotSigned": "Aún sin firmar",
+  "ppspsSignedOn": "Firmado el {date}",
+  "@ppspsSignedOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "ppspsSignButton": "Firmar",
+  "ppspsSignAgain": "Rehacer",
+  "ppspsSignRemove": "Quitar la firma",
+  "ppspsSignName": "Nombre del firmante",
+  "ppspsSignHint": "Firme con el dedo en el recuadro blanco.",
+  "ppspsSignClear": "Borrar",
+  "ppspsSignValidate": "Confirmar la firma"
 }

@@ -6071,5 +6071,40 @@
       "count": {}
     }
   },
-  "ppspsPhaseOrderError": "The dates are out of order: load-in must come before the show, then load-out."
+  "ppspsPhaseOrderError": "The dates are out of order: load-in must come before the show, then load-out.",
+  "ppspsFindHospital": "Find the nearest hospital",
+  "ppspsFindHospitalSearching": "Searching…",
+  "ppspsFindHospitalNeedAddress": "First enter the venue or address of the event (Project step).",
+  "ppspsFindHospitalNoPlace": "The event address could not be found. Check it in the Project step, or enter the hospital manually.",
+  "ppspsFindHospitalError": "Search unavailable right now (connection?). Enter the hospital manually.",
+  "ppspsFindHospitalNone": "No hospital found within 30 km. Enter it manually.",
+  "ppspsFindHospitalTitle": "Nearby hospitals",
+  "ppspsFindHospitalVerify": "Check that the chosen hospital has an emergency department open during the event.",
+  "ppspsDistanceKm": "{km} km",
+  "@ppspsDistanceKm": {
+    "placeholders": {
+      "km": {}
+    }
+  },
+  "ppspsHospitalEmergency": "Emergency department",
+  "ppspsOsmAttribution": "Data © OpenStreetMap contributors",
+  "ppspsSectionEquipment": "Emergency equipment",
+  "ppspsFieldEquipmentDetails": "Details (locations, quantities, other equipment)",
+  "ppspsSectionSignatures": "Signatures",
+  "ppspsSignAuthor": "Prepared by",
+  "ppspsSignCoordinator": "Coordinator approval (optional)",
+  "ppspsNotSigned": "Not signed yet",
+  "ppspsSignedOn": "Signed on {date}",
+  "@ppspsSignedOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "ppspsSignButton": "Sign",
+  "ppspsSignAgain": "Redo",
+  "ppspsSignRemove": "Remove signature",
+  "ppspsSignName": "Signatory's name",
+  "ppspsSignHint": "Sign with your finger in the white box.",
+  "ppspsSignClear": "Clear",
+  "ppspsSignValidate": "Confirm signature"
 }

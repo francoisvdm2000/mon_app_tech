@@ -5750,5 +5750,40 @@
       "count": {}
     }
   },
-  "ppspsPhaseOrderError": "Die Termine sind nicht in der richtigen Reihenfolge: erst Aufbau, dann Veranstaltung, dann Abbau."
+  "ppspsPhaseOrderError": "Die Termine sind nicht in der richtigen Reihenfolge: erst Aufbau, dann Veranstaltung, dann Abbau.",
+  "ppspsFindHospital": "Nächstes Krankenhaus suchen",
+  "ppspsFindHospitalSearching": "Suche läuft…",
+  "ppspsFindHospitalNeedAddress": "Geben Sie zuerst Ort oder Adresse der Veranstaltung ein (Schritt Projekt).",
+  "ppspsFindHospitalNoPlace": "Die Adresse der Veranstaltung wurde nicht gefunden. Prüfen Sie sie im Schritt Projekt oder tragen Sie das Krankenhaus manuell ein.",
+  "ppspsFindHospitalError": "Suche derzeit nicht möglich (Verbindung?). Tragen Sie das Krankenhaus manuell ein.",
+  "ppspsFindHospitalNone": "Kein Krankenhaus im Umkreis von 30 km gefunden. Bitte manuell eintragen.",
+  "ppspsFindHospitalTitle": "Krankenhäuser in der Nähe",
+  "ppspsFindHospitalVerify": "Prüfen Sie, ob das gewählte Krankenhaus während der Veranstaltung eine geöffnete Notaufnahme hat.",
+  "ppspsDistanceKm": "{km} km",
+  "@ppspsDistanceKm": {
+    "placeholders": {
+      "km": {}
+    }
+  },
+  "ppspsHospitalEmergency": "Notaufnahme",
+  "ppspsOsmAttribution": "Daten © OpenStreetMap-Mitwirkende",
+  "ppspsSectionEquipment": "Notfallausrüstung",
+  "ppspsFieldEquipmentDetails": "Details (Standorte, Mengen, weitere Ausrüstung)",
+  "ppspsSectionSignatures": "Unterschriften",
+  "ppspsSignAuthor": "Erstellt von",
+  "ppspsSignCoordinator": "Freigabe des Koordinators (optional)",
+  "ppspsNotSigned": "Noch nicht unterschrieben",
+  "ppspsSignedOn": "Unterschrieben am {date}",
+  "@ppspsSignedOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "ppspsSignButton": "Unterschreiben",
+  "ppspsSignAgain": "Erneut",
+  "ppspsSignRemove": "Unterschrift entfernen",
+  "ppspsSignName": "Name des Unterzeichners",
+  "ppspsSignHint": "Unterschreiben Sie mit dem Finger im weißen Feld.",
+  "ppspsSignClear": "Löschen",
+  "ppspsSignValidate": "Unterschrift bestätigen"
 }

@@ -16025,4 +16025,106 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get ppspsPhaseOrderError =>
       'De data volgen elkaar niet op: eerst opbouw, dan evenement, dan afbouw.';
+
+  @override
+  String get ppspsFindHospital =>
+      'Dichtstbijzijnde ziekenhuis zoeken';
+
+  @override
+  String get ppspsFindHospitalSearching =>
+      'Bezig met zoeken…';
+
+  @override
+  String get ppspsFindHospitalNeedAddress =>
+      'Vul eerst de locatie of het adres van het evenement in (stap Project).';
+
+  @override
+  String get ppspsFindHospitalNoPlace =>
+      'Het adres van het evenement is niet gevonden. Controleer het in de stap Project of vul het ziekenhuis handmatig in.';
+
+  @override
+  String get ppspsFindHospitalError =>
+      'Zoeken lukt nu niet (verbinding?). Vul het ziekenhuis handmatig in.';
+
+  @override
+  String get ppspsFindHospitalNone =>
+      'Geen ziekenhuis gevonden binnen 30 km. Vul het handmatig in.';
+
+  @override
+  String get ppspsFindHospitalTitle =>
+      'Ziekenhuizen in de buurt';
+
+  @override
+  String get ppspsFindHospitalVerify =>
+      'Controleer of het gekozen ziekenhuis tijdens het evenement een open spoedafdeling heeft.';
+
+  @override
+  String ppspsDistanceKm(Object km) {
+    return '$km km';
+  }
+
+  @override
+  String get ppspsHospitalEmergency =>
+      'Spoedafdeling';
+
+  @override
+  String get ppspsOsmAttribution =>
+      'Gegevens © OpenStreetMap-bijdragers';
+
+  @override
+  String get ppspsSectionEquipment =>
+      'Noodmateriaal';
+
+  @override
+  String get ppspsFieldEquipmentDetails =>
+      'Details (plaatsen, aantallen, ander materiaal)';
+
+  @override
+  String get ppspsSectionSignatures =>
+      'Handtekeningen';
+
+  @override
+  String get ppspsSignAuthor =>
+      'Opgesteld door';
+
+  @override
+  String get ppspsSignCoordinator =>
+      'Visum van de coördinator (optioneel)';
+
+  @override
+  String get ppspsNotSigned =>
+      'Nog niet ondertekend';
+
+  @override
+  String ppspsSignedOn(Object date) {
+    return 'Ondertekend op $date';
+  }
+
+  @override
+  String get ppspsSignButton =>
+      'Ondertekenen';
+
+  @override
+  String get ppspsSignAgain =>
+      'Opnieuw';
+
+  @override
+  String get ppspsSignRemove =>
+      'Handtekening verwijderen';
+
+  @override
+  String get ppspsSignName =>
+      'Naam van de ondertekenaar';
+
+  @override
+  String get ppspsSignHint =>
+      'Onderteken met uw vinger in het witte vak.';
+
+  @override
+  String get ppspsSignClear =>
+      'Wissen';
+
+  @override
+  String get ppspsSignValidate =>
+      'Handtekening bevestigen';
 }

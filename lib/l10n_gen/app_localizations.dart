@@ -28252,6 +28252,156 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Les dates ne se suivent pas : le montage doit précéder l'exploitation, puis le démontage.'**
   String get ppspsPhaseOrderError;
+
+  /// No description provided for @ppspsFindHospital.
+  ///
+  /// In fr, this message translates to:
+  /// **'Trouver l'hôpital le plus proche'**
+  String get ppspsFindHospital;
+
+  /// No description provided for @ppspsFindHospitalSearching.
+  ///
+  /// In fr, this message translates to:
+  /// **'Recherche en cours…'**
+  String get ppspsFindHospitalSearching;
+
+  /// No description provided for @ppspsFindHospitalNeedAddress.
+  ///
+  /// In fr, this message translates to:
+  /// **'Renseignez d'abord le lieu ou l'adresse de l'événement (étape Projet).'**
+  String get ppspsFindHospitalNeedAddress;
+
+  /// No description provided for @ppspsFindHospitalNoPlace.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse de l'événement introuvable. Vérifiez-la dans l'étape Projet, ou complétez l'hôpital à la main.'**
+  String get ppspsFindHospitalNoPlace;
+
+  /// No description provided for @ppspsFindHospitalError.
+  ///
+  /// In fr, this message translates to:
+  /// **'Recherche impossible pour le moment (connexion ?). Complétez l'hôpital à la main.'**
+  String get ppspsFindHospitalError;
+
+  /// No description provided for @ppspsFindHospitalNone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun hôpital trouvé à moins de 30 km. Complétez à la main.'**
+  String get ppspsFindHospitalNone;
+
+  /// No description provided for @ppspsFindHospitalTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Hôpitaux à proximité'**
+  String get ppspsFindHospitalTitle;
+
+  /// No description provided for @ppspsFindHospitalVerify.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vérifiez que l'hôpital choisi a un service d'urgences ouvert pendant l'événement.'**
+  String get ppspsFindHospitalVerify;
+
+  /// No description provided for @ppspsDistanceKm.
+  ///
+  /// In fr, this message translates to:
+  /// **'{km} km'**
+  String ppspsDistanceKm(Object km);
+
+  /// No description provided for @ppspsHospitalEmergency.
+  ///
+  /// In fr, this message translates to:
+  /// **'Urgences'**
+  String get ppspsHospitalEmergency;
+
+  /// No description provided for @ppspsOsmAttribution.
+  ///
+  /// In fr, this message translates to:
+  /// **'Données © contributeurs OpenStreetMap'**
+  String get ppspsOsmAttribution;
+
+  /// No description provided for @ppspsSectionEquipment.
+  ///
+  /// In fr, this message translates to:
+  /// **'Matériel de secours'**
+  String get ppspsSectionEquipment;
+
+  /// No description provided for @ppspsFieldEquipmentDetails.
+  ///
+  /// In fr, this message translates to:
+  /// **'Précisions (emplacements, quantités, autre matériel)'**
+  String get ppspsFieldEquipmentDetails;
+
+  /// No description provided for @ppspsSectionSignatures.
+  ///
+  /// In fr, this message translates to:
+  /// **'Signatures'**
+  String get ppspsSectionSignatures;
+
+  /// No description provided for @ppspsSignAuthor.
+  ///
+  /// In fr, this message translates to:
+  /// **'Établi par'**
+  String get ppspsSignAuthor;
+
+  /// No description provided for @ppspsSignCoordinator.
+  ///
+  /// In fr, this message translates to:
+  /// **'Visa du coordinateur (facultatif)'**
+  String get ppspsSignCoordinator;
+
+  /// No description provided for @ppspsNotSigned.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas encore signé'**
+  String get ppspsNotSigned;
+
+  /// No description provided for @ppspsSignedOn.
+  ///
+  /// In fr, this message translates to:
+  /// **'Signé le {date}'**
+  String ppspsSignedOn(Object date);
+
+  /// No description provided for @ppspsSignButton.
+  ///
+  /// In fr, this message translates to:
+  /// **'Signer'**
+  String get ppspsSignButton;
+
+  /// No description provided for @ppspsSignAgain.
+  ///
+  /// In fr, this message translates to:
+  /// **'Refaire'**
+  String get ppspsSignAgain;
+
+  /// No description provided for @ppspsSignRemove.
+  ///
+  /// In fr, this message translates to:
+  /// **'Retirer la signature'**
+  String get ppspsSignRemove;
+
+  /// No description provided for @ppspsSignName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom du signataire'**
+  String get ppspsSignName;
+
+  /// No description provided for @ppspsSignHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Signez avec le doigt dans le cadre blanc.'**
+  String get ppspsSignHint;
+
+  /// No description provided for @ppspsSignClear.
+  ///
+  /// In fr, this message translates to:
+  /// **'Effacer'**
+  String get ppspsSignClear;
+
+  /// No description provided for @ppspsSignValidate.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valider la signature'**
+  String get ppspsSignValidate;
 }
 
 class _AppLocalizationsDelegate
