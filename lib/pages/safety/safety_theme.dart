@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 
 import '../../l10n_gen/app_localizations.dart';
+import 'safety_library.dart' show SafetyRiskLevel;
 
 const Color kSafetyAccent = Color(0xFFF5A524);
 const Color kSafetyOnAccent = Color(0xFF1A1300);
@@ -15,11 +16,16 @@ const Color kSafetyCritHigh = Color(0xFFFF6B6B);
 const Color kSafetyCritMid = Color(0xFFF7B955);
 const Color kSafetyCritLow = Color(0xFF5BC48A);
 
-/// Couleur d'une criticité (gravité × probabilité, de 1 à 16).
-Color safetyCriticalityColor(int criticality) {
-  if (criticality >= 12) return kSafetyCritHigh;
-  if (criticality >= 6) return kSafetyCritMid;
-  return kSafetyCritLow;
+/// Couleur d'un niveau de risque (voir safetyRiskLevel).
+Color safetyRiskLevelColor(SafetyRiskLevel level) {
+  switch (level) {
+    case SafetyRiskLevel.high:
+      return kSafetyCritHigh;
+    case SafetyRiskLevel.medium:
+      return kSafetyCritMid;
+    case SafetyRiskLevel.low:
+      return kSafetyCritLow;
+  }
 }
 
 /// Nom du pays dans la langue de l'app (le Sheet ne le donne qu'en français).

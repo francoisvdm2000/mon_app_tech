@@ -86,7 +86,121 @@ class SafetyRisk {
 
   /// Gravité × probabilité, de 1 à 16.
   int get criticality => severity * probability;
+
+  SafetyRiskLevel get level => safetyRiskLevel(severity, probability);
 }
+
+// ── Cotation des risques ────────────────────────────────────────────────────
+//
+// Grille gravité (1–4) × probabilité (1–4), cote de 1 à 16.
+// Niveau : élevé si cote ≥ 12 OU gravité 4 (un risque mortel n'est jamais
+// « moyen » ni « faible », même s'il est rare) ; moyen de 6 à 11 ; faible ≤ 5.
+
+enum SafetyRiskLevel { low, medium, high }
+
+SafetyRiskLevel safetyRiskLevel(int severity, int probability) {
+  if (severity >= 4 || severity * probability >= 12) {
+    return SafetyRiskLevel.high;
+  }
+  if (severity * probability >= 6) return SafetyRiskLevel.medium;
+  return SafetyRiskLevel.low;
+}
+
+/// Tri : niveau d'abord, puis cote, puis gravité.
+int compareRiskRating(int sevA, int probA, int sevB, int probB) {
+  final la = safetyRiskLevel(sevA, probA).index;
+  final lb = safetyRiskLevel(sevB, probB).index;
+  if (la != lb) return lb.compareTo(la);
+  final ca = sevA * probA, cb = sevB * probB;
+  if (ca != cb) return cb.compareTo(ca);
+  return sevB.compareTo(sevA);
+}
+
+/// Définition des niveaux de gravité (index 0 = niveau 1).
+const Map<String, List<String>> kSeverityLevels = {
+  'fr': [
+    'Bénin : soins sur place, pas d\'arrêt de travail',
+    'Accident avec arrêt de travail, sans séquelles',
+    'Blessure grave : séquelles ou incapacité durable',
+    'Mortel ou invalidité permanente',
+  ],
+  'en': [
+    'Minor: first aid on site, no lost time',
+    'Lost-time injury, no lasting effects',
+    'Serious injury: lasting effects or disability',
+    'Fatal or permanent disability',
+  ],
+  'nl': [
+    'Licht: eerste zorg ter plaatse, geen werkverlet',
+    'Ongeval met werkverlet, zonder blijvende letsels',
+    'Ernstig letsel: blijvende gevolgen of arbeidsongeschiktheid',
+    'Dodelijk of blijvende invaliditeit',
+  ],
+  'de': [
+    'Gering: Erste Hilfe vor Ort, keine Ausfallzeit',
+    'Unfall mit Ausfallzeit, ohne bleibende Folgen',
+    'Schwere Verletzung: bleibende Folgen oder Arbeitsunfähigkeit',
+    'Tödlich oder dauerhafte Invalidität',
+  ],
+  'es': [
+    'Leve: primeros auxilios in situ, sin baja',
+    'Accidente con baja, sin secuelas',
+    'Lesión grave: secuelas o incapacidad duradera',
+    'Mortal o invalidez permanente',
+  ],
+  'pt': [
+    'Ligeiro: primeiros socorros no local, sem baixa',
+    'Acidente com baixa, sem sequelas',
+    'Lesão grave: sequelas ou incapacidade duradoura',
+    'Mortal ou invalidez permanente',
+  ],
+};
+
+/// Définition des niveaux de probabilité (index 0 = niveau 1).
+const Map<String, List<String>> kProbabilityLevels = {
+  'fr': [
+    'Exceptionnel : jamais vu sur un événement',
+    'Rare : déjà arrivé dans le métier',
+    'Occasionnel : arrive de temps en temps',
+    'Fréquent : arrive sur la plupart des événements',
+  ],
+  'en': [
+    'Exceptional: never seen at an event',
+    'Rare: has happened in the industry',
+    'Occasional: happens from time to time',
+    'Frequent: happens at most events',
+  ],
+  'nl': [
+    'Uitzonderlijk: nooit gezien op een evenement',
+    'Zeldzaam: al voorgekomen in de sector',
+    'Af en toe: gebeurt van tijd tot tijd',
+    'Vaak: gebeurt op de meeste evenementen',
+  ],
+  'de': [
+    'Außergewöhnlich: bei Veranstaltungen nie beobachtet',
+    'Selten: in der Branche schon vorgekommen',
+    'Gelegentlich: kommt ab und zu vor',
+    'Häufig: kommt bei den meisten Veranstaltungen vor',
+  ],
+  'es': [
+    'Excepcional: nunca visto en un evento',
+    'Raro: ya ha ocurrido en el sector',
+    'Ocasional: ocurre de vez en cuando',
+    'Frecuente: ocurre en la mayoría de los eventos',
+  ],
+  'pt': [
+    'Excecional: nunca visto num evento',
+    'Raro: já aconteceu no setor',
+    'Ocasional: acontece de vez em quando',
+    'Frequente: acontece na maioria dos eventos',
+  ],
+};
+
+String severityLevelLabel(int level, String lang) =>
+    (kSeverityLevels[lang] ?? kSeverityLevels['en']!)[(level - 1).clamp(0, 3)];
+
+String probabilityLevelLabel(int level, String lang) =>
+    (kProbabilityLevels[lang] ?? kProbabilityLevels['en']!)[(level - 1).clamp(0, 3)];
 
 class SafetyMeasure {
   final String id;

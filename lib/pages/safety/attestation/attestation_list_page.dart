@@ -342,7 +342,9 @@ class _AttestationListPageState extends State<AttestationListPage> {
         label: Text(loc.attestationNew,
             style: const TextStyle(fontWeight: FontWeight.w700)),
       ),
-      body: _loading
+      body: SafeArea(
+        top: false,
+        child: _loading
           ? const Center(child: CircularProgressIndicator())
           : _docs.isEmpty
               ? Center(
@@ -370,12 +372,12 @@ class _AttestationListPageState extends State<AttestationListPage> {
                   ),
                 )
               : ListView.separated(
-                  padding: EdgeInsets.fromLTRB(
-                      16, 12, 16, 96 + MediaQuery.paddingOf(context).bottom),
+                  padding: const EdgeInsets.fromLTRB(16, 12, 16, 96),
                   itemCount: _docs.length,
                   separatorBuilder: (_, __) => const SizedBox(height: 12),
                   itemBuilder: (_, i) => _card(loc, _docs[i]),
                 ),
+      ),
     );
   }
 }

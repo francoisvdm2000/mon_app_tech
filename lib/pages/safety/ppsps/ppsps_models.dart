@@ -63,30 +63,72 @@ class PpspsWorker {
       );
 }
 
+int? _level(dynamic v) {
+  final n = v is num ? v.toInt() : int.tryParse(_s(v));
+  return n == null || n < 1 || n > 4 ? null : n;
+}
+
 /// Risque retenu dans le plan, avec ses mesures cochées et ajoutées.
+///
+/// La gravité et la probabilité viennent de la bibliothèque ; elles peuvent
+/// être ajustées pour ce plan (ex. vent en salle), avec un motif.
 class PpspsRiskSelection {
   final Set<String> measureIds;
   final List<String> customMeasures;
+  final int? severity; // null = valeur de la bibliothèque
+  final int? probability; // null = valeur de la bibliothèque
+  final String ratingNote; // motif de l'ajustement
 
   const PpspsRiskSelection({
     this.measureIds = const {},
     this.customMeasures = const [],
+    this.severity,
+    this.probability,
+    this.ratingNote = '',
   });
 
   int get measureCount => measureIds.length + customMeasures.length;
 
+  bool get isAdjusted => severity != null || probability != null;
+
+  int severityFor(SafetyRisk r) => severity ?? r.severity;
+  int probabilityFor(SafetyRisk r) => probability ?? r.probability;
+  int criticalityFor(SafetyRisk r) => severityFor(r) * probabilityFor(r);
+  SafetyRiskLevel levelFor(SafetyRisk r) =>
+      safetyRiskLevel(severityFor(r), probabilityFor(r));
+
   PpspsRiskSelection copyWith({
     Set<String>? measureIds,
     List<String>? customMeasures,
+    String? ratingNote,
   }) =>
       PpspsRiskSelection(
         measureIds: measureIds ?? this.measureIds,
         customMeasures: customMeasures ?? this.customMeasures,
+        severity: severity,
+        probability: probability,
+        ratingNote: ratingNote ?? this.ratingNote,
+      );
+
+  /// Nouvelle cotation pour ce plan. Une valeur égale à celle de la
+  /// bibliothèque est enregistrée comme « non ajustée ».
+  PpspsRiskSelection withRating(SafetyRisk r, int severity, int probability) =>
+      PpspsRiskSelection(
+        measureIds: measureIds,
+        customMeasures: customMeasures,
+        severity: severity == r.severity ? null : severity,
+        probability: probability == r.probability ? null : probability,
+        ratingNote: severity == r.severity && probability == r.probability
+            ? ''
+            : ratingNote,
       );
 
   Map<String, dynamic> toJson() => {
         'measures': measureIds.toList(),
         'custom': customMeasures,
+        if (severity != null) 'severity': severity,
+        if (probability != null) 'probability': probability,
+        if (ratingNote.isNotEmpty) 'ratingNote': ratingNote,
       };
 
   factory PpspsRiskSelection.fromJson(Map<String, dynamic> json) =>
@@ -97,6 +139,9 @@ class PpspsRiskSelection {
         customMeasures: [
           for (final m in (json['custom'] as List? ?? const [])) _s(m)
         ],
+        severity: _level(json['severity']),
+        probability: _level(json['probability']),
+        ratingNote: _s(json['ratingNote']),
       );
 }
 

@@ -227,7 +227,8 @@ class _AttestationEditorPageState extends State<AttestationEditorPage> {
       builder: (ctx) => StatefulBuilder(
         builder: (ctx, setSheet) => Padding(
           padding: EdgeInsets.fromLTRB(
-              20, 0, 20, 20 + MediaQuery.viewInsetsOf(ctx).bottom),
+              20, 0, 20, 20 + MediaQuery.viewInsetsOf(ctx).bottom +
+                MediaQuery.paddingOf(ctx).bottom),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,

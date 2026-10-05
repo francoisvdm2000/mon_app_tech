@@ -12,12 +12,12 @@ import 'package:printing/printing.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../../l10n_gen/app_localizations.dart';
-import '../hospital_finder.dart';
 import '../safety_library.dart';
 import '../safety_theme.dart';
 import 'ppsps_models.dart';
 import 'ppsps_pdf.dart';
 import 'ppsps_storage.dart';
+import '../widgets/hospital_search_sheet.dart';
 import '../widgets/signature_pad.dart';
 
 class PpspsEditorPage extends StatefulWidget {
@@ -42,7 +42,6 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
   Timer? _saveTimer;
   SafetyPhase? _phaseFilter;
   bool _exporting = false;
-  bool _searchingHospital = false;
 
   /// Incrémenté quand des champs sont remplis par l'app (hôpital trouvé),
   /// pour que les champs texte relisent leur valeur.
@@ -361,7 +360,8 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
       showDragHandle: true,
       builder: (ctx) => Padding(
         padding: EdgeInsets.fromLTRB(
-            20, 0, 20, 20 + MediaQuery.viewInsetsOf(ctx).bottom),
+            20, 0, 20, 20 + MediaQuery.viewInsetsOf(ctx).bottom +
+                MediaQuery.paddingOf(ctx).bottom),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -542,6 +542,8 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
     final loc = AppLocalizations.of(context);
     final measures = widget.library.measuresFor(risk.id, _doc.country);
     final customCtrl = TextEditingController();
+    final noteCtrl = TextEditingController(
+        text: _doc.risks[risk.id]?.ratingNote ?? '');
 
     await showModalBottomSheet<void>(
       context: context,
@@ -559,7 +561,8 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
 
           return Padding(
             padding: EdgeInsets.only(
-                bottom: MediaQuery.viewInsetsOf(ctx).bottom),
+                bottom: MediaQuery.viewInsetsOf(ctx).bottom +
+                MediaQuery.paddingOf(ctx).bottom),
             child: ConstrainedBox(
               constraints: BoxConstraints(
                   maxHeight: MediaQuery.sizeOf(ctx).height * 0.85),
@@ -574,7 +577,9 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
                         fontWeight: FontWeight.w700,
                         color: Colors.white),
                   ),
-                  const SizedBox(height: 4),
+                  const SizedBox(height: 12),
+                  _ratingEditor(loc, risk, sel, noteCtrl, apply),
+                  const SizedBox(height: 16),
                   Text(
                     loc.ppspsMeasuresTitle,
                     style:
@@ -654,11 +659,253 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
         },
       ),
     );
-    customCtrl.dispose();
+    // Laisse l'animation de fermeture se terminer avant de libérer.
+    Future.delayed(const Duration(milliseconds: 500), () {
+      customCtrl.dispose();
+      noteCtrl.dispose();
+    });
   }
 
-  Widget _criticalityBadge(int c) {
-    final color = safetyCriticalityColor(c);
+  // ── Cotation gravité × probabilité ───────────────────────────────────────
+
+  Widget _ratingEditor(
+    AppLocalizations loc,
+    SafetyRisk risk,
+    PpspsRiskSelection sel,
+    TextEditingController noteCtrl,
+    void Function(PpspsRiskSelection) apply,
+  ) {
+    final sev = sel.severityFor(risk);
+    final prob = sel.probabilityFor(risk);
+    final level = sel.levelFor(risk);
+
+    Widget scale(String title, int value, int libValue, String Function(int) def,
+        void Function(int) onPick) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(title,
+              style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white.withValues(alpha: 0.8))),
+          const SizedBox(height: 6),
+          Row(
+            children: [
+              for (var n = 1; n <= 4; n++)
+                Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: ChoiceChip(
+                    label: Text('$n'),
+                    selected: value == n,
+                    selectedColor: kSafetyAccent.withValues(alpha: 0.3),
+                    avatar: n == libValue && value != n
+                        ? Icon(Icons.menu_book_rounded,
+                            size: 14,
+                            color: Colors.white.withValues(alpha: 0.5))
+                        : null,
+                    onSelected: (_) => onPick(n),
+                  ),
+                ),
+            ],
+          ),
+          const SizedBox(height: 4),
+          Text(def(value),
+              style: TextStyle(
+                  fontSize: 12, color: Colors.white.withValues(alpha: 0.6))),
+        ],
+      );
+    }
+
+    return Container(
+      padding: const EdgeInsets.fromLTRB(12, 10, 12, 12),
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Text(loc.ppspsRatingTitle,
+                    style: const TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.w700)),
+              ),
+              _ratingBadge(sev, prob),
+              IconButton(
+                tooltip: loc.ppspsRatingHelpTitle,
+                visualDensity: VisualDensity.compact,
+                icon: Icon(Icons.info_outline_rounded,
+                    size: 20, color: Colors.white.withValues(alpha: 0.6)),
+                onPressed: () => _showRatingHelp(loc),
+              ),
+            ],
+          ),
+          Text(_levelLabel(loc, level),
+              style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: safetyRiskLevelColor(level))),
+          const SizedBox(height: 10),
+          scale(loc.ppspsSeverity, sev, risk.severity,
+              (n) => severityLevelLabel(n, _lang),
+              (n) => apply(sel.withRating(risk, n, prob))),
+          const SizedBox(height: 10),
+          scale(loc.ppspsProbability, prob, risk.probability,
+              (n) => probabilityLevelLabel(n, _lang),
+              (n) => apply(sel.withRating(risk, sev, n))),
+          if (sel.isAdjusted) ...[
+            const SizedBox(height: 10),
+            Text(
+              loc.ppspsRatingLibraryValue(risk.severity, risk.probability),
+              style: TextStyle(
+                  fontSize: 12, color: Colors.white.withValues(alpha: 0.55)),
+            ),
+            const SizedBox(height: 6),
+            TextField(
+              controller: noteCtrl,
+              textCapitalization: TextCapitalization.sentences,
+              style: const TextStyle(color: Colors.white),
+              decoration:
+                  InputDecoration(hintText: loc.ppspsRatingNoteHint),
+              onChanged: (v) => apply(
+                  (_doc.risks[risk.id] ?? sel).copyWith(ratingNote: v)),
+            ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton.icon(
+                style: TextButton.styleFrom(foregroundColor: kSafetyAccent),
+                onPressed: () {
+                  noteCtrl.clear();
+                  apply(sel.withRating(
+                      risk, risk.severity, risk.probability));
+                },
+                icon: const Icon(Icons.restart_alt_rounded, size: 18),
+                label: Text(loc.ppspsRatingReset),
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+
+  String _levelLabel(AppLocalizations loc, SafetyRiskLevel l) {
+    switch (l) {
+      case SafetyRiskLevel.high:
+        return loc.ppspsLevelHigh;
+      case SafetyRiskLevel.medium:
+        return loc.ppspsLevelMedium;
+      case SafetyRiskLevel.low:
+        return loc.ppspsLevelLow;
+    }
+  }
+
+  Future<void> _showRatingHelp(AppLocalizations loc) {
+    Widget levels(String title, String Function(int) def) => Padding(
+          padding: const EdgeInsets.only(top: 14),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(title,
+                  style: const TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w700)),
+              const SizedBox(height: 4),
+              for (var n = 1; n <= 4; n++)
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 3),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        width: 22,
+                        child: Text('$n',
+                            style: const TextStyle(
+                                color: kSafetyAccent,
+                                fontWeight: FontWeight.w700)),
+                      ),
+                      Expanded(
+                        child: Text(def(n),
+                            style: TextStyle(
+                                color: Colors.white.withValues(alpha: 0.8))),
+                      ),
+                    ],
+                  ),
+                ),
+            ],
+          ),
+        );
+
+    Widget levelRow(SafetyRiskLevel l, String rule) => Padding(
+          padding: const EdgeInsets.symmetric(vertical: 3),
+          child: Row(
+            children: [
+              Container(
+                width: 10,
+                height: 10,
+                decoration: BoxDecoration(
+                    color: safetyRiskLevelColor(l), shape: BoxShape.circle),
+              ),
+              const SizedBox(width: 10),
+              Text(_levelLabel(loc, l),
+                  style: const TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w600)),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(rule,
+                    style: TextStyle(
+                        color: Colors.white.withValues(alpha: 0.7))),
+              ),
+            ],
+          ),
+        );
+
+    return showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: kSafetySheetBg,
+      showDragHandle: true,
+      builder: (ctx) => SafeArea(
+        child: ConstrainedBox(
+          constraints:
+              BoxConstraints(maxHeight: MediaQuery.sizeOf(ctx).height * 0.85),
+          child: ListView(
+            shrinkWrap: true,
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+            children: [
+              Text(loc.ppspsRatingHelpTitle,
+                  style: const TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white)),
+              const SizedBox(height: 8),
+              Text(loc.ppspsRatingHelpIntro,
+                  style:
+                      TextStyle(color: Colors.white.withValues(alpha: 0.75))),
+              levels(loc.ppspsSeverity, (n) => severityLevelLabel(n, _lang)),
+              levels(loc.ppspsProbability,
+                  (n) => probabilityLevelLabel(n, _lang)),
+              const SizedBox(height: 14),
+              levelRow(SafetyRiskLevel.high, loc.ppspsLevelHighRule),
+              levelRow(SafetyRiskLevel.medium, loc.ppspsLevelMediumRule),
+              levelRow(SafetyRiskLevel.low, loc.ppspsLevelLowRule),
+              const SizedBox(height: 12),
+              Text(loc.ppspsRatingHelpAdjust,
+                  style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.white.withValues(alpha: 0.6))),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _ratingBadge(int severity, int probability) {
+    final c = severity * probability;
+    final color = safetyRiskLevelColor(safetyRiskLevel(severity, probability));
     return Container(
       constraints: const BoxConstraints(minWidth: 30),
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
@@ -672,6 +919,22 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
         style: TextStyle(
             color: color, fontWeight: FontWeight.w700, fontSize: 13),
       ),
+    );
+  }
+
+  Widget _riskTrailing(SafetyRisk r) {
+    final sel = _doc.risks[r.id];
+    final badge = _ratingBadge(sel?.severityFor(r) ?? r.severity,
+        sel?.probabilityFor(r) ?? r.probability);
+    if (sel == null || !sel.isAdjusted) return badge;
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(Icons.tune_rounded,
+            size: 14, color: Colors.white.withValues(alpha: 0.5)),
+        const SizedBox(width: 4),
+        badge,
+      ],
     );
   }
 
@@ -756,7 +1019,7 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
                                                 .withValues(alpha: 0.55)),
                                       )
                                     : null,
-                                trailing: _criticalityBadge(r.criticality),
+                                trailing: _riskTrailing(r),
                                 onTap: () {
                                   if (!_doc.risks.containsKey(r.id)) {
                                     _toggleRisk(r, true);
@@ -779,10 +1042,24 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
             border: Border(
                 top: BorderSide(color: Colors.white.withValues(alpha: 0.08))),
           ),
-          child: Text(
-            loc.ppspsRisksSummary(_doc.risks.length, _doc.measureCount),
-            style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.w600),
+          child: Row(
+            children: [
+              Expanded(
+                child: Text(
+                  loc.ppspsRisksSummary(_doc.risks.length, _doc.measureCount),
+                  style: const TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w600),
+                ),
+              ),
+              TextButton.icon(
+                style: TextButton.styleFrom(
+                    foregroundColor: kSafetyAccent,
+                    visualDensity: VisualDensity.compact),
+                onPressed: () => _showRatingHelp(loc),
+                icon: const Icon(Icons.info_outline_rounded, size: 18),
+                label: Text(loc.ppspsRatingHelpShort),
+              ),
+            ],
           ),
         ),
       ],
@@ -829,16 +1106,9 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
             minimumSize: const Size.fromHeight(48),
             side: BorderSide(color: kSafetyAccent.withValues(alpha: 0.5)),
           ),
-          onPressed: _searchingHospital ? null : _findHospital,
-          icon: _searchingHospital
-              ? const SizedBox(
-                  width: 18,
-                  height: 18,
-                  child: CircularProgressIndicator(strokeWidth: 2))
-              : const Icon(Icons.local_hospital_rounded),
-          label: Text(_searchingHospital
-              ? loc.ppspsFindHospitalSearching
-              : loc.ppspsFindHospital),
+          onPressed: _findHospital,
+          icon: const Icon(Icons.local_hospital_rounded),
+          label: Text(loc.ppspsFindHospital),
         ),
         const SizedBox(height: 12),
         _field(
@@ -918,95 +1188,29 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
   }
 
   Future<void> _findHospital() async {
-    final loc = AppLocalizations.of(context);
-    final query = [_doc.address, _doc.venue]
+    // Le lieu (nom de salle) et l'adresse servent de point de départ ; la
+    // feuille permet de corriger ou de taper autre chose (ville, code postal…)
+    // et propose les lieux correspondants si la saisie est ambiguë.
+    final query = [_doc.venue, _doc.address]
         .map((s) => s.trim())
         .where((s) => s.isNotEmpty)
         .join(', ');
-    if (query.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(loc.ppspsFindHospitalNeedAddress)));
-      return;
-    }
 
-    setState(() => _searchingHospital = true);
-    List<HospitalResult> results;
-    try {
-      results = await HospitalFinder.search(query, countryCode: _doc.country);
-    } on HospitalFinderException catch (e) {
-      if (!mounted) return;
-      setState(() => _searchingHospital = false);
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text(e.code == 'geocode'
-              ? loc.ppspsFindHospitalNoPlace
-              : loc.ppspsFindHospitalError)));
-      return;
-    }
-    if (!mounted) return;
-    setState(() => _searchingHospital = false);
-
-    if (results.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(loc.ppspsFindHospitalNone)));
-      return;
-    }
-
-    final chosen = await showModalBottomSheet<HospitalResult>(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: kSafetySheetBg,
-      showDragHandle: true,
-      builder: (ctx) => SafeArea(
-        child: ListView(
-          shrinkWrap: true,
-          padding: const EdgeInsets.fromLTRB(20, 0, 20, 16),
-          children: [
-            Text(loc.ppspsFindHospitalTitle,
-                style: const TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white)),
-            const SizedBox(height: 4),
-            Text(loc.ppspsFindHospitalVerify,
-                style: TextStyle(
-                    fontSize: 12, color: Colors.white.withValues(alpha: 0.6))),
-            const SizedBox(height: 8),
-            for (final h in results)
-              ListTile(
-                contentPadding: EdgeInsets.zero,
-                leading: Icon(Icons.local_hospital_rounded,
-                    color: h.hasEmergency
-                        ? kSafetyCritHigh
-                        : Colors.white.withValues(alpha: 0.5)),
-                title: Text(h.name,
-                    style: const TextStyle(color: Colors.white)),
-                subtitle: Text(
-                  [
-                    loc.ppspsDistanceKm(h.distanceKm.toStringAsFixed(1)),
-                    if (h.hasEmergency) loc.ppspsHospitalEmergency,
-                    if (h.address.isNotEmpty) h.address,
-                  ].join(' · '),
-                  style:
-                      TextStyle(color: Colors.white.withValues(alpha: 0.6)),
-                ),
-                onTap: () => Navigator.pop(ctx, h),
-              ),
-            const SizedBox(height: 8),
-            Text(
-              loc.ppspsOsmAttribution,
-              style: TextStyle(
-                  fontSize: 11, color: Colors.white.withValues(alpha: 0.45)),
-            ),
-          ],
-        ),
-      ),
+    final pick = await showHospitalSearchSheet(
+      context,
+      initialQuery: query,
+      countryCode: _doc.country,
     );
-    if (chosen == null || !mounted) return;
+    if (pick == null || !mounted) return;
+
+    final h = pick.hospital;
     _update(_doc.copyWith(
+      // Adresse de l'événement vide : on la complète avec le lieu choisi.
+      address: _doc.address.trim().isEmpty ? pick.place.fullAddress : null,
       emergency: _doc.emergency.copyWith(
-        hospitalName: chosen.name,
-        hospitalAddress: chosen.address,
-        hospitalPhone: chosen.phone,
+        hospitalName: h.name,
+        hospitalAddress: h.address,
+        hospitalPhone: h.phone,
       ),
     ));
     setState(() => _formRevision++);
@@ -1107,10 +1311,11 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
     final selected = widget.library.risks
         .where((r) => _doc.risks.containsKey(r.id))
         .toList();
-    final high = selected.where((r) => r.criticality >= 12).length;
-    final mid = selected
-        .where((r) => r.criticality >= 6 && r.criticality < 12)
-        .length;
+    SafetyRiskLevel levelOf(SafetyRisk r) => _doc.risks[r.id]!.levelFor(r);
+    final high =
+        selected.where((r) => levelOf(r) == SafetyRiskLevel.high).length;
+    final mid =
+        selected.where((r) => levelOf(r) == SafetyRiskLevel.medium).length;
     final low = selected.length - high - mid;
 
     final missing = <String>[

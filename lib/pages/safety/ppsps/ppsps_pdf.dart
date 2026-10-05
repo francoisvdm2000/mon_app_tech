@@ -47,6 +47,16 @@ const Map<String, Map<String, String>> _kTexts = {
     'severity': 'Gravité',
     'probability': 'Probabilité',
     'criticality': 'Criticité',
+    'ratingMethod': 'Méthode de cotation',
+    'ratingIntro': 'Chaque risque est coté gravité (1 à 4) × probabilité (1 à 4), soit une cote de 1 à 16.',
+    'levelHigh': 'Élevé',
+    'levelHighRule': 'cote ≥ 12, ou gravité 4 quelle que soit la probabilité',
+    'levelMedium': 'Moyen',
+    'levelMediumRule': 'cote de 6 à 11',
+    'levelLow': 'Faible',
+    'levelLowRule': 'cote ≤ 5',
+    'adjusted': 'Cotation ajustée pour ce chantier (bibliothèque : G{s} × P{p})',
+    'adjustReason': 'Motif : ',
     'collective': 'Protection collective',
     'individuelle': 'Protection individuelle',
     'organisationnelle': 'Organisation',
@@ -97,6 +107,16 @@ const Map<String, Map<String, String>> _kTexts = {
     'severity': 'Severity',
     'probability': 'Likelihood',
     'criticality': 'Risk level',
+    'ratingMethod': 'Rating method',
+    'ratingIntro': 'Each risk is rated severity (1 to 4) × likelihood (1 to 4), giving a score from 1 to 16.',
+    'levelHigh': 'High',
+    'levelHighRule': 'score ≥ 12, or severity 4 whatever the likelihood',
+    'levelMedium': 'Medium',
+    'levelMediumRule': 'score 6 to 11',
+    'levelLow': 'Low',
+    'levelLowRule': 'score ≤ 5',
+    'adjusted': 'Rating adjusted for this site (library: S{s} × L{p})',
+    'adjustReason': 'Reason: ',
     'collective': 'Collective protection',
     'individuelle': 'Personal protection',
     'organisationnelle': 'Organisation',
@@ -147,6 +167,16 @@ const Map<String, Map<String, String>> _kTexts = {
     'severity': 'Ernst',
     'probability': 'Waarschijnlijkheid',
     'criticality': 'Risiconiveau',
+    'ratingMethod': 'Beoordelingsmethode',
+    'ratingIntro': 'Elk risico wordt beoordeeld als ernst (1 tot 4) × waarschijnlijkheid (1 tot 4), wat een score van 1 tot 16 geeft.',
+    'levelHigh': 'Hoog',
+    'levelHighRule': 'score ≥ 12, of ernst 4 ongeacht de waarschijnlijkheid',
+    'levelMedium': 'Middel',
+    'levelMediumRule': 'score 6 tot 11',
+    'levelLow': 'Laag',
+    'levelLowRule': 'score ≤ 5',
+    'adjusted': 'Beoordeling aangepast voor deze werf (bibliotheek: E{s} × W{p})',
+    'adjustReason': 'Reden: ',
     'collective': 'Collectieve bescherming',
     'individuelle': 'Persoonlijke bescherming',
     'organisationnelle': 'Organisatie',
@@ -196,6 +226,16 @@ const Map<String, Map<String, String>> _kTexts = {
     'severity': 'Schwere',
     'probability': 'Wahrscheinlichkeit',
     'criticality': 'Risikostufe',
+    'ratingMethod': 'Bewertungsmethode',
+    'ratingIntro': 'Jedes Risiko wird nach Schwere (1 bis 4) × Wahrscheinlichkeit (1 bis 4) bewertet, also mit 1 bis 16 Punkten.',
+    'levelHigh': 'Hoch',
+    'levelHighRule': 'Wert ≥ 12 oder Schwere 4 unabhängig von der Wahrscheinlichkeit',
+    'levelMedium': 'Mittel',
+    'levelMediumRule': 'Wert 6 bis 11',
+    'levelLow': 'Gering',
+    'levelLowRule': 'Wert ≤ 5',
+    'adjusted': 'Bewertung für diese Baustelle angepasst (Bibliothek: S{s} × W{p})',
+    'adjustReason': 'Begründung: ',
     'collective': 'Kollektiver Schutz',
     'individuelle': 'Persönlicher Schutz',
     'organisationnelle': 'Organisation',
@@ -245,6 +285,16 @@ const Map<String, Map<String, String>> _kTexts = {
     'severity': 'Gravedad',
     'probability': 'Probabilidad',
     'criticality': 'Nivel de riesgo',
+    'ratingMethod': 'Método de valoración',
+    'ratingIntro': 'Cada riesgo se valora gravedad (1 a 4) × probabilidad (1 a 4), con una puntuación de 1 a 16.',
+    'levelHigh': 'Alto',
+    'levelHighRule': 'puntuación ≥ 12, o gravedad 4 sea cual sea la probabilidad',
+    'levelMedium': 'Medio',
+    'levelMediumRule': 'puntuación de 6 a 11',
+    'levelLow': 'Bajo',
+    'levelLowRule': 'puntuación ≤ 5',
+    'adjusted': 'Valoración ajustada para esta obra (biblioteca: G{s} × P{p})',
+    'adjustReason': 'Motivo: ',
     'collective': 'Protección colectiva',
     'individuelle': 'Protección individual',
     'organisationnelle': 'Organización',
@@ -294,6 +344,16 @@ const Map<String, Map<String, String>> _kTexts = {
     'severity': 'Gravidade',
     'probability': 'Probabilidade',
     'criticality': 'Nível de risco',
+    'ratingMethod': 'Método de classificação',
+    'ratingIntro': 'Cada risco é classificado gravidade (1 a 4) × probabilidade (1 a 4), com uma pontuação de 1 a 16.',
+    'levelHigh': 'Elevado',
+    'levelHighRule': 'pontuação ≥ 12, ou gravidade 4 qualquer que seja a probabilidade',
+    'levelMedium': 'Médio',
+    'levelMediumRule': 'pontuação de 6 a 11',
+    'levelLow': 'Baixo',
+    'levelLowRule': 'pontuação ≤ 5',
+    'adjusted': 'Classificação ajustada para esta obra (biblioteca: G{s} × P{p})',
+    'adjustReason': 'Motivo: ',
     'collective': 'Proteção coletiva',
     'individuelle': 'Proteção individual',
     'organisationnelle': 'Organização',
@@ -327,8 +387,11 @@ class PpspsPdf {
   static const PdfColor _mid = PdfColor.fromInt(0xFFE08A00);
   static const PdfColor _low = PdfColor.fromInt(0xFF2E7D32);
 
-  static PdfColor _critColor(int c) =>
-      c >= 12 ? _high : (c >= 6 ? _mid : _low);
+  static PdfColor _levelColor(SafetyRiskLevel l) => switch (l) {
+        SafetyRiskLevel.high => _high,
+        SafetyRiskLevel.medium => _mid,
+        SafetyRiskLevel.low => _low,
+      };
 
   static String _fmtDate(DateTime d) =>
       '${d.day.toString().padLeft(2, '0')}/${d.month.toString().padLeft(2, '0')}/${d.year}';
@@ -375,7 +438,11 @@ class PpspsPdf {
     final selectedRisks = lib.risks
         .where((r) => doc.risks.containsKey(r.id))
         .toList()
-      ..sort((a, b) => b.criticality.compareTo(a.criticality));
+      ..sort((a, b) {
+        final sa = doc.risks[a.id]!, sb = doc.risks[b.id]!;
+        return compareRiskRating(sa.severityFor(a), sa.probabilityFor(a),
+            sb.severityFor(b), sb.probabilityFor(b));
+      });
     final measuresById = {for (final m in lib.measures) m.id: m};
 
     final now = DateTime.now();
@@ -434,6 +501,69 @@ class PpspsPdf {
                   font: bold, fontSize: 8.5, color: PdfColors.white)),
         );
 
+    pw.Widget ratingMethod() {
+      pw.Widget scale(String title, String Function(int) def) => pw.Expanded(
+            child: pw.Column(
+              crossAxisAlignment: pw.CrossAxisAlignment.start,
+              children: [
+                pw.Text(title, style: label),
+                for (var n = 1; n <= 4; n++)
+                  pw.Text('$n  ${def(n)}', style: small),
+              ],
+            ),
+          );
+      pw.Widget level(SafetyRiskLevel l, String name, String rule) =>
+          pw.Padding(
+            padding: const pw.EdgeInsets.only(right: 10),
+            child: pw.Row(
+              mainAxisSize: pw.MainAxisSize.min,
+              children: [
+                badge(name, _levelColor(l)),
+                pw.SizedBox(width: 4),
+                pw.Text(rule, style: small),
+              ],
+            ),
+          );
+      return pw.Container(
+        margin: const pw.EdgeInsets.only(bottom: 10),
+        padding: const pw.EdgeInsets.all(8),
+        decoration: pw.BoxDecoration(
+          color: _band,
+          borderRadius: pw.BorderRadius.circular(4),
+        ),
+        child: pw.Column(
+          crossAxisAlignment: pw.CrossAxisAlignment.start,
+          children: [
+            pw.Text(t['ratingMethod']!, style: label),
+            pw.SizedBox(height: 2),
+            pw.Text(t['ratingIntro']!, style: small),
+            pw.SizedBox(height: 6),
+            pw.Row(
+              crossAxisAlignment: pw.CrossAxisAlignment.start,
+              children: [
+                scale(t['severity']!, (n) => severityLevelLabel(n, lang)),
+                pw.SizedBox(width: 12),
+                scale(t['probability']!,
+                    (n) => probabilityLevelLabel(n, lang)),
+              ],
+            ),
+            pw.SizedBox(height: 6),
+            pw.Wrap(
+              runSpacing: 4,
+              children: [
+                level(SafetyRiskLevel.high, t['levelHigh']!,
+                    t['levelHighRule']!),
+                level(SafetyRiskLevel.medium, t['levelMedium']!,
+                    t['levelMediumRule']!),
+                level(SafetyRiskLevel.low, t['levelLow']!,
+                    t['levelLowRule']!),
+              ],
+            ),
+          ],
+        ),
+      );
+    }
+
     pw.Widget riskBlock(SafetyRisk r) {
       final sel = doc.risks[r.id]!;
       final byType = <SafetyMeasureType, List<String>>{};
@@ -475,10 +605,11 @@ class PpspsPdf {
                   ),
                   pw.SizedBox(width: 8),
                   pw.Text(
-                    '${t['severity']} ${r.severity} · ${t['probability']} ${r.probability}  ',
+                    '${t['severity']} ${sel.severityFor(r)} · ${t['probability']} ${sel.probabilityFor(r)}  ',
                     style: small,
                   ),
-                  badge('${r.criticality}', _critColor(r.criticality)),
+                  badge('${sel.criticalityFor(r)}',
+                      _levelColor(sel.levelFor(r))),
                 ],
               ),
             ),
@@ -487,6 +618,18 @@ class PpspsPdf {
               child: pw.Column(
                 crossAxisAlignment: pw.CrossAxisAlignment.start,
                 children: [
+                  if (sel.isAdjusted) ...[
+                    pw.Text(
+                      t['adjusted']!
+                          .replaceAll('{s}', '${r.severity}')
+                          .replaceAll('{p}', '${r.probability}'),
+                      style: small,
+                    ),
+                    if (sel.ratingNote.trim().isNotEmpty)
+                      pw.Text('${t['adjustReason']}${sel.ratingNote.trim()}',
+                          style: small),
+                    pw.SizedBox(height: 4),
+                  ],
                   for (final type in SafetyMeasureType.values)
                     if (byType[type]?.isNotEmpty == true) ...[
                       pw.Text(t[type.name]!, style: label),
@@ -677,6 +820,7 @@ class PpspsPdf {
             child: pw.Text('${selectedRisks.length} ${t['riskSummary']}',
                 style: body),
           ),
+          ratingMethod(),
           for (final r in selectedRisks) riskBlock(r),
 
           // ── 5. Secours ──

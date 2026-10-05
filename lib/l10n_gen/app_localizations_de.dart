@@ -16045,12 +16045,10 @@ class AppLocalizationsDe extends AppLocalizations {
       'Die Termine sind nicht in der richtigen Reihenfolge: erst Aufbau, dann Veranstaltung, dann Abbau.';
 
   @override
-  String get ppspsFindHospital =>
-      'Nächstes Krankenhaus suchen';
+  String get ppspsFindHospital => 'Nächstes Krankenhaus suchen';
 
   @override
-  String get ppspsFindHospitalSearching =>
-      'Suche läuft…';
+  String get ppspsFindHospitalSearching => 'Suche läuft…';
 
   @override
   String get ppspsFindHospitalNeedAddress =>
@@ -16069,8 +16067,7 @@ class AppLocalizationsDe extends AppLocalizations {
       'Kein Krankenhaus im Umkreis von 30 km gefunden. Bitte manuell eintragen.';
 
   @override
-  String get ppspsFindHospitalTitle =>
-      'Krankenhäuser in der Nähe';
+  String get ppspsFindHospitalTitle => 'Krankenhäuser in der Nähe';
 
   @override
   String get ppspsFindHospitalVerify =>
@@ -16082,36 +16079,29 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get ppspsHospitalEmergency =>
-      'Notaufnahme';
+  String get ppspsHospitalEmergency => 'Notaufnahme';
 
   @override
-  String get ppspsOsmAttribution =>
-      'Daten © OpenStreetMap-Mitwirkende';
+  String get ppspsOsmAttribution => 'Daten © OpenStreetMap-Mitwirkende';
 
   @override
-  String get ppspsSectionEquipment =>
-      'Notfallausrüstung';
+  String get ppspsSectionEquipment => 'Notfallausrüstung';
 
   @override
   String get ppspsFieldEquipmentDetails =>
       'Details (Standorte, Mengen, weitere Ausrüstung)';
 
   @override
-  String get ppspsSectionSignatures =>
-      'Unterschriften';
+  String get ppspsSectionSignatures => 'Unterschriften';
 
   @override
-  String get ppspsSignAuthor =>
-      'Erstellt von';
+  String get ppspsSignAuthor => 'Erstellt von';
 
   @override
-  String get ppspsSignCoordinator =>
-      'Freigabe des Koordinators (optional)';
+  String get ppspsSignCoordinator => 'Freigabe des Koordinators (optional)';
 
   @override
-  String get ppspsNotSigned =>
-      'Noch nicht unterschrieben';
+  String get ppspsNotSigned => 'Noch nicht unterschrieben';
 
   @override
   String ppspsSignedOn(Object date) {
@@ -16119,56 +16109,544 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get ppspsSignButton =>
-      'Unterschreiben';
+  String get ppspsSignButton => 'Unterschreiben';
 
   @override
-  String get ppspsSignAgain =>
-      'Erneut';
+  String get ppspsSignAgain => 'Erneut';
 
   @override
-  String get ppspsSignRemove =>
-      'Unterschrift entfernen';
+  String get ppspsSignRemove => 'Unterschrift entfernen';
 
   @override
-  String get ppspsSignName =>
-      'Name des Unterzeichners';
+  String get ppspsSignName => 'Name des Unterzeichners';
 
   @override
   String get ppspsSignHint =>
       'Unterschreiben Sie mit dem Finger im weißen Feld.';
 
   @override
-  String get ppspsSignClear =>
-      'Löschen';
+  String get ppspsSignClear => 'Löschen';
 
   @override
-  String get ppspsSignValidate =>
-      'Unterschrift bestätigen';
+  String get ppspsSignValidate => 'Unterschrift bestätigen';
 
   @override
-  String get attestationListTitle =>
-      'Montageabnahmen';
+  String get electricityToolPowerPlanTitle => 'Stromplan';
 
   @override
-  String get attestationNew =>
-      'Neue Abnahme';
+  String get electricityToolPowerPlanSubtitle =>
+      'Baue deine Verteilung Feld für Feld: Quelle, Verteiler, Kabel, Lasten. Übersichtsplan und Lasttabelle mit einem Tipp.';
 
   @override
-  String get attestationNewTitle =>
-      'Neue Abnahme';
+  String get ppPageTitle => 'Stromplan';
 
   @override
-  String get attestationNewBlank =>
-      'Leere Abnahme';
+  String get ppTabPlan => 'Plan';
+
+  @override
+  String get ppTabSynoptic => 'Übersicht';
+
+  @override
+  String get ppTabLoadTable => 'Lasttabelle';
+
+  @override
+  String get ppDefaultPlanName => 'Mein Stromplan';
+
+  @override
+  String get ppStartTitle => 'Starte mit der Stromquelle ⚡';
+
+  @override
+  String get ppStartSubtitle =>
+      'Aggregat, Netzanschluss oder vorhandene Steckdose. Danach wird jeder freie Abgang ein +-Feld für einen Verteiler oder ein Gerät.';
+
+  @override
+  String get ppSourceSheetTitle => 'Stromquelle';
+
+  @override
+  String get ppSourceGenerator => 'Aggregat';
+
+  @override
+  String get ppSourceMains => 'Netz / Zähler';
+
+  @override
+  String get ppSourceOutlet => 'Vorhandene Steckdose';
+
+  @override
+  String get ppGeneratorSizeLabel => 'Aggregatgröße';
+
+  @override
+  String get ppMainsSizeLabel => 'Anschlusswert';
+
+  @override
+  String get ppOutletTypeLabel => 'Steckdosentyp';
+
+  @override
+  String ppSourceCapacity(String amps, String kva) {
+    return 'Verfügbar: $amps A pro Phase · $kva kVA';
+  }
+
+  @override
+  String get ppPhaseWord => 'Phase';
+
+  @override
+  String get ppNameLabel => 'Name';
+
+  @override
+  String get ppValidate => 'Los geht\'s!';
+
+  @override
+  String get ppSave => 'Speichern';
+
+  @override
+  String get ppDone => 'Fertig';
+
+  @override
+  String get ppDelete => 'Löschen';
+
+  @override
+  String get ppEdit => 'Bearbeiten';
+
+  @override
+  String get ppCopy => 'Kopieren';
+
+  @override
+  String get ppRename => 'Umbenennen';
+
+  @override
+  String get ppDuplicate => 'Duplizieren';
+
+  @override
+  String get ppUnplug => 'Abstecken';
+
+  @override
+  String get ppExpand => 'Aufklappen';
+
+  @override
+  String get ppCollapse => 'Zuklappen';
+
+  @override
+  String ppCollapsedHint(String count) {
+    return '▸ $count Abgänge anzeigen';
+  }
+
+  @override
+  String ppCopied(String name) {
+    return '📋 „$name“ kopiert: auf einem freien +-Feld einfügen';
+  }
+
+  @override
+  String get ppConnectHere => 'Hier etwas anschließen';
+
+  @override
+  String ppConnectTitle(String connector) {
+    return 'An $connector anschließen';
+  }
+
+  @override
+  String get ppConnectPanel => 'Ein Verteiler';
+
+  @override
+  String get ppConnectPanelSubtitle =>
+      'Verteiler, Schrank, Steckdosenleiste… mit eigenen Abgängen';
+
+  @override
+  String get ppConnectLoad => 'Ein Gerät';
+
+  @override
+  String get ppConnectLoadSubtitle =>
+      'Licht, Ton, LED-Wand, Toiletten, Catering, Büros… du gibst die Leistung ein';
+
+  @override
+  String ppPasteTitle(String name) {
+    return '„$name“ einfügen';
+  }
+
+  @override
+  String get ppPasteSubtitle =>
+      'Eine vollständige Kopie mit allem, was darunter hängt';
+
+  @override
+  String get ppTemplateSheetTitle => 'Verteiler wählen';
+
+  @override
+  String get ppTemplateStrip => 'Steckdosenleiste 6× Schuko';
+
+  @override
+  String get ppTemplateCustomTri => 'Eigener Verteiler (3-phasig)';
+
+  @override
+  String get ppTemplateCustomMono => 'Eigener Verteiler (1-phasig)';
+
+  @override
+  String get ppTemplateCustomSubtitle =>
+      'Leer: du fügst die Abgänge selbst hinzu';
+
+  @override
+  String get ppCompatOk => '✓ Direkt';
+
+  @override
+  String get ppCompatAdapter => 'Adapter';
+
+  @override
+  String get ppLoadSheetTitle => 'Gerät anschließen';
+
+  @override
+  String get ppLoadEditTitle => 'Gerät bearbeiten';
+
+  @override
+  String get ppCategoryLabel => 'Kategorie';
+
+  @override
+  String get ppLoadNameHint => 'z. B. LED-Wand Bühne, VIP-Toiletten…';
+
+  @override
+  String get ppPowerLabel => 'Leistung';
+
+  @override
+  String get ppCosPhiLabel => 'Leistungsfaktor';
+
+  @override
+  String get ppConnectAction => 'Anschließen';
+
+  @override
+  String ppLoadPreviewTri(String amps) {
+    return '≈ $amps A pro Phase (auf L1, L2, L3 verteilt)';
+  }
+
+  @override
+  String ppLoadPreviewMono(String amps) {
+    return '≈ $amps A auf einer Phase';
+  }
+
+  @override
+  String get ppCatLighting => 'Licht';
+
+  @override
+  String get ppCatSound => 'Ton';
+
+  @override
+  String get ppCatVideo => 'Video / LED';
+
+  @override
+  String get ppCatStage => 'Bühnentechnik / Motoren';
+
+  @override
+  String get ppCatCatering => 'Catering / Bars';
+
+  @override
+  String get ppCatToilets => 'Sanitär';
+
+  @override
+  String get ppCatProduction => 'Produktion / Büros';
+
+  @override
+  String get ppCatHvac => 'Klima / Heizung';
+
+  @override
+  String get ppCatOther => 'Sonstiges';
+
+  @override
+  String get ppOutputSheetTitle => 'Abgang und Kabel';
+
+  @override
+  String get ppConnectorLabel => 'Steckverbinder';
+
+  @override
+  String get ppBreakerLabel => 'Absicherung (LS-Schalter)';
+
+  @override
+  String get ppRcdLabel => 'FI 30 mA';
+
+  @override
+  String get ppPhaseLabel => 'Phase';
+
+  @override
+  String get ppPhaseInherited =>
+      'Vorgegeben durch den 1-phasigen Verteiler davor';
+
+  @override
+  String get ppCableLabel => 'Kabel';
+
+  @override
+  String get ppCableLengthLabel => 'Länge';
+
+  @override
+  String ppAmpacityShort(String amps) {
+    return '$amps A zulässig (H07RN-F, Richtwert)';
+  }
+
+  @override
+  String get ppPanelSheetTitle => 'Verteiler';
+
+  @override
+  String get ppPanelInputLabel => 'Eingang';
+
+  @override
+  String get ppMainBreakerLabel => 'Hauptschalter';
+
+  @override
+  String ppOutputsLabel(String count) {
+    return 'Abgänge ($count)';
+  }
+
+  @override
+  String ppOutputsUsed(String used, String total) {
+    return '$used/$total Abgänge belegt';
+  }
+
+  @override
+  String get ppFreeOutput => 'frei';
+
+  @override
+  String get ppAddOutputHint => 'Abgang hinzufügen:';
+
+  @override
+  String get ppAddOutput => 'Abgang hinzufügen';
+
+  @override
+  String get ppAddSourceOutput => 'Ausgang an der Quelle hinzufügen';
+
+  @override
+  String get ppAutoPhases => 'L1 / L2 / L3 automatisch verteilen';
+
+  @override
+  String get ppDeleteSourceTitle => 'Quelle löschen?';
+
+  @override
+  String get ppDeleteSourceBody => 'Der gesamte Plan darunter wird gelöscht.';
+
+  @override
+  String get ppDeleteOutputTitle => 'Diesen Abgang löschen?';
+
+  @override
+  String ppDeleteOutputBody(String name) {
+    return '„$name“ und alles darunter werden entfernt.';
+  }
+
+  @override
+  String get ppDeletePanelTitle => 'Diesen Verteiler abstecken?';
+
+  @override
+  String ppDeletePanelBody(String name) {
+    return '„$name“ und alles daran Angeschlossene werden aus dem Plan entfernt.';
+  }
+
+  @override
+  String get ppDeletePlanTitle => 'Diesen Plan löschen?';
+
+  @override
+  String ppDeletePlanBody(String name) {
+    return '„$name“ wird endgültig gelöscht.';
+  }
+
+  @override
+  String get ppProjectsTitle => 'Meine Pläne';
+
+  @override
+  String get ppNewPlan => 'Neuer Plan';
+
+  @override
+  String get ppRenamePlan => 'Plan umbenennen';
+
+  @override
+  String ppPlanSummary(String panels, String kw) {
+    return '$panels Verteiler · $kw kW';
+  }
+
+  @override
+  String get ppKpiPower => 'Leistung';
+
+  @override
+  String get ppKpiApparent => 'Scheinleistung';
+
+  @override
+  String get ppKpiMaxPhase => 'Stärkste Phase';
+
+  @override
+  String get ppKpiSourceUse => 'Quelle genutzt';
+
+  @override
+  String get ppKpiWorstDrop => 'Max. Spannungsfall';
+
+  @override
+  String get ppKpiGenerator => 'Empfohlenes Aggregat';
+
+  @override
+  String ppGeneratorOk(String kva) {
+    return '👍 Dein Aggregat reicht (empfohlenes Minimum: $kva kVA mit 20 % Reserve)';
+  }
+
+  @override
+  String ppGeneratorTooSmall(String kva) {
+    return '🚨 Plane lieber ein $kva-kVA-Aggregat ein (stärkste Phase + 20 % Reserve)';
+  }
+
+  @override
+  String get ppAllGood => 'Alles im grünen Bereich, gute Arbeit! 🎉';
+
+  @override
+  String ppAllGoodWithTips(String count) {
+    return 'Alles grün 🎉 · $count Hinweis(e)';
+  }
+
+  @override
+  String ppAlertsCount(String errors, String warnings) {
+    return '$errors Fehler · $warnings Punkt(e) zu prüfen';
+  }
+
+  @override
+  String get ppAlertsTitle => 'Hinweise';
+
+  @override
+  String get ppAllGoodPdf => 'Keine Hinweise.';
+
+  @override
+  String get ppAlertNoSource => 'Füge zuerst eine Stromquelle hinzu.';
+
+  @override
+  String ppAlertSourceOverload(String amps, String limit) {
+    return 'Quelle überlastet: $amps A bei $limit A verfügbar';
+  }
+
+  @override
+  String ppAlertNearLimit(String percent, String amps, String limit) {
+    return 'Zu $percent % ausgelastet ($amps / $limit A)';
+  }
+
+  @override
+  String ppAlertPanelOverload(String amps, String limit) {
+    return 'Verteiler überlastet: $amps A an $limit A';
+  }
+
+  @override
+  String ppAlertOutputOverload(String amps, String limit) {
+    return 'Abgang überlastet: $amps A an $limit-A-Absicherung';
+  }
+
+  @override
+  String ppAlertCableUndersized(String cable, String amps, String limit) {
+    return 'Kabel $cable ($amps A max.) mit $limit A abgesichert: Querschnitt erhöhen';
+  }
+
+  @override
+  String ppAlertVoltageDrop(String percent, String limit) {
+    return 'Kumulierter Spannungsfall $percent % (über $limit %)';
+  }
+
+  @override
+  String ppAlertImbalance(String percent) {
+    return 'Phasen unsymmetrisch ($percent %): 1-phasige Lasten besser verteilen';
+  }
+
+  @override
+  String ppAlertAdapter(String adapter) {
+    return 'Adapter nötig: $adapter';
+  }
+
+  @override
+  String get ppCategoriesTitle => 'Aufteilung nach Nutzung';
+
+  @override
+  String get ppSynopticSubtitle => 'Verteilungsübersicht';
+
+  @override
+  String get ppSynopticHint => '🤏 Zum Zoomen ziehen, zum Verschieben wischen';
+
+  @override
+  String get ppEmptyTab =>
+      'Noch nichts anzuzeigen: baue zuerst deinen Plan im Tab Plan.';
+
+  @override
+  String get ppGoToPlan => 'Zum Plan';
+
+  @override
+  String get ppExportTitle => 'Exportieren';
+
+  @override
+  String get ppExportPdf => 'Komplettes PDF';
+
+  @override
+  String get ppExportPdfSubtitle => 'Übersicht + Lasttabelle + Hinweise';
+
+  @override
+  String get ppExportCsv => 'CSV-Tabelle';
+
+  @override
+  String get ppExportCsvSubtitle => 'Für Excel, Numbers oder Google Sheets';
+
+  @override
+  String get ppExportPng => 'Bild der Übersicht';
+
+  @override
+  String get ppExportPngSubtitle => 'Hochauflösendes PNG, weißer Hintergrund';
+
+  @override
+  String get ppExportError => 'Hoppla, der Export ist fehlgeschlagen 😕';
+
+  @override
+  String get ppPdfTitle => 'Stromverteilungsplan';
+
+  @override
+  String get ppPdfGenerated => 'Erstellt mit ShowTech Tools';
+
+  @override
+  String get ppColPanel => 'Verteiler';
+
+  @override
+  String get ppColOutput => 'Abgang';
+
+  @override
+  String get ppColConnector => 'Steckverbinder';
+
+  @override
+  String get ppColBreaker => 'Absicherung';
+
+  @override
+  String get ppColPhase => 'Phase';
+
+  @override
+  String get ppColLength => 'Länge (m)';
+
+  @override
+  String get ppColCable => 'Kabel';
+
+  @override
+  String get ppColConnected => 'Angeschlossen';
+
+  @override
+  String get ppColCategory => 'Nutzung';
+
+  @override
+  String get ppColPower => 'kW';
+
+  @override
+  String get ppColCurrent => 'I (A)';
+
+  @override
+  String get ppColDrop => 'ΔU (%)';
+
+  @override
+  String get ppDisclaimer =>
+      'Richtwerte (230/400 V, H07RN-F-Kupferkabel frei verlegt, max. 5 % Spannungsfall). Dieser Plan hilft bei der Vorbereitung einer Anlage und muss von einer Elektrofachkraft nach den örtlichen Normen geprüft werden.';
+
+  @override
+  String get attestationListTitle => 'Montageabnahmen';
+
+  @override
+  String get attestationNew => 'Neue Abnahme';
+
+  @override
+  String get attestationNewTitle => 'Neue Abnahme';
+
+  @override
+  String get attestationNewBlank => 'Leere Abnahme';
 
   @override
   String get attestationNewFromPlan =>
       'Oder aus einem Sicherheitsplan (übernimmt Veranstaltung und Unternehmen):';
 
   @override
-  String get attestationEmptyTitle =>
-      'Noch keine Abnahmen';
+  String get attestationEmptyTitle => 'Noch keine Abnahmen';
 
   @override
   String get attestationEmptyBody =>
@@ -16179,12 +16657,10 @@ class AppLocalizationsDe extends AppLocalizations {
       'Diese Abnahme und ihre Fotos löschen? Dies kann nicht rückgängig gemacht werden.';
 
   @override
-  String get attestationStatusSigned =>
-      'Unterschrieben';
+  String get attestationStatusSigned => 'Unterschrieben';
 
   @override
-  String get attestationStatusReserve =>
-      'Mit Vorbehalt unterschrieben';
+  String get attestationStatusReserve => 'Mit Vorbehalt unterschrieben';
 
   @override
   String attestationElementCount(Object count) {
@@ -16196,8 +16672,7 @@ class AppLocalizationsDe extends AppLocalizations {
       'Inhalt geändert: Die Unterschrift wurde entfernt, bitte erneut unterschreiben.';
 
   @override
-  String get attestationFieldCompany =>
-      'Montageunternehmen';
+  String get attestationFieldCompany => 'Montageunternehmen';
 
   @override
   String get attestationElementName =>
@@ -16208,16 +16683,13 @@ class AppLocalizationsDe extends AppLocalizations {
       'Beschreibung (z. B. Traverse 40×40, 12 m, 4 Kettenzüge 1 t)';
 
   @override
-  String get attestationElementFamilies =>
-      'Durchzuführende Prüfungen';
+  String get attestationElementFamilies => 'Durchzuführende Prüfungen';
 
   @override
-  String get attestationAppliedLoad =>
-      'Aufgebrachte Last (kg)';
+  String get attestationAppliedLoad => 'Aufgebrachte Last (kg)';
 
   @override
-  String get attestationRatedLoad =>
-      'Zulässige Last (kg)';
+  String get attestationRatedLoad => 'Zulässige Last (kg)';
 
   @override
   String get attestationDeleteElementConfirm =>
@@ -16229,48 +16701,40 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get attestationOverload =>
-      'Last überschreitet die zulässige Last';
+  String get attestationOverload => 'Last überschreitet die zulässige Last';
 
   @override
   String get attestationElementsEmpty =>
       'Fügen Sie die montierten Elemente hinzu: Traversen, Grid, Türme, Kettenzüge, Bühne, Screens…';
 
   @override
-  String get attestationAddElement =>
-      'Element hinzufügen';
+  String get attestationAddElement => 'Element hinzufügen';
 
   @override
-  String get attestationTakePhoto =>
-      'Foto aufnehmen';
+  String get attestationTakePhoto => 'Foto aufnehmen';
 
   @override
-  String get attestationPickPhoto =>
-      'Aus der Galerie wählen';
+  String get attestationPickPhoto => 'Aus der Galerie wählen';
 
   @override
   String get attestationPhotoError =>
       'Foto konnte nicht hinzugefügt werden. Prüfen Sie den Kamerazugriff in den Einstellungen.';
 
   @override
-  String get attestationOk =>
-      'OK';
+  String get attestationOk => 'OK';
 
   @override
-  String get attestationNc =>
-      'M';
+  String get attestationNc => 'M';
 
   @override
-  String get attestationNa =>
-      'Entf.';
+  String get attestationNa => 'Entf.';
 
   @override
   String get attestationReserveLabel =>
       'Vorbehalt: Befund und geplante Maßnahme (Pflicht)';
 
   @override
-  String get attestationPhotoRequired =>
-      'Foto für diesen Prüfpunkt empfohlen';
+  String get attestationPhotoRequired => 'Foto für diesen Prüfpunkt empfohlen';
 
   @override
   String get attestationNoElements =>
@@ -16281,8 +16745,7 @@ class AppLocalizationsDe extends AppLocalizations {
       'Jeder Mangel braucht vor der Unterschrift einen schriftlichen Vorbehalt.';
 
   @override
-  String get attestationSignTitle =>
-      'Unterschrift der Abnahme';
+  String get attestationSignTitle => 'Unterschrift der Abnahme';
 
   @override
   String attestationUnanswered(Object count) {
@@ -16300,16 +16763,13 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get attestationStatElements =>
-      'Elemente';
+  String get attestationStatElements => 'Elemente';
 
   @override
-  String get attestationStatReserves =>
-      'Vorbehalte';
+  String get attestationStatReserves => 'Vorbehalte';
 
   @override
-  String get attestationStatPhotos =>
-      'Fotos';
+  String get attestationStatPhotos => 'Fotos';
 
   @override
   String attestationStatement(Object name) {
@@ -16322,50 +16782,127 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get attestationReserve =>
-      'Vorbehalt';
+  String get attestationReserve => 'Vorbehalt';
 
   @override
   String get attestationReserveEmpty =>
       'Vorbehalt noch zu schreiben (Schritt Prüfungen)';
 
   @override
-  String get attestationSignerSection =>
-      'Unterzeichner';
+  String get attestationSignerSection => 'Unterzeichner';
 
   @override
   String get attestationSignerRole =>
       'Funktion (z. B. Head Rigger, Produktionsleiter)';
 
   @override
-  String get attestationSign =>
-      'Abnahme unterschreiben';
+  String get attestationSign => 'Abnahme unterschreiben';
 
   @override
-  String get attestationSignWithReserve =>
-      'Mit Vorbehalt unterschreiben';
+  String get attestationSignWithReserve => 'Mit Vorbehalt unterschreiben';
 
   @override
-  String get attestationStepInfo =>
-      'Angaben';
+  String get attestationStepInfo => 'Angaben';
 
   @override
-  String get attestationStepElements =>
-      'Elemente';
+  String get attestationStepElements => 'Elemente';
 
   @override
-  String get attestationStepControls =>
-      'Prüfungen';
+  String get attestationStepControls => 'Prüfungen';
 
   @override
-  String get attestationStepSignature =>
-      'Unterschrift';
+  String get attestationStepSignature => 'Unterschrift';
 
   @override
-  String get attestationNextElement =>
-      'Nächstes Element';
+  String get attestationNextElement => 'Nächstes Element';
 
   @override
-  String get attestationDeletePhotoConfirm =>
-      'Dieses Foto löschen?';
+  String get attestationDeletePhotoConfirm => 'Dieses Foto löschen?';
+
+  @override
+  String get hospitalSearchPlaceTitle => 'Wo findet die Veranstaltung statt?';
+
+  @override
+  String get hospitalSearchPlaceHelp =>
+      'Name des Veranstaltungsorts, Adresse, Stadt oder PLZ – auch ungefähr reicht.';
+
+  @override
+  String get hospitalSearchPlaceHint => 'z. B. Lanxess Arena, Köln';
+
+  @override
+  String get hospitalSearchButton => 'Suchen';
+
+  @override
+  String get hospitalSearchPlaceChoose =>
+      'Mehrere Orte passen – welcher ist es?';
+
+  @override
+  String get hospitalSearchNoPlace =>
+      'Kein Ort gefunden. Versuchen Sie es kürzer: nur Stadt, PLZ oder Name des Veranstaltungsorts.';
+
+  @override
+  String hospitalSearchAround(Object place) {
+    return 'Rund um $place';
+  }
+
+  @override
+  String get hospitalSearchChangePlace => 'Ändern';
+
+  @override
+  String hospitalSearchNoneRadius(Object km) {
+    return 'Kein Krankenhaus im Umkreis von $km km gefunden. Bitte manuell eintragen.';
+  }
+
+  @override
+  String get ppspsRatingTitle => 'Risikobewertung';
+
+  @override
+  String get ppspsSeverity => 'Schwere';
+
+  @override
+  String get ppspsProbability => 'Wahrscheinlichkeit';
+
+  @override
+  String ppspsRatingLibraryValue(Object severity, Object probability) {
+    return 'Für diesen Plan angepasst. Wert der Bibliothek: Schwere $severity × Wahrscheinlichkeit $probability.';
+  }
+
+  @override
+  String get ppspsRatingNoteHint => 'Begründung (z. B. Halle, kein Wind)';
+
+  @override
+  String get ppspsRatingReset => 'Auf den Wert der Bibliothek zurücksetzen';
+
+  @override
+  String get ppspsLevelHigh => 'Hohes Risiko';
+
+  @override
+  String get ppspsLevelMedium => 'Mittleres Risiko';
+
+  @override
+  String get ppspsLevelLow => 'Geringes Risiko';
+
+  @override
+  String get ppspsLevelHighRule =>
+      'Wert 12 bis 16 oder Schwere 4 unabhängig von der Wahrscheinlichkeit';
+
+  @override
+  String get ppspsLevelMediumRule => 'Wert 6 bis 11';
+
+  @override
+  String get ppspsLevelLowRule => 'Wert 1 bis 5';
+
+  @override
+  String get ppspsRatingHelpTitle => 'Wie Risiken bewertet werden';
+
+  @override
+  String get ppspsRatingHelpShort => 'Bewertung';
+
+  @override
+  String get ppspsRatingHelpIntro =>
+      'Jedes Risiko erhält eine Schwere von 1 bis 4 und eine Wahrscheinlichkeit von 1 bis 4. Der Wert ist ihr Produkt, von 1 bis 16.';
+
+  @override
+  String get ppspsRatingHelpAdjust =>
+      'Die vorgeschlagenen Werte stammen aus der Bibliothek für eine typische Veranstaltung. Passen Sie sie für Ihre Baustelle an, indem Sie auf ein Risiko tippen; die Begründung erscheint im PDF.';
 }

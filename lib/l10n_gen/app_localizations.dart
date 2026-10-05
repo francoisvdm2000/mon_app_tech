@@ -28250,13 +28250,13 @@ abstract class AppLocalizations {
   /// No description provided for @ppspsPhaseOrderError.
   ///
   /// In fr, this message translates to:
-  /// **'Les dates ne se suivent pas : le montage doit précéder l'exploitation, puis le démontage.'**
+  /// **'Les dates ne se suivent pas : le montage doit précéder l\'exploitation, puis le démontage.'**
   String get ppspsPhaseOrderError;
 
   /// No description provided for @ppspsFindHospital.
   ///
   /// In fr, this message translates to:
-  /// **'Trouver l'hôpital le plus proche'**
+  /// **'Trouver l\'hôpital le plus proche'**
   String get ppspsFindHospital;
 
   /// No description provided for @ppspsFindHospitalSearching.
@@ -28268,19 +28268,19 @@ abstract class AppLocalizations {
   /// No description provided for @ppspsFindHospitalNeedAddress.
   ///
   /// In fr, this message translates to:
-  /// **'Renseignez d'abord le lieu ou l'adresse de l'événement (étape Projet).'**
+  /// **'Renseignez d\'abord le lieu ou l\'adresse de l\'événement (étape Projet).'**
   String get ppspsFindHospitalNeedAddress;
 
   /// No description provided for @ppspsFindHospitalNoPlace.
   ///
   /// In fr, this message translates to:
-  /// **'Adresse de l'événement introuvable. Vérifiez-la dans l'étape Projet, ou complétez l'hôpital à la main.'**
+  /// **'Adresse de l\'événement introuvable. Vérifiez-la dans l\'étape Projet, ou complétez l\'hôpital à la main.'**
   String get ppspsFindHospitalNoPlace;
 
   /// No description provided for @ppspsFindHospitalError.
   ///
   /// In fr, this message translates to:
-  /// **'Recherche impossible pour le moment (connexion ?). Complétez l'hôpital à la main.'**
+  /// **'Recherche impossible pour le moment (connexion ?). Complétez l\'hôpital à la main.'**
   String get ppspsFindHospitalError;
 
   /// No description provided for @ppspsFindHospitalNone.
@@ -28298,7 +28298,7 @@ abstract class AppLocalizations {
   /// No description provided for @ppspsFindHospitalVerify.
   ///
   /// In fr, this message translates to:
-  /// **'Vérifiez que l'hôpital choisi a un service d'urgences ouvert pendant l'événement.'**
+  /// **'Vérifiez que l\'hôpital choisi a un service d\'urgences ouvert pendant l\'événement.'**
   String get ppspsFindHospitalVerify;
 
   /// No description provided for @ppspsDistanceKm.
@@ -28403,6 +28403,882 @@ abstract class AppLocalizations {
   /// **'Valider la signature'**
   String get ppspsSignValidate;
 
+  /// No description provided for @electricityToolPowerPlanTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Plan électrique'**
+  String get electricityToolPowerPlanTitle;
+
+  /// No description provided for @electricityToolPowerPlanSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Construis ta distribution case par case : source, tableaux, câbles, charges. Synoptique et tableau de charge en un clic.'**
+  String get electricityToolPowerPlanSubtitle;
+
+  /// No description provided for @ppPageTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Plan électrique'**
+  String get ppPageTitle;
+
+  /// No description provided for @ppTabPlan.
+  ///
+  /// In fr, this message translates to:
+  /// **'Plan'**
+  String get ppTabPlan;
+
+  /// No description provided for @ppTabSynoptic.
+  ///
+  /// In fr, this message translates to:
+  /// **'Synoptique'**
+  String get ppTabSynoptic;
+
+  /// No description provided for @ppTabLoadTable.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tableau de charge'**
+  String get ppTabLoadTable;
+
+  /// No description provided for @ppDefaultPlanName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mon plan électrique'**
+  String get ppDefaultPlanName;
+
+  /// No description provided for @ppStartTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Commence par la source ⚡'**
+  String get ppStartTitle;
+
+  /// No description provided for @ppStartSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Groupe électrogène, raccordement réseau ou prise existante. Ensuite, chaque sortie libre devient une case + où brancher un tableau ou un équipement.'**
+  String get ppStartSubtitle;
+
+  /// No description provided for @ppSourceSheetTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Source d\'alimentation'**
+  String get ppSourceSheetTitle;
+
+  /// No description provided for @ppSourceGenerator.
+  ///
+  /// In fr, this message translates to:
+  /// **'Groupe électrogène'**
+  String get ppSourceGenerator;
+
+  /// No description provided for @ppSourceMains.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réseau / compteur'**
+  String get ppSourceMains;
+
+  /// No description provided for @ppSourceOutlet.
+  ///
+  /// In fr, this message translates to:
+  /// **'Prise existante'**
+  String get ppSourceOutlet;
+
+  /// No description provided for @ppGeneratorSizeLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance du groupe'**
+  String get ppGeneratorSizeLabel;
+
+  /// No description provided for @ppMainsSizeLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calibre du raccordement'**
+  String get ppMainsSizeLabel;
+
+  /// No description provided for @ppOutletTypeLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Type de prise'**
+  String get ppOutletTypeLabel;
+
+  /// No description provided for @ppSourceCapacity.
+  ///
+  /// In fr, this message translates to:
+  /// **'Disponible : {amps} A par phase · {kva} kVA'**
+  String ppSourceCapacity(String amps, String kva);
+
+  /// No description provided for @ppPhaseWord.
+  ///
+  /// In fr, this message translates to:
+  /// **'phase'**
+  String get ppPhaseWord;
+
+  /// No description provided for @ppNameLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom'**
+  String get ppNameLabel;
+
+  /// No description provided for @ppValidate.
+  ///
+  /// In fr, this message translates to:
+  /// **'C\'est parti !'**
+  String get ppValidate;
+
+  /// No description provided for @ppSave.
+  ///
+  /// In fr, this message translates to:
+  /// **'Enregistrer'**
+  String get ppSave;
+
+  /// No description provided for @ppDone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Terminé'**
+  String get ppDone;
+
+  /// No description provided for @ppDelete.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer'**
+  String get ppDelete;
+
+  /// No description provided for @ppEdit.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modifier'**
+  String get ppEdit;
+
+  /// No description provided for @ppCopy.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copier'**
+  String get ppCopy;
+
+  /// No description provided for @ppRename.
+  ///
+  /// In fr, this message translates to:
+  /// **'Renommer'**
+  String get ppRename;
+
+  /// No description provided for @ppDuplicate.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dupliquer'**
+  String get ppDuplicate;
+
+  /// No description provided for @ppUnplug.
+  ///
+  /// In fr, this message translates to:
+  /// **'Débrancher'**
+  String get ppUnplug;
+
+  /// No description provided for @ppExpand.
+  ///
+  /// In fr, this message translates to:
+  /// **'Déplier'**
+  String get ppExpand;
+
+  /// No description provided for @ppCollapse.
+  ///
+  /// In fr, this message translates to:
+  /// **'Replier'**
+  String get ppCollapse;
+
+  /// No description provided for @ppCollapsedHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'▸ Afficher les {count} départs'**
+  String ppCollapsedHint(String count);
+
+  /// No description provided for @ppCopied.
+  ///
+  /// In fr, this message translates to:
+  /// **'📋 « {name} » copié : colle-le sur une case + libre'**
+  String ppCopied(String name);
+
+  /// No description provided for @ppConnectHere.
+  ///
+  /// In fr, this message translates to:
+  /// **'Brancher quelque chose ici'**
+  String get ppConnectHere;
+
+  /// No description provided for @ppConnectTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Brancher sur {connector}'**
+  String ppConnectTitle(String connector);
+
+  /// No description provided for @ppConnectPanel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Un tableau'**
+  String get ppConnectPanel;
+
+  /// No description provided for @ppConnectPanelSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Distro, armoire, multiprise… avec ses propres départs'**
+  String get ppConnectPanelSubtitle;
+
+  /// No description provided for @ppConnectLoad.
+  ///
+  /// In fr, this message translates to:
+  /// **'Un équipement'**
+  String get ppConnectLoad;
+
+  /// No description provided for @ppConnectLoadSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lumière, son, écran LED, toilettes, catering, bureaux… tu saisis la puissance'**
+  String get ppConnectLoadSubtitle;
+
+  /// No description provided for @ppPasteTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Coller « {name} »'**
+  String ppPasteTitle(String name);
+
+  /// No description provided for @ppPasteSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Une copie complète, avec tout ce qui est branché dessous'**
+  String get ppPasteSubtitle;
+
+  /// No description provided for @ppTemplateSheetTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Choisis un tableau'**
+  String get ppTemplateSheetTitle;
+
+  /// No description provided for @ppTemplateStrip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Multiprise 6× Schuko'**
+  String get ppTemplateStrip;
+
+  /// No description provided for @ppTemplateCustomTri.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tableau personnalisé (tri)'**
+  String get ppTemplateCustomTri;
+
+  /// No description provided for @ppTemplateCustomMono.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tableau personnalisé (mono)'**
+  String get ppTemplateCustomMono;
+
+  /// No description provided for @ppTemplateCustomSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vide : tu ajoutes toi-même les départs'**
+  String get ppTemplateCustomSubtitle;
+
+  /// No description provided for @ppCompatOk.
+  ///
+  /// In fr, this message translates to:
+  /// **'✓ Direct'**
+  String get ppCompatOk;
+
+  /// No description provided for @ppCompatAdapter.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adaptateur'**
+  String get ppCompatAdapter;
+
+  /// No description provided for @ppLoadSheetTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Brancher un équipement'**
+  String get ppLoadSheetTitle;
+
+  /// No description provided for @ppLoadEditTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modifier l\'équipement'**
+  String get ppLoadEditTitle;
+
+  /// No description provided for @ppCategoryLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Catégorie'**
+  String get ppCategoryLabel;
+
+  /// No description provided for @ppLoadNameHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex. Écran LED scène, Toilettes VIP…'**
+  String get ppLoadNameHint;
+
+  /// No description provided for @ppPowerLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance'**
+  String get ppPowerLabel;
+
+  /// No description provided for @ppCosPhiLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Facteur de puissance'**
+  String get ppCosPhiLabel;
+
+  /// No description provided for @ppConnectAction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Brancher'**
+  String get ppConnectAction;
+
+  /// No description provided for @ppLoadPreviewTri.
+  ///
+  /// In fr, this message translates to:
+  /// **'≈ {amps} A par phase (réparti sur L1, L2, L3)'**
+  String ppLoadPreviewTri(String amps);
+
+  /// No description provided for @ppLoadPreviewMono.
+  ///
+  /// In fr, this message translates to:
+  /// **'≈ {amps} A sur une phase'**
+  String ppLoadPreviewMono(String amps);
+
+  /// No description provided for @ppCatLighting.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lumière'**
+  String get ppCatLighting;
+
+  /// No description provided for @ppCatSound.
+  ///
+  /// In fr, this message translates to:
+  /// **'Son'**
+  String get ppCatSound;
+
+  /// No description provided for @ppCatVideo.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vidéo / LED'**
+  String get ppCatVideo;
+
+  /// No description provided for @ppCatStage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Machinerie / moteurs'**
+  String get ppCatStage;
+
+  /// No description provided for @ppCatCatering.
+  ///
+  /// In fr, this message translates to:
+  /// **'Catering / bars'**
+  String get ppCatCatering;
+
+  /// No description provided for @ppCatToilets.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sanitaires'**
+  String get ppCatToilets;
+
+  /// No description provided for @ppCatProduction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Production / bureaux'**
+  String get ppCatProduction;
+
+  /// No description provided for @ppCatHvac.
+  ///
+  /// In fr, this message translates to:
+  /// **'Clim / chauffage'**
+  String get ppCatHvac;
+
+  /// No description provided for @ppCatOther.
+  ///
+  /// In fr, this message translates to:
+  /// **'Autre'**
+  String get ppCatOther;
+
+  /// No description provided for @ppOutputSheetTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Départ et câble'**
+  String get ppOutputSheetTitle;
+
+  /// No description provided for @ppConnectorLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Prise'**
+  String get ppConnectorLabel;
+
+  /// No description provided for @ppBreakerLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Protection (disjoncteur)'**
+  String get ppBreakerLabel;
+
+  /// No description provided for @ppRcdLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Différentiel 30 mA'**
+  String get ppRcdLabel;
+
+  /// No description provided for @ppPhaseLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Phase'**
+  String get ppPhaseLabel;
+
+  /// No description provided for @ppPhaseInherited.
+  ///
+  /// In fr, this message translates to:
+  /// **'Imposée par le tableau mono en amont'**
+  String get ppPhaseInherited;
+
+  /// No description provided for @ppCableLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Câble'**
+  String get ppCableLabel;
+
+  /// No description provided for @ppCableLengthLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Longueur'**
+  String get ppCableLengthLabel;
+
+  /// No description provided for @ppAmpacityShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'{amps} A admissibles (H07RN-F, indicatif)'**
+  String ppAmpacityShort(String amps);
+
+  /// No description provided for @ppPanelSheetTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tableau'**
+  String get ppPanelSheetTitle;
+
+  /// No description provided for @ppPanelInputLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entrée'**
+  String get ppPanelInputLabel;
+
+  /// No description provided for @ppMainBreakerLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Protection générale'**
+  String get ppMainBreakerLabel;
+
+  /// No description provided for @ppOutputsLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Départs ({count})'**
+  String ppOutputsLabel(String count);
+
+  /// No description provided for @ppOutputsUsed.
+  ///
+  /// In fr, this message translates to:
+  /// **'{used}/{total} départs utilisés'**
+  String ppOutputsUsed(String used, String total);
+
+  /// No description provided for @ppFreeOutput.
+  ///
+  /// In fr, this message translates to:
+  /// **'libre'**
+  String get ppFreeOutput;
+
+  /// No description provided for @ppAddOutputHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajouter un départ :'**
+  String get ppAddOutputHint;
+
+  /// No description provided for @ppAddOutput.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajouter un départ'**
+  String get ppAddOutput;
+
+  /// No description provided for @ppAddSourceOutput.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajouter une sortie à la source'**
+  String get ppAddSourceOutput;
+
+  /// No description provided for @ppAutoPhases.
+  ///
+  /// In fr, this message translates to:
+  /// **'Répartir L1 / L2 / L3 automatiquement'**
+  String get ppAutoPhases;
+
+  /// No description provided for @ppDeleteSourceTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer la source ?'**
+  String get ppDeleteSourceTitle;
+
+  /// No description provided for @ppDeleteSourceBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tout le plan branché dessous sera effacé.'**
+  String get ppDeleteSourceBody;
+
+  /// No description provided for @ppDeleteOutputTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer ce départ ?'**
+  String get ppDeleteOutputTitle;
+
+  /// No description provided for @ppDeleteOutputBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'« {name} » et tout ce qui est branché dessous seront retirés.'**
+  String ppDeleteOutputBody(String name);
+
+  /// No description provided for @ppDeletePanelTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Débrancher ce tableau ?'**
+  String get ppDeletePanelTitle;
+
+  /// No description provided for @ppDeletePanelBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'« {name} » et tout ce qui est branché dessus seront retirés du plan.'**
+  String ppDeletePanelBody(String name);
+
+  /// No description provided for @ppDeletePlanTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer ce plan ?'**
+  String get ppDeletePlanTitle;
+
+  /// No description provided for @ppDeletePlanBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'« {name} » sera définitivement supprimé.'**
+  String ppDeletePlanBody(String name);
+
+  /// No description provided for @ppProjectsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mes plans'**
+  String get ppProjectsTitle;
+
+  /// No description provided for @ppNewPlan.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nouveau plan'**
+  String get ppNewPlan;
+
+  /// No description provided for @ppRenamePlan.
+  ///
+  /// In fr, this message translates to:
+  /// **'Renommer le plan'**
+  String get ppRenamePlan;
+
+  /// No description provided for @ppPlanSummary.
+  ///
+  /// In fr, this message translates to:
+  /// **'{panels} tableau(x) · {kw} kW'**
+  String ppPlanSummary(String panels, String kw);
+
+  /// No description provided for @ppKpiPower.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance'**
+  String get ppKpiPower;
+
+  /// No description provided for @ppKpiApparent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance apparente'**
+  String get ppKpiApparent;
+
+  /// No description provided for @ppKpiMaxPhase.
+  ///
+  /// In fr, this message translates to:
+  /// **'Phase la + chargée'**
+  String get ppKpiMaxPhase;
+
+  /// No description provided for @ppKpiSourceUse.
+  ///
+  /// In fr, this message translates to:
+  /// **'Source utilisée'**
+  String get ppKpiSourceUse;
+
+  /// No description provided for @ppKpiWorstDrop.
+  ///
+  /// In fr, this message translates to:
+  /// **'Chute de tension max'**
+  String get ppKpiWorstDrop;
+
+  /// No description provided for @ppKpiGenerator.
+  ///
+  /// In fr, this message translates to:
+  /// **'Groupe conseillé'**
+  String get ppKpiGenerator;
+
+  /// No description provided for @ppGeneratorOk.
+  ///
+  /// In fr, this message translates to:
+  /// **'👍 Ton groupe tient la route (minimum conseillé : {kva} kVA avec 20 % de marge)'**
+  String ppGeneratorOk(String kva);
+
+  /// No description provided for @ppGeneratorTooSmall.
+  ///
+  /// In fr, this message translates to:
+  /// **'🚨 Prévois plutôt un groupe de {kva} kVA (phase la plus chargée + 20 % de marge)'**
+  String ppGeneratorTooSmall(String kva);
+
+  /// No description provided for @ppAllGood.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tout est au vert, beau boulot ! 🎉'**
+  String get ppAllGood;
+
+  /// No description provided for @ppAllGoodWithTips.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tout est au vert 🎉 · {count} conseil(s)'**
+  String ppAllGoodWithTips(String count);
+
+  /// No description provided for @ppAlertsCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'{errors} erreur(s) · {warnings} point(s) à vérifier'**
+  String ppAlertsCount(String errors, String warnings);
+
+  /// No description provided for @ppAlertsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Points d\'attention'**
+  String get ppAlertsTitle;
+
+  /// No description provided for @ppAllGoodPdf.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun point d\'attention.'**
+  String get ppAllGoodPdf;
+
+  /// No description provided for @ppAlertNoSource.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajoute d\'abord une source d\'alimentation.'**
+  String get ppAlertNoSource;
+
+  /// No description provided for @ppAlertSourceOverload.
+  ///
+  /// In fr, this message translates to:
+  /// **'Source en surcharge : {amps} A pour {limit} A disponibles'**
+  String ppAlertSourceOverload(String amps, String limit);
+
+  /// No description provided for @ppAlertNearLimit.
+  ///
+  /// In fr, this message translates to:
+  /// **'Chargé à {percent} % ({amps} / {limit} A)'**
+  String ppAlertNearLimit(String percent, String amps, String limit);
+
+  /// No description provided for @ppAlertPanelOverload.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tableau en surcharge : {amps} A sur un {limit} A'**
+  String ppAlertPanelOverload(String amps, String limit);
+
+  /// No description provided for @ppAlertOutputOverload.
+  ///
+  /// In fr, this message translates to:
+  /// **'Départ en surcharge : {amps} A sur une protection de {limit} A'**
+  String ppAlertOutputOverload(String amps, String limit);
+
+  /// No description provided for @ppAlertCableUndersized.
+  ///
+  /// In fr, this message translates to:
+  /// **'Câble {cable} ({amps} A max) protégé en {limit} A : augmente la section'**
+  String ppAlertCableUndersized(String cable, String amps, String limit);
+
+  /// No description provided for @ppAlertVoltageDrop.
+  ///
+  /// In fr, this message translates to:
+  /// **'Chute de tension cumulée de {percent} % (plus de {limit} %)'**
+  String ppAlertVoltageDrop(String percent, String limit);
+
+  /// No description provided for @ppAlertImbalance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Phases déséquilibrées ({percent} %) : répartis mieux les charges mono'**
+  String ppAlertImbalance(String percent);
+
+  /// No description provided for @ppAlertAdapter.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adaptateur nécessaire : {adapter}'**
+  String ppAlertAdapter(String adapter);
+
+  /// No description provided for @ppCategoriesTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Répartition par usage'**
+  String get ppCategoriesTitle;
+
+  /// No description provided for @ppSynopticSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Synoptique de distribution'**
+  String get ppSynopticSubtitle;
+
+  /// No description provided for @ppSynopticHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'🤏 Pince pour zoomer, glisse pour te déplacer'**
+  String get ppSynopticHint;
+
+  /// No description provided for @ppEmptyTab.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rien à afficher pour l\'instant : construis d\'abord ton plan dans l\'onglet Plan.'**
+  String get ppEmptyTab;
+
+  /// No description provided for @ppGoToPlan.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aller au plan'**
+  String get ppGoToPlan;
+
+  /// No description provided for @ppExportTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exporter'**
+  String get ppExportTitle;
+
+  /// No description provided for @ppExportPdf.
+  ///
+  /// In fr, this message translates to:
+  /// **'PDF complet'**
+  String get ppExportPdf;
+
+  /// No description provided for @ppExportPdfSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Synoptique + tableau de charge + points d\'attention'**
+  String get ppExportPdfSubtitle;
+
+  /// No description provided for @ppExportCsv.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tableau CSV'**
+  String get ppExportCsv;
+
+  /// No description provided for @ppExportCsvSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pour Excel, Numbers ou Google Sheets'**
+  String get ppExportCsvSubtitle;
+
+  /// No description provided for @ppExportPng.
+  ///
+  /// In fr, this message translates to:
+  /// **'Image du synoptique'**
+  String get ppExportPng;
+
+  /// No description provided for @ppExportPngSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'PNG haute définition, fond blanc'**
+  String get ppExportPngSubtitle;
+
+  /// No description provided for @ppExportError.
+  ///
+  /// In fr, this message translates to:
+  /// **'Oups, l\'export a échoué 😕'**
+  String get ppExportError;
+
+  /// No description provided for @ppPdfTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Plan de distribution électrique'**
+  String get ppPdfTitle;
+
+  /// No description provided for @ppPdfGenerated.
+  ///
+  /// In fr, this message translates to:
+  /// **'Généré avec ShowTech Tools'**
+  String get ppPdfGenerated;
+
+  /// No description provided for @ppColPanel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tableau'**
+  String get ppColPanel;
+
+  /// No description provided for @ppColOutput.
+  ///
+  /// In fr, this message translates to:
+  /// **'Départ'**
+  String get ppColOutput;
+
+  /// No description provided for @ppColConnector.
+  ///
+  /// In fr, this message translates to:
+  /// **'Prise'**
+  String get ppColConnector;
+
+  /// No description provided for @ppColBreaker.
+  ///
+  /// In fr, this message translates to:
+  /// **'Protection'**
+  String get ppColBreaker;
+
+  /// No description provided for @ppColPhase.
+  ///
+  /// In fr, this message translates to:
+  /// **'Phase'**
+  String get ppColPhase;
+
+  /// No description provided for @ppColLength.
+  ///
+  /// In fr, this message translates to:
+  /// **'Longueur (m)'**
+  String get ppColLength;
+
+  /// No description provided for @ppColCable.
+  ///
+  /// In fr, this message translates to:
+  /// **'Câble'**
+  String get ppColCable;
+
+  /// No description provided for @ppColConnected.
+  ///
+  /// In fr, this message translates to:
+  /// **'Branché'**
+  String get ppColConnected;
+
+  /// No description provided for @ppColCategory.
+  ///
+  /// In fr, this message translates to:
+  /// **'Usage'**
+  String get ppColCategory;
+
+  /// No description provided for @ppColPower.
+  ///
+  /// In fr, this message translates to:
+  /// **'kW'**
+  String get ppColPower;
+
+  /// No description provided for @ppColCurrent.
+  ///
+  /// In fr, this message translates to:
+  /// **'I (A)'**
+  String get ppColCurrent;
+
+  /// No description provided for @ppColDrop.
+  ///
+  /// In fr, this message translates to:
+  /// **'ΔU (%)'**
+  String get ppColDrop;
+
+  /// No description provided for @ppDisclaimer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculs indicatifs (230/400 V, câbles H07RN-F cuivre à l\'air libre, chute de tension max 5 %). Ce plan aide à préparer une installation : il doit être validé par une personne qualifiée selon les normes locales.'**
+  String get ppDisclaimer;
+
   /// No description provided for @attestationListTitle.
   ///
   /// In fr, this message translates to:
@@ -28430,19 +29306,19 @@ abstract class AppLocalizations {
   /// No description provided for @attestationNewFromPlan.
   ///
   /// In fr, this message translates to:
-  /// **'Ou à partir d'un plan de sécurité (reprend l'événement et l'entreprise) :'**
+  /// **'Ou à partir d\'un plan de sécurité (reprend l\'événement et l\'entreprise) :'**
   String get attestationNewFromPlan;
 
   /// No description provided for @attestationEmptyTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Aucune attestation pour l'instant'**
+  /// **'Aucune attestation pour l\'instant'**
   String get attestationEmptyTitle;
 
   /// No description provided for @attestationEmptyBody.
   ///
   /// In fr, this message translates to:
-  /// **'Après le montage, contrôlez chaque élément, notez les réserves et signez l'attestation sur place.'**
+  /// **'Après le montage, contrôlez chaque élément, notez les réserves et signez l\'attestation sur place.'**
   String get attestationEmptyBody;
 
   /// No description provided for @attestationDeleteConfirm.
@@ -28484,7 +29360,7 @@ abstract class AppLocalizations {
   /// No description provided for @attestationElementName.
   ///
   /// In fr, this message translates to:
-  /// **'Nom de l'élément (ex. Pont avant)'**
+  /// **'Nom de l\'élément (ex. Pont avant)'**
   String get attestationElementName;
 
   /// No description provided for @attestationElementDesc.
@@ -28556,7 +29432,7 @@ abstract class AppLocalizations {
   /// No description provided for @attestationPhotoError.
   ///
   /// In fr, this message translates to:
-  /// **'Impossible d'ajouter la photo. Vérifiez l'accès à l'appareil photo dans les réglages.'**
+  /// **'Impossible d\'ajouter la photo. Vérifiez l\'accès à l\'appareil photo dans les réglages.'**
   String get attestationPhotoError;
 
   /// No description provided for @attestationOk.
@@ -28592,7 +29468,7 @@ abstract class AppLocalizations {
   /// No description provided for @attestationNoElements.
   ///
   /// In fr, this message translates to:
-  /// **'Aucun élément à contrôler : ajoutez-les à l'étape Éléments.'**
+  /// **'Aucun élément à contrôler : ajoutez-les à l\'étape Éléments.'**
   String get attestationNoElements;
 
   /// No description provided for @attestationReservesMissing.
@@ -28604,7 +29480,7 @@ abstract class AppLocalizations {
   /// No description provided for @attestationSignTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Signature de l'attestation'**
+  /// **'Signature de l\'attestation'**
   String get attestationSignTitle;
 
   /// No description provided for @attestationUnanswered.
@@ -28646,13 +29522,13 @@ abstract class AppLocalizations {
   /// No description provided for @attestationStatement.
   ///
   /// In fr, this message translates to:
-  /// **'Je soussigné(e), {name}, atteste que les installations listées ont été montées conformément aux notices des fabricants et aux règles de l'art, et qu'elles ont été vérifiées avant l'accueil du public.'**
+  /// **'Je soussigné(e), {name}, atteste que les installations listées ont été montées conformément aux notices des fabricants et aux règles de l\'art, et qu\'elles ont été vérifiées avant l\'accueil du public.'**
   String attestationStatement(Object name);
 
   /// No description provided for @attestationStatementReserve.
   ///
   /// In fr, this message translates to:
-  /// **'Je soussigné(e), {name}, atteste que les installations listées ont été montées conformément aux notices des fabricants et aux règles de l'art, et qu'elles ont été vérifiées avant l'accueil du public, sous réserve des points ci-dessous.'**
+  /// **'Je soussigné(e), {name}, atteste que les installations listées ont été montées conformément aux notices des fabricants et aux règles de l\'art, et qu\'elles ont été vérifiées avant l\'accueil du public, sous réserve des points ci-dessous.'**
   String attestationStatementReserve(Object name);
 
   /// No description provided for @attestationReserve.
@@ -28682,7 +29558,7 @@ abstract class AppLocalizations {
   /// No description provided for @attestationSign.
   ///
   /// In fr, this message translates to:
-  /// **'Signer l'attestation'**
+  /// **'Signer l\'attestation'**
   String get attestationSign;
 
   /// No description provided for @attestationSignWithReserve.
@@ -28726,6 +29602,156 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Supprimer cette photo ?'**
   String get attestationDeletePhotoConfirm;
+
+  /// No description provided for @hospitalSearchPlaceTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Où se passe l\'événement ?'**
+  String get hospitalSearchPlaceTitle;
+
+  /// No description provided for @hospitalSearchPlaceHelp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom de la salle, adresse, ville ou code postal : même approximatif, on s\'en occupe.'**
+  String get hospitalSearchPlaceHelp;
+
+  /// No description provided for @hospitalSearchPlaceHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'ex. Forest National, Bruxelles'**
+  String get hospitalSearchPlaceHint;
+
+  /// No description provided for @hospitalSearchButton.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rechercher'**
+  String get hospitalSearchButton;
+
+  /// No description provided for @hospitalSearchPlaceChoose.
+  ///
+  /// In fr, this message translates to:
+  /// **'Plusieurs lieux correspondent, lequel est le bon ?'**
+  String get hospitalSearchPlaceChoose;
+
+  /// No description provided for @hospitalSearchNoPlace.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun lieu trouvé. Essayez plus court : juste la ville, le code postal ou le nom de la salle.'**
+  String get hospitalSearchNoPlace;
+
+  /// No description provided for @hospitalSearchAround.
+  ///
+  /// In fr, this message translates to:
+  /// **'Autour de {place}'**
+  String hospitalSearchAround(Object place);
+
+  /// No description provided for @hospitalSearchChangePlace.
+  ///
+  /// In fr, this message translates to:
+  /// **'Changer'**
+  String get hospitalSearchChangePlace;
+
+  /// No description provided for @hospitalSearchNoneRadius.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun hôpital trouvé à moins de {km} km de ce lieu. Complétez à la main.'**
+  String hospitalSearchNoneRadius(Object km);
+
+  /// No description provided for @ppspsRatingTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cotation du risque'**
+  String get ppspsRatingTitle;
+
+  /// No description provided for @ppspsSeverity.
+  ///
+  /// In fr, this message translates to:
+  /// **'Gravité'**
+  String get ppspsSeverity;
+
+  /// No description provided for @ppspsProbability.
+  ///
+  /// In fr, this message translates to:
+  /// **'Probabilité'**
+  String get ppspsProbability;
+
+  /// No description provided for @ppspsRatingLibraryValue.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajusté pour ce plan. Valeur de la bibliothèque : gravité {severity} × probabilité {probability}.'**
+  String ppspsRatingLibraryValue(Object severity, Object probability);
+
+  /// No description provided for @ppspsRatingNoteHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Motif (ex. montage en salle, pas d\'exposition au vent)'**
+  String get ppspsRatingNoteHint;
+
+  /// No description provided for @ppspsRatingReset.
+  ///
+  /// In fr, this message translates to:
+  /// **'Revenir à la valeur de la bibliothèque'**
+  String get ppspsRatingReset;
+
+  /// No description provided for @ppspsLevelHigh.
+  ///
+  /// In fr, this message translates to:
+  /// **'Risque élevé'**
+  String get ppspsLevelHigh;
+
+  /// No description provided for @ppspsLevelMedium.
+  ///
+  /// In fr, this message translates to:
+  /// **'Risque moyen'**
+  String get ppspsLevelMedium;
+
+  /// No description provided for @ppspsLevelLow.
+  ///
+  /// In fr, this message translates to:
+  /// **'Risque faible'**
+  String get ppspsLevelLow;
+
+  /// No description provided for @ppspsLevelHighRule.
+  ///
+  /// In fr, this message translates to:
+  /// **'cote de 12 à 16, ou gravité 4 quelle que soit la probabilité'**
+  String get ppspsLevelHighRule;
+
+  /// No description provided for @ppspsLevelMediumRule.
+  ///
+  /// In fr, this message translates to:
+  /// **'cote de 6 à 11'**
+  String get ppspsLevelMediumRule;
+
+  /// No description provided for @ppspsLevelLowRule.
+  ///
+  /// In fr, this message translates to:
+  /// **'cote de 1 à 5'**
+  String get ppspsLevelLowRule;
+
+  /// No description provided for @ppspsRatingHelpTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Comment les risques sont cotés'**
+  String get ppspsRatingHelpTitle;
+
+  /// No description provided for @ppspsRatingHelpShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cotation'**
+  String get ppspsRatingHelpShort;
+
+  /// No description provided for @ppspsRatingHelpIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'Chaque risque reçoit une gravité de 1 à 4 et une probabilité de 1 à 4. La cote est leur produit, de 1 à 16.'**
+  String get ppspsRatingHelpIntro;
+
+  /// No description provided for @ppspsRatingHelpAdjust.
+  ///
+  /// In fr, this message translates to:
+  /// **'Les valeurs proposées sont celles de la bibliothèque pour un événement type. Ajustez-les pour votre chantier en touchant un risque ; le motif apparaît dans le PDF.'**
+  String get ppspsRatingHelpAdjust;
 }
 
 class _AppLocalizationsDelegate

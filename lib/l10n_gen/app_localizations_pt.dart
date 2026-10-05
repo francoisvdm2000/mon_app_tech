@@ -15992,12 +15992,10 @@ class AppLocalizationsPt extends AppLocalizations {
       'As datas não estão pela ordem: a montagem deve preceder a exploração e depois a desmontagem.';
 
   @override
-  String get ppspsFindHospital =>
-      'Procurar o hospital mais próximo';
+  String get ppspsFindHospital => 'Procurar o hospital mais próximo';
 
   @override
-  String get ppspsFindHospitalSearching =>
-      'A procurar…';
+  String get ppspsFindHospitalSearching => 'A procurar…';
 
   @override
   String get ppspsFindHospitalNeedAddress =>
@@ -16016,8 +16014,7 @@ class AppLocalizationsPt extends AppLocalizations {
       'Nenhum hospital encontrado num raio de 30 km. Introduza-o manualmente.';
 
   @override
-  String get ppspsFindHospitalTitle =>
-      'Hospitais próximos';
+  String get ppspsFindHospitalTitle => 'Hospitais próximos';
 
   @override
   String get ppspsFindHospitalVerify =>
@@ -16029,36 +16026,29 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get ppspsHospitalEmergency =>
-      'Urgências';
+  String get ppspsHospitalEmergency => 'Urgências';
 
   @override
-  String get ppspsOsmAttribution =>
-      'Dados © colaboradores do OpenStreetMap';
+  String get ppspsOsmAttribution => 'Dados © colaboradores do OpenStreetMap';
 
   @override
-  String get ppspsSectionEquipment =>
-      'Material de emergência';
+  String get ppspsSectionEquipment => 'Material de emergência';
 
   @override
   String get ppspsFieldEquipmentDetails =>
       'Detalhes (localização, quantidades, outro material)';
 
   @override
-  String get ppspsSectionSignatures =>
-      'Assinaturas';
+  String get ppspsSectionSignatures => 'Assinaturas';
 
   @override
-  String get ppspsSignAuthor =>
-      'Elaborado por';
+  String get ppspsSignAuthor => 'Elaborado por';
 
   @override
-  String get ppspsSignCoordinator =>
-      'Visto do coordenador (opcional)';
+  String get ppspsSignCoordinator => 'Visto do coordenador (opcional)';
 
   @override
-  String get ppspsNotSigned =>
-      'Ainda não assinado';
+  String get ppspsNotSigned => 'Ainda não assinado';
 
   @override
   String ppspsSignedOn(Object date) {
@@ -16066,56 +16056,542 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get ppspsSignButton =>
-      'Assinar';
+  String get ppspsSignButton => 'Assinar';
 
   @override
-  String get ppspsSignAgain =>
-      'Refazer';
+  String get ppspsSignAgain => 'Refazer';
 
   @override
-  String get ppspsSignRemove =>
-      'Remover a assinatura';
+  String get ppspsSignRemove => 'Remover a assinatura';
 
   @override
-  String get ppspsSignName =>
-      'Nome do signatário';
+  String get ppspsSignName => 'Nome do signatário';
 
   @override
-  String get ppspsSignHint =>
-      'Assine com o dedo no quadro branco.';
+  String get ppspsSignHint => 'Assine com o dedo no quadro branco.';
 
   @override
-  String get ppspsSignClear =>
-      'Apagar';
+  String get ppspsSignClear => 'Apagar';
 
   @override
-  String get ppspsSignValidate =>
-      'Confirmar a assinatura';
+  String get ppspsSignValidate => 'Confirmar a assinatura';
 
   @override
-  String get attestationListTitle =>
-      'Certificados de montagem';
+  String get electricityToolPowerPlanTitle => 'Plano elétrico';
 
   @override
-  String get attestationNew =>
-      'Novo certificado';
+  String get electricityToolPowerPlanSubtitle =>
+      'Constrói a tua distribuição casa a casa: fonte, quadros, cabos, cargas. Sinóptico e quadro de cargas num toque.';
 
   @override
-  String get attestationNewTitle =>
-      'Novo certificado';
+  String get ppPageTitle => 'Plano elétrico';
 
   @override
-  String get attestationNewBlank =>
-      'Certificado em branco';
+  String get ppTabPlan => 'Plano';
+
+  @override
+  String get ppTabSynoptic => 'Sinóptico';
+
+  @override
+  String get ppTabLoadTable => 'Quadro de cargas';
+
+  @override
+  String get ppDefaultPlanName => 'O meu plano elétrico';
+
+  @override
+  String get ppStartTitle => 'Começa pela fonte ⚡';
+
+  @override
+  String get ppStartSubtitle =>
+      'Gerador, ligação à rede ou tomada existente. Depois, cada saída livre torna-se uma casa + onde ligar um quadro ou um equipamento.';
+
+  @override
+  String get ppSourceSheetTitle => 'Fonte de alimentação';
+
+  @override
+  String get ppSourceGenerator => 'Gerador';
+
+  @override
+  String get ppSourceMains => 'Rede / contador';
+
+  @override
+  String get ppSourceOutlet => 'Tomada existente';
+
+  @override
+  String get ppGeneratorSizeLabel => 'Potência do gerador';
+
+  @override
+  String get ppMainsSizeLabel => 'Calibre da ligação';
+
+  @override
+  String get ppOutletTypeLabel => 'Tipo de tomada';
+
+  @override
+  String ppSourceCapacity(String amps, String kva) {
+    return 'Disponível: $amps A por fase · $kva kVA';
+  }
+
+  @override
+  String get ppPhaseWord => 'fase';
+
+  @override
+  String get ppNameLabel => 'Nome';
+
+  @override
+  String get ppValidate => 'Vamos lá!';
+
+  @override
+  String get ppSave => 'Guardar';
+
+  @override
+  String get ppDone => 'Concluído';
+
+  @override
+  String get ppDelete => 'Eliminar';
+
+  @override
+  String get ppEdit => 'Editar';
+
+  @override
+  String get ppCopy => 'Copiar';
+
+  @override
+  String get ppRename => 'Mudar o nome';
+
+  @override
+  String get ppDuplicate => 'Duplicar';
+
+  @override
+  String get ppUnplug => 'Desligar';
+
+  @override
+  String get ppExpand => 'Expandir';
+
+  @override
+  String get ppCollapse => 'Recolher';
+
+  @override
+  String ppCollapsedHint(String count) {
+    return '▸ Mostrar as $count saídas';
+  }
+
+  @override
+  String ppCopied(String name) {
+    return '📋 «$name» copiado: cola-o numa casa + livre';
+  }
+
+  @override
+  String get ppConnectHere => 'Ligar algo aqui';
+
+  @override
+  String ppConnectTitle(String connector) {
+    return 'Ligar a $connector';
+  }
+
+  @override
+  String get ppConnectPanel => 'Um quadro';
+
+  @override
+  String get ppConnectPanelSubtitle =>
+      'Quadro, armário, extensão… com as suas próprias saídas';
+
+  @override
+  String get ppConnectLoad => 'Um equipamento';
+
+  @override
+  String get ppConnectLoadSubtitle =>
+      'Luz, som, ecrã LED, sanitários, catering, escritórios… introduzes a potência';
+
+  @override
+  String ppPasteTitle(String name) {
+    return 'Colar «$name»';
+  }
+
+  @override
+  String get ppPasteSubtitle =>
+      'Uma cópia completa, com tudo o que está ligado abaixo';
+
+  @override
+  String get ppTemplateSheetTitle => 'Escolhe um quadro';
+
+  @override
+  String get ppTemplateStrip => 'Extensão 6× Schuko';
+
+  @override
+  String get ppTemplateCustomTri => 'Quadro personalizado (trifásico)';
+
+  @override
+  String get ppTemplateCustomMono => 'Quadro personalizado (monofásico)';
+
+  @override
+  String get ppTemplateCustomSubtitle => 'Vazio: adicionas tu as saídas';
+
+  @override
+  String get ppCompatOk => '✓ Direto';
+
+  @override
+  String get ppCompatAdapter => 'Adaptador';
+
+  @override
+  String get ppLoadSheetTitle => 'Ligar um equipamento';
+
+  @override
+  String get ppLoadEditTitle => 'Editar o equipamento';
+
+  @override
+  String get ppCategoryLabel => 'Categoria';
+
+  @override
+  String get ppLoadNameHint => 'ex. Ecrã LED palco, Sanitários VIP…';
+
+  @override
+  String get ppPowerLabel => 'Potência';
+
+  @override
+  String get ppCosPhiLabel => 'Fator de potência';
+
+  @override
+  String get ppConnectAction => 'Ligar';
+
+  @override
+  String ppLoadPreviewTri(String amps) {
+    return '≈ $amps A por fase (repartido por L1, L2, L3)';
+  }
+
+  @override
+  String ppLoadPreviewMono(String amps) {
+    return '≈ $amps A numa fase';
+  }
+
+  @override
+  String get ppCatLighting => 'Iluminação';
+
+  @override
+  String get ppCatSound => 'Som';
+
+  @override
+  String get ppCatVideo => 'Vídeo / LED';
+
+  @override
+  String get ppCatStage => 'Maquinaria / motores';
+
+  @override
+  String get ppCatCatering => 'Catering / bares';
+
+  @override
+  String get ppCatToilets => 'Sanitários';
+
+  @override
+  String get ppCatProduction => 'Produção / escritórios';
+
+  @override
+  String get ppCatHvac => 'Climatização / aquecimento';
+
+  @override
+  String get ppCatOther => 'Outro';
+
+  @override
+  String get ppOutputSheetTitle => 'Saída e cabo';
+
+  @override
+  String get ppConnectorLabel => 'Conector';
+
+  @override
+  String get ppBreakerLabel => 'Proteção (disjuntor)';
+
+  @override
+  String get ppRcdLabel => 'Diferencial 30 mA';
+
+  @override
+  String get ppPhaseLabel => 'Fase';
+
+  @override
+  String get ppPhaseInherited => 'Imposta pelo quadro monofásico a montante';
+
+  @override
+  String get ppCableLabel => 'Cabo';
+
+  @override
+  String get ppCableLengthLabel => 'Comprimento';
+
+  @override
+  String ppAmpacityShort(String amps) {
+    return '$amps A admissíveis (H07RN-F, indicativo)';
+  }
+
+  @override
+  String get ppPanelSheetTitle => 'Quadro';
+
+  @override
+  String get ppPanelInputLabel => 'Entrada';
+
+  @override
+  String get ppMainBreakerLabel => 'Proteção geral';
+
+  @override
+  String ppOutputsLabel(String count) {
+    return 'Saídas ($count)';
+  }
+
+  @override
+  String ppOutputsUsed(String used, String total) {
+    return '$used/$total saídas usadas';
+  }
+
+  @override
+  String get ppFreeOutput => 'livre';
+
+  @override
+  String get ppAddOutputHint => 'Adicionar uma saída:';
+
+  @override
+  String get ppAddOutput => 'Adicionar uma saída';
+
+  @override
+  String get ppAddSourceOutput => 'Adicionar uma saída à fonte';
+
+  @override
+  String get ppAutoPhases => 'Repartir L1 / L2 / L3 automaticamente';
+
+  @override
+  String get ppDeleteSourceTitle => 'Eliminar a fonte?';
+
+  @override
+  String get ppDeleteSourceBody => 'Todo o plano ligado abaixo será apagado.';
+
+  @override
+  String get ppDeleteOutputTitle => 'Eliminar esta saída?';
+
+  @override
+  String ppDeleteOutputBody(String name) {
+    return '«$name» e tudo o que está ligado abaixo serão removidos.';
+  }
+
+  @override
+  String get ppDeletePanelTitle => 'Desligar este quadro?';
+
+  @override
+  String ppDeletePanelBody(String name) {
+    return '«$name» e tudo o que está ligado a ele serão retirados do plano.';
+  }
+
+  @override
+  String get ppDeletePlanTitle => 'Eliminar este plano?';
+
+  @override
+  String ppDeletePlanBody(String name) {
+    return '«$name» será eliminado definitivamente.';
+  }
+
+  @override
+  String get ppProjectsTitle => 'Os meus planos';
+
+  @override
+  String get ppNewPlan => 'Novo plano';
+
+  @override
+  String get ppRenamePlan => 'Mudar o nome do plano';
+
+  @override
+  String ppPlanSummary(String panels, String kw) {
+    return '$panels quadro(s) · $kw kW';
+  }
+
+  @override
+  String get ppKpiPower => 'Potência';
+
+  @override
+  String get ppKpiApparent => 'Potência aparente';
+
+  @override
+  String get ppKpiMaxPhase => 'Fase mais carregada';
+
+  @override
+  String get ppKpiSourceUse => 'Fonte usada';
+
+  @override
+  String get ppKpiWorstDrop => 'Queda de tensão máx.';
+
+  @override
+  String get ppKpiGenerator => 'Gerador recomendado';
+
+  @override
+  String ppGeneratorOk(String kva) {
+    return '👍 O teu gerador aguenta (mínimo recomendado: $kva kVA com 20 % de margem)';
+  }
+
+  @override
+  String ppGeneratorTooSmall(String kva) {
+    return '🚨 Prevê antes um gerador de $kva kVA (fase mais carregada + 20 % de margem)';
+  }
+
+  @override
+  String get ppAllGood => 'Tudo no verde, bom trabalho! 🎉';
+
+  @override
+  String ppAllGoodWithTips(String count) {
+    return 'Tudo no verde 🎉 · $count dica(s)';
+  }
+
+  @override
+  String ppAlertsCount(String errors, String warnings) {
+    return '$errors erro(s) · $warnings ponto(s) a verificar';
+  }
+
+  @override
+  String get ppAlertsTitle => 'Pontos de atenção';
+
+  @override
+  String get ppAllGoodPdf => 'Nenhum ponto de atenção.';
+
+  @override
+  String get ppAlertNoSource => 'Adiciona primeiro uma fonte de alimentação.';
+
+  @override
+  String ppAlertSourceOverload(String amps, String limit) {
+    return 'Fonte em sobrecarga: $amps A para $limit A disponíveis';
+  }
+
+  @override
+  String ppAlertNearLimit(String percent, String amps, String limit) {
+    return 'Carregado a $percent % ($amps / $limit A)';
+  }
+
+  @override
+  String ppAlertPanelOverload(String amps, String limit) {
+    return 'Quadro em sobrecarga: $amps A num de $limit A';
+  }
+
+  @override
+  String ppAlertOutputOverload(String amps, String limit) {
+    return 'Saída em sobrecarga: $amps A numa proteção de $limit A';
+  }
+
+  @override
+  String ppAlertCableUndersized(String cable, String amps, String limit) {
+    return 'Cabo $cable ($amps A máx.) protegido a $limit A: aumenta a secção';
+  }
+
+  @override
+  String ppAlertVoltageDrop(String percent, String limit) {
+    return 'Queda de tensão acumulada de $percent % (mais de $limit %)';
+  }
+
+  @override
+  String ppAlertImbalance(String percent) {
+    return 'Fases desequilibradas ($percent %): reparte melhor as cargas monofásicas';
+  }
+
+  @override
+  String ppAlertAdapter(String adapter) {
+    return 'Adaptador necessário: $adapter';
+  }
+
+  @override
+  String get ppCategoriesTitle => 'Repartição por utilização';
+
+  @override
+  String get ppSynopticSubtitle => 'Sinóptico de distribuição';
+
+  @override
+  String get ppSynopticHint => '🤏 Belisca para ampliar, arrasta para mover';
+
+  @override
+  String get ppEmptyTab =>
+      'Nada para mostrar ainda: constrói primeiro o teu plano no separador Plano.';
+
+  @override
+  String get ppGoToPlan => 'Ir para o plano';
+
+  @override
+  String get ppExportTitle => 'Exportar';
+
+  @override
+  String get ppExportPdf => 'PDF completo';
+
+  @override
+  String get ppExportPdfSubtitle =>
+      'Sinóptico + quadro de cargas + pontos de atenção';
+
+  @override
+  String get ppExportCsv => 'Tabela CSV';
+
+  @override
+  String get ppExportCsvSubtitle => 'Para Excel, Numbers ou Google Sheets';
+
+  @override
+  String get ppExportPng => 'Imagem do sinóptico';
+
+  @override
+  String get ppExportPngSubtitle => 'PNG de alta resolução, fundo branco';
+
+  @override
+  String get ppExportError => 'Ups, a exportação falhou 😕';
+
+  @override
+  String get ppPdfTitle => 'Plano de distribuição elétrica';
+
+  @override
+  String get ppPdfGenerated => 'Gerado com ShowTech Tools';
+
+  @override
+  String get ppColPanel => 'Quadro';
+
+  @override
+  String get ppColOutput => 'Saída';
+
+  @override
+  String get ppColConnector => 'Conector';
+
+  @override
+  String get ppColBreaker => 'Proteção';
+
+  @override
+  String get ppColPhase => 'Fase';
+
+  @override
+  String get ppColLength => 'Comprimento (m)';
+
+  @override
+  String get ppColCable => 'Cabo';
+
+  @override
+  String get ppColConnected => 'Ligado';
+
+  @override
+  String get ppColCategory => 'Utilização';
+
+  @override
+  String get ppColPower => 'kW';
+
+  @override
+  String get ppColCurrent => 'I (A)';
+
+  @override
+  String get ppColDrop => 'ΔU (%)';
+
+  @override
+  String get ppDisclaimer =>
+      'Cálculos indicativos (230/400 V, cabos H07RN-F de cobre ao ar livre, queda de tensão máx. 5 %). Este plano ajuda a preparar uma instalação: deve ser validado por uma pessoa qualificada segundo as normas locais.';
+
+  @override
+  String get attestationListTitle => 'Certificados de montagem';
+
+  @override
+  String get attestationNew => 'Novo certificado';
+
+  @override
+  String get attestationNewTitle => 'Novo certificado';
+
+  @override
+  String get attestationNewBlank => 'Certificado em branco';
 
   @override
   String get attestationNewFromPlan =>
       'Ou a partir de um plano de segurança (retoma o evento e a empresa):';
 
   @override
-  String get attestationEmptyTitle =>
-      'Ainda não há certificados';
+  String get attestationEmptyTitle => 'Ainda não há certificados';
 
   @override
   String get attestationEmptyBody =>
@@ -16126,12 +16602,10 @@ class AppLocalizationsPt extends AppLocalizations {
       'Eliminar este certificado e as suas fotos? Esta ação é definitiva.';
 
   @override
-  String get attestationStatusSigned =>
-      'Assinado';
+  String get attestationStatusSigned => 'Assinado';
 
   @override
-  String get attestationStatusReserve =>
-      'Assinado com reservas';
+  String get attestationStatusReserve => 'Assinado com reservas';
 
   @override
   String attestationElementCount(Object count) {
@@ -16143,28 +16617,23 @@ class AppLocalizationsPt extends AppLocalizations {
       'Conteúdo alterado: a assinatura foi removida, assine novamente.';
 
   @override
-  String get attestationFieldCompany =>
-      'Empresa montadora';
+  String get attestationFieldCompany => 'Empresa montadora';
 
   @override
-  String get attestationElementName =>
-      'Nome do elemento (ex. Truss frontal)';
+  String get attestationElementName => 'Nome do elemento (ex. Truss frontal)';
 
   @override
   String get attestationElementDesc =>
       'Descrição (ex. Estrutura 40×40, 12 m, 4 diferenciais 1 t)';
 
   @override
-  String get attestationElementFamilies =>
-      'Controlos a efetuar';
+  String get attestationElementFamilies => 'Controlos a efetuar';
 
   @override
-  String get attestationAppliedLoad =>
-      'Carga aplicada (kg)';
+  String get attestationAppliedLoad => 'Carga aplicada (kg)';
 
   @override
-  String get attestationRatedLoad =>
-      'Carga admissível (kg)';
+  String get attestationRatedLoad => 'Carga admissível (kg)';
 
   @override
   String get attestationDeleteElementConfirm =>
@@ -16176,48 +16645,40 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get attestationOverload =>
-      'Carga superior à carga admissível';
+  String get attestationOverload => 'Carga superior à carga admissível';
 
   @override
   String get attestationElementsEmpty =>
       'Adicione os elementos montados: truss, grelha, torres, diferenciais, palco, ecrãs…';
 
   @override
-  String get attestationAddElement =>
-      'Adicionar um elemento';
+  String get attestationAddElement => 'Adicionar um elemento';
 
   @override
-  String get attestationTakePhoto =>
-      'Tirar uma foto';
+  String get attestationTakePhoto => 'Tirar uma foto';
 
   @override
-  String get attestationPickPhoto =>
-      'Escolher da galeria';
+  String get attestationPickPhoto => 'Escolher da galeria';
 
   @override
   String get attestationPhotoError =>
       'Não foi possível adicionar a foto. Verifique o acesso à câmara nas definições.';
 
   @override
-  String get attestationOk =>
-      'OK';
+  String get attestationOk => 'OK';
 
   @override
-  String get attestationNc =>
-      'NC';
+  String get attestationNc => 'NC';
 
   @override
-  String get attestationNa =>
-      'N/A';
+  String get attestationNa => 'N/A';
 
   @override
   String get attestationReserveLabel =>
       'Reserva: constatação e ação prevista (obrigatório)';
 
   @override
-  String get attestationPhotoRequired =>
-      'Foto recomendada para este ponto';
+  String get attestationPhotoRequired => 'Foto recomendada para este ponto';
 
   @override
   String get attestationNoElements =>
@@ -16228,8 +16689,7 @@ class AppLocalizationsPt extends AppLocalizations {
       'Cada ponto não conforme precisa de uma reserva escrita antes da assinatura.';
 
   @override
-  String get attestationSignTitle =>
-      'Assinatura do certificado';
+  String get attestationSignTitle => 'Assinatura do certificado';
 
   @override
   String attestationUnanswered(Object count) {
@@ -16247,16 +16707,13 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get attestationStatElements =>
-      'elementos';
+  String get attestationStatElements => 'elementos';
 
   @override
-  String get attestationStatReserves =>
-      'reservas';
+  String get attestationStatReserves => 'reservas';
 
   @override
-  String get attestationStatPhotos =>
-      'fotos';
+  String get attestationStatPhotos => 'fotos';
 
   @override
   String attestationStatement(Object name) {
@@ -16269,50 +16726,128 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get attestationReserve =>
-      'Reserva';
+  String get attestationReserve => 'Reserva';
 
   @override
   String get attestationReserveEmpty =>
       'Reserva por escrever (passo Controlos)';
 
   @override
-  String get attestationSignerSection =>
-      'Signatário';
+  String get attestationSignerSection => 'Signatário';
 
   @override
   String get attestationSignerRole =>
       'Função (ex. chefe de rigging, diretor técnico)';
 
   @override
-  String get attestationSign =>
-      'Assinar o certificado';
+  String get attestationSign => 'Assinar o certificado';
 
   @override
-  String get attestationSignWithReserve =>
-      'Assinar com reservas';
+  String get attestationSignWithReserve => 'Assinar com reservas';
 
   @override
-  String get attestationStepInfo =>
-      'Dados';
+  String get attestationStepInfo => 'Dados';
 
   @override
-  String get attestationStepElements =>
-      'Elementos';
+  String get attestationStepElements => 'Elementos';
 
   @override
-  String get attestationStepControls =>
-      'Controlos';
+  String get attestationStepControls => 'Controlos';
 
   @override
-  String get attestationStepSignature =>
-      'Assinatura';
+  String get attestationStepSignature => 'Assinatura';
 
   @override
-  String get attestationNextElement =>
-      'Elemento seguinte';
+  String get attestationNextElement => 'Elemento seguinte';
 
   @override
-  String get attestationDeletePhotoConfirm =>
-      'Eliminar esta foto?';
+  String get attestationDeletePhotoConfirm => 'Eliminar esta foto?';
+
+  @override
+  String get hospitalSearchPlaceTitle => 'Onde decorre o evento?';
+
+  @override
+  String get hospitalSearchPlaceHelp =>
+      'Nome do recinto, morada, cidade ou código postal: mesmo aproximado serve.';
+
+  @override
+  String get hospitalSearchPlaceHint => 'ex. Altice Arena, Lisboa';
+
+  @override
+  String get hospitalSearchButton => 'Pesquisar';
+
+  @override
+  String get hospitalSearchPlaceChoose =>
+      'Vários locais correspondem. Qual é o certo?';
+
+  @override
+  String get hospitalSearchNoPlace =>
+      'Nenhum local encontrado. Tente algo mais curto: só a cidade, o código postal ou o nome do recinto.';
+
+  @override
+  String hospitalSearchAround(Object place) {
+    return 'Perto de $place';
+  }
+
+  @override
+  String get hospitalSearchChangePlace => 'Alterar';
+
+  @override
+  String hospitalSearchNoneRadius(Object km) {
+    return 'Nenhum hospital encontrado a menos de $km km. Preencha manualmente.';
+  }
+
+  @override
+  String get ppspsRatingTitle => 'Classificação do risco';
+
+  @override
+  String get ppspsSeverity => 'Gravidade';
+
+  @override
+  String get ppspsProbability => 'Probabilidade';
+
+  @override
+  String ppspsRatingLibraryValue(Object severity, Object probability) {
+    return 'Ajustado para este plano. Valor da biblioteca: gravidade $severity × probabilidade $probability.';
+  }
+
+  @override
+  String get ppspsRatingNoteHint =>
+      'Motivo (ex. recinto coberto, sem exposição ao vento)';
+
+  @override
+  String get ppspsRatingReset => 'Voltar ao valor da biblioteca';
+
+  @override
+  String get ppspsLevelHigh => 'Risco elevado';
+
+  @override
+  String get ppspsLevelMedium => 'Risco médio';
+
+  @override
+  String get ppspsLevelLow => 'Risco baixo';
+
+  @override
+  String get ppspsLevelHighRule =>
+      'pontuação de 12 a 16, ou gravidade 4 qualquer que seja a probabilidade';
+
+  @override
+  String get ppspsLevelMediumRule => 'pontuação de 6 a 11';
+
+  @override
+  String get ppspsLevelLowRule => 'pontuação de 1 a 5';
+
+  @override
+  String get ppspsRatingHelpTitle => 'Como os riscos são classificados';
+
+  @override
+  String get ppspsRatingHelpShort => 'Classificação';
+
+  @override
+  String get ppspsRatingHelpIntro =>
+      'Cada risco recebe uma gravidade de 1 a 4 e uma probabilidade de 1 a 4. A pontuação é o seu produto, de 1 a 16.';
+
+  @override
+  String get ppspsRatingHelpAdjust =>
+      'Os valores propostos vêm da biblioteca para um evento tipo. Ajuste-os à sua obra tocando num risco; o motivo aparece no PDF.';
 }

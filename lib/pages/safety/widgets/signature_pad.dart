@@ -157,7 +157,8 @@ Future<SignatureResult?> showSignatureSheet(
     showDragHandle: true,
     builder: (ctx) => Padding(
       padding: EdgeInsets.fromLTRB(
-          20, 0, 20, 20 + MediaQuery.viewInsetsOf(ctx).bottom),
+          20, 0, 20, 20 + MediaQuery.viewInsetsOf(ctx).bottom +
+                MediaQuery.paddingOf(ctx).bottom),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,

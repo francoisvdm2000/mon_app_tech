@@ -6406,6 +6406,370 @@
   "ppspsSignHint": "Signez avec le doigt dans le cadre blanc.",
   "ppspsSignClear": "Effacer",
   "ppspsSignValidate": "Valider la signature",
+  "electricityToolPowerPlanTitle": "Plan électrique",
+  "electricityToolPowerPlanSubtitle": "Construis ta distribution case par case : source, tableaux, câbles, charges. Synoptique et tableau de charge en un clic.",
+  "ppPageTitle": "Plan électrique",
+  "ppTabPlan": "Plan",
+  "ppTabSynoptic": "Synoptique",
+  "ppTabLoadTable": "Tableau de charge",
+  "ppDefaultPlanName": "Mon plan électrique",
+  "ppStartTitle": "Commence par la source ⚡",
+  "ppStartSubtitle": "Groupe électrogène, raccordement réseau ou prise existante. Ensuite, chaque sortie libre devient une case + où brancher un tableau ou un équipement.",
+  "ppSourceSheetTitle": "Source d'alimentation",
+  "ppSourceGenerator": "Groupe électrogène",
+  "ppSourceMains": "Réseau / compteur",
+  "ppSourceOutlet": "Prise existante",
+  "ppGeneratorSizeLabel": "Puissance du groupe",
+  "ppMainsSizeLabel": "Calibre du raccordement",
+  "ppOutletTypeLabel": "Type de prise",
+  "ppSourceCapacity": "Disponible : {amps} A par phase · {kva} kVA",
+  "@ppSourceCapacity": {
+    "placeholders": {
+      "amps": {
+        "type": "String"
+      },
+      "kva": {
+        "type": "String"
+      }
+    }
+  },
+  "ppPhaseWord": "phase",
+  "ppNameLabel": "Nom",
+  "ppValidate": "C'est parti !",
+  "ppSave": "Enregistrer",
+  "ppDone": "Terminé",
+  "ppDelete": "Supprimer",
+  "ppEdit": "Modifier",
+  "ppCopy": "Copier",
+  "ppRename": "Renommer",
+  "ppDuplicate": "Dupliquer",
+  "ppUnplug": "Débrancher",
+  "ppExpand": "Déplier",
+  "ppCollapse": "Replier",
+  "ppCollapsedHint": "▸ Afficher les {count} départs",
+  "@ppCollapsedHint": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "ppCopied": "📋 « {name} » copié : colle-le sur une case + libre",
+  "@ppCopied": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "ppConnectHere": "Brancher quelque chose ici",
+  "ppConnectTitle": "Brancher sur {connector}",
+  "@ppConnectTitle": {
+    "placeholders": {
+      "connector": {
+        "type": "String"
+      }
+    }
+  },
+  "ppConnectPanel": "Un tableau",
+  "ppConnectPanelSubtitle": "Distro, armoire, multiprise… avec ses propres départs",
+  "ppConnectLoad": "Un équipement",
+  "ppConnectLoadSubtitle": "Lumière, son, écran LED, toilettes, catering, bureaux… tu saisis la puissance",
+  "ppPasteTitle": "Coller « {name} »",
+  "@ppPasteTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "ppPasteSubtitle": "Une copie complète, avec tout ce qui est branché dessous",
+  "ppTemplateSheetTitle": "Choisis un tableau",
+  "ppTemplateStrip": "Multiprise 6× Schuko",
+  "ppTemplateCustomTri": "Tableau personnalisé (tri)",
+  "ppTemplateCustomMono": "Tableau personnalisé (mono)",
+  "ppTemplateCustomSubtitle": "Vide : tu ajoutes toi-même les départs",
+  "ppCompatOk": "✓ Direct",
+  "ppCompatAdapter": "Adaptateur",
+  "ppLoadSheetTitle": "Brancher un équipement",
+  "ppLoadEditTitle": "Modifier l'équipement",
+  "ppCategoryLabel": "Catégorie",
+  "ppLoadNameHint": "ex. Écran LED scène, Toilettes VIP…",
+  "ppPowerLabel": "Puissance",
+  "ppCosPhiLabel": "Facteur de puissance",
+  "ppConnectAction": "Brancher",
+  "ppLoadPreviewTri": "≈ {amps} A par phase (réparti sur L1, L2, L3)",
+  "@ppLoadPreviewTri": {
+    "placeholders": {
+      "amps": {
+        "type": "String"
+      }
+    }
+  },
+  "ppLoadPreviewMono": "≈ {amps} A sur une phase",
+  "@ppLoadPreviewMono": {
+    "placeholders": {
+      "amps": {
+        "type": "String"
+      }
+    }
+  },
+  "ppCatLighting": "Lumière",
+  "ppCatSound": "Son",
+  "ppCatVideo": "Vidéo / LED",
+  "ppCatStage": "Machinerie / moteurs",
+  "ppCatCatering": "Catering / bars",
+  "ppCatToilets": "Sanitaires",
+  "ppCatProduction": "Production / bureaux",
+  "ppCatHvac": "Clim / chauffage",
+  "ppCatOther": "Autre",
+  "ppOutputSheetTitle": "Départ et câble",
+  "ppConnectorLabel": "Prise",
+  "ppBreakerLabel": "Protection (disjoncteur)",
+  "ppRcdLabel": "Différentiel 30 mA",
+  "ppPhaseLabel": "Phase",
+  "ppPhaseInherited": "Imposée par le tableau mono en amont",
+  "ppCableLabel": "Câble",
+  "ppCableLengthLabel": "Longueur",
+  "ppAmpacityShort": "{amps} A admissibles (H07RN-F, indicatif)",
+  "@ppAmpacityShort": {
+    "placeholders": {
+      "amps": {
+        "type": "String"
+      }
+    }
+  },
+  "ppPanelSheetTitle": "Tableau",
+  "ppPanelInputLabel": "Entrée",
+  "ppMainBreakerLabel": "Protection générale",
+  "ppOutputsLabel": "Départs ({count})",
+  "@ppOutputsLabel": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "ppOutputsUsed": "{used}/{total} départs utilisés",
+  "@ppOutputsUsed": {
+    "placeholders": {
+      "used": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "ppFreeOutput": "libre",
+  "ppAddOutputHint": "Ajouter un départ :",
+  "ppAddOutput": "Ajouter un départ",
+  "ppAddSourceOutput": "Ajouter une sortie à la source",
+  "ppAutoPhases": "Répartir L1 / L2 / L3 automatiquement",
+  "ppDeleteSourceTitle": "Supprimer la source ?",
+  "ppDeleteSourceBody": "Tout le plan branché dessous sera effacé.",
+  "ppDeleteOutputTitle": "Supprimer ce départ ?",
+  "ppDeleteOutputBody": "« {name} » et tout ce qui est branché dessous seront retirés.",
+  "@ppDeleteOutputBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "ppDeletePanelTitle": "Débrancher ce tableau ?",
+  "ppDeletePanelBody": "« {name} » et tout ce qui est branché dessus seront retirés du plan.",
+  "@ppDeletePanelBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "ppDeletePlanTitle": "Supprimer ce plan ?",
+  "ppDeletePlanBody": "« {name} » sera définitivement supprimé.",
+  "@ppDeletePlanBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "ppProjectsTitle": "Mes plans",
+  "ppNewPlan": "Nouveau plan",
+  "ppRenamePlan": "Renommer le plan",
+  "ppPlanSummary": "{panels} tableau(x) · {kw} kW",
+  "@ppPlanSummary": {
+    "placeholders": {
+      "panels": {
+        "type": "String"
+      },
+      "kw": {
+        "type": "String"
+      }
+    }
+  },
+  "ppKpiPower": "Puissance",
+  "ppKpiApparent": "Puissance apparente",
+  "ppKpiMaxPhase": "Phase la + chargée",
+  "ppKpiSourceUse": "Source utilisée",
+  "ppKpiWorstDrop": "Chute de tension max",
+  "ppKpiGenerator": "Groupe conseillé",
+  "ppGeneratorOk": "👍 Ton groupe tient la route (minimum conseillé : {kva} kVA avec 20 % de marge)",
+  "@ppGeneratorOk": {
+    "placeholders": {
+      "kva": {
+        "type": "String"
+      }
+    }
+  },
+  "ppGeneratorTooSmall": "🚨 Prévois plutôt un groupe de {kva} kVA (phase la plus chargée + 20 % de marge)",
+  "@ppGeneratorTooSmall": {
+    "placeholders": {
+      "kva": {
+        "type": "String"
+      }
+    }
+  },
+  "ppAllGood": "Tout est au vert, beau boulot ! 🎉",
+  "ppAllGoodWithTips": "Tout est au vert 🎉 · {count} conseil(s)",
+  "@ppAllGoodWithTips": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "ppAlertsCount": "{errors} erreur(s) · {warnings} point(s) à vérifier",
+  "@ppAlertsCount": {
+    "placeholders": {
+      "errors": {
+        "type": "String"
+      },
+      "warnings": {
+        "type": "String"
+      }
+    }
+  },
+  "ppAlertsTitle": "Points d'attention",
+  "ppAllGoodPdf": "Aucun point d'attention.",
+  "ppAlertNoSource": "Ajoute d'abord une source d'alimentation.",
+  "ppAlertSourceOverload": "Source en surcharge : {amps} A pour {limit} A disponibles",
+  "@ppAlertSourceOverload": {
+    "placeholders": {
+      "amps": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+  "ppAlertNearLimit": "Chargé à {percent} % ({amps} / {limit} A)",
+  "@ppAlertNearLimit": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      },
+      "amps": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+  "ppAlertPanelOverload": "Tableau en surcharge : {amps} A sur un {limit} A",
+  "@ppAlertPanelOverload": {
+    "placeholders": {
+      "amps": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+  "ppAlertOutputOverload": "Départ en surcharge : {amps} A sur une protection de {limit} A",
+  "@ppAlertOutputOverload": {
+    "placeholders": {
+      "amps": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+  "ppAlertCableUndersized": "Câble {cable} ({amps} A max) protégé en {limit} A : augmente la section",
+  "@ppAlertCableUndersized": {
+    "placeholders": {
+      "cable": {
+        "type": "String"
+      },
+      "amps": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+  "ppAlertVoltageDrop": "Chute de tension cumulée de {percent} % (plus de {limit} %)",
+  "@ppAlertVoltageDrop": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+  "ppAlertImbalance": "Phases déséquilibrées ({percent} %) : répartis mieux les charges mono",
+  "@ppAlertImbalance": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "ppAlertAdapter": "Adaptateur nécessaire : {adapter}",
+  "@ppAlertAdapter": {
+    "placeholders": {
+      "adapter": {
+        "type": "String"
+      }
+    }
+  },
+  "ppCategoriesTitle": "Répartition par usage",
+  "ppSynopticSubtitle": "Synoptique de distribution",
+  "ppSynopticHint": "🤏 Pince pour zoomer, glisse pour te déplacer",
+  "ppEmptyTab": "Rien à afficher pour l'instant : construis d'abord ton plan dans l'onglet Plan.",
+  "ppGoToPlan": "Aller au plan",
+  "ppExportTitle": "Exporter",
+  "ppExportPdf": "PDF complet",
+  "ppExportPdfSubtitle": "Synoptique + tableau de charge + points d'attention",
+  "ppExportCsv": "Tableau CSV",
+  "ppExportCsvSubtitle": "Pour Excel, Numbers ou Google Sheets",
+  "ppExportPng": "Image du synoptique",
+  "ppExportPngSubtitle": "PNG haute définition, fond blanc",
+  "ppExportError": "Oups, l'export a échoué 😕",
+  "ppPdfTitle": "Plan de distribution électrique",
+  "ppPdfGenerated": "Généré avec ShowTech Tools",
+  "ppColPanel": "Tableau",
+  "ppColOutput": "Départ",
+  "ppColConnector": "Prise",
+  "ppColBreaker": "Protection",
+  "ppColPhase": "Phase",
+  "ppColLength": "Longueur (m)",
+  "ppColCable": "Câble",
+  "ppColConnected": "Branché",
+  "ppColCategory": "Usage",
+  "ppColPower": "kW",
+  "ppColCurrent": "I (A)",
+  "ppColDrop": "ΔU (%)",
+  "ppDisclaimer": "Calculs indicatifs (230/400 V, câbles H07RN-F cuivre à l'air libre, chute de tension max 5 %). Ce plan aide à préparer une installation : il doit être validé par une personne qualifiée selon les normes locales.",
   "attestationListTitle": "Attestations de bon montage",
   "attestationNew": "Nouvelle attestation",
   "attestationNewTitle": "Nouvelle attestation",
@@ -6495,5 +6859,46 @@
   "attestationStepControls": "Contrôles",
   "attestationStepSignature": "Signature",
   "attestationNextElement": "Élément suivant",
-  "attestationDeletePhotoConfirm": "Supprimer cette photo ?"
+  "attestationDeletePhotoConfirm": "Supprimer cette photo ?",
+  "hospitalSearchPlaceTitle": "Où se passe l'événement ?",
+  "hospitalSearchPlaceHelp": "Nom de la salle, adresse, ville ou code postal : même approximatif, on s'en occupe.",
+  "hospitalSearchPlaceHint": "ex. Forest National, Bruxelles",
+  "hospitalSearchButton": "Rechercher",
+  "hospitalSearchPlaceChoose": "Plusieurs lieux correspondent, lequel est le bon ?",
+  "hospitalSearchNoPlace": "Aucun lieu trouvé. Essayez plus court : juste la ville, le code postal ou le nom de la salle.",
+  "hospitalSearchAround": "Autour de {place}",
+  "@hospitalSearchAround": {
+    "placeholders": {
+      "place": {}
+    }
+  },
+  "hospitalSearchChangePlace": "Changer",
+  "hospitalSearchNoneRadius": "Aucun hôpital trouvé à moins de {km} km de ce lieu. Complétez à la main.",
+  "@hospitalSearchNoneRadius": {
+    "placeholders": {
+      "km": {}
+    }
+  },
+  "ppspsRatingTitle": "Cotation du risque",
+  "ppspsSeverity": "Gravité",
+  "ppspsProbability": "Probabilité",
+  "ppspsRatingLibraryValue": "Ajusté pour ce plan. Valeur de la bibliothèque : gravité {severity} × probabilité {probability}.",
+  "@ppspsRatingLibraryValue": {
+    "placeholders": {
+      "severity": {},
+      "probability": {}
+    }
+  },
+  "ppspsRatingNoteHint": "Motif (ex. montage en salle, pas d'exposition au vent)",
+  "ppspsRatingReset": "Revenir à la valeur de la bibliothèque",
+  "ppspsLevelHigh": "Risque élevé",
+  "ppspsLevelMedium": "Risque moyen",
+  "ppspsLevelLow": "Risque faible",
+  "ppspsLevelHighRule": "cote de 12 à 16, ou gravité 4 quelle que soit la probabilité",
+  "ppspsLevelMediumRule": "cote de 6 à 11",
+  "ppspsLevelLowRule": "cote de 1 à 5",
+  "ppspsRatingHelpTitle": "Comment les risques sont cotés",
+  "ppspsRatingHelpShort": "Cotation",
+  "ppspsRatingHelpIntro": "Chaque risque reçoit une gravité de 1 à 4 et une probabilité de 1 à 4. La cote est leur produit, de 1 à 16.",
+  "ppspsRatingHelpAdjust": "Les valeurs proposées sont celles de la bibliothèque pour un événement type. Ajustez-les pour votre chantier en touchant un risque ; le motif apparaît dans le PDF."
 }

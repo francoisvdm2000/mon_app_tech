@@ -16027,12 +16027,10 @@ class AppLocalizationsNl extends AppLocalizations {
       'De data volgen elkaar niet op: eerst opbouw, dan evenement, dan afbouw.';
 
   @override
-  String get ppspsFindHospital =>
-      'Dichtstbijzijnde ziekenhuis zoeken';
+  String get ppspsFindHospital => 'Dichtstbijzijnde ziekenhuis zoeken';
 
   @override
-  String get ppspsFindHospitalSearching =>
-      'Bezig met zoeken…';
+  String get ppspsFindHospitalSearching => 'Bezig met zoeken…';
 
   @override
   String get ppspsFindHospitalNeedAddress =>
@@ -16051,8 +16049,7 @@ class AppLocalizationsNl extends AppLocalizations {
       'Geen ziekenhuis gevonden binnen 30 km. Vul het handmatig in.';
 
   @override
-  String get ppspsFindHospitalTitle =>
-      'Ziekenhuizen in de buurt';
+  String get ppspsFindHospitalTitle => 'Ziekenhuizen in de buurt';
 
   @override
   String get ppspsFindHospitalVerify =>
@@ -16064,36 +16061,29 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get ppspsHospitalEmergency =>
-      'Spoedafdeling';
+  String get ppspsHospitalEmergency => 'Spoedafdeling';
 
   @override
-  String get ppspsOsmAttribution =>
-      'Gegevens © OpenStreetMap-bijdragers';
+  String get ppspsOsmAttribution => 'Gegevens © OpenStreetMap-bijdragers';
 
   @override
-  String get ppspsSectionEquipment =>
-      'Noodmateriaal';
+  String get ppspsSectionEquipment => 'Noodmateriaal';
 
   @override
   String get ppspsFieldEquipmentDetails =>
       'Details (plaatsen, aantallen, ander materiaal)';
 
   @override
-  String get ppspsSectionSignatures =>
-      'Handtekeningen';
+  String get ppspsSectionSignatures => 'Handtekeningen';
 
   @override
-  String get ppspsSignAuthor =>
-      'Opgesteld door';
+  String get ppspsSignAuthor => 'Opgesteld door';
 
   @override
-  String get ppspsSignCoordinator =>
-      'Visum van de coördinator (optioneel)';
+  String get ppspsSignCoordinator => 'Visum van de coördinator (optioneel)';
 
   @override
-  String get ppspsNotSigned =>
-      'Nog niet ondertekend';
+  String get ppspsNotSigned => 'Nog niet ondertekend';
 
   @override
   String ppspsSignedOn(Object date) {
@@ -16101,56 +16091,542 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get ppspsSignButton =>
-      'Ondertekenen';
+  String get ppspsSignButton => 'Ondertekenen';
 
   @override
-  String get ppspsSignAgain =>
-      'Opnieuw';
+  String get ppspsSignAgain => 'Opnieuw';
 
   @override
-  String get ppspsSignRemove =>
-      'Handtekening verwijderen';
+  String get ppspsSignRemove => 'Handtekening verwijderen';
 
   @override
-  String get ppspsSignName =>
-      'Naam van de ondertekenaar';
+  String get ppspsSignName => 'Naam van de ondertekenaar';
 
   @override
-  String get ppspsSignHint =>
-      'Onderteken met uw vinger in het witte vak.';
+  String get ppspsSignHint => 'Onderteken met uw vinger in het witte vak.';
 
   @override
-  String get ppspsSignClear =>
-      'Wissen';
+  String get ppspsSignClear => 'Wissen';
 
   @override
-  String get ppspsSignValidate =>
-      'Handtekening bevestigen';
+  String get ppspsSignValidate => 'Handtekening bevestigen';
 
   @override
-  String get attestationListTitle =>
-      'Montageattesten';
+  String get electricityToolPowerPlanTitle => 'Stroomplan';
 
   @override
-  String get attestationNew =>
-      'Nieuw attest';
+  String get electricityToolPowerPlanSubtitle =>
+      'Bouw je distributie vakje per vakje: bron, verdeelkasten, kabels, lasten. Synoptiek en lastentabel in één tik.';
 
   @override
-  String get attestationNewTitle =>
-      'Nieuw attest';
+  String get ppPageTitle => 'Stroomplan';
 
   @override
-  String get attestationNewBlank =>
-      'Leeg attest';
+  String get ppTabPlan => 'Plan';
+
+  @override
+  String get ppTabSynoptic => 'Synoptiek';
+
+  @override
+  String get ppTabLoadTable => 'Lastentabel';
+
+  @override
+  String get ppDefaultPlanName => 'Mijn stroomplan';
+
+  @override
+  String get ppStartTitle => 'Begin met de stroombron ⚡';
+
+  @override
+  String get ppStartSubtitle =>
+      'Aggregaat, netaansluiting of bestaand stopcontact. Daarna wordt elke vrije uitgang een +-vakje voor een verdeelkast of een toestel.';
+
+  @override
+  String get ppSourceSheetTitle => 'Stroombron';
+
+  @override
+  String get ppSourceGenerator => 'Aggregaat';
+
+  @override
+  String get ppSourceMains => 'Net / meter';
+
+  @override
+  String get ppSourceOutlet => 'Bestaand stopcontact';
+
+  @override
+  String get ppGeneratorSizeLabel => 'Vermogen aggregaat';
+
+  @override
+  String get ppMainsSizeLabel => 'Aansluitwaarde';
+
+  @override
+  String get ppOutletTypeLabel => 'Type stopcontact';
+
+  @override
+  String ppSourceCapacity(String amps, String kva) {
+    return 'Beschikbaar: $amps A per fase · $kva kVA';
+  }
+
+  @override
+  String get ppPhaseWord => 'fase';
+
+  @override
+  String get ppNameLabel => 'Naam';
+
+  @override
+  String get ppValidate => 'Aan de slag!';
+
+  @override
+  String get ppSave => 'Opslaan';
+
+  @override
+  String get ppDone => 'Klaar';
+
+  @override
+  String get ppDelete => 'Verwijderen';
+
+  @override
+  String get ppEdit => 'Bewerken';
+
+  @override
+  String get ppCopy => 'Kopiëren';
+
+  @override
+  String get ppRename => 'Hernoemen';
+
+  @override
+  String get ppDuplicate => 'Dupliceren';
+
+  @override
+  String get ppUnplug => 'Loskoppelen';
+
+  @override
+  String get ppExpand => 'Uitklappen';
+
+  @override
+  String get ppCollapse => 'Inklappen';
+
+  @override
+  String ppCollapsedHint(String count) {
+    return '▸ Toon de $count uitgangen';
+  }
+
+  @override
+  String ppCopied(String name) {
+    return '📋 ‘$name’ gekopieerd: plak het op een vrij +-vakje';
+  }
+
+  @override
+  String get ppConnectHere => 'Hier iets aansluiten';
+
+  @override
+  String ppConnectTitle(String connector) {
+    return 'Aansluiten op $connector';
+  }
+
+  @override
+  String get ppConnectPanel => 'Een verdeelkast';
+
+  @override
+  String get ppConnectPanelSubtitle =>
+      'Verdeelkast, kast, stekkerdoos… met eigen uitgangen';
+
+  @override
+  String get ppConnectLoad => 'Een toestel';
+
+  @override
+  String get ppConnectLoadSubtitle =>
+      'Licht, geluid, ledscherm, toiletten, catering, kantoren… je vult het vermogen in';
+
+  @override
+  String ppPasteTitle(String name) {
+    return '‘$name’ plakken';
+  }
+
+  @override
+  String get ppPasteSubtitle =>
+      'Een volledige kopie, met alles wat eronder hangt';
+
+  @override
+  String get ppTemplateSheetTitle => 'Kies een verdeelkast';
+
+  @override
+  String get ppTemplateStrip => 'Stekkerdoos 6× Schuko';
+
+  @override
+  String get ppTemplateCustomTri => 'Eigen verdeelkast (3-fase)';
+
+  @override
+  String get ppTemplateCustomMono => 'Eigen verdeelkast (1-fase)';
+
+  @override
+  String get ppTemplateCustomSubtitle => 'Leeg: je voegt zelf de uitgangen toe';
+
+  @override
+  String get ppCompatOk => '✓ Direct';
+
+  @override
+  String get ppCompatAdapter => 'Adapter';
+
+  @override
+  String get ppLoadSheetTitle => 'Toestel aansluiten';
+
+  @override
+  String get ppLoadEditTitle => 'Toestel bewerken';
+
+  @override
+  String get ppCategoryLabel => 'Categorie';
+
+  @override
+  String get ppLoadNameHint => 'bv. Ledscherm podium, VIP-toiletten…';
+
+  @override
+  String get ppPowerLabel => 'Vermogen';
+
+  @override
+  String get ppCosPhiLabel => 'Arbeidsfactor';
+
+  @override
+  String get ppConnectAction => 'Aansluiten';
+
+  @override
+  String ppLoadPreviewTri(String amps) {
+    return '≈ $amps A per fase (verdeeld over L1, L2, L3)';
+  }
+
+  @override
+  String ppLoadPreviewMono(String amps) {
+    return '≈ $amps A op één fase';
+  }
+
+  @override
+  String get ppCatLighting => 'Licht';
+
+  @override
+  String get ppCatSound => 'Geluid';
+
+  @override
+  String get ppCatVideo => 'Video / led';
+
+  @override
+  String get ppCatStage => 'Rigging / motoren';
+
+  @override
+  String get ppCatCatering => 'Catering / bars';
+
+  @override
+  String get ppCatToilets => 'Sanitair';
+
+  @override
+  String get ppCatProduction => 'Productie / kantoren';
+
+  @override
+  String get ppCatHvac => 'Airco / verwarming';
+
+  @override
+  String get ppCatOther => 'Overig';
+
+  @override
+  String get ppOutputSheetTitle => 'Uitgang en kabel';
+
+  @override
+  String get ppConnectorLabel => 'Connector';
+
+  @override
+  String get ppBreakerLabel => 'Beveiliging (automaat)';
+
+  @override
+  String get ppRcdLabel => 'Differentieel 30 mA';
+
+  @override
+  String get ppPhaseLabel => 'Fase';
+
+  @override
+  String get ppPhaseInherited =>
+      'Opgelegd door de 1-fase verdeelkast stroomopwaarts';
+
+  @override
+  String get ppCableLabel => 'Kabel';
+
+  @override
+  String get ppCableLengthLabel => 'Lengte';
+
+  @override
+  String ppAmpacityShort(String amps) {
+    return '$amps A toelaatbaar (H07RN-F, indicatief)';
+  }
+
+  @override
+  String get ppPanelSheetTitle => 'Verdeelkast';
+
+  @override
+  String get ppPanelInputLabel => 'Ingang';
+
+  @override
+  String get ppMainBreakerLabel => 'Hoofdschakelaar';
+
+  @override
+  String ppOutputsLabel(String count) {
+    return 'Uitgangen ($count)';
+  }
+
+  @override
+  String ppOutputsUsed(String used, String total) {
+    return '$used/$total uitgangen gebruikt';
+  }
+
+  @override
+  String get ppFreeOutput => 'vrij';
+
+  @override
+  String get ppAddOutputHint => 'Uitgang toevoegen:';
+
+  @override
+  String get ppAddOutput => 'Uitgang toevoegen';
+
+  @override
+  String get ppAddSourceOutput => 'Uitgang aan de bron toevoegen';
+
+  @override
+  String get ppAutoPhases => 'L1 / L2 / L3 automatisch verdelen';
+
+  @override
+  String get ppDeleteSourceTitle => 'Bron verwijderen?';
+
+  @override
+  String get ppDeleteSourceBody => 'Het hele plan eronder wordt gewist.';
+
+  @override
+  String get ppDeleteOutputTitle => 'Deze uitgang verwijderen?';
+
+  @override
+  String ppDeleteOutputBody(String name) {
+    return '‘$name’ en alles eronder worden verwijderd.';
+  }
+
+  @override
+  String get ppDeletePanelTitle => 'Deze verdeelkast loskoppelen?';
+
+  @override
+  String ppDeletePanelBody(String name) {
+    return '‘$name’ en alles wat erop aangesloten is, worden uit het plan verwijderd.';
+  }
+
+  @override
+  String get ppDeletePlanTitle => 'Dit plan verwijderen?';
+
+  @override
+  String ppDeletePlanBody(String name) {
+    return '‘$name’ wordt definitief verwijderd.';
+  }
+
+  @override
+  String get ppProjectsTitle => 'Mijn plannen';
+
+  @override
+  String get ppNewPlan => 'Nieuw plan';
+
+  @override
+  String get ppRenamePlan => 'Plan hernoemen';
+
+  @override
+  String ppPlanSummary(String panels, String kw) {
+    return '$panels verdeelkast(en) · $kw kW';
+  }
+
+  @override
+  String get ppKpiPower => 'Vermogen';
+
+  @override
+  String get ppKpiApparent => 'Schijnbaar vermogen';
+
+  @override
+  String get ppKpiMaxPhase => 'Zwaarste fase';
+
+  @override
+  String get ppKpiSourceUse => 'Bron gebruikt';
+
+  @override
+  String get ppKpiWorstDrop => 'Max. spanningsval';
+
+  @override
+  String get ppKpiGenerator => 'Aanbevolen aggregaat';
+
+  @override
+  String ppGeneratorOk(String kva) {
+    return '👍 Je aggregaat volstaat (aanbevolen minimum: $kva kVA met 20 % marge)';
+  }
+
+  @override
+  String ppGeneratorTooSmall(String kva) {
+    return '🚨 Voorzie beter een aggregaat van $kva kVA (zwaarste fase + 20 % marge)';
+  }
+
+  @override
+  String get ppAllGood => 'Alles in het groen, goed bezig! 🎉';
+
+  @override
+  String ppAllGoodWithTips(String count) {
+    return 'Alles groen 🎉 · $count tip(s)';
+  }
+
+  @override
+  String ppAlertsCount(String errors, String warnings) {
+    return '$errors fout(en) · $warnings punt(en) om na te kijken';
+  }
+
+  @override
+  String get ppAlertsTitle => 'Aandachtspunten';
+
+  @override
+  String get ppAllGoodPdf => 'Geen aandachtspunten.';
+
+  @override
+  String get ppAlertNoSource => 'Voeg eerst een stroombron toe.';
+
+  @override
+  String ppAlertSourceOverload(String amps, String limit) {
+    return 'Bron overbelast: $amps A voor $limit A beschikbaar';
+  }
+
+  @override
+  String ppAlertNearLimit(String percent, String amps, String limit) {
+    return 'Belast op $percent % ($amps / $limit A)';
+  }
+
+  @override
+  String ppAlertPanelOverload(String amps, String limit) {
+    return 'Verdeelkast overbelast: $amps A op $limit A';
+  }
+
+  @override
+  String ppAlertOutputOverload(String amps, String limit) {
+    return 'Uitgang overbelast: $amps A op een beveiliging van $limit A';
+  }
+
+  @override
+  String ppAlertCableUndersized(String cable, String amps, String limit) {
+    return 'Kabel $cable ($amps A max) beveiligd op $limit A: verhoog de doorsnede';
+  }
+
+  @override
+  String ppAlertVoltageDrop(String percent, String limit) {
+    return 'Cumulatieve spanningsval van $percent % (meer dan $limit %)';
+  }
+
+  @override
+  String ppAlertImbalance(String percent) {
+    return 'Fases uit balans ($percent %): verdeel de 1-fase lasten beter';
+  }
+
+  @override
+  String ppAlertAdapter(String adapter) {
+    return 'Adapter nodig: $adapter';
+  }
+
+  @override
+  String get ppCategoriesTitle => 'Verdeling per gebruik';
+
+  @override
+  String get ppSynopticSubtitle => 'Synoptiek van de distributie';
+
+  @override
+  String get ppSynopticHint => '🤏 Knijp om te zoomen, sleep om te bewegen';
+
+  @override
+  String get ppEmptyTab =>
+      'Nog niets te tonen: bouw eerst je plan in het tabblad Plan.';
+
+  @override
+  String get ppGoToPlan => 'Naar het plan';
+
+  @override
+  String get ppExportTitle => 'Exporteren';
+
+  @override
+  String get ppExportPdf => 'Volledige pdf';
+
+  @override
+  String get ppExportPdfSubtitle => 'Synoptiek + lastentabel + aandachtspunten';
+
+  @override
+  String get ppExportCsv => 'CSV-tabel';
+
+  @override
+  String get ppExportCsvSubtitle => 'Voor Excel, Numbers of Google Sheets';
+
+  @override
+  String get ppExportPng => 'Afbeelding van de synoptiek';
+
+  @override
+  String get ppExportPngSubtitle => 'PNG in hoge resolutie, witte achtergrond';
+
+  @override
+  String get ppExportError => 'Oei, de export is mislukt 😕';
+
+  @override
+  String get ppPdfTitle => 'Plan van de stroomverdeling';
+
+  @override
+  String get ppPdfGenerated => 'Gemaakt met ShowTech Tools';
+
+  @override
+  String get ppColPanel => 'Verdeelkast';
+
+  @override
+  String get ppColOutput => 'Uitgang';
+
+  @override
+  String get ppColConnector => 'Connector';
+
+  @override
+  String get ppColBreaker => 'Beveiliging';
+
+  @override
+  String get ppColPhase => 'Fase';
+
+  @override
+  String get ppColLength => 'Lengte (m)';
+
+  @override
+  String get ppColCable => 'Kabel';
+
+  @override
+  String get ppColConnected => 'Aangesloten';
+
+  @override
+  String get ppColCategory => 'Gebruik';
+
+  @override
+  String get ppColPower => 'kW';
+
+  @override
+  String get ppColCurrent => 'I (A)';
+
+  @override
+  String get ppColDrop => 'ΔU (%)';
+
+  @override
+  String get ppDisclaimer =>
+      'Indicatieve berekeningen (230/400 V, H07RN-F koperkabels in open lucht, max. 5 % spanningsval). Dit plan helpt een installatie voorbereiden: het moet door een bevoegd persoon volgens de lokale normen worden gevalideerd.';
+
+  @override
+  String get attestationListTitle => 'Montageattesten';
+
+  @override
+  String get attestationNew => 'Nieuw attest';
+
+  @override
+  String get attestationNewTitle => 'Nieuw attest';
+
+  @override
+  String get attestationNewBlank => 'Leeg attest';
 
   @override
   String get attestationNewFromPlan =>
       'Of vanuit een veiligheidsplan (neemt evenement en bedrijf over):';
 
   @override
-  String get attestationEmptyTitle =>
-      'Nog geen attesten';
+  String get attestationEmptyTitle => 'Nog geen attesten';
 
   @override
   String get attestationEmptyBody =>
@@ -16161,12 +16637,10 @@ class AppLocalizationsNl extends AppLocalizations {
       'Dit attest en de foto\'s verwijderen? Dit kan niet ongedaan worden gemaakt.';
 
   @override
-  String get attestationStatusSigned =>
-      'Ondertekend';
+  String get attestationStatusSigned => 'Ondertekend';
 
   @override
-  String get attestationStatusReserve =>
-      'Ondertekend met voorbehoud';
+  String get attestationStatusReserve => 'Ondertekend met voorbehoud';
 
   @override
   String attestationElementCount(Object count) {
@@ -16178,8 +16652,7 @@ class AppLocalizationsNl extends AppLocalizations {
       'Inhoud gewijzigd: de handtekening is verwijderd, onderteken opnieuw.';
 
   @override
-  String get attestationFieldCompany =>
-      'Monterend bedrijf';
+  String get attestationFieldCompany => 'Monterend bedrijf';
 
   @override
   String get attestationElementName =>
@@ -16190,16 +16663,13 @@ class AppLocalizationsNl extends AppLocalizations {
       'Beschrijving (bv. Truss 40×40, 12 m, 4 takels 1 t)';
 
   @override
-  String get attestationElementFamilies =>
-      'Uit te voeren controles';
+  String get attestationElementFamilies => 'Uit te voeren controles';
 
   @override
-  String get attestationAppliedLoad =>
-      'Toegepaste last (kg)';
+  String get attestationAppliedLoad => 'Toegepaste last (kg)';
 
   @override
-  String get attestationRatedLoad =>
-      'Toelaatbare last (kg)';
+  String get attestationRatedLoad => 'Toelaatbare last (kg)';
 
   @override
   String get attestationDeleteElementConfirm =>
@@ -16211,48 +16681,40 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get attestationOverload =>
-      'Last hoger dan de toelaatbare last';
+  String get attestationOverload => 'Last hoger dan de toelaatbare last';
 
   @override
   String get attestationElementsEmpty =>
       'Voeg de gemonteerde elementen toe: trussen, grid, torens, takels, podium, schermen…';
 
   @override
-  String get attestationAddElement =>
-      'Element toevoegen';
+  String get attestationAddElement => 'Element toevoegen';
 
   @override
-  String get attestationTakePhoto =>
-      'Foto nemen';
+  String get attestationTakePhoto => 'Foto nemen';
 
   @override
-  String get attestationPickPhoto =>
-      'Kiezen uit galerij';
+  String get attestationPickPhoto => 'Kiezen uit galerij';
 
   @override
   String get attestationPhotoError =>
       'Foto kon niet worden toegevoegd. Controleer de cameratoegang in de instellingen.';
 
   @override
-  String get attestationOk =>
-      'OK';
+  String get attestationOk => 'OK';
 
   @override
-  String get attestationNc =>
-      'NC';
+  String get attestationNc => 'NC';
 
   @override
-  String get attestationNa =>
-      'N.v.t.';
+  String get attestationNa => 'N.v.t.';
 
   @override
   String get attestationReserveLabel =>
       'Voorbehoud: vaststelling en geplande actie (verplicht)';
 
   @override
-  String get attestationPhotoRequired =>
-      'Foto aanbevolen voor dit punt';
+  String get attestationPhotoRequired => 'Foto aanbevolen voor dit punt';
 
   @override
   String get attestationNoElements =>
@@ -16263,8 +16725,7 @@ class AppLocalizationsNl extends AppLocalizations {
       'Elk niet-conform punt heeft een schriftelijk voorbehoud nodig vóór ondertekening.';
 
   @override
-  String get attestationSignTitle =>
-      'Ondertekening van het attest';
+  String get attestationSignTitle => 'Ondertekening van het attest';
 
   @override
   String attestationUnanswered(Object count) {
@@ -16282,16 +16743,13 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get attestationStatElements =>
-      'elementen';
+  String get attestationStatElements => 'elementen';
 
   @override
-  String get attestationStatReserves =>
-      'voorbehouden';
+  String get attestationStatReserves => 'voorbehouden';
 
   @override
-  String get attestationStatPhotos =>
-      'foto\'s';
+  String get attestationStatPhotos => 'foto\'s';
 
   @override
   String attestationStatement(Object name) {
@@ -16304,50 +16762,127 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get attestationReserve =>
-      'Voorbehoud';
+  String get attestationReserve => 'Voorbehoud';
 
   @override
   String get attestationReserveEmpty =>
       'Voorbehoud nog te schrijven (stap Controles)';
 
   @override
-  String get attestationSignerSection =>
-      'Ondertekenaar';
+  String get attestationSignerSection => 'Ondertekenaar';
 
   @override
   String get attestationSignerRole =>
       'Functie (bv. hoofdrigger, productieleider)';
 
   @override
-  String get attestationSign =>
-      'Attest ondertekenen';
+  String get attestationSign => 'Attest ondertekenen';
 
   @override
-  String get attestationSignWithReserve =>
-      'Ondertekenen met voorbehoud';
+  String get attestationSignWithReserve => 'Ondertekenen met voorbehoud';
 
   @override
-  String get attestationStepInfo =>
-      'Gegevens';
+  String get attestationStepInfo => 'Gegevens';
 
   @override
-  String get attestationStepElements =>
-      'Elementen';
+  String get attestationStepElements => 'Elementen';
 
   @override
-  String get attestationStepControls =>
-      'Controles';
+  String get attestationStepControls => 'Controles';
 
   @override
-  String get attestationStepSignature =>
-      'Handtekening';
+  String get attestationStepSignature => 'Handtekening';
 
   @override
-  String get attestationNextElement =>
-      'Volgend element';
+  String get attestationNextElement => 'Volgend element';
 
   @override
-  String get attestationDeletePhotoConfirm =>
-      'Deze foto verwijderen?';
+  String get attestationDeletePhotoConfirm => 'Deze foto verwijderen?';
+
+  @override
+  String get hospitalSearchPlaceTitle => 'Waar vindt het evenement plaats?';
+
+  @override
+  String get hospitalSearchPlaceHelp =>
+      'Naam van de zaal, adres, stad of postcode: ook een ruwe aanduiding volstaat.';
+
+  @override
+  String get hospitalSearchPlaceHint => 'bv. Ziggo Dome, Amsterdam';
+
+  @override
+  String get hospitalSearchButton => 'Zoeken';
+
+  @override
+  String get hospitalSearchPlaceChoose =>
+      'Meerdere plaatsen komen overeen. Welke is het?';
+
+  @override
+  String get hospitalSearchNoPlace =>
+      'Geen plaats gevonden. Probeer korter: alleen de stad, de postcode of de naam van de zaal.';
+
+  @override
+  String hospitalSearchAround(Object place) {
+    return 'Rond $place';
+  }
+
+  @override
+  String get hospitalSearchChangePlace => 'Wijzigen';
+
+  @override
+  String hospitalSearchNoneRadius(Object km) {
+    return 'Geen ziekenhuis gevonden binnen $km km. Vul het handmatig in.';
+  }
+
+  @override
+  String get ppspsRatingTitle => 'Risicobeoordeling';
+
+  @override
+  String get ppspsSeverity => 'Ernst';
+
+  @override
+  String get ppspsProbability => 'Waarschijnlijkheid';
+
+  @override
+  String ppspsRatingLibraryValue(Object severity, Object probability) {
+    return 'Aangepast voor dit plan. Waarde uit de bibliotheek: ernst $severity × waarschijnlijkheid $probability.';
+  }
+
+  @override
+  String get ppspsRatingNoteHint => 'Reden (bv. binnenlocatie, geen wind)';
+
+  @override
+  String get ppspsRatingReset => 'Terug naar de waarde uit de bibliotheek';
+
+  @override
+  String get ppspsLevelHigh => 'Hoog risico';
+
+  @override
+  String get ppspsLevelMedium => 'Middelmatig risico';
+
+  @override
+  String get ppspsLevelLow => 'Laag risico';
+
+  @override
+  String get ppspsLevelHighRule =>
+      'score 12 tot 16, of ernst 4 ongeacht de waarschijnlijkheid';
+
+  @override
+  String get ppspsLevelMediumRule => 'score 6 tot 11';
+
+  @override
+  String get ppspsLevelLowRule => 'score 1 tot 5';
+
+  @override
+  String get ppspsRatingHelpTitle => 'Hoe risico\'s worden beoordeeld';
+
+  @override
+  String get ppspsRatingHelpShort => 'Beoordeling';
+
+  @override
+  String get ppspsRatingHelpIntro =>
+      'Elk risico krijgt een ernst van 1 tot 4 en een waarschijnlijkheid van 1 tot 4. De score is hun product, van 1 tot 16.';
+
+  @override
+  String get ppspsRatingHelpAdjust =>
+      'De voorgestelde waarden komen uit de bibliotheek voor een typisch evenement. Pas ze aan voor uw werf door op een risico te tikken; de reden verschijnt in de pdf.';
 }
