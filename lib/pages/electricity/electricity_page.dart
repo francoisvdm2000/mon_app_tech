@@ -11,6 +11,7 @@ import 'electricity_ups_autonomy_page.dart';
 import 'load_balancer/load_balancer_page.dart';
 import 'electricity_generator_page.dart';
 import 'electricity_power_factor_page.dart';
+import 'power_plan/power_plan_page.dart';
 import 'widgets/electricity_tool_tile.dart';
 import '../shared/app_grid_tile.dart';
 
@@ -173,6 +174,14 @@ class _ElectricityPageState extends State<ElectricityPage> {
                 isPro: true,
                 locked: !_isPro,
                 onTap: () => _openOrSubscribe(context, const ElectricityPowerFactorPage()),
+              ),
+              ElectricityToolTile(
+                icon: Icons.schema_rounded,
+                title: loc.electricityToolPowerPlanTitle,
+                subtitle: loc.electricityToolPowerPlanSubtitle,
+                isPro: true,
+                locked: !_isPro,
+                onTap: () => _openOrSubscribe(context, const ElectricityPowerPlanPage()),
               ),
             ],
           ),

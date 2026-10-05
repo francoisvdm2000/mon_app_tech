@@ -328,7 +328,9 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
           ),
         ],
       ),
-      body: ListView(
+      body: SafeArea(
+        top: false,
+        child: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           Padding(
@@ -454,6 +456,7 @@ class _FixtureCatalogPageState extends State<FixtureCatalogPage>
           ),
           ],
         ],
+      ),
       ),
     );
   }

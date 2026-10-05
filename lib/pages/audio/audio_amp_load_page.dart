@@ -232,7 +232,9 @@ class _AudioAmpLoadPageState extends State<AudioAmpLoadPage> {
               Divider(height: 1, color: Colors.white.withValues(alpha: 0.08)),
         ),
       ),
-      body: ListView(
+      body: SafeArea(
+        top: false,
+        child: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           // ── Ampli ──
@@ -324,6 +326,7 @@ class _AudioAmpLoadPageState extends State<AudioAmpLoadPage> {
           const _InfoNote(),
           const SizedBox(height: 24),
         ],
+      ),
       ),
     );
   }
@@ -1190,7 +1193,7 @@ class _PresetPickerSheetState<T> extends State<_PresetPickerSheet<T>> {
                 ),
               ),
             ),
-            Expanded(child: list),
+            Expanded(child: SafeArea(top: false, child: list)),
           ],
         ),
       ),

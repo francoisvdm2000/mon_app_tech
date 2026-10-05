@@ -46,6 +46,7 @@ import '../electricity/electricity_phase_power_page.dart';
 import '../electricity/load_balancer/load_balancer_page.dart';
 import '../electricity/electricity_generator_page.dart';
 import '../electricity/electricity_power_factor_page.dart';
+import '../electricity/power_plan/power_plan_page.dart';
 import '../laser_page.dart';
 import '../laser/laser_beam_size_page.dart';
 import '../console/virtual_console_page.dart';
@@ -459,6 +460,14 @@ class ToolRegistry {
         toolTitle: loc.electricityPowerFactorToolTitle,
         icon: Icons.sync_alt_rounded,
         builder: (_) => const ElectricityPowerFactorPage(),
+      ),
+      ToolRefEntry(
+        pageId: 'tool:electricity_power_plan',
+        sectionId: 'main',
+        categoryTitle: loc.electricityTitle,
+        toolTitle: loc.electricityToolPowerPlanTitle,
+        icon: Icons.schema_rounded,
+        builder: (_) => const ElectricityPowerPlanPage(),
       ),
 
       // ── Laser ──────────────────────────────────────────────────────────

@@ -388,7 +388,7 @@ class _CatalogBrowserPageState<T> extends State<CatalogBrowserPage<T>> {
               ),
           ],
         ),
-        body: body,
+        body: SafeArea(top: false, child: body),
       ),
     );
   }

@@ -15,6 +15,18 @@ subprojects {
     val newSubprojectBuildDir: Directory = newBuildDir.dir(project.name)
     project.layout.buildDirectory.value(newSubprojectBuildDir)
 }
+// Certains plugins (ex. file_picker 8.x) compilent encore contre l'API 34,
+// alors que flutter_plugin_android_lifecycle exige l'API 36 minimum.
+// On force compileSdk 36 sur toutes les librairies Android des plugins.
+// (Doit rester AVANT evaluationDependsOn(":app").)
+subprojects {
+    if (!project.state.executed) {
+        afterEvaluate {
+            extensions.findByType(com.android.build.api.dsl.LibraryExtension::class.java)
+                ?.let { it.compileSdk = 36 }
+        }
+    }
+}
 subprojects {
     project.evaluationDependsOn(":app")
 }

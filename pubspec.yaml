@@ -2,7 +2,7 @@ name: mon_app_tech
 description: "A new Flutter project."
 publish_to: 'none'
 
-version: 3.7.3+1012
+version: 4.1.1+1016
 environment:
   sdk: ">=3.0.0 <4.0.0"
 
@@ -105,6 +105,7 @@ flutter:
     - assets/catalogs/sound.json
     - assets/catalogs/laser.json
     - assets/catalogs/safety.json
+    - assets/catalogs/electricity.json
     - assets/fonts/pdf/
 
 flutter_launcher_icons:

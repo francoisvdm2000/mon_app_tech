@@ -27,6 +27,8 @@
 <string>ShowTech Tools needs access to the photo library to import images used for technical calculations and documentation.</string>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>ShowTech Tools needs local network access to scan for devices, receive Art-Net and sACN / E1.31 lighting control data.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>ShowTech Tools uses your location only to read the name of the Wi-Fi network you are connected to, for the network diagnostic tools. Your location is never stored or shared.</string>
 	<key>NSBonjourServices</key>
 	<array>
 		<string>_artnet._udp</string>
