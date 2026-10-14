@@ -5,17 +5,20 @@ import 'package:flutter/material.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 import '../../models/network/dmx_universe.dart';
+import '../../models/network/luminex_alarm.dart';
 import '../../models/network/ndi_source.dart';
 import '../../models/network/network_device.dart';
 import '../../models/network/network_diagnostic_alert.dart';
 import '../../models/network/network_diagnostic_result.dart';
 import '../../models/network/network_snapshot.dart';
 import '../../services/network/artnet_service.dart';
+import '../../services/network/luminex_service.dart';
 import '../../services/network/ndi_discovery_service.dart';
 import '../../services/network/network_diagnostic_service.dart';
 import '../../services/network/network_scan_service.dart';
 import '../../services/network/network_snapshot_service.dart';
 import '../about/about_favorites.dart';
+import 'luminex_monitor_page.dart' show luminexAlarmLabel;
 import '../../services/network/sacn_service.dart';
 
 const _kAccentDiag = Color(0xFF00E5FF);
@@ -33,6 +36,10 @@ class _NetworkDiagnosticPageState extends State<NetworkDiagnosticPage> {
   final _artnetService = ArtNetService();
   final _sacnService = SacnService();
   final _snapshotService = NetworkSnapshotService();
+
+  /// Switches GigaCore : IP enregistrées dans l'outil Luminex + découverte
+  /// sur le sous-réseau. Ils apportent la vue de tous les VLAN.
+  final _luminexService = LuminexService();
 
   StreamSubscription<NetworkScanEvent>? _scanSub;
   StreamSubscription<Map<int, DmxUniverse>>? _artnetSub;
@@ -60,6 +67,7 @@ class _NetworkDiagnosticPageState extends State<NetworkDiagnosticPage> {
     _scanService.dispose();
     _artnetService.dispose();
     _sacnService.dispose();
+    _luminexService.dispose();
     super.dispose();
   }
 
@@ -72,6 +80,7 @@ class _NetworkDiagnosticPageState extends State<NetworkDiagnosticPage> {
     _scanService.stopScan();
     _artnetService.stop();
     _sacnService.stop();
+    _luminexService.stop();
   }
 
   // ── Analyse ────────────────────────────────────────────────────────────────
@@ -90,6 +99,13 @@ class _NetworkDiagnosticPageState extends State<NetworkDiagnosticPage> {
       _scanTotal = 0;
       _localIp = null;
     });
+
+    // GigaCore : relevé des switches connus, puis recherche sur le
+    // sous-réseau (en parallèle du reste).
+    unawaited(_luminexService
+        .start()
+        .then((_) => _luminexService.discoverOnSubnet())
+        .catchError((_) {}));
 
     // Démarrer Art-Net + sACN en parallèle du scan
     try {
@@ -161,12 +177,19 @@ class _NetworkDiagnosticPageState extends State<NetworkDiagnosticPage> {
     _artnetService.stop();
     _sacnService.stop();
 
+    // Switches GigaCore : les injoignables ne comptent que si au moins un
+    // GigaCore répond (sinon ce sont des IP d'une autre installation).
+    final gigacores = _luminexService.devices;
+    final anyReachable = gigacores.any((d) => d.isReachable);
+    _luminexService.stop();
+
     final result = NetworkDiagnosticService.analyze(
       devices: _scanDevices,
       artnetUniverses: _artnetUniverses,
       sacnUniverses: _sacnUniverses,
       ndiSources: _ndiSources,
       localIp: _localIp,
+      luminexDevices: anyReachable ? gigacores : const [],
     );
 
     if (!mounted) return;
@@ -897,8 +920,45 @@ class _AlertList extends StatelessWidget {
         ),
       'diagManyUnknownDevices' =>
         loc.diagManyUnknownDevices(p['count'] as int),
+      'diagSacnOtherVlan' => loc.diagSacnOtherVlan(p['count'] as int),
+      'diagLuminexUnreachable' =>
+        loc.diagLuminexUnreachable('${p['switch']}', '${p['ip']}'),
+      'diagLuminexAlarm' =>
+        loc.diagLuminexAlarm('${p['switch']}', _luminexAlarmText(p)),
+      'diagLuminexNoIp' => loc.diagLuminexNoIp(
+          '${p['switch']}',
+          (p['port'] as num?)?.toInt() ?? 0,
+          '${p['name']}',
+        ),
+      'diagLuminexDuplicateIp' => loc.diagLuminexDuplicateIp(
+          '${p['switch']}',
+          (p['port'] as num?)?.toInt() ?? 0,
+          '${p['ips']}',
+        ),
       _ => alert.code,
     };
+  }
+
+  /// Texte d'une alarme GigaCore enregistrée dans un diagnostic.
+  String _luminexAlarmText(Map<String, dynamic> p) {
+    final type = LuminexAlarmType.values
+        .where((t) => t.name == p['type'])
+        .firstOrNull;
+    if (type == null) return '${p['type']}';
+    final params = Map<String, dynamic>.from(p)
+      ..remove('switch')
+      ..remove('type')
+      ..remove('port');
+    return luminexAlarmLabel(
+      LuminexAlarm(
+        type: type,
+        severity: DiagnosticSeverity.warning,
+        portNr: (p['port'] as num?)?.toInt(),
+        params: params,
+        timestamp: DateTime.now(),
+      ),
+      loc,
+    );
   }
 }
 

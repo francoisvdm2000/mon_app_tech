@@ -1,16 +1,23 @@
-import '../../../models/network/dmx_universe.dart';
-import '../../../models/network/ndi_source.dart';
-import '../../../models/network/network_device.dart';
-import '../../../models/network/network_diagnostic_alert.dart';
-import '../../../models/network/network_diagnostic_result.dart';
+import '../../models/network/dmx_universe.dart';
+import '../../models/network/luminex_device.dart';
+import '../../models/network/luminex_inventory.dart';
+import '../../models/network/luminex_multicast.dart';
+import '../../models/network/ndi_source.dart';
+import '../../models/network/network_device.dart';
+import '../../models/network/network_diagnostic_alert.dart';
+import '../../models/network/network_diagnostic_result.dart';
 
 /// Service d'analyse réseau statique.
 ///
-/// Reçoit un snapshot des données collectées (scan, Art-Net, sACN) et
-/// retourne un [NetworkDiagnosticResult] avec score et liste d'alertes.
+/// Reçoit un snapshot des données collectées (scan, Art-Net, sACN, switches
+/// GigaCore) et retourne un [NetworkDiagnosticResult] avec score et liste
+/// d'alertes.
+///
+/// Les GigaCore apportent la vue de tous les VLAN : leurs alarmes, les
+/// anomalies de l'inventaire (appareil sans IP, IP en double) et le sACN qui
+/// circule dans d'autres VLAN que celui du téléphone.
 ///
 /// Architecture : service stateless, aucune dépendance Flutter.
-/// Luminex et MA-Net : architecture prévue, non implémentée.
 class NetworkDiagnosticService {
   static const double _lowFpsThreshold = 10.0;
   static const int _unknownDevicesRatioThreshold = 60; // % sans hostname
@@ -28,6 +35,7 @@ class NetworkDiagnosticService {
     required Map<int, DmxUniverse> sacnUniverses,
     List<NdiSource> ndiSources = const [],
     String? localIp,
+    List<LuminexDevice> luminexDevices = const [],
   }) {
     final alerts = <NetworkDiagnosticAlert>[];
 
@@ -104,6 +112,55 @@ class NetworkDiagnosticService {
       }
     }
 
+    // ── Switches GigaCore ────────────────────────────────────────────────────
+
+    for (final dev in luminexDevices) {
+      if (!dev.isReachable) {
+        alerts.add(NetworkDiagnosticAlert(
+          severity: DiagnosticSeverity.critical,
+          code: 'diagLuminexUnreachable',
+          params: {'ip': dev.ip, 'switch': dev.displayName},
+        ));
+        continue;
+      }
+      for (final alarm in dev.alarms) {
+        alerts.add(NetworkDiagnosticAlert(
+          severity: alarm.severity,
+          code: 'diagLuminexAlarm',
+          params: {
+            'switch': dev.displayName,
+            'type': alarm.type.name,
+            'port': alarm.portNr,
+            ...alarm.params,
+          },
+        ));
+      }
+    }
+
+    for (final e in LuminexInventoryEntry.compute(luminexDevices)) {
+      for (final issue in e.issues) {
+        alerts.add(NetworkDiagnosticAlert(
+          severity: DiagnosticSeverity.warning,
+          code: switch (issue) {
+            LuminexInventoryIssue.noIpAddress => 'diagLuminexNoIp',
+            LuminexInventoryIssue.duplicateIp => 'diagLuminexDuplicateIp',
+          },
+          params: {
+            'switch': e.switchName,
+            'port': e.portNr,
+            'name': e.displayName ?? '',
+            'ips': e.duplicateIps.join(', '),
+          },
+        ));
+      }
+    }
+
+    // sACN vu par les GigaCore dans d'autres VLAN que celui du téléphone.
+    final sacnElsewhere = <int>{
+      for (final v in LuminexMulticastVlan.compute(luminexDevices))
+        ...v.sacnUniverses,
+    };
+
     // ── INFO ─────────────────────────────────────────────────────────────────
 
     // Aucun appareil détecté
@@ -122,12 +179,18 @@ class NetworkDiagnosticService {
       ));
     }
 
-    // Aucun flux sACN
+    // Aucun flux sACN ici : on précise s'il circule ailleurs (GigaCore).
     if (sacnUniverses.isEmpty) {
-      alerts.add(const NetworkDiagnosticAlert(
-        severity: DiagnosticSeverity.info,
-        code: 'diagNoSacn',
-      ));
+      alerts.add(sacnElsewhere.isEmpty
+          ? const NetworkDiagnosticAlert(
+              severity: DiagnosticSeverity.info,
+              code: 'diagNoSacn',
+            )
+          : NetworkDiagnosticAlert(
+              severity: DiagnosticSeverity.info,
+              code: 'diagSacnOtherVlan',
+              params: {'count': sacnElsewhere.length},
+            ));
     }
 
     // Trop d'appareils sans hostname

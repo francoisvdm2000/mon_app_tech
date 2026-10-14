@@ -4,6 +4,7 @@ import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import '../../models/network/manet_node.dart';
 import '../../services/network/manet_service.dart';
 import '../about/about_favorites.dart';
+import 'widgets/network_limits_card.dart';
 
 const _kAccent = Color(0xFF00E5FF);
 const _kBg = Color(0xFF0D0D14);
@@ -197,8 +198,8 @@ class _EmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Center(
-        child: Padding(
-          padding: const EdgeInsets.all(40),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.fromLTRB(24, 40, 24, 40),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -234,12 +235,17 @@ class _EmptyState extends StatelessWidget {
                       color: Colors.white.withValues(alpha: 0.08)),
                 ),
                 child: Text(
-                  loc.manetPortListening(6549),
+                  loc.manetPortListening(MaNetService.kPort),
                   style: TextStyle(
                       color: Colors.white.withValues(alpha: 0.28),
                       fontSize: 11,
                       fontFamily: 'monospace'),
                 ),
+              ),
+              const SizedBox(height: 24),
+              const NetworkLimitsCard(
+                protocol: NetworkListenProtocol.manet,
+                initiallyExpanded: true,
               ),
             ],
           ),
@@ -285,8 +291,14 @@ class _NodeCard extends StatelessWidget {
                     color: iconColor.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Icon(Icons.table_chart_rounded,
-                      color: iconColor, size: 19),
+                  child: Icon(
+                      switch (node.deviceClass) {
+                        MaDeviceClass.console => Icons.tune_rounded,
+                        MaDeviceClass.processingUnit => Icons.dns_rounded,
+                        MaDeviceClass.unknown => Icons.table_chart_rounded,
+                      },
+                      color: iconColor,
+                      size: 19),
                 ),
                 const SizedBox(width: 10),
                 Expanded(
@@ -336,6 +348,7 @@ class _NodeCard extends StatelessWidget {
 
   bool _hasDetails(MaNetNode n) =>
       n.nodeType != null ||
+      n.sessionName != null ||
       n.firmwareVersion != null ||
       n.mac != null;
 }
@@ -354,6 +367,8 @@ class _DetailGrid extends StatelessWidget {
         children: [
           if (node.nodeType != null)
             _InfoChip(label: loc.manetNodeType, value: node.nodeType!),
+          if (node.sessionName != null)
+            _InfoChip(label: loc.manetSession, value: node.sessionName!),
           if (node.firmwareVersion != null)
             _InfoChip(
                 label: loc.manetFirmware, value: node.firmwareVersion!),

@@ -6,6 +6,7 @@ import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import '../../models/network/dmx_universe.dart';
 import '../../services/network/artnet_service.dart';
 import '../about/about_favorites.dart';
+import 'widgets/network_limits_card.dart';
 
 const _kAccent = Color(0xFFFFB703);
 
@@ -91,6 +92,12 @@ class _ArtNetViewerPageState extends State<ArtNetViewerPage> {
         children: [
           // ── Info ──────────────────────────────────────────────────────────
           _InfoBanner(text: loc.artnetPlatformInfo, color: Colors.blueAccent),
+          const SizedBox(height: 8),
+          NetworkLimitsCard(
+            protocol: NetworkListenProtocol.artnet,
+            key: ValueKey(_universes.isEmpty),
+            initiallyExpanded: _universes.isEmpty,
+          ),
           const SizedBox(height: 12),
 
           // ── Status + bouton ────────────────────────────────────────────────

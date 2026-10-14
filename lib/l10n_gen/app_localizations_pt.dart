@@ -11572,13 +11572,14 @@ class AppLocalizationsPt extends AppLocalizations {
       'No iOS 14+, o multicast sACN pode exigir permissão de acesso à rede local.';
 
   @override
-  String get diagCardTitle => 'Diagnóstico de rede';
+  String get diagCardTitle => 'Verificação de saúde';
 
   @override
-  String get diagCardSubtitle => 'Análise automática de rede, Art-Net e sACN.';
+  String get diagCardSubtitle =>
+      'Uma pontuação e a lista de problemas: rede, Art-Net, sACN, GigaCore.';
 
   @override
-  String get diagPageTitle => 'Diagnóstico de rede';
+  String get diagPageTitle => 'Verificação de saúde';
 
   @override
   String get diagPlatformInfo =>
@@ -11823,13 +11824,14 @@ class AppLocalizationsPt extends AppLocalizations {
   String get subscriptionCategoryNetworkShort => 'REDE';
 
   @override
-  String get dashboardPageTitle => 'Painel de rede';
+  String get dashboardPageTitle => 'Monitorização em direto';
 
   @override
-  String get dashboardCardTitle => 'Painel de rede';
+  String get dashboardCardTitle => 'Monitorização em direto';
 
   @override
-  String get dashboardCardSubtitle => 'Visualização da rede em tempo real';
+  String get dashboardCardSubtitle =>
+      'Equipamentos, fluxos e alertas em tempo real';
 
   @override
   String get dashboardStatusIdle => 'Em espera';
@@ -11960,13 +11962,14 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get luminexPageTitle => 'Luminex Monitor';
+  String get luminexPageTitle => 'Switches GigaCore';
 
   @override
-  String get luminexMonitorCardTitle => 'Luminex Monitor';
+  String get luminexMonitorCardTitle => 'Switches GigaCore';
 
   @override
-  String get luminexMonitorCardSubtitle => 'Chaves de monitoramento GigaCore';
+  String get luminexMonitorCardSubtitle =>
+      'Inventário, tráfego por VLAN, configuração, cópias';
 
   @override
   String get luminexAddDevice => 'Adicionar equipamento';
@@ -12339,23 +12342,23 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get helpToolLuminexDoes =>
-      'Consultas GigaCore Luminex alternam por meio de sua API HTTP. Exibe o status da porta (link, velocidade, PoE, erros), temperatura, fontes de alimentação e aciona alarmes.';
+      'Consulta os switches Luminex GigaCore através da sua API HTTP. Mostra o estado das portas (ligação, velocidade, grupo, equipamento ligado, débito, PoE), a temperatura, as fontes de alimentação e o tráfego por grupo em toda a rede, e aciona alarmes.';
 
   @override
   String get helpToolLuminexDelay =>
-      'Enquete a cada 30 segundos. Descoberta automática na sub-rede: 15 a 30 segundos.';
+      'Débito e estado das portas a cada 10 segundos; grupos, LLDP, PoE e fontes a cada minuto. Descoberta automática na sub-rede: 15 a 30 segundos.';
 
   @override
   String get helpToolLuminexLimits =>
-      'Somente leitura. Nenhuma alteração na configuração de VLAN, grupo ou porta. Não suporta vídeo MA-Net ou NDI.';
+      'Apenas leitura por defeito. O modo de configuração (cadeado) permite mudar o nome, mudar de grupo, ativar ou desativar uma porta, fazer piscar os LED e controlar o PoE. As portas ISL estão bloqueadas. Cada alteração pode ser anulada.';
 
   @override
   String get helpToolLuminexTip =>
-      'Autenticação padrão: admin/senha vazia. Gen2s expõem /api/v1/, Gen1s respondem em /stat/ports em texto simples.';
+      'O telefone deve estar na rede de gestão dos GigaCore. O tráfego por grupo é lido apenas a partir dessa rede, sem estar em cada VLAN. O firmware recente usa a API /api/; os equipamentos antigos respondem em /stat/ports em texto simples.';
 
   @override
   String get helpToolManetDoes =>
-      'Escuta passivamente a porta UDP 6549 e detecta grandMA2/3 consoles e nós se anunciando na rede. Exibe nome, tipo de dispositivo, versão de firmware e endereço MAC.';
+      'Escuta passivamente a porta UDP 30020 e detecta grandMA2/3 consoles e nós se anunciando na rede. Exibe nome, tipo de dispositivo, versão de firmware e endereço MAC.';
 
   @override
   String get helpToolManetDelay =>
@@ -12367,13 +12370,14 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get helpToolManetTip =>
-      'Se nenhum dispositivo aparecer: verifique se o transmissor grandMA está na LAN e se a porta UDP 6549 não está bloqueada por um firewall.';
+      'Se nenhum dispositivo aparecer: verifique se o transmissor grandMA está na LAN e se a porta UDP 30020 não está bloqueada por um firewall.';
 
   @override
   String get bwCardTitle => 'Largura de banda';
 
   @override
-  String get bwCardSubtitle => 'Broadcast + switch SNMP';
+  String get bwCardSubtitle =>
+      'Débito broadcast recebido e portas de switches SNMP';
 
   @override
   String get bwHubTitle => 'Largura de banda';
@@ -12396,10 +12400,11 @@ class AppLocalizationsPt extends AppLocalizations {
       'Tráfego unicast não visível (NDI, Dante…)';
 
   @override
-  String get bwHubCardSnmpTitle => 'Portas do switch';
+  String get bwHubCardSnmpTitle => 'Switch SNMP (outras marcas)';
 
   @override
-  String get bwHubCardSnmpSubtitle => 'Vista por porta, todo o tráfego';
+  String get bwHubCardSnmpSubtitle =>
+      'Débito por porta via SNMP. Para GigaCore, use «Switches GigaCore».';
 
   @override
   String get bwHubCardSnmpRequires => 'Switch gerenciado SNMP necessário';
@@ -16850,4 +16855,623 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get ppspsRatingHelpAdjust =>
       'Os valores propostos vêm da biblioteca para um evento tipo. Ajuste-os à sua obra tocando num risco; o motivo aparece no PDF.';
+
+  @override
+  String get netLimitsTitle => 'Não aparece nada? Não é necessariamente a app';
+
+  @override
+  String get netLimitsIntro =>
+      'O ShowTech Tools escuta a rede sem enviar nada. O que pode receber depende do sistema do dispositivo e da configuração da rede:';
+
+  @override
+  String get netLimitsManetMa3Only =>
+      'Apenas equipamentos grandMA3 (MA-Net3) são detetados. grandMA2 (MA-Net2) não é suportado.';
+
+  @override
+  String get netLimitsIosEntitlement =>
+      'iOS: a Apple exige uma autorização especial para receber multicast e broadcast. Sem ela, só é recebido o tráfego enviado diretamente (unicast) para este iPhone ou iPad. É uma limitação do iOS, não da app.';
+
+  @override
+  String get netLimitsIosLocalNetwork =>
+      'iOS: verifique se o acesso está autorizado em Definições › Privacidade e segurança › Rede local › ShowTech Tools.';
+
+  @override
+  String get netLimitsArtnetUnicast =>
+      'A grandMA3 envia Art-Net em unicast para os seus nodes por defeito. Adicione o IP deste dispositivo como destino na consola, ou mude o universo para broadcast.';
+
+  @override
+  String get netLimitsArtnetSubnet =>
+      'O broadcast Art-Net só é recebido se este dispositivo estiver na mesma sub-rede que a fonte (ex. 2.x.x.x / 255.0.0.0).';
+
+  @override
+  String get netLimitsSameNetwork =>
+      'Rede: o dispositivo tem de estar na mesma rede / VLAN que as consolas (mesmo grupo Luminex ou porta de switch). O multicast não atravessa um router.';
+
+  @override
+  String get netLimitsWifiAp =>
+      'Wi-Fi: o ponto de acesso tem de estar em modo access point (não em modo router), sem isolamento de clientes nem filtragem multicast / broadcast.';
+
+  @override
+  String netLimitsDeviceIp(String ip) {
+    return 'IP deste dispositivo: $ip';
+  }
+
+  @override
+  String get netLimitsNoIp => 'Nenhum endereço IP local detetado';
+
+  @override
+  String get manetSession => 'Sessão';
+
+  @override
+  String get pingCardTitle => 'Ping';
+
+  @override
+  String get pingCardSubtitle => 'Um equipamento responde?';
+
+  @override
+  String get pingTitle => 'Ping';
+
+  @override
+  String get pingHostLabel => 'Endereço IP ou nome';
+
+  @override
+  String get pingHostInvalid => 'Endereço não encontrado';
+
+  @override
+  String get pingCountContinuous => 'Contínuo';
+
+  @override
+  String get pingStart => 'Ping!';
+
+  @override
+  String get pingStop => 'Parar';
+
+  @override
+  String get pingSent => 'Enviados';
+
+  @override
+  String get pingReceived => 'Recebidos';
+
+  @override
+  String get pingLoss => 'Perdas';
+
+  @override
+  String get pingMin => 'Mín ms';
+
+  @override
+  String get pingAvg => 'Méd. ms';
+
+  @override
+  String get pingMax => 'Máx ms';
+
+  @override
+  String get pingTimeout => 'Sem resposta';
+
+  @override
+  String get pingIdle => 'Escreva um endereço e lance o ping 🚀';
+
+  @override
+  String get pingVerdictGood => 'Responde num instante 👌';
+
+  @override
+  String get pingVerdictOk => 'Responde, mas a latência está um pouco alta';
+
+  @override
+  String get pingVerdictLossy =>
+      'Há pacotes perdidos: verifique o cabo ou o Wi-Fi';
+
+  @override
+  String get pingVerdictDown =>
+      'Sem resposta: equipamento desligado, outra gama IP ou ping bloqueado';
+
+  @override
+  String get pingNote =>
+      'Alguns equipamentos não respondem ao ping (firewall). Sem resposta nem sempre significa offline.';
+
+  @override
+  String get myIpCardTitle => 'O meu IP';
+
+  @override
+  String get myIpCardSubtitle => 'IP do telefone e assistente de IP fixo';
+
+  @override
+  String get myIpTitle => 'O meu IP';
+
+  @override
+  String get myIpRefresh => 'Atualizar';
+
+  @override
+  String get myIpCurrentTitle => 'Este dispositivo';
+
+  @override
+  String get myIpNotConnected => 'Sem ligação Wi-Fi';
+
+  @override
+  String get myIpMask => 'Máscara';
+
+  @override
+  String get myIpGateway => 'Gateway';
+
+  @override
+  String get myIpInterfaces => 'Todas as interfaces';
+
+  @override
+  String get myIpSameRange => 'Já está na gama IP certa ✅';
+
+  @override
+  String get myIpOtherRange => 'Não está na mesma gama IP que esse equipamento';
+
+  @override
+  String get myIpSystemLimit =>
+      'O iOS e o Android não permitem que nenhuma app altere o endereço IP do telefone. Não é uma limitação do ShowTech Tools: o IP define-se nas definições Wi-Fi. O assistente abaixo indica os valores exatos a introduzir.';
+
+  @override
+  String get myIpAssistantTitle => 'Assistente de IP fixo';
+
+  @override
+  String get myIpTargetLabel => 'IP de um equipamento da rede (ex. a consola)';
+
+  @override
+  String get myIpMaskLabel => 'Máscara de rede';
+
+  @override
+  String get myIpFindFree => 'Encontrar um IP livre';
+
+  @override
+  String get myIpSearching => 'A procurar um IP livre…';
+
+  @override
+  String get myIpPingTarget => 'Fazer ping a este equipamento';
+
+  @override
+  String get myIpNoFree =>
+      'Nenhum IP livre encontrado nas tentativas. Escolha um manualmente.';
+
+  @override
+  String get myIpValuesTitle => 'Valores a introduzir';
+
+  @override
+  String get myIpValueIp => 'Endereço IP';
+
+  @override
+  String get myIpValueMask => 'Máscara de sub-rede';
+
+  @override
+  String get myIpValuePrefix => 'Comprimento do prefixo de rede';
+
+  @override
+  String get myIpValueRouter => 'Router / gateway';
+
+  @override
+  String get myIpRouterEmpty => 'Deixar vazio';
+
+  @override
+  String myIpRouterHint(String ip) {
+    return 'Se o campo for obrigatório: $ip';
+  }
+
+  @override
+  String get myIpFreeNote =>
+      'Este endereço não responde ao ping, parece livre. Em caso de dúvida, confirme com o responsável de rede.';
+
+  @override
+  String get myIpCopied => 'Copiado';
+
+  @override
+  String get myIpOpenWifi => 'Abrir definições Wi-Fi';
+
+  @override
+  String get myIpStepsTitle => 'Como fazer';
+
+  @override
+  String get myIpStepsIos =>
+      'Abra Definições › Wi-Fi\nToque em (i) junto à rede\nConfigurar IP › Manual\nIntroduza o endereço IP e a máscara, deixe Router vazio\nToque em Guardar';
+
+  @override
+  String get myIpStepsAndroid =>
+      'Abra Definições › Wi-Fi\nToque na roda dentada da rede (ou toque longo › Modificar)\nOpções avançadas › Definições de IP: Estático\nIntroduza o endereço IP e o comprimento do prefixo\nGuarde (os menus variam consoante a marca)';
+
+  @override
+  String get myIpBackToDhcp =>
+      'Depois do espetáculo, volte a pôr este Wi-Fi em automático (DHCP) para recuperar a Internet.';
+
+  @override
+  String get audioSectionPassive => 'Passivo';
+
+  @override
+  String get audioPickSection => 'Secção (um canal de amplificador cada)';
+
+  @override
+  String get luminexSectionGroupTraffic => 'Tráfego por grupo';
+
+  @override
+  String get luminexGroupTrafficHint =>
+      'Soma das portas de acesso de todos os switches, sem as ligações ISL. Enviado: enviado pelos equipamentos. Recebido: entregue aos equipamentos.';
+
+  @override
+  String get luminexTrafficSent => 'Enviado';
+
+  @override
+  String get luminexTrafficReceived => 'Recebido';
+
+  @override
+  String luminexGroupActivePorts(int active, int total) {
+    return '$active de $total portas ativas';
+  }
+
+  @override
+  String get luminexAlarmFanFault => 'Falha de ventoinha';
+
+  @override
+  String luminexAlarmDeviceNotice(String text) {
+    return 'Switch: $text';
+  }
+
+  @override
+  String get luminexSectionMulticast => 'Subscrições multicast';
+
+  @override
+  String get luminexMulticastHint =>
+      'Grupos multicast subscritos (IGMP), segundo os switches: quem escuta que universo sACN ou que sessão MA-Net, em cada VLAN.';
+
+  @override
+  String luminexMulticastSummary(int groups, int listeners) {
+    return 'Grupos: $groups · subscritores: $listeners';
+  }
+
+  @override
+  String luminexMulticastListeners(int count) {
+    return 'Subscritores: $count';
+  }
+
+  @override
+  String luminexMulticastUniverse(int universe) {
+    return 'Universo $universe';
+  }
+
+  @override
+  String luminexMulticastSacnUniverses(String list) {
+    return 'Universos sACN: $list';
+  }
+
+  @override
+  String get luminexMulticastSacnDiscovery => 'Descoberta sACN';
+
+  @override
+  String get luminexMulticastManetAdmin => 'MA-Net3 · administração';
+
+  @override
+  String get luminexMulticastManetSession => 'MA-Net3 · sessão';
+
+  @override
+  String get luminexMulticastViaIsl => 'Visto através de uma ligação ISL';
+
+  @override
+  String luminexMulticastPort(int port) {
+    return 'porta $port';
+  }
+
+  @override
+  String get luminexCfgMode => 'Modo de configuração';
+
+  @override
+  String get luminexCfgModeBanner =>
+      'Modo de configuração ativo: cada ação altera o switch de imediato. Toque numa porta para a alterar.';
+
+  @override
+  String get luminexCfgIdentifySwitch => 'Fazer piscar o switch';
+
+  @override
+  String get luminexCfgIdentifyPort => 'Fazer piscar o LED da porta';
+
+  @override
+  String get luminexCfgRenameSwitch => 'Mudar o nome do switch';
+
+  @override
+  String get luminexCfgRenamePort => 'Mudar o nome da porta';
+
+  @override
+  String get luminexCfgChangeGroup => 'Mudar de grupo';
+
+  @override
+  String get luminexCfgDisablePort => 'Desativar a porta';
+
+  @override
+  String get luminexCfgEnablePort => 'Ativar a porta';
+
+  @override
+  String get luminexCfgPoeOff => 'Desligar o PoE';
+
+  @override
+  String get luminexCfgPoeOn => 'Religar o PoE';
+
+  @override
+  String get luminexCfgPoeCycle => 'Reiniciar o equipamento (PoE)';
+
+  @override
+  String luminexCfgPortTitle(int port) {
+    return 'Porta $port';
+  }
+
+  @override
+  String get luminexCfgConfirmTitle => 'Confirmar a alteração';
+
+  @override
+  String get luminexCfgApply => 'Aplicar';
+
+  @override
+  String get luminexCfgCancel => 'Cancelar';
+
+  @override
+  String get luminexCfgUndo => 'Anular';
+
+  @override
+  String get luminexCfgActiveWarning =>
+      'Esta porta está ativa: o equipamento ligado perderá a comunicação.';
+
+  @override
+  String get luminexCfgTrunkLocked =>
+      'Porta ISL: grupo e ativação bloqueados para proteger a rede.';
+
+  @override
+  String get luminexCfgDone => 'Alteração aplicada';
+
+  @override
+  String get luminexCfgUndone => 'Alteração anulada';
+
+  @override
+  String luminexCfgFailed(String reason) {
+    return 'Falhou: $reason';
+  }
+
+  @override
+  String get luminexCfgErrUnreachable => 'switch inacessível';
+
+  @override
+  String get luminexCfgErrUnauthorized => 'o switch pede uma palavra-passe';
+
+  @override
+  String get luminexCfgErrRejected => 'recusado pelo switch';
+
+  @override
+  String get luminexCfgErrNotApplied => 'o switch não aplicou a alteração';
+
+  @override
+  String get luminexCfgErrProtected => 'porta protegida';
+
+  @override
+  String get luminexCfgErrUnknownGroup => 'grupo desconhecido neste switch';
+
+  @override
+  String get luminexCfgErrNoPoe => 'sem PoE nesta porta';
+
+  @override
+  String get luminexCfgErrNoSlot => 'nenhum espaço de perfil livre no switch';
+
+  @override
+  String get luminexCfgIdentifySent => 'Os LED estão a piscar';
+
+  @override
+  String get luminexCfgPoeCycleRunning => 'Reinício PoE em curso…';
+
+  @override
+  String get luminexCfgName => 'Nome';
+
+  @override
+  String get luminexOn => 'ativada';
+
+  @override
+  String get luminexOff => 'desativada';
+
+  @override
+  String get luminexBackupTitle => 'Cópias de segurança';
+
+  @override
+  String get luminexBackupHint =>
+      'Uma cópia contém o perfil Luminex completo (grupos, trunks, portas, IP) e as legendas das portas. Fica guardada na app e pode ser partilhada. Serve para voltar atrás após um problema ou para configurar um switch de substituição.';
+
+  @override
+  String get luminexBackupNow => 'Fazer cópia deste switch';
+
+  @override
+  String get luminexBackupDone => 'Cópia guardada';
+
+  @override
+  String get luminexBackupImport => 'Importar um ficheiro';
+
+  @override
+  String get luminexBackupImportInvalid =>
+      'Este ficheiro não é uma cópia GigaCore';
+
+  @override
+  String get luminexBackupEmpty => 'Ainda não há cópias';
+
+  @override
+  String get luminexBackupCompare => 'Comparar';
+
+  @override
+  String get luminexBackupShare => 'Partilhar';
+
+  @override
+  String get luminexBackupDelete => 'Eliminar';
+
+  @override
+  String get luminexBackupRestorePorts => 'Repor as portas';
+
+  @override
+  String get luminexBackupRestoreFull => 'Restauro completo';
+
+  @override
+  String get luminexBackupRestoreFullHint =>
+      'Aplica todo o perfil: grupos, trunks, portas, nome. O tráfego pode cortar alguns segundos: evite durante um espetáculo.';
+
+  @override
+  String get luminexBackupConfirmFull => 'repor toda a configuração?';
+
+  @override
+  String luminexBackupConfirmPorts(int count) {
+    return 'portas a repor a partir da cópia: $count';
+  }
+
+  @override
+  String luminexBackupUseBackupIp(String ip) {
+    return 'Usar o IP da cópia ($ip): substituição de equipamento';
+  }
+
+  @override
+  String get luminexBackupModelMismatch =>
+      'Modelo diferente: verifique se esta cópia serve para este switch.';
+
+  @override
+  String get luminexBackupNoDiff => 'Idêntico à cópia';
+
+  @override
+  String luminexBackupDiffCount(int count) {
+    return 'Diferenças: $count';
+  }
+
+  @override
+  String get luminexBackupColBackup => 'Cópia';
+
+  @override
+  String get luminexBackupColNow => 'Atual';
+
+  @override
+  String get luminexBackupRestoreRunning => 'Restauro em curso…';
+
+  @override
+  String get luminexBackupRestored => 'Restauro concluído';
+
+  @override
+  String get luminexBackupDiffModel => 'Modelo';
+
+  @override
+  String get luminexBackupDiffName => 'Nome do switch';
+
+  @override
+  String luminexBackupDiffGroupName(int id) {
+    return 'Nome do grupo $id';
+  }
+
+  @override
+  String luminexBackupDiffPortGroup(int port) {
+    return 'Porta $port · grupo';
+  }
+
+  @override
+  String luminexBackupDiffPortTrunk(int port) {
+    return 'Porta $port · ISL';
+  }
+
+  @override
+  String luminexBackupDiffPortEnabled(int port) {
+    return 'Porta $port · ativação';
+  }
+
+  @override
+  String luminexBackupDiffPortLegend(int port) {
+    return 'Porta $port · legenda';
+  }
+
+  @override
+  String get luminexInvTitle => 'Inventário da rede';
+
+  @override
+  String get luminexInvHint =>
+      'Cada porta ativa dos GigaCore: equipamento ligado (LLDP), IP vistos em IGMP, grupo e universos sACN escutados. Um equipamento que não envia LLDP nem IGMP só aparece com a legenda da porta.';
+
+  @override
+  String luminexInvSummary(int count) {
+    return 'Portas ocupadas: $count';
+  }
+
+  @override
+  String luminexInvIssuesCount(int count) {
+    return 'Anomalias: $count';
+  }
+
+  @override
+  String get luminexInvNoIssue => 'Nenhuma anomalia';
+
+  @override
+  String get luminexInvSearchHint => 'Nome, IP, grupo, u101…';
+
+  @override
+  String get luminexInvShowLinks => 'Ligações ISL';
+
+  @override
+  String get luminexInvEmpty => 'Nada para mostrar';
+
+  @override
+  String get luminexInvExport => 'Exportar em CSV';
+
+  @override
+  String get luminexInvIssueNoIp =>
+      'Equipamento sem endereço IP (subscreve como 0.0.0.0)';
+
+  @override
+  String luminexInvIssueDuplicateIp(String ips) {
+    return 'IP duplicado na VLAN: $ips';
+  }
+
+  @override
+  String get netStartTip =>
+      'Por onde começar? Numa rede Luminex, abra «Switches GigaCore» com o telefone na VLAN de gestão: vê o que está ligado em todas as VLAN. Caso contrário, faça uma «Verificação de saúde».';
+
+  @override
+  String get netSecWhoTitle => 'Quem está na rede?';
+
+  @override
+  String get netSecWhoDesc =>
+      'Os equipamentos ligados: em todas as VLAN através dos switches GigaCore, ou na sua sub-rede com a pesquisa.';
+
+  @override
+  String get netSecFlowTitle => 'Fluxos de luz e vídeo';
+
+  @override
+  String get netSecFlowDesc =>
+      'O que circula onde o telefone está ligado: sACN, Art-Net, RDM e débito. Para outras VLAN, use «Switches GigaCore».';
+
+  @override
+  String get netSecHealthTitle => 'Saúde da rede';
+
+  @override
+  String get netSecHealthDesc =>
+      'Uma verificação com pontuação, monitorização em direto e instantâneos para comparar antes / depois.';
+
+  @override
+  String get netSecToolsTitle => 'Ferramentas e cálculos';
+
+  @override
+  String get netSecToolsDesc =>
+      'Ping, endereço IP, sub-rede, endereçamento Art-Net, orçamentos PoE e fibra.';
+
+  @override
+  String get netLimitsLuminexTip =>
+      'O telefone não está na VLAN certa? Com switches GigaCore, «Switches GigaCore › Subscrições multicast» mostra quem escuta o quê em todas as VLAN, a partir da rede de gestão.';
+
+  @override
+  String diagSacnOtherVlan(int count) {
+    return 'Sem sACN na sua VLAN, mas $count universos circulam noutras VLAN (vistos pelos GigaCore).';
+  }
+
+  @override
+  String diagLuminexUnreachable(String switchName, String ip) {
+    return 'Switch GigaCore $switchName ($ip) inacessível';
+  }
+
+  @override
+  String diagLuminexAlarm(String switchName, String text) {
+    return '$switchName: $text';
+  }
+
+  @override
+  String diagLuminexNoIp(String switchName, int port, String name) {
+    return '$switchName, porta $port ($name): equipamento sem endereço IP';
+  }
+
+  @override
+  String diagLuminexDuplicateIp(String switchName, int port, String ips) {
+    return '$switchName, porta $port: IP duplicado na VLAN ($ips)';
+  }
 }

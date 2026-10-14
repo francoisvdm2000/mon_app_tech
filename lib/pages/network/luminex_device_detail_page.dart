@@ -1,11 +1,17 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 import '../../models/network/luminex_alarm.dart';
 import '../../models/network/luminex_device.dart';
+import '../../models/network/luminex_group.dart';
 import '../../models/network/luminex_port.dart';
 import '../../models/network/network_diagnostic_alert.dart';
 import '../../services/network/luminex_service.dart';
+import 'luminex_backup_page.dart';
+import 'luminex_config_actions.dart';
+import 'luminex_group_traffic_card.dart';
 import 'luminex_monitor_page.dart' show luminexAlarmLabel;
 
 const _kAccent = Color(0xFF00E5FF);
@@ -27,12 +33,23 @@ class LuminexDeviceDetailPage extends StatefulWidget {
 
 class _LuminexDeviceDetailPageState extends State<LuminexDeviceDetailPage> {
   late LuminexDevice _device;
+  StreamSubscription<List<LuminexDevice>>? _subscription;
+
+  /// Mode configuration : désactivé par défaut, pour éviter toute
+  /// modification accidentelle pendant un show.
+  bool _configMode = false;
+
+  @override
+  void dispose() {
+    _subscription?.cancel();
+    super.dispose();
+  }
 
   @override
   void initState() {
     super.initState();
     _device = widget.device;
-    widget.service.stream.listen((devices) {
+    _subscription = widget.service.stream.listen((devices) {
       if (!mounted) return;
       final updated =
           devices.where((d) => d.ip == _device.ip).firstOrNull;
@@ -57,6 +74,7 @@ class _LuminexDeviceDetailPageState extends State<LuminexDeviceDetailPage> {
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
+    final traffic = LuminexGroupTraffic.compute([_device]);
 
     return Scaffold(
       backgroundColor: const Color(0xFF0D0D14),
@@ -75,6 +93,16 @@ class _LuminexDeviceDetailPageState extends State<LuminexDeviceDetailPage> {
               height: 1, color: Colors.white.withValues(alpha: 0.08)),
         ),
         actions: [
+          IconButton(
+            icon: Icon(
+              _configMode ? Icons.lock_open_rounded : Icons.lock_rounded,
+              color: _configMode
+                  ? const Color(0xFFFFB300)
+                  : Colors.white.withValues(alpha: 0.45),
+            ),
+            tooltip: loc.luminexCfgMode,
+            onPressed: () => setState(() => _configMode = !_configMode),
+          ),
           IconButton(
             icon: _device.isPolling
                 ? SizedBox(
@@ -98,9 +126,50 @@ class _LuminexDeviceDetailPageState extends State<LuminexDeviceDetailPage> {
         padding: EdgeInsets.fromLTRB(
             16, 12, 16, 24 + MediaQuery.paddingOf(context).bottom),
         children: [
+          // ── Mode configuration ────────────────────────────────────────────
+          if (_configMode) ...[
+            _ConfigBanner(text: loc.luminexCfgModeBanner),
+            const SizedBox(height: 12),
+          ],
+
           // ── Infos système ─────────────────────────────────────────────────
           _sectionLabel(loc.luminexSectionSystem),
           _InfoCard(device: _device, loc: loc, formatUptime: _formatUptime),
+          const SizedBox(height: 10),
+          _ToolsRow(
+            children: [
+              _ToolButton(
+                icon: Icons.highlight_rounded,
+                label: loc.luminexCfgIdentifySwitch,
+                onTap: _device.isReachable
+                    ? () => identifyLuminexSwitch(
+                        context, widget.service, _device, loc)
+                    : null,
+              ),
+              _ToolButton(
+                icon: Icons.inventory_2_rounded,
+                label: loc.luminexBackupTitle,
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => LuminexBackupPage(
+                      service: widget.service,
+                      ip: _device.ip,
+                    ),
+                  ),
+                ),
+              ),
+              if (_configMode)
+                _ToolButton(
+                  icon: Icons.edit_rounded,
+                  label: loc.luminexCfgRenameSwitch,
+                  onTap: _device.isReachable
+                      ? () => renameLuminexSwitch(
+                          context, widget.service, _device, loc)
+                      : null,
+                ),
+            ],
+          ),
           const SizedBox(height: 16),
 
           // ── Alarmes ───────────────────────────────────────────────────────
@@ -108,10 +177,29 @@ class _LuminexDeviceDetailPageState extends State<LuminexDeviceDetailPage> {
           _AlarmsSection(device: _device, loc: loc),
           const SizedBox(height: 16),
 
+          // ── Trafic par groupe ─────────────────────────────────────────────
+          if (traffic.isNotEmpty) ...[
+            _sectionLabel(loc.luminexSectionGroupTraffic),
+            LuminexGroupTrafficCard(traffic: traffic, loc: loc),
+            const SizedBox(height: 16),
+          ],
+
           // ── Ports ─────────────────────────────────────────────────────────
           if (_device.ports.isNotEmpty) ...[
             _sectionLabel(loc.luminexSectionPorts),
-            _PortsSection(device: _device, loc: loc),
+            _PortsSection(
+              device: _device,
+              loc: loc,
+              onPortTap: _configMode && _device.isReachable
+                  ? (port) => showLuminexPortActions(
+                        context,
+                        service: widget.service,
+                        device: _device,
+                        port: port,
+                        loc: loc,
+                      )
+                  : null,
+            ),
           ],
         ],
       ),
@@ -175,7 +263,7 @@ class _InfoCard extends StatelessWidget {
         _InfoRow(
           label: loc.luminexLabelTemperature,
           value: '${device.temperatureCelsius!.toStringAsFixed(1)}°C',
-          highlight: device.temperatureCelsius! > 70.0,
+          highlight: device.isTemperatureHigh,
           highlightColor: const Color(0xFFFF5252),
         ),
       if (device.psuOk != null)
@@ -435,11 +523,21 @@ class _AlarmTile extends StatelessWidget {
 class _PortsSection extends StatelessWidget {
   final LuminexDevice device;
   final AppLocalizations loc;
-  const _PortsSection({required this.device, required this.loc});
+
+  /// Mode configuration : appui sur un port → actions. Null = lecture seule.
+  final void Function(LuminexPort port)? onPortTap;
+
+  const _PortsSection({
+    required this.device,
+    required this.loc,
+    this.onPortTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final ports = [...device.ports]..sort((a, b) => a.portNr.compareTo(b.portNr));
+    final ports = [...device.ports]
+      ..sort((a, b) => a.portNr.compareTo(b.portNr));
+    final sep = luminexDecimalSeparator(context);
 
     return Container(
       decoration: BoxDecoration(
@@ -447,200 +545,332 @@ class _PortsSection extends StatelessWidget {
         borderRadius: BorderRadius.circular(18),
         border: Border.all(color: Colors.white.withValues(alpha: 0.07)),
       ),
+      clipBehavior: Clip.antiAlias,
       child: Column(
         children: [
-          // En-tête
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-            child: Row(
-              children: [
-                _ColHeader('#', flex: 1),
-                _ColHeader(loc.luminexSectionPorts, flex: 2),
-                _ColHeader('${loc.luminexPortUp}/${loc.luminexPortDown}',
-                    flex: 2, center: true),
-                _ColHeader('PoE', flex: 2, center: true),
-                _ColHeader('RX/TX err.', flex: 3, right: true),
-              ],
+          for (var i = 0; i < ports.length; i++)
+            _PortRow(
+              port: ports[i],
+              loc: loc,
+              device: device,
+              decimalSeparator: sep,
+              showDivider: i > 0,
+              onTap: onPortTap == null ? null : () => onPortTap!(ports[i]),
             ),
-          ),
-          Divider(height: 1, color: Colors.white.withValues(alpha: 0.07)),
-          ...ports.map(
-            (port) => _PortRow(port: port, loc: loc, device: device),
-          ),
         ],
       ),
     );
   }
-}
-
-class _ColHeader extends StatelessWidget {
-  final String text;
-  final int flex;
-  final bool center;
-  final bool right;
-  const _ColHeader(this.text,
-      {required this.flex, this.center = false, this.right = false});
-
-  @override
-  Widget build(BuildContext context) => Expanded(
-        flex: flex,
-        child: Text(
-          text,
-          textAlign: right
-              ? TextAlign.right
-              : (center ? TextAlign.center : TextAlign.left),
-          style: TextStyle(
-            fontSize: 10,
-            fontWeight: FontWeight.w700,
-            color: Colors.white.withValues(alpha: 0.30),
-            letterSpacing: 0.5,
-          ),
-        ),
-      );
 }
 
 class _PortRow extends StatelessWidget {
   final LuminexPort port;
   final AppLocalizations loc;
   final LuminexDevice device;
-  const _PortRow(
-      {required this.port, required this.loc, required this.device});
+  final String decimalSeparator;
+  final bool showDivider;
+  final VoidCallback? onTap;
+
+  const _PortRow({
+    required this.port,
+    required this.loc,
+    required this.device,
+    required this.decimalSeparator,
+    required this.showDivider,
+    this.onTap,
+  });
+
+  String _speedLabel(int mbps) {
+    if (mbps < 1000) return loc.luminexPortSpeed(mbps);
+    final gbps = mbps / 1000;
+    final text = gbps == gbps.roundToDouble()
+        ? gbps.toInt().toString()
+        : gbps.toStringAsFixed(1).replaceAll('.', decimalSeparator);
+    return '$text Gb/s';
+  }
 
   @override
   Widget build(BuildContext context) {
-    final hasPortAlarm = device.alarms
-        .any((a) => a.portNr == port.portNr);
+    final hasPortAlarm = device.alarms.any((a) => a.portNr == port.portNr);
+    final group = device.groupById(port.groupId);
+    final trunkId = port.trunkId;
+    final trunkName =
+        trunkId != null ? (device.trunkNames[trunkId] ?? 'ISL') : null;
 
-    final linkColor = port.linkUp == true
+    final groupColorValue = group?.colorValue;
+    final tagColor = groupColorValue != null
+        ? Color(groupColorValue)
+        : trunkName != null
+            ? const Color(0xFF999999)
+            : _kAccent;
+
+    final linkUp = port.linkUp;
+    final linkColor = linkUp == true
         ? const Color(0xFF00C853)
-        : port.linkUp == false
+        : linkUp == false
             ? const Color(0xFFFF5252)
             : Colors.white.withValues(alpha: 0.35);
-
-    final linkLabel = port.linkUp == true
+    final linkLabel = linkUp == true
         ? loc.luminexPortUp
-        : port.linkUp == false
+        : linkUp == false
             ? loc.luminexPortDown
             : loc.luminexPortUnknown;
 
-    String poeLabel;
-    Color poeColor;
-    if (!port.poeSupported) {
-      poeLabel = loc.luminexPortNoPoe;
-      poeColor = Colors.white.withValues(alpha: 0.22);
-    } else if (port.poeFault == true) {
+    // Titre : légende du port, sinon l'appareil vu en LLDP.
+    final legend = port.name;
+    final neighbor = port.neighborName ?? port.neighborIp;
+    final title = legend ?? neighbor ?? '—';
+
+    // Sous-titre : vitesse · groupe/trunk · voisin · SFP
+    final speed = port.speedMbps;
+    final details = <String>[
+      if (linkUp == true && speed != null) _speedLabel(speed) else linkLabel,
+      if (group != null) group.name else if (trunkName != null) trunkName,
+      if (legend != null && neighbor != null) '→ $neighbor',
+      if (port.isSfp) 'SFP',
+      if (port.enabled == false) loc.luminexOff,
+    ];
+
+    // PoE (seulement s'il se passe quelque chose sur le port)
+    String? poeLabel;
+    Color poeColor = const Color(0xFFFFB300);
+    if (port.poeSupported && port.poeFault == true) {
       poeLabel = loc.luminexPortPoeFault;
       poeColor = const Color(0xFFFF5252);
-    } else if (port.poeActive == true) {
-      poeLabel = loc.luminexPortPoeActive;
-      poeColor = const Color(0xFFFFB300);
-    } else {
-      poeLabel = loc.luminexPortPoeOff;
-      poeColor = Colors.white.withValues(alpha: 0.35);
+    } else if (port.poeSupported && port.poeActive == true) {
+      final mw = port.poePowerMw;
+      poeLabel = mw != null && mw > 0
+          ? '${loc.luminexPortPoeActive} · '
+              '${(mw / 1000).toStringAsFixed(1).replaceAll('.', decimalSeparator)} W'
+          : loc.luminexPortPoeActive;
     }
 
-    return Container(
+    final hasErrors = port.rxErrors > 0 || port.txErrors > 0;
+    final rxBps = port.rxBps;
+    final txBps = port.txBps;
+    final showRates = linkUp == true && (rxBps != null || txBps != null);
+    final dimmed = linkUp == false;
+
+    final row = Container(
       decoration: BoxDecoration(
         color: hasPortAlarm
-            ? Colors.amber.withValues(alpha: 0.04)
+            ? Colors.amber.withValues(alpha: 0.05)
             : Colors.transparent,
-        border: Border(
-          top: BorderSide(color: Colors.white.withValues(alpha: 0.05)),
-        ),
+        border: showDivider
+            ? Border(
+                top: BorderSide(color: Colors.white.withValues(alpha: 0.05)),
+              )
+            : null,
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-      child: Row(
-        children: [
-          // Numéro
-          Expanded(
-            flex: 1,
-            child: Text(
-              '${port.portNr}',
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w700,
-                color: Colors.white.withValues(alpha: 0.65),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 9),
+      child: Opacity(
+        opacity: dimmed ? 0.55 : 1.0,
+        child: Row(
+          children: [
+            // Numéro, teinté de la couleur du groupe
+            Container(
+              width: 34,
+              height: 34,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: tagColor.withValues(alpha: 0.16),
+                borderRadius: BorderRadius.circular(9),
+                border: Border.all(color: tagColor.withValues(alpha: 0.55)),
+              ),
+              child: Text(
+                '${port.portNr}',
+                style: const TextStyle(
+                  fontSize: 12.5,
+                  fontWeight: FontWeight.w800,
+                  color: Colors.white,
+                ),
               ),
             ),
-          ),
-          // Vitesse
-          Expanded(
-            flex: 2,
-            child: port.speedMbps != null
-                ? Text(
-                    loc.luminexPortSpeed(port.speedMbps!),
+            const SizedBox(width: 12),
+            // Légende + détails
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.white.withValues(alpha: 0.65),
-                    ),
-                  )
-                : Text(
-                    loc.luminexNotAvailable,
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.white.withValues(alpha: 0.22),
+                      fontSize: 13.5,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white.withValues(alpha: 0.92),
                     ),
                   ),
-          ),
-          // Statut lien
-          Expanded(
-            flex: 2,
-            child: Center(
-              child: Text(
+                  const SizedBox(height: 2),
+                  Text(
+                    details.join('  ·  '),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: 11.5,
+                      color: Colors.white.withValues(alpha: 0.45),
+                    ),
+                  ),
+                  if (poeLabel != null || hasErrors) ...[
+                    const SizedBox(height: 2),
+                    Text(
+                      [
+                        if (poeLabel != null) poeLabel,
+                        if (hasErrors) ...[
+                          loc.luminexPortRxErrors(port.rxErrors),
+                          loc.luminexPortTxErrors(port.txErrors),
+                        ],
+                      ].join('  ·  '),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w600,
+                        color: poeLabel != null && !hasErrors
+                            ? poeColor
+                            : const Color(0xFFFFB300),
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+            const SizedBox(width: 8),
+            // Débits ou état du lien
+            if (showRates)
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  _PortRate(
+                    icon: Icons.arrow_upward_rounded,
+                    value: formatBitRate(rxBps ?? 0,
+                        decimalSeparator: decimalSeparator),
+                  ),
+                  const SizedBox(height: 2),
+                  _PortRate(
+                    icon: Icons.arrow_downward_rounded,
+                    value: formatBitRate(txBps ?? 0,
+                        decimalSeparator: decimalSeparator),
+                  ),
+                ],
+              )
+            else
+              Text(
                 linkLabel,
-                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 11.5,
                   fontWeight: FontWeight.w600,
                   color: linkColor,
                 ),
               ),
-            ),
-          ),
-          // PoE
-          Expanded(
-            flex: 2,
-            child: Center(
-              child: Text(
-                poeLabel,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 10.5,
-                  fontWeight: FontWeight.w600,
-                  color: poeColor,
-                ),
-              ),
-            ),
-          ),
-          // Erreurs RX/TX
-          Expanded(
-            flex: 3,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text(
-                  loc.luminexPortRxErrors(port.rxErrors),
-                  style: TextStyle(
-                    fontSize: 10.5,
-                    color: port.rxErrors > 0
-                        ? const Color(0xFFFFB300).withValues(alpha: 0.85)
-                        : Colors.white.withValues(alpha: 0.25),
-                  ),
-                ),
-                Text(
-                  loc.luminexPortTxErrors(port.txErrors),
-                  style: TextStyle(
-                    fontSize: 10.5,
-                    color: port.txErrors > 0
-                        ? const Color(0xFFFFB300).withValues(alpha: 0.85)
-                        : Colors.white.withValues(alpha: 0.25),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
+      ),
+    );
+
+    final tap = onTap;
+    if (tap == null) return row;
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: tap,
+        splashColor: _kAccent.withValues(alpha: 0.08),
+        child: row,
       ),
     );
   }
+}
+
+/// Débit d'un port. ↑ = envoyé par l'appareil branché (RX du switch),
+/// ↓ = délivré à l'appareil (TX du switch), comme dans « Trafic par groupe ».
+class _PortRate extends StatelessWidget {
+  final IconData icon;
+  final String value;
+  const _PortRate({required this.icon, required this.value});
+
+  @override
+  Widget build(BuildContext context) => Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 11, color: Colors.white.withValues(alpha: 0.40)),
+          const SizedBox(width: 3),
+          Text(
+            value,
+            style: TextStyle(
+              fontSize: 11.5,
+              fontWeight: FontWeight.w600,
+              color: Colors.white.withValues(alpha: 0.80),
+              fontFeatures: const [FontFeature.tabularFigures()],
+            ),
+          ),
+        ],
+      );
+}
+
+// ─── Mode configuration ───────────────────────────────────────────────────────
+
+class _ConfigBanner extends StatelessWidget {
+  final String text;
+  const _ConfigBanner({required this.text});
+
+  @override
+  Widget build(BuildContext context) => Container(
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: const Color(0xFFFFB300).withValues(alpha: 0.10),
+          borderRadius: BorderRadius.circular(14),
+          border: Border.all(
+              color: const Color(0xFFFFB300).withValues(alpha: 0.45)),
+        ),
+        child: Row(
+          children: [
+            const Icon(Icons.lock_open_rounded,
+                color: Color(0xFFFFB300), size: 20),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                text,
+                style: const TextStyle(
+                  color: Color(0xFFFFB300),
+                  fontSize: 12.5,
+                  height: 1.4,
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+}
+
+class _ToolsRow extends StatelessWidget {
+  final List<Widget> children;
+  const _ToolsRow({required this.children});
+
+  @override
+  Widget build(BuildContext context) =>
+      Wrap(spacing: 8, runSpacing: 8, children: children);
+}
+
+class _ToolButton extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final VoidCallback? onTap;
+
+  const _ToolButton({required this.icon, required this.label, this.onTap});
+
+  @override
+  Widget build(BuildContext context) => OutlinedButton.icon(
+        style: OutlinedButton.styleFrom(
+          foregroundColor: _kAccent,
+          disabledForegroundColor: Colors.white.withValues(alpha: 0.25),
+          side: BorderSide(color: Colors.white.withValues(alpha: 0.12)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12)),
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+        ),
+        onPressed: onTap,
+        icon: Icon(icon, size: 18),
+        label: Text(label, style: const TextStyle(fontSize: 12.5)),
+      );
 }

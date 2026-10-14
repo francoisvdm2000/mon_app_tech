@@ -13,6 +13,8 @@
 //                 `pRms` = null → seule l'impédance est vérifiée.
 //   • Enceintes actives (multi-amplifiées) : une entrée par section
 //     (LF, HF, Front, Rear…) car chaque section a sa propre voie d'ampli.
+//     Pour l'affichage, [groupSpeakerModels] regroupe ces sections en UNE
+//     enceinte ([SpkModel]) : on choisit l'enceinte, puis la section.
 //   • Pas d'enceintes auto-amplifiées (Meyer, RCF actives, L-Acoustics 108P…) :
 //     elles n'ont pas de sens dans cet outil.
 
@@ -126,6 +128,62 @@ class SpkPreset {
   String get fullName => '$brand $label';
   bool get isSection => section != null;
   bool get hasRange => ampMin != null || ampMax != null;
+}
+
+/// Une enceinte (un modèle physique) avec ses sections pilotées séparément.
+/// Ex. K2 = LF (×2 ch) + MF + HF. Une enceinte passive n'a qu'une section
+/// (section == null). Certains modèles existent en passif ET en actif
+/// (Nexo P12 : passif, LF, HF) : toutes ces variantes sont regroupées ici.
+class SpkModel {
+  final String brand;
+  final String model;
+  final List<SpkPreset> sections;
+
+  const SpkModel({
+    required this.brand,
+    required this.model,
+    required this.sections,
+  });
+
+  String get key => '$brand|$model';
+  String get fullName => '$brand $model';
+  bool get hasSections => sections.length > 1 || sections.first.isSection;
+
+  String? get type {
+    for (final s in sections) {
+      if (s.type != null) return s.type;
+    }
+    return null;
+  }
+
+  String? get manualUrl {
+    for (final s in sections) {
+      if (s.manualUrl != null) return s.manualUrl;
+    }
+    return null;
+  }
+
+  String? get note {
+    for (final s in sections) {
+      if (s.note != null) return s.note;
+    }
+    return null;
+  }
+
+  bool get hasPowerData => sections.any((s) => s.pRms != null || s.hasRange);
+}
+
+/// Regroupe les entrées par enceinte (marque + modèle), dans l'ordre
+/// d'apparition du catalogue.
+List<SpkModel> groupSpeakerModels(List<SpkPreset> presets) {
+  final map = <String, List<SpkPreset>>{};
+  for (final p in presets) {
+    map.putIfAbsent('${p.brand}|${p.model}', () => []).add(p);
+  }
+  return [
+    for (final list in map.values)
+      SpkModel(brand: list.first.brand, model: list.first.model, sections: list),
+  ];
 }
 
 double _ln(double x) => math.log(x);

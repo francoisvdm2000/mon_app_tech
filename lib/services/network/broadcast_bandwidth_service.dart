@@ -15,7 +15,7 @@ class BroadcastBandwidthService {
   static const protocols = <String, int>{
     'Art-Net': 6454,
     'sACN': 5568,
-    'MA-Net': 6549,
+    'MA-Net3': 30020,
   };
 
   final _controller = StreamController<BandwidthSnapshot>.broadcast();

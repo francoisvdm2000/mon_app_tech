@@ -1,11 +1,19 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 import '../../models/network/luminex_alarm.dart';
 import '../../models/network/luminex_device.dart';
+import '../../models/network/luminex_group.dart';
+import '../../models/network/luminex_inventory.dart';
+import '../../models/network/luminex_multicast.dart';
 import '../../models/network/network_diagnostic_alert.dart';
 import '../../services/network/luminex_service.dart';
 import 'luminex_device_detail_page.dart';
+import 'luminex_group_traffic_card.dart';
+import 'luminex_inventory_page.dart';
+import 'luminex_multicast_page.dart';
 import '../about/about_favorites.dart';
 
 const _kAccent = Color(0xFF00E5FF);
@@ -19,13 +27,14 @@ class LuminexMonitorPage extends StatefulWidget {
 
 class _LuminexMonitorPageState extends State<LuminexMonitorPage> {
   late final LuminexService _service;
+  StreamSubscription<List<LuminexDevice>>? _subscription;
   List<LuminexDevice> _devices = [];
 
   @override
   void initState() {
     super.initState();
     _service = LuminexService();
-    _service.stream.listen((devices) {
+    _subscription = _service.stream.listen((devices) {
       if (mounted) setState(() => _devices = devices);
     });
     _service.start();
@@ -33,6 +42,7 @@ class _LuminexMonitorPageState extends State<LuminexMonitorPage> {
 
   @override
   void dispose() {
+    _subscription?.cancel();
     _service.dispose();
     super.dispose();
   }
@@ -161,33 +171,116 @@ class _LuminexMonitorPageState extends State<LuminexMonitorPage> {
       ),
       body: _devices.isEmpty
           ? _EmptyState(loc: loc, onAdd: _showAddDialog)
-          : ListView.separated(
-              padding: EdgeInsets.fromLTRB(
-                  16,
-                  12,
-                  16,
-                  80 + MediaQuery.paddingOf(context).bottom),
-              itemCount: _devices.length,
-              separatorBuilder: (_, __) => const SizedBox(height: 10),
-              itemBuilder: (_, i) => _DeviceCard(
-                device: _devices[i],
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => LuminexDeviceDetailPage(
-                      device: _devices[i],
-                      service: _service,
-                    ),
-                  ),
-                ),
-                onRemove: _devices[i].isManual
-                    ? () => _service.removeManualIp(_devices[i].ip)
-                    : null,
-                loc: loc,
-              ),
-            ),
+          : _buildList(context, loc),
     );
   }
+
+  Widget _buildList(BuildContext context, AppLocalizations loc) {
+    final traffic = LuminexGroupTraffic.compute(_devices);
+    final multicast = LuminexMulticastVlan.compute(_devices);
+    final inventory = LuminexInventoryEntry.compute(_devices);
+
+    return ListView(
+      padding: EdgeInsets.fromLTRB(
+          16, 12, 16, 80 + MediaQuery.paddingOf(context).bottom),
+      children: [
+        for (var i = 0; i < _devices.length; i++) ...[
+          if (i > 0) const SizedBox(height: 10),
+          _buildDeviceCard(_devices[i], loc),
+        ],
+        // Inventaire : ce qui est branché sur chaque port.
+        if (inventory.isNotEmpty) ...[
+          const SizedBox(height: 18),
+          _SectionLabel(text: loc.luminexInvTitle),
+          LuminexInventorySummaryCard(
+            entries: inventory,
+            loc: loc,
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => LuminexInventoryPage(service: _service),
+              ),
+            ),
+          ),
+        ],
+        // Vue réseau : trafic de chaque groupe sur l'ensemble des switches.
+        if (traffic.isNotEmpty) ...[
+          const SizedBox(height: 18),
+          _SectionLabel(text: loc.luminexSectionGroupTraffic),
+          LuminexGroupTrafficCard(traffic: traffic, loc: loc),
+        ],
+        // Qui écoute quoi (IGMP) : univers sACN, sessions MA-Net…
+        if (multicast.isNotEmpty) ...[
+          const SizedBox(height: 18),
+          _SectionLabel(text: loc.luminexSectionMulticast),
+          LuminexMulticastSummaryCard(
+            vlans: multicast,
+            loc: loc,
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => LuminexMulticastPage(service: _service),
+              ),
+            ),
+          ),
+        ],
+      ],
+    );
+  }
+
+  Widget _buildDeviceCard(LuminexDevice device, AppLocalizations loc) {
+    return _DeviceCard(
+      device: device,
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => LuminexDeviceDetailPage(
+            device: device,
+            service: _service,
+          ),
+        ),
+      ),
+      onRemove:
+          device.isManual ? () => _service.removeManualIp(device.ip) : null,
+      loc: loc,
+    );
+  }
+}
+
+// ─── Titre de section ─────────────────────────────────────────────────────────
+
+class _SectionLabel extends StatelessWidget {
+  final String text;
+  const _SectionLabel({required this.text});
+
+  @override
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+        child: Row(
+          children: [
+            Expanded(
+              child: Divider(
+                  color: Colors.white.withValues(alpha: 0.10), height: 1),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Text(
+                text.toUpperCase(),
+                style: const TextStyle(
+                  color: _kAccent,
+                  fontSize: 10,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 1.5,
+                ),
+              ),
+            ),
+            Expanded(
+              child: Divider(
+                  color: Colors.white.withValues(alpha: 0.10), height: 1),
+            ),
+          ],
+        ),
+      );
 }
 
 // ─── État vide ────────────────────────────────────────────────────────────────
@@ -550,6 +643,10 @@ String _alarmLabel(LuminexAlarm alarm, AppLocalizations loc) =>
       LuminexAlarmType.highTemp =>
         loc.luminexAlarmHighTemp(alarm.params['temp'] as String? ?? '?'),
       LuminexAlarmType.psuAbsent => loc.luminexAlarmPsuAbsent,
+      LuminexAlarmType.fanFault => loc.luminexAlarmFanFault,
+      LuminexAlarmType.deviceNotice => loc.luminexAlarmDeviceNotice(
+          alarm.params['text'] as String? ?? '?',
+        ),
     };
 
 // Export du helper pour la page détail

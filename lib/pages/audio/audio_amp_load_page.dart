@@ -41,6 +41,19 @@ String _spkSubtitle(SpkPreset s) {
   return parts.join(' · ');
 }
 
+/// Nom affiché d'une section (null = version passive / large bande).
+String _sectionName(AppLocalizations loc, SpkPreset s) =>
+    s.section ?? loc.audioSectionPassive;
+
+/// Sous-titre d'une enceinte dans la liste : ses caractéristiques si elle n'a
+/// qu'une section, sinon le résumé de ses sections (« LF 8 Ω · HF 8 Ω »).
+String _modelSubtitle(AppLocalizations loc, SpkModel m) {
+  if (!m.hasSections) return _spkSubtitle(m.sections.first);
+  return m.sections
+      .map((s) => '${_sectionName(loc, s)} ${_fmtOhm(s.zNom)}')
+      .join(' · ');
+}
+
 String _rangeText(SpkPreset s) {
   if (s.ampMin != null && s.ampMax != null) {
     return '${s.ampMin!.round()}–${s.ampMax!.round()} W';
@@ -61,16 +74,18 @@ class _AudioAmpLoadPageState extends State<AudioAmpLoadPage> {
   /// Listes affichées : catalogue en ligne (sound.json) si disponible,
   /// sinon la liste intégrée au code.
   List<AmpPreset> _amps = kAmpPresets;
-  List<SpkPreset> _spks = kSpkPresets;
+  List<SpkModel> _spkModels = groupSpeakerModels(kSpkPresets);
   final _repo = SoundCatalogRepository();
 
   /// null = ampli personnalisé
   AmpPreset? _amp =
       kAmpPresets.firstWhere((a) => a.model == 'D80', orElse: () => kAmpPresets.first);
 
-  /// null = enceinte personnalisée
-  SpkPreset? _spk =
-      kSpkPresets.firstWhere((s) => s.model == 'V8', orElse: () => kSpkPresets.first);
+  /// Enceinte choisie (null = enceinte personnalisée) et section active
+  /// de cette enceinte (une voie d'ampli par section).
+  late SpkModel? _spkModel = _spkModels.firstWhere((m) => m.model == 'V8',
+      orElse: () => _spkModels.first);
+  late SpkPreset? _spk = _spkModel?.sections.first;
 
   final _ampZminCtrl = TextEditingController(text: '4');
   final _ampPrefCtrl = TextEditingController(text: '1000');
@@ -131,10 +146,16 @@ class _AudioAmpLoadPageState extends State<AudioAmpLoadPage> {
         }
       }
       if (c.speakers.isNotEmpty) {
-        _spks = c.speakers;
-        final cur = _spk;
-        if (cur != null) {
-          _spk = _spks.firstWhere((s) => s.key == cur.key, orElse: () => cur);
+        _spkModels = groupSpeakerModels(c.speakers);
+        final curModel = _spkModel;
+        final curSection = _spk;
+        if (curModel != null) {
+          final m = _spkModels.where((m) => m.key == curModel.key).firstOrNull;
+          if (m != null) {
+            _spkModel = m;
+            _spk = m.sections.firstWhere((s) => s.key == curSection?.key,
+                orElse: () => m.sections.first);
+          }
         }
       }
     });
@@ -182,17 +203,17 @@ class _AudioAmpLoadPageState extends State<AudioAmpLoadPage> {
 
   Future<void> _pickSpk() async {
     final loc = AppLocalizations.of(context);
-    final res = await showModalBottomSheet<_Pick<SpkPreset>>(
+    final res = await showModalBottomSheet<_Pick<SpkModel>>(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
-      builder: (_) => _PresetPickerSheet<SpkPreset>(
+      builder: (_) => _PresetPickerSheet<SpkModel>(
         title: loc.audioPickSpeaker,
-        items: _spks,
-        selected: _spk,
-        brandOf: (s) => s.brand,
-        titleOf: (s) => s.label,
-        subtitleOf: _spkSubtitle,
+        items: _spkModels,
+        selected: _spkModel,
+        brandOf: (m) => m.brand,
+        titleOf: (m) => m.model,
+        subtitleOf: (m) => _modelSubtitle(loc, m),
       ),
     );
     if (res == null || !mounted) return;
@@ -202,7 +223,8 @@ class _AudioAmpLoadPageState extends State<AudioAmpLoadPage> {
         _spkZCtrl.text = _fmtNum(_spk!.zNom);
         _spkPCtrl.text = _spk!.pRms?.round().toString() ?? '';
       }
-      _spk = res.value;
+      _spkModel = res.value;
+      _spk = res.value?.sections.first;
     });
   }
 
@@ -290,13 +312,41 @@ class _AudioAmpLoadPageState extends State<AudioAmpLoadPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _SelectorTile(
-                  brand: _spk?.brand,
-                  title: _spk?.label ?? loc.audioCustomPreset,
-                  subtitle: _spk == null
+                  brand: _spkModel?.brand,
+                  title: _spkModel?.model ?? loc.audioCustomPreset,
+                  subtitle: _spkModel == null
                       ? loc.audioCustomPresetHint
-                      : _spkSubtitle(_spk!),
+                      : _modelSubtitle(loc, _spkModel!),
                   onTap: _pickSpk,
                 ),
+                if (_spkModel != null && _spkModel!.sections.length > 1) ...[
+                  const SizedBox(height: 12),
+                  Text(loc.audioPickSection,
+                      style: TextStyle(
+                          fontSize: 12, color: Colors.white.withValues(alpha: 0.5))),
+                  const SizedBox(height: 6),
+                  Wrap(spacing: 8, runSpacing: 8, children: [
+                    for (final sec in _spkModel!.sections)
+                      ChoiceChip(
+                        label: Text(_sectionName(loc, sec)),
+                        selected: identical(sec, _spk),
+                        showCheckmark: false,
+                        selectedColor: _kAccent,
+                        backgroundColor: Colors.white.withValues(alpha: 0.05),
+                        side: BorderSide(color: Colors.white.withValues(alpha: 0.10)),
+                        labelStyle: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          color: identical(sec, _spk)
+                              ? Colors.black
+                              : Colors.white.withValues(alpha: 0.75),
+                        ),
+                        onSelected: (_) {
+                          HapticFeedback.selectionClick();
+                          setState(() => _spk = sec);
+                        },
+                      ),
+                  ]),
+                ],
                 const SizedBox(height: 12),
                 if (_spk != null)
                   _SpkDetails(spk: _spk!)

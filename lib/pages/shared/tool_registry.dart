@@ -65,6 +65,8 @@ import '../network/network_scan_page.dart';
 import '../network/network_poe_budget_page.dart';
 import '../network/network_fiber_budget_page.dart';
 import '../network/network_subnet_calculator_page.dart';
+import '../network/ping_page.dart';
+import '../network/my_ip_page.dart';
 import '../network/network_dashboard_page.dart';
 import '../network/sacn_viewer_page.dart';
 import '../network/luminex_monitor_page.dart';
@@ -698,6 +700,22 @@ class ToolRegistry {
         toolTitle: loc.networkScanTitle,
         icon: Icons.radar_rounded,
         builder: (_) => const NetworkScanPage(),
+      ),
+      ToolRefEntry(
+        pageId: 'tool:network_ping',
+        sectionId: 'main',
+        categoryTitle: loc.networkPageTitle,
+        toolTitle: loc.pingTitle,
+        icon: Icons.network_ping,
+        builder: (_) => const PingPage(),
+      ),
+      ToolRefEntry(
+        pageId: 'tool:network_my_ip',
+        sectionId: 'main',
+        categoryTitle: loc.networkPageTitle,
+        toolTitle: loc.myIpTitle,
+        icon: Icons.perm_device_information_rounded,
+        builder: (_) => const MyIpPage(),
       ),
       ToolRefEntry(
         pageId: 'tool:network_poe_budget',

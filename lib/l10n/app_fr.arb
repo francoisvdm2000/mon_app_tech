@@ -4131,9 +4131,9 @@
   "sacnPlatformInfo": "sACN / E1.31 — UDP port 5568. Multicast 239.255.x.x et unicast supportés.",
   "sacnErrorBind": "Impossible d'ouvrir le socket UDP. Vérifiez les permissions réseau.",
   "sacnIosMulticastNote": "Sur iOS 14+, le multicast sACN peut nécessiter l'autorisation d'accès au réseau local.",
-  "diagCardTitle": "Diagnostic réseau",
-  "diagCardSubtitle": "Analyse automatique du réseau, Art-Net et sACN.",
-  "diagPageTitle": "Diagnostic réseau",
+  "diagCardTitle": "Bilan de santé",
+  "diagCardSubtitle": "Une note et la liste des problèmes : réseau, Art-Net, sACN, GigaCore.",
+  "diagPageTitle": "Bilan de santé",
   "diagPlatformInfo": "Lance un scan réseau + écoute Art-Net/sACN pendant quelques secondes, puis analyse les problèmes potentiels.",
   "diagAnalyseButton": "Analyser",
   "diagCancelButton": "Annuler",
@@ -4264,9 +4264,9 @@
   "networkPremiumUnlockButton": "Débloquer",
   "networkPremiumBannerText": "Art-Net, sACN, NDI, diagnostic et snapshots nécessitent un abonnement Réseau Pro.",
   "subscriptionCategoryNetworkShort": "RÉSEAU",
-  "dashboardPageTitle": "Tableau de bord réseau",
-  "dashboardCardTitle": "Dashboard réseau",
-  "dashboardCardSubtitle": "Vue réseau en temps réel",
+  "dashboardPageTitle": "Surveillance en direct",
+  "dashboardCardTitle": "Surveillance en direct",
+  "dashboardCardSubtitle": "Appareils, flux et alertes en temps réel",
   "dashboardStatusIdle": "En attente",
   "dashboardStatusScanning": "Scan en cours…",
   "dashboardStatusCompleted": "Scan terminé",
@@ -4389,9 +4389,9 @@
       }
     }
   },
-  "luminexPageTitle": "Luminex Monitor",
-  "luminexMonitorCardTitle": "Luminex Monitor",
-  "luminexMonitorCardSubtitle": "Supervision des switches GigaCore",
+  "luminexPageTitle": "Switches GigaCore",
+  "luminexMonitorCardTitle": "Switches GigaCore",
+  "luminexMonitorCardSubtitle": "Inventaire, trafic par VLAN, configuration, sauvegardes",
   "luminexAddDevice": "Ajouter un équipement",
   "luminexAddDeviceTitle": "Adresse IP du switch",
   "luminexAddDeviceHint": "192.168.x.x",
@@ -4587,24 +4587,24 @@
   "helpToolSnapshotDelay": "Capture en 30 à 45 secondes selon la taille du réseau.",
   "helpToolSnapshotLimits": "Pas de monitoring continu ni d'alertes automatiques. L'historique est conservé uniquement sur cet appareil.",
   "helpToolSnapshotTip": "Idéal pour documenter l'état avant/après un changement d'infrastructure ou pour isoler une régression lors d'un dépannage.",
-  "helpToolLuminexDoes": "Interroge les switches GigaCore Luminex via leur API HTTP. Affiche l'état des ports (lien, vitesse, PoE, erreurs), la température, les alimentations et déclenche des alarmes.",
-  "helpToolLuminexDelay": "Sondage toutes les 30 secondes. Découverte automatique sur le subnet : 15 à 30 secondes.",
-  "helpToolLuminexLimits": "Lecture seule. Aucune modification de VLAN, groupe ou configuration de port. Ne supporte pas MA-Net ou la vidéo NDI.",
-  "helpToolLuminexTip": "Authentification par défaut : admin / mot de passe vide. Les Gen2 exposent /api/v1/, les Gen1 répondent sur /stat/ports en texte brut.",
-  "helpToolManetDoes": "Écoute passivement le port UDP 6549 et détecte les consoles et nodes grandMA2/3 qui s'annoncent sur le réseau. Affiche nom, type d'équipement, version firmware et adresse MAC.",
+  "helpToolLuminexDoes": "Interroge les switches GigaCore Luminex via leur API HTTP. Affiche l'état des ports (lien, vitesse, groupe, appareil branché, débit, PoE), la température, les alimentations, le trafic par groupe sur tout le réseau, et déclenche des alarmes.",
+  "helpToolLuminexDelay": "Débits et état des ports toutes les 10 secondes ; groupes, LLDP, PoE et alimentations toutes les minutes. Découverte automatique sur le subnet : 15 à 30 secondes.",
+  "helpToolLuminexLimits": "Lecture seule par défaut. Le mode configuration (cadenas) permet de renommer, changer de groupe, activer ou désactiver un port, faire clignoter les LED et piloter le PoE. Les ports ISL sont verrouillés. Chaque modification peut être annulée.",
+  "helpToolLuminexTip": "Le téléphone doit être sur le réseau de management des GigaCore. Le trafic par groupe se lit depuis ce seul réseau, sans être dans chaque VLAN. API /api/ des firmwares récents ; les anciens répondent sur /stat/ports en texte brut.",
+  "helpToolManetDoes": "Écoute passivement le port UDP 30020 et détecte les consoles et nodes grandMA2/3 qui s'annoncent sur le réseau. Affiche nom, type d'équipement, version firmware et adresse MAC.",
   "helpToolManetDelay": "Les équipements apparaissent dès leur prochain broadcast réseau, généralement en moins de 10 secondes.",
   "helpToolManetLimits": "Lecture seule. Aucune donnée de show, aucune valeur DMX, aucune configuration. Ne traverse pas les VLANs.",
-  "helpToolManetTip": "Si aucun équipement n'apparaît : vérifiez que la grandMA broadcaster sur le LAN et que le port UDP 6549 n'est pas bloqué par un pare-feu.",
+  "helpToolManetTip": "Si aucun équipement n'apparaît : vérifiez que la grandMA broadcaster sur le LAN et que le port UDP 30020 n'est pas bloqué par un pare-feu.",
   "bwCardTitle": "Bande passante",
-  "bwCardSubtitle": "Broadcast + switch SNMP",
+  "bwCardSubtitle": "Débit broadcast reçu, et ports des switches SNMP",
   "bwHubTitle": "Bande passante",
   "bwHubSubtitle": "Option 1 — trafic broadcast uniquement (sans équipement). Option 2 — bande passante réelle par port via SNMP (switch managé requis).",
   "bwHubTagFree": "GRATUIT",
   "bwHubCardBroadcastTitle": "Broadcast réseau",
   "bwHubCardBroadcastSubtitle": "Art-Net · sACN · MA-Net",
   "bwHubCardBroadcastLimit": "Trafic unicast non visible (NDI, Dante…)",
-  "bwHubCardSnmpTitle": "Ports switch",
-  "bwHubCardSnmpSubtitle": "Vue par port, tout le trafic",
+  "bwHubCardSnmpTitle": "Switch SNMP (autres marques)",
+  "bwHubCardSnmpSubtitle": "Débit par port via SNMP. Pour les GigaCore, utilise « Switches GigaCore ».",
   "bwHubCardSnmpRequires": "Switch managé SNMP requis",
   "bwBroadcastPageTitle": "Broadcast réseau",
   "bwBroadcastWarning": "Broadcast & multicast uniquement. Le trafic unicast (NDI, Dante…) n'est pas visible depuis cet appareil.",
@@ -6900,5 +6900,395 @@
   "ppspsRatingHelpTitle": "Comment les risques sont cotés",
   "ppspsRatingHelpShort": "Cotation",
   "ppspsRatingHelpIntro": "Chaque risque reçoit une gravité de 1 à 4 et une probabilité de 1 à 4. La cote est leur produit, de 1 à 16.",
-  "ppspsRatingHelpAdjust": "Les valeurs proposées sont celles de la bibliothèque pour un événement type. Ajustez-les pour votre chantier en touchant un risque ; le motif apparaît dans le PDF."
+  "ppspsRatingHelpAdjust": "Les valeurs proposées sont celles de la bibliothèque pour un événement type. Ajustez-les pour votre chantier en touchant un risque ; le motif apparaît dans le PDF.",
+  "netLimitsTitle": "Rien ne s'affiche ? Ce n'est pas forcément l'app",
+  "netLimitsIntro": "ShowTech Tools écoute le réseau sans rien envoyer. Ce qu'il peut recevoir dépend du système de l'appareil et de la configuration du réseau :",
+  "netLimitsManetMa3Only": "Seuls les équipements grandMA3 (MA-Net3) sont détectés. Les grandMA2 (MA-Net2) ne sont pas pris en charge.",
+  "netLimitsIosEntitlement": "iOS : Apple soumet la réception du multicast et du broadcast à une autorisation spéciale. Sans elle, seul le trafic envoyé directement (unicast) à cet iPhone ou iPad est reçu. C'est une limite d'iOS, pas de l'app.",
+  "netLimitsIosLocalNetwork": "iOS : vérifiez que l'accès est autorisé dans Réglages › Confidentialité et sécurité › Réseau local › ShowTech Tools.",
+  "netLimitsArtnetUnicast": "grandMA3 envoie l'Art-Net en unicast vers ses nodes par défaut. Ajoutez l'IP de cet appareil en destination dans la console, ou passez l'univers en broadcast.",
+  "netLimitsArtnetSubnet": "Le broadcast Art-Net n'est reçu que si cet appareil est dans le même sous-réseau que la source (ex. 2.x.x.x / 255.0.0.0).",
+  "netLimitsSameNetwork": "Réseau : l'appareil doit être sur le même réseau / VLAN que les consoles (même groupe Luminex ou port de switch). Le multicast ne traverse pas un routeur.",
+  "netLimitsWifiAp": "Wi-Fi : la borne doit être en mode point d'accès (pas en mode routeur), sans isolation des clients ni filtrage multicast / broadcast.",
+  "netLimitsDeviceIp": "IP de cet appareil : {ip}",
+  "@netLimitsDeviceIp": {
+    "placeholders": {
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "netLimitsNoIp": "Aucune adresse IP locale détectée",
+  "manetSession": "Session",
+  "pingCardTitle": "Ping",
+  "pingCardSubtitle": "Un appareil répond-il ?",
+  "pingTitle": "Ping",
+  "pingHostLabel": "Adresse IP ou nom",
+  "pingHostInvalid": "Adresse introuvable",
+  "pingCountContinuous": "Continu",
+  "pingStart": "Ping !",
+  "pingStop": "Stop",
+  "pingSent": "Envoyés",
+  "pingReceived": "Reçus",
+  "pingLoss": "Pertes",
+  "pingMin": "Min ms",
+  "pingAvg": "Moy. ms",
+  "pingMax": "Max ms",
+  "pingTimeout": "Pas de réponse",
+  "pingIdle": "Tapez une adresse et lancez le ping 🚀",
+  "pingVerdictGood": "Ça répond au quart de tour 👌",
+  "pingVerdictOk": "Ça répond, mais la latence est un peu élevée",
+  "pingVerdictLossy": "Des paquets se perdent : vérifiez le câble ou le Wi-Fi",
+  "pingVerdictDown": "Aucune réponse : appareil éteint, autre plage IP ou ping bloqué",
+  "pingNote": "Certains appareils ne répondent pas au ping (pare-feu). Pas de réponse ne veut pas toujours dire hors ligne.",
+  "myIpCardTitle": "Mon IP",
+  "myIpCardSubtitle": "IP du téléphone & assistant IP fixe",
+  "myIpTitle": "Mon IP",
+  "myIpRefresh": "Actualiser",
+  "myIpCurrentTitle": "Cet appareil",
+  "myIpNotConnected": "Pas connecté au Wi-Fi",
+  "myIpMask": "Masque",
+  "myIpGateway": "Passerelle",
+  "myIpInterfaces": "Toutes les interfaces",
+  "myIpSameRange": "Déjà dans la bonne plage IP ✅",
+  "myIpOtherRange": "Pas dans la même plage IP que cet appareil",
+  "myIpSystemLimit": "iOS et Android n'autorisent aucune app à changer l'adresse IP du téléphone. Ce n'est pas une limite de ShowTech Tools : l'IP se règle dans les réglages Wi-Fi. L'assistant ci-dessous vous donne les valeurs exactes à saisir.",
+  "myIpAssistantTitle": "Assistant IP fixe",
+  "myIpTargetLabel": "IP d'un appareil du réseau (ex. la console)",
+  "myIpMaskLabel": "Masque du réseau",
+  "myIpFindFree": "Trouver une IP libre",
+  "myIpSearching": "Recherche d'une IP libre…",
+  "myIpPingTarget": "Pinger cet appareil",
+  "myIpNoFree": "Aucune IP libre trouvée parmi les essais. Choisissez-en une à la main.",
+  "myIpValuesTitle": "Valeurs à saisir",
+  "myIpValueIp": "Adresse IP",
+  "myIpValueMask": "Masque de sous-réseau",
+  "myIpValuePrefix": "Longueur du préfixe réseau",
+  "myIpValueRouter": "Routeur / passerelle",
+  "myIpRouterEmpty": "Laisser vide",
+  "myIpRouterHint": "Si le champ est obligatoire : {ip}",
+  "@myIpRouterHint": {
+    "placeholders": {
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "myIpFreeNote": "Cette adresse ne répond pas au ping, elle semble libre. En cas de doute, validez-la avec le responsable réseau.",
+  "myIpCopied": "Copié",
+  "myIpOpenWifi": "Ouvrir les réglages Wi-Fi",
+  "myIpStepsTitle": "Comment faire",
+  "myIpStepsIos": "Ouvrez Réglages › Wi-Fi\nTouchez (i) à côté du réseau\nConfigurer l'IP › Manuelle\nSaisissez l'adresse IP et le masque, laissez Routeur vide\nTouchez Enregistrer",
+  "myIpStepsAndroid": "Ouvrez Paramètres › Wi-Fi\nTouchez la roue dentée du réseau (ou appui long › Modifier)\nOptions avancées › Paramètres IP : Statique\nSaisissez l'adresse IP et la longueur du préfixe\nEnregistrez (les menus varient selon la marque)",
+  "myIpBackToDhcp": "Après le show, repassez ce Wi-Fi en automatique (DHCP) pour retrouver Internet.",
+  "audioSectionPassive": "Passif",
+  "audioPickSection": "Section (une voie d'ampli chacune)",
+  "luminexSectionGroupTraffic": "Trafic par groupe",
+  "luminexGroupTrafficHint": "Somme des ports d'accès de tous les switches, liens ISL exclus. Émis : envoyé par les appareils. Reçu : délivré aux appareils.",
+  "luminexTrafficSent": "Émis",
+  "luminexTrafficReceived": "Reçu",
+  "luminexGroupActivePorts": "{active} ports actifs sur {total}",
+  "@luminexGroupActivePorts": {
+    "placeholders": {
+      "active": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "luminexAlarmFanFault": "Défaut de ventilateur",
+  "luminexAlarmDeviceNotice": "Switch : {text}",
+  "@luminexAlarmDeviceNotice": {
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "luminexSectionMulticast": "Abonnements multicast",
+  "luminexMulticastHint": "Groupes multicast rejoints (IGMP), relevés sur les switches : qui écoute quel univers sACN ou quelle session MA-Net, dans chaque VLAN.",
+  "luminexMulticastSummary": "Groupes : {groups} · abonnés : {listeners}",
+  "@luminexMulticastSummary": {
+    "placeholders": {
+      "groups": {
+        "type": "int"
+      },
+      "listeners": {
+        "type": "int"
+      }
+    }
+  },
+  "luminexMulticastListeners": "Abonnés : {count}",
+  "@luminexMulticastListeners": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "luminexMulticastUniverse": "Univers {universe}",
+  "@luminexMulticastUniverse": {
+    "placeholders": {
+      "universe": {
+        "type": "int"
+      }
+    }
+  },
+  "luminexMulticastSacnUniverses": "Univers sACN : {list}",
+  "@luminexMulticastSacnUniverses": {
+    "placeholders": {
+      "list": {
+        "type": "String"
+      }
+    }
+  },
+  "luminexMulticastSacnDiscovery": "Découverte sACN",
+  "luminexMulticastManetAdmin": "MA-Net3 · administration",
+  "luminexMulticastManetSession": "MA-Net3 · session",
+  "luminexMulticastViaIsl": "Vu via un lien ISL",
+  "luminexMulticastPort": "port {port}",
+  "@luminexMulticastPort": {
+    "placeholders": {
+      "port": {
+        "type": "int"
+      }
+    }
+  },
+  "luminexCfgMode": "Mode configuration",
+  "luminexCfgModeBanner": "Mode configuration actif : chaque action modifie le switch tout de suite. Touche un port pour le modifier.",
+  "luminexCfgIdentifySwitch": "Faire clignoter le switch",
+  "luminexCfgIdentifyPort": "Faire clignoter la LED du port",
+  "luminexCfgRenameSwitch": "Renommer le switch",
+  "luminexCfgRenamePort": "Renommer le port",
+  "luminexCfgChangeGroup": "Changer de groupe",
+  "luminexCfgDisablePort": "Désactiver le port",
+  "luminexCfgEnablePort": "Activer le port",
+  "luminexCfgPoeOff": "Couper le PoE",
+  "luminexCfgPoeOn": "Rétablir le PoE",
+  "luminexCfgPoeCycle": "Redémarrer l'appareil (PoE)",
+  "luminexCfgPortTitle": "Port {port}",
+  "@luminexCfgPortTitle": {
+    "placeholders": {
+      "port": {
+        "type": "int"
+      }
+    }
+  },
+  "luminexCfgConfirmTitle": "Confirmer la modification",
+  "luminexCfgApply": "Appliquer",
+  "luminexCfgCancel": "Annuler",
+  "luminexCfgUndo": "Annuler",
+  "luminexCfgActiveWarning": "Ce port est actif : l'appareil branché perdra la communication.",
+  "luminexCfgTrunkLocked": "Port ISL : groupe et activation verrouillés pour protéger le réseau.",
+  "luminexCfgDone": "Modification appliquée",
+  "luminexCfgUndone": "Modification annulée",
+  "luminexCfgFailed": "Échec : {reason}",
+  "@luminexCfgFailed": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "luminexCfgErrUnreachable": "switch injoignable",
+  "luminexCfgErrUnauthorized": "le switch demande un mot de passe",
+  "luminexCfgErrRejected": "refusé par le switch",
+  "luminexCfgErrNotApplied": "le switch n'a pas pris la modification",
+  "luminexCfgErrProtected": "port protégé",
+  "luminexCfgErrUnknownGroup": "groupe inconnu sur ce switch",
+  "luminexCfgErrNoPoe": "pas de PoE sur ce port",
+  "luminexCfgErrNoSlot": "aucun emplacement de profil libre sur le switch",
+  "luminexCfgIdentifySent": "Les LED clignotent",
+  "luminexCfgPoeCycleRunning": "Redémarrage PoE en cours…",
+  "luminexCfgName": "Nom",
+  "luminexOn": "activé",
+  "luminexOff": "désactivé",
+  "luminexBackupTitle": "Sauvegardes",
+  "luminexBackupHint": "Une sauvegarde contient le profil Luminex complet (groupes, trunks, ports, IP) et les légendes des ports. Elle est rangée dans l'app et peut être partagée. Elle sert à revenir en arrière après un problème ou à configurer un switch de remplacement.",
+  "luminexBackupNow": "Sauvegarder ce switch",
+  "luminexBackupDone": "Sauvegarde enregistrée",
+  "luminexBackupImport": "Importer un fichier",
+  "luminexBackupImportInvalid": "Ce fichier n'est pas une sauvegarde GigaCore",
+  "luminexBackupEmpty": "Aucune sauvegarde pour l'instant",
+  "luminexBackupCompare": "Comparer",
+  "luminexBackupShare": "Partager",
+  "luminexBackupDelete": "Supprimer",
+  "luminexBackupRestorePorts": "Remettre les ports",
+  "luminexBackupRestoreFull": "Restauration complète",
+  "luminexBackupRestoreFullHint": "Applique tout le profil : groupes, trunks, ports, nom. Le trafic peut être coupé quelques secondes : à éviter pendant un show.",
+  "luminexBackupConfirmFull": "restaurer toute la configuration ?",
+  "luminexBackupConfirmPorts": "ports à remettre comme dans la sauvegarde : {count}",
+  "@luminexBackupConfirmPorts": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "luminexBackupUseBackupIp": "Reprendre l'IP de la sauvegarde ({ip}) : remplacement de matériel",
+  "@luminexBackupUseBackupIp": {
+    "placeholders": {
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "luminexBackupModelMismatch": "Modèle différent : vérifie que cette sauvegarde convient à ce switch.",
+  "luminexBackupNoDiff": "Identique à la sauvegarde",
+  "luminexBackupDiffCount": "Différences : {count}",
+  "@luminexBackupDiffCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "luminexBackupColBackup": "Sauvegarde",
+  "luminexBackupColNow": "Actuel",
+  "luminexBackupRestoreRunning": "Restauration en cours…",
+  "luminexBackupRestored": "Restauration terminée",
+  "luminexBackupDiffModel": "Modèle",
+  "luminexBackupDiffName": "Nom du switch",
+  "luminexBackupDiffGroupName": "Nom du groupe {id}",
+  "@luminexBackupDiffGroupName": {
+    "placeholders": {
+      "id": {
+        "type": "int"
+      }
+    }
+  },
+  "luminexBackupDiffPortGroup": "Port {port} · groupe",
+  "@luminexBackupDiffPortGroup": {
+    "placeholders": {
+      "port": {
+        "type": "int"
+      }
+    }
+  },
+  "luminexBackupDiffPortTrunk": "Port {port} · ISL",
+  "@luminexBackupDiffPortTrunk": {
+    "placeholders": {
+      "port": {
+        "type": "int"
+      }
+    }
+  },
+  "luminexBackupDiffPortEnabled": "Port {port} · activation",
+  "@luminexBackupDiffPortEnabled": {
+    "placeholders": {
+      "port": {
+        "type": "int"
+      }
+    }
+  },
+  "luminexBackupDiffPortLegend": "Port {port} · légende",
+  "@luminexBackupDiffPortLegend": {
+    "placeholders": {
+      "port": {
+        "type": "int"
+      }
+    }
+  },
+  "luminexInvTitle": "Inventaire du réseau",
+  "luminexInvHint": "Chaque port actif des GigaCore : appareil branché (LLDP), IP vues en IGMP, groupe et univers sACN écoutés. Un appareil qui n'envoie ni LLDP ni IGMP n'apparaît qu'avec la légende du port.",
+  "luminexInvSummary": "Ports occupés : {count}",
+  "@luminexInvSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "luminexInvIssuesCount": "Anomalies : {count}",
+  "@luminexInvIssuesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "luminexInvNoIssue": "Aucune anomalie",
+  "luminexInvSearchHint": "Nom, IP, groupe, u101…",
+  "luminexInvShowLinks": "Liens ISL",
+  "luminexInvEmpty": "Rien à afficher",
+  "luminexInvExport": "Exporter en CSV",
+  "luminexInvIssueNoIp": "Appareil sans adresse IP (s'abonne en 0.0.0.0)",
+  "luminexInvIssueDuplicateIp": "IP en double dans le VLAN : {ips}",
+  "@luminexInvIssueDuplicateIp": {
+    "placeholders": {
+      "ips": {
+        "type": "String"
+      }
+    }
+  },
+  "netStartTip": "Par où commencer ? Sur un réseau Luminex, ouvre « Switches GigaCore » avec le téléphone sur le VLAN de management : il voit ce qui est branché sur tous les VLAN. Sinon, lance un « Bilan de santé ».",
+  "netSecWhoTitle": "Qui est sur le réseau ?",
+  "netSecWhoDesc": "Les appareils branchés : sur tous les VLAN grâce aux switches GigaCore, ou sur ton sous-réseau avec le scan.",
+  "netSecFlowTitle": "Flux lumière et vidéo",
+  "netSecFlowDesc": "Ce qui circule là où ton téléphone est branché : sACN, Art-Net, RDM et débit. Pour les autres VLAN, passe par « Switches GigaCore ».",
+  "netSecHealthTitle": "Santé du réseau",
+  "netSecHealthDesc": "Un bilan noté, une surveillance en direct, et des instantanés pour comparer avant / après.",
+  "netSecToolsTitle": "Outils et calculs",
+  "netSecToolsDesc": "Ping, adresse IP, sous-réseau, adressage Art-Net, budgets PoE et fibre.",
+  "netLimitsLuminexTip": "Le téléphone n'est pas dans le bon VLAN ? Avec des switches GigaCore, « Switches GigaCore › Abonnements multicast » montre qui écoute quoi sur tous les VLAN, depuis le management.",
+  "diagSacnOtherVlan": "Pas de sACN sur ton VLAN, mais {count} univers circulent dans d'autres VLAN (vus par les GigaCore).",
+  "@diagSacnOtherVlan": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "diagLuminexUnreachable": "Switch GigaCore {switchName} ({ip}) injoignable",
+  "@diagLuminexUnreachable": {
+    "placeholders": {
+      "switchName": {
+        "type": "String"
+      },
+      "ip": {
+        "type": "String"
+      }
+    }
+  },
+  "diagLuminexAlarm": "{switchName} : {text}",
+  "@diagLuminexAlarm": {
+    "placeholders": {
+      "switchName": {
+        "type": "String"
+      },
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "diagLuminexNoIp": "{switchName}, port {port} ({name}) : appareil sans adresse IP",
+  "@diagLuminexNoIp": {
+    "placeholders": {
+      "switchName": {
+        "type": "String"
+      },
+      "port": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "diagLuminexDuplicateIp": "{switchName}, port {port} : IP en double dans le VLAN ({ips})",
+  "@diagLuminexDuplicateIp": {
+    "placeholders": {
+      "switchName": {
+        "type": "String"
+      },
+      "port": {
+        "type": "int"
+      },
+      "ips": {
+        "type": "String"
+      }
+    }
+  }
 }

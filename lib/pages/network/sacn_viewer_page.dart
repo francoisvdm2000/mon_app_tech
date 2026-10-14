@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
@@ -7,6 +6,7 @@ import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import '../../models/network/dmx_universe.dart';
 import '../../services/network/sacn_service.dart';
 import '../about/about_favorites.dart';
+import 'widgets/network_limits_card.dart';
 
 const _kAccent = Color(0xFF7C4DFF);
 
@@ -94,14 +94,12 @@ class _SacnViewerPageState extends State<SacnViewerPage> {
           _InfoBanner(
               text: loc.sacnPlatformInfo, color: Colors.deepPurpleAccent),
           const SizedBox(height: 8),
-          if (Platform.isIOS) ...[
-            _InfoBanner(
-              text: loc.sacnIosMulticastNote,
-              color: Colors.orangeAccent,
-              icon: Icons.warning_amber_rounded,
-            ),
-            const SizedBox(height: 8),
-          ],
+          NetworkLimitsCard(
+            protocol: NetworkListenProtocol.sacn,
+            key: ValueKey(_universes.isEmpty),
+            initiallyExpanded: _universes.isEmpty,
+          ),
+          const SizedBox(height: 8),
 
           // ── Status + bouton ────────────────────────────────────────────────
           _StatusAndButton(

@@ -20672,19 +20672,19 @@ abstract class AppLocalizations {
   /// No description provided for @diagCardTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Diagnostic réseau'**
+  /// **'Bilan de santé'**
   String get diagCardTitle;
 
   /// No description provided for @diagCardSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Analyse automatique du réseau, Art-Net et sACN.'**
+  /// **'Une note et la liste des problèmes : réseau, Art-Net, sACN, GigaCore.'**
   String get diagCardSubtitle;
 
   /// No description provided for @diagPageTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Diagnostic réseau'**
+  /// **'Bilan de santé'**
   String get diagPageTitle;
 
   /// No description provided for @diagPlatformInfo.
@@ -21122,19 +21122,19 @@ abstract class AppLocalizations {
   /// No description provided for @dashboardPageTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Tableau de bord réseau'**
+  /// **'Surveillance en direct'**
   String get dashboardPageTitle;
 
   /// No description provided for @dashboardCardTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Dashboard réseau'**
+  /// **'Surveillance en direct'**
   String get dashboardCardTitle;
 
   /// No description provided for @dashboardCardSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Vue réseau en temps réel'**
+  /// **'Appareils, flux et alertes en temps réel'**
   String get dashboardCardSubtitle;
 
   /// No description provided for @dashboardStatusIdle.
@@ -21344,19 +21344,19 @@ abstract class AppLocalizations {
   /// No description provided for @luminexPageTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Luminex Monitor'**
+  /// **'Switches GigaCore'**
   String get luminexPageTitle;
 
   /// No description provided for @luminexMonitorCardTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Luminex Monitor'**
+  /// **'Switches GigaCore'**
   String get luminexMonitorCardTitle;
 
   /// No description provided for @luminexMonitorCardSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Supervision des switches GigaCore'**
+  /// **'Inventaire, trafic par VLAN, configuration, sauvegardes'**
   String get luminexMonitorCardSubtitle;
 
   /// No description provided for @luminexAddDevice.
@@ -21986,31 +21986,31 @@ abstract class AppLocalizations {
   /// No description provided for @helpToolLuminexDoes.
   ///
   /// In fr, this message translates to:
-  /// **'Interroge les switches GigaCore Luminex via leur API HTTP. Affiche l\'état des ports (lien, vitesse, PoE, erreurs), la température, les alimentations et déclenche des alarmes.'**
+  /// **'Interroge les switches GigaCore Luminex via leur API HTTP. Affiche l\'état des ports (lien, vitesse, groupe, appareil branché, débit, PoE), la température, les alimentations, le trafic par groupe sur tout le réseau, et déclenche des alarmes.'**
   String get helpToolLuminexDoes;
 
   /// No description provided for @helpToolLuminexDelay.
   ///
   /// In fr, this message translates to:
-  /// **'Sondage toutes les 30 secondes. Découverte automatique sur le subnet : 15 à 30 secondes.'**
+  /// **'Débits et état des ports toutes les 10 secondes ; groupes, LLDP, PoE et alimentations toutes les minutes. Découverte automatique sur le subnet : 15 à 30 secondes.'**
   String get helpToolLuminexDelay;
 
   /// No description provided for @helpToolLuminexLimits.
   ///
   /// In fr, this message translates to:
-  /// **'Lecture seule. Aucune modification de VLAN, groupe ou configuration de port. Ne supporte pas MA-Net ou la vidéo NDI.'**
+  /// **'Lecture seule par défaut. Le mode configuration (cadenas) permet de renommer, changer de groupe, activer ou désactiver un port, faire clignoter les LED et piloter le PoE. Les ports ISL sont verrouillés. Chaque modification peut être annulée.'**
   String get helpToolLuminexLimits;
 
   /// No description provided for @helpToolLuminexTip.
   ///
   /// In fr, this message translates to:
-  /// **'Authentification par défaut : admin / mot de passe vide. Les Gen2 exposent /api/v1/, les Gen1 répondent sur /stat/ports en texte brut.'**
+  /// **'Le téléphone doit être sur le réseau de management des GigaCore. Le trafic par groupe se lit depuis ce seul réseau, sans être dans chaque VLAN. API /api/ des firmwares récents ; les anciens répondent sur /stat/ports en texte brut.'**
   String get helpToolLuminexTip;
 
   /// No description provided for @helpToolManetDoes.
   ///
   /// In fr, this message translates to:
-  /// **'Écoute passivement le port UDP 6549 et détecte les consoles et nodes grandMA2/3 qui s\'annoncent sur le réseau. Affiche nom, type d\'équipement, version firmware et adresse MAC.'**
+  /// **'Écoute passivement le port UDP 30020 et détecte les consoles et nodes grandMA2/3 qui s\'annoncent sur le réseau. Affiche nom, type d\'équipement, version firmware et adresse MAC.'**
   String get helpToolManetDoes;
 
   /// No description provided for @helpToolManetDelay.
@@ -22028,7 +22028,7 @@ abstract class AppLocalizations {
   /// No description provided for @helpToolManetTip.
   ///
   /// In fr, this message translates to:
-  /// **'Si aucun équipement n\'apparaît : vérifiez que la grandMA broadcaster sur le LAN et que le port UDP 6549 n\'est pas bloqué par un pare-feu.'**
+  /// **'Si aucun équipement n\'apparaît : vérifiez que la grandMA broadcaster sur le LAN et que le port UDP 30020 n\'est pas bloqué par un pare-feu.'**
   String get helpToolManetTip;
 
   /// No description provided for @bwCardTitle.
@@ -22040,7 +22040,7 @@ abstract class AppLocalizations {
   /// No description provided for @bwCardSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Broadcast + switch SNMP'**
+  /// **'Débit broadcast reçu, et ports des switches SNMP'**
   String get bwCardSubtitle;
 
   /// No description provided for @bwHubTitle.
@@ -22082,13 +22082,13 @@ abstract class AppLocalizations {
   /// No description provided for @bwHubCardSnmpTitle.
   ///
   /// In fr, this message translates to:
-  /// **'Ports switch'**
+  /// **'Switch SNMP (autres marques)'**
   String get bwHubCardSnmpTitle;
 
   /// No description provided for @bwHubCardSnmpSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Vue par port, tout le trafic'**
+  /// **'Débit par port via SNMP. Pour les GigaCore, utilise « Switches GigaCore ».'**
   String get bwHubCardSnmpSubtitle;
 
   /// No description provided for @bwHubCardSnmpRequires.
@@ -29752,6 +29752,1068 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Les valeurs proposées sont celles de la bibliothèque pour un événement type. Ajustez-les pour votre chantier en touchant un risque ; le motif apparaît dans le PDF.'**
   String get ppspsRatingHelpAdjust;
+
+  /// No description provided for @netLimitsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rien ne s\'affiche ? Ce n\'est pas forcément l\'app'**
+  String get netLimitsTitle;
+
+  /// No description provided for @netLimitsIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'ShowTech Tools écoute le réseau sans rien envoyer. Ce qu\'il peut recevoir dépend du système de l\'appareil et de la configuration du réseau :'**
+  String get netLimitsIntro;
+
+  /// No description provided for @netLimitsManetMa3Only.
+  ///
+  /// In fr, this message translates to:
+  /// **'Seuls les équipements grandMA3 (MA-Net3) sont détectés. Les grandMA2 (MA-Net2) ne sont pas pris en charge.'**
+  String get netLimitsManetMa3Only;
+
+  /// No description provided for @netLimitsIosEntitlement.
+  ///
+  /// In fr, this message translates to:
+  /// **'iOS : Apple soumet la réception du multicast et du broadcast à une autorisation spéciale. Sans elle, seul le trafic envoyé directement (unicast) à cet iPhone ou iPad est reçu. C\'est une limite d\'iOS, pas de l\'app.'**
+  String get netLimitsIosEntitlement;
+
+  /// No description provided for @netLimitsIosLocalNetwork.
+  ///
+  /// In fr, this message translates to:
+  /// **'iOS : vérifiez que l\'accès est autorisé dans Réglages › Confidentialité et sécurité › Réseau local › ShowTech Tools.'**
+  String get netLimitsIosLocalNetwork;
+
+  /// No description provided for @netLimitsArtnetUnicast.
+  ///
+  /// In fr, this message translates to:
+  /// **'grandMA3 envoie l\'Art-Net en unicast vers ses nodes par défaut. Ajoutez l\'IP de cet appareil en destination dans la console, ou passez l\'univers en broadcast.'**
+  String get netLimitsArtnetUnicast;
+
+  /// No description provided for @netLimitsArtnetSubnet.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le broadcast Art-Net n\'est reçu que si cet appareil est dans le même sous-réseau que la source (ex. 2.x.x.x / 255.0.0.0).'**
+  String get netLimitsArtnetSubnet;
+
+  /// No description provided for @netLimitsSameNetwork.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réseau : l\'appareil doit être sur le même réseau / VLAN que les consoles (même groupe Luminex ou port de switch). Le multicast ne traverse pas un routeur.'**
+  String get netLimitsSameNetwork;
+
+  /// No description provided for @netLimitsWifiAp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Wi-Fi : la borne doit être en mode point d\'accès (pas en mode routeur), sans isolation des clients ni filtrage multicast / broadcast.'**
+  String get netLimitsWifiAp;
+
+  /// No description provided for @netLimitsDeviceIp.
+  ///
+  /// In fr, this message translates to:
+  /// **'IP de cet appareil : {ip}'**
+  String netLimitsDeviceIp(String ip);
+
+  /// No description provided for @netLimitsNoIp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune adresse IP locale détectée'**
+  String get netLimitsNoIp;
+
+  /// No description provided for @manetSession.
+  ///
+  /// In fr, this message translates to:
+  /// **'Session'**
+  String get manetSession;
+
+  /// No description provided for @pingCardTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ping'**
+  String get pingCardTitle;
+
+  /// No description provided for @pingCardSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Un appareil répond-il ?'**
+  String get pingCardSubtitle;
+
+  /// No description provided for @pingTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ping'**
+  String get pingTitle;
+
+  /// No description provided for @pingHostLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse IP ou nom'**
+  String get pingHostLabel;
+
+  /// No description provided for @pingHostInvalid.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse introuvable'**
+  String get pingHostInvalid;
+
+  /// No description provided for @pingCountContinuous.
+  ///
+  /// In fr, this message translates to:
+  /// **'Continu'**
+  String get pingCountContinuous;
+
+  /// No description provided for @pingStart.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ping !'**
+  String get pingStart;
+
+  /// No description provided for @pingStop.
+  ///
+  /// In fr, this message translates to:
+  /// **'Stop'**
+  String get pingStop;
+
+  /// No description provided for @pingSent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Envoyés'**
+  String get pingSent;
+
+  /// No description provided for @pingReceived.
+  ///
+  /// In fr, this message translates to:
+  /// **'Reçus'**
+  String get pingReceived;
+
+  /// No description provided for @pingLoss.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pertes'**
+  String get pingLoss;
+
+  /// No description provided for @pingMin.
+  ///
+  /// In fr, this message translates to:
+  /// **'Min ms'**
+  String get pingMin;
+
+  /// No description provided for @pingAvg.
+  ///
+  /// In fr, this message translates to:
+  /// **'Moy. ms'**
+  String get pingAvg;
+
+  /// No description provided for @pingMax.
+  ///
+  /// In fr, this message translates to:
+  /// **'Max ms'**
+  String get pingMax;
+
+  /// No description provided for @pingTimeout.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas de réponse'**
+  String get pingTimeout;
+
+  /// No description provided for @pingIdle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tapez une adresse et lancez le ping 🚀'**
+  String get pingIdle;
+
+  /// No description provided for @pingVerdictGood.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ça répond au quart de tour 👌'**
+  String get pingVerdictGood;
+
+  /// No description provided for @pingVerdictOk.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ça répond, mais la latence est un peu élevée'**
+  String get pingVerdictOk;
+
+  /// No description provided for @pingVerdictLossy.
+  ///
+  /// In fr, this message translates to:
+  /// **'Des paquets se perdent : vérifiez le câble ou le Wi-Fi'**
+  String get pingVerdictLossy;
+
+  /// No description provided for @pingVerdictDown.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune réponse : appareil éteint, autre plage IP ou ping bloqué'**
+  String get pingVerdictDown;
+
+  /// No description provided for @pingNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Certains appareils ne répondent pas au ping (pare-feu). Pas de réponse ne veut pas toujours dire hors ligne.'**
+  String get pingNote;
+
+  /// No description provided for @myIpCardTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mon IP'**
+  String get myIpCardTitle;
+
+  /// No description provided for @myIpCardSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'IP du téléphone & assistant IP fixe'**
+  String get myIpCardSubtitle;
+
+  /// No description provided for @myIpTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mon IP'**
+  String get myIpTitle;
+
+  /// No description provided for @myIpRefresh.
+  ///
+  /// In fr, this message translates to:
+  /// **'Actualiser'**
+  String get myIpRefresh;
+
+  /// No description provided for @myIpCurrentTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cet appareil'**
+  String get myIpCurrentTitle;
+
+  /// No description provided for @myIpNotConnected.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas connecté au Wi-Fi'**
+  String get myIpNotConnected;
+
+  /// No description provided for @myIpMask.
+  ///
+  /// In fr, this message translates to:
+  /// **'Masque'**
+  String get myIpMask;
+
+  /// No description provided for @myIpGateway.
+  ///
+  /// In fr, this message translates to:
+  /// **'Passerelle'**
+  String get myIpGateway;
+
+  /// No description provided for @myIpInterfaces.
+  ///
+  /// In fr, this message translates to:
+  /// **'Toutes les interfaces'**
+  String get myIpInterfaces;
+
+  /// No description provided for @myIpSameRange.
+  ///
+  /// In fr, this message translates to:
+  /// **'Déjà dans la bonne plage IP ✅'**
+  String get myIpSameRange;
+
+  /// No description provided for @myIpOtherRange.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas dans la même plage IP que cet appareil'**
+  String get myIpOtherRange;
+
+  /// No description provided for @myIpSystemLimit.
+  ///
+  /// In fr, this message translates to:
+  /// **'iOS et Android n\'autorisent aucune app à changer l\'adresse IP du téléphone. Ce n\'est pas une limite de ShowTech Tools : l\'IP se règle dans les réglages Wi-Fi. L\'assistant ci-dessous vous donne les valeurs exactes à saisir.'**
+  String get myIpSystemLimit;
+
+  /// No description provided for @myIpAssistantTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Assistant IP fixe'**
+  String get myIpAssistantTitle;
+
+  /// No description provided for @myIpTargetLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'IP d\'un appareil du réseau (ex. la console)'**
+  String get myIpTargetLabel;
+
+  /// No description provided for @myIpMaskLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Masque du réseau'**
+  String get myIpMaskLabel;
+
+  /// No description provided for @myIpFindFree.
+  ///
+  /// In fr, this message translates to:
+  /// **'Trouver une IP libre'**
+  String get myIpFindFree;
+
+  /// No description provided for @myIpSearching.
+  ///
+  /// In fr, this message translates to:
+  /// **'Recherche d\'une IP libre…'**
+  String get myIpSearching;
+
+  /// No description provided for @myIpPingTarget.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pinger cet appareil'**
+  String get myIpPingTarget;
+
+  /// No description provided for @myIpNoFree.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune IP libre trouvée parmi les essais. Choisissez-en une à la main.'**
+  String get myIpNoFree;
+
+  /// No description provided for @myIpValuesTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeurs à saisir'**
+  String get myIpValuesTitle;
+
+  /// No description provided for @myIpValueIp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Adresse IP'**
+  String get myIpValueIp;
+
+  /// No description provided for @myIpValueMask.
+  ///
+  /// In fr, this message translates to:
+  /// **'Masque de sous-réseau'**
+  String get myIpValueMask;
+
+  /// No description provided for @myIpValuePrefix.
+  ///
+  /// In fr, this message translates to:
+  /// **'Longueur du préfixe réseau'**
+  String get myIpValuePrefix;
+
+  /// No description provided for @myIpValueRouter.
+  ///
+  /// In fr, this message translates to:
+  /// **'Routeur / passerelle'**
+  String get myIpValueRouter;
+
+  /// No description provided for @myIpRouterEmpty.
+  ///
+  /// In fr, this message translates to:
+  /// **'Laisser vide'**
+  String get myIpRouterEmpty;
+
+  /// No description provided for @myIpRouterHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Si le champ est obligatoire : {ip}'**
+  String myIpRouterHint(String ip);
+
+  /// No description provided for @myIpFreeNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cette adresse ne répond pas au ping, elle semble libre. En cas de doute, validez-la avec le responsable réseau.'**
+  String get myIpFreeNote;
+
+  /// No description provided for @myIpCopied.
+  ///
+  /// In fr, this message translates to:
+  /// **'Copié'**
+  String get myIpCopied;
+
+  /// No description provided for @myIpOpenWifi.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ouvrir les réglages Wi-Fi'**
+  String get myIpOpenWifi;
+
+  /// No description provided for @myIpStepsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Comment faire'**
+  String get myIpStepsTitle;
+
+  /// No description provided for @myIpStepsIos.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ouvrez Réglages › Wi-Fi\nTouchez (i) à côté du réseau\nConfigurer l\'IP › Manuelle\nSaisissez l\'adresse IP et le masque, laissez Routeur vide\nTouchez Enregistrer'**
+  String get myIpStepsIos;
+
+  /// No description provided for @myIpStepsAndroid.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ouvrez Paramètres › Wi-Fi\nTouchez la roue dentée du réseau (ou appui long › Modifier)\nOptions avancées › Paramètres IP : Statique\nSaisissez l\'adresse IP et la longueur du préfixe\nEnregistrez (les menus varient selon la marque)'**
+  String get myIpStepsAndroid;
+
+  /// No description provided for @myIpBackToDhcp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Après le show, repassez ce Wi-Fi en automatique (DHCP) pour retrouver Internet.'**
+  String get myIpBackToDhcp;
+
+  /// No description provided for @audioSectionPassive.
+  ///
+  /// In fr, this message translates to:
+  /// **'Passif'**
+  String get audioSectionPassive;
+
+  /// No description provided for @audioPickSection.
+  ///
+  /// In fr, this message translates to:
+  /// **'Section (une voie d\'ampli chacune)'**
+  String get audioPickSection;
+
+  /// No description provided for @luminexSectionGroupTraffic.
+  ///
+  /// In fr, this message translates to:
+  /// **'Trafic par groupe'**
+  String get luminexSectionGroupTraffic;
+
+  /// No description provided for @luminexGroupTrafficHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Somme des ports d\'accès de tous les switches, liens ISL exclus. Émis : envoyé par les appareils. Reçu : délivré aux appareils.'**
+  String get luminexGroupTrafficHint;
+
+  /// No description provided for @luminexTrafficSent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Émis'**
+  String get luminexTrafficSent;
+
+  /// No description provided for @luminexTrafficReceived.
+  ///
+  /// In fr, this message translates to:
+  /// **'Reçu'**
+  String get luminexTrafficReceived;
+
+  /// No description provided for @luminexGroupActivePorts.
+  ///
+  /// In fr, this message translates to:
+  /// **'{active} ports actifs sur {total}'**
+  String luminexGroupActivePorts(int active, int total);
+
+  /// No description provided for @luminexAlarmFanFault.
+  ///
+  /// In fr, this message translates to:
+  /// **'Défaut de ventilateur'**
+  String get luminexAlarmFanFault;
+
+  /// No description provided for @luminexAlarmDeviceNotice.
+  ///
+  /// In fr, this message translates to:
+  /// **'Switch : {text}'**
+  String luminexAlarmDeviceNotice(String text);
+
+  /// No description provided for @luminexSectionMulticast.
+  ///
+  /// In fr, this message translates to:
+  /// **'Abonnements multicast'**
+  String get luminexSectionMulticast;
+
+  /// No description provided for @luminexMulticastHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Groupes multicast rejoints (IGMP), relevés sur les switches : qui écoute quel univers sACN ou quelle session MA-Net, dans chaque VLAN.'**
+  String get luminexMulticastHint;
+
+  /// No description provided for @luminexMulticastSummary.
+  ///
+  /// In fr, this message translates to:
+  /// **'Groupes : {groups} · abonnés : {listeners}'**
+  String luminexMulticastSummary(int groups, int listeners);
+
+  /// No description provided for @luminexMulticastListeners.
+  ///
+  /// In fr, this message translates to:
+  /// **'Abonnés : {count}'**
+  String luminexMulticastListeners(int count);
+
+  /// No description provided for @luminexMulticastUniverse.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers {universe}'**
+  String luminexMulticastUniverse(int universe);
+
+  /// No description provided for @luminexMulticastSacnUniverses.
+  ///
+  /// In fr, this message translates to:
+  /// **'Univers sACN : {list}'**
+  String luminexMulticastSacnUniverses(String list);
+
+  /// No description provided for @luminexMulticastSacnDiscovery.
+  ///
+  /// In fr, this message translates to:
+  /// **'Découverte sACN'**
+  String get luminexMulticastSacnDiscovery;
+
+  /// No description provided for @luminexMulticastManetAdmin.
+  ///
+  /// In fr, this message translates to:
+  /// **'MA-Net3 · administration'**
+  String get luminexMulticastManetAdmin;
+
+  /// No description provided for @luminexMulticastManetSession.
+  ///
+  /// In fr, this message translates to:
+  /// **'MA-Net3 · session'**
+  String get luminexMulticastManetSession;
+
+  /// No description provided for @luminexMulticastViaIsl.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vu via un lien ISL'**
+  String get luminexMulticastViaIsl;
+
+  /// No description provided for @luminexMulticastPort.
+  ///
+  /// In fr, this message translates to:
+  /// **'port {port}'**
+  String luminexMulticastPort(int port);
+
+  /// No description provided for @luminexCfgMode.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mode configuration'**
+  String get luminexCfgMode;
+
+  /// No description provided for @luminexCfgModeBanner.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mode configuration actif : chaque action modifie le switch tout de suite. Touche un port pour le modifier.'**
+  String get luminexCfgModeBanner;
+
+  /// No description provided for @luminexCfgIdentifySwitch.
+  ///
+  /// In fr, this message translates to:
+  /// **'Faire clignoter le switch'**
+  String get luminexCfgIdentifySwitch;
+
+  /// No description provided for @luminexCfgIdentifyPort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Faire clignoter la LED du port'**
+  String get luminexCfgIdentifyPort;
+
+  /// No description provided for @luminexCfgRenameSwitch.
+  ///
+  /// In fr, this message translates to:
+  /// **'Renommer le switch'**
+  String get luminexCfgRenameSwitch;
+
+  /// No description provided for @luminexCfgRenamePort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Renommer le port'**
+  String get luminexCfgRenamePort;
+
+  /// No description provided for @luminexCfgChangeGroup.
+  ///
+  /// In fr, this message translates to:
+  /// **'Changer de groupe'**
+  String get luminexCfgChangeGroup;
+
+  /// No description provided for @luminexCfgDisablePort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Désactiver le port'**
+  String get luminexCfgDisablePort;
+
+  /// No description provided for @luminexCfgEnablePort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Activer le port'**
+  String get luminexCfgEnablePort;
+
+  /// No description provided for @luminexCfgPoeOff.
+  ///
+  /// In fr, this message translates to:
+  /// **'Couper le PoE'**
+  String get luminexCfgPoeOff;
+
+  /// No description provided for @luminexCfgPoeOn.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rétablir le PoE'**
+  String get luminexCfgPoeOn;
+
+  /// No description provided for @luminexCfgPoeCycle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Redémarrer l\'appareil (PoE)'**
+  String get luminexCfgPoeCycle;
+
+  /// No description provided for @luminexCfgPortTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Port {port}'**
+  String luminexCfgPortTitle(int port);
+
+  /// No description provided for @luminexCfgConfirmTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Confirmer la modification'**
+  String get luminexCfgConfirmTitle;
+
+  /// No description provided for @luminexCfgApply.
+  ///
+  /// In fr, this message translates to:
+  /// **'Appliquer'**
+  String get luminexCfgApply;
+
+  /// No description provided for @luminexCfgCancel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Annuler'**
+  String get luminexCfgCancel;
+
+  /// No description provided for @luminexCfgUndo.
+  ///
+  /// In fr, this message translates to:
+  /// **'Annuler'**
+  String get luminexCfgUndo;
+
+  /// No description provided for @luminexCfgActiveWarning.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ce port est actif : l\'appareil branché perdra la communication.'**
+  String get luminexCfgActiveWarning;
+
+  /// No description provided for @luminexCfgTrunkLocked.
+  ///
+  /// In fr, this message translates to:
+  /// **'Port ISL : groupe et activation verrouillés pour protéger le réseau.'**
+  String get luminexCfgTrunkLocked;
+
+  /// No description provided for @luminexCfgDone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modification appliquée'**
+  String get luminexCfgDone;
+
+  /// No description provided for @luminexCfgUndone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modification annulée'**
+  String get luminexCfgUndone;
+
+  /// No description provided for @luminexCfgFailed.
+  ///
+  /// In fr, this message translates to:
+  /// **'Échec : {reason}'**
+  String luminexCfgFailed(String reason);
+
+  /// No description provided for @luminexCfgErrUnreachable.
+  ///
+  /// In fr, this message translates to:
+  /// **'switch injoignable'**
+  String get luminexCfgErrUnreachable;
+
+  /// No description provided for @luminexCfgErrUnauthorized.
+  ///
+  /// In fr, this message translates to:
+  /// **'le switch demande un mot de passe'**
+  String get luminexCfgErrUnauthorized;
+
+  /// No description provided for @luminexCfgErrRejected.
+  ///
+  /// In fr, this message translates to:
+  /// **'refusé par le switch'**
+  String get luminexCfgErrRejected;
+
+  /// No description provided for @luminexCfgErrNotApplied.
+  ///
+  /// In fr, this message translates to:
+  /// **'le switch n\'a pas pris la modification'**
+  String get luminexCfgErrNotApplied;
+
+  /// No description provided for @luminexCfgErrProtected.
+  ///
+  /// In fr, this message translates to:
+  /// **'port protégé'**
+  String get luminexCfgErrProtected;
+
+  /// No description provided for @luminexCfgErrUnknownGroup.
+  ///
+  /// In fr, this message translates to:
+  /// **'groupe inconnu sur ce switch'**
+  String get luminexCfgErrUnknownGroup;
+
+  /// No description provided for @luminexCfgErrNoPoe.
+  ///
+  /// In fr, this message translates to:
+  /// **'pas de PoE sur ce port'**
+  String get luminexCfgErrNoPoe;
+
+  /// No description provided for @luminexCfgErrNoSlot.
+  ///
+  /// In fr, this message translates to:
+  /// **'aucun emplacement de profil libre sur le switch'**
+  String get luminexCfgErrNoSlot;
+
+  /// No description provided for @luminexCfgIdentifySent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Les LED clignotent'**
+  String get luminexCfgIdentifySent;
+
+  /// No description provided for @luminexCfgPoeCycleRunning.
+  ///
+  /// In fr, this message translates to:
+  /// **'Redémarrage PoE en cours…'**
+  String get luminexCfgPoeCycleRunning;
+
+  /// No description provided for @luminexCfgName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom'**
+  String get luminexCfgName;
+
+  /// No description provided for @luminexOn.
+  ///
+  /// In fr, this message translates to:
+  /// **'activé'**
+  String get luminexOn;
+
+  /// No description provided for @luminexOff.
+  ///
+  /// In fr, this message translates to:
+  /// **'désactivé'**
+  String get luminexOff;
+
+  /// No description provided for @luminexBackupTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sauvegardes'**
+  String get luminexBackupTitle;
+
+  /// No description provided for @luminexBackupHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Une sauvegarde contient le profil Luminex complet (groupes, trunks, ports, IP) et les légendes des ports. Elle est rangée dans l\'app et peut être partagée. Elle sert à revenir en arrière après un problème ou à configurer un switch de remplacement.'**
+  String get luminexBackupHint;
+
+  /// No description provided for @luminexBackupNow.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sauvegarder ce switch'**
+  String get luminexBackupNow;
+
+  /// No description provided for @luminexBackupDone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sauvegarde enregistrée'**
+  String get luminexBackupDone;
+
+  /// No description provided for @luminexBackupImport.
+  ///
+  /// In fr, this message translates to:
+  /// **'Importer un fichier'**
+  String get luminexBackupImport;
+
+  /// No description provided for @luminexBackupImportInvalid.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ce fichier n\'est pas une sauvegarde GigaCore'**
+  String get luminexBackupImportInvalid;
+
+  /// No description provided for @luminexBackupEmpty.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune sauvegarde pour l\'instant'**
+  String get luminexBackupEmpty;
+
+  /// No description provided for @luminexBackupCompare.
+  ///
+  /// In fr, this message translates to:
+  /// **'Comparer'**
+  String get luminexBackupCompare;
+
+  /// No description provided for @luminexBackupShare.
+  ///
+  /// In fr, this message translates to:
+  /// **'Partager'**
+  String get luminexBackupShare;
+
+  /// No description provided for @luminexBackupDelete.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer'**
+  String get luminexBackupDelete;
+
+  /// No description provided for @luminexBackupRestorePorts.
+  ///
+  /// In fr, this message translates to:
+  /// **'Remettre les ports'**
+  String get luminexBackupRestorePorts;
+
+  /// No description provided for @luminexBackupRestoreFull.
+  ///
+  /// In fr, this message translates to:
+  /// **'Restauration complète'**
+  String get luminexBackupRestoreFull;
+
+  /// No description provided for @luminexBackupRestoreFullHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Applique tout le profil : groupes, trunks, ports, nom. Le trafic peut être coupé quelques secondes : à éviter pendant un show.'**
+  String get luminexBackupRestoreFullHint;
+
+  /// No description provided for @luminexBackupConfirmFull.
+  ///
+  /// In fr, this message translates to:
+  /// **'restaurer toute la configuration ?'**
+  String get luminexBackupConfirmFull;
+
+  /// No description provided for @luminexBackupConfirmPorts.
+  ///
+  /// In fr, this message translates to:
+  /// **'ports à remettre comme dans la sauvegarde : {count}'**
+  String luminexBackupConfirmPorts(int count);
+
+  /// No description provided for @luminexBackupUseBackupIp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Reprendre l\'IP de la sauvegarde ({ip}) : remplacement de matériel'**
+  String luminexBackupUseBackupIp(String ip);
+
+  /// No description provided for @luminexBackupModelMismatch.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modèle différent : vérifie que cette sauvegarde convient à ce switch.'**
+  String get luminexBackupModelMismatch;
+
+  /// No description provided for @luminexBackupNoDiff.
+  ///
+  /// In fr, this message translates to:
+  /// **'Identique à la sauvegarde'**
+  String get luminexBackupNoDiff;
+
+  /// No description provided for @luminexBackupDiffCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'Différences : {count}'**
+  String luminexBackupDiffCount(int count);
+
+  /// No description provided for @luminexBackupColBackup.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sauvegarde'**
+  String get luminexBackupColBackup;
+
+  /// No description provided for @luminexBackupColNow.
+  ///
+  /// In fr, this message translates to:
+  /// **'Actuel'**
+  String get luminexBackupColNow;
+
+  /// No description provided for @luminexBackupRestoreRunning.
+  ///
+  /// In fr, this message translates to:
+  /// **'Restauration en cours…'**
+  String get luminexBackupRestoreRunning;
+
+  /// No description provided for @luminexBackupRestored.
+  ///
+  /// In fr, this message translates to:
+  /// **'Restauration terminée'**
+  String get luminexBackupRestored;
+
+  /// No description provided for @luminexBackupDiffModel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modèle'**
+  String get luminexBackupDiffModel;
+
+  /// No description provided for @luminexBackupDiffName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom du switch'**
+  String get luminexBackupDiffName;
+
+  /// No description provided for @luminexBackupDiffGroupName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom du groupe {id}'**
+  String luminexBackupDiffGroupName(int id);
+
+  /// No description provided for @luminexBackupDiffPortGroup.
+  ///
+  /// In fr, this message translates to:
+  /// **'Port {port} · groupe'**
+  String luminexBackupDiffPortGroup(int port);
+
+  /// No description provided for @luminexBackupDiffPortTrunk.
+  ///
+  /// In fr, this message translates to:
+  /// **'Port {port} · ISL'**
+  String luminexBackupDiffPortTrunk(int port);
+
+  /// No description provided for @luminexBackupDiffPortEnabled.
+  ///
+  /// In fr, this message translates to:
+  /// **'Port {port} · activation'**
+  String luminexBackupDiffPortEnabled(int port);
+
+  /// No description provided for @luminexBackupDiffPortLegend.
+  ///
+  /// In fr, this message translates to:
+  /// **'Port {port} · légende'**
+  String luminexBackupDiffPortLegend(int port);
+
+  /// No description provided for @luminexInvTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Inventaire du réseau'**
+  String get luminexInvTitle;
+
+  /// No description provided for @luminexInvHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Chaque port actif des GigaCore : appareil branché (LLDP), IP vues en IGMP, groupe et univers sACN écoutés. Un appareil qui n\'envoie ni LLDP ni IGMP n\'apparaît qu\'avec la légende du port.'**
+  String get luminexInvHint;
+
+  /// No description provided for @luminexInvSummary.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ports occupés : {count}'**
+  String luminexInvSummary(int count);
+
+  /// No description provided for @luminexInvIssuesCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'Anomalies : {count}'**
+  String luminexInvIssuesCount(int count);
+
+  /// No description provided for @luminexInvNoIssue.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune anomalie'**
+  String get luminexInvNoIssue;
+
+  /// No description provided for @luminexInvSearchHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom, IP, groupe, u101…'**
+  String get luminexInvSearchHint;
+
+  /// No description provided for @luminexInvShowLinks.
+  ///
+  /// In fr, this message translates to:
+  /// **'Liens ISL'**
+  String get luminexInvShowLinks;
+
+  /// No description provided for @luminexInvEmpty.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rien à afficher'**
+  String get luminexInvEmpty;
+
+  /// No description provided for @luminexInvExport.
+  ///
+  /// In fr, this message translates to:
+  /// **'Exporter en CSV'**
+  String get luminexInvExport;
+
+  /// No description provided for @luminexInvIssueNoIp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Appareil sans adresse IP (s\'abonne en 0.0.0.0)'**
+  String get luminexInvIssueNoIp;
+
+  /// No description provided for @luminexInvIssueDuplicateIp.
+  ///
+  /// In fr, this message translates to:
+  /// **'IP en double dans le VLAN : {ips}'**
+  String luminexInvIssueDuplicateIp(String ips);
+
+  /// No description provided for @netStartTip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Par où commencer ? Sur un réseau Luminex, ouvre « Switches GigaCore » avec le téléphone sur le VLAN de management : il voit ce qui est branché sur tous les VLAN. Sinon, lance un « Bilan de santé ».'**
+  String get netStartTip;
+
+  /// No description provided for @netSecWhoTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Qui est sur le réseau ?'**
+  String get netSecWhoTitle;
+
+  /// No description provided for @netSecWhoDesc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Les appareils branchés : sur tous les VLAN grâce aux switches GigaCore, ou sur ton sous-réseau avec le scan.'**
+  String get netSecWhoDesc;
+
+  /// No description provided for @netSecFlowTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Flux lumière et vidéo'**
+  String get netSecFlowTitle;
+
+  /// No description provided for @netSecFlowDesc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ce qui circule là où ton téléphone est branché : sACN, Art-Net, RDM et débit. Pour les autres VLAN, passe par « Switches GigaCore ».'**
+  String get netSecFlowDesc;
+
+  /// No description provided for @netSecHealthTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Santé du réseau'**
+  String get netSecHealthTitle;
+
+  /// No description provided for @netSecHealthDesc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Un bilan noté, une surveillance en direct, et des instantanés pour comparer avant / après.'**
+  String get netSecHealthDesc;
+
+  /// No description provided for @netSecToolsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Outils et calculs'**
+  String get netSecToolsTitle;
+
+  /// No description provided for @netSecToolsDesc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ping, adresse IP, sous-réseau, adressage Art-Net, budgets PoE et fibre.'**
+  String get netSecToolsDesc;
+
+  /// No description provided for @netLimitsLuminexTip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le téléphone n\'est pas dans le bon VLAN ? Avec des switches GigaCore, « Switches GigaCore › Abonnements multicast » montre qui écoute quoi sur tous les VLAN, depuis le management.'**
+  String get netLimitsLuminexTip;
+
+  /// No description provided for @diagSacnOtherVlan.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas de sACN sur ton VLAN, mais {count} univers circulent dans d\'autres VLAN (vus par les GigaCore).'**
+  String diagSacnOtherVlan(int count);
+
+  /// No description provided for @diagLuminexUnreachable.
+  ///
+  /// In fr, this message translates to:
+  /// **'Switch GigaCore {switchName} ({ip}) injoignable'**
+  String diagLuminexUnreachable(String switchName, String ip);
+
+  /// No description provided for @diagLuminexAlarm.
+  ///
+  /// In fr, this message translates to:
+  /// **'{switchName} : {text}'**
+  String diagLuminexAlarm(String switchName, String text);
+
+  /// No description provided for @diagLuminexNoIp.
+  ///
+  /// In fr, this message translates to:
+  /// **'{switchName}, port {port} ({name}) : appareil sans adresse IP'**
+  String diagLuminexNoIp(String switchName, int port, String name);
+
+  /// No description provided for @diagLuminexDuplicateIp.
+  ///
+  /// In fr, this message translates to:
+  /// **'{switchName}, port {port} : IP en double dans le VLAN ({ips})'**
+  String diagLuminexDuplicateIp(String switchName, int port, String ips);
 }
 
 class _AppLocalizationsDelegate

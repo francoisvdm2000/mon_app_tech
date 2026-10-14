@@ -25,12 +25,18 @@ enum LuminexAlarmType {
 
   /// Bloc d'alimentation absent ou en défaut
   psuAbsent,
+
+  /// Ventilateur en défaut
+  fanFault,
+
+  /// Avertissement remonté par le switch lui-même (texte dans params['text'])
+  deviceNotice,
 }
 
 /// Alarme produite par le service Luminex.
 ///
 /// [portNr] est null pour les alarmes au niveau du switch
-/// (inaccessible, highTemp, psuAbsent).
+/// (inaccessible, highTemp, psuAbsent, fanFault, deviceNotice).
 class LuminexAlarm {
   final LuminexAlarmType type;
   final DiagnosticSeverity severity;
@@ -54,6 +60,7 @@ class LuminexAlarm {
         LuminexAlarmType.highTxErrors ||
         LuminexAlarmType.poeFault =>
           '${type.name}_${portNr ?? 0}',
+        LuminexAlarmType.deviceNotice => '${type.name}_${params['text']}',
         _ => type.name,
       };
 }

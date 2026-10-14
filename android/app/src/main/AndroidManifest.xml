@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <!-- Réception multicast (MA-Net3, sACN) via WifiManager.MulticastLock -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
     <!-- Sonomètre (mesure indicative du niveau sonore ambiant) -->
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 

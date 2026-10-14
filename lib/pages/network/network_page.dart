@@ -13,6 +13,8 @@ import 'network_scan_page.dart';
 import 'network_poe_budget_page.dart';
 import 'network_fiber_budget_page.dart';
 import 'network_subnet_calculator_page.dart';
+import 'ping_page.dart';
+import 'my_ip_page.dart';
 import 'artnet_viewer_page.dart';
 import 'network_artnet_addressing_page.dart';
 import 'sacn_viewer_page.dart';
@@ -57,35 +59,25 @@ class _NetworkPageState extends State<NetworkPage> {
     _checkAccess();
   }
 
-  Widget _sectionLabel(String text) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 16, 0, 8),
-      child: Row(
-        children: [
-          Expanded(
-            child: Divider(
-                color: Colors.white.withValues(alpha: 0.10), height: 1),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Text(
-              text.toUpperCase(),
-              style: const TextStyle(
-                color: _kAccent,
-                fontSize: 10,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 1.5,
-              ),
-            ),
-          ),
-          Expanded(
-            child: Divider(
-                color: Colors.white.withValues(alpha: 0.10), height: 1),
-          ),
-        ],
-      ),
-    );
+  void _open(Widget page) {
+    Navigator.push(context, MaterialPageRoute(builder: (_) => page));
   }
+
+  /// Tuile d'un outil Pro : ouvre l'outil, ou l'abonnement s'il est verrouillé.
+  Widget _pro({
+    required IconData icon,
+    required String title,
+    required String subtitle,
+    required Widget Function() page,
+  }) =>
+      _NetworkToolTile(
+        icon: icon,
+        title: title,
+        subtitle: subtitle,
+        pro: true,
+        locked: !_hasPremium,
+        onTap: _hasPremium ? () => _open(page()) : _goToSubscription,
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -131,210 +123,143 @@ class _NetworkPageState extends State<NetworkPage> {
         padding: EdgeInsets.fromLTRB(
             16, 8, 16, 24 + MediaQuery.paddingOf(context).bottom),
         children: [
-          // ── Gratuit ──────────────────────────────────────────────────────
-          _sectionLabel(loc.rfFreeLabel),
+          // ── Par où commencer ─────────────────────────────────────────────
+          _StartTip(text: loc.netStartTip),
+
+          // ── 1. Qui est sur le réseau ─────────────────────────────────────
+          _Section(title: loc.netSecWhoTitle, description: loc.netSecWhoDesc),
           AppGridView(
             children: [
+              _pro(
+                icon: Icons.router_rounded,
+                title: loc.luminexMonitorCardTitle,
+                subtitle: loc.luminexMonitorCardSubtitle,
+                page: () => const LuminexMonitorPage(),
+              ),
               _NetworkToolTile(
                 icon: Icons.radar_rounded,
                 title: loc.networkScanCardTitle,
                 subtitle: loc.networkScanCardSubtitle,
                 free: true,
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (_) => const NetworkScanPage()),
-                ),
+                onTap: () => _open(const NetworkScanPage()),
+              ),
+              _pro(
+                icon: Icons.wifi_tethering_rounded,
+                title: loc.manetMonitorCardTitle,
+                subtitle: loc.manetMonitorCardSubtitle,
+                page: () => const MaNetMonitorPage(),
+              ),
+              _pro(
+                icon: Icons.videocam_rounded,
+                title: loc.ndiCardTitle,
+                subtitle: loc.ndiCardSubtitle,
+                page: () => const NdiDiscoveryPage(),
+              ),
+            ],
+          ),
+
+          // ── 2. Flux lumière et vidéo ─────────────────────────────────────
+          _Section(title: loc.netSecFlowTitle, description: loc.netSecFlowDesc),
+          AppGridView(
+            children: [
+              _pro(
+                icon: Icons.hub_rounded,
+                title: loc.networkSacnCardTitle,
+                subtitle: loc.networkSacnCardSubtitle,
+                page: () => const SacnViewerPage(),
+              ),
+              _pro(
+                icon: Icons.broadcast_on_personal_rounded,
+                title: loc.networkArtNetCardTitle,
+                subtitle: loc.networkArtNetCardSubtitle,
+                page: () => const ArtNetViewerPage(),
+              ),
+              _pro(
+                icon: Icons.settings_remote_rounded,
+                title: loc.rdmPageTitle,
+                subtitle: loc.rdmPageSubtitle,
+                page: () => const RdmPage(),
+              ),
+              _pro(
+                icon: Icons.stacked_line_chart_rounded,
+                title: loc.bwCardTitle,
+                subtitle: loc.bwCardSubtitle,
+                page: () => const BandwidthHubPage(),
+              ),
+            ],
+          ),
+
+          // ── 3. Santé du réseau ───────────────────────────────────────────
+          _Section(
+              title: loc.netSecHealthTitle, description: loc.netSecHealthDesc),
+          AppGridView(
+            children: [
+              _pro(
+                icon: Icons.monitor_heart_rounded,
+                title: loc.diagCardTitle,
+                subtitle: loc.diagCardSubtitle,
+                page: () => const NetworkDiagnosticPage(),
+              ),
+              _pro(
+                icon: Icons.dashboard_rounded,
+                title: loc.dashboardCardTitle,
+                subtitle: loc.dashboardCardSubtitle,
+                page: () => const NetworkDashboardPage(),
+              ),
+              _pro(
+                icon: Icons.compare_arrows_rounded,
+                title: loc.snapshotCardTitle,
+                subtitle: loc.snapshotCardSubtitle,
+                page: () => const SnapshotListPage(),
+              ),
+            ],
+          ),
+
+          // ── 4. Outils et calculs ─────────────────────────────────────────
+          _Section(
+              title: loc.netSecToolsTitle, description: loc.netSecToolsDesc),
+          AppGridView(
+            children: [
+              _NetworkToolTile(
+                icon: Icons.network_ping,
+                title: loc.pingCardTitle,
+                subtitle: loc.pingCardSubtitle,
+                free: true,
+                onTap: () => _open(const PingPage()),
               ),
               _NetworkToolTile(
-                icon: Icons.power_rounded,
-                title: loc.networkPoeTitle,
-                subtitle: loc.networkPoeSubtitle,
+                icon: Icons.perm_device_information_rounded,
+                title: loc.myIpCardTitle,
+                subtitle: loc.myIpCardSubtitle,
                 free: true,
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (_) => const NetworkPoeBudgetPage()),
-                ),
-              ),
-              _NetworkToolTile(
-                icon: Icons.cable_rounded,
-                title: loc.networkFiberTitle,
-                subtitle: loc.networkFiberSubtitle,
-                free: true,
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (_) => const NetworkFiberBudgetPage()),
-                ),
+                onTap: () => _open(const MyIpPage()),
               ),
               _NetworkToolTile(
                 icon: Icons.lan_rounded,
                 title: loc.networkSubnetTitle,
                 subtitle: loc.networkSubnetSubtitle,
                 free: true,
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (_) => const NetworkSubnetCalculatorPage()),
-                ),
+                onTap: () => _open(const NetworkSubnetCalculatorPage()),
               ),
-            ],
-          ),
-
-          // ── Réseau Pro ───────────────────────────────────────────────────
-          _sectionLabel(loc.subscriptionCategoryNetworkTitle),
-          AppGridView(
-            children: [
-              _NetworkToolTile(
-                icon: Icons.dashboard_rounded,
-                title: loc.dashboardCardTitle,
-                subtitle: loc.dashboardCardSubtitle,
-                pro: true,
-                locked: !_hasPremium,
-                onTap: _hasPremium
-                    ? () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => const NetworkDashboardPage()),
-                        )
-                    : _goToSubscription,
-              ),
-              _NetworkToolTile(
-                icon: Icons.broadcast_on_personal_rounded,
-                title: loc.networkArtNetCardTitle,
-                subtitle: loc.networkArtNetCardSubtitle,
-                pro: true,
-                locked: !_hasPremium,
-                onTap: _hasPremium
-                    ? () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => const ArtNetViewerPage()),
-                        )
-                    : _goToSubscription,
-              ),
-              _NetworkToolTile(
+              _pro(
                 icon: Icons.pin_rounded,
                 title: loc.networkArtNetAddressingTitle,
                 subtitle: loc.networkArtNetAddressingSubtitle,
-                pro: true,
-                locked: !_hasPremium,
-                onTap: _hasPremium
-                    ? () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => const NetworkArtNetAddressingPage()),
-                        )
-                    : _goToSubscription,
+                page: () => const NetworkArtNetAddressingPage(),
               ),
               _NetworkToolTile(
-                icon: Icons.hub_rounded,
-                title: loc.networkSacnCardTitle,
-                subtitle: loc.networkSacnCardSubtitle,
-                pro: true,
-                locked: !_hasPremium,
-                onTap: _hasPremium
-                    ? () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => const SacnViewerPage()),
-                        )
-                    : _goToSubscription,
+                icon: Icons.power_rounded,
+                title: loc.networkPoeTitle,
+                subtitle: loc.networkPoeSubtitle,
+                free: true,
+                onTap: () => _open(const NetworkPoeBudgetPage()),
               ),
               _NetworkToolTile(
-                icon: Icons.videocam_rounded,
-                title: loc.ndiCardTitle,
-                subtitle: loc.ndiCardSubtitle,
-                pro: true,
-                locked: !_hasPremium,
-                onTap: _hasPremium
-                    ? () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => const NdiDiscoveryPage()),
-                        )
-                    : _goToSubscription,
-              ),
-              _NetworkToolTile(
-                icon: Icons.monitor_heart_rounded,
-                title: loc.diagCardTitle,
-                subtitle: loc.diagCardSubtitle,
-                pro: true,
-                locked: !_hasPremium,
-                onTap: _hasPremium
-                    ? () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => const NetworkDiagnosticPage()),
-                        )
-                    : _goToSubscription,
-              ),
-              _NetworkToolTile(
-                icon: Icons.compare_arrows_rounded,
-                title: loc.snapshotCardTitle,
-                subtitle: loc.snapshotCardSubtitle,
-                pro: true,
-                locked: !_hasPremium,
-                onTap: _hasPremium
-                    ? () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => const SnapshotListPage()),
-                        )
-                    : _goToSubscription,
-              ),
-              _NetworkToolTile(
-                icon: Icons.router_rounded,
-                title: loc.luminexMonitorCardTitle,
-                subtitle: loc.luminexMonitorCardSubtitle,
-                pro: true,
-                locked: !_hasPremium,
-                onTap: _hasPremium
-                    ? () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => const LuminexMonitorPage()),
-                        )
-                    : _goToSubscription,
-              ),
-              _NetworkToolTile(
-                icon: Icons.wifi_tethering_rounded,
-                title: loc.manetMonitorCardTitle,
-                subtitle: loc.manetMonitorCardSubtitle,
-                pro: true,
-                locked: !_hasPremium,
-                onTap: _hasPremium
-                    ? () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => const MaNetMonitorPage()),
-                        )
-                    : _goToSubscription,
-              ),
-              _NetworkToolTile(
-                icon: Icons.stacked_line_chart_rounded,
-                title: loc.bwCardTitle,
-                subtitle: loc.bwCardSubtitle,
-                pro: true,
-                locked: !_hasPremium,
-                onTap: _hasPremium
-                    ? () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => const BandwidthHubPage()),
-                        )
-                    : _goToSubscription,
-              ),
-              _NetworkToolTile(
-                icon: Icons.settings_remote_rounded,
-                title: loc.rdmPageTitle,
-                subtitle: loc.rdmPageSubtitle,
-                pro: true,
-                locked: !_hasPremium,
-                onTap: _hasPremium
-                    ? () => Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (_) => const RdmPage()),
-                        )
-                    : _goToSubscription,
+                icon: Icons.cable_rounded,
+                title: loc.networkFiberTitle,
+                subtitle: loc.networkFiberSubtitle,
+                free: true,
+                onTap: () => _open(const NetworkFiberBudgetPage()),
               ),
             ],
           ),
@@ -343,6 +268,93 @@ class _NetworkPageState extends State<NetworkPage> {
       ),
     );
   }
+}
+
+// ─── En-tête de rubrique ──────────────────────────────────────────────────────
+
+class _Section extends StatelessWidget {
+  final String title;
+  final String description;
+
+  const _Section({required this.title, required this.description});
+
+  @override
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.fromLTRB(2, 22, 2, 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Container(
+                  width: 4,
+                  height: 16,
+                  decoration: BoxDecoration(
+                    color: _kAccent,
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    title,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 0.2,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 4),
+            Text(
+              description,
+              style: TextStyle(
+                fontSize: 12.5,
+                height: 1.4,
+                color: Colors.white.withValues(alpha: 0.50),
+              ),
+            ),
+          ],
+        ),
+      );
+}
+
+/// Conseil « par où commencer » en tête de page.
+class _StartTip extends StatelessWidget {
+  final String text;
+  const _StartTip({required this.text});
+
+  @override
+  Widget build(BuildContext context) => Container(
+        margin: const EdgeInsets.only(top: 8),
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: _kAccent.withValues(alpha: 0.07),
+          borderRadius: BorderRadius.circular(14),
+          border: Border.all(color: _kAccent.withValues(alpha: 0.22)),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(Icons.tips_and_updates_rounded,
+                color: _kAccent.withValues(alpha: 0.9), size: 18),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                text,
+                style: TextStyle(
+                  fontSize: 12.5,
+                  height: 1.4,
+                  color: Colors.white.withValues(alpha: 0.75),
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
 }
 
 // ─── Tile outil réseau ────────────────────────────────────────────────────────
