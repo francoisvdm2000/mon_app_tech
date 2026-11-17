@@ -13,6 +13,7 @@ class RiggingBridleDiagramData {
     required this.rightTension,
     this.leftAngleH = 0,
     this.rightAngleH = 0,
+    this.heightDiff = 0,
   });
 
   final double span;
@@ -24,6 +25,9 @@ class RiggingBridleDiagramData {
   final double rightTension;
   final double leftAngleH;
   final double rightAngleH;
+
+  /// Height of anchor B relative to anchor A (m, + = B higher).
+  final double heightDiff;
 }
 
 class RiggingBridleDiagramLabels {
@@ -168,8 +172,22 @@ class _RiggingBridlePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final a = Offset(30, 68);
-    final b = Offset(size.width - 30, 68);
+    // Anchors at the same height, unless B is higher or lower than A:
+    // the lower anchor is drawn further down (schematic, not to scale).
+    var aY = 68.0;
+    var bY = 68.0;
+    final d = data;
+    if (d != null && d.heightDiff != 0) {
+      final ref = math.max(d.drop.abs() + d.heightDiff.abs(), 0.01);
+      final px = (d.heightDiff.abs() / ref * 60).clamp(6.0, 40.0);
+      if (d.heightDiff > 0) {
+        aY += px;
+      } else {
+        bY += px;
+      }
+    }
+    final a = Offset(30, aY);
+    final b = Offset(size.width - 30, bY);
 
     double ratio = 0.5;
     if (data != null && data!.span > 0) {

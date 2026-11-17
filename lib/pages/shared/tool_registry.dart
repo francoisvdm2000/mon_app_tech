@@ -38,6 +38,7 @@ import '../rigging/rigging_wll_check_page.dart';
 import '../rigging/rigging_angle_factor_page.dart';
 import '../rigging/rigging_bridle_2_points_page.dart';
 import '../rigging/rigging_multi_point_page.dart';
+import '../rigging/rigging_truss_load_page.dart';
 import '../rigging/rigging_hoist_selector_page.dart';
 import '../electricity/electricity_cable_section_page.dart';
 import '../electricity/electricity_ups_autonomy_page.dart';
@@ -87,6 +88,8 @@ import '../lumiere/light_exposure_meter_page.dart';
 import '../lumiere/filter_led_page.dart';
 import '../lumiere/color_temperature_filter_page.dart';
 import '../lumiere/fixtures/fixture_catalog_page.dart';
+import '../lumiere/fixtures/fixture_compare_page.dart';
+import '../lumiere/diaph/diaph_page.dart';
 import '../lumiere/patch/patch_mvr_import_page.dart';
 import '../lumiere/patch/gdtf_builder_simple_page.dart';
 import '../community/plugin_community_page.dart';
@@ -404,6 +407,14 @@ class ToolRegistry {
         toolTitle: loc.riggingToolHoistTitle,
         icon: Icons.build_circle_outlined,
         builder: (_) => const RiggingHoistSelectorPage(),
+      ),
+      ToolRefEntry(
+        pageId: 'tool:rigging_truss_load',
+        sectionId: 'main',
+        categoryTitle: loc.riggingTitle,
+        toolTitle: loc.riggingToolTrussLoadTitle,
+        icon: Icons.linear_scale,
+        builder: (_) => const RiggingTrussLoadPage(),
       ),
 
       // ── Électricité ────────────────────────────────────────────────────
@@ -902,6 +913,22 @@ class ToolRegistry {
         toolTitle: loc.lightCatalogTitle,
         icon: Icons.list_alt,
         builder: (_) => const FixtureCatalogPage(),
+      ),
+      ToolRefEntry(
+        pageId: 'tool:lumiere_fixture_compare',
+        sectionId: 'main',
+        categoryTitle: loc.homeLightTitle,
+        toolTitle: loc.fxCmpTitle,
+        icon: Icons.compare_rounded,
+        builder: (_) => const FixtureComparePage(),
+      ),
+      ToolRefEntry(
+        pageId: 'tool:lumiere_diaph',
+        sectionId: 'main',
+        categoryTitle: loc.homeLightTitle,
+        toolTitle: loc.diaphTitle,
+        icon: Icons.camera_rounded,
+        builder: (_) => const DiaphPage(),
       ),
       ToolRefEntry(
         pageId: 'tool:lumiere_patch_mvr_import',

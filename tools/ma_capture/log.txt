@@ -1,0 +1,91 @@
+Interfaces avec une adresse IP :
+  en0  10.136.93.175
+  en8  192.168.201.102
+>> Capture sur en8 (192.168.201.102) pendant 60 s…
+tcpdump: listening on en8, link-type EN10MB (Ethernet), snapshot length 524288 bytes
+>> Groupes multicast actifs sur en8 :
+1:0:5e:7f:0:14      	<none>          	en8
+1:0:5e:7f:0:13      	<none>          	en8
+1:0:5e:7f:0:12      	<none>          	en8
+1:0:5e:7f:0:11      	<none>          	en8
+1:0:5e:7f:0:10      	<none>          	en8
+1:0:5e:7f:0:f       	<none>          	en8
+1:0:5e:7f:0:e       	<none>          	en8
+1:0:5e:7f:0:d       	<none>          	en8
+1:0:5e:7f:0:c       	<none>          	en8
+1:0:5e:7f:0:b       	<none>          	en8
+1:0:5e:7f:0:a       	<none>          	en8
+1:0:5e:7f:0:9       	<none>          	en8
+1:0:5e:7f:0:8       	<none>          	en8
+1:0:5e:7f:0:7       	<none>          	en8
+1:0:5e:7f:0:6       	<none>          	en8
+1:0:5e:7f:0:5       	<none>          	en8
+1:0:5e:7f:0:4       	<none>          	en8
+1:0:5e:7f:0:3       	<none>          	en8
+1:0:5e:7f:0:2       	<none>          	en8
+1:0:5e:7f:0:1       	<none>          	en8
+1:0:5e:7f:fa:d6     	<none>          	en8
+1:0:5e:4:1:0        	<none>          	en8
+1:0:5e:0:0:1        	<none>          	en8
+33:33:ff:98:ae:67   	<none>          	en8
+33:33:0:0:0:1       	<none>          	en8
+33:33:ff:48:4:9b    	<none>          	en8
+1:80:c2:0:0:3       	<none>          	en8
+1:0:5e:0:0:fb       	<none>          	en8
+33:33:0:0:0:fb      	<none>          	en8
+239.255.0.20        	1:0:5e:7f:0:14  	en8
+>> Ping console 192.168.201.3 :
+PING 192.168.201.3 (192.168.201.3): 56 data bytes
+64 bytes from 192.168.201.3: icmp_seq=0 ttl=64 time=0.424 ms
+64 bytes from 192.168.201.3: icmp_seq=1 ttl=64 time=0.506 ms
+64 bytes from 192.168.201.3: icmp_seq=2 ttl=64 time=0.532 ms
+
+--- 192.168.201.3 ping statistics ---
+3 packets transmitted, 3 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 0.424/0.487/0.532/0.046 ms
+>> ARP console :
+? (192.168.201.3) at e4:4f:29:1:52:e4 on en8 ifscope [ethernet]
+>> Web console :
+
+join OK 236.4.1.0
+join OK 239.4.1.0
+join OK 239.255.250.214
+join OK 239.255.0.1
+join OK 239.255.0.2
+join OK 239.255.0.3
+join OK 239.255.0.4
+join OK 239.255.0.5
+join OK 239.255.0.6
+join OK 239.255.0.7
+join OK 239.255.0.8
+join OK 239.255.0.9
+join OK 239.255.0.10
+join OK 239.255.0.11
+join OK 239.255.0.12
+join OK 239.255.0.13
+join OK 239.255.0.14
+join OK 239.255.0.15
+join OK 239.255.0.16
+join OK 239.255.0.17
+join OK 239.255.0.18
+join OK 239.255.0.19
+join OK 239.255.0.20
+Groupes multicast demandés sur 192.168.201.102 - 2 sockets
+98308 packets captured
+98775 packets received by filter
+0 packets dropped by kernel
+>> IP sources vues :
+0.0.0.0
+192.168.1.20
+192.168.201.102
+192.168.201.11
+192.168.201.12
+192.168.201.13
+192.168.201.14
+192.168.201.15
+192.168.201.16
+192.168.201.17
+192.168.201.18
+192.168.201.3
+>> Interrogation SNMP (sysDescr, sysName, sysObjectID)…
+>> Terminé. Fichiers dans tools/ma_capture/ — dis à Claude que c'est prêt.

@@ -19,6 +19,7 @@ import 'ppsps_pdf.dart';
 import 'ppsps_storage.dart';
 import '../widgets/hospital_search_sheet.dart';
 import '../widgets/signature_pad.dart';
+import 'package:mon_app_tech/services/review_prompt_service.dart';
 
 class PpspsEditorPage extends StatefulWidget {
   final PpspsDocument document;
@@ -1265,6 +1266,7 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
           onLayout: (_) async => bytes,
           name: '${base}_${langs.first.toUpperCase()}.pdf',
         );
+        ReviewPromptService.onSuccess();
         return;
       }
 
@@ -1280,6 +1282,7 @@ class _PpspsEditorPageState extends State<PpspsEditorPage> {
         subject: _doc.eventName.trim().isEmpty ? null : _doc.eventName.trim(),
         sharePositionOrigin: shareOrigin,
       );
+      ReviewPromptService.onSuccess();
     } finally {
       if (mounted) setState(() => _exporting = false);
     }

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
-import '../../services/subscription_service.dart';
-import '../subscription_page.dart';
 import '../shared/app_grid_tile.dart';
 import 'bandwidth_hub_page.dart';
+import 'network_category_page.dart';
 import 'luminex_monitor_page.dart';
 import 'manet_monitor_page.dart';
 import 'network_dashboard_page.dart';
@@ -33,55 +32,168 @@ class NetworkPage extends StatefulWidget {
 }
 
 class _NetworkPageState extends State<NetworkPage> {
-  bool _hasPremium = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _checkAccess();
-  }
-
-  Future<void> _checkAccess() async {
-    final ok =
-        await SubscriptionService.hasAccess(SubscriptionCategory.network);
-    if (!mounted) return;
-    setState(() => _hasPremium = ok);
-  }
-
-  Future<void> _goToSubscription() async {
-    await Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) =>
-            const SubscriptionPage(category: SubscriptionCategory.network),
-      ),
-    );
-    _checkAccess();
-  }
-
   void _open(Widget page) {
     Navigator.push(context, MaterialPageRoute(builder: (_) => page));
   }
 
-  /// Tuile d'un outil Pro : ouvre l'outil, ou l'abonnement s'il est verrouillé.
-  Widget _pro({
-    required IconData icon,
+  void _openCategory({
     required String title,
-    required String subtitle,
-    required Widget Function() page,
-  }) =>
-      _NetworkToolTile(
-        icon: icon,
-        title: title,
-        subtitle: subtitle,
-        pro: true,
-        locked: !_hasPremium,
-        onTap: _hasPremium ? () => _open(page()) : _goToSubscription,
-      );
+    required String description,
+    required IconData icon,
+    required List<NetworkToolEntry> tools,
+  }) {
+    _open(NetworkCategoryPage(
+      title: title,
+      description: description,
+      icon: icon,
+      tools: tools,
+    ));
+  }
+
+  // ─── Contenu des rubriques ─────────────────────────────────────────────────
+
+  List<NetworkToolEntry> _whoTools(AppLocalizations loc) => [
+        NetworkToolEntry(
+          icon: Icons.router_rounded,
+          title: loc.luminexMonitorCardTitle,
+          subtitle: loc.luminexMonitorCardSubtitle,
+          pro: true,
+          builder: () => const LuminexMonitorPage(),
+        ),
+        NetworkToolEntry(
+          icon: Icons.wifi_tethering_rounded,
+          title: loc.manetMonitorCardTitle,
+          subtitle: loc.manetMonitorCardSubtitle,
+          pro: true,
+          builder: () => const MaNetMonitorPage(),
+        ),
+        NetworkToolEntry(
+          icon: Icons.videocam_rounded,
+          title: loc.ndiCardTitle,
+          subtitle: loc.ndiCardSubtitle,
+          pro: true,
+          builder: () => const NdiDiscoveryPage(),
+        ),
+      ];
+
+  List<NetworkToolEntry> _flowTools(AppLocalizations loc) => [
+        NetworkToolEntry(
+          icon: Icons.hub_rounded,
+          title: loc.networkSacnCardTitle,
+          subtitle: loc.networkSacnCardSubtitle,
+          pro: true,
+          builder: () => const SacnViewerPage(),
+        ),
+        NetworkToolEntry(
+          icon: Icons.broadcast_on_personal_rounded,
+          title: loc.networkArtNetCardTitle,
+          subtitle: loc.networkArtNetCardSubtitle,
+          pro: true,
+          builder: () => const ArtNetViewerPage(),
+        ),
+        NetworkToolEntry(
+          icon: Icons.settings_remote_rounded,
+          title: loc.rdmPageTitle,
+          subtitle: loc.rdmPageSubtitle,
+          pro: true,
+          builder: () => const RdmPage(),
+        ),
+        NetworkToolEntry(
+          icon: Icons.stacked_line_chart_rounded,
+          title: loc.bwCardTitle,
+          subtitle: loc.bwCardSubtitle,
+          pro: true,
+          builder: () => const BandwidthHubPage(),
+        ),
+      ];
+
+  List<NetworkToolEntry> _healthTools(AppLocalizations loc) => [
+        NetworkToolEntry(
+          icon: Icons.monitor_heart_rounded,
+          title: loc.diagCardTitle,
+          subtitle: loc.diagCardSubtitle,
+          pro: true,
+          builder: () => const NetworkDiagnosticPage(),
+        ),
+        NetworkToolEntry(
+          icon: Icons.dashboard_rounded,
+          title: loc.dashboardCardTitle,
+          subtitle: loc.dashboardCardSubtitle,
+          pro: true,
+          builder: () => const NetworkDashboardPage(),
+        ),
+        NetworkToolEntry(
+          icon: Icons.compare_arrows_rounded,
+          title: loc.snapshotCardTitle,
+          subtitle: loc.snapshotCardSubtitle,
+          pro: true,
+          builder: () => const SnapshotListPage(),
+        ),
+      ];
+
+  List<NetworkToolEntry> _calcTools(AppLocalizations loc) => [
+        NetworkToolEntry(
+          icon: Icons.lan_rounded,
+          title: loc.networkSubnetTitle,
+          subtitle: loc.networkSubnetSubtitle,
+          pro: false,
+          builder: () => const NetworkSubnetCalculatorPage(),
+        ),
+        NetworkToolEntry(
+          icon: Icons.power_rounded,
+          title: loc.networkPoeTitle,
+          subtitle: loc.networkPoeSubtitle,
+          pro: false,
+          builder: () => const NetworkPoeBudgetPage(),
+        ),
+        NetworkToolEntry(
+          icon: Icons.cable_rounded,
+          title: loc.networkFiberTitle,
+          subtitle: loc.networkFiberSubtitle,
+          pro: false,
+          builder: () => const NetworkFiberBudgetPage(),
+        ),
+        NetworkToolEntry(
+          icon: Icons.pin_rounded,
+          title: loc.networkArtNetAddressingTitle,
+          subtitle: loc.networkArtNetAddressingSubtitle,
+          pro: true,
+          builder: () => const NetworkArtNetAddressingPage(),
+        ),
+      ];
+
+  // ─── Build ─────────────────────────────────────────────────────────────────
 
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
+
+    final categories = [
+      (
+        icon: Icons.travel_explore_rounded,
+        title: loc.netSecWhoTitle,
+        description: loc.netSecWhoDesc,
+        tools: _whoTools(loc),
+      ),
+      (
+        icon: Icons.podcasts_rounded,
+        title: loc.netSecFlowTitle,
+        description: loc.netSecFlowDesc,
+        tools: _flowTools(loc),
+      ),
+      (
+        icon: Icons.monitor_heart_rounded,
+        title: loc.netSecHealthTitle,
+        description: loc.netSecHealthDesc,
+        tools: _healthTools(loc),
+      ),
+      (
+        icon: Icons.calculate_rounded,
+        title: loc.netSecToolsTitle,
+        description: loc.netSecToolsDesc,
+        tools: _calcTools(loc),
+      ),
+    ];
 
     return Scaffold(
       backgroundColor: const Color(0xFF0D0D14),
@@ -102,11 +214,7 @@ class _NetworkPageState extends State<NetworkPage> {
               color: Colors.white.withValues(alpha: 0.45),
             ),
             tooltip: loc.helpPageTitle,
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (_) => const NetworkHelpPage()),
-            ),
+            onPressed: () => _open(const NetworkHelpPage()),
           ),
         ],
         bottom: PreferredSize(
@@ -120,154 +228,186 @@ class _NetworkPageState extends State<NetworkPage> {
         top: false,
         bottom: false,
         child: ListView(
-        padding: EdgeInsets.fromLTRB(
-            16, 8, 16, 24 + MediaQuery.paddingOf(context).bottom),
-        children: [
-          // ── Par où commencer ─────────────────────────────────────────────
-          _StartTip(text: loc.netStartTip),
+          padding: EdgeInsets.fromLTRB(
+              16, 8, 16, 24 + MediaQuery.paddingOf(context).bottom),
+          children: [
+            // ── Par où commencer ───────────────────────────────────────────
+            _StartTip(text: loc.netStartTip),
+            const SizedBox(height: 14),
 
-          // ── 1. Qui est sur le réseau ─────────────────────────────────────
-          _Section(title: loc.netSecWhoTitle, description: loc.netSecWhoDesc),
-          AppGridView(
-            children: [
-              _pro(
-                icon: Icons.router_rounded,
-                title: loc.luminexMonitorCardTitle,
-                subtitle: loc.luminexMonitorCardSubtitle,
-                page: () => const LuminexMonitorPage(),
+            // ── Rubriques ──────────────────────────────────────────────────
+            for (final c in categories)
+              _CategoryCard(
+                icon: c.icon,
+                title: c.title,
+                description: c.description,
+                toolCount: c.tools.length,
+                freeCount: c.tools.where((t) => !t.pro).length,
+                onTap: () => _openCategory(
+                  title: c.title,
+                  description: c.description,
+                  icon: c.icon,
+                  tools: c.tools,
+                ),
               ),
-              _NetworkToolTile(
-                icon: Icons.radar_rounded,
-                title: loc.networkScanCardTitle,
-                subtitle: loc.networkScanCardSubtitle,
-                free: true,
-                onTap: () => _open(const NetworkScanPage()),
-              ),
-              _pro(
-                icon: Icons.wifi_tethering_rounded,
-                title: loc.manetMonitorCardTitle,
-                subtitle: loc.manetMonitorCardSubtitle,
-                page: () => const MaNetMonitorPage(),
-              ),
-              _pro(
-                icon: Icons.videocam_rounded,
-                title: loc.ndiCardTitle,
-                subtitle: loc.ndiCardSubtitle,
-                page: () => const NdiDiscoveryPage(),
-              ),
-            ],
-          ),
 
-          // ── 2. Flux lumière et vidéo ─────────────────────────────────────
-          _Section(title: loc.netSecFlowTitle, description: loc.netSecFlowDesc),
-          AppGridView(
-            children: [
-              _pro(
-                icon: Icons.hub_rounded,
-                title: loc.networkSacnCardTitle,
-                subtitle: loc.networkSacnCardSubtitle,
-                page: () => const SacnViewerPage(),
-              ),
-              _pro(
-                icon: Icons.broadcast_on_personal_rounded,
-                title: loc.networkArtNetCardTitle,
-                subtitle: loc.networkArtNetCardSubtitle,
-                page: () => const ArtNetViewerPage(),
-              ),
-              _pro(
-                icon: Icons.settings_remote_rounded,
-                title: loc.rdmPageTitle,
-                subtitle: loc.rdmPageSubtitle,
-                page: () => const RdmPage(),
-              ),
-              _pro(
-                icon: Icons.stacked_line_chart_rounded,
-                title: loc.bwCardTitle,
-                subtitle: loc.bwCardSubtitle,
-                page: () => const BandwidthHubPage(),
-              ),
-            ],
-          ),
-
-          // ── 3. Santé du réseau ───────────────────────────────────────────
-          _Section(
-              title: loc.netSecHealthTitle, description: loc.netSecHealthDesc),
-          AppGridView(
-            children: [
-              _pro(
-                icon: Icons.monitor_heart_rounded,
-                title: loc.diagCardTitle,
-                subtitle: loc.diagCardSubtitle,
-                page: () => const NetworkDiagnosticPage(),
-              ),
-              _pro(
-                icon: Icons.dashboard_rounded,
-                title: loc.dashboardCardTitle,
-                subtitle: loc.dashboardCardSubtitle,
-                page: () => const NetworkDashboardPage(),
-              ),
-              _pro(
-                icon: Icons.compare_arrows_rounded,
-                title: loc.snapshotCardTitle,
-                subtitle: loc.snapshotCardSubtitle,
-                page: () => const SnapshotListPage(),
-              ),
-            ],
-          ),
-
-          // ── 4. Outils et calculs ─────────────────────────────────────────
-          _Section(
-              title: loc.netSecToolsTitle, description: loc.netSecToolsDesc),
-          AppGridView(
-            children: [
-              _NetworkToolTile(
-                icon: Icons.network_ping,
-                title: loc.pingCardTitle,
-                subtitle: loc.pingCardSubtitle,
-                free: true,
-                onTap: () => _open(const PingPage()),
-              ),
-              _NetworkToolTile(
-                icon: Icons.perm_device_information_rounded,
-                title: loc.myIpCardTitle,
-                subtitle: loc.myIpCardSubtitle,
-                free: true,
-                onTap: () => _open(const MyIpPage()),
-              ),
-              _NetworkToolTile(
-                icon: Icons.lan_rounded,
-                title: loc.networkSubnetTitle,
-                subtitle: loc.networkSubnetSubtitle,
-                free: true,
-                onTap: () => _open(const NetworkSubnetCalculatorPage()),
-              ),
-              _pro(
-                icon: Icons.pin_rounded,
-                title: loc.networkArtNetAddressingTitle,
-                subtitle: loc.networkArtNetAddressingSubtitle,
-                page: () => const NetworkArtNetAddressingPage(),
-              ),
-              _NetworkToolTile(
-                icon: Icons.power_rounded,
-                title: loc.networkPoeTitle,
-                subtitle: loc.networkPoeSubtitle,
-                free: true,
-                onTap: () => _open(const NetworkPoeBudgetPage()),
-              ),
-              _NetworkToolTile(
-                icon: Icons.cable_rounded,
-                title: loc.networkFiberTitle,
-                subtitle: loc.networkFiberSubtitle,
-                free: true,
-                onTap: () => _open(const NetworkFiberBudgetPage()),
-              ),
-            ],
-          ),
-        ],
-      ),
+            // ── Accès rapide (gratuit) ─────────────────────────────────────
+            _Section(title: loc.netQuickTitle, description: loc.netQuickDesc),
+            AppGridView(
+              children: [
+                _NetworkToolTile(
+                  icon: Icons.radar_rounded,
+                  title: loc.networkScanCardTitle,
+                  subtitle: loc.networkScanCardSubtitle,
+                  free: true,
+                  onTap: () => _open(const NetworkScanPage()),
+                ),
+                _NetworkToolTile(
+                  icon: Icons.network_ping,
+                  title: loc.pingCardTitle,
+                  subtitle: loc.pingCardSubtitle,
+                  free: true,
+                  onTap: () => _open(const PingPage()),
+                ),
+                _NetworkToolTile(
+                  icon: Icons.perm_device_information_rounded,
+                  title: loc.myIpCardTitle,
+                  subtitle: loc.myIpCardSubtitle,
+                  free: true,
+                  onTap: () => _open(const MyIpPage()),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
+}
+
+// ─── Carte de rubrique ────────────────────────────────────────────────────────
+
+class _CategoryCard extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final String description;
+  final int toolCount;
+  final int freeCount;
+  final VoidCallback onTap;
+
+  const _CategoryCard({
+    required this.icon,
+    required this.title,
+    required this.description,
+    required this.toolCount,
+    required this.freeCount,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Material(
+        color: const Color(0xFF161622),
+        borderRadius: BorderRadius.circular(18),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(18),
+          onTap: onTap,
+          splashColor: _kAccent.withValues(alpha: 0.08),
+          child: Container(
+            padding: const EdgeInsets.fromLTRB(14, 14, 10, 14),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(18),
+              border: Border.all(color: Colors.white.withValues(alpha: 0.07)),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  width: 48,
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color: _kAccent.withValues(alpha: 0.13),
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                  child: Icon(icon, color: _kAccent, size: 26),
+                ),
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 15.5,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      const SizedBox(height: 3),
+                      Text(
+                        description,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 12,
+                          height: 1.35,
+                          color: Colors.white.withValues(alpha: 0.50),
+                        ),
+                      ),
+                      const SizedBox(height: 6),
+                      Wrap(
+                        spacing: 6,
+                        runSpacing: 4,
+                        children: [
+                          _Chip(
+                            text: loc.netCatTools(toolCount),
+                            color: _kAccent,
+                          ),
+                          if (freeCount > 0)
+                            _Chip(
+                              text: loc.netCatFree(freeCount),
+                              color: const Color(0xFF00C853),
+                            ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Icon(Icons.chevron_right_rounded,
+                    color: _kAccent.withValues(alpha: 0.55)),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _Chip extends StatelessWidget {
+  final String text;
+  final Color color;
+  const _Chip({required this.text, required this.color});
+
+  @override
+  Widget build(BuildContext context) => Container(
+        padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.12),
+          borderRadius: BorderRadius.circular(6),
+        ),
+        child: Text(
+          text,
+          style: TextStyle(
+            color: color,
+            fontSize: 10.5,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+      );
 }
 
 // ─── En-tête de rubrique ──────────────────────────────────────────────────────
@@ -364,18 +504,14 @@ class _NetworkToolTile extends StatelessWidget {
   final String title;
   final String? subtitle;
   final VoidCallback onTap;
-  final bool locked;
   final bool free;
-  final bool pro;
 
   const _NetworkToolTile({
     required this.icon,
     required this.title,
     this.subtitle,
     required this.onTap,
-    this.locked = false,
     this.free = false,
-    this.pro = false,
   });
 
   @override
@@ -387,10 +523,7 @@ class _NetworkToolTile extends StatelessWidget {
       label: title,
       subtitle: subtitle,
       accentColor: _kAccent,
-      locked: locked,
-      badge: free
-          ? loc.rfFreeLabel
-          : (pro ? loc.subscriptionProShort : null),
+      badge: free ? loc.rfFreeLabel : null,
       onTap: onTap,
     );
   }

@@ -982,7 +982,8 @@ void main() {
       expect(codes, contains('diagSacnOtherVlan'));
       expect(codes, isNot(contains('diagNoSacn')));
       final other = r.alerts.firstWhere((a) => a.code == 'diagSacnOtherVlan');
-      expect(other.params['count'], 3); // univers 1, 2, 3 du fixture
+      // Univers 1, 2, 3 (port d'accès 14) et 101 (vu à travers l'ISL).
+      expect(other.params['count'], 4);
     });
 
     test('switch injoignable et appareil sans IP', () {

@@ -8,6 +8,7 @@ import 'rigging_bridle_2_points_page.dart';
 import 'rigging_wll_check_page.dart';
 import 'rigging_multi_point_page.dart';
 import 'rigging_hoist_selector_page.dart';
+import 'rigging_truss_load_page.dart';
 import 'widgets/rigging_tool_tile.dart';
 import '../shared/app_grid_tile.dart';
 
@@ -150,6 +151,14 @@ class _RiggingPageState extends State<RiggingPage> {
                 isPro: true,
                 locked: !_isPro,
                 onTap: () => _openOrSubscribe(context, const RiggingHoistSelectorPage()),
+              ),
+              RiggingToolTile(
+                icon: Icons.linear_scale,
+                title: loc.riggingToolTrussLoadTitle,
+                subtitle: loc.riggingToolTrussLoadSubtitle,
+                isPro: true,
+                locked: !_isPro,
+                onTap: () => _openOrSubscribe(context, const RiggingTrussLoadPage()),
               ),
             ],
           ),

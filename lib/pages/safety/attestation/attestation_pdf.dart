@@ -10,6 +10,7 @@ import 'dart:typed_data';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
+import 'package:mon_app_tech/app/utils/pdf_branding.dart';
 
 import '../safety_library.dart';
 import 'attestation_models.dart';
@@ -365,6 +366,7 @@ class AttestationPdf {
           mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
           children: [
             pw.Text('${t['generated']} ${_fmtDate(now)}', style: small),
+            showTechPdfBadge(),
             pw.Text('${t['page']} ${ctx.pageNumber} / ${ctx.pagesCount}',
                 style: small),
           ],

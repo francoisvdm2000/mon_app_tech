@@ -97,6 +97,18 @@ class Product {
   final String? manualUrl;
   final String? dmxChartUrl;
 
+  /// Angle de faisceau / zoom (degrés). Machine à optique fixe : min == max
+  /// (ou une seule des deux valeurs renseignée).
+  final double? zoomMinDeg;
+  final double? zoomMaxDeg;
+
+  /// Source lumineuse telle que saisie dans le catalogue
+  /// (ex. « LED blanc », « LED RGBW », « Lampe à décharge »…).
+  final String? lightSource;
+
+  /// Indice de rendu des couleurs (CRI / Ra).
+  final int? cri;
+
   const Product({
     required this.type,
     required this.name,
@@ -107,6 +119,10 @@ class Product {
     required this.luminousFluxLumen,
     required this.manualUrl,
     required this.dmxChartUrl,
+    this.zoomMinDeg,
+    this.zoomMaxDeg,
+    this.lightSource,
+    this.cri,
   });
 
   factory Product.fromJson(Map<String, dynamic> json) {
@@ -133,6 +149,10 @@ class Product {
       luminousFluxLumen: _asIntNullable(json['luminousFluxLumen']),
       manualUrl: _asStringNullable(json['manualUrl']),
       dmxChartUrl: _asStringNullable(json['dmxChartUrl']),
+      zoomMinDeg: _firstDouble(json, const ['zoomMinDeg', 'zoomMin', 'beamAngleMin']),
+      zoomMaxDeg: _firstDouble(json, const ['zoomMaxDeg', 'zoomMax', 'beamAngleMax']),
+      lightSource: _firstString(json, const ['lightSource', 'source']),
+      cri: _firstInt(json, const ['cri', 'CRI']),
     );
   }
 
@@ -146,6 +166,10 @@ class Product {
         if (luminousFluxLumen != null) 'luminousFluxLumen': luminousFluxLumen,
         if (manualUrl != null) 'manualUrl': manualUrl,
         if (dmxChartUrl != null) 'dmxChartUrl': dmxChartUrl,
+        if (zoomMinDeg != null) 'zoomMinDeg': zoomMinDeg,
+        if (zoomMaxDeg != null) 'zoomMaxDeg': zoomMaxDeg,
+        if (lightSource != null) 'lightSource': lightSource,
+        if (cri != null) 'cri': cri,
       };
 }
 
@@ -221,4 +245,30 @@ DateTime? _asDateTime(dynamic v) {
   final s = v.toString().trim();
   if (s.isEmpty) return null;
   return DateTime.tryParse(s);
+}
+
+// Lecture tolérante des nouvelles colonnes (zoom, source, CRI) : plusieurs
+// noms de clé acceptés, valeur vide ou 0 = non renseigné.
+double? _firstDouble(Map<String, dynamic> json, List<String> keys) {
+  for (final k in keys) {
+    final v = _asDoubleNullable(json[k]);
+    if (v != null && v > 0) return v;
+  }
+  return null;
+}
+
+int? _firstInt(Map<String, dynamic> json, List<String> keys) {
+  for (final k in keys) {
+    final v = _asIntNullable(json[k]);
+    if (v != null && v > 0) return v;
+  }
+  return null;
+}
+
+String? _firstString(Map<String, dynamic> json, List<String> keys) {
+  for (final k in keys) {
+    final v = _asStringNullable(json[k]);
+    if (v != null && v.trim().isNotEmpty) return v.trim();
+  }
+  return null;
 }

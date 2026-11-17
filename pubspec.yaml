@@ -2,7 +2,7 @@ name: mon_app_tech
 description: "A new Flutter project."
 publish_to: 'none'
 
-version: 4.1.4+1020
+version: 4.1.8+1029
 environment:
   sdk: ">=3.0.0 <4.0.0"
 
@@ -15,6 +15,7 @@ dependencies:
   noise_meter: ^6.0.0
   multicast_dns: ^0.3.2
   in_app_purchase: ^3.3.0
+  in_app_review: ^2.0.10
   syncfusion_flutter_pdf: ^33.1.49
   
 

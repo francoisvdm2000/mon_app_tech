@@ -29,6 +29,7 @@ class RiggingBridle2PointsPage extends StatefulWidget {
 
 class _RiggingBridle2PointsPageState extends State<RiggingBridle2PointsPage> {
   final _spanController = TextEditingController(text: '5');
+  final _heightDiffController = TextEditingController(text: '0');
   final _dropController = TextEditingController(text: '4');
   final _angleController = TextEditingController(text: '58');
   final _legLengthController = TextEditingController(text: '4.72');
@@ -49,6 +50,7 @@ class _RiggingBridle2PointsPageState extends State<RiggingBridle2PointsPage> {
     _legLengthController.dispose();
     _weightController.dispose();
     _offsetController.dispose();
+    _heightDiffController.dispose();
     super.dispose();
   }
 
@@ -80,6 +82,22 @@ class _RiggingBridle2PointsPageState extends State<RiggingBridle2PointsPage> {
                 controller: _spanController,
                 label: loc.riggingSpanLabel,
                 suffix: loc.riggingUnitMeters,
+              ),
+              const SizedBox(height: 12),
+              _numberField(
+                controller: _heightDiffController,
+                label: loc.riggingBridleHeightDiffLabel,
+                suffix: loc.riggingUnitMeters,
+                allowNegative: true,
+              ),
+              const SizedBox(height: 6),
+              Text(
+                loc.riggingBridleHeightDiffHint,
+                style: TextStyle(
+                  color: Colors.white.withValues(alpha: 0.5),
+                  fontSize: 12,
+                  height: 1.3,
+                ),
               ),
               const SizedBox(height: 12),
               if (_knownInput == _BridleKnownInput.drop)
@@ -153,6 +171,7 @@ class _RiggingBridle2PointsPageState extends State<RiggingBridle2PointsPage> {
                         rightTension: result.rightTension,
                         leftAngleH: result.leftAngleFromHorizontal,
                         rightAngleH: result.rightAngleFromHorizontal,
+                        heightDiff: result.heightDiff,
                       ),
                 labels: RiggingBridleDiagramLabels(
                   pointA: loc.riggingPointALabel,
@@ -336,13 +355,19 @@ class _RiggingBridle2PointsPageState extends State<RiggingBridle2PointsPage> {
     required TextEditingController controller,
     required String label,
     required String suffix,
+    bool allowNegative = false,
   }) {
     return TextField(
       controller: controller,
       onChanged: (_) => setState(() {}),
-      keyboardType: const TextInputType.numberWithOptions(decimal: true),
+      keyboardType: TextInputType.numberWithOptions(
+        decimal: true,
+        signed: allowNegative,
+      ),
       inputFormatters: [
-        FilteringTextInputFormatter.allow(RegExp(r'[0-9\.,]')),
+        FilteringTextInputFormatter.allow(
+          RegExp(allowNegative ? r'[0-9\.,\-]' : r'[0-9\.,]'),
+        ),
       ],
       decoration: InputDecoration(
         labelText: label,
@@ -420,6 +445,14 @@ class _RiggingBridle2PointsPageState extends State<RiggingBridle2PointsPage> {
       return null;
     }
 
+    // Height of anchor B relative to anchor A (+ = B higher). The drop is
+    // measured below A, so the right leg drops by drop + heightDiff.
+    final heightDiff = _parseNumber(_heightDiffController.text) ?? 0;
+    final rightDrop = drop + heightDiff;
+    if (rightDrop <= 0) {
+      return null;
+    }
+
     final leftHorizontal = offset;
     final rightHorizontal = span - offset;
 
@@ -427,14 +460,17 @@ class _RiggingBridle2PointsPageState extends State<RiggingBridle2PointsPage> {
       (leftHorizontal * leftHorizontal) + (drop * drop),
     );
     final rightLength = math.sqrt(
-      (rightHorizontal * rightHorizontal) + (drop * drop),
+      (rightHorizontal * rightHorizontal) + (rightDrop * rightDrop),
     );
 
     final leftAngle = _degrees(math.atan2(drop, leftHorizontal));
-    final rightAngle = _degrees(math.atan2(drop, rightHorizontal));
+    final rightAngle = _degrees(math.atan2(rightDrop, rightHorizontal));
 
-    final leftTension = _withLoad ? _legTension(weight, leftAngle) : 0.0;
-    final rightTension = _withLoad ? _legTension(weight, rightAngle) : 0.0;
+    final tensions = _withLoad
+        ? _legTensions(weight, leftAngle, rightAngle)
+        : (left: 0.0, right: 0.0);
+    final leftTension = tensions.left;
+    final rightTension = tensions.right;
 
     return _BridleResult(
       span: span,
@@ -446,18 +482,33 @@ class _RiggingBridle2PointsPageState extends State<RiggingBridle2PointsPage> {
       rightAngleFromHorizontal: rightAngle,
       leftTension: leftTension,
       rightTension: rightTension,
+      heightDiff: heightDiff,
     );
   }
 
-  double _legTension(double weight, double angleFromHorizontal) {
+  /// Tension in each leg from the equilibrium of the apex:
+  /// T_L·cos θL = T_R·cos θR (horizontal) and
+  /// T_L·sin θL + T_R·sin θR = W (vertical).
+  /// Valid for centred, off-centre and uneven-height bridles. For a centred
+  /// bridle it gives W / (2·sin θ) for each leg.
+  ({double left, double right}) _legTensions(
+    double weight,
+    double leftAngleFromHorizontal,
+    double rightAngleFromHorizontal,
+  ) {
     if (weight <= 0) {
-      return 0;
+      return (left: 0.0, right: 0.0);
     }
-    final sine = math.sin(_radians(angleFromHorizontal));
-    if (sine <= 0) {
-      return double.infinity;
+    final a = _radians(leftAngleFromHorizontal);
+    final b = _radians(rightAngleFromHorizontal);
+    final s = math.sin(a + b);
+    if (s <= 0) {
+      return (left: double.infinity, right: double.infinity);
     }
-    return weight / (2 * sine);
+    return (
+      left: weight * math.cos(b) / s,
+      right: weight * math.cos(a) / s,
+    );
   }
 
   double _degrees(double radians) => radians * 180 / math.pi;
@@ -476,6 +527,7 @@ class _BridleResult {
     required this.rightAngleFromHorizontal,
     required this.leftTension,
     required this.rightTension,
+    this.heightDiff = 0,
   });
 
   final double span;
@@ -487,6 +539,9 @@ class _BridleResult {
   final double rightAngleFromHorizontal;
   final double leftTension;
   final double rightTension;
+
+  /// Height of anchor B relative to anchor A (m, + = B higher).
+  final double heightDiff;
 
   double get worstAngle => math.min(
         leftAngleFromHorizontal,

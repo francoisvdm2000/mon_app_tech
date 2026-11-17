@@ -11,6 +11,7 @@ import 'mire_painters.dart' as mp;
 import 'mire_texts.dart';
 import '../about/about_favorites.dart';
 import 'package:mon_app_tech/app/constants.dart';
+import 'package:mon_app_tech/services/review_prompt_service.dart';
 
 class _FormDropdown<T> extends StatelessWidget {
   const _FormDropdown({
@@ -182,6 +183,7 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
     final filename = 'mire_video_simple_${w}x${h}_${_simpleType.name}.png';
     if (!mounted) return;
     await exportPngBytes(context, png, filename);
+    ReviewPromptService.onSuccess();
   }
 
   Future<void> _exportMapping() async {
@@ -216,6 +218,7 @@ class _MireEcranVideoPageState extends State<MireEcranVideoPage> {
 
     if (!mounted) return;
     await exportPngBytes(context, png, filename);
+    ReviewPromptService.onSuccess();
   }
 
   @override

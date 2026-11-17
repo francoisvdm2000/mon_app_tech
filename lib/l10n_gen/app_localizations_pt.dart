@@ -8325,11 +8325,11 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get cinemaRecordingStorageSubtitle =>
-      'Duração disponível dependendo da capacidade e taxa de bits.';
+      'Duração disponível ou capacidade necessária consoante o bitrate.';
 
   @override
   String get cinemaRecordingStorageDescription =>
-      'Estima o tempo disponível com base na capacidade do cartão/disco e na taxa de bits do vídeo.';
+      'Estima a duração disponível num cartão/disco, ou a capacidade necessária para uma dada duração de gravação, consoante o bitrate de vídeo.';
 
   @override
   String get cinemaRecordingStorageInfo =>
@@ -17423,7 +17423,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get netSecWhoDesc =>
-      'Os equipamentos ligados: em todas as VLAN através dos switches GigaCore, ou na sua sub-rede com a pesquisa.';
+      'Os equipamentos ligados em todas as VLAN, vistos pelos switches GigaCore, e os nós MA-Net e NDI.';
 
   @override
   String get netSecFlowTitle => 'Fluxos de luz e vídeo';
@@ -17444,7 +17444,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get netSecToolsDesc =>
-      'Ping, endereço IP, sub-rede, endereçamento Art-Net, orçamentos PoE e fibra.';
+      'Sub-rede, orçamentos PoE e fibra, endereçamento Art-Net.';
 
   @override
   String get netLimitsLuminexTip =>
@@ -17473,5 +17473,755 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String diagLuminexDuplicateIp(String switchName, int port, String ips) {
     return '$switchName, porta $port: IP duplicado na VLAN ($ips)';
+  }
+
+  @override
+  String get netQuickTitle => 'Acesso rápido';
+
+  @override
+  String get netQuickDesc =>
+      'O essencial, grátis: pesquisar a rede, fazer ping, ver o seu endereço IP.';
+
+  @override
+  String netCatTools(int count) {
+    return 'Ferramentas: $count';
+  }
+
+  @override
+  String netCatFree(int count) {
+    return 'Grátis: $count';
+  }
+
+  @override
+  String get netProUnlockTitle => 'Desbloquear as ferramentas Pro';
+
+  @override
+  String get netProUnlockDesc =>
+      'Subscrição Rede Pro: todas as ferramentas desta secção.';
+
+  @override
+  String get fxCmpTitle => 'Comparador de projetores';
+
+  @override
+  String get fxCmpTileDescription =>
+      'Beta · Encontrar um equivalente a um projetor';
+
+  @override
+  String get fxCmpPickHint =>
+      'Falta-te um projetor? Escolhe o que queres substituir e encontro equivalentes, ordenados por luminosidade e depois zoom.';
+
+  @override
+  String get fxCmpRefTitle => 'Projetor a substituir';
+
+  @override
+  String get fxCmpSearchHint => 'Marca, modelo ou tipo…';
+
+  @override
+  String get fxCmpNoSearchResults => 'Nenhum projetor encontrado';
+
+  @override
+  String get fxCmpChange => 'Mudar';
+
+  @override
+  String fxCmpResultsCount(Object count) {
+    return 'Equivalentes encontrados: $count';
+  }
+
+  @override
+  String fxCmpShowResults(Object count) {
+    return 'Ver resultados ($count)';
+  }
+
+  @override
+  String get fxCmpNoResults =>
+      'Nenhum equivalente com estes filtros. Alarga um pouco a pesquisa!';
+
+  @override
+  String get fxCmpFilters => 'Filtros';
+
+  @override
+  String get fxCmpResetFilters => 'Repor';
+
+  @override
+  String get fxCmpCriteriaSection => 'Critérios';
+
+  @override
+  String get fxCmpConstraintsSection => 'Restrições';
+
+  @override
+  String get fxCmpFamily => 'Família';
+
+  @override
+  String get fxCmpScopeSame => 'Mesma família';
+
+  @override
+  String get fxCmpScopeClose => 'Famílias próximas';
+
+  @override
+  String get fxCmpScopeAll => 'Todas';
+
+  @override
+  String get fxCmpLumenTolerance => 'Diferença de luminosidade';
+
+  @override
+  String get fxCmpAny => 'Qualquer';
+
+  @override
+  String get fxCmpMustCoverZoom => 'O zoom deve cobrir o da referência';
+
+  @override
+  String get fxCmpMustCoverZoomShort => 'Zoom coberto';
+
+  @override
+  String get fxCmpSource => 'Fonte de luz';
+
+  @override
+  String get fxCmpMinCri => 'CRI mínimo';
+
+  @override
+  String get fxCmpSameMotion => 'Mesmo movimento (cabeça móvel / fixo)';
+
+  @override
+  String get fxCmpOtherBrands => 'Só outras marcas';
+
+  @override
+  String get fxCmpLighter => 'Peso ≤ referência';
+
+  @override
+  String get fxCmpLowerPower => 'Consumo ≤ referência';
+
+  @override
+  String get fxCmpIncludeIncomplete => 'Incluir dados incompletos';
+
+  @override
+  String get fxCmpIncludeIncompleteHint =>
+      'Um dado em falta não exclui o projetor, mas perde os pontos desse critério.';
+
+  @override
+  String get fxCmpCompleteOnly => 'Só dados completos';
+
+  @override
+  String get fxCmpRefMissingValue =>
+      'Não indicado para o projetor de referência';
+
+  @override
+  String get fxCmpLevelEquivalent => 'Equivalente';
+
+  @override
+  String get fxCmpLevelClose => 'Próximo';
+
+  @override
+  String get fxCmpLevelFar => 'Afastado';
+
+  @override
+  String get fxCmpIncomplete => 'Dados incompletos';
+
+  @override
+  String get fxCmpZoomCovers => 'Zoom coberto';
+
+  @override
+  String get fxCmpZoomPartial => 'Zoom parcial';
+
+  @override
+  String get fxCmpCompareTitle => 'Comparação';
+
+  @override
+  String get fxCmpCritFamily => 'Família';
+
+  @override
+  String get fxCmpCritLumen => 'Luminosidade';
+
+  @override
+  String get fxCmpCritZoom => 'Zoom';
+
+  @override
+  String get fxCmpCritCri => 'CRI';
+
+  @override
+  String get fxCmpCritSource => 'Fonte';
+
+  @override
+  String get fxCmpCritPower => 'Potência';
+
+  @override
+  String get fxCmpCritWeight => 'Peso';
+
+  @override
+  String get fxCmpCritDmx => 'Canais DMX';
+
+  @override
+  String get fxCmpFamSpotProfile => 'Spot / Perfil';
+
+  @override
+  String get fxCmpFamBeam => 'Beam';
+
+  @override
+  String get fxCmpFamHybrid => 'Híbrido';
+
+  @override
+  String get fxCmpFamWash => 'Wash';
+
+  @override
+  String get fxCmpFamMovingHead => 'Cabeça móvel (não especificado)';
+
+  @override
+  String get fxCmpFamPar => 'PAR';
+
+  @override
+  String get fxCmpFamFresnelPc => 'Fresnel / PC';
+
+  @override
+  String get fxCmpFamBar => 'Barra / linear';
+
+  @override
+  String get fxCmpFamStrobe => 'Estrobo / blinder';
+
+  @override
+  String get fxCmpFamFollowspot => 'Canhão seguidor';
+
+  @override
+  String get fxCmpFamSoftPanel => 'Painel / luz suave';
+
+  @override
+  String get fxCmpFamCyclo => 'Ciclorama / wall washer';
+
+  @override
+  String get fxCmpFamEffect => 'Efeito';
+
+  @override
+  String get fxCmpFamLaser => 'Laser';
+
+  @override
+  String get fxCmpFamAtmospheric => 'Efeitos atmosféricos (fumo…)';
+
+  @override
+  String get fxCmpFamOther => 'Outro';
+
+  @override
+  String get fxCmpSrcWhiteLed => 'LED branco';
+
+  @override
+  String get fxCmpSrcColorLed => 'LED de cor (RGBW…)';
+
+  @override
+  String get fxCmpSrcDischarge => 'Lâmpada de descarga';
+
+  @override
+  String get fxCmpSrcLaser => 'Laser-fósforo';
+
+  @override
+  String get fxCmpSrcHalogen => 'Halogéneo / tungsténio';
+
+  @override
+  String get fxCmpSrcOther => 'Outra fonte';
+
+  @override
+  String get fxCmpDataNotice =>
+      'O zoom, o CRI e a fonte ainda não estão preenchidos no catálogo para a maioria dos projetores: contarão na classificação assim que o forem.';
+
+  @override
+  String get fxCmpRefNoData =>
+      'Este projetor não tem luminosidade nem zoom indicados: a classificação será pouco fiável.';
+
+  @override
+  String get fxCmpDisclaimer =>
+      'Classificação indicativa com base nos dados do fabricante do catálogo. Verifica sempre a ficha técnica antes de substituir um projetor.';
+
+  @override
+  String get fxCmpBetaBadge => 'PRO · BETA';
+
+  @override
+  String get fxCmpBetaPill => 'BETA';
+
+  @override
+  String get fxCmpBetaTitle => 'Ferramenta em beta 🧪';
+
+  @override
+  String get fxCmpBetaBody =>
+      'O comparador é novinho em folha! A classificação vai melhorar à medida que o catálogo for completado (luminosidade, zoom, CRI, fonte). Um resultado estranho? Escreve-nos, ajuda-nos a melhorá-lo.';
+
+  @override
+  String get fxCmpFeedback => 'Enviar comentário';
+
+  @override
+  String get fxCmpReportResult => 'Reportar este resultado';
+
+  @override
+  String get fxCmpFeedbackSubject => 'Comparador de projetores (beta)';
+
+  @override
+  String fxCmpFeedbackRef(Object name) {
+    return 'Projetor a substituir: $name';
+  }
+
+  @override
+  String fxCmpFeedbackCandidate(Object name, Object score) {
+    return 'Equivalente proposto: $name (pontuação $score)';
+  }
+
+  @override
+  String get fxCmpFeedbackComment => 'O teu comentário:';
+
+  @override
+  String get diaphTitle => 'Diafragma de um projetor';
+
+  @override
+  String get diaphTileDescription =>
+      'Que diafragma de câmara com este projetor?';
+
+  @override
+  String get diaphIntro =>
+      'Em televisão ilumina-se em diafragmas! Escolhe o projetor, a distância e a tua câmara: dou-te o diafragma no centro do feixe.';
+
+  @override
+  String get diaphMachineSection => 'Projetor';
+
+  @override
+  String get diaphSearchHint => 'Procurar no catálogo (opcional)…';
+
+  @override
+  String get diaphSourceLumens => 'Lúmenes + ângulo';
+
+  @override
+  String get diaphSourceMaker => 'Lux do fabricante';
+
+  @override
+  String get diaphLumens => 'Fluxo';
+
+  @override
+  String get diaphBeamAngle => 'Ângulo do feixe';
+
+  @override
+  String get diaphBeamAngleHint => 'Beam (50 %), não field';
+
+  @override
+  String get diaphMakerLux => 'Iluminância';
+
+  @override
+  String get diaphMakerDistance => 'à distância';
+
+  @override
+  String diaphZoomRange(Object range) {
+    return 'Zoom do projetor: $range';
+  }
+
+  @override
+  String get diaphDimmer => 'Dimmer';
+
+  @override
+  String get diaphDistanceSection => 'Distância';
+
+  @override
+  String get diaphDistance => 'Distância projetor → sujeito';
+
+  @override
+  String get diaphCameraSection => 'Câmara';
+
+  @override
+  String get diaphCamBroadcast => 'Broadcast';
+
+  @override
+  String get diaphCamIso => 'ISO / obturação';
+
+  @override
+  String get diaphSensitivity => 'Sensibilidade: F a 2000 lx';
+
+  @override
+  String get diaphSensitivityHint =>
+      'Da ficha técnica da tua câmara (ganho 0 dB)';
+
+  @override
+  String get diaphCustom => 'Personalizado';
+
+  @override
+  String get diaphGain => 'Ganho';
+
+  @override
+  String get diaphNd => 'Filtro ND';
+
+  @override
+  String get diaphNdClear => 'Clear';
+
+  @override
+  String get diaphIso => 'ISO';
+
+  @override
+  String get diaphFps => 'Imagens/s';
+
+  @override
+  String get diaphShutter => 'Obturador';
+
+  @override
+  String diaphExposure(Object time) {
+    return 'Tempo de exposição: $time';
+  }
+
+  @override
+  String get diaphResultTitle => 'Diafragma no centro do feixe';
+
+  @override
+  String diaphExact(Object value) {
+    return 'exato: f/$value';
+  }
+
+  @override
+  String get diaphLux => 'Iluminância';
+
+  @override
+  String get diaphBeamDiameter => 'Diâmetro do feixe';
+
+  @override
+  String get diaphTooDark =>
+      'Falta luz: aproxima o projetor, sobe o ganho ou tira o ND.';
+
+  @override
+  String get diaphTooBright =>
+      'Luz a mais: põe um ND, baixa o dimmer ou afasta o projetor.';
+
+  @override
+  String get diaphMissingInput =>
+      'Indica o projetor (fluxo + ângulo, ou lux do fabricante) e a distância para ver o diafragma.';
+
+  @override
+  String get diaphTargetSection => 'Para trabalhar a um diafragma preciso';
+
+  @override
+  String get diaphTargetF => 'Diafragma pretendido (f/)';
+
+  @override
+  String diaphTargetResult(Object distance, Object lux) {
+    return 'Coloca o projetor a $distance m (são precisos $lux lx no sujeito).';
+  }
+
+  @override
+  String get diaphDisclaimer =>
+      'Estimativa a partir do fluxo e do ângulo (feixe suposto em sino): conta ± 1/2 diafragma consoante a ótica. Para mais precisão, usa os lux do fabricante ou um luxímetro.';
+
+  @override
+  String get cinemaRecModeDuration => 'Duração disponível';
+
+  @override
+  String get cinemaRecModeCapacity => 'Capacidade necessária';
+
+  @override
+  String get cinemaRecHoursLabel => 'Duração a gravar — horas';
+
+  @override
+  String get cinemaRecMinutesLabel => 'Duração a gravar — minutos';
+
+  @override
+  String get cinemaRecMarginLabel => 'Margem de segurança';
+
+  @override
+  String get cinemaRecNeededResult => 'Capacidade necessária';
+
+  @override
+  String cinemaRecWithMarginResult(Object pct) {
+    return 'Com $pct % de margem';
+  }
+
+  @override
+  String get cinemaRecSuggestedMediaResult => 'Suporte recomendado';
+
+  @override
+  String get cinemaRecSuggestedNone => '> 8 TB: vários suportes';
+
+  @override
+  String get riggingToolTrussLoadTitle => 'Carga por motor';
+
+  @override
+  String get riggingToolTrussLoadSubtitle =>
+      'Distribuição de uma treliça por 2 a 6 motores, com verificação de CMU e da treliça.';
+
+  @override
+  String get riggingTrussSectionTruss => 'Treliça';
+
+  @override
+  String get riggingTrussLengthLabel => 'Comprimento da treliça';
+
+  @override
+  String get riggingTrussSelfWeightLabel => 'Peso próprio da treliça';
+
+  @override
+  String get riggingTrussExtraUdlLabel =>
+      'Carga distribuída adicional (cabos…)';
+
+  @override
+  String get riggingUnitKgPerMeter => 'kg/m';
+
+  @override
+  String get riggingUnitKn => 'kN';
+
+  @override
+  String get riggingUnitKnm => 'kN·m';
+
+  @override
+  String get riggingTrussSectionMotors => 'Motores';
+
+  @override
+  String get riggingTrussMotorCountLabel => 'Número de motores';
+
+  @override
+  String riggingTrussMotorPositionLabel(Object n) {
+    return 'Posição do motor $n';
+  }
+
+  @override
+  String get riggingTrussPositionsHint =>
+      'Posições medidas a partir da extremidade esquerda da treliça.';
+
+  @override
+  String get riggingTrussSpreadMotors => 'Distribuir uniformemente';
+
+  @override
+  String get riggingTrussExtraPerMotorLabel =>
+      'Peso adicional por ponto (corrente, cintas, manilhas)';
+
+  @override
+  String get riggingTrussMotorWllLabel => 'CMU / WLL do motor';
+
+  @override
+  String get riggingTrussDynamicFactorLabel => 'Coeficiente dinâmico';
+
+  @override
+  String get riggingTrussSectionLoads => 'Cargas';
+
+  @override
+  String get riggingTrussFixtureCountLabel =>
+      'Projetores distribuídos (número)';
+
+  @override
+  String get riggingTrussFixtureWeightLabel => 'Peso por projetor';
+
+  @override
+  String get riggingTrussPointLoadsLabel => 'Cargas pontuais';
+
+  @override
+  String get riggingTrussAddPointLoad => 'Adicionar uma carga';
+
+  @override
+  String get riggingTrussPositionLabel => 'Posição';
+
+  @override
+  String get riggingTrussMassLabel => 'Peso';
+
+  @override
+  String get riggingTrussSectionCheck => 'Verificação da treliça (opcional)';
+
+  @override
+  String get riggingTrussAllowableUdl => 'Distribuída (UDL)';
+
+  @override
+  String get riggingTrussAllowableCpl => 'Pontual centrada (CPL)';
+
+  @override
+  String riggingTrussAllowableValueLabel(Object span) {
+    return 'Valor admissível do fabricante ($span m)';
+  }
+
+  @override
+  String get riggingTrussAllowableHint =>
+      'Consulte na tabela de carga do fabricante o valor para o maior vão entre dois motores.';
+
+  @override
+  String riggingTrussMotorResultLabel(Object n, Object x) {
+    return 'Motor $n · $x m';
+  }
+
+  @override
+  String get riggingTrussTotalLoadLabel => 'Carga total nos motores';
+
+  @override
+  String riggingTrussMaxMomentLabel(Object x) {
+    return 'Momento máx. (a $x m)';
+  }
+
+  @override
+  String get riggingTrussLargestSpanLabel => 'Maior vão';
+
+  @override
+  String get riggingTrussUsageLabel => 'Utilização da treliça (momento)';
+
+  @override
+  String get riggingTrussInvalidInput =>
+      'Verifique os valores: comprimento, CMU, posições dos motores (em ordem, na treliça, pelo menos 1 cm de distância), cargas na treliça, coeficiente dinâmico ≥ 1.';
+
+  @override
+  String get riggingTrussOkDescription =>
+      'Todos os motores estão abaixo de 80 % da sua CMU.';
+
+  @override
+  String get riggingTrussWatchDescription =>
+      'Pelo menos um motor ultrapassa 80 % da sua CMU.';
+
+  @override
+  String get riggingTrussOverloadDescription =>
+      'Pelo menos um motor ultrapassa a sua CMU.';
+
+  @override
+  String get riggingTrussUpliftDescription =>
+      'Pelo menos um motor está em levantamento (carga negativa): balanço sobrecarregado, configuração instável.';
+
+  @override
+  String get riggingTrussHyperstaticWarning =>
+      '3 motores ou mais: distribuição teórica, com motores perfeitamente nivelados e uma treliça de rigidez constante. Poucos centímetros de diferença de altura alteram muito as cargas reais. Só uma medição (load cells) mostra a realidade.';
+
+  @override
+  String get riggingTrussCantileverNote =>
+      'Há balanço: verifique também os valores admissíveis em balanço do fabricante.';
+
+  @override
+  String get riggingTrussCheckNote =>
+      'Apenas o momento fletor é comparado. O esforço transverso, a flecha, as ligações e os acessórios não são verificados.';
+
+  @override
+  String get riggingTrussDisclaimer =>
+      'Resultados teóricos apenas indicativos; não substituem um cálculo estrutural. Qualquer instalação deve ser verificada e validada por uma pessoa qualificada. O editor da aplicação não pode, em caso algum, ser responsabilizado pela utilização destes resultados.';
+
+  @override
+  String get riggingTrussModelLabel => 'Modelo de treliça';
+
+  @override
+  String get riggingTrussModelManual => 'Introdução manual';
+
+  @override
+  String get riggingTrussModelUnchecked => 'valores a verificar';
+
+  @override
+  String riggingTrussTableValueLabel(Object span) {
+    return 'Valor da tabela do fabricante ($span m)';
+  }
+
+  @override
+  String riggingTrussTableSource(Object source) {
+    return 'Fonte: $source';
+  }
+
+  @override
+  String get riggingTrussOutOfTable =>
+      'Vão fora da tabela do fabricante: verificação impossível.';
+
+  @override
+  String get riggingTrussNetNote =>
+      'O peso próprio da treliça já está descontado dos valores da tabela; a ferramenta tem isso em conta.';
+
+  @override
+  String get riggingTrussUncheckedNote =>
+      'Valores retirados da ficha do fabricante, ainda não verificados: confirme-os no documento de origem.';
+
+  @override
+  String get riggingBridleHeightDiffLabel =>
+      'Desnível do ponto B (+ se mais alto que A)';
+
+  @override
+  String get riggingBridleHeightDiffHint =>
+      'Distância medida na horizontal, queda medida abaixo do ponto A.';
+
+  @override
+  String get homeTipLabel => 'Você sabia?';
+
+  @override
+  String get homeTipOpen => 'Descobrir';
+
+  @override
+  String get homeTipHide => 'Não mostrar novamente';
+
+  @override
+  String get homeTipHiddenSnack =>
+      'Dicas ocultas. Você pode reativá-las em Configurações.';
+
+  @override
+  String get settingsTipsTitle => 'Dicas na tela inicial';
+
+  @override
+  String get settingsTipsSubtitle =>
+      'Sugerir uma ferramenta para descobrir sempre que o app é aberto';
+
+  @override
+  String get homeTipRdm =>
+      'Identifique e configure seus equipamentos DMX à distância com a ferramenta RDM, sem subir no truss.';
+
+  @override
+  String get homeTipGigacore =>
+      'Leia a configuração dos seus switches Luminex GigaCore, faça o inventário da rede e salve suas configurações.';
+
+  @override
+  String get homeTipGdtf =>
+      'Crie um arquivo GDTF a partir do manual PDF de um refletor, ou manualmente com o assistente.';
+
+  @override
+  String get homeTipPluginForge =>
+      'Gere plugins Lua sob medida para grandMA3 com o MA3 Plugin Forge.';
+
+  @override
+  String get homeTipPowerPlan =>
+      'Desenhe o diagrama da sua distribuição elétrica e exporte o relatório pedido pelos fiscais.';
+
+  @override
+  String get homeTipUps =>
+      'Calcule a autonomia de um nobreak (UPS) de acordo com a potência dos seus equipamentos.';
+
+  @override
+  String get homeTipRigging =>
+      'Calcule ângulos e comprimentos de lingas dos seus bridles e verifique a carga de um truss.';
+
+  @override
+  String get homeTipSafety =>
+      'Prepare seu plano de segurança e o certificado de montagem direto do celular.';
+
+  @override
+  String get homeTipIm3 =>
+      'Calcule os produtos de intermodulação (IM3) para escolher frequências sem fio compatíveis.';
+
+  @override
+  String get homeTipSubCardio =>
+      'Subs cardioides ou um arranjo end-fire? O app calcula os delays para você.';
+
+  @override
+  String get homeTipDipswitch =>
+      'Encontre a posição das dip-switches para qualquer endereço DMX.';
+
+  @override
+  String get homeTipPinned =>
+      'Fixe as referências que você mais consulta para abri-las direto da tela inicial.';
+
+  @override
+  String get homeTipBpm =>
+      'Marque o andamento de uma música e converta em milissegundos para seus efeitos e delays.';
+
+  @override
+  String get homeTipTimecode =>
+      'Calcule durações, deslocamentos e atrasos de timecode em segundos.';
+
+  @override
+  String get homeDrawerRecommend => 'Recomendar a um colega';
+
+  @override
+  String get homeShareAppSubject => 'ShowTech Tools';
+
+  @override
+  String get homeShareAppMessage =>
+      'Recomendo o ShowTech Tools, um app feito para técnicos de eventos: iluminação, som, vídeo, elétrica, rigging, rede, segurança… Disponível para iOS e Android: https://www.openwhite.eu/showtech-tools/';
+
+  @override
+  String get riggingTrussGrossNote =>
+      'O fabricante não indica se o peso próprio está descontado: por segurança, a ferramenta subtrai-o do valor da tabela.';
+
+  @override
+  String get riggingHoistModelLabel =>
+      'Modelo de talha';
+
+  @override
+  String get riggingHoistModelManual =>
+      'Entrada manual';
+
+  @override
+  String riggingHoistModelClassNote(Object cls) {
+    return 'Classe publicada: $cls. A classe que conta é a da placa da talha.';
+  }
+
+  @override
+  String riggingHoistModelWeights(Object weight, Object chain) {
+    return 'Peso sem corrente: $weight kg · corrente: $chain kg/m';
   }
 }

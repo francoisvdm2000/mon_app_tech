@@ -11,6 +11,7 @@ import 'package:intl/intl.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
+import 'package:mon_app_tech/app/utils/pdf_branding.dart';
 
 import 'power_plan_models.dart';
 import 'power_plan_widgets.dart';
@@ -183,6 +184,7 @@ class PowerPlanPdf {
           mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
           children: [
             pw.Text('${loc.ppPdfGenerated} · $date', style: small),
+            showTechPdfBadge(),
             pw.Text('${ctx.pageNumber} / ${ctx.pagesCount}', style: small),
           ],
         );

@@ -9,6 +9,8 @@ import 'shared/app_grid_tile.dart';
 
 import 'lumiere/dipswitch_page.dart';
 import 'lumiere/fixtures/fixture_catalog_page.dart';
+import 'lumiere/fixtures/fixture_compare_page.dart';
+import 'lumiere/diaph/diaph_page.dart';
 import 'lumiere/photometry_page.dart';
 import 'lumiere/projection_page.dart';
 import 'lumiere/patch/patch_home_page.dart';
@@ -73,6 +75,7 @@ class _PageLumiereState extends State<PageLumiere> {
     bool isPro = false,
     bool isFree = false,
     bool locked = false,
+    String? badge,
   }) {
     return AppGridTile(
       icon: icon,
@@ -82,9 +85,9 @@ class _PageLumiereState extends State<PageLumiere> {
       accentColor: _kAccent,
       onTap: onTap,
       locked: locked,
-      badge: isFree
+      badge: badge ?? (isFree
           ? AppLocalizations.of(context).free
-          : (isPro ? AppLocalizations.of(context).pro : null),
+          : (isPro ? AppLocalizations.of(context).pro : null)),
     );
   }
 
@@ -179,6 +182,25 @@ class _PageLumiereState extends State<PageLumiere> {
                 isPro: true,
                 locked: !_isPro,
                 onTap: () => _openOrSubscribe(context, const FixtureCatalogPage()),
+              ),
+              _actionCard(
+                context: context,
+                title: loc.fxCmpTitle,
+                icon: Icons.compare_rounded,
+                description: loc.fxCmpTileDescription,
+                isPro: true,
+                badge: loc.fxCmpBetaBadge,
+                locked: !_isPro,
+                onTap: () => _openOrSubscribe(context, const FixtureComparePage()),
+              ),
+              _actionCard(
+                context: context,
+                title: loc.diaphTitle,
+                icon: Icons.camera_rounded,
+                description: loc.diaphTileDescription,
+                isPro: true,
+                locked: !_isPro,
+                onTap: () => _openOrSubscribe(context, const DiaphPage()),
               ),
               _actionCard(
                 context: context,

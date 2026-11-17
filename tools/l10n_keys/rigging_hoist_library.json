@@ -1,0 +1,44 @@
+{
+  "riggingTrussGrossNote": {
+    "fr": "Le fabricant ne précise pas si le poids propre est déduit : par sécurité, l’outil le retire de la valeur du tableau.",
+    "en": "The manufacturer does not state whether the self-weight is deducted: to be safe, the tool subtracts it from the table value.",
+    "de": "Der Hersteller gibt nicht an, ob das Eigengewicht abgezogen ist: Sicherheitshalber zieht das Tool es vom Tabellenwert ab.",
+    "es": "El fabricante no indica si el peso propio está descontado: por seguridad, la herramienta lo resta del valor de la tabla.",
+    "nl": "De fabrikant vermeldt niet of het eigen gewicht is afgetrokken: voor de veiligheid trekt de tool het af van de tabelwaarde.",
+    "pt": "O fabricante não indica se o peso próprio está descontado: por segurança, a ferramenta subtrai-o do valor da tabela."
+  },
+  "riggingHoistModelLabel": {
+    "fr": "Modèle de moteur",
+    "en": "Hoist model",
+    "de": "Kettenzugmodell",
+    "es": "Modelo de motor",
+    "nl": "Takelmodel",
+    "pt": "Modelo de talha"
+  },
+  "riggingHoistModelManual": {
+    "fr": "Saisie manuelle",
+    "en": "Manual entry",
+    "de": "Manuelle Eingabe",
+    "es": "Entrada manual",
+    "nl": "Handmatige invoer",
+    "pt": "Entrada manual"
+  },
+  "riggingHoistModelClassNote": {
+    "placeholders": ["cls"],
+    "fr": "Classe publiée : {cls}. La classe qui compte est celle de la plaque du moteur.",
+    "en": "Published class: {cls}. The class that applies is the one on the hoist plate.",
+    "de": "Angegebene Klasse: {cls}. Maßgebend ist die Klasse auf dem Typenschild des Kettenzugs.",
+    "es": "Clase publicada: {cls}. La clase que cuenta es la de la placa del motor.",
+    "nl": "Opgegeven klasse: {cls}. De klasse op het typeplaatje van de takel is bepalend.",
+    "pt": "Classe publicada: {cls}. A classe que conta é a da placa da talha."
+  },
+  "riggingHoistModelWeights": {
+    "placeholders": ["weight", "chain"],
+    "fr": "Poids sans chaîne : {weight} kg · chaîne : {chain} kg/m",
+    "en": "Weight without chain: {weight} kg · chain: {chain} kg/m",
+    "de": "Gewicht ohne Kette: {weight} kg · Kette: {chain} kg/m",
+    "es": "Peso sin cadena: {weight} kg · cadena: {chain} kg/m",
+    "nl": "Gewicht zonder ketting: {weight} kg · ketting: {chain} kg/m",
+    "pt": "Peso sem corrente: {weight} kg · corrente: {chain} kg/m"
+  }
+}

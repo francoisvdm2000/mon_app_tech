@@ -83,4 +83,16 @@ class MetaAnalyticsService {
       debugPrint('[Meta] logPurchase error: $e');
     }
   }
+
+  /// Événement personnalisé (engagement : astuces, partages, avis…).
+  static Future<void> logCustom(
+    String name, [
+    Map<String, Object>? parameters,
+  ]) async {
+    try {
+      await _fb.logEvent(name: name, parameters: parameters);
+    } catch (e) {
+      debugPrint('[Meta] logCustom($name) error: $e');
+    }
+  }
 }

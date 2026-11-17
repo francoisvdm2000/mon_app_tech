@@ -11,6 +11,7 @@ import 'mire_painters.dart';
 import 'mire_texts.dart'; // ✅ MireTexts unique (doit être la seule source)
 import '../about/about_favorites.dart';
 import 'package:mon_app_tech/app/constants.dart';
+import 'package:mon_app_tech/services/review_prompt_service.dart';
 
 class _FormDropdown<T> extends StatelessWidget {
   const _FormDropdown({
@@ -237,6 +238,7 @@ class _MireEcranLedPageState extends State<MireEcranLedPage> {
 
     if (!mounted) return;
     await exportPngBytes(context, png, filename);
+    ReviewPromptService.onSuccess();
   }
 
   @override

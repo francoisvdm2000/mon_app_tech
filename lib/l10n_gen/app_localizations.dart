@@ -14774,13 +14774,13 @@ abstract class AppLocalizations {
   /// No description provided for @cinemaRecordingStorageSubtitle.
   ///
   /// In fr, this message translates to:
-  /// **'Durée disponible selon capacité et bitrate.'**
+  /// **'Durée disponible ou capacité nécessaire selon le bitrate.'**
   String get cinemaRecordingStorageSubtitle;
 
   /// No description provided for @cinemaRecordingStorageDescription.
   ///
   /// In fr, this message translates to:
-  /// **'Estime la durée disponible selon la capacité de carte/disque et le bitrate vidéo.'**
+  /// **'Estime la durée disponible sur une carte/un disque, ou la capacité nécessaire pour une durée d\'enregistrement donnée, selon le bitrate vidéo.'**
   String get cinemaRecordingStorageDescription;
 
   /// No description provided for @cinemaRecordingStorageInfo.
@@ -30740,7 +30740,7 @@ abstract class AppLocalizations {
   /// No description provided for @netSecWhoDesc.
   ///
   /// In fr, this message translates to:
-  /// **'Les appareils branchés : sur tous les VLAN grâce aux switches GigaCore, ou sur ton sous-réseau avec le scan.'**
+  /// **'Les appareils branchés sur tous les VLAN, vus par les switches GigaCore, et les nœuds MA-Net et NDI.'**
   String get netSecWhoDesc;
 
   /// No description provided for @netSecFlowTitle.
@@ -30776,7 +30776,7 @@ abstract class AppLocalizations {
   /// No description provided for @netSecToolsDesc.
   ///
   /// In fr, this message translates to:
-  /// **'Ping, adresse IP, sous-réseau, adressage Art-Net, budgets PoE et fibre.'**
+  /// **'Sous-réseau, budgets PoE et fibre, adressage Art-Net.'**
   String get netSecToolsDesc;
 
   /// No description provided for @netLimitsLuminexTip.
@@ -30814,6 +30814,1314 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'{switchName}, port {port} : IP en double dans le VLAN ({ips})'**
   String diagLuminexDuplicateIp(String switchName, int port, String ips);
+
+  /// No description provided for @netQuickTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Accès rapide'**
+  String get netQuickTitle;
+
+  /// No description provided for @netQuickDesc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Les gestes de base, gratuits : scanner le réseau, pinger, voir ton adresse IP.'**
+  String get netQuickDesc;
+
+  /// No description provided for @netCatTools.
+  ///
+  /// In fr, this message translates to:
+  /// **'Outils : {count}'**
+  String netCatTools(int count);
+
+  /// No description provided for @netCatFree.
+  ///
+  /// In fr, this message translates to:
+  /// **'Gratuits : {count}'**
+  String netCatFree(int count);
+
+  /// No description provided for @netProUnlockTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Débloquer les outils Pro'**
+  String get netProUnlockTitle;
+
+  /// No description provided for @netProUnlockDesc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Abonnement Réseau Pro : tous les outils de cette rubrique.'**
+  String get netProUnlockDesc;
+
+  /// No description provided for @fxCmpTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Comparateur de projecteurs'**
+  String get fxCmpTitle;
+
+  /// No description provided for @fxCmpTileDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bêta · Trouver un équivalent à une machine'**
+  String get fxCmpTileDescription;
+
+  /// No description provided for @fxCmpPickHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Il te manque une machine ? Choisis celle à remplacer : je te trouve des équivalents, classés par luminosité puis zoom.'**
+  String get fxCmpPickHint;
+
+  /// No description provided for @fxCmpRefTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Machine à remplacer'**
+  String get fxCmpRefTitle;
+
+  /// No description provided for @fxCmpSearchHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Marque, modèle ou type…'**
+  String get fxCmpSearchHint;
+
+  /// No description provided for @fxCmpNoSearchResults.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune machine trouvée'**
+  String get fxCmpNoSearchResults;
+
+  /// No description provided for @fxCmpChange.
+  ///
+  /// In fr, this message translates to:
+  /// **'Changer'**
+  String get fxCmpChange;
+
+  /// No description provided for @fxCmpResultsCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'Équivalents trouvés : {count}'**
+  String fxCmpResultsCount(Object count);
+
+  /// No description provided for @fxCmpShowResults.
+  ///
+  /// In fr, this message translates to:
+  /// **'Voir les résultats ({count})'**
+  String fxCmpShowResults(Object count);
+
+  /// No description provided for @fxCmpNoResults.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun équivalent avec ces filtres. Élargis un peu la recherche !'**
+  String get fxCmpNoResults;
+
+  /// No description provided for @fxCmpFilters.
+  ///
+  /// In fr, this message translates to:
+  /// **'Filtres'**
+  String get fxCmpFilters;
+
+  /// No description provided for @fxCmpResetFilters.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réinitialiser'**
+  String get fxCmpResetFilters;
+
+  /// No description provided for @fxCmpCriteriaSection.
+  ///
+  /// In fr, this message translates to:
+  /// **'Critères'**
+  String get fxCmpCriteriaSection;
+
+  /// No description provided for @fxCmpConstraintsSection.
+  ///
+  /// In fr, this message translates to:
+  /// **'Contraintes'**
+  String get fxCmpConstraintsSection;
+
+  /// No description provided for @fxCmpFamily.
+  ///
+  /// In fr, this message translates to:
+  /// **'Famille'**
+  String get fxCmpFamily;
+
+  /// No description provided for @fxCmpScopeSame.
+  ///
+  /// In fr, this message translates to:
+  /// **'Même famille'**
+  String get fxCmpScopeSame;
+
+  /// No description provided for @fxCmpScopeClose.
+  ///
+  /// In fr, this message translates to:
+  /// **'Familles proches'**
+  String get fxCmpScopeClose;
+
+  /// No description provided for @fxCmpScopeAll.
+  ///
+  /// In fr, this message translates to:
+  /// **'Toutes'**
+  String get fxCmpScopeAll;
+
+  /// No description provided for @fxCmpLumenTolerance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Écart de luminosité'**
+  String get fxCmpLumenTolerance;
+
+  /// No description provided for @fxCmpAny.
+  ///
+  /// In fr, this message translates to:
+  /// **'Peu importe'**
+  String get fxCmpAny;
+
+  /// No description provided for @fxCmpMustCoverZoom.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le zoom doit couvrir celui de la référence'**
+  String get fxCmpMustCoverZoom;
+
+  /// No description provided for @fxCmpMustCoverZoomShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Zoom couvert'**
+  String get fxCmpMustCoverZoomShort;
+
+  /// No description provided for @fxCmpSource.
+  ///
+  /// In fr, this message translates to:
+  /// **'Source lumineuse'**
+  String get fxCmpSource;
+
+  /// No description provided for @fxCmpMinCri.
+  ///
+  /// In fr, this message translates to:
+  /// **'CRI minimum'**
+  String get fxCmpMinCri;
+
+  /// No description provided for @fxCmpSameMotion.
+  ///
+  /// In fr, this message translates to:
+  /// **'Même mouvement (lyre / fixe)'**
+  String get fxCmpSameMotion;
+
+  /// No description provided for @fxCmpOtherBrands.
+  ///
+  /// In fr, this message translates to:
+  /// **'Autres marques uniquement'**
+  String get fxCmpOtherBrands;
+
+  /// No description provided for @fxCmpLighter.
+  ///
+  /// In fr, this message translates to:
+  /// **'Poids ≤ référence'**
+  String get fxCmpLighter;
+
+  /// No description provided for @fxCmpLowerPower.
+  ///
+  /// In fr, this message translates to:
+  /// **'Consommation ≤ référence'**
+  String get fxCmpLowerPower;
+
+  /// No description provided for @fxCmpIncludeIncomplete.
+  ///
+  /// In fr, this message translates to:
+  /// **'Inclure les données incomplètes'**
+  String get fxCmpIncludeIncomplete;
+
+  /// No description provided for @fxCmpIncludeIncompleteHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Une donnée manquante n\'exclut pas la machine, mais elle perd les points de ce critère.'**
+  String get fxCmpIncludeIncompleteHint;
+
+  /// No description provided for @fxCmpCompleteOnly.
+  ///
+  /// In fr, this message translates to:
+  /// **'Données complètes'**
+  String get fxCmpCompleteOnly;
+
+  /// No description provided for @fxCmpRefMissingValue.
+  ///
+  /// In fr, this message translates to:
+  /// **'Non renseigné pour la machine de référence'**
+  String get fxCmpRefMissingValue;
+
+  /// No description provided for @fxCmpLevelEquivalent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Équivalent'**
+  String get fxCmpLevelEquivalent;
+
+  /// No description provided for @fxCmpLevelClose.
+  ///
+  /// In fr, this message translates to:
+  /// **'Proche'**
+  String get fxCmpLevelClose;
+
+  /// No description provided for @fxCmpLevelFar.
+  ///
+  /// In fr, this message translates to:
+  /// **'Éloigné'**
+  String get fxCmpLevelFar;
+
+  /// No description provided for @fxCmpIncomplete.
+  ///
+  /// In fr, this message translates to:
+  /// **'Données incomplètes'**
+  String get fxCmpIncomplete;
+
+  /// No description provided for @fxCmpZoomCovers.
+  ///
+  /// In fr, this message translates to:
+  /// **'Zoom couvert'**
+  String get fxCmpZoomCovers;
+
+  /// No description provided for @fxCmpZoomPartial.
+  ///
+  /// In fr, this message translates to:
+  /// **'Zoom partiel'**
+  String get fxCmpZoomPartial;
+
+  /// No description provided for @fxCmpCompareTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Comparaison'**
+  String get fxCmpCompareTitle;
+
+  /// No description provided for @fxCmpCritFamily.
+  ///
+  /// In fr, this message translates to:
+  /// **'Famille'**
+  String get fxCmpCritFamily;
+
+  /// No description provided for @fxCmpCritLumen.
+  ///
+  /// In fr, this message translates to:
+  /// **'Luminosité'**
+  String get fxCmpCritLumen;
+
+  /// No description provided for @fxCmpCritZoom.
+  ///
+  /// In fr, this message translates to:
+  /// **'Zoom'**
+  String get fxCmpCritZoom;
+
+  /// No description provided for @fxCmpCritCri.
+  ///
+  /// In fr, this message translates to:
+  /// **'CRI'**
+  String get fxCmpCritCri;
+
+  /// No description provided for @fxCmpCritSource.
+  ///
+  /// In fr, this message translates to:
+  /// **'Source'**
+  String get fxCmpCritSource;
+
+  /// No description provided for @fxCmpCritPower.
+  ///
+  /// In fr, this message translates to:
+  /// **'Puissance'**
+  String get fxCmpCritPower;
+
+  /// No description provided for @fxCmpCritWeight.
+  ///
+  /// In fr, this message translates to:
+  /// **'Poids'**
+  String get fxCmpCritWeight;
+
+  /// No description provided for @fxCmpCritDmx.
+  ///
+  /// In fr, this message translates to:
+  /// **'Canaux DMX'**
+  String get fxCmpCritDmx;
+
+  /// No description provided for @fxCmpFamSpotProfile.
+  ///
+  /// In fr, this message translates to:
+  /// **'Spot / Profile'**
+  String get fxCmpFamSpotProfile;
+
+  /// No description provided for @fxCmpFamBeam.
+  ///
+  /// In fr, this message translates to:
+  /// **'Beam'**
+  String get fxCmpFamBeam;
+
+  /// No description provided for @fxCmpFamHybrid.
+  ///
+  /// In fr, this message translates to:
+  /// **'Hybride'**
+  String get fxCmpFamHybrid;
+
+  /// No description provided for @fxCmpFamWash.
+  ///
+  /// In fr, this message translates to:
+  /// **'Wash'**
+  String get fxCmpFamWash;
+
+  /// No description provided for @fxCmpFamMovingHead.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lyre (type non précisé)'**
+  String get fxCmpFamMovingHead;
+
+  /// No description provided for @fxCmpFamPar.
+  ///
+  /// In fr, this message translates to:
+  /// **'PAR'**
+  String get fxCmpFamPar;
+
+  /// No description provided for @fxCmpFamFresnelPc.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fresnel / PC'**
+  String get fxCmpFamFresnelPc;
+
+  /// No description provided for @fxCmpFamBar.
+  ///
+  /// In fr, this message translates to:
+  /// **'Barre / linéaire'**
+  String get fxCmpFamBar;
+
+  /// No description provided for @fxCmpFamStrobe.
+  ///
+  /// In fr, this message translates to:
+  /// **'Strobe / blinder'**
+  String get fxCmpFamStrobe;
+
+  /// No description provided for @fxCmpFamFollowspot.
+  ///
+  /// In fr, this message translates to:
+  /// **'Poursuite'**
+  String get fxCmpFamFollowspot;
+
+  /// No description provided for @fxCmpFamSoftPanel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Panneau / soft'**
+  String get fxCmpFamSoftPanel;
+
+  /// No description provided for @fxCmpFamCyclo.
+  ///
+  /// In fr, this message translates to:
+  /// **'Cyclo / wall washer'**
+  String get fxCmpFamCyclo;
+
+  /// No description provided for @fxCmpFamEffect.
+  ///
+  /// In fr, this message translates to:
+  /// **'Effet'**
+  String get fxCmpFamEffect;
+
+  /// No description provided for @fxCmpFamLaser.
+  ///
+  /// In fr, this message translates to:
+  /// **'Laser'**
+  String get fxCmpFamLaser;
+
+  /// No description provided for @fxCmpFamAtmospheric.
+  ///
+  /// In fr, this message translates to:
+  /// **'Machine à effets (fumée…)'**
+  String get fxCmpFamAtmospheric;
+
+  /// No description provided for @fxCmpFamOther.
+  ///
+  /// In fr, this message translates to:
+  /// **'Autre'**
+  String get fxCmpFamOther;
+
+  /// No description provided for @fxCmpSrcWhiteLed.
+  ///
+  /// In fr, this message translates to:
+  /// **'LED blanche'**
+  String get fxCmpSrcWhiteLed;
+
+  /// No description provided for @fxCmpSrcColorLed.
+  ///
+  /// In fr, this message translates to:
+  /// **'LED couleur (RGBW…)'**
+  String get fxCmpSrcColorLed;
+
+  /// No description provided for @fxCmpSrcDischarge.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lampe à décharge'**
+  String get fxCmpSrcDischarge;
+
+  /// No description provided for @fxCmpSrcLaser.
+  ///
+  /// In fr, this message translates to:
+  /// **'Laser-phosphore'**
+  String get fxCmpSrcLaser;
+
+  /// No description provided for @fxCmpSrcHalogen.
+  ///
+  /// In fr, this message translates to:
+  /// **'Halogène / tungstène'**
+  String get fxCmpSrcHalogen;
+
+  /// No description provided for @fxCmpSrcOther.
+  ///
+  /// In fr, this message translates to:
+  /// **'Autre source'**
+  String get fxCmpSrcOther;
+
+  /// No description provided for @fxCmpDataNotice.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le zoom, la CRI et la source ne sont pas encore renseignés dans le catalogue pour la plupart des machines : ils compteront dans le classement dès qu\'ils le seront.'**
+  String get fxCmpDataNotice;
+
+  /// No description provided for @fxCmpRefNoData.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ni la luminosité ni le zoom ne sont renseignés pour cette machine : le classement sera peu fiable.'**
+  String get fxCmpRefNoData;
+
+  /// No description provided for @fxCmpDisclaimer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Classement indicatif basé sur les données constructeur du catalogue. Vérifie toujours la fiche technique avant de remplacer une machine.'**
+  String get fxCmpDisclaimer;
+
+  /// No description provided for @fxCmpBetaBadge.
+  ///
+  /// In fr, this message translates to:
+  /// **'PRO · BÊTA'**
+  String get fxCmpBetaBadge;
+
+  /// No description provided for @fxCmpBetaPill.
+  ///
+  /// In fr, this message translates to:
+  /// **'BÊTA'**
+  String get fxCmpBetaPill;
+
+  /// No description provided for @fxCmpBetaTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Outil en bêta 🧪'**
+  String get fxCmpBetaTitle;
+
+  /// No description provided for @fxCmpBetaBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le comparateur est tout neuf ! Le classement va s\'affiner à mesure que le catalogue se complète (luminosité, zoom, CRI, source). Un résultat bizarre ? Écris-nous, ça nous aide à l\'améliorer.'**
+  String get fxCmpBetaBody;
+
+  /// No description provided for @fxCmpFeedback.
+  ///
+  /// In fr, this message translates to:
+  /// **'Envoyer un retour'**
+  String get fxCmpFeedback;
+
+  /// No description provided for @fxCmpReportResult.
+  ///
+  /// In fr, this message translates to:
+  /// **'Signaler ce résultat'**
+  String get fxCmpReportResult;
+
+  /// No description provided for @fxCmpFeedbackSubject.
+  ///
+  /// In fr, this message translates to:
+  /// **'Comparateur de projecteurs (bêta)'**
+  String get fxCmpFeedbackSubject;
+
+  /// No description provided for @fxCmpFeedbackRef.
+  ///
+  /// In fr, this message translates to:
+  /// **'Machine à remplacer : {name}'**
+  String fxCmpFeedbackRef(Object name);
+
+  /// No description provided for @fxCmpFeedbackCandidate.
+  ///
+  /// In fr, this message translates to:
+  /// **'Équivalent proposé : {name} (score {score})'**
+  String fxCmpFeedbackCandidate(Object name, Object score);
+
+  /// No description provided for @fxCmpFeedbackComment.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ton commentaire :'**
+  String get fxCmpFeedbackComment;
+
+  /// No description provided for @diaphTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Diaph d\'une machine'**
+  String get diaphTitle;
+
+  /// No description provided for @diaphTileDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Quel diaph caméra avec cette machine ?'**
+  String get diaphTileDescription;
+
+  /// No description provided for @diaphIntro.
+  ///
+  /// In fr, this message translates to:
+  /// **'En télé, on éclaire en diaph ! Choisis la machine, la distance et ta caméra : je te donne le diaph au centre du faisceau.'**
+  String get diaphIntro;
+
+  /// No description provided for @diaphMachineSection.
+  ///
+  /// In fr, this message translates to:
+  /// **'Machine'**
+  String get diaphMachineSection;
+
+  /// No description provided for @diaphSearchHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Chercher dans le catalogue (facultatif)…'**
+  String get diaphSearchHint;
+
+  /// No description provided for @diaphSourceLumens.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lumens + angle'**
+  String get diaphSourceLumens;
+
+  /// No description provided for @diaphSourceMaker.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lux constructeur'**
+  String get diaphSourceMaker;
+
+  /// No description provided for @diaphLumens.
+  ///
+  /// In fr, this message translates to:
+  /// **'Flux'**
+  String get diaphLumens;
+
+  /// No description provided for @diaphBeamAngle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Angle de faisceau'**
+  String get diaphBeamAngle;
+
+  /// No description provided for @diaphBeamAngleHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Beam angle (50 %), pas le field'**
+  String get diaphBeamAngleHint;
+
+  /// No description provided for @diaphMakerLux.
+  ///
+  /// In fr, this message translates to:
+  /// **'Éclairement'**
+  String get diaphMakerLux;
+
+  /// No description provided for @diaphMakerDistance.
+  ///
+  /// In fr, this message translates to:
+  /// **'à la distance'**
+  String get diaphMakerDistance;
+
+  /// No description provided for @diaphZoomRange.
+  ///
+  /// In fr, this message translates to:
+  /// **'Zoom de la machine : {range}'**
+  String diaphZoomRange(Object range);
+
+  /// No description provided for @diaphDimmer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Gradateur'**
+  String get diaphDimmer;
+
+  /// No description provided for @diaphDistanceSection.
+  ///
+  /// In fr, this message translates to:
+  /// **'Distance'**
+  String get diaphDistanceSection;
+
+  /// No description provided for @diaphDistance.
+  ///
+  /// In fr, this message translates to:
+  /// **'Distance machine → sujet'**
+  String get diaphDistance;
+
+  /// No description provided for @diaphCameraSection.
+  ///
+  /// In fr, this message translates to:
+  /// **'Caméra'**
+  String get diaphCameraSection;
+
+  /// No description provided for @diaphCamBroadcast.
+  ///
+  /// In fr, this message translates to:
+  /// **'Broadcast'**
+  String get diaphCamBroadcast;
+
+  /// No description provided for @diaphCamIso.
+  ///
+  /// In fr, this message translates to:
+  /// **'ISO / vitesse'**
+  String get diaphCamIso;
+
+  /// No description provided for @diaphSensitivity.
+  ///
+  /// In fr, this message translates to:
+  /// **'Sensibilité : F à 2000 lx'**
+  String get diaphSensitivity;
+
+  /// No description provided for @diaphSensitivityHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Fiche technique de ta caméra (gain 0 dB)'**
+  String get diaphSensitivityHint;
+
+  /// No description provided for @diaphCustom.
+  ///
+  /// In fr, this message translates to:
+  /// **'Perso'**
+  String get diaphCustom;
+
+  /// No description provided for @diaphGain.
+  ///
+  /// In fr, this message translates to:
+  /// **'Gain'**
+  String get diaphGain;
+
+  /// No description provided for @diaphNd.
+  ///
+  /// In fr, this message translates to:
+  /// **'Filtre ND'**
+  String get diaphNd;
+
+  /// No description provided for @diaphNdClear.
+  ///
+  /// In fr, this message translates to:
+  /// **'Clear'**
+  String get diaphNdClear;
+
+  /// No description provided for @diaphIso.
+  ///
+  /// In fr, this message translates to:
+  /// **'ISO'**
+  String get diaphIso;
+
+  /// No description provided for @diaphFps.
+  ///
+  /// In fr, this message translates to:
+  /// **'Images/s'**
+  String get diaphFps;
+
+  /// No description provided for @diaphShutter.
+  ///
+  /// In fr, this message translates to:
+  /// **'Obturateur'**
+  String get diaphShutter;
+
+  /// No description provided for @diaphExposure.
+  ///
+  /// In fr, this message translates to:
+  /// **'Temps de pose : {time}'**
+  String diaphExposure(Object time);
+
+  /// No description provided for @diaphResultTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Diaph au centre du faisceau'**
+  String get diaphResultTitle;
+
+  /// No description provided for @diaphExact.
+  ///
+  /// In fr, this message translates to:
+  /// **'exact : f/{value}'**
+  String diaphExact(Object value);
+
+  /// No description provided for @diaphLux.
+  ///
+  /// In fr, this message translates to:
+  /// **'Éclairement'**
+  String get diaphLux;
+
+  /// No description provided for @diaphBeamDiameter.
+  ///
+  /// In fr, this message translates to:
+  /// **'Diamètre du faisceau'**
+  String get diaphBeamDiameter;
+
+  /// No description provided for @diaphTooDark.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pas assez de lumière : rapproche la machine, monte le gain ou retire le ND.'**
+  String get diaphTooDark;
+
+  /// No description provided for @diaphTooBright.
+  ///
+  /// In fr, this message translates to:
+  /// **'Trop de lumière : ajoute un ND, baisse le gradateur ou éloigne la machine.'**
+  String get diaphTooBright;
+
+  /// No description provided for @diaphMissingInput.
+  ///
+  /// In fr, this message translates to:
+  /// **'Renseigne la machine (flux + angle, ou lux constructeur) et la distance pour voir le diaph.'**
+  String get diaphMissingInput;
+
+  /// No description provided for @diaphTargetSection.
+  ///
+  /// In fr, this message translates to:
+  /// **'Pour travailler à un diaph précis'**
+  String get diaphTargetSection;
+
+  /// No description provided for @diaphTargetF.
+  ///
+  /// In fr, this message translates to:
+  /// **'Diaph visé (f/)'**
+  String get diaphTargetF;
+
+  /// No description provided for @diaphTargetResult.
+  ///
+  /// In fr, this message translates to:
+  /// **'Place la machine à {distance} m (il faut {lux} lx au sujet).'**
+  String diaphTargetResult(Object distance, Object lux);
+
+  /// No description provided for @diaphDisclaimer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Estimation à partir du flux et de l\'angle (faisceau supposé en cloche) : compte ± 1/2 diaph selon l\'optique. Pour plus de précision, utilise les lux constructeur ou un luxmètre.'**
+  String get diaphDisclaimer;
+
+  /// No description provided for @cinemaRecModeDuration.
+  ///
+  /// In fr, this message translates to:
+  /// **'Durée disponible'**
+  String get cinemaRecModeDuration;
+
+  /// No description provided for @cinemaRecModeCapacity.
+  ///
+  /// In fr, this message translates to:
+  /// **'Capacité nécessaire'**
+  String get cinemaRecModeCapacity;
+
+  /// No description provided for @cinemaRecHoursLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Durée à enregistrer — heures'**
+  String get cinemaRecHoursLabel;
+
+  /// No description provided for @cinemaRecMinutesLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Durée à enregistrer — minutes'**
+  String get cinemaRecMinutesLabel;
+
+  /// No description provided for @cinemaRecMarginLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Marge de sécurité'**
+  String get cinemaRecMarginLabel;
+
+  /// No description provided for @cinemaRecNeededResult.
+  ///
+  /// In fr, this message translates to:
+  /// **'Capacité nécessaire'**
+  String get cinemaRecNeededResult;
+
+  /// No description provided for @cinemaRecWithMarginResult.
+  ///
+  /// In fr, this message translates to:
+  /// **'Avec {pct} % de marge'**
+  String cinemaRecWithMarginResult(Object pct);
+
+  /// No description provided for @cinemaRecSuggestedMediaResult.
+  ///
+  /// In fr, this message translates to:
+  /// **'Support conseillé'**
+  String get cinemaRecSuggestedMediaResult;
+
+  /// No description provided for @cinemaRecSuggestedNone.
+  ///
+  /// In fr, this message translates to:
+  /// **'> 8 TB : plusieurs supports'**
+  String get cinemaRecSuggestedNone;
+
+  /// No description provided for @riggingToolTrussLoadTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charge par moteur'**
+  String get riggingToolTrussLoadTitle;
+
+  /// No description provided for @riggingToolTrussLoadSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Répartition d’un truss sur 2 à 6 moteurs, avec vérification CMU et truss.'**
+  String get riggingToolTrussLoadSubtitle;
+
+  /// No description provided for @riggingTrussSectionTruss.
+  ///
+  /// In fr, this message translates to:
+  /// **'Truss'**
+  String get riggingTrussSectionTruss;
+
+  /// No description provided for @riggingTrussLengthLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Longueur du truss'**
+  String get riggingTrussLengthLabel;
+
+  /// No description provided for @riggingTrussSelfWeightLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Poids propre du truss'**
+  String get riggingTrussSelfWeightLabel;
+
+  /// No description provided for @riggingTrussExtraUdlLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charge répartie en plus (câbles…)'**
+  String get riggingTrussExtraUdlLabel;
+
+  /// No description provided for @riggingUnitKgPerMeter.
+  ///
+  /// In fr, this message translates to:
+  /// **'kg/m'**
+  String get riggingUnitKgPerMeter;
+
+  /// No description provided for @riggingUnitKn.
+  ///
+  /// In fr, this message translates to:
+  /// **'kN'**
+  String get riggingUnitKn;
+
+  /// No description provided for @riggingUnitKnm.
+  ///
+  /// In fr, this message translates to:
+  /// **'kN·m'**
+  String get riggingUnitKnm;
+
+  /// No description provided for @riggingTrussSectionMotors.
+  ///
+  /// In fr, this message translates to:
+  /// **'Moteurs'**
+  String get riggingTrussSectionMotors;
+
+  /// No description provided for @riggingTrussMotorCountLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nombre de moteurs'**
+  String get riggingTrussMotorCountLabel;
+
+  /// No description provided for @riggingTrussMotorPositionLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Position moteur {n}'**
+  String riggingTrussMotorPositionLabel(Object n);
+
+  /// No description provided for @riggingTrussPositionsHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Positions mesurées depuis l’extrémité gauche du truss.'**
+  String get riggingTrussPositionsHint;
+
+  /// No description provided for @riggingTrussSpreadMotors.
+  ///
+  /// In fr, this message translates to:
+  /// **'Répartir régulièrement'**
+  String get riggingTrussSpreadMotors;
+
+  /// No description provided for @riggingTrussExtraPerMotorLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Poids ajouté par point (chaîne, élingues, manilles)'**
+  String get riggingTrussExtraPerMotorLabel;
+
+  /// No description provided for @riggingTrussMotorWllLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'CMU / WLL du moteur'**
+  String get riggingTrussMotorWllLabel;
+
+  /// No description provided for @riggingTrussDynamicFactorLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Coefficient dynamique'**
+  String get riggingTrussDynamicFactorLabel;
+
+  /// No description provided for @riggingTrussSectionLoads.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charges'**
+  String get riggingTrussSectionLoads;
+
+  /// No description provided for @riggingTrussFixtureCountLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Projecteurs répartis (nombre)'**
+  String get riggingTrussFixtureCountLabel;
+
+  /// No description provided for @riggingTrussFixtureWeightLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Poids d’un projecteur'**
+  String get riggingTrussFixtureWeightLabel;
+
+  /// No description provided for @riggingTrussPointLoadsLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charges ponctuelles'**
+  String get riggingTrussPointLoadsLabel;
+
+  /// No description provided for @riggingTrussAddPointLoad.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ajouter une charge'**
+  String get riggingTrussAddPointLoad;
+
+  /// No description provided for @riggingTrussPositionLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Position'**
+  String get riggingTrussPositionLabel;
+
+  /// No description provided for @riggingTrussMassLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Poids'**
+  String get riggingTrussMassLabel;
+
+  /// No description provided for @riggingTrussSectionCheck.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vérification truss (optionnel)'**
+  String get riggingTrussSectionCheck;
+
+  /// No description provided for @riggingTrussAllowableUdl.
+  ///
+  /// In fr, this message translates to:
+  /// **'Répartie (UDL)'**
+  String get riggingTrussAllowableUdl;
+
+  /// No description provided for @riggingTrussAllowableCpl.
+  ///
+  /// In fr, this message translates to:
+  /// **'Centrée (CPL)'**
+  String get riggingTrussAllowableCpl;
+
+  /// No description provided for @riggingTrussAllowableValueLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeur admissible fabricant ({span} m)'**
+  String riggingTrussAllowableValueLabel(Object span);
+
+  /// No description provided for @riggingTrussAllowableHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Relève dans le tableau de charge du fabricant la valeur pour la plus grande portée entre deux moteurs.'**
+  String get riggingTrussAllowableHint;
+
+  /// No description provided for @riggingTrussMotorResultLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Moteur {n} · {x} m'**
+  String riggingTrussMotorResultLabel(Object n, Object x);
+
+  /// No description provided for @riggingTrussTotalLoadLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Charge totale aux moteurs'**
+  String get riggingTrussTotalLoadLabel;
+
+  /// No description provided for @riggingTrussMaxMomentLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Moment max (à {x} m)'**
+  String riggingTrussMaxMomentLabel(Object x);
+
+  /// No description provided for @riggingTrussLargestSpanLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Plus grande portée'**
+  String get riggingTrussLargestSpanLabel;
+
+  /// No description provided for @riggingTrussUsageLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Utilisation truss (moment)'**
+  String get riggingTrussUsageLabel;
+
+  /// No description provided for @riggingTrussInvalidInput.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vérifie les valeurs : longueur, CMU, positions des moteurs (dans l’ordre, sur le truss, au moins 1 cm d’écart), charges sur le truss, coefficient dynamique ≥ 1.'**
+  String get riggingTrussInvalidInput;
+
+  /// No description provided for @riggingTrussOkDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tous les moteurs sont sous 80 % de leur CMU.'**
+  String get riggingTrussOkDescription;
+
+  /// No description provided for @riggingTrussWatchDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Au moins un moteur dépasse 80 % de sa CMU.'**
+  String get riggingTrussWatchDescription;
+
+  /// No description provided for @riggingTrussOverloadDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Au moins un moteur dépasse sa CMU.'**
+  String get riggingTrussOverloadDescription;
+
+  /// No description provided for @riggingTrussUpliftDescription.
+  ///
+  /// In fr, this message translates to:
+  /// **'Au moins un moteur est en soulèvement (charge négative) : porte-à-faux trop chargé, configuration instable.'**
+  String get riggingTrussUpliftDescription;
+
+  /// No description provided for @riggingTrussHyperstaticWarning.
+  ///
+  /// In fr, this message translates to:
+  /// **'3 moteurs ou plus : répartition théorique, avec des moteurs parfaitement à niveau et un truss de rigidité constante. Quelques centimètres de différence de hauteur changent fortement les charges réelles. Seule une mesure (load cells) donne la réalité.'**
+  String get riggingTrussHyperstaticWarning;
+
+  /// No description provided for @riggingTrussCantileverNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Porte-à-faux présent : vérifie aussi les valeurs admissibles en porte-à-faux du fabricant.'**
+  String get riggingTrussCantileverNote;
+
+  /// No description provided for @riggingTrussCheckNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Seul le moment fléchissant est comparé. L’effort tranchant, la flèche, les assemblages et les accessoires ne sont pas vérifiés.'**
+  String get riggingTrussCheckNote;
+
+  /// No description provided for @riggingTrussDisclaimer.
+  ///
+  /// In fr, this message translates to:
+  /// **'Résultats théoriques fournis à titre indicatif ; ils ne remplacent pas une note de calcul. Toute installation doit être vérifiée et validée par une personne qualifiée. L’éditeur de l’application ne peut en aucun cas être tenu responsable de l’utilisation de ces résultats.'**
+  String get riggingTrussDisclaimer;
+
+  /// No description provided for @riggingTrussModelLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modèle de truss'**
+  String get riggingTrussModelLabel;
+
+  /// No description provided for @riggingTrussModelManual.
+  ///
+  /// In fr, this message translates to:
+  /// **'Saisie manuelle'**
+  String get riggingTrussModelManual;
+
+  /// No description provided for @riggingTrussModelUnchecked.
+  ///
+  /// In fr, this message translates to:
+  /// **'valeurs à contrôler'**
+  String get riggingTrussModelUnchecked;
+
+  /// No description provided for @riggingTrussTableValueLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeur du tableau fabricant ({span} m)'**
+  String riggingTrussTableValueLabel(Object span);
+
+  /// No description provided for @riggingTrussTableSource.
+  ///
+  /// In fr, this message translates to:
+  /// **'Source : {source}'**
+  String riggingTrussTableSource(Object source);
+
+  /// No description provided for @riggingTrussOutOfTable.
+  ///
+  /// In fr, this message translates to:
+  /// **'Portée hors du tableau fabricant : vérification impossible.'**
+  String get riggingTrussOutOfTable;
+
+  /// No description provided for @riggingTrussNetNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le poids propre du truss est déjà déduit des valeurs du tableau ; l’outil en tient compte.'**
+  String get riggingTrussNetNote;
+
+  /// No description provided for @riggingTrussUncheckedNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Valeurs relevées dans la fiche fabricant mais pas encore contrôlées : vérifie-les sur le document source.'**
+  String get riggingTrussUncheckedNote;
+
+  /// No description provided for @riggingBridleHeightDiffLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dénivelé du point B (+ si plus haut que A)'**
+  String get riggingBridleHeightDiffLabel;
+
+  /// No description provided for @riggingBridleHeightDiffHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'Entraxe mesuré à l’horizontale, flèche mesurée sous le point A.'**
+  String get riggingBridleHeightDiffHint;
+
+  /// No description provided for @homeTipLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le saviez-vous ?'**
+  String get homeTipLabel;
+
+  /// No description provided for @homeTipOpen.
+  ///
+  /// In fr, this message translates to:
+  /// **'Découvrir'**
+  String get homeTipOpen;
+
+  /// No description provided for @homeTipHide.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ne plus afficher'**
+  String get homeTipHide;
+
+  /// No description provided for @homeTipHiddenSnack.
+  ///
+  /// In fr, this message translates to:
+  /// **'Astuces masquées. Vous pouvez les réactiver dans Paramètres.'**
+  String get homeTipHiddenSnack;
+
+  /// No description provided for @settingsTipsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Astuces à l\'accueil'**
+  String get settingsTipsTitle;
+
+  /// No description provided for @settingsTipsSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Suggérer un outil à découvrir à chaque ouverture de l\'app'**
+  String get settingsTipsSubtitle;
+
+  /// No description provided for @homeTipRdm.
+  ///
+  /// In fr, this message translates to:
+  /// **'Identifiez et configurez vos appareils DMX à distance grâce à l\'outil RDM, sans monter sur le pont.'**
+  String get homeTipRdm;
+
+  /// No description provided for @homeTipGigacore.
+  ///
+  /// In fr, this message translates to:
+  /// **'Lisez la configuration de vos switches Luminex GigaCore, faites l\'inventaire du réseau et sauvegardez vos configurations.'**
+  String get homeTipGigacore;
+
+  /// No description provided for @homeTipGdtf.
+  ///
+  /// In fr, this message translates to:
+  /// **'Créez un fichier GDTF à partir de la fiche PDF d\'un projecteur, ou à la main avec l\'assistant.'**
+  String get homeTipGdtf;
+
+  /// No description provided for @homeTipPluginForge.
+  ///
+  /// In fr, this message translates to:
+  /// **'Générez des plugins Lua grandMA3 sur mesure avec MA3 Plugin Forge.'**
+  String get homeTipPluginForge;
+
+  /// No description provided for @homeTipPowerPlan.
+  ///
+  /// In fr, this message translates to:
+  /// **'Dessinez le synoptique de votre distribution électrique et sortez le rapport demandé par les contrôleurs.'**
+  String get homeTipPowerPlan;
+
+  /// No description provided for @homeTipUps.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculez l\'autonomie d\'un onduleur (UPS) selon la puissance de vos équipements.'**
+  String get homeTipUps;
+
+  /// No description provided for @homeTipRigging.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculez les angles et longueurs d\'élingues de vos bridles, et vérifiez la charge d\'un truss.'**
+  String get homeTipRigging;
+
+  /// No description provided for @homeTipSafety.
+  ///
+  /// In fr, this message translates to:
+  /// **'Préparez votre PPSPS et l\'attestation de bon montage directement depuis votre téléphone.'**
+  String get homeTipSafety;
+
+  /// No description provided for @homeTipIm3.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculez les produits d\'intermodulation (IM3) pour choisir des fréquences HF compatibles.'**
+  String get homeTipIm3;
+
+  /// No description provided for @homeTipSubCardio.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réglez un sub cardioïde ou un end-fire : l\'app calcule les délais pour vous.'**
+  String get homeTipSubCardio;
+
+  /// No description provided for @homeTipDipswitch.
+  ///
+  /// In fr, this message translates to:
+  /// **'Trouvez la position des dip-switchs pour n\'importe quelle adresse DMX.'**
+  String get homeTipDipswitch;
+
+  /// No description provided for @homeTipPinned.
+  ///
+  /// In fr, this message translates to:
+  /// **'Épinglez les références que vous consultez le plus pour les retrouver directement depuis l\'accueil.'**
+  String get homeTipPinned;
+
+  /// No description provided for @homeTipBpm.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tapez le tempo d\'un morceau et convertissez-le en millisecondes pour vos effets et délais.'**
+  String get homeTipBpm;
+
+  /// No description provided for @homeTipTimecode.
+  ///
+  /// In fr, this message translates to:
+  /// **'Calculez durées, décalages et retards de timecode en quelques secondes.'**
+  String get homeTipTimecode;
+
+  /// No description provided for @homeDrawerRecommend.
+  ///
+  /// In fr, this message translates to:
+  /// **'Recommander à un collègue'**
+  String get homeDrawerRecommend;
+
+  /// No description provided for @homeShareAppSubject.
+  ///
+  /// In fr, this message translates to:
+  /// **'ShowTech Tools'**
+  String get homeShareAppSubject;
+
+  /// No description provided for @homeShareAppMessage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Je te conseille ShowTech Tools, une app pensée pour les techniciens du spectacle : lumière, son, vidéo, électricité, rigging, réseau, sécurité… Dispo sur iOS et Android : https://www.openwhite.eu/showtech-tools/'**
+  String get homeShareAppMessage;
+
+  /// No description provided for @riggingTrussGrossNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le fabricant ne précise pas si le poids propre est déduit : par sécurité, l’outil le retire de la valeur du tableau.'**
+  String get riggingTrussGrossNote;
+
+  /// No description provided for @riggingHoistModelLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modèle de moteur'**
+  String get riggingHoistModelLabel;
+
+  /// No description provided for @riggingHoistModelManual.
+  ///
+  /// In fr, this message translates to:
+  /// **'Saisie manuelle'**
+  String get riggingHoistModelManual;
+
+  /// No description provided for @riggingHoistModelClassNote.
+  ///
+  /// In fr, this message translates to:
+  /// **'Classe publiée : {cls}. La classe qui compte est celle de la plaque du moteur.'**
+  String riggingHoistModelClassNote(Object cls);
+
+  /// No description provided for @riggingHoistModelWeights.
+  ///
+  /// In fr, this message translates to:
+  /// **'Poids sans chaîne : {weight} kg · chaîne : {chain} kg/m'**
+  String riggingHoistModelWeights(Object weight, Object chain);
 }
 
 class _AppLocalizationsDelegate

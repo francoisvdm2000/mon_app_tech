@@ -17,6 +17,7 @@ import '../../../l10n_gen/app_localizations.dart';
 import '../../about/about_favorites.dart';
 import 'gdtf_manual_wizard_page.dart';
 import 'package:mon_app_tech/app/constants.dart';
+import 'package:mon_app_tech/services/review_prompt_service.dart';
 
 const String _kWorkerUrl =
     'https://showtech-gdtf.francois-vandermeeren.workers.dev';
@@ -907,6 +908,7 @@ class _GdtfBuilderSimplePageState extends State<GdtfBuilderSimplePage>
       subject: fileName,
       sharePositionOrigin: _sharePositionOrigin(),
     );
+    ReviewPromptService.onSuccess();
   }
 
   // ─── Search ──────────────────────────────────────────────────────────────
@@ -5391,6 +5393,7 @@ class _GdtfBuilderSimplePageState extends State<GdtfBuilderSimplePage>
               subject: zipName,
               sharePositionOrigin: _sharePositionOrigin(),
             );
+            ReviewPromptService.onSuccess();
           },
         ),
         const SizedBox(height: 6),

@@ -21,6 +21,7 @@ import 'power_plan_sheets.dart';
 import 'power_plan_storage.dart';
 import 'power_plan_synoptic.dart';
 import 'power_plan_widgets.dart';
+import 'package:mon_app_tech/services/review_prompt_service.dart';
 
 const Color _kPanelColor = Color(0xFF4CC9F0);
 
@@ -490,16 +491,19 @@ class _ElectricityPowerPlanPageState extends State<ElectricityPowerPlanPage>
             onLayout: (_) async => bytes,
             name: '$_fileBase.pdf',
           );
+          ReviewPromptService.onSuccess();
         case 'csv':
           final bytes = ppBuildCsv(plan, calc, loc);
           await Share.shareXFiles(
             [XFile.fromData(bytes, name: '$_fileBase.csv', mimeType: 'text/csv')],
             sharePositionOrigin: _shareOrigin(),
           );
+          ReviewPromptService.onSuccess();
         case 'png':
           final png = await ppRenderSynopticPng(_layout(plan, calc, loc));
           if (!mounted) return;
           await exportPngBytes(context, png, '${_fileBase}_diagram.png');
+          ReviewPromptService.onSuccess();
       }
     } catch (_) {
       if (mounted) _toast(loc.ppExportError);

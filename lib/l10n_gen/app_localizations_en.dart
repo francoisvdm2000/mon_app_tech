@@ -8279,11 +8279,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cinemaRecordingStorageSubtitle =>
-      'Duration available depending on capacity and bitrate.';
+      'Available time or required capacity based on bitrate.';
 
   @override
   String get cinemaRecordingStorageDescription =>
-      'Estimates available time based on card/disk capacity and video bitrate.';
+      'Estimates the recording time available on a card/drive, or the capacity needed for a given recording time, based on the video bitrate.';
 
   @override
   String get cinemaRecordingStorageInfo =>
@@ -17334,7 +17334,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get netSecWhoDesc =>
-      'Connected devices: on every VLAN through the GigaCore switches, or on your subnet with the scan.';
+      'Devices plugged in on every VLAN, seen by the GigaCore switches, plus MA-Net and NDI nodes.';
 
   @override
   String get netSecFlowTitle => 'Lighting and video streams';
@@ -17355,7 +17355,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get netSecToolsDesc =>
-      'Ping, IP address, subnet, Art-Net addressing, PoE and fibre budgets.';
+      'Subnet, PoE and fibre budgets, Art-Net addressing.';
 
   @override
   String get netLimitsLuminexTip =>
@@ -17384,5 +17384,750 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String diagLuminexDuplicateIp(String switchName, int port, String ips) {
     return '$switchName, port $port: duplicate IP in the VLAN ($ips)';
+  }
+
+  @override
+  String get netQuickTitle => 'Quick access';
+
+  @override
+  String get netQuickDesc =>
+      'The basics, free: scan the network, ping, see your IP address.';
+
+  @override
+  String netCatTools(int count) {
+    return 'Tools: $count';
+  }
+
+  @override
+  String netCatFree(int count) {
+    return 'Free: $count';
+  }
+
+  @override
+  String get netProUnlockTitle => 'Unlock the Pro tools';
+
+  @override
+  String get netProUnlockDesc =>
+      'Network Pro subscription: every tool in this section.';
+
+  @override
+  String get fxCmpTitle => 'Fixture comparator';
+
+  @override
+  String get fxCmpTileDescription => 'Beta · Find a replacement for a fixture';
+
+  @override
+  String get fxCmpPickHint =>
+      'Missing a fixture? Pick the one to replace and I\'ll find equivalents, ranked by brightness then zoom.';
+
+  @override
+  String get fxCmpRefTitle => 'Fixture to replace';
+
+  @override
+  String get fxCmpSearchHint => 'Brand, model or type…';
+
+  @override
+  String get fxCmpNoSearchResults => 'No fixture found';
+
+  @override
+  String get fxCmpChange => 'Change';
+
+  @override
+  String fxCmpResultsCount(Object count) {
+    return 'Equivalents found: $count';
+  }
+
+  @override
+  String fxCmpShowResults(Object count) {
+    return 'Show results ($count)';
+  }
+
+  @override
+  String get fxCmpNoResults =>
+      'No equivalent with these filters. Try widening the search!';
+
+  @override
+  String get fxCmpFilters => 'Filters';
+
+  @override
+  String get fxCmpResetFilters => 'Reset';
+
+  @override
+  String get fxCmpCriteriaSection => 'Criteria';
+
+  @override
+  String get fxCmpConstraintsSection => 'Constraints';
+
+  @override
+  String get fxCmpFamily => 'Family';
+
+  @override
+  String get fxCmpScopeSame => 'Same family';
+
+  @override
+  String get fxCmpScopeClose => 'Related families';
+
+  @override
+  String get fxCmpScopeAll => 'All';
+
+  @override
+  String get fxCmpLumenTolerance => 'Brightness tolerance';
+
+  @override
+  String get fxCmpAny => 'Any';
+
+  @override
+  String get fxCmpMustCoverZoom => 'Zoom must cover the reference\'s range';
+
+  @override
+  String get fxCmpMustCoverZoomShort => 'Zoom covered';
+
+  @override
+  String get fxCmpSource => 'Light source';
+
+  @override
+  String get fxCmpMinCri => 'Minimum CRI';
+
+  @override
+  String get fxCmpSameMotion => 'Same motion (moving / static)';
+
+  @override
+  String get fxCmpOtherBrands => 'Other brands only';
+
+  @override
+  String get fxCmpLighter => 'Weight ≤ reference';
+
+  @override
+  String get fxCmpLowerPower => 'Power draw ≤ reference';
+
+  @override
+  String get fxCmpIncludeIncomplete => 'Include incomplete data';
+
+  @override
+  String get fxCmpIncludeIncompleteHint =>
+      'A missing value doesn\'t exclude the fixture, but it loses the points for that criterion.';
+
+  @override
+  String get fxCmpCompleteOnly => 'Complete data only';
+
+  @override
+  String get fxCmpRefMissingValue => 'Not provided for the reference fixture';
+
+  @override
+  String get fxCmpLevelEquivalent => 'Equivalent';
+
+  @override
+  String get fxCmpLevelClose => 'Close';
+
+  @override
+  String get fxCmpLevelFar => 'Distant';
+
+  @override
+  String get fxCmpIncomplete => 'Incomplete data';
+
+  @override
+  String get fxCmpZoomCovers => 'Zoom covered';
+
+  @override
+  String get fxCmpZoomPartial => 'Partial zoom';
+
+  @override
+  String get fxCmpCompareTitle => 'Comparison';
+
+  @override
+  String get fxCmpCritFamily => 'Family';
+
+  @override
+  String get fxCmpCritLumen => 'Brightness';
+
+  @override
+  String get fxCmpCritZoom => 'Zoom';
+
+  @override
+  String get fxCmpCritCri => 'CRI';
+
+  @override
+  String get fxCmpCritSource => 'Source';
+
+  @override
+  String get fxCmpCritPower => 'Power';
+
+  @override
+  String get fxCmpCritWeight => 'Weight';
+
+  @override
+  String get fxCmpCritDmx => 'DMX channels';
+
+  @override
+  String get fxCmpFamSpotProfile => 'Spot / Profile';
+
+  @override
+  String get fxCmpFamBeam => 'Beam';
+
+  @override
+  String get fxCmpFamHybrid => 'Hybrid';
+
+  @override
+  String get fxCmpFamWash => 'Wash';
+
+  @override
+  String get fxCmpFamMovingHead => 'Moving head (unspecified)';
+
+  @override
+  String get fxCmpFamPar => 'PAR';
+
+  @override
+  String get fxCmpFamFresnelPc => 'Fresnel / PC';
+
+  @override
+  String get fxCmpFamBar => 'Bar / linear';
+
+  @override
+  String get fxCmpFamStrobe => 'Strobe / blinder';
+
+  @override
+  String get fxCmpFamFollowspot => 'Followspot';
+
+  @override
+  String get fxCmpFamSoftPanel => 'Panel / soft light';
+
+  @override
+  String get fxCmpFamCyclo => 'Cyc / wall washer';
+
+  @override
+  String get fxCmpFamEffect => 'Effect';
+
+  @override
+  String get fxCmpFamLaser => 'Laser';
+
+  @override
+  String get fxCmpFamAtmospheric => 'Atmospheric (smoke…)';
+
+  @override
+  String get fxCmpFamOther => 'Other';
+
+  @override
+  String get fxCmpSrcWhiteLed => 'White LED';
+
+  @override
+  String get fxCmpSrcColorLed => 'Colour LED (RGBW…)';
+
+  @override
+  String get fxCmpSrcDischarge => 'Discharge lamp';
+
+  @override
+  String get fxCmpSrcLaser => 'Laser phosphor';
+
+  @override
+  String get fxCmpSrcHalogen => 'Halogen / tungsten';
+
+  @override
+  String get fxCmpSrcOther => 'Other source';
+
+  @override
+  String get fxCmpDataNotice =>
+      'Zoom, CRI and light source aren\'t yet filled in for most fixtures in the catalogue: they\'ll count in the ranking as soon as they are.';
+
+  @override
+  String get fxCmpRefNoData =>
+      'Neither brightness nor zoom is provided for this fixture: the ranking won\'t be reliable.';
+
+  @override
+  String get fxCmpDisclaimer =>
+      'Indicative ranking based on manufacturer data from the catalogue. Always check the datasheet before replacing a fixture.';
+
+  @override
+  String get fxCmpBetaBadge => 'PRO · BETA';
+
+  @override
+  String get fxCmpBetaPill => 'BETA';
+
+  @override
+  String get fxCmpBetaTitle => 'Beta tool 🧪';
+
+  @override
+  String get fxCmpBetaBody =>
+      'The comparator is brand new! Rankings will get sharper as the catalogue fills up (brightness, zoom, CRI, source). Spotted an odd result? Drop us a line, it helps us improve it.';
+
+  @override
+  String get fxCmpFeedback => 'Send feedback';
+
+  @override
+  String get fxCmpReportResult => 'Report this result';
+
+  @override
+  String get fxCmpFeedbackSubject => 'Fixture comparator (beta)';
+
+  @override
+  String fxCmpFeedbackRef(Object name) {
+    return 'Fixture to replace: $name';
+  }
+
+  @override
+  String fxCmpFeedbackCandidate(Object name, Object score) {
+    return 'Suggested equivalent: $name (score $score)';
+  }
+
+  @override
+  String get fxCmpFeedbackComment => 'Your comment:';
+
+  @override
+  String get diaphTitle => 'Fixture f-stop';
+
+  @override
+  String get diaphTileDescription => 'Which camera f-stop with this fixture?';
+
+  @override
+  String get diaphIntro =>
+      'In TV we light in f-stops! Pick the fixture, the distance and your camera: I\'ll give you the f-stop at the centre of the beam.';
+
+  @override
+  String get diaphMachineSection => 'Fixture';
+
+  @override
+  String get diaphSearchHint => 'Search the catalogue (optional)…';
+
+  @override
+  String get diaphSourceLumens => 'Lumens + angle';
+
+  @override
+  String get diaphSourceMaker => 'Manufacturer lux';
+
+  @override
+  String get diaphLumens => 'Output';
+
+  @override
+  String get diaphBeamAngle => 'Beam angle';
+
+  @override
+  String get diaphBeamAngleHint => 'Beam angle (50%), not field';
+
+  @override
+  String get diaphMakerLux => 'Illuminance';
+
+  @override
+  String get diaphMakerDistance => 'at distance';
+
+  @override
+  String diaphZoomRange(Object range) {
+    return 'Fixture zoom: $range';
+  }
+
+  @override
+  String get diaphDimmer => 'Dimmer';
+
+  @override
+  String get diaphDistanceSection => 'Distance';
+
+  @override
+  String get diaphDistance => 'Fixture → subject distance';
+
+  @override
+  String get diaphCameraSection => 'Camera';
+
+  @override
+  String get diaphCamBroadcast => 'Broadcast';
+
+  @override
+  String get diaphCamIso => 'ISO / shutter';
+
+  @override
+  String get diaphSensitivity => 'Sensitivity: F at 2000 lx';
+
+  @override
+  String get diaphSensitivityHint =>
+      'From your camera\'s datasheet (0 dB gain)';
+
+  @override
+  String get diaphCustom => 'Custom';
+
+  @override
+  String get diaphGain => 'Gain';
+
+  @override
+  String get diaphNd => 'ND filter';
+
+  @override
+  String get diaphNdClear => 'Clear';
+
+  @override
+  String get diaphIso => 'ISO';
+
+  @override
+  String get diaphFps => 'Frames/s';
+
+  @override
+  String get diaphShutter => 'Shutter';
+
+  @override
+  String diaphExposure(Object time) {
+    return 'Exposure time: $time';
+  }
+
+  @override
+  String get diaphResultTitle => 'F-stop at the centre of the beam';
+
+  @override
+  String diaphExact(Object value) {
+    return 'exact: f/$value';
+  }
+
+  @override
+  String get diaphLux => 'Illuminance';
+
+  @override
+  String get diaphBeamDiameter => 'Beam diameter';
+
+  @override
+  String get diaphTooDark =>
+      'Not enough light: move the fixture closer, add gain or remove the ND.';
+
+  @override
+  String get diaphTooBright =>
+      'Too much light: add an ND, lower the dimmer or move the fixture back.';
+
+  @override
+  String get diaphMissingInput =>
+      'Fill in the fixture (output + angle, or manufacturer lux) and the distance to see the f-stop.';
+
+  @override
+  String get diaphTargetSection => 'To work at a given f-stop';
+
+  @override
+  String get diaphTargetF => 'Target f-stop (f/)';
+
+  @override
+  String diaphTargetResult(Object distance, Object lux) {
+    return 'Place the fixture at $distance m ($lux lx needed on the subject).';
+  }
+
+  @override
+  String get diaphDisclaimer =>
+      'Estimate from output and angle (bell-shaped beam assumed): allow ± 1/2 stop depending on the optics. For more accuracy, use manufacturer lux data or a light meter.';
+
+  @override
+  String get cinemaRecModeDuration => 'Available time';
+
+  @override
+  String get cinemaRecModeCapacity => 'Required capacity';
+
+  @override
+  String get cinemaRecHoursLabel => 'Recording time — hours';
+
+  @override
+  String get cinemaRecMinutesLabel => 'Recording time — minutes';
+
+  @override
+  String get cinemaRecMarginLabel => 'Safety margin';
+
+  @override
+  String get cinemaRecNeededResult => 'Required capacity';
+
+  @override
+  String cinemaRecWithMarginResult(Object pct) {
+    return 'With $pct% margin';
+  }
+
+  @override
+  String get cinemaRecSuggestedMediaResult => 'Suggested media';
+
+  @override
+  String get cinemaRecSuggestedNone => '> 8 TB: several media';
+
+  @override
+  String get riggingToolTrussLoadTitle => 'Load per hoist';
+
+  @override
+  String get riggingToolTrussLoadSubtitle =>
+      'Truss load split over 2 to 6 hoists, with WLL and truss checks.';
+
+  @override
+  String get riggingTrussSectionTruss => 'Truss';
+
+  @override
+  String get riggingTrussLengthLabel => 'Truss length';
+
+  @override
+  String get riggingTrussSelfWeightLabel => 'Truss self-weight';
+
+  @override
+  String get riggingTrussExtraUdlLabel => 'Extra distributed load (cables…)';
+
+  @override
+  String get riggingUnitKgPerMeter => 'kg/m';
+
+  @override
+  String get riggingUnitKn => 'kN';
+
+  @override
+  String get riggingUnitKnm => 'kN·m';
+
+  @override
+  String get riggingTrussSectionMotors => 'Hoists';
+
+  @override
+  String get riggingTrussMotorCountLabel => 'Number of hoists';
+
+  @override
+  String riggingTrussMotorPositionLabel(Object n) {
+    return 'Hoist $n position';
+  }
+
+  @override
+  String get riggingTrussPositionsHint =>
+      'Positions measured from the left end of the truss.';
+
+  @override
+  String get riggingTrussSpreadMotors => 'Space evenly';
+
+  @override
+  String get riggingTrussExtraPerMotorLabel =>
+      'Extra weight per pick point (chain, slings, shackles)';
+
+  @override
+  String get riggingTrussMotorWllLabel => 'Hoist WLL';
+
+  @override
+  String get riggingTrussDynamicFactorLabel => 'Dynamic factor';
+
+  @override
+  String get riggingTrussSectionLoads => 'Loads';
+
+  @override
+  String get riggingTrussFixtureCountLabel => 'Evenly spread fixtures (count)';
+
+  @override
+  String get riggingTrussFixtureWeightLabel => 'Weight per fixture';
+
+  @override
+  String get riggingTrussPointLoadsLabel => 'Point loads';
+
+  @override
+  String get riggingTrussAddPointLoad => 'Add a load';
+
+  @override
+  String get riggingTrussPositionLabel => 'Position';
+
+  @override
+  String get riggingTrussMassLabel => 'Weight';
+
+  @override
+  String get riggingTrussSectionCheck => 'Truss check (optional)';
+
+  @override
+  String get riggingTrussAllowableUdl => 'Distributed (UDL)';
+
+  @override
+  String get riggingTrussAllowableCpl => 'Centre point (CPL)';
+
+  @override
+  String riggingTrussAllowableValueLabel(Object span) {
+    return 'Manufacturer allowable value ($span m)';
+  }
+
+  @override
+  String get riggingTrussAllowableHint =>
+      'Read the value for the largest span between two hoists in the manufacturer\'s load table.';
+
+  @override
+  String riggingTrussMotorResultLabel(Object n, Object x) {
+    return 'Hoist $n · $x m';
+  }
+
+  @override
+  String get riggingTrussTotalLoadLabel => 'Total load on hoists';
+
+  @override
+  String riggingTrussMaxMomentLabel(Object x) {
+    return 'Max moment (at $x m)';
+  }
+
+  @override
+  String get riggingTrussLargestSpanLabel => 'Largest span';
+
+  @override
+  String get riggingTrussUsageLabel => 'Truss utilisation (moment)';
+
+  @override
+  String get riggingTrussInvalidInput =>
+      'Check the values: length, WLL, hoist positions (in order, on the truss, at least 1 cm apart), loads on the truss, dynamic factor ≥ 1.';
+
+  @override
+  String get riggingTrussOkDescription =>
+      'All hoists are below 80 % of their WLL.';
+
+  @override
+  String get riggingTrussWatchDescription =>
+      'At least one hoist is above 80 % of its WLL.';
+
+  @override
+  String get riggingTrussOverloadDescription =>
+      'At least one hoist exceeds its WLL.';
+
+  @override
+  String get riggingTrussUpliftDescription =>
+      'At least one hoist is in uplift (negative load): the cantilever is overloaded, the setup is unstable.';
+
+  @override
+  String get riggingTrussHyperstaticWarning =>
+      '3 or more hoists: theoretical distribution, with perfectly level hoists and a truss of constant stiffness. A few centimetres of height difference strongly change the real loads. Only a measurement (load cells) shows reality.';
+
+  @override
+  String get riggingTrussCantileverNote =>
+      'Cantilever present: also check the manufacturer\'s allowable cantilever values.';
+
+  @override
+  String get riggingTrussCheckNote =>
+      'Only the bending moment is compared. Shear, deflection, connections and accessories are not checked.';
+
+  @override
+  String get riggingTrussDisclaimer =>
+      'Theoretical results for guidance only; they do not replace a structural calculation. Every installation must be checked and approved by a qualified person. The app publisher cannot under any circumstances be held liable for the use of these results.';
+
+  @override
+  String get riggingTrussModelLabel => 'Truss model';
+
+  @override
+  String get riggingTrussModelManual => 'Manual entry';
+
+  @override
+  String get riggingTrussModelUnchecked => 'values to check';
+
+  @override
+  String riggingTrussTableValueLabel(Object span) {
+    return 'Manufacturer table value ($span m)';
+  }
+
+  @override
+  String riggingTrussTableSource(Object source) {
+    return 'Source: $source';
+  }
+
+  @override
+  String get riggingTrussOutOfTable =>
+      'Span outside the manufacturer table: check not possible.';
+
+  @override
+  String get riggingTrussNetNote =>
+      'The truss self-weight is already deducted from the table values; the tool accounts for it.';
+
+  @override
+  String get riggingTrussUncheckedNote =>
+      'Values taken from the manufacturer sheet but not yet checked: verify them against the source document.';
+
+  @override
+  String get riggingBridleHeightDiffLabel =>
+      'Height of point B (+ if higher than A)';
+
+  @override
+  String get riggingBridleHeightDiffHint =>
+      'Span measured horizontally, drop measured below point A.';
+
+  @override
+  String get homeTipLabel => 'Did you know?';
+
+  @override
+  String get homeTipOpen => 'Explore';
+
+  @override
+  String get homeTipHide => 'Don\'t show again';
+
+  @override
+  String get homeTipHiddenSnack =>
+      'Tips hidden. You can turn them back on in Parameters.';
+
+  @override
+  String get settingsTipsTitle => 'Home screen tips';
+
+  @override
+  String get settingsTipsSubtitle =>
+      'Suggest a tool to discover each time the app opens';
+
+  @override
+  String get homeTipRdm =>
+      'Identify and configure your DMX devices remotely with the RDM tool, without climbing the truss.';
+
+  @override
+  String get homeTipGigacore =>
+      'Read your Luminex GigaCore switch configuration, inventory your network and back up your configurations.';
+
+  @override
+  String get homeTipGdtf =>
+      'Create a GDTF file from a fixture\'s PDF manual, or by hand with the wizard.';
+
+  @override
+  String get homeTipPluginForge =>
+      'Generate custom grandMA3 Lua plugins with MA3 Plugin Forge.';
+
+  @override
+  String get homeTipPowerPlan =>
+      'Draw your power distribution diagram and export the report inspectors ask for.';
+
+  @override
+  String get homeTipUps =>
+      'Calculate UPS runtime based on the power draw of your equipment.';
+
+  @override
+  String get homeTipRigging =>
+      'Calculate sling angles and lengths for your bridles, and check truss loads.';
+
+  @override
+  String get homeTipSafety =>
+      'Prepare your safety plan and installation certificate straight from your phone.';
+
+  @override
+  String get homeTipIm3 =>
+      'Calculate intermodulation products (IM3) to pick compatible wireless frequencies.';
+
+  @override
+  String get homeTipSubCardio =>
+      'Setting up cardioid subs or an end-fire array? The app calculates the delays for you.';
+
+  @override
+  String get homeTipDipswitch =>
+      'Find the dip-switch settings for any DMX address.';
+
+  @override
+  String get homeTipPinned =>
+      'Pin the references you use most to reach them straight from the home screen.';
+
+  @override
+  String get homeTipBpm =>
+      'Tap the tempo of a song and convert it to milliseconds for your effects and delays.';
+
+  @override
+  String get homeTipTimecode =>
+      'Work out timecode durations, offsets and delays in seconds.';
+
+  @override
+  String get homeDrawerRecommend => 'Recommend to a colleague';
+
+  @override
+  String get homeShareAppSubject => 'ShowTech Tools';
+
+  @override
+  String get homeShareAppMessage =>
+      'Check out ShowTech Tools, an app built for live event technicians: lighting, audio, video, power, rigging, networking, safety… Available on iOS and Android: https://www.openwhite.eu/showtech-tools/';
+
+  @override
+  String get riggingTrussGrossNote =>
+      'The manufacturer does not state whether the self-weight is deducted: to be safe, the tool subtracts it from the table value.';
+
+  @override
+  String get riggingHoistModelLabel =>
+      'Hoist model';
+
+  @override
+  String get riggingHoistModelManual =>
+      'Manual entry';
+
+  @override
+  String riggingHoistModelClassNote(Object cls) {
+    return 'Published class: $cls. The class that applies is the one on the hoist plate.';
+  }
+
+  @override
+  String riggingHoistModelWeights(Object weight, Object chain) {
+    return 'Weight without chain: $weight kg · chain: $chain kg/m';
   }
 }

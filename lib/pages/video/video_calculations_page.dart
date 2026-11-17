@@ -2,11 +2,13 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:pdf/widgets.dart' as pw;
+import 'package:mon_app_tech/app/utils/pdf_branding.dart';
 import 'package:printing/printing.dart';
 
 import '../../app/ui/widgets.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 import 'package:mon_app_tech/app/constants.dart';
+import 'package:mon_app_tech/services/review_prompt_service.dart';
 
 /// =======================
 /// SOUS-PAGE : CALCULATEUR VIDÉO
@@ -596,6 +598,16 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
 
     doc.addPage(
       pw.MultiPage(
+        footer: (ctx) => pw.Row(
+          mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+          children: [
+            showTechPdfBadge(),
+            pw.Text(
+              '${ctx.pageNumber} / ${ctx.pagesCount}',
+              style: const pw.TextStyle(fontSize: 8),
+            ),
+          ],
+        ),
         build: (context) => [
           pw.Text(
             loc.videoPdfTitle,
@@ -630,6 +642,7 @@ class _VideoCalculationsPageState extends State<VideoCalculationsPage> {
       onLayout: (format) async => doc.save(),
       name: "export_video.pdf",
     );
+    ReviewPromptService.onSuccess();
   }
 
   Widget _calcActionsRow({

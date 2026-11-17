@@ -2885,8 +2885,8 @@
   "cinemaNdExposureDescription": "Converts a correction in stops to ND density and light reduction factor.",
   "cinemaNdExposureInfo": "Marks: ND 0.3 = 1 stop, ND 0.6 = 2 stops, ND 0.9 = 3 stops, ND 1.2 = 4 stops.",
   "cinemaRecordingStorageTitle": "Recording time",
-  "cinemaRecordingStorageSubtitle": "Duration available depending on capacity and bitrate.",
-  "cinemaRecordingStorageDescription": "Estimates available time based on card/disk capacity and video bitrate.",
+  "cinemaRecordingStorageSubtitle": "Available time or required capacity based on bitrate.",
+  "cinemaRecordingStorageDescription": "Estimates the recording time available on a card/drive, or the capacity needed for a given recording time, based on the video bitrate.",
   "cinemaRecordingStorageInfo": "Simplified decimal calculation: 1 GB = 8000 Mb. Allow room for audio, metadata, file system, and media pool.",
   "cinemaTimecodeTitle": "Timecode",
   "cinemaTimecodeSubtitle": "Timecode conversion ↔ frames and duration between two TCs.",
@@ -6548,17 +6548,324 @@
   "luminexInvIssueDuplicateIp": "Duplicate IP in the VLAN: {ips}",
   "netStartTip": "Where to start? On a Luminex network, open “GigaCore switches” with the phone on the management VLAN: it sees what is plugged in on every VLAN. Otherwise, run a “Health check”.",
   "netSecWhoTitle": "Who is on the network?",
-  "netSecWhoDesc": "Connected devices: on every VLAN through the GigaCore switches, or on your subnet with the scan.",
+  "netSecWhoDesc": "Devices plugged in on every VLAN, seen by the GigaCore switches, plus MA-Net and NDI nodes.",
   "netSecFlowTitle": "Lighting and video streams",
   "netSecFlowDesc": "What flows where your phone is connected: sACN, Art-Net, RDM and throughput. For other VLANs, use “GigaCore switches”.",
   "netSecHealthTitle": "Network health",
   "netSecHealthDesc": "A scored check, live monitoring, and snapshots to compare before / after.",
   "netSecToolsTitle": "Tools and calculators",
-  "netSecToolsDesc": "Ping, IP address, subnet, Art-Net addressing, PoE and fibre budgets.",
+  "netSecToolsDesc": "Subnet, PoE and fibre budgets, Art-Net addressing.",
   "netLimitsLuminexTip": "Phone not on the right VLAN? With GigaCore switches, “GigaCore switches › Multicast subscriptions” shows who listens to what on every VLAN, from the management network.",
   "diagSacnOtherVlan": "No sACN on your VLAN, but {count} universes flow on other VLANs (seen by the GigaCore switches).",
   "diagLuminexUnreachable": "GigaCore switch {switchName} ({ip}) unreachable",
   "diagLuminexAlarm": "{switchName}: {text}",
   "diagLuminexNoIp": "{switchName}, port {port} ({name}): device without an IP address",
-  "diagLuminexDuplicateIp": "{switchName}, port {port}: duplicate IP in the VLAN ({ips})"
+  "diagLuminexDuplicateIp": "{switchName}, port {port}: duplicate IP in the VLAN ({ips})",
+  "netQuickTitle": "Quick access",
+  "netQuickDesc": "The basics, free: scan the network, ping, see your IP address.",
+  "netCatTools": "Tools: {count}",
+  "netCatFree": "Free: {count}",
+  "netProUnlockTitle": "Unlock the Pro tools",
+  "netProUnlockDesc": "Network Pro subscription: every tool in this section.",
+  "fxCmpTitle": "Fixture comparator",
+  "fxCmpTileDescription": "Beta · Find a replacement for a fixture",
+  "fxCmpPickHint": "Missing a fixture? Pick the one to replace and I'll find equivalents, ranked by brightness then zoom.",
+  "fxCmpRefTitle": "Fixture to replace",
+  "fxCmpSearchHint": "Brand, model or type…",
+  "fxCmpNoSearchResults": "No fixture found",
+  "fxCmpChange": "Change",
+  "fxCmpResultsCount": "Equivalents found: {count}",
+  "@fxCmpResultsCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "fxCmpShowResults": "Show results ({count})",
+  "@fxCmpShowResults": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "fxCmpNoResults": "No equivalent with these filters. Try widening the search!",
+  "fxCmpFilters": "Filters",
+  "fxCmpResetFilters": "Reset",
+  "fxCmpCriteriaSection": "Criteria",
+  "fxCmpConstraintsSection": "Constraints",
+  "fxCmpFamily": "Family",
+  "fxCmpScopeSame": "Same family",
+  "fxCmpScopeClose": "Related families",
+  "fxCmpScopeAll": "All",
+  "fxCmpLumenTolerance": "Brightness tolerance",
+  "fxCmpAny": "Any",
+  "fxCmpMustCoverZoom": "Zoom must cover the reference's range",
+  "fxCmpMustCoverZoomShort": "Zoom covered",
+  "fxCmpSource": "Light source",
+  "fxCmpMinCri": "Minimum CRI",
+  "fxCmpSameMotion": "Same motion (moving / static)",
+  "fxCmpOtherBrands": "Other brands only",
+  "fxCmpLighter": "Weight ≤ reference",
+  "fxCmpLowerPower": "Power draw ≤ reference",
+  "fxCmpIncludeIncomplete": "Include incomplete data",
+  "fxCmpIncludeIncompleteHint": "A missing value doesn't exclude the fixture, but it loses the points for that criterion.",
+  "fxCmpCompleteOnly": "Complete data only",
+  "fxCmpRefMissingValue": "Not provided for the reference fixture",
+  "fxCmpLevelEquivalent": "Equivalent",
+  "fxCmpLevelClose": "Close",
+  "fxCmpLevelFar": "Distant",
+  "fxCmpIncomplete": "Incomplete data",
+  "fxCmpZoomCovers": "Zoom covered",
+  "fxCmpZoomPartial": "Partial zoom",
+  "fxCmpCompareTitle": "Comparison",
+  "fxCmpCritFamily": "Family",
+  "fxCmpCritLumen": "Brightness",
+  "fxCmpCritZoom": "Zoom",
+  "fxCmpCritCri": "CRI",
+  "fxCmpCritSource": "Source",
+  "fxCmpCritPower": "Power",
+  "fxCmpCritWeight": "Weight",
+  "fxCmpCritDmx": "DMX channels",
+  "fxCmpFamSpotProfile": "Spot / Profile",
+  "fxCmpFamBeam": "Beam",
+  "fxCmpFamHybrid": "Hybrid",
+  "fxCmpFamWash": "Wash",
+  "fxCmpFamMovingHead": "Moving head (unspecified)",
+  "fxCmpFamPar": "PAR",
+  "fxCmpFamFresnelPc": "Fresnel / PC",
+  "fxCmpFamBar": "Bar / linear",
+  "fxCmpFamStrobe": "Strobe / blinder",
+  "fxCmpFamFollowspot": "Followspot",
+  "fxCmpFamSoftPanel": "Panel / soft light",
+  "fxCmpFamCyclo": "Cyc / wall washer",
+  "fxCmpFamEffect": "Effect",
+  "fxCmpFamLaser": "Laser",
+  "fxCmpFamAtmospheric": "Atmospheric (smoke…)",
+  "fxCmpFamOther": "Other",
+  "fxCmpSrcWhiteLed": "White LED",
+  "fxCmpSrcColorLed": "Colour LED (RGBW…)",
+  "fxCmpSrcDischarge": "Discharge lamp",
+  "fxCmpSrcLaser": "Laser phosphor",
+  "fxCmpSrcHalogen": "Halogen / tungsten",
+  "fxCmpSrcOther": "Other source",
+  "fxCmpDataNotice": "Zoom, CRI and light source aren't yet filled in for most fixtures in the catalogue: they'll count in the ranking as soon as they are.",
+  "fxCmpRefNoData": "Neither brightness nor zoom is provided for this fixture: the ranking won't be reliable.",
+  "fxCmpDisclaimer": "Indicative ranking based on manufacturer data from the catalogue. Always check the datasheet before replacing a fixture.",
+  "fxCmpBetaBadge": "PRO · BETA",
+  "fxCmpBetaPill": "BETA",
+  "fxCmpBetaTitle": "Beta tool 🧪",
+  "fxCmpBetaBody": "The comparator is brand new! Rankings will get sharper as the catalogue fills up (brightness, zoom, CRI, source). Spotted an odd result? Drop us a line, it helps us improve it.",
+  "fxCmpFeedback": "Send feedback",
+  "fxCmpReportResult": "Report this result",
+  "fxCmpFeedbackSubject": "Fixture comparator (beta)",
+  "fxCmpFeedbackRef": "Fixture to replace: {name}",
+  "@fxCmpFeedbackRef": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "fxCmpFeedbackCandidate": "Suggested equivalent: {name} (score {score})",
+  "@fxCmpFeedbackCandidate": {
+    "placeholders": {
+      "name": {},
+      "score": {}
+    }
+  },
+  "fxCmpFeedbackComment": "Your comment:",
+  "diaphTitle": "Fixture f-stop",
+  "diaphTileDescription": "Which camera f-stop with this fixture?",
+  "diaphIntro": "In TV we light in f-stops! Pick the fixture, the distance and your camera: I'll give you the f-stop at the centre of the beam.",
+  "diaphMachineSection": "Fixture",
+  "diaphSearchHint": "Search the catalogue (optional)…",
+  "diaphSourceLumens": "Lumens + angle",
+  "diaphSourceMaker": "Manufacturer lux",
+  "diaphLumens": "Output",
+  "diaphBeamAngle": "Beam angle",
+  "diaphBeamAngleHint": "Beam angle (50%), not field",
+  "diaphMakerLux": "Illuminance",
+  "diaphMakerDistance": "at distance",
+  "diaphZoomRange": "Fixture zoom: {range}",
+  "@diaphZoomRange": {
+    "placeholders": {
+      "range": {}
+    }
+  },
+  "diaphDimmer": "Dimmer",
+  "diaphDistanceSection": "Distance",
+  "diaphDistance": "Fixture → subject distance",
+  "diaphCameraSection": "Camera",
+  "diaphCamBroadcast": "Broadcast",
+  "diaphCamIso": "ISO / shutter",
+  "diaphSensitivity": "Sensitivity: F at 2000 lx",
+  "diaphSensitivityHint": "From your camera's datasheet (0 dB gain)",
+  "diaphCustom": "Custom",
+  "diaphGain": "Gain",
+  "diaphNd": "ND filter",
+  "diaphNdClear": "Clear",
+  "diaphIso": "ISO",
+  "diaphFps": "Frames/s",
+  "diaphShutter": "Shutter",
+  "diaphExposure": "Exposure time: {time}",
+  "@diaphExposure": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "diaphResultTitle": "F-stop at the centre of the beam",
+  "diaphExact": "exact: f/{value}",
+  "@diaphExact": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "diaphLux": "Illuminance",
+  "diaphBeamDiameter": "Beam diameter",
+  "diaphTooDark": "Not enough light: move the fixture closer, add gain or remove the ND.",
+  "diaphTooBright": "Too much light: add an ND, lower the dimmer or move the fixture back.",
+  "diaphMissingInput": "Fill in the fixture (output + angle, or manufacturer lux) and the distance to see the f-stop.",
+  "diaphTargetSection": "To work at a given f-stop",
+  "diaphTargetF": "Target f-stop (f/)",
+  "diaphTargetResult": "Place the fixture at {distance} m ({lux} lx needed on the subject).",
+  "@diaphTargetResult": {
+    "placeholders": {
+      "distance": {},
+      "lux": {}
+    }
+  },
+  "diaphDisclaimer": "Estimate from output and angle (bell-shaped beam assumed): allow ± 1/2 stop depending on the optics. For more accuracy, use manufacturer lux data or a light meter.",
+  "cinemaRecModeDuration": "Available time",
+  "cinemaRecModeCapacity": "Required capacity",
+  "cinemaRecHoursLabel": "Recording time — hours",
+  "cinemaRecMinutesLabel": "Recording time — minutes",
+  "cinemaRecMarginLabel": "Safety margin",
+  "cinemaRecNeededResult": "Required capacity",
+  "cinemaRecWithMarginResult": "With {pct}% margin",
+  "@cinemaRecWithMarginResult": {
+    "placeholders": {
+      "pct": {}
+    }
+  },
+  "cinemaRecSuggestedMediaResult": "Suggested media",
+  "cinemaRecSuggestedNone": "> 8 TB: several media",
+  "riggingToolTrussLoadTitle": "Load per hoist",
+  "riggingToolTrussLoadSubtitle": "Truss load split over 2 to 6 hoists, with WLL and truss checks.",
+  "riggingTrussSectionTruss": "Truss",
+  "riggingTrussLengthLabel": "Truss length",
+  "riggingTrussSelfWeightLabel": "Truss self-weight",
+  "riggingTrussExtraUdlLabel": "Extra distributed load (cables…)",
+  "riggingUnitKgPerMeter": "kg/m",
+  "riggingUnitKn": "kN",
+  "riggingUnitKnm": "kN·m",
+  "riggingTrussSectionMotors": "Hoists",
+  "riggingTrussMotorCountLabel": "Number of hoists",
+  "riggingTrussMotorPositionLabel": "Hoist {n} position",
+  "@riggingTrussMotorPositionLabel": {
+    "placeholders": {
+      "n": {}
+    }
+  },
+  "riggingTrussPositionsHint": "Positions measured from the left end of the truss.",
+  "riggingTrussSpreadMotors": "Space evenly",
+  "riggingTrussExtraPerMotorLabel": "Extra weight per pick point (chain, slings, shackles)",
+  "riggingTrussMotorWllLabel": "Hoist WLL",
+  "riggingTrussDynamicFactorLabel": "Dynamic factor",
+  "riggingTrussSectionLoads": "Loads",
+  "riggingTrussFixtureCountLabel": "Evenly spread fixtures (count)",
+  "riggingTrussFixtureWeightLabel": "Weight per fixture",
+  "riggingTrussPointLoadsLabel": "Point loads",
+  "riggingTrussAddPointLoad": "Add a load",
+  "riggingTrussPositionLabel": "Position",
+  "riggingTrussMassLabel": "Weight",
+  "riggingTrussSectionCheck": "Truss check (optional)",
+  "riggingTrussAllowableUdl": "Distributed (UDL)",
+  "riggingTrussAllowableCpl": "Centre point (CPL)",
+  "riggingTrussAllowableValueLabel": "Manufacturer allowable value ({span} m)",
+  "@riggingTrussAllowableValueLabel": {
+    "placeholders": {
+      "span": {}
+    }
+  },
+  "riggingTrussAllowableHint": "Read the value for the largest span between two hoists in the manufacturer's load table.",
+  "riggingTrussMotorResultLabel": "Hoist {n} · {x} m",
+  "@riggingTrussMotorResultLabel": {
+    "placeholders": {
+      "n": {},
+      "x": {}
+    }
+  },
+  "riggingTrussTotalLoadLabel": "Total load on hoists",
+  "riggingTrussMaxMomentLabel": "Max moment (at {x} m)",
+  "@riggingTrussMaxMomentLabel": {
+    "placeholders": {
+      "x": {}
+    }
+  },
+  "riggingTrussLargestSpanLabel": "Largest span",
+  "riggingTrussUsageLabel": "Truss utilisation (moment)",
+  "riggingTrussInvalidInput": "Check the values: length, WLL, hoist positions (in order, on the truss, at least 1 cm apart), loads on the truss, dynamic factor ≥ 1.",
+  "riggingTrussOkDescription": "All hoists are below 80 % of their WLL.",
+  "riggingTrussWatchDescription": "At least one hoist is above 80 % of its WLL.",
+  "riggingTrussOverloadDescription": "At least one hoist exceeds its WLL.",
+  "riggingTrussUpliftDescription": "At least one hoist is in uplift (negative load): the cantilever is overloaded, the setup is unstable.",
+  "riggingTrussHyperstaticWarning": "3 or more hoists: theoretical distribution, with perfectly level hoists and a truss of constant stiffness. A few centimetres of height difference strongly change the real loads. Only a measurement (load cells) shows reality.",
+  "riggingTrussCantileverNote": "Cantilever present: also check the manufacturer's allowable cantilever values.",
+  "riggingTrussCheckNote": "Only the bending moment is compared. Shear, deflection, connections and accessories are not checked.",
+  "riggingTrussDisclaimer": "Theoretical results for guidance only; they do not replace a structural calculation. Every installation must be checked and approved by a qualified person. The app publisher cannot under any circumstances be held liable for the use of these results.",
+  "riggingTrussModelLabel": "Truss model",
+  "riggingTrussModelManual": "Manual entry",
+  "riggingTrussModelUnchecked": "values to check",
+  "riggingTrussTableValueLabel": "Manufacturer table value ({span} m)",
+  "@riggingTrussTableValueLabel": {
+    "placeholders": {
+      "span": {}
+    }
+  },
+  "riggingTrussTableSource": "Source: {source}",
+  "@riggingTrussTableSource": {
+    "placeholders": {
+      "source": {}
+    }
+  },
+  "riggingTrussOutOfTable": "Span outside the manufacturer table: check not possible.",
+  "riggingTrussNetNote": "The truss self-weight is already deducted from the table values; the tool accounts for it.",
+  "riggingTrussUncheckedNote": "Values taken from the manufacturer sheet but not yet checked: verify them against the source document.",
+  "riggingBridleHeightDiffLabel": "Height of point B (+ if higher than A)",
+  "riggingBridleHeightDiffHint": "Span measured horizontally, drop measured below point A.",
+  "homeTipLabel": "Did you know?",
+  "homeTipOpen": "Explore",
+  "homeTipHide": "Don't show again",
+  "homeTipHiddenSnack": "Tips hidden. You can turn them back on in Parameters.",
+  "settingsTipsTitle": "Home screen tips",
+  "settingsTipsSubtitle": "Suggest a tool to discover each time the app opens",
+  "homeTipRdm": "Identify and configure your DMX devices remotely with the RDM tool, without climbing the truss.",
+  "homeTipGigacore": "Read your Luminex GigaCore switch configuration, inventory your network and back up your configurations.",
+  "homeTipGdtf": "Create a GDTF file from a fixture's PDF manual, or by hand with the wizard.",
+  "homeTipPluginForge": "Generate custom grandMA3 Lua plugins with MA3 Plugin Forge.",
+  "homeTipPowerPlan": "Draw your power distribution diagram and export the report inspectors ask for.",
+  "homeTipUps": "Calculate UPS runtime based on the power draw of your equipment.",
+  "homeTipRigging": "Calculate sling angles and lengths for your bridles, and check truss loads.",
+  "homeTipSafety": "Prepare your safety plan and installation certificate straight from your phone.",
+  "homeTipIm3": "Calculate intermodulation products (IM3) to pick compatible wireless frequencies.",
+  "homeTipSubCardio": "Setting up cardioid subs or an end-fire array? The app calculates the delays for you.",
+  "homeTipDipswitch": "Find the dip-switch settings for any DMX address.",
+  "homeTipPinned": "Pin the references you use most to reach them straight from the home screen.",
+  "homeTipBpm": "Tap the tempo of a song and convert it to milliseconds for your effects and delays.",
+  "homeTipTimecode": "Work out timecode durations, offsets and delays in seconds.",
+  "homeDrawerRecommend": "Recommend to a colleague",
+  "homeShareAppSubject": "ShowTech Tools",
+  "homeShareAppMessage": "Check out ShowTech Tools, an app built for live event technicians: lighting, audio, video, power, rigging, networking, safety… Available on iOS and Android: https://www.openwhite.eu/showtech-tools/",
+  "riggingTrussGrossNote": "The manufacturer does not state whether the self-weight is deducted: to be safe, the tool subtracts it from the table value.",
+  "riggingHoistModelLabel": "Hoist model",
+  "riggingHoistModelManual": "Manual entry",
+  "riggingHoistModelClassNote": "Published class: {cls}. The class that applies is the one on the hoist plate.",
+  "@riggingHoistModelClassNote": {
+    "placeholders": {
+      "cls": {}
+    }
+  },
+  "riggingHoistModelWeights": "Weight without chain: {weight} kg · chain: {chain} kg/m",
+  "@riggingHoistModelWeights": {
+    "placeholders": {
+      "weight": {},
+      "chain": {}
+    }
+  }
 }

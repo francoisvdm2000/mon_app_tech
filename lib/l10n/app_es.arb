@@ -2883,8 +2883,8 @@
   "cinemaNdExposureDescription": "Convierte una corrección en paradas en densidad ND y factor de reducción de luz.",
   "cinemaNdExposureInfo": "Marcas: ND 0,3 = 1 paso, ND 0,6 = 2 pasos, ND 0,9 = 3 pasos, ND 1,2 = 4 pasos.",
   "cinemaRecordingStorageTitle": "tiempo de grabación",
-  "cinemaRecordingStorageSubtitle": "Duración disponible según capacidad y bitrate.",
-  "cinemaRecordingStorageDescription": "Calcula el tiempo disponible según la capacidad de la tarjeta/disco y la tasa de bits del vídeo.",
+  "cinemaRecordingStorageSubtitle": "Duración disponible o capacidad necesaria según el bitrate.",
+  "cinemaRecordingStorageDescription": "Estima la duración disponible en una tarjeta/disco, o la capacidad necesaria para una duración de grabación dada, según el bitrate de vídeo.",
   "cinemaRecordingStorageInfo": "Cálculo decimal simplificado: 1 GB = 8000 Mb. Deje espacio para audio, metadatos, sistema de archivos y grupo de medios.",
   "cinemaTimecodeTitle": "Código de tiempo",
   "cinemaTimecodeSubtitle": "Conversión de código de tiempo ↔ fotogramas y duración entre dos TC.",
@@ -6548,17 +6548,324 @@
   "luminexInvIssueDuplicateIp": "IP duplicada en la VLAN: {ips}",
   "netStartTip": "¿Por dónde empezar? En una red Luminex, abre «Switches GigaCore» con el teléfono en la VLAN de gestión: ve lo que está conectado en todas las VLAN. Si no, lanza un «Chequeo de salud».",
   "netSecWhoTitle": "¿Quién está en la red?",
-  "netSecWhoDesc": "Los equipos conectados: en todas las VLAN gracias a los switches GigaCore, o en tu subred con el escaneo.",
+  "netSecWhoDesc": "Los equipos conectados en todas las VLAN, vistos por los switches GigaCore, y los nodos MA-Net y NDI.",
   "netSecFlowTitle": "Flujos de luz y vídeo",
   "netSecFlowDesc": "Lo que circula donde está conectado tu teléfono: sACN, Art-Net, RDM y caudal. Para otras VLAN, usa «Switches GigaCore».",
   "netSecHealthTitle": "Salud de la red",
   "netSecHealthDesc": "Un chequeo con nota, una vigilancia en directo e instantáneas para comparar antes / después.",
   "netSecToolsTitle": "Herramientas y cálculos",
-  "netSecToolsDesc": "Ping, dirección IP, subred, direccionamiento Art-Net, presupuestos PoE y fibra.",
+  "netSecToolsDesc": "Subred, presupuestos PoE y fibra, direccionamiento Art-Net.",
   "netLimitsLuminexTip": "¿El teléfono no está en la VLAN correcta? Con switches GigaCore, «Switches GigaCore › Suscripciones multicast» muestra quién escucha qué en todas las VLAN, desde la red de gestión.",
   "diagSacnOtherVlan": "No hay sACN en tu VLAN, pero {count} universos circulan en otras VLAN (vistos por los GigaCore).",
   "diagLuminexUnreachable": "Switch GigaCore {switchName} ({ip}) inaccesible",
   "diagLuminexAlarm": "{switchName}: {text}",
   "diagLuminexNoIp": "{switchName}, puerto {port} ({name}): equipo sin dirección IP",
-  "diagLuminexDuplicateIp": "{switchName}, puerto {port}: IP duplicada en la VLAN ({ips})"
+  "diagLuminexDuplicateIp": "{switchName}, puerto {port}: IP duplicada en la VLAN ({ips})",
+  "netQuickTitle": "Acceso rápido",
+  "netQuickDesc": "Lo básico, gratis: escanear la red, hacer ping, ver tu dirección IP.",
+  "netCatTools": "Herramientas: {count}",
+  "netCatFree": "Gratis: {count}",
+  "netProUnlockTitle": "Desbloquear las herramientas Pro",
+  "netProUnlockDesc": "Suscripción Red Pro: todas las herramientas de esta sección.",
+  "fxCmpTitle": "Comparador de focos",
+  "fxCmpTileDescription": "Beta · Encontrar un equivalente a un foco",
+  "fxCmpPickHint": "¿Te falta un foco? Elige el que quieres sustituir y te encuentro equivalentes, ordenados por luminosidad y luego zoom.",
+  "fxCmpRefTitle": "Foco a sustituir",
+  "fxCmpSearchHint": "Marca, modelo o tipo…",
+  "fxCmpNoSearchResults": "Ningún foco encontrado",
+  "fxCmpChange": "Cambiar",
+  "fxCmpResultsCount": "Equivalentes encontrados: {count}",
+  "@fxCmpResultsCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "fxCmpShowResults": "Ver resultados ({count})",
+  "@fxCmpShowResults": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "fxCmpNoResults": "Ningún equivalente con estos filtros. ¡Amplía un poco la búsqueda!",
+  "fxCmpFilters": "Filtros",
+  "fxCmpResetFilters": "Restablecer",
+  "fxCmpCriteriaSection": "Criterios",
+  "fxCmpConstraintsSection": "Restricciones",
+  "fxCmpFamily": "Familia",
+  "fxCmpScopeSame": "Misma familia",
+  "fxCmpScopeClose": "Familias cercanas",
+  "fxCmpScopeAll": "Todas",
+  "fxCmpLumenTolerance": "Diferencia de luminosidad",
+  "fxCmpAny": "Cualquiera",
+  "fxCmpMustCoverZoom": "El zoom debe cubrir el de la referencia",
+  "fxCmpMustCoverZoomShort": "Zoom cubierto",
+  "fxCmpSource": "Fuente de luz",
+  "fxCmpMinCri": "CRI mínimo",
+  "fxCmpSameMotion": "Mismo movimiento (cabeza móvil / fijo)",
+  "fxCmpOtherBrands": "Solo otras marcas",
+  "fxCmpLighter": "Peso ≤ referencia",
+  "fxCmpLowerPower": "Consumo ≤ referencia",
+  "fxCmpIncludeIncomplete": "Incluir datos incompletos",
+  "fxCmpIncludeIncompleteHint": "Un dato que falta no excluye el foco, pero pierde los puntos de ese criterio.",
+  "fxCmpCompleteOnly": "Solo datos completos",
+  "fxCmpRefMissingValue": "No indicado para el foco de referencia",
+  "fxCmpLevelEquivalent": "Equivalente",
+  "fxCmpLevelClose": "Cercano",
+  "fxCmpLevelFar": "Lejano",
+  "fxCmpIncomplete": "Datos incompletos",
+  "fxCmpZoomCovers": "Zoom cubierto",
+  "fxCmpZoomPartial": "Zoom parcial",
+  "fxCmpCompareTitle": "Comparación",
+  "fxCmpCritFamily": "Familia",
+  "fxCmpCritLumen": "Luminosidad",
+  "fxCmpCritZoom": "Zoom",
+  "fxCmpCritCri": "CRI",
+  "fxCmpCritSource": "Fuente",
+  "fxCmpCritPower": "Potencia",
+  "fxCmpCritWeight": "Peso",
+  "fxCmpCritDmx": "Canales DMX",
+  "fxCmpFamSpotProfile": "Spot / Perfil",
+  "fxCmpFamBeam": "Beam",
+  "fxCmpFamHybrid": "Híbrido",
+  "fxCmpFamWash": "Wash",
+  "fxCmpFamMovingHead": "Cabeza móvil (sin precisar)",
+  "fxCmpFamPar": "PAR",
+  "fxCmpFamFresnelPc": "Fresnel / PC",
+  "fxCmpFamBar": "Barra / lineal",
+  "fxCmpFamStrobe": "Estrobo / blinder",
+  "fxCmpFamFollowspot": "Cañón de seguimiento",
+  "fxCmpFamSoftPanel": "Panel / luz suave",
+  "fxCmpFamCyclo": "Ciclorama / bañador de pared",
+  "fxCmpFamEffect": "Efecto",
+  "fxCmpFamLaser": "Láser",
+  "fxCmpFamAtmospheric": "Efectos atmosféricos (humo…)",
+  "fxCmpFamOther": "Otro",
+  "fxCmpSrcWhiteLed": "LED blanco",
+  "fxCmpSrcColorLed": "LED de color (RGBW…)",
+  "fxCmpSrcDischarge": "Lámpara de descarga",
+  "fxCmpSrcLaser": "Láser-fósforo",
+  "fxCmpSrcHalogen": "Halógeno / tungsteno",
+  "fxCmpSrcOther": "Otra fuente",
+  "fxCmpDataNotice": "El zoom, el CRI y la fuente aún no figuran en el catálogo para la mayoría de los focos: contarán en la clasificación en cuanto se añadan.",
+  "fxCmpRefNoData": "Este foco no tiene luminosidad ni zoom indicados: la clasificación será poco fiable.",
+  "fxCmpDisclaimer": "Clasificación orientativa basada en los datos del fabricante del catálogo. Comprueba siempre la ficha técnica antes de sustituir un foco.",
+  "fxCmpBetaBadge": "PRO · BETA",
+  "fxCmpBetaPill": "BETA",
+  "fxCmpBetaTitle": "Herramienta en beta 🧪",
+  "fxCmpBetaBody": "¡El comparador es totalmente nuevo! La clasificación irá mejorando a medida que se complete el catálogo (luminosidad, zoom, CRI, fuente). ¿Un resultado raro? Escríbenos, nos ayuda a mejorarlo.",
+  "fxCmpFeedback": "Enviar comentarios",
+  "fxCmpReportResult": "Informar de este resultado",
+  "fxCmpFeedbackSubject": "Comparador de focos (beta)",
+  "fxCmpFeedbackRef": "Foco a sustituir: {name}",
+  "@fxCmpFeedbackRef": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "fxCmpFeedbackCandidate": "Equivalente propuesto: {name} (puntuación {score})",
+  "@fxCmpFeedbackCandidate": {
+    "placeholders": {
+      "name": {},
+      "score": {}
+    }
+  },
+  "fxCmpFeedbackComment": "Tu comentario:",
+  "diaphTitle": "Diafragma de un foco",
+  "diaphTileDescription": "¿Qué diafragma de cámara con este foco?",
+  "diaphIntro": "¡En televisión se ilumina en diafragmas! Elige el foco, la distancia y tu cámara: te doy el diafragma en el centro del haz.",
+  "diaphMachineSection": "Foco",
+  "diaphSearchHint": "Buscar en el catálogo (opcional)…",
+  "diaphSourceLumens": "Lúmenes + ángulo",
+  "diaphSourceMaker": "Lux del fabricante",
+  "diaphLumens": "Flujo",
+  "diaphBeamAngle": "Ángulo de haz",
+  "diaphBeamAngleHint": "Beam (50 %), no field",
+  "diaphMakerLux": "Iluminancia",
+  "diaphMakerDistance": "a la distancia",
+  "diaphZoomRange": "Zoom del foco: {range}",
+  "@diaphZoomRange": {
+    "placeholders": {
+      "range": {}
+    }
+  },
+  "diaphDimmer": "Dimmer",
+  "diaphDistanceSection": "Distancia",
+  "diaphDistance": "Distancia foco → sujeto",
+  "diaphCameraSection": "Cámara",
+  "diaphCamBroadcast": "Broadcast",
+  "diaphCamIso": "ISO / obturación",
+  "diaphSensitivity": "Sensibilidad: F a 2000 lx",
+  "diaphSensitivityHint": "De la ficha técnica de tu cámara (ganancia 0 dB)",
+  "diaphCustom": "Personalizado",
+  "diaphGain": "Ganancia",
+  "diaphNd": "Filtro ND",
+  "diaphNdClear": "Clear",
+  "diaphIso": "ISO",
+  "diaphFps": "Imágenes/s",
+  "diaphShutter": "Obturador",
+  "diaphExposure": "Tiempo de exposición: {time}",
+  "@diaphExposure": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "diaphResultTitle": "Diafragma en el centro del haz",
+  "diaphExact": "exacto: f/{value}",
+  "@diaphExact": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "diaphLux": "Iluminancia",
+  "diaphBeamDiameter": "Diámetro del haz",
+  "diaphTooDark": "Falta luz: acerca el foco, sube la ganancia o quita el ND.",
+  "diaphTooBright": "Demasiada luz: añade un ND, baja el dimmer o aleja el foco.",
+  "diaphMissingInput": "Indica el foco (flujo + ángulo, o lux del fabricante) y la distancia para ver el diafragma.",
+  "diaphTargetSection": "Para trabajar a un diafragma concreto",
+  "diaphTargetF": "Diafragma objetivo (f/)",
+  "diaphTargetResult": "Coloca el foco a {distance} m (se necesitan {lux} lx en el sujeto).",
+  "@diaphTargetResult": {
+    "placeholders": {
+      "distance": {},
+      "lux": {}
+    }
+  },
+  "diaphDisclaimer": "Estimación a partir del flujo y el ángulo (haz supuesto en campana): cuenta ± 1/2 diafragma según la óptica. Para más precisión, usa los lux del fabricante o un luxómetro.",
+  "cinemaRecModeDuration": "Duración disponible",
+  "cinemaRecModeCapacity": "Capacidad necesaria",
+  "cinemaRecHoursLabel": "Duración a grabar — horas",
+  "cinemaRecMinutesLabel": "Duración a grabar — minutos",
+  "cinemaRecMarginLabel": "Margen de seguridad",
+  "cinemaRecNeededResult": "Capacidad necesaria",
+  "cinemaRecWithMarginResult": "Con {pct} % de margen",
+  "@cinemaRecWithMarginResult": {
+    "placeholders": {
+      "pct": {}
+    }
+  },
+  "cinemaRecSuggestedMediaResult": "Soporte recomendado",
+  "cinemaRecSuggestedNone": "> 8 TB: varios soportes",
+  "riggingToolTrussLoadTitle": "Carga por motor",
+  "riggingToolTrussLoadSubtitle": "Reparto de un truss sobre 2 a 6 motores, con verificación de CMU y del truss.",
+  "riggingTrussSectionTruss": "Truss",
+  "riggingTrussLengthLabel": "Longitud del truss",
+  "riggingTrussSelfWeightLabel": "Peso propio del truss",
+  "riggingTrussExtraUdlLabel": "Carga repartida adicional (cables…)",
+  "riggingUnitKgPerMeter": "kg/m",
+  "riggingUnitKn": "kN",
+  "riggingUnitKnm": "kN·m",
+  "riggingTrussSectionMotors": "Motores",
+  "riggingTrussMotorCountLabel": "Número de motores",
+  "riggingTrussMotorPositionLabel": "Posición motor {n}",
+  "@riggingTrussMotorPositionLabel": {
+    "placeholders": {
+      "n": {}
+    }
+  },
+  "riggingTrussPositionsHint": "Posiciones medidas desde el extremo izquierdo del truss.",
+  "riggingTrussSpreadMotors": "Repartir uniformemente",
+  "riggingTrussExtraPerMotorLabel": "Peso añadido por punto (cadena, eslingas, grilletes)",
+  "riggingTrussMotorWllLabel": "CMU / WLL del motor",
+  "riggingTrussDynamicFactorLabel": "Coeficiente dinámico",
+  "riggingTrussSectionLoads": "Cargas",
+  "riggingTrussFixtureCountLabel": "Proyectores repartidos (número)",
+  "riggingTrussFixtureWeightLabel": "Peso por proyector",
+  "riggingTrussPointLoadsLabel": "Cargas puntuales",
+  "riggingTrussAddPointLoad": "Añadir una carga",
+  "riggingTrussPositionLabel": "Posición",
+  "riggingTrussMassLabel": "Peso",
+  "riggingTrussSectionCheck": "Verificación del truss (opcional)",
+  "riggingTrussAllowableUdl": "Repartida (UDL)",
+  "riggingTrussAllowableCpl": "Puntual centrada (CPL)",
+  "riggingTrussAllowableValueLabel": "Valor admisible del fabricante ({span} m)",
+  "@riggingTrussAllowableValueLabel": {
+    "placeholders": {
+      "span": {}
+    }
+  },
+  "riggingTrussAllowableHint": "Toma de la tabla de carga del fabricante el valor para el mayor vano entre dos motores.",
+  "riggingTrussMotorResultLabel": "Motor {n} · {x} m",
+  "@riggingTrussMotorResultLabel": {
+    "placeholders": {
+      "n": {},
+      "x": {}
+    }
+  },
+  "riggingTrussTotalLoadLabel": "Carga total en los motores",
+  "riggingTrussMaxMomentLabel": "Momento máx. (a {x} m)",
+  "@riggingTrussMaxMomentLabel": {
+    "placeholders": {
+      "x": {}
+    }
+  },
+  "riggingTrussLargestSpanLabel": "Mayor vano",
+  "riggingTrussUsageLabel": "Uso del truss (momento)",
+  "riggingTrussInvalidInput": "Revisa los valores: longitud, CMU, posiciones de los motores (en orden, sobre el truss, al menos 1 cm de separación), cargas sobre el truss, coeficiente dinámico ≥ 1.",
+  "riggingTrussOkDescription": "Todos los motores están por debajo del 80 % de su CMU.",
+  "riggingTrussWatchDescription": "Al menos un motor supera el 80 % de su CMU.",
+  "riggingTrussOverloadDescription": "Al menos un motor supera su CMU.",
+  "riggingTrussUpliftDescription": "Al menos un motor está en levantamiento (carga negativa): voladizo sobrecargado, configuración inestable.",
+  "riggingTrussHyperstaticWarning": "3 motores o más: reparto teórico, con motores perfectamente nivelados y un truss de rigidez constante. Unos centímetros de diferencia de altura cambian mucho las cargas reales. Solo una medición (load cells) muestra la realidad.",
+  "riggingTrussCantileverNote": "Hay voladizo: verifica también los valores admisibles en voladizo del fabricante.",
+  "riggingTrussCheckNote": "Solo se compara el momento flector. El esfuerzo cortante, la flecha, las uniones y los accesorios no se verifican.",
+  "riggingTrussDisclaimer": "Resultados teóricos solo orientativos; no sustituyen un cálculo estructural. Toda instalación debe ser verificada y validada por una persona cualificada. El editor de la aplicación no puede en ningún caso ser considerado responsable del uso de estos resultados.",
+  "riggingTrussModelLabel": "Modelo de truss",
+  "riggingTrussModelManual": "Entrada manual",
+  "riggingTrussModelUnchecked": "valores por comprobar",
+  "riggingTrussTableValueLabel": "Valor de la tabla del fabricante ({span} m)",
+  "@riggingTrussTableValueLabel": {
+    "placeholders": {
+      "span": {}
+    }
+  },
+  "riggingTrussTableSource": "Fuente: {source}",
+  "@riggingTrussTableSource": {
+    "placeholders": {
+      "source": {}
+    }
+  },
+  "riggingTrussOutOfTable": "Vano fuera de la tabla del fabricante: verificación imposible.",
+  "riggingTrussNetNote": "El peso propio del truss ya está descontado de los valores de la tabla; la herramienta lo tiene en cuenta.",
+  "riggingTrussUncheckedNote": "Valores tomados de la ficha del fabricante pero aún no comprobados: verifícalos en el documento original.",
+  "riggingBridleHeightDiffLabel": "Desnivel del punto B (+ si está más alto que A)",
+  "riggingBridleHeightDiffHint": "Distancia medida en horizontal, caída medida bajo el punto A.",
+  "homeTipLabel": "¿Lo sabías?",
+  "homeTipOpen": "Descubrir",
+  "homeTipHide": "No volver a mostrar",
+  "homeTipHiddenSnack": "Consejos ocultos. Puedes reactivarlos en Ajustes.",
+  "settingsTipsTitle": "Consejos en la pantalla de inicio",
+  "settingsTipsSubtitle": "Sugerir una herramienta para descubrir cada vez que se abre la app",
+  "homeTipRdm": "Identifica y configura tus equipos DMX a distancia con la herramienta RDM, sin subir al truss.",
+  "homeTipGigacore": "Lee la configuración de tus switches Luminex GigaCore, haz el inventario de la red y guarda copias de tus configuraciones.",
+  "homeTipGdtf": "Crea un archivo GDTF a partir del manual PDF de un aparato, o a mano con el asistente.",
+  "homeTipPluginForge": "Genera plugins Lua a medida para grandMA3 con MA3 Plugin Forge.",
+  "homeTipPowerPlan": "Dibuja el esquema de tu distribución eléctrica y exporta el informe que piden los inspectores.",
+  "homeTipUps": "Calcula la autonomía de un SAI (UPS) según la potencia de tus equipos.",
+  "homeTipRigging": "Calcula ángulos y longitudes de eslingas para tus bridas, y comprueba la carga de un truss.",
+  "homeTipSafety": "Prepara tu plan de seguridad y el certificado de montaje directamente desde tu teléfono.",
+  "homeTipIm3": "Calcula los productos de intermodulación (IM3) para elegir frecuencias inalámbricas compatibles.",
+  "homeTipSubCardio": "¿Subs cardioides o un arreglo end-fire? La app calcula los retardos por ti.",
+  "homeTipDipswitch": "Encuentra la posición de los dip-switch para cualquier dirección DMX.",
+  "homeTipPinned": "Fija las referencias que más consultas para abrirlas directamente desde el inicio.",
+  "homeTipBpm": "Marca el tempo de una canción y conviértelo en milisegundos para tus efectos y retardos.",
+  "homeTipTimecode": "Calcula duraciones, desfases y retardos de timecode en segundos.",
+  "homeDrawerRecommend": "Recomendar a un compañero",
+  "homeShareAppSubject": "ShowTech Tools",
+  "homeShareAppMessage": "Te recomiendo ShowTech Tools, una app pensada para técnicos de espectáculos: iluminación, sonido, vídeo, electricidad, rigging, red, seguridad… Disponible en iOS y Android: https://www.openwhite.eu/showtech-tools/",
+  "riggingTrussGrossNote": "El fabricante no indica si el peso propio está descontado: por seguridad, la herramienta lo resta del valor de la tabla.",
+  "riggingHoistModelLabel": "Modelo de motor",
+  "riggingHoistModelManual": "Entrada manual",
+  "riggingHoistModelClassNote": "Clase publicada: {cls}. La clase que cuenta es la de la placa del motor.",
+  "@riggingHoistModelClassNote": {
+    "placeholders": {
+      "cls": {}
+    }
+  },
+  "riggingHoistModelWeights": "Peso sin cadena: {weight} kg · cadena: {chain} kg/m",
+  "@riggingHoistModelWeights": {
+    "placeholders": {
+      "weight": {},
+      "chain": {}
+    }
+  }
 }

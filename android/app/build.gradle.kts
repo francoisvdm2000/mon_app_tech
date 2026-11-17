@@ -68,9 +68,13 @@ android {
             // ✅ Signature release
             signingConfig = signingConfigs.getByName("release")
 
-            // ✅ APK bêta stable (pas de minify/shrink pour éviter bugs surprises)
-            isMinifyEnabled = false
-            isShrinkResources = false
+            // ✅ R8 : réduction + optimisation + obscurcissement (exigé par Google Play)
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 }

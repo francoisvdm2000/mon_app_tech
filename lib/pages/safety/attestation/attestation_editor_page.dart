@@ -21,6 +21,7 @@ import '../widgets/signature_pad.dart';
 import 'attestation_models.dart';
 import 'attestation_pdf.dart';
 import 'attestation_storage.dart';
+import 'package:mon_app_tech/services/review_prompt_service.dart';
 
 class AttestationEditorPage extends StatefulWidget {
   final AttestationDocument document;
@@ -858,6 +859,7 @@ class _AttestationEditorPageState extends State<AttestationEditorPage> {
           onLayout: (_) async => bytes,
           name: '${base}_${langs.first.toUpperCase()}.pdf',
         );
+        ReviewPromptService.onSuccess();
         return;
       }
       final files = <XFile>[];
@@ -873,6 +875,7 @@ class _AttestationEditorPageState extends State<AttestationEditorPage> {
         subject: _doc.eventName.trim().isEmpty ? null : _doc.eventName.trim(),
         sharePositionOrigin: shareOrigin,
       );
+      ReviewPromptService.onSuccess();
     } finally {
       if (mounted) setState(() => _exporting = false);
     }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/locale_provider.dart';
+import '../services/home_tips_service.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
 
 class PageSettings extends StatelessWidget {
@@ -109,9 +110,48 @@ class PageSettings extends StatelessWidget {
                 title: _flagTitle(_flag(code), _label(code)),
               );
             }),
+            const Divider(height: 24),
+            const _HomeTipsSwitchTile(),
           ],
         ),
       ),
+    );
+  }
+}
+
+/// Active / désactive les astuces « Le saviez-vous ? » de l'accueil.
+class _HomeTipsSwitchTile extends StatefulWidget {
+  const _HomeTipsSwitchTile();
+
+  @override
+  State<_HomeTipsSwitchTile> createState() => _HomeTipsSwitchTileState();
+}
+
+class _HomeTipsSwitchTileState extends State<_HomeTipsSwitchTile> {
+  bool? _enabled;
+
+  @override
+  void initState() {
+    super.initState();
+    HomeTipsService.isEnabled().then((v) {
+      if (mounted) setState(() => _enabled = v);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context);
+    return SwitchListTile(
+      secondary: const Icon(Icons.lightbulb_outline_rounded),
+      title: Text(loc.settingsTipsTitle),
+      subtitle: Text(loc.settingsTipsSubtitle),
+      value: _enabled ?? true,
+      onChanged: _enabled == null
+          ? null
+          : (v) async {
+              setState(() => _enabled = v);
+              await HomeTipsService.setEnabled(v);
+            },
     );
   }
 }

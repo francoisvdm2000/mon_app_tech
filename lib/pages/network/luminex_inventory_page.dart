@@ -11,6 +11,7 @@ import '../../models/network/luminex_group.dart';
 import '../../models/network/luminex_inventory.dart';
 import '../../services/network/luminex_service.dart';
 import 'luminex_multicast_page.dart' show compactUniverseList;
+import 'package:mon_app_tech/services/review_prompt_service.dart';
 
 const _kAccent = Color(0xFF00E5FF);
 const _kWarn = Color(0xFFFFB300);
@@ -163,6 +164,7 @@ class _LuminexInventoryPageState extends State<LuminexInventoryPage> {
       [XFile.fromData(bytes, name: name, mimeType: 'text/csv')],
       sharePositionOrigin: origin,
     );
+    ReviewPromptService.onSuccess();
   }
 
   @override

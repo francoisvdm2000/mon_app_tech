@@ -11,6 +11,7 @@ import '../../models/network/luminex_device.dart';
 import '../../services/network/luminex_backup_store.dart';
 import '../../services/network/luminex_service.dart';
 import 'luminex_config_actions.dart';
+import 'package:mon_app_tech/services/review_prompt_service.dart';
 
 const _kAccent = Color(0xFF00E5FF);
 const _kWarn = Color(0xFFFFB300);
@@ -144,6 +145,7 @@ class _LuminexBackupPageState extends State<LuminexBackupPage> {
       [XFile(file.path, mimeType: 'application/json')],
       sharePositionOrigin: origin,
     );
+    ReviewPromptService.onSuccess();
   }
 
   Future<void> _delete(File file) async {

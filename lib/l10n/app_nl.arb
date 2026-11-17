@@ -2883,8 +2883,8 @@
   "cinemaNdExposureDescription": "Converteert een correctie in stops naar ND-dichtheid en lichtreductiefactor.",
   "cinemaNdExposureInfo": "Merken: ND 0,3 = 1 stop, ND 0,6 = 2 stops, ND 0,9 = 3 stops, ND 1,2 = 4 stops.",
   "cinemaRecordingStorageTitle": "Opnametijd",
-  "cinemaRecordingStorageSubtitle": "Beschikbare duur afhankelijk van capaciteit en bitrate.",
-  "cinemaRecordingStorageDescription": "Schat de beschikbare tijd op basis van kaart-/schijfcapaciteit en videobitsnelheid.",
+  "cinemaRecordingStorageSubtitle": "Beschikbare duur of benodigde capaciteit op basis van de bitrate.",
+  "cinemaRecordingStorageDescription": "Schat de beschikbare opnameduur op een kaart/schijf, of de benodigde capaciteit voor een gegeven opnameduur, op basis van de videobitrate.",
   "cinemaRecordingStorageInfo": "Vereenvoudigde decimale berekening: 1 GB = 8000 Mb. Zorg voor ruimte voor audio, metadata, bestandssysteem en mediapool.",
   "cinemaTimecodeTitle": "Tijdcode",
   "cinemaTimecodeSubtitle": "Tijdcodeconversie ↔ frames en duur tussen twee TC's.",
@@ -6548,17 +6548,324 @@
   "luminexInvIssueDuplicateIp": "Dubbel IP in het VLAN: {ips}",
   "netStartTip": "Waar beginnen? Op een Luminex-netwerk open je „GigaCore-switches” met de telefoon op het management-VLAN: die ziet wat er op alle VLAN's is aangesloten. Anders start je een „Gezondheidscheck”.",
   "netSecWhoTitle": "Wie zit er op het netwerk?",
-  "netSecWhoDesc": "Aangesloten apparaten: op alle VLAN's via de GigaCore-switches, of op je subnet met de scan.",
+  "netSecWhoDesc": "Apparaten op alle VLAN's, gezien door de GigaCore-switches, plus MA-Net- en NDI-nodes.",
   "netSecFlowTitle": "Licht- en videostromen",
   "netSecFlowDesc": "Wat er stroomt waar je telefoon is aangesloten: sACN, Art-Net, RDM en doorvoer. Voor andere VLAN's gebruik je „GigaCore-switches”.",
   "netSecHealthTitle": "Gezondheid van het netwerk",
   "netSecHealthDesc": "Een check met score, live bewaking en momentopnamen om voor / na te vergelijken.",
   "netSecToolsTitle": "Hulpmiddelen en berekeningen",
-  "netSecToolsDesc": "Ping, IP-adres, subnet, Art-Net-adressering, PoE- en glasvezelbudget.",
+  "netSecToolsDesc": "Subnet, PoE- en glasvezelbudget, Art-Net-adressering.",
   "netLimitsLuminexTip": "Telefoon niet op het juiste VLAN? Met GigaCore-switches toont „GigaCore-switches › Multicast-abonnementen” vanaf het managementnetwerk wie waarnaar luistert op alle VLAN's.",
   "diagSacnOtherVlan": "Geen sACN op je VLAN, maar {count} universums lopen op andere VLAN's (gezien door de GigaCores).",
   "diagLuminexUnreachable": "GigaCore-switch {switchName} ({ip}) onbereikbaar",
   "diagLuminexAlarm": "{switchName}: {text}",
   "diagLuminexNoIp": "{switchName}, poort {port} ({name}): apparaat zonder IP-adres",
-  "diagLuminexDuplicateIp": "{switchName}, poort {port}: dubbel IP in het VLAN ({ips})"
+  "diagLuminexDuplicateIp": "{switchName}, poort {port}: dubbel IP in het VLAN ({ips})",
+  "netQuickTitle": "Snelle toegang",
+  "netQuickDesc": "De basis, gratis: netwerk scannen, pingen, je IP-adres zien.",
+  "netCatTools": "Hulpmiddelen: {count}",
+  "netCatFree": "Gratis: {count}",
+  "netProUnlockTitle": "Pro-hulpmiddelen ontgrendelen",
+  "netProUnlockDesc": "Netwerk Pro-abonnement: alle hulpmiddelen in deze rubriek.",
+  "fxCmpTitle": "Armaturenvergelijker",
+  "fxCmpTileDescription": "Bèta · Een vervanger voor een armatuur vinden",
+  "fxCmpPickHint": "Mis je een armatuur? Kies de te vervangen armatuur en ik zoek alternatieven, gerangschikt op lichtopbrengst en daarna zoom.",
+  "fxCmpRefTitle": "Te vervangen armatuur",
+  "fxCmpSearchHint": "Merk, model of type…",
+  "fxCmpNoSearchResults": "Geen armatuur gevonden",
+  "fxCmpChange": "Wijzigen",
+  "fxCmpResultsCount": "Gevonden alternatieven: {count}",
+  "@fxCmpResultsCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "fxCmpShowResults": "Resultaten tonen ({count})",
+  "@fxCmpShowResults": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "fxCmpNoResults": "Geen alternatief met deze filters. Verruim de zoekopdracht een beetje!",
+  "fxCmpFilters": "Filters",
+  "fxCmpResetFilters": "Herstellen",
+  "fxCmpCriteriaSection": "Criteria",
+  "fxCmpConstraintsSection": "Beperkingen",
+  "fxCmpFamily": "Familie",
+  "fxCmpScopeSame": "Zelfde familie",
+  "fxCmpScopeClose": "Verwante families",
+  "fxCmpScopeAll": "Alle",
+  "fxCmpLumenTolerance": "Afwijking lichtopbrengst",
+  "fxCmpAny": "Maakt niet uit",
+  "fxCmpMustCoverZoom": "Zoom moet het bereik van de referentie dekken",
+  "fxCmpMustCoverZoomShort": "Zoom gedekt",
+  "fxCmpSource": "Lichtbron",
+  "fxCmpMinCri": "Minimale CRI",
+  "fxCmpSameMotion": "Zelfde beweging (moving head / statisch)",
+  "fxCmpOtherBrands": "Alleen andere merken",
+  "fxCmpLighter": "Gewicht ≤ referentie",
+  "fxCmpLowerPower": "Verbruik ≤ referentie",
+  "fxCmpIncludeIncomplete": "Onvolledige gegevens meenemen",
+  "fxCmpIncludeIncompleteHint": "Een ontbrekende waarde sluit de armatuur niet uit, maar ze verliest de punten voor dat criterium.",
+  "fxCmpCompleteOnly": "Alleen volledige gegevens",
+  "fxCmpRefMissingValue": "Niet opgegeven voor de referentie-armatuur",
+  "fxCmpLevelEquivalent": "Gelijkwaardig",
+  "fxCmpLevelClose": "Vergelijkbaar",
+  "fxCmpLevelFar": "Afwijkend",
+  "fxCmpIncomplete": "Onvolledige gegevens",
+  "fxCmpZoomCovers": "Zoom gedekt",
+  "fxCmpZoomPartial": "Zoom gedeeltelijk",
+  "fxCmpCompareTitle": "Vergelijking",
+  "fxCmpCritFamily": "Familie",
+  "fxCmpCritLumen": "Lichtopbrengst",
+  "fxCmpCritZoom": "Zoom",
+  "fxCmpCritCri": "CRI",
+  "fxCmpCritSource": "Bron",
+  "fxCmpCritPower": "Vermogen",
+  "fxCmpCritWeight": "Gewicht",
+  "fxCmpCritDmx": "DMX-kanalen",
+  "fxCmpFamSpotProfile": "Spot / Profiel",
+  "fxCmpFamBeam": "Beam",
+  "fxCmpFamHybrid": "Hybride",
+  "fxCmpFamWash": "Wash",
+  "fxCmpFamMovingHead": "Moving head (niet gespecificeerd)",
+  "fxCmpFamPar": "PAR",
+  "fxCmpFamFresnelPc": "Fresnel / PC",
+  "fxCmpFamBar": "Bar / lineair",
+  "fxCmpFamStrobe": "Strobe / blinder",
+  "fxCmpFamFollowspot": "Volgspot",
+  "fxCmpFamSoftPanel": "Paneel / softlight",
+  "fxCmpFamCyclo": "Cyc / wallwasher",
+  "fxCmpFamEffect": "Effect",
+  "fxCmpFamLaser": "Laser",
+  "fxCmpFamAtmospheric": "Effectmachine (rook…)",
+  "fxCmpFamOther": "Overig",
+  "fxCmpSrcWhiteLed": "Witte led",
+  "fxCmpSrcColorLed": "Kleuren-led (RGBW…)",
+  "fxCmpSrcDischarge": "Ontladingslamp",
+  "fxCmpSrcLaser": "Laserfosfor",
+  "fxCmpSrcHalogen": "Halogeen / wolfraam",
+  "fxCmpSrcOther": "Andere bron",
+  "fxCmpDataNotice": "Zoom, CRI en lichtbron zijn voor de meeste armaturen nog niet in de catalogus ingevuld: ze tellen mee in de rangschikking zodra dat wel zo is.",
+  "fxCmpRefNoData": "Voor deze armatuur zijn lichtopbrengst noch zoom opgegeven: de rangschikking is weinig betrouwbaar.",
+  "fxCmpDisclaimer": "Indicatieve rangschikking op basis van fabrikantgegevens uit de catalogus. Controleer altijd het datablad voordat je een armatuur vervangt.",
+  "fxCmpBetaBadge": "PRO · BÈTA",
+  "fxCmpBetaPill": "BÈTA",
+  "fxCmpBetaTitle": "Tool in bèta 🧪",
+  "fxCmpBetaBody": "De vergelijker is gloednieuw! De rangschikking wordt nauwkeuriger naarmate de catalogus vollediger wordt (lichtopbrengst, zoom, CRI, bron). Een raar resultaat? Laat het ons weten, zo kunnen we het verbeteren.",
+  "fxCmpFeedback": "Feedback sturen",
+  "fxCmpReportResult": "Dit resultaat melden",
+  "fxCmpFeedbackSubject": "Armaturenvergelijker (bèta)",
+  "fxCmpFeedbackRef": "Te vervangen armatuur: {name}",
+  "@fxCmpFeedbackRef": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "fxCmpFeedbackCandidate": "Voorgesteld alternatief: {name} (score {score})",
+  "@fxCmpFeedbackCandidate": {
+    "placeholders": {
+      "name": {},
+      "score": {}
+    }
+  },
+  "fxCmpFeedbackComment": "Je opmerking:",
+  "diaphTitle": "Diafragma van een armatuur",
+  "diaphTileDescription": "Welk cameradiafragma met deze armatuur?",
+  "diaphIntro": "Bij televisie belicht je in diafragma's! Kies de armatuur, de afstand en je camera: ik geef je het diafragma in het midden van de bundel.",
+  "diaphMachineSection": "Armatuur",
+  "diaphSearchHint": "Zoeken in de catalogus (optioneel)…",
+  "diaphSourceLumens": "Lumen + hoek",
+  "diaphSourceMaker": "Lux volgens fabrikant",
+  "diaphLumens": "Lichtstroom",
+  "diaphBeamAngle": "Bundelhoek",
+  "diaphBeamAngleHint": "Beam (50 %), niet field",
+  "diaphMakerLux": "Verlichtingssterkte",
+  "diaphMakerDistance": "op afstand",
+  "diaphZoomRange": "Zoom van de armatuur: {range}",
+  "@diaphZoomRange": {
+    "placeholders": {
+      "range": {}
+    }
+  },
+  "diaphDimmer": "Dimmer",
+  "diaphDistanceSection": "Afstand",
+  "diaphDistance": "Afstand armatuur → onderwerp",
+  "diaphCameraSection": "Camera",
+  "diaphCamBroadcast": "Broadcast",
+  "diaphCamIso": "ISO / sluiter",
+  "diaphSensitivity": "Gevoeligheid: F bij 2000 lx",
+  "diaphSensitivityHint": "Uit het datablad van je camera (gain 0 dB)",
+  "diaphCustom": "Eigen",
+  "diaphGain": "Gain",
+  "diaphNd": "ND-filter",
+  "diaphNdClear": "Clear",
+  "diaphIso": "ISO",
+  "diaphFps": "Beelden/s",
+  "diaphShutter": "Sluiter",
+  "diaphExposure": "Belichtingstijd: {time}",
+  "@diaphExposure": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "diaphResultTitle": "Diafragma in het midden van de bundel",
+  "diaphExact": "exact: f/{value}",
+  "@diaphExact": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "diaphLux": "Verlichtingssterkte",
+  "diaphBeamDiameter": "Bundeldiameter",
+  "diaphTooDark": "Te weinig licht: zet de armatuur dichterbij, verhoog de gain of verwijder de ND.",
+  "diaphTooBright": "Te veel licht: voeg een ND toe, dim de armatuur of zet hem verder weg.",
+  "diaphMissingInput": "Vul de armatuur (lichtstroom + hoek, of lux volgens fabrikant) en de afstand in om het diafragma te zien.",
+  "diaphTargetSection": "Om op een bepaald diafragma te werken",
+  "diaphTargetF": "Gewenst diafragma (f/)",
+  "diaphTargetResult": "Zet de armatuur op {distance} m ({lux} lx nodig op het onderwerp).",
+  "@diaphTargetResult": {
+    "placeholders": {
+      "distance": {},
+      "lux": {}
+    }
+  },
+  "diaphDisclaimer": "Schatting op basis van lichtstroom en hoek (klokvormige bundel verondersteld): reken op ± 1/2 diafragma afhankelijk van de optiek. Gebruik voor meer precisie de lux van de fabrikant of een luxmeter.",
+  "cinemaRecModeDuration": "Beschikbare duur",
+  "cinemaRecModeCapacity": "Benodigde capaciteit",
+  "cinemaRecHoursLabel": "Op te nemen duur — uren",
+  "cinemaRecMinutesLabel": "Op te nemen duur — minuten",
+  "cinemaRecMarginLabel": "Veiligheidsmarge",
+  "cinemaRecNeededResult": "Benodigde capaciteit",
+  "cinemaRecWithMarginResult": "Met {pct} % marge",
+  "@cinemaRecWithMarginResult": {
+    "placeholders": {
+      "pct": {}
+    }
+  },
+  "cinemaRecSuggestedMediaResult": "Aanbevolen medium",
+  "cinemaRecSuggestedNone": "> 8 TB: meerdere media",
+  "riggingToolTrussLoadTitle": "Belasting per takel",
+  "riggingToolTrussLoadSubtitle": "Verdeling van een truss over 2 tot 6 takels, met WLL- en trusscontrole.",
+  "riggingTrussSectionTruss": "Truss",
+  "riggingTrussLengthLabel": "Lengte van de truss",
+  "riggingTrussSelfWeightLabel": "Eigen gewicht van de truss",
+  "riggingTrussExtraUdlLabel": "Extra verdeelde last (kabels…)",
+  "riggingUnitKgPerMeter": "kg/m",
+  "riggingUnitKn": "kN",
+  "riggingUnitKnm": "kN·m",
+  "riggingTrussSectionMotors": "Takels",
+  "riggingTrussMotorCountLabel": "Aantal takels",
+  "riggingTrussMotorPositionLabel": "Positie takel {n}",
+  "@riggingTrussMotorPositionLabel": {
+    "placeholders": {
+      "n": {}
+    }
+  },
+  "riggingTrussPositionsHint": "Posities gemeten vanaf het linkeruiteinde van de truss.",
+  "riggingTrussSpreadMotors": "Gelijkmatig verdelen",
+  "riggingTrussExtraPerMotorLabel": "Extra gewicht per ophangpunt (ketting, spanbanden, sluitingen)",
+  "riggingTrussMotorWllLabel": "WLL van de takel",
+  "riggingTrussDynamicFactorLabel": "Dynamische factor",
+  "riggingTrussSectionLoads": "Lasten",
+  "riggingTrussFixtureCountLabel": "Gelijk verdeelde armaturen (aantal)",
+  "riggingTrussFixtureWeightLabel": "Gewicht per armatuur",
+  "riggingTrussPointLoadsLabel": "Puntlasten",
+  "riggingTrussAddPointLoad": "Last toevoegen",
+  "riggingTrussPositionLabel": "Positie",
+  "riggingTrussMassLabel": "Gewicht",
+  "riggingTrussSectionCheck": "Trusscontrole (optioneel)",
+  "riggingTrussAllowableUdl": "Verdeeld (UDL)",
+  "riggingTrussAllowableCpl": "Centrale puntlast (CPL)",
+  "riggingTrussAllowableValueLabel": "Toelaatbare waarde fabrikant ({span} m)",
+  "@riggingTrussAllowableValueLabel": {
+    "placeholders": {
+      "span": {}
+    }
+  },
+  "riggingTrussAllowableHint": "Lees in de belastingtabel van de fabrikant de waarde af voor de grootste overspanning tussen twee takels.",
+  "riggingTrussMotorResultLabel": "Takel {n} · {x} m",
+  "@riggingTrussMotorResultLabel": {
+    "placeholders": {
+      "n": {},
+      "x": {}
+    }
+  },
+  "riggingTrussTotalLoadLabel": "Totale last op de takels",
+  "riggingTrussMaxMomentLabel": "Max. moment (op {x} m)",
+  "@riggingTrussMaxMomentLabel": {
+    "placeholders": {
+      "x": {}
+    }
+  },
+  "riggingTrussLargestSpanLabel": "Grootste overspanning",
+  "riggingTrussUsageLabel": "Benutting truss (moment)",
+  "riggingTrussInvalidInput": "Controleer de waarden: lengte, WLL, takelposities (op volgorde, op de truss, minstens 1 cm uit elkaar), lasten op de truss, dynamische factor ≥ 1.",
+  "riggingTrussOkDescription": "Alle takels zitten onder 80 % van hun WLL.",
+  "riggingTrussWatchDescription": "Minstens één takel zit boven 80 % van zijn WLL.",
+  "riggingTrussOverloadDescription": "Minstens één takel overschrijdt zijn WLL.",
+  "riggingTrussUpliftDescription": "Minstens één takel wordt opgetild (negatieve last): uitkraging overbelast, opstelling instabiel.",
+  "riggingTrussHyperstaticWarning": "3 takels of meer: theoretische verdeling, met perfect waterpas hangende takels en een truss met constante stijfheid. Enkele centimeters hoogteverschil veranderen de echte lasten sterk. Alleen een meting (load cells) toont de werkelijkheid.",
+  "riggingTrussCantileverNote": "Uitkraging aanwezig: controleer ook de toelaatbare uitkragingswaarden van de fabrikant.",
+  "riggingTrussCheckNote": "Alleen het buigend moment wordt vergeleken. Dwarskracht, doorbuiging, verbindingen en accessoires worden niet gecontroleerd.",
+  "riggingTrussDisclaimer": "Theoretische resultaten, alleen ter indicatie; ze vervangen geen sterkteberekening. Elke installatie moet door een gekwalificeerde persoon worden gecontroleerd en goedgekeurd. De uitgever van de app kan in geen geval aansprakelijk worden gesteld voor het gebruik van deze resultaten.",
+  "riggingTrussModelLabel": "Trussmodel",
+  "riggingTrussModelManual": "Handmatige invoer",
+  "riggingTrussModelUnchecked": "waarden te controleren",
+  "riggingTrussTableValueLabel": "Waarde uit de fabrikantentabel ({span} m)",
+  "@riggingTrussTableValueLabel": {
+    "placeholders": {
+      "span": {}
+    }
+  },
+  "riggingTrussTableSource": "Bron: {source}",
+  "@riggingTrussTableSource": {
+    "placeholders": {
+      "source": {}
+    }
+  },
+  "riggingTrussOutOfTable": "Overspanning buiten de fabrikantentabel: controle niet mogelijk.",
+  "riggingTrussNetNote": "Het eigen gewicht van de truss is al afgetrokken van de tabelwaarden; de tool houdt daar rekening mee.",
+  "riggingTrussUncheckedNote": "Waarden uit het fabrikantenblad, maar nog niet gecontroleerd: controleer ze met het brondocument.",
+  "riggingBridleHeightDiffLabel": "Hoogteverschil punt B (+ als hoger dan A)",
+  "riggingBridleHeightDiffHint": "Afstand horizontaal gemeten, doorhang gemeten onder punt A.",
+  "homeTipLabel": "Wist je dat?",
+  "homeTipOpen": "Ontdekken",
+  "homeTipHide": "Niet meer tonen",
+  "homeTipHiddenSnack": "Tips verborgen. Je kunt ze weer aanzetten in Instellingen.",
+  "settingsTipsTitle": "Tips op het startscherm",
+  "settingsTipsSubtitle": "Bij elke start een tool voorstellen om te ontdekken",
+  "homeTipRdm": "Identificeer en configureer je DMX-apparaten op afstand met de RDM-tool, zonder de truss op te gaan.",
+  "homeTipGigacore": "Lees de configuratie van je Luminex GigaCore-switches, inventariseer je netwerk en maak back-ups van je configuraties.",
+  "homeTipGdtf": "Maak een GDTF-bestand op basis van de PDF-handleiding van een armatuur, of handmatig met de assistent.",
+  "homeTipPluginForge": "Genereer grandMA3 Lua-plugins op maat met MA3 Plugin Forge.",
+  "homeTipPowerPlan": "Teken het schema van je stroomverdeling en exporteer het rapport dat keurders vragen.",
+  "homeTipUps": "Bereken de autonomie van een UPS op basis van het vermogen van je apparatuur.",
+  "homeTipRigging": "Bereken hoeken en lengtes van stroppen voor je bridles en controleer de belasting van een truss.",
+  "homeTipSafety": "Bereid je veiligheidsplan en montageattest voor, rechtstreeks vanaf je telefoon.",
+  "homeTipIm3": "Bereken intermodulatieproducten (IM3) om compatibele draadloze frequenties te kiezen.",
+  "homeTipSubCardio": "Cardioïde subs of een end-fire opstelling? De app berekent de delays voor je.",
+  "homeTipDipswitch": "Vind de dipswitch-stand voor elk DMX-adres.",
+  "homeTipPinned": "Pin de referenties die je het meest gebruikt om ze direct vanaf het startscherm te openen.",
+  "homeTipBpm": "Tik het tempo van een nummer in en zet het om naar milliseconden voor je effecten en delays.",
+  "homeTipTimecode": "Bereken timecode-duur, offsets en vertragingen in een paar seconden.",
+  "homeDrawerRecommend": "Aanraden aan een collega",
+  "homeShareAppSubject": "ShowTech Tools",
+  "homeShareAppMessage": "Ik raad je ShowTech Tools aan, een app voor podiumtechnici: licht, geluid, video, elektriciteit, rigging, netwerk, veiligheid… Beschikbaar op iOS en Android: https://www.openwhite.eu/showtech-tools/",
+  "riggingTrussGrossNote": "De fabrikant vermeldt niet of het eigen gewicht is afgetrokken: voor de veiligheid trekt de tool het af van de tabelwaarde.",
+  "riggingHoistModelLabel": "Takelmodel",
+  "riggingHoistModelManual": "Handmatige invoer",
+  "riggingHoistModelClassNote": "Opgegeven klasse: {cls}. De klasse op het typeplaatje van de takel is bepalend.",
+  "@riggingHoistModelClassNote": {
+    "placeholders": {
+      "cls": {}
+    }
+  },
+  "riggingHoistModelWeights": "Gewicht zonder ketting: {weight} kg · ketting: {chain} kg/m",
+  "@riggingHoistModelWeights": {
+    "placeholders": {
+      "weight": {},
+      "chain": {}
+    }
+  }
 }

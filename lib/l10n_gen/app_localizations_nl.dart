@@ -8355,11 +8355,11 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get cinemaRecordingStorageSubtitle =>
-      'Beschikbare duur afhankelijk van capaciteit en bitrate.';
+      'Beschikbare duur of benodigde capaciteit op basis van de bitrate.';
 
   @override
   String get cinemaRecordingStorageDescription =>
-      'Schat de beschikbare tijd op basis van kaart-/schijfcapaciteit en videobitsnelheid.';
+      'Schat de beschikbare opnameduur op een kaart/schijf, of de benodigde capaciteit voor een gegeven opnameduur, op basis van de videobitrate.';
 
   @override
   String get cinemaRecordingStorageInfo =>
@@ -17460,7 +17460,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get netSecWhoDesc =>
-      'Aangesloten apparaten: op alle VLAN\'s via de GigaCore-switches, of op je subnet met de scan.';
+      'Apparaten op alle VLAN\'s, gezien door de GigaCore-switches, plus MA-Net- en NDI-nodes.';
 
   @override
   String get netSecFlowTitle => 'Licht- en videostromen';
@@ -17481,7 +17481,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get netSecToolsDesc =>
-      'Ping, IP-adres, subnet, Art-Net-adressering, PoE- en glasvezelbudget.';
+      'Subnet, PoE- en glasvezelbudget, Art-Net-adressering.';
 
   @override
   String get netLimitsLuminexTip =>
@@ -17510,5 +17510,753 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String diagLuminexDuplicateIp(String switchName, int port, String ips) {
     return '$switchName, poort $port: dubbel IP in het VLAN ($ips)';
+  }
+
+  @override
+  String get netQuickTitle => 'Snelle toegang';
+
+  @override
+  String get netQuickDesc =>
+      'De basis, gratis: netwerk scannen, pingen, je IP-adres zien.';
+
+  @override
+  String netCatTools(int count) {
+    return 'Hulpmiddelen: $count';
+  }
+
+  @override
+  String netCatFree(int count) {
+    return 'Gratis: $count';
+  }
+
+  @override
+  String get netProUnlockTitle => 'Pro-hulpmiddelen ontgrendelen';
+
+  @override
+  String get netProUnlockDesc =>
+      'Netwerk Pro-abonnement: alle hulpmiddelen in deze rubriek.';
+
+  @override
+  String get fxCmpTitle => 'Armaturenvergelijker';
+
+  @override
+  String get fxCmpTileDescription =>
+      'Bèta · Een vervanger voor een armatuur vinden';
+
+  @override
+  String get fxCmpPickHint =>
+      'Mis je een armatuur? Kies de te vervangen armatuur en ik zoek alternatieven, gerangschikt op lichtopbrengst en daarna zoom.';
+
+  @override
+  String get fxCmpRefTitle => 'Te vervangen armatuur';
+
+  @override
+  String get fxCmpSearchHint => 'Merk, model of type…';
+
+  @override
+  String get fxCmpNoSearchResults => 'Geen armatuur gevonden';
+
+  @override
+  String get fxCmpChange => 'Wijzigen';
+
+  @override
+  String fxCmpResultsCount(Object count) {
+    return 'Gevonden alternatieven: $count';
+  }
+
+  @override
+  String fxCmpShowResults(Object count) {
+    return 'Resultaten tonen ($count)';
+  }
+
+  @override
+  String get fxCmpNoResults =>
+      'Geen alternatief met deze filters. Verruim de zoekopdracht een beetje!';
+
+  @override
+  String get fxCmpFilters => 'Filters';
+
+  @override
+  String get fxCmpResetFilters => 'Herstellen';
+
+  @override
+  String get fxCmpCriteriaSection => 'Criteria';
+
+  @override
+  String get fxCmpConstraintsSection => 'Beperkingen';
+
+  @override
+  String get fxCmpFamily => 'Familie';
+
+  @override
+  String get fxCmpScopeSame => 'Zelfde familie';
+
+  @override
+  String get fxCmpScopeClose => 'Verwante families';
+
+  @override
+  String get fxCmpScopeAll => 'Alle';
+
+  @override
+  String get fxCmpLumenTolerance => 'Afwijking lichtopbrengst';
+
+  @override
+  String get fxCmpAny => 'Maakt niet uit';
+
+  @override
+  String get fxCmpMustCoverZoom =>
+      'Zoom moet het bereik van de referentie dekken';
+
+  @override
+  String get fxCmpMustCoverZoomShort => 'Zoom gedekt';
+
+  @override
+  String get fxCmpSource => 'Lichtbron';
+
+  @override
+  String get fxCmpMinCri => 'Minimale CRI';
+
+  @override
+  String get fxCmpSameMotion => 'Zelfde beweging (moving head / statisch)';
+
+  @override
+  String get fxCmpOtherBrands => 'Alleen andere merken';
+
+  @override
+  String get fxCmpLighter => 'Gewicht ≤ referentie';
+
+  @override
+  String get fxCmpLowerPower => 'Verbruik ≤ referentie';
+
+  @override
+  String get fxCmpIncludeIncomplete => 'Onvolledige gegevens meenemen';
+
+  @override
+  String get fxCmpIncludeIncompleteHint =>
+      'Een ontbrekende waarde sluit de armatuur niet uit, maar ze verliest de punten voor dat criterium.';
+
+  @override
+  String get fxCmpCompleteOnly => 'Alleen volledige gegevens';
+
+  @override
+  String get fxCmpRefMissingValue =>
+      'Niet opgegeven voor de referentie-armatuur';
+
+  @override
+  String get fxCmpLevelEquivalent => 'Gelijkwaardig';
+
+  @override
+  String get fxCmpLevelClose => 'Vergelijkbaar';
+
+  @override
+  String get fxCmpLevelFar => 'Afwijkend';
+
+  @override
+  String get fxCmpIncomplete => 'Onvolledige gegevens';
+
+  @override
+  String get fxCmpZoomCovers => 'Zoom gedekt';
+
+  @override
+  String get fxCmpZoomPartial => 'Zoom gedeeltelijk';
+
+  @override
+  String get fxCmpCompareTitle => 'Vergelijking';
+
+  @override
+  String get fxCmpCritFamily => 'Familie';
+
+  @override
+  String get fxCmpCritLumen => 'Lichtopbrengst';
+
+  @override
+  String get fxCmpCritZoom => 'Zoom';
+
+  @override
+  String get fxCmpCritCri => 'CRI';
+
+  @override
+  String get fxCmpCritSource => 'Bron';
+
+  @override
+  String get fxCmpCritPower => 'Vermogen';
+
+  @override
+  String get fxCmpCritWeight => 'Gewicht';
+
+  @override
+  String get fxCmpCritDmx => 'DMX-kanalen';
+
+  @override
+  String get fxCmpFamSpotProfile => 'Spot / Profiel';
+
+  @override
+  String get fxCmpFamBeam => 'Beam';
+
+  @override
+  String get fxCmpFamHybrid => 'Hybride';
+
+  @override
+  String get fxCmpFamWash => 'Wash';
+
+  @override
+  String get fxCmpFamMovingHead => 'Moving head (niet gespecificeerd)';
+
+  @override
+  String get fxCmpFamPar => 'PAR';
+
+  @override
+  String get fxCmpFamFresnelPc => 'Fresnel / PC';
+
+  @override
+  String get fxCmpFamBar => 'Bar / lineair';
+
+  @override
+  String get fxCmpFamStrobe => 'Strobe / blinder';
+
+  @override
+  String get fxCmpFamFollowspot => 'Volgspot';
+
+  @override
+  String get fxCmpFamSoftPanel => 'Paneel / softlight';
+
+  @override
+  String get fxCmpFamCyclo => 'Cyc / wallwasher';
+
+  @override
+  String get fxCmpFamEffect => 'Effect';
+
+  @override
+  String get fxCmpFamLaser => 'Laser';
+
+  @override
+  String get fxCmpFamAtmospheric => 'Effectmachine (rook…)';
+
+  @override
+  String get fxCmpFamOther => 'Overig';
+
+  @override
+  String get fxCmpSrcWhiteLed => 'Witte led';
+
+  @override
+  String get fxCmpSrcColorLed => 'Kleuren-led (RGBW…)';
+
+  @override
+  String get fxCmpSrcDischarge => 'Ontladingslamp';
+
+  @override
+  String get fxCmpSrcLaser => 'Laserfosfor';
+
+  @override
+  String get fxCmpSrcHalogen => 'Halogeen / wolfraam';
+
+  @override
+  String get fxCmpSrcOther => 'Andere bron';
+
+  @override
+  String get fxCmpDataNotice =>
+      'Zoom, CRI en lichtbron zijn voor de meeste armaturen nog niet in de catalogus ingevuld: ze tellen mee in de rangschikking zodra dat wel zo is.';
+
+  @override
+  String get fxCmpRefNoData =>
+      'Voor deze armatuur zijn lichtopbrengst noch zoom opgegeven: de rangschikking is weinig betrouwbaar.';
+
+  @override
+  String get fxCmpDisclaimer =>
+      'Indicatieve rangschikking op basis van fabrikantgegevens uit de catalogus. Controleer altijd het datablad voordat je een armatuur vervangt.';
+
+  @override
+  String get fxCmpBetaBadge => 'PRO · BÈTA';
+
+  @override
+  String get fxCmpBetaPill => 'BÈTA';
+
+  @override
+  String get fxCmpBetaTitle => 'Tool in bèta 🧪';
+
+  @override
+  String get fxCmpBetaBody =>
+      'De vergelijker is gloednieuw! De rangschikking wordt nauwkeuriger naarmate de catalogus vollediger wordt (lichtopbrengst, zoom, CRI, bron). Een raar resultaat? Laat het ons weten, zo kunnen we het verbeteren.';
+
+  @override
+  String get fxCmpFeedback => 'Feedback sturen';
+
+  @override
+  String get fxCmpReportResult => 'Dit resultaat melden';
+
+  @override
+  String get fxCmpFeedbackSubject => 'Armaturenvergelijker (bèta)';
+
+  @override
+  String fxCmpFeedbackRef(Object name) {
+    return 'Te vervangen armatuur: $name';
+  }
+
+  @override
+  String fxCmpFeedbackCandidate(Object name, Object score) {
+    return 'Voorgesteld alternatief: $name (score $score)';
+  }
+
+  @override
+  String get fxCmpFeedbackComment => 'Je opmerking:';
+
+  @override
+  String get diaphTitle => 'Diafragma van een armatuur';
+
+  @override
+  String get diaphTileDescription => 'Welk cameradiafragma met deze armatuur?';
+
+  @override
+  String get diaphIntro =>
+      'Bij televisie belicht je in diafragma\'s! Kies de armatuur, de afstand en je camera: ik geef je het diafragma in het midden van de bundel.';
+
+  @override
+  String get diaphMachineSection => 'Armatuur';
+
+  @override
+  String get diaphSearchHint => 'Zoeken in de catalogus (optioneel)…';
+
+  @override
+  String get diaphSourceLumens => 'Lumen + hoek';
+
+  @override
+  String get diaphSourceMaker => 'Lux volgens fabrikant';
+
+  @override
+  String get diaphLumens => 'Lichtstroom';
+
+  @override
+  String get diaphBeamAngle => 'Bundelhoek';
+
+  @override
+  String get diaphBeamAngleHint => 'Beam (50 %), niet field';
+
+  @override
+  String get diaphMakerLux => 'Verlichtingssterkte';
+
+  @override
+  String get diaphMakerDistance => 'op afstand';
+
+  @override
+  String diaphZoomRange(Object range) {
+    return 'Zoom van de armatuur: $range';
+  }
+
+  @override
+  String get diaphDimmer => 'Dimmer';
+
+  @override
+  String get diaphDistanceSection => 'Afstand';
+
+  @override
+  String get diaphDistance => 'Afstand armatuur → onderwerp';
+
+  @override
+  String get diaphCameraSection => 'Camera';
+
+  @override
+  String get diaphCamBroadcast => 'Broadcast';
+
+  @override
+  String get diaphCamIso => 'ISO / sluiter';
+
+  @override
+  String get diaphSensitivity => 'Gevoeligheid: F bij 2000 lx';
+
+  @override
+  String get diaphSensitivityHint =>
+      'Uit het datablad van je camera (gain 0 dB)';
+
+  @override
+  String get diaphCustom => 'Eigen';
+
+  @override
+  String get diaphGain => 'Gain';
+
+  @override
+  String get diaphNd => 'ND-filter';
+
+  @override
+  String get diaphNdClear => 'Clear';
+
+  @override
+  String get diaphIso => 'ISO';
+
+  @override
+  String get diaphFps => 'Beelden/s';
+
+  @override
+  String get diaphShutter => 'Sluiter';
+
+  @override
+  String diaphExposure(Object time) {
+    return 'Belichtingstijd: $time';
+  }
+
+  @override
+  String get diaphResultTitle => 'Diafragma in het midden van de bundel';
+
+  @override
+  String diaphExact(Object value) {
+    return 'exact: f/$value';
+  }
+
+  @override
+  String get diaphLux => 'Verlichtingssterkte';
+
+  @override
+  String get diaphBeamDiameter => 'Bundeldiameter';
+
+  @override
+  String get diaphTooDark =>
+      'Te weinig licht: zet de armatuur dichterbij, verhoog de gain of verwijder de ND.';
+
+  @override
+  String get diaphTooBright =>
+      'Te veel licht: voeg een ND toe, dim de armatuur of zet hem verder weg.';
+
+  @override
+  String get diaphMissingInput =>
+      'Vul de armatuur (lichtstroom + hoek, of lux volgens fabrikant) en de afstand in om het diafragma te zien.';
+
+  @override
+  String get diaphTargetSection => 'Om op een bepaald diafragma te werken';
+
+  @override
+  String get diaphTargetF => 'Gewenst diafragma (f/)';
+
+  @override
+  String diaphTargetResult(Object distance, Object lux) {
+    return 'Zet de armatuur op $distance m ($lux lx nodig op het onderwerp).';
+  }
+
+  @override
+  String get diaphDisclaimer =>
+      'Schatting op basis van lichtstroom en hoek (klokvormige bundel verondersteld): reken op ± 1/2 diafragma afhankelijk van de optiek. Gebruik voor meer precisie de lux van de fabrikant of een luxmeter.';
+
+  @override
+  String get cinemaRecModeDuration => 'Beschikbare duur';
+
+  @override
+  String get cinemaRecModeCapacity => 'Benodigde capaciteit';
+
+  @override
+  String get cinemaRecHoursLabel => 'Op te nemen duur — uren';
+
+  @override
+  String get cinemaRecMinutesLabel => 'Op te nemen duur — minuten';
+
+  @override
+  String get cinemaRecMarginLabel => 'Veiligheidsmarge';
+
+  @override
+  String get cinemaRecNeededResult => 'Benodigde capaciteit';
+
+  @override
+  String cinemaRecWithMarginResult(Object pct) {
+    return 'Met $pct % marge';
+  }
+
+  @override
+  String get cinemaRecSuggestedMediaResult => 'Aanbevolen medium';
+
+  @override
+  String get cinemaRecSuggestedNone => '> 8 TB: meerdere media';
+
+  @override
+  String get riggingToolTrussLoadTitle => 'Belasting per takel';
+
+  @override
+  String get riggingToolTrussLoadSubtitle =>
+      'Verdeling van een truss over 2 tot 6 takels, met WLL- en trusscontrole.';
+
+  @override
+  String get riggingTrussSectionTruss => 'Truss';
+
+  @override
+  String get riggingTrussLengthLabel => 'Lengte van de truss';
+
+  @override
+  String get riggingTrussSelfWeightLabel => 'Eigen gewicht van de truss';
+
+  @override
+  String get riggingTrussExtraUdlLabel => 'Extra verdeelde last (kabels…)';
+
+  @override
+  String get riggingUnitKgPerMeter => 'kg/m';
+
+  @override
+  String get riggingUnitKn => 'kN';
+
+  @override
+  String get riggingUnitKnm => 'kN·m';
+
+  @override
+  String get riggingTrussSectionMotors => 'Takels';
+
+  @override
+  String get riggingTrussMotorCountLabel => 'Aantal takels';
+
+  @override
+  String riggingTrussMotorPositionLabel(Object n) {
+    return 'Positie takel $n';
+  }
+
+  @override
+  String get riggingTrussPositionsHint =>
+      'Posities gemeten vanaf het linkeruiteinde van de truss.';
+
+  @override
+  String get riggingTrussSpreadMotors => 'Gelijkmatig verdelen';
+
+  @override
+  String get riggingTrussExtraPerMotorLabel =>
+      'Extra gewicht per ophangpunt (ketting, spanbanden, sluitingen)';
+
+  @override
+  String get riggingTrussMotorWllLabel => 'WLL van de takel';
+
+  @override
+  String get riggingTrussDynamicFactorLabel => 'Dynamische factor';
+
+  @override
+  String get riggingTrussSectionLoads => 'Lasten';
+
+  @override
+  String get riggingTrussFixtureCountLabel =>
+      'Gelijk verdeelde armaturen (aantal)';
+
+  @override
+  String get riggingTrussFixtureWeightLabel => 'Gewicht per armatuur';
+
+  @override
+  String get riggingTrussPointLoadsLabel => 'Puntlasten';
+
+  @override
+  String get riggingTrussAddPointLoad => 'Last toevoegen';
+
+  @override
+  String get riggingTrussPositionLabel => 'Positie';
+
+  @override
+  String get riggingTrussMassLabel => 'Gewicht';
+
+  @override
+  String get riggingTrussSectionCheck => 'Trusscontrole (optioneel)';
+
+  @override
+  String get riggingTrussAllowableUdl => 'Verdeeld (UDL)';
+
+  @override
+  String get riggingTrussAllowableCpl => 'Centrale puntlast (CPL)';
+
+  @override
+  String riggingTrussAllowableValueLabel(Object span) {
+    return 'Toelaatbare waarde fabrikant ($span m)';
+  }
+
+  @override
+  String get riggingTrussAllowableHint =>
+      'Lees in de belastingtabel van de fabrikant de waarde af voor de grootste overspanning tussen twee takels.';
+
+  @override
+  String riggingTrussMotorResultLabel(Object n, Object x) {
+    return 'Takel $n · $x m';
+  }
+
+  @override
+  String get riggingTrussTotalLoadLabel => 'Totale last op de takels';
+
+  @override
+  String riggingTrussMaxMomentLabel(Object x) {
+    return 'Max. moment (op $x m)';
+  }
+
+  @override
+  String get riggingTrussLargestSpanLabel => 'Grootste overspanning';
+
+  @override
+  String get riggingTrussUsageLabel => 'Benutting truss (moment)';
+
+  @override
+  String get riggingTrussInvalidInput =>
+      'Controleer de waarden: lengte, WLL, takelposities (op volgorde, op de truss, minstens 1 cm uit elkaar), lasten op de truss, dynamische factor ≥ 1.';
+
+  @override
+  String get riggingTrussOkDescription =>
+      'Alle takels zitten onder 80 % van hun WLL.';
+
+  @override
+  String get riggingTrussWatchDescription =>
+      'Minstens één takel zit boven 80 % van zijn WLL.';
+
+  @override
+  String get riggingTrussOverloadDescription =>
+      'Minstens één takel overschrijdt zijn WLL.';
+
+  @override
+  String get riggingTrussUpliftDescription =>
+      'Minstens één takel wordt opgetild (negatieve last): uitkraging overbelast, opstelling instabiel.';
+
+  @override
+  String get riggingTrussHyperstaticWarning =>
+      '3 takels of meer: theoretische verdeling, met perfect waterpas hangende takels en een truss met constante stijfheid. Enkele centimeters hoogteverschil veranderen de echte lasten sterk. Alleen een meting (load cells) toont de werkelijkheid.';
+
+  @override
+  String get riggingTrussCantileverNote =>
+      'Uitkraging aanwezig: controleer ook de toelaatbare uitkragingswaarden van de fabrikant.';
+
+  @override
+  String get riggingTrussCheckNote =>
+      'Alleen het buigend moment wordt vergeleken. Dwarskracht, doorbuiging, verbindingen en accessoires worden niet gecontroleerd.';
+
+  @override
+  String get riggingTrussDisclaimer =>
+      'Theoretische resultaten, alleen ter indicatie; ze vervangen geen sterkteberekening. Elke installatie moet door een gekwalificeerde persoon worden gecontroleerd en goedgekeurd. De uitgever van de app kan in geen geval aansprakelijk worden gesteld voor het gebruik van deze resultaten.';
+
+  @override
+  String get riggingTrussModelLabel => 'Trussmodel';
+
+  @override
+  String get riggingTrussModelManual => 'Handmatige invoer';
+
+  @override
+  String get riggingTrussModelUnchecked => 'waarden te controleren';
+
+  @override
+  String riggingTrussTableValueLabel(Object span) {
+    return 'Waarde uit de fabrikantentabel ($span m)';
+  }
+
+  @override
+  String riggingTrussTableSource(Object source) {
+    return 'Bron: $source';
+  }
+
+  @override
+  String get riggingTrussOutOfTable =>
+      'Overspanning buiten de fabrikantentabel: controle niet mogelijk.';
+
+  @override
+  String get riggingTrussNetNote =>
+      'Het eigen gewicht van de truss is al afgetrokken van de tabelwaarden; de tool houdt daar rekening mee.';
+
+  @override
+  String get riggingTrussUncheckedNote =>
+      'Waarden uit het fabrikantenblad, maar nog niet gecontroleerd: controleer ze met het brondocument.';
+
+  @override
+  String get riggingBridleHeightDiffLabel =>
+      'Hoogteverschil punt B (+ als hoger dan A)';
+
+  @override
+  String get riggingBridleHeightDiffHint =>
+      'Afstand horizontaal gemeten, doorhang gemeten onder punt A.';
+
+  @override
+  String get homeTipLabel => 'Wist je dat?';
+
+  @override
+  String get homeTipOpen => 'Ontdekken';
+
+  @override
+  String get homeTipHide => 'Niet meer tonen';
+
+  @override
+  String get homeTipHiddenSnack =>
+      'Tips verborgen. Je kunt ze weer aanzetten in Instellingen.';
+
+  @override
+  String get settingsTipsTitle => 'Tips op het startscherm';
+
+  @override
+  String get settingsTipsSubtitle =>
+      'Bij elke start een tool voorstellen om te ontdekken';
+
+  @override
+  String get homeTipRdm =>
+      'Identificeer en configureer je DMX-apparaten op afstand met de RDM-tool, zonder de truss op te gaan.';
+
+  @override
+  String get homeTipGigacore =>
+      'Lees de configuratie van je Luminex GigaCore-switches, inventariseer je netwerk en maak back-ups van je configuraties.';
+
+  @override
+  String get homeTipGdtf =>
+      'Maak een GDTF-bestand op basis van de PDF-handleiding van een armatuur, of handmatig met de assistent.';
+
+  @override
+  String get homeTipPluginForge =>
+      'Genereer grandMA3 Lua-plugins op maat met MA3 Plugin Forge.';
+
+  @override
+  String get homeTipPowerPlan =>
+      'Teken het schema van je stroomverdeling en exporteer het rapport dat keurders vragen.';
+
+  @override
+  String get homeTipUps =>
+      'Bereken de autonomie van een UPS op basis van het vermogen van je apparatuur.';
+
+  @override
+  String get homeTipRigging =>
+      'Bereken hoeken en lengtes van stroppen voor je bridles en controleer de belasting van een truss.';
+
+  @override
+  String get homeTipSafety =>
+      'Bereid je veiligheidsplan en montageattest voor, rechtstreeks vanaf je telefoon.';
+
+  @override
+  String get homeTipIm3 =>
+      'Bereken intermodulatieproducten (IM3) om compatibele draadloze frequenties te kiezen.';
+
+  @override
+  String get homeTipSubCardio =>
+      'Cardioïde subs of een end-fire opstelling? De app berekent de delays voor je.';
+
+  @override
+  String get homeTipDipswitch => 'Vind de dipswitch-stand voor elk DMX-adres.';
+
+  @override
+  String get homeTipPinned =>
+      'Pin de referenties die je het meest gebruikt om ze direct vanaf het startscherm te openen.';
+
+  @override
+  String get homeTipBpm =>
+      'Tik het tempo van een nummer in en zet het om naar milliseconden voor je effecten en delays.';
+
+  @override
+  String get homeTipTimecode =>
+      'Bereken timecode-duur, offsets en vertragingen in een paar seconden.';
+
+  @override
+  String get homeDrawerRecommend => 'Aanraden aan een collega';
+
+  @override
+  String get homeShareAppSubject => 'ShowTech Tools';
+
+  @override
+  String get homeShareAppMessage =>
+      'Ik raad je ShowTech Tools aan, een app voor podiumtechnici: licht, geluid, video, elektriciteit, rigging, netwerk, veiligheid… Beschikbaar op iOS en Android: https://www.openwhite.eu/showtech-tools/';
+
+  @override
+  String get riggingTrussGrossNote =>
+      'De fabrikant vermeldt niet of het eigen gewicht is afgetrokken: voor de veiligheid trekt de tool het af van de tabelwaarde.';
+
+  @override
+  String get riggingHoistModelLabel =>
+      'Takelmodel';
+
+  @override
+  String get riggingHoistModelManual =>
+      'Handmatige invoer';
+
+  @override
+  String riggingHoistModelClassNote(Object cls) {
+    return 'Opgegeven klasse: $cls. De klasse op het typeplaatje van de takel is bepalend.';
+  }
+
+  @override
+  String riggingHoistModelWeights(Object weight, Object chain) {
+    return 'Gewicht zonder ketting: $weight kg · ketting: $chain kg/m';
   }
 }

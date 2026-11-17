@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../app/constants.dart';
 import 'package:mon_app_tech/l10n_gen/app_localizations.dart';
@@ -31,6 +32,10 @@ import 'rf/rf_page.dart';
 import 'network/network_page.dart';
 import 'timecode/timecode_page.dart';
 import 'safety/safety_page.dart';
+import 'shared/home_tip_card.dart';
+import '../services/home_tips_service.dart';
+import '../services/meta_analytics_service.dart';
+import '../services/review_prompt_service.dart';
 
 // ─── Couleurs d'accent par catégorie ───────────────────────────────────────
 const _kColorVideo        = Color(0xFF00B4D8);
@@ -67,12 +72,113 @@ class _PageAccueilState extends State<PageAccueil> {
 
   String _appVersion = '';
 
+  /// Astuce « Le saviez-vous ? » de ce lancement (null = rien à afficher).
+  String? _tipId;
+
+  /// Toutes les astuces : (id, section concernée).
+  static const List<({String id, String section})> _kTips = [
+    (id: 'rdm', section: 'network'),
+    (id: 'gigacore', section: 'network'),
+    (id: 'gdtf', section: 'console'),
+    (id: 'pluginForge', section: 'console'),
+    (id: 'powerPlan', section: 'electricity'),
+    (id: 'ups', section: 'electricity'),
+    (id: 'rigging', section: 'rigging'),
+    (id: 'safety', section: 'safety'),
+    (id: 'im3', section: 'rf'),
+    (id: 'subCardio', section: 'audio'),
+    (id: 'dipswitch', section: 'light'),
+    (id: 'pinned', section: 'pinned'),
+    (id: 'bpm', section: 'bpm'),
+    (id: 'timecode', section: 'timecode'),
+  ];
+
   @override
   void initState() {
     super.initState();
     _checkDisclaimerOnStart();
     _loadAppVersion();
     _restorePurchases();
+    _loadTip();
+    ReviewPromptService.init();
+  }
+
+  Future<void> _loadTip() async {
+    final id = await HomeTipsService.pickTipForLaunch(_kTips);
+    if (!mounted || id == null) return;
+    setState(() => _tipId = id);
+    MetaAnalyticsService.logCustom('home_tip_shown', {'tip': id});
+  }
+
+  /// Contenu affichable d'une astuce : icône, couleur, section, texte, page.
+  ({IconData icon, Color color, String section, String text, Widget page, String sectionId})?
+      _tipContent(String id, AppLocalizations loc) {
+    switch (id) {
+      case 'rdm':
+        return (icon: Icons.settings_remote_rounded, color: _kColorNetwork, section: loc.homeNetworkTitle, text: loc.homeTipRdm, page: const NetworkPage(), sectionId: 'network');
+      case 'gigacore':
+        return (icon: Icons.lan_rounded, color: _kColorNetwork, section: loc.homeNetworkTitle, text: loc.homeTipGigacore, page: const NetworkPage(), sectionId: 'network');
+      case 'gdtf':
+        return (icon: Icons.picture_as_pdf_rounded, color: _kColorConsole, section: loc.consoleTitle, text: loc.homeTipGdtf, page: const ConsolePage(), sectionId: 'console');
+      case 'pluginForge':
+        return (icon: Icons.code_rounded, color: _kColorConsole, section: loc.consoleTitle, text: loc.homeTipPluginForge, page: const ConsolePage(), sectionId: 'console');
+      case 'powerPlan':
+        return (icon: Icons.account_tree_rounded, color: _kColorElectricity, section: loc.homeElectricityTitle, text: loc.homeTipPowerPlan, page: const ElectricityPage(), sectionId: 'electricity');
+      case 'ups':
+        return (icon: Icons.battery_charging_full_rounded, color: _kColorElectricity, section: loc.homeElectricityTitle, text: loc.homeTipUps, page: const ElectricityPage(), sectionId: 'electricity');
+      case 'rigging':
+        return (icon: Icons.hardware_rounded, color: _kColorRigging, section: loc.homeRiggingTitle, text: loc.homeTipRigging, page: const RiggingPage(), sectionId: 'rigging');
+      case 'safety':
+        return (icon: Icons.health_and_safety_rounded, color: _kColorSafety, section: loc.homeSafetyTitle, text: loc.homeTipSafety, page: const SafetyPage(), sectionId: 'safety');
+      case 'im3':
+        return (icon: Icons.settings_input_antenna_rounded, color: _kColorRf, section: loc.homeRfTitle, text: loc.homeTipIm3, page: const RfPage(), sectionId: 'rf');
+      case 'subCardio':
+        return (icon: Icons.speaker_rounded, color: _kColorAudio, section: loc.audioHomeTitle, text: loc.homeTipSubCardio, page: const AudioPage(), sectionId: 'audio');
+      case 'dipswitch':
+        return (icon: Icons.toggle_on_rounded, color: _kColorLight, section: loc.homeLightTitle, text: loc.homeTipDipswitch, page: const PageLumiere(), sectionId: 'light');
+      case 'pinned':
+        return (icon: Icons.push_pin_rounded, color: _kColorPinned, section: loc.homePinnedTitle, text: loc.homeTipPinned, page: const PinnedReferencesPage(), sectionId: 'pinned');
+      case 'bpm':
+        return (icon: Icons.speed_rounded, color: _kColorBpm, section: loc.homeBpmTitle, text: loc.homeTipBpm, page: const BpmPage(), sectionId: 'bpm');
+      case 'timecode':
+        return (icon: Icons.schedule_rounded, color: _kColorTimecode, section: loc.homeTimecodeTitle, text: loc.homeTipTimecode, page: const TimecodeHubPage(), sectionId: 'timecode');
+    }
+    return null;
+  }
+
+  Widget _tipCard(AppLocalizations loc) {
+    final id = _tipId;
+    if (id == null) return const SizedBox.shrink();
+    final c = _tipContent(id, loc);
+    if (c == null) return const SizedBox.shrink();
+
+    return Padding(
+      padding: const EdgeInsets.only(top: 12),
+      child: HomeTipCard(
+        label: loc.homeTipLabel,
+        sectionTitle: c.section,
+        text: c.text,
+        icon: c.icon,
+        accentColor: c.color,
+        openLabel: loc.homeTipOpen,
+        hideLabel: loc.homeTipHide,
+        onOpen: () {
+          MetaAnalyticsService.logCustom('home_tip_opened', {'tip': id});
+          setState(() => _tipId = null);
+          _push(c.page, c.sectionId);
+        },
+        onClose: () => setState(() => _tipId = null),
+        onHideForever: () async {
+          await HomeTipsService.setEnabled(false);
+          MetaAnalyticsService.logCustom('home_tip_disabled', {'tip': id});
+          if (!mounted) return;
+          setState(() => _tipId = null);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(loc.homeTipHiddenSnack)),
+          );
+        },
+      ),
+    );
   }
 
   Future<void> _loadAppVersion() async {
@@ -143,6 +249,18 @@ class _PageAccueilState extends State<PageAccueil> {
         SnackBar(content: Text(loc.homeErrorOpenEmail)),
       );
     }
+  }
+
+  Future<void> _recommendApp() async {
+    final loc = AppLocalizations.of(context);
+    final size = MediaQuery.of(context).size;
+    MetaAnalyticsService.logCustom('app_recommend_tapped');
+    await Share.share(
+      loc.homeShareAppMessage,
+      subject: loc.homeShareAppSubject,
+      // Requis sur iPad (popover) : ancrage en haut de l'écran.
+      sharePositionOrigin: Rect.fromLTWH(0, 0, size.width, size.height / 3),
+    );
   }
 
   Future<void> _openGoogleForm(BuildContext context) async {
@@ -262,6 +380,7 @@ class _PageAccueilState extends State<PageAccueil> {
     );
 
     if (accepted == true && mounted) {
+      HomeTipsService.markSectionOpened('laser');
       Navigator.push(
         context,
         MaterialPageRoute(builder: (_) => LaserPage()),
@@ -269,7 +388,8 @@ class _PageAccueilState extends State<PageAccueil> {
     }
   }
 
-  void _push(Widget page) {
+  void _push(Widget page, [String? sectionId]) {
+    if (sectionId != null) HomeTipsService.markSectionOpened(sectionId);
     Navigator.push(
       context,
       MaterialPageRoute(builder: (_) => page),
@@ -517,6 +637,15 @@ class _PageAccueilState extends State<PageAccueil> {
             ),
 
             _drawerTile(
+              icon: Icons.ios_share_rounded,
+              label: loc.homeDrawerRecommend,
+              iconColor: _kColorLight,
+              onTap: () async {
+                Navigator.pop(context);
+                await _recommendApp();
+              },
+            ),
+            _drawerTile(
               icon: Icons.mail_outline_rounded,
               label: loc.homeDrawerContact,
               iconColor: _kColorConversions,
@@ -576,6 +705,7 @@ class _PageAccueilState extends State<PageAccueil> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               _greetingHeader(loc),
+              _tipCard(loc),
               const SizedBox(height: 16),
               AppGridView(
                 children: [
@@ -584,14 +714,14 @@ class _PageAccueilState extends State<PageAccueil> {
                 title: loc.homeVideoTitle,
                 subtitle: loc.homeVideoSubtitle,
                 accentColor: _kColorVideo,
-                onTap: () => _push(const PageVideo()),
+                onTap: () => _push(const PageVideo(), 'video'),
               ),
               _homeTile(
                 icon: Icons.lightbulb_outline_rounded,
                 title: loc.homeLightTitle,
                 subtitle: loc.homeLightSubtitle,
                 accentColor: _kColorLight,
-                onTap: () => _push(const PageLumiere()),
+                onTap: () => _push(const PageLumiere(), 'light'),
               ),
               _homeTile(
                 icon: Icons.center_focus_strong_rounded,
@@ -605,91 +735,91 @@ class _PageAccueilState extends State<PageAccueil> {
                 title: loc.consoleTitle,
                 subtitle: loc.consoleSubtitle,
                 accentColor: _kColorConsole,
-                onTap: () => _push(const ConsolePage()),
+                onTap: () => _push(const ConsolePage(), 'console'),
               ),
               _homeTile(
                 imageAsset: 'assets/tool_icons/icone_audio.png',
                 title: loc.audioHomeTitle,
                 subtitle: loc.audioHomeSubtitle,
                 accentColor: _kColorAudio,
-                onTap: () => _push(const AudioPage()),
+                onTap: () => _push(const AudioPage(), 'audio'),
               ),
               _homeTile(
                 icon: Icons.settings_input_antenna_rounded,
                 title: loc.homeRfTitle,
                 subtitle: loc.homeRfSubtitle,
                 accentColor: _kColorRf,
-                onTap: () => _push(const RfPage()),
+                onTap: () => _push(const RfPage(), 'rf'),
               ),
               _homeTile(
                 imageAsset: 'assets/tool_icons/icone_reseaux_luminex.png',
                 title: loc.homeNetworkTitle,
                 subtitle: loc.homeNetworkSubtitle,
                 accentColor: _kColorNetwork,
-                onTap: () => _push(const NetworkPage()),
+                onTap: () => _push(const NetworkPage(), 'network'),
               ),
               _homeTile(
                 imageAsset: 'assets/tool_icons/icone_cinema.png',
                 title: loc.homeCinemaTitle,
                 subtitle: loc.homeCinemaSubtitle,
                 accentColor: _kColorCinema,
-                onTap: () => _push(const CinemaToolsPage()),
+                onTap: () => _push(const CinemaToolsPage(), 'cinema'),
               ),
               _homeTile(
                 imageAsset: 'assets/tool_icons/icone_electricite.png',
                 title: loc.homeElectricityTitle,
                 subtitle: loc.homeElectricitySubtitle,
                 accentColor: _kColorElectricity,
-                onTap: () => _push(const ElectricityPage()),
+                onTap: () => _push(const ElectricityPage(), 'electricity'),
               ),
               _homeTile(
                 icon: Icons.hardware_rounded,
                 title: loc.homeRiggingTitle,
                 subtitle: loc.homeRiggingSubtitle,
                 accentColor: _kColorRigging,
-                onTap: () => _push(const RiggingPage()),
+                onTap: () => _push(const RiggingPage(), 'rigging'),
               ),
               _homeTile(
                 icon: Icons.health_and_safety_rounded,
                 title: loc.homeSafetyTitle,
                 subtitle: loc.homeSafetySubtitle,
                 accentColor: _kColorSafety,
-                onTap: () => _push(const SafetyPage()),
+                onTap: () => _push(const SafetyPage(), 'safety'),
               ),
               _homeTile(
                 imageAsset: 'assets/tool_icons/icone_conversion.png',
                 title: loc.homeConversionsTitle,
                 subtitle: loc.homeConversionsSubtitle,
                 accentColor: _kColorConversions,
-                onTap: () => _push(const ConversionsPage()),
+                onTap: () => _push(const ConversionsPage(), 'conversions'),
               ),
               _homeTile(
                 icon: Icons.speed_rounded,
                 title: loc.homeBpmTitle,
                 subtitle: loc.homeBpmSubtitle,
                 accentColor: _kColorBpm,
-                onTap: () => _push(const BpmPage()),
+                onTap: () => _push(const BpmPage(), 'bpm'),
               ),
               _homeTile(
                 icon: Icons.schedule_rounded,
                 title: loc.homeTimecodeTitle,
                 subtitle: loc.homeTimecodeSubtitle,
                 accentColor: _kColorTimecode,
-                onTap: () => _push(const TimecodeHubPage()),
+                onTap: () => _push(const TimecodeHubPage(), 'timecode'),
               ),
               _homeTile(
                 icon: Icons.menu_book_rounded,
                 title: loc.homeReferencesTitle,
                 subtitle: loc.homeReferencesSubtitle,
                 accentColor: _kColorReferences,
-                onTap: () => _push(const PageAbout()),
+                onTap: () => _push(const PageAbout(), 'references'),
               ),
               _homeTile(
                 icon: Icons.push_pin_rounded,
                 title: loc.homePinnedTitle,
                 subtitle: loc.homePinnedSubtitle,
                 accentColor: _kColorPinned,
-                onTap: () => _push(const PinnedReferencesPage()),
+                onTap: () => _push(const PinnedReferencesPage(), 'pinned'),
               ),
                 ],
               ), // AppGridView

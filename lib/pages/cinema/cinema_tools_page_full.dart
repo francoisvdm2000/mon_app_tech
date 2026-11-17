@@ -965,54 +965,176 @@ class RecordingStoragePage extends StatefulWidget {
 class _RecordingStoragePageState extends State<RecordingStoragePage> {
   final capacity = TextEditingController(text: '256');
   final bitrate = TextEditingController(text: '400');
+  final hoursCtrl = TextEditingController(text: '2');
+  final minutesCtrl = TextEditingController(text: '0');
+
+  /// false = durée disponible (capacité → durée) ;
+  /// true = capacité nécessaire (durée → capacité).
+  bool _needCapacity = false;
+  int _marginPct = 10;
+
+  /// Tailles de supports courantes (GB, décimal).
+  static const List<int> _mediaSizes = [
+    32, 64, 128, 256, 512, 1000, 2000, 4000, 8000,
+  ];
 
   @override
   void dispose() {
     capacity.dispose();
     bitrate.dispose();
+    hoursCtrl.dispose();
+    minutesCtrl.dispose();
     super.dispose();
+  }
+
+  static String _gb(double gb) {
+    if (gb.isNaN || gb.isInfinite) return '—';
+    if (gb >= 1000) {
+      final tb = gb / 1000;
+      return '${_fmt(tb, decimals: tb % 1 == 0 ? 0 : 2)} TB';
+    }
+    return '${_fmt(gb, decimals: gb >= 100 ? 0 : 1)} GB';
+  }
+
+  Widget _modeChips(AppLocalizations loc) {
+    final accent = Theme.of(context).colorScheme.primary;
+    Widget chip(bool value, String label, IconData icon) => ChoiceChip(
+          avatar: Icon(icon, size: 18),
+          label: Text(label),
+          selected: _needCapacity == value,
+          selectedColor: accent.withValues(alpha: 0.25),
+          onSelected: (_) => setState(() => _needCapacity = value),
+        );
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: Wrap(
+        spacing: 8,
+        runSpacing: 8,
+        children: [
+          chip(false, loc.cinemaRecModeDuration, Icons.timer_outlined),
+          chip(true, loc.cinemaRecModeCapacity, Icons.sd_card_outlined),
+        ],
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    final capacityGb = _read(capacity, 256);
+    final loc = AppLocalizations.of(context);
     final bitrateMbps = _read(bitrate, 400);
-    final totalMb = capacityGb * 8000;
-    final seconds = bitrateMbps <= 0 ? double.nan : totalMb / bitrateMbps;
-    final minutes = seconds / 60;
-    final hours = minutes / 60;
     final gbPerHour = bitrateMbps * 3600 / 8000;
 
-    return _CalcShell(
-      pageId: 'tool:cinema_recording_storage',
-      title: AppLocalizations.of(context).cinemaRecordingStorageTitle,
-      description:
-          AppLocalizations.of(context).cinemaRecordingStorageDescription,
-      inputs: [
+    final bitrateField = _NumberField(
+        label: loc.cinemaBitrateLabel,
+        suffix: 'Mb/s',
+        controller: bitrate,
+        helper: loc.cinemaBitrateHelper,
+        onChanged: (_) => setState(() {}));
+
+    final List<Widget> inputs;
+    final List<Widget> results;
+
+    if (!_needCapacity) {
+      final capacityGb = _read(capacity, 256);
+      final totalMb = capacityGb * 8000;
+      final seconds = bitrateMbps <= 0 ? double.nan : totalMb / bitrateMbps;
+      final minutes = seconds / 60;
+      final hours = minutes / 60;
+      inputs = [
+        _modeChips(loc),
         _NumberField(
-            label: AppLocalizations.of(context).cinemaMediaCapacityLabel,
+            label: loc.cinemaMediaCapacityLabel,
             suffix: 'GB',
             controller: capacity,
             onChanged: (_) => setState(() {})),
-        _NumberField(
-            label: AppLocalizations.of(context).cinemaBitrateLabel,
-            suffix: 'Mb/s',
-            controller: bitrate,
-            helper: AppLocalizations.of(context).cinemaBitrateHelper,
-            onChanged: (_) => setState(() {})),
-      ],
-      results: [
+        bitrateField,
+      ];
+      results = [
         _ResultLine(
-            label: AppLocalizations.of(context).cinemaAvailableDurationResult,
+            label: loc.cinemaAvailableDurationResult,
             value: '${_fmt(hours)} h'),
         _ResultLine(
-            label: AppLocalizations.of(context).cinemaAvailableDurationResult,
+            label: loc.cinemaAvailableDurationResult,
             value: '${_fmt(minutes, decimals: 0)} min'),
         _ResultLine(
-            label: AppLocalizations.of(context).cinemaStorageConsumptionResult,
+            label: loc.cinemaStorageConsumptionResult,
             value: '${_fmt(gbPerHour)} GB/h'),
-      ],
-      info: AppLocalizations.of(context).cinemaRecordingStorageInfo,
+      ];
+    } else {
+      final h = _read(hoursCtrl, 0);
+      final m = _read(minutesCtrl, 0);
+      final totalSeconds = h * 3600 + m * 60;
+      final seconds = totalSeconds < 0 ? 0.0 : totalSeconds;
+      final neededGb = bitrateMbps <= 0 || seconds <= 0
+          ? double.nan
+          : bitrateMbps * seconds / 8000;
+      final withMargin = neededGb * (1 + _marginPct / 100);
+      int? media;
+      if (!withMargin.isNaN) {
+        for (final size in _mediaSizes) {
+          if (size >= withMargin) {
+            media = size;
+            break;
+          }
+        }
+      }
+      inputs = [
+        _modeChips(loc),
+        _NumberField(
+            label: loc.cinemaRecHoursLabel,
+            suffix: 'h',
+            controller: hoursCtrl,
+            onChanged: (_) => setState(() {})),
+        _NumberField(
+            label: loc.cinemaRecMinutesLabel,
+            suffix: 'min',
+            controller: minutesCtrl,
+            onChanged: (_) => setState(() {})),
+        bitrateField,
+        Padding(
+          padding: const EdgeInsets.only(bottom: 12),
+          child: Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: [
+              Text(loc.cinemaRecMarginLabel),
+              for (final pct in const [0, 10, 20])
+                ChoiceChip(
+                  label: Text('$pct %'),
+                  selected: _marginPct == pct,
+                  onSelected: (_) => setState(() => _marginPct = pct),
+                ),
+            ],
+          ),
+        ),
+      ];
+      results = [
+        _ResultLine(label: loc.cinemaRecNeededResult, value: _gb(neededGb)),
+        if (_marginPct > 0)
+          _ResultLine(
+              label: loc.cinemaRecWithMarginResult(_marginPct),
+              value: _gb(withMargin)),
+        _ResultLine(
+            label: loc.cinemaRecSuggestedMediaResult,
+            value: neededGb.isNaN
+                ? '—'
+                : (media == null
+                    ? loc.cinemaRecSuggestedNone
+                    : _gb(media.toDouble()))),
+        _ResultLine(
+            label: loc.cinemaStorageConsumptionResult,
+            value: '${_fmt(gbPerHour)} GB/h'),
+      ];
+    }
+
+    return _CalcShell(
+      pageId: 'tool:cinema_recording_storage',
+      title: loc.cinemaRecordingStorageTitle,
+      description: loc.cinemaRecordingStorageDescription,
+      inputs: inputs,
+      results: results,
+      info: loc.cinemaRecordingStorageInfo,
     );
   }
 }

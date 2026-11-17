@@ -2868,8 +2868,8 @@
   "cinemaNdExposureDescription": "Konvertiert eine Korrektur in Blendenstufen in ND-Dichte und Lichtreduktionsfaktor.",
   "cinemaNdExposureInfo": "Markierungen: ND 0,3 = 1 Stopp, ND 0,6 = 2 Stopps, ND 0,9 = 3 Stopps, ND 1,2 = 4 Stopps.",
   "cinemaRecordingStorageTitle": "Aufnahmezeit",
-  "cinemaRecordingStorageSubtitle": "Verfügbare Dauer abhängig von Kapazität und Bitrate.",
-  "cinemaRecordingStorageDescription": "Schätzt die verfügbare Zeit basierend auf der Karten-/Festplattenkapazität und der Videobitrate.",
+  "cinemaRecordingStorageSubtitle": "Verfügbare Dauer oder benötigte Kapazität je nach Bitrate.",
+  "cinemaRecordingStorageDescription": "Schätzt die verfügbare Aufnahmedauer einer Karte/Festplatte oder die für eine bestimmte Dauer benötigte Kapazität anhand der Video-Bitrate.",
   "cinemaRecordingStorageInfo": "Vereinfachte Dezimalrechnung: 1 GB = 8000 MB. Lassen Sie Platz für Audio, Metadaten, Dateisystem und Medienpool.",
   "cinemaTimecodeTitle": "Timecode",
   "cinemaTimecodeSubtitle": "Timecode-Konvertierung ↔ Frames und Dauer zwischen zwei TCs.",
@@ -6227,17 +6227,324 @@
   "luminexInvIssueDuplicateIp": "Doppelte IP im VLAN: {ips}",
   "netStartTip": "Wo anfangen? In einem Luminex-Netz öffne „GigaCore-Switches“ mit dem Telefon im Management-VLAN: es sieht, was in allen VLANs angeschlossen ist. Sonst starte einen „Gesundheitscheck“.",
   "netSecWhoTitle": "Wer ist im Netz?",
-  "netSecWhoDesc": "Angeschlossene Geräte: in allen VLANs über die GigaCore-Switches oder in deinem Subnetz per Scan.",
+  "netSecWhoDesc": "Geräte in allen VLANs, von den GigaCore-Switches gesehen, dazu MA-Net- und NDI-Knoten.",
   "netSecFlowTitle": "Licht- und Videoströme",
   "netSecFlowDesc": "Was dort fließt, wo dein Telefon angeschlossen ist: sACN, Art-Net, RDM und Datenrate. Für andere VLANs nutze „GigaCore-Switches“.",
   "netSecHealthTitle": "Netzwerkzustand",
   "netSecHealthDesc": "Ein bewerteter Check, Live-Überwachung und Momentaufnahmen zum Vorher-Nachher-Vergleich.",
   "netSecToolsTitle": "Werkzeuge und Rechner",
-  "netSecToolsDesc": "Ping, IP-Adresse, Subnetz, Art-Net-Adressierung, PoE- und Glasfaserbudget.",
+  "netSecToolsDesc": "Subnetz, PoE- und Glasfaserbudget, Art-Net-Adressierung.",
   "netLimitsLuminexTip": "Telefon nicht im richtigen VLAN? Mit GigaCore-Switches zeigt „GigaCore-Switches › Multicast-Abonnements“ vom Management-Netz aus, wer in allen VLANs was empfängt.",
   "diagSacnOtherVlan": "Kein sACN in deinem VLAN, aber {count} Universen laufen in anderen VLANs (von den GigaCores gesehen).",
   "diagLuminexUnreachable": "GigaCore-Switch {switchName} ({ip}) nicht erreichbar",
   "diagLuminexAlarm": "{switchName}: {text}",
   "diagLuminexNoIp": "{switchName}, Port {port} ({name}): Gerät ohne IP-Adresse",
-  "diagLuminexDuplicateIp": "{switchName}, Port {port}: doppelte IP im VLAN ({ips})"
+  "diagLuminexDuplicateIp": "{switchName}, Port {port}: doppelte IP im VLAN ({ips})",
+  "netQuickTitle": "Schnellzugriff",
+  "netQuickDesc": "Die Grundlagen, kostenlos: Netz scannen, pingen, deine IP-Adresse sehen.",
+  "netCatTools": "Werkzeuge: {count}",
+  "netCatFree": "Kostenlos: {count}",
+  "netProUnlockTitle": "Pro-Werkzeuge freischalten",
+  "netProUnlockDesc": "Netzwerk-Pro-Abo: alle Werkzeuge dieser Rubrik.",
+  "fxCmpTitle": "Scheinwerfer-Vergleich",
+  "fxCmpTileDescription": "Beta · Ersatz für ein Gerät finden",
+  "fxCmpPickHint": "Fehlt ein Gerät? Wähle das zu ersetzende aus – ich finde Alternativen, sortiert nach Helligkeit und Zoom.",
+  "fxCmpRefTitle": "Zu ersetzendes Gerät",
+  "fxCmpSearchHint": "Marke, Modell oder Typ…",
+  "fxCmpNoSearchResults": "Kein Gerät gefunden",
+  "fxCmpChange": "Ändern",
+  "fxCmpResultsCount": "Gefundene Alternativen: {count}",
+  "@fxCmpResultsCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "fxCmpShowResults": "Ergebnisse anzeigen ({count})",
+  "@fxCmpShowResults": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "fxCmpNoResults": "Keine Alternative mit diesen Filtern. Erweitere die Suche ein wenig!",
+  "fxCmpFilters": "Filter",
+  "fxCmpResetFilters": "Zurücksetzen",
+  "fxCmpCriteriaSection": "Kriterien",
+  "fxCmpConstraintsSection": "Einschränkungen",
+  "fxCmpFamily": "Gerätefamilie",
+  "fxCmpScopeSame": "Gleiche Familie",
+  "fxCmpScopeClose": "Ähnliche Familien",
+  "fxCmpScopeAll": "Alle",
+  "fxCmpLumenTolerance": "Helligkeitsabweichung",
+  "fxCmpAny": "Egal",
+  "fxCmpMustCoverZoom": "Zoom muss den Bereich der Referenz abdecken",
+  "fxCmpMustCoverZoomShort": "Zoom abgedeckt",
+  "fxCmpSource": "Lichtquelle",
+  "fxCmpMinCri": "Mindest-CRI",
+  "fxCmpSameMotion": "Gleiche Bewegung (Moving Head / statisch)",
+  "fxCmpOtherBrands": "Nur andere Marken",
+  "fxCmpLighter": "Gewicht ≤ Referenz",
+  "fxCmpLowerPower": "Leistungsaufnahme ≤ Referenz",
+  "fxCmpIncludeIncomplete": "Unvollständige Daten einbeziehen",
+  "fxCmpIncludeIncompleteHint": "Ein fehlender Wert schließt das Gerät nicht aus, es verliert aber die Punkte für dieses Kriterium.",
+  "fxCmpCompleteOnly": "Nur vollständige Daten",
+  "fxCmpRefMissingValue": "Für das Referenzgerät nicht angegeben",
+  "fxCmpLevelEquivalent": "Gleichwertig",
+  "fxCmpLevelClose": "Ähnlich",
+  "fxCmpLevelFar": "Abweichend",
+  "fxCmpIncomplete": "Unvollständige Daten",
+  "fxCmpZoomCovers": "Zoom abgedeckt",
+  "fxCmpZoomPartial": "Zoom teilweise",
+  "fxCmpCompareTitle": "Vergleich",
+  "fxCmpCritFamily": "Familie",
+  "fxCmpCritLumen": "Helligkeit",
+  "fxCmpCritZoom": "Zoom",
+  "fxCmpCritCri": "CRI",
+  "fxCmpCritSource": "Quelle",
+  "fxCmpCritPower": "Leistung",
+  "fxCmpCritWeight": "Gewicht",
+  "fxCmpCritDmx": "DMX-Kanäle",
+  "fxCmpFamSpotProfile": "Spot / Profil",
+  "fxCmpFamBeam": "Beam",
+  "fxCmpFamHybrid": "Hybrid",
+  "fxCmpFamWash": "Wash",
+  "fxCmpFamMovingHead": "Moving Head (nicht angegeben)",
+  "fxCmpFamPar": "PAR",
+  "fxCmpFamFresnelPc": "Fresnel / PC",
+  "fxCmpFamBar": "Leiste / linear",
+  "fxCmpFamStrobe": "Strobe / Blinder",
+  "fxCmpFamFollowspot": "Verfolger",
+  "fxCmpFamSoftPanel": "Panel / Flächenlicht",
+  "fxCmpFamCyclo": "Horizontleuchte / Wallwasher",
+  "fxCmpFamEffect": "Effekt",
+  "fxCmpFamLaser": "Laser",
+  "fxCmpFamAtmospheric": "Effektmaschine (Nebel…)",
+  "fxCmpFamOther": "Sonstiges",
+  "fxCmpSrcWhiteLed": "Weiße LED",
+  "fxCmpSrcColorLed": "Farb-LED (RGBW…)",
+  "fxCmpSrcDischarge": "Entladungslampe",
+  "fxCmpSrcLaser": "Laser-Phosphor",
+  "fxCmpSrcHalogen": "Halogen / Wolfram",
+  "fxCmpSrcOther": "Andere Quelle",
+  "fxCmpDataNotice": "Zoom, CRI und Lichtquelle sind im Katalog für die meisten Geräte noch nicht eingetragen: Sie fließen in die Bewertung ein, sobald sie vorhanden sind.",
+  "fxCmpRefNoData": "Für dieses Gerät sind weder Helligkeit noch Zoom angegeben: Die Bewertung ist wenig zuverlässig.",
+  "fxCmpDisclaimer": "Unverbindliche Bewertung auf Basis der Herstellerdaten im Katalog. Vor dem Ersetzen immer das Datenblatt prüfen.",
+  "fxCmpBetaBadge": "PRO · BETA",
+  "fxCmpBetaPill": "BETA",
+  "fxCmpBetaTitle": "Beta-Werkzeug 🧪",
+  "fxCmpBetaBody": "Der Vergleich ist ganz neu! Die Bewertung wird genauer, je vollständiger der Katalog wird (Helligkeit, Zoom, CRI, Quelle). Ein seltsames Ergebnis? Schreib uns – das hilft uns weiter.",
+  "fxCmpFeedback": "Feedback senden",
+  "fxCmpReportResult": "Dieses Ergebnis melden",
+  "fxCmpFeedbackSubject": "Scheinwerfer-Vergleich (Beta)",
+  "fxCmpFeedbackRef": "Zu ersetzendes Gerät: {name}",
+  "@fxCmpFeedbackRef": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "fxCmpFeedbackCandidate": "Vorgeschlagene Alternative: {name} (Wertung {score})",
+  "@fxCmpFeedbackCandidate": {
+    "placeholders": {
+      "name": {},
+      "score": {}
+    }
+  },
+  "fxCmpFeedbackComment": "Dein Kommentar:",
+  "diaphTitle": "Blende eines Scheinwerfers",
+  "diaphTileDescription": "Welche Kamerablende mit diesem Gerät?",
+  "diaphIntro": "Im Fernsehen leuchtet man in Blenden! Wähle Gerät, Abstand und Kamera – ich nenne dir die Blende in der Strahlmitte.",
+  "diaphMachineSection": "Gerät",
+  "diaphSearchHint": "Im Katalog suchen (optional)…",
+  "diaphSourceLumens": "Lumen + Winkel",
+  "diaphSourceMaker": "Lux laut Hersteller",
+  "diaphLumens": "Lichtstrom",
+  "diaphBeamAngle": "Abstrahlwinkel",
+  "diaphBeamAngleHint": "Beam (50 %), nicht Field",
+  "diaphMakerLux": "Beleuchtungsstärke",
+  "diaphMakerDistance": "im Abstand",
+  "diaphZoomRange": "Zoom des Geräts: {range}",
+  "@diaphZoomRange": {
+    "placeholders": {
+      "range": {}
+    }
+  },
+  "diaphDimmer": "Dimmer",
+  "diaphDistanceSection": "Abstand",
+  "diaphDistance": "Abstand Gerät → Motiv",
+  "diaphCameraSection": "Kamera",
+  "diaphCamBroadcast": "Broadcast",
+  "diaphCamIso": "ISO / Verschluss",
+  "diaphSensitivity": "Empfindlichkeit: F bei 2000 lx",
+  "diaphSensitivityHint": "Aus dem Datenblatt deiner Kamera (0 dB Gain)",
+  "diaphCustom": "Eigene",
+  "diaphGain": "Gain",
+  "diaphNd": "ND-Filter",
+  "diaphNdClear": "Clear",
+  "diaphIso": "ISO",
+  "diaphFps": "Bilder/s",
+  "diaphShutter": "Hellsektor",
+  "diaphExposure": "Belichtungszeit: {time}",
+  "@diaphExposure": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "diaphResultTitle": "Blende in der Strahlmitte",
+  "diaphExact": "genau: f/{value}",
+  "@diaphExact": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "diaphLux": "Beleuchtungsstärke",
+  "diaphBeamDiameter": "Strahldurchmesser",
+  "diaphTooDark": "Zu wenig Licht: Gerät näher bringen, Gain erhöhen oder ND entfernen.",
+  "diaphTooBright": "Zu viel Licht: ND einsetzen, Dimmer absenken oder Gerät weiter weg stellen.",
+  "diaphMissingInput": "Gib Gerät (Lichtstrom + Winkel oder Herstellerlux) und Abstand ein, um die Blende zu sehen.",
+  "diaphTargetSection": "Für eine bestimmte Blende",
+  "diaphTargetF": "Ziel-Blende (f/)",
+  "diaphTargetResult": "Stelle das Gerät in {distance} m Abstand auf ({lux} lx am Motiv nötig).",
+  "@diaphTargetResult": {
+    "placeholders": {
+      "distance": {},
+      "lux": {}
+    }
+  },
+  "diaphDisclaimer": "Schätzung aus Lichtstrom und Winkel (glockenförmiger Strahl angenommen): je nach Optik ± 1/2 Blende. Für mehr Genauigkeit Herstellerlux oder ein Luxmeter verwenden.",
+  "cinemaRecModeDuration": "Verfügbare Dauer",
+  "cinemaRecModeCapacity": "Benötigte Kapazität",
+  "cinemaRecHoursLabel": "Aufnahmedauer — Stunden",
+  "cinemaRecMinutesLabel": "Aufnahmedauer — Minuten",
+  "cinemaRecMarginLabel": "Sicherheitsreserve",
+  "cinemaRecNeededResult": "Benötigte Kapazität",
+  "cinemaRecWithMarginResult": "Mit {pct} % Reserve",
+  "@cinemaRecWithMarginResult": {
+    "placeholders": {
+      "pct": {}
+    }
+  },
+  "cinemaRecSuggestedMediaResult": "Empfohlenes Medium",
+  "cinemaRecSuggestedNone": "> 8 TB: mehrere Medien",
+  "riggingToolTrussLoadTitle": "Last pro Kettenzug",
+  "riggingToolTrussLoadSubtitle": "Lastverteilung einer Traverse auf 2 bis 6 Kettenzüge, mit WLL- und Traversenprüfung.",
+  "riggingTrussSectionTruss": "Traverse",
+  "riggingTrussLengthLabel": "Traversenlänge",
+  "riggingTrussSelfWeightLabel": "Eigengewicht der Traverse",
+  "riggingTrussExtraUdlLabel": "Zusätzliche Streckenlast (Kabel…)",
+  "riggingUnitKgPerMeter": "kg/m",
+  "riggingUnitKn": "kN",
+  "riggingUnitKnm": "kN·m",
+  "riggingTrussSectionMotors": "Kettenzüge",
+  "riggingTrussMotorCountLabel": "Anzahl Kettenzüge",
+  "riggingTrussMotorPositionLabel": "Position Kettenzug {n}",
+  "@riggingTrussMotorPositionLabel": {
+    "placeholders": {
+      "n": {}
+    }
+  },
+  "riggingTrussPositionsHint": "Positionen ab dem linken Ende der Traverse gemessen.",
+  "riggingTrussSpreadMotors": "Gleichmäßig verteilen",
+  "riggingTrussExtraPerMotorLabel": "Zusatzgewicht pro Anschlagpunkt (Kette, Rundschlingen, Schäkel)",
+  "riggingTrussMotorWllLabel": "WLL des Kettenzugs",
+  "riggingTrussDynamicFactorLabel": "Dynamikfaktor",
+  "riggingTrussSectionLoads": "Lasten",
+  "riggingTrussFixtureCountLabel": "Gleichmäßig verteilte Scheinwerfer (Anzahl)",
+  "riggingTrussFixtureWeightLabel": "Gewicht pro Scheinwerfer",
+  "riggingTrussPointLoadsLabel": "Punktlasten",
+  "riggingTrussAddPointLoad": "Last hinzufügen",
+  "riggingTrussPositionLabel": "Position",
+  "riggingTrussMassLabel": "Gewicht",
+  "riggingTrussSectionCheck": "Traversenprüfung (optional)",
+  "riggingTrussAllowableUdl": "Streckenlast (UDL)",
+  "riggingTrussAllowableCpl": "Mittige Punktlast (CPL)",
+  "riggingTrussAllowableValueLabel": "Zulässiger Herstellerwert ({span} m)",
+  "@riggingTrussAllowableValueLabel": {
+    "placeholders": {
+      "span": {}
+    }
+  },
+  "riggingTrussAllowableHint": "Lies den Wert für die größte Spannweite zwischen zwei Kettenzügen in der Lasttabelle des Herstellers ab.",
+  "riggingTrussMotorResultLabel": "Kettenzug {n} · {x} m",
+  "@riggingTrussMotorResultLabel": {
+    "placeholders": {
+      "n": {},
+      "x": {}
+    }
+  },
+  "riggingTrussTotalLoadLabel": "Gesamtlast an den Kettenzügen",
+  "riggingTrussMaxMomentLabel": "Max. Moment (bei {x} m)",
+  "@riggingTrussMaxMomentLabel": {
+    "placeholders": {
+      "x": {}
+    }
+  },
+  "riggingTrussLargestSpanLabel": "Größte Spannweite",
+  "riggingTrussUsageLabel": "Traversenauslastung (Moment)",
+  "riggingTrussInvalidInput": "Prüfe die Werte: Länge, WLL, Kettenzugpositionen (in Reihenfolge, auf der Traverse, mind. 1 cm Abstand), Lasten auf der Traverse, Dynamikfaktor ≥ 1.",
+  "riggingTrussOkDescription": "Alle Kettenzüge liegen unter 80 % ihrer WLL.",
+  "riggingTrussWatchDescription": "Mindestens ein Kettenzug liegt über 80 % seiner WLL.",
+  "riggingTrussOverloadDescription": "Mindestens ein Kettenzug überschreitet seine WLL.",
+  "riggingTrussUpliftDescription": "Mindestens ein Kettenzug wird angehoben (negative Last): Auskragung überlastet, Aufbau instabil.",
+  "riggingTrussHyperstaticWarning": "3 oder mehr Kettenzüge: theoretische Verteilung bei exakt nivellierten Kettenzügen und konstanter Traversensteifigkeit. Wenige Zentimeter Höhenunterschied verändern die realen Lasten stark. Nur eine Messung (Load Cells) zeigt die Realität.",
+  "riggingTrussCantileverNote": "Auskragung vorhanden: prüfe auch die zulässigen Kragwerte des Herstellers.",
+  "riggingTrussCheckNote": "Nur das Biegemoment wird verglichen. Querkraft, Durchbiegung, Verbinder und Zubehör werden nicht geprüft.",
+  "riggingTrussDisclaimer": "Theoretische Ergebnisse nur zur Orientierung; sie ersetzen keine statische Berechnung. Jede Installation muss von einer qualifizierten Person geprüft und freigegeben werden. Der Herausgeber der App haftet in keinem Fall für die Verwendung dieser Ergebnisse.",
+  "riggingTrussModelLabel": "Traversenmodell",
+  "riggingTrussModelManual": "Manuelle Eingabe",
+  "riggingTrussModelUnchecked": "Werte zu prüfen",
+  "riggingTrussTableValueLabel": "Wert der Herstellertabelle ({span} m)",
+  "@riggingTrussTableValueLabel": {
+    "placeholders": {
+      "span": {}
+    }
+  },
+  "riggingTrussTableSource": "Quelle: {source}",
+  "@riggingTrussTableSource": {
+    "placeholders": {
+      "source": {}
+    }
+  },
+  "riggingTrussOutOfTable": "Spannweite außerhalb der Herstellertabelle: keine Prüfung möglich.",
+  "riggingTrussNetNote": "Das Eigengewicht der Traverse ist in den Tabellenwerten bereits abgezogen; das Tool berücksichtigt dies.",
+  "riggingTrussUncheckedNote": "Werte aus dem Herstellerdatenblatt, aber noch nicht geprüft: mit dem Quelldokument abgleichen.",
+  "riggingBridleHeightDiffLabel": "Höhenunterschied Punkt B (+ wenn höher als A)",
+  "riggingBridleHeightDiffHint": "Abstand horizontal gemessen, Durchhang unter Punkt A gemessen.",
+  "homeTipLabel": "Schon gewusst?",
+  "homeTipOpen": "Entdecken",
+  "homeTipHide": "Nicht mehr anzeigen",
+  "homeTipHiddenSnack": "Tipps ausgeblendet. Sie können sie in den Einstellungen wieder aktivieren.",
+  "settingsTipsTitle": "Tipps auf dem Startbildschirm",
+  "settingsTipsSubtitle": "Bei jedem App-Start ein Tool zum Entdecken vorschlagen",
+  "homeTipRdm": "Identifizieren und konfigurieren Sie Ihre DMX-Geräte aus der Ferne mit dem RDM-Tool, ohne auf die Traverse zu steigen.",
+  "homeTipGigacore": "Lesen Sie die Konfiguration Ihrer Luminex-GigaCore-Switches aus, inventarisieren Sie das Netzwerk und sichern Sie Ihre Konfigurationen.",
+  "homeTipGdtf": "Erstellen Sie eine GDTF-Datei aus dem PDF-Handbuch eines Scheinwerfers oder manuell mit dem Assistenten.",
+  "homeTipPluginForge": "Erzeugen Sie maßgeschneiderte grandMA3-Lua-Plugins mit MA3 Plugin Forge.",
+  "homeTipPowerPlan": "Zeichnen Sie Ihr Stromverteilungsschema und exportieren Sie den Bericht, den Prüfer verlangen.",
+  "homeTipUps": "Berechnen Sie die Laufzeit einer USV anhand der Leistung Ihrer Geräte.",
+  "homeTipRigging": "Berechnen Sie Winkel und Längen der Anschlagmittel Ihrer Bridles und prüfen Sie die Belastung einer Traverse.",
+  "homeTipSafety": "Erstellen Sie Ihren Sicherheitsplan und die Montagebescheinigung direkt auf dem Smartphone.",
+  "homeTipIm3": "Berechnen Sie Intermodulationsprodukte (IM3), um kompatible Funkfrequenzen zu wählen.",
+  "homeTipSubCardio": "Cardioid-Subs oder End-Fire-Aufbau? Die App berechnet die Delays für Sie.",
+  "homeTipDipswitch": "Finden Sie die DIP-Schalter-Stellung für jede DMX-Adresse.",
+  "homeTipPinned": "Heften Sie Ihre meistgenutzten Referenzen an, um sie direkt vom Startbildschirm zu öffnen.",
+  "homeTipBpm": "Tippen Sie das Tempo eines Songs und rechnen Sie es in Millisekunden für Effekte und Delays um.",
+  "homeTipTimecode": "Berechnen Sie Timecode-Dauer, Versatz und Verzögerungen in Sekunden.",
+  "homeDrawerRecommend": "Einem Kollegen empfehlen",
+  "homeShareAppSubject": "ShowTech Tools",
+  "homeShareAppMessage": "Ich empfehle dir ShowTech Tools, eine App für Veranstaltungstechniker: Licht, Ton, Video, Strom, Rigging, Netzwerk, Sicherheit… Verfügbar für iOS und Android: https://www.openwhite.eu/showtech-tools/",
+  "riggingTrussGrossNote": "Der Hersteller gibt nicht an, ob das Eigengewicht abgezogen ist: Sicherheitshalber zieht das Tool es vom Tabellenwert ab.",
+  "riggingHoistModelLabel": "Kettenzugmodell",
+  "riggingHoistModelManual": "Manuelle Eingabe",
+  "riggingHoistModelClassNote": "Angegebene Klasse: {cls}. Maßgebend ist die Klasse auf dem Typenschild des Kettenzugs.",
+  "@riggingHoistModelClassNote": {
+    "placeholders": {
+      "cls": {}
+    }
+  },
+  "riggingHoistModelWeights": "Gewicht ohne Kette: {weight} kg · Kette: {chain} kg/m",
+  "@riggingHoistModelWeights": {
+    "placeholders": {
+      "weight": {},
+      "chain": {}
+    }
+  }
 }
